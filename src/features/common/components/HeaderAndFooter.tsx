@@ -50,6 +50,12 @@ export default function HeaderAndFooter() {
         }
     }
 
+    //雪を積もらせる
+    //ローカルストレージ
+    const jsonStr = localStorage.getItem('snowParam');
+    const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string} 
+        = jsonStr===null?{snowIsValid:'1',noticeCheckedYear:''}:JSON.parse(jsonStr);
+    const snowImgSrc: string ='/snow/artworksnow'+String(Math.floor(Math.random() * 3)+1)+'.png';
 
     
     return (
@@ -140,13 +146,23 @@ export default function HeaderAndFooter() {
                         </span>
                     </a>
                     <Link className="
+                        p-2 font-semibold
+                        inline-block w-full hover:bg-gray-200 text-blue-600
+                        transition-all duration-500 ease-out
+                        text-xl font-sans justify-center
+                    "
+                        href={`/setting`}
+                        rel="noopener noreferrer">
+                        設定
+                    </Link>
+                    <Link className="
                         p-2
                         inline-block w-full bg-gray-600 hover:bg-gray-200/0 
                         text-white hover:text-gray-600
                         transition-all duration-500 ease-out
                         text-xl font-sans justify-center
                     "
-                        href={`/about`}
+                        href={`/`}
                         rel="noopener noreferrer">
                         TOPに戻る
                     </Link>
@@ -159,11 +175,17 @@ export default function HeaderAndFooter() {
 
             <code className="font-mono font-bold">
                 <Link
-                    className =""
+                    className ="relative"
                     href={`/`}
                     rel="noopener noreferrer"
                 >
                 <img className="tablet:w-[200px] w-[150px] h-[50px]" src="/search315_logo.svg" width="200" height="200" alt="ホームアイコン" />
+                <img
+                className={currentSnowParam.snowIsValid==='0'
+                    ?'hidden':` absolute left-[3px] top-[3px] tablet:left-[4px] tablet:top-[-5px] h-auto tablet:w-[195px] w-[146px]  `}
+                src={'/snow/logosnow.png'}
+                alt="logosnow"
+                />
                 </Link>
             </code>
 

@@ -37,7 +37,7 @@ export default function UnitBlock({ id }: { id: string }) {
             hover:bg-blue-100/10
             border-l-8 border-` + id
             }
-            href={{ pathname: '/search', query: {q: qStr , colle: 1}}}
+            href={{ pathname: '/unit/'+id}}
         >
         <motion.button
           className='w-full h-full'

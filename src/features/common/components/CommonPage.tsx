@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation"
 import React from "react";
 import useBuildId from "../utils/useBuildId"
 import Link from 'next/link';
+import ParticlesComponent from './particles';
 
 
 const CommonPage = ({ children }: Props ,{ Component, pageProps, router }: AppProps)=> {
@@ -26,11 +27,26 @@ const CommonPage = ({ children }: Props ,{ Component, pageProps, router }: AppPr
     <main className=" min-h-screen">
         <HeaderAndFooter />
         <>{children}</>
+        <ParticlesComponent/>
+        <div className="
+          flex pb-2 justify-center underline 
+          text-blue-600 mobileL:text-lg mobileM:text-base text-sm
+        ">
         <Link 
-          className="flex pb-2 justify-center underline text-gray-600 mobileL:text-base mobileM:text-sm text-xs"
+          className=""
+          href={`/setting`}
+          rel="noopener noreferrer"
+        >雪の降る演出のON・OFFはこちら</Link>
+        </div>
+        <div className="
+          flex pb-2 justify-center underline text-gray-600 mobileL:text-base mobileM:text-sm text-xs
+        ">
+        <Link 
+          className=""
           href={`/about`}
           rel="noopener noreferrer"
         >このサイトについて・プライバシーポリシー・免責事項</Link>
+        </div>
 
     </main>
     );

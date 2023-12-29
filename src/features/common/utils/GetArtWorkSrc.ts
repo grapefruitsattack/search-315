@@ -4,6 +4,7 @@ const dummySeriesId:string[]
         'AD'
         ,'SH'
         ,'PM'
+        ,'CODS'
         ,''
     ];
 

@@ -36,10 +36,7 @@ export default function Live({ results }: { results: LiveMaster[] }) {
                 </span>
                 </span>
                     <p className="w-fit">
-                        {'ナンバリングライブ(1st～7th)、3Dライブ(ファンコンライブ)のみ対応。'}
-                    </p>
-                    <p className="w-max-[calc(100%_-_20px)]">
-                        {'そのほかのライブは後日実装予定です'}
+                        {'映像商品化されたライブイベントのみ掲載'}
                     </p>
                 </div>
             </a>
@@ -57,8 +54,7 @@ export default function Live({ results }: { results: LiveMaster[] }) {
                 <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 2 24 24" width="18" height="18"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11 15H13V17H11V15ZM11 7H13V13H11V7Z"></path></svg>
                 </span>
             </span>
-                {'ナンバリングライブ(1st～7th)、3Dライブ(ファンコンライブ)のみ対応。'}
-                {'そのほかのライブは後日実装予定です'}
+                {'映像商品化されたライブイベントのみ掲載'}
             </p>
         </div>
         <div className={`grid
@@ -67,9 +63,15 @@ export default function Live({ results }: { results: LiveMaster[] }) {
         {results.map((result, index) => (
             <div key={index} className = "flex ">
                 <a
-                className ="
+                className ={`
                 rounded-md
-                bg-white border-cyan-600/40 border-2
+                bg-white 
+                ${result.type===''
+                    ?'border-cyan-600/40 border-2 hover:bg-gradient-to-tl from-cyan-100/30 to-violet-200/30'
+                    :result.type==='ex'
+                        ?'border-violet-600/40 border-2 hover:bg-violet-100/40'
+                        :'border-pink-600/40 border-2 hover:bg-pink-100/40'
+                }
                 py-1 w-full
                 grid
                 place-items-center
@@ -78,13 +80,11 @@ export default function Live({ results }: { results: LiveMaster[] }) {
                 leading-tight
                 font-sans
                 rounded-md px-1 pt-1 
-                from-cyan-100/30 to-violet-200/30
                 text-cyan-900
-                hover:bg-gradient-to-tl
                 hover:text-cyan-700 
                 duration-500 ease-out
                 w-fit h-fit
-                "
+                `}
                 href={`/live/` + result.livePerId}
                 >
                     <div className="flex flex-wrap place-content-center">

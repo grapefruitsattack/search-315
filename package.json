@@ -25,7 +25,7 @@
     "framer-motion": "^10.12.18",
     "holderjs": "^2.9.9",
     "license-checker": "^25.0.1",
-    "next": "13.4.2",
+    "next": "^13.5.6",
     "next-build-id": "^3.0.0",
     "postcss": "8.4.23",
     "proper-url-join": "^2.1.1",
@@ -34,8 +34,11 @@
     "react-hooks-use-modal": "^3.3.1",
     "react-modal-video": "^2.0.0",
     "react-select": "^5.7.3",
+    "react-tsparticles": "^2.12.2",
     "react-youtube": "^10.1.0",
     "tailwindcss": "3.3.2",
+    "tsparticles": "^2.0.6",
+    "tsparticles-engine": "^2.12.0",
     "typescript": "5.0.4"
   },
   "devDependencies": {

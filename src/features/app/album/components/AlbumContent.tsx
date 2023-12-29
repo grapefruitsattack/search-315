@@ -18,6 +18,13 @@ export default function AlbumContent({ album, }: { album: Albums}) {
             Number(album.releaseDate.substring(0,4))
             ,Number(album.releaseDate.substring(4,6))-1
             ,Number(album.releaseDate.substring(6,8))).toLocaleDateString();
+
+    //雪を積もらせる
+    //ローカルストレージ
+    const jsonStr = localStorage.getItem('snowParam');
+    const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string} 
+        = jsonStr===null?{snowIsValid:'1',noticeCheckedYear:''}:JSON.parse(jsonStr);
+    const snowImgSrc: string ='/snow/artworksnow'+String(Math.floor(Math.random() * 3)+1)+'.png';
     
     return(
        
@@ -52,6 +59,12 @@ export default function AlbumContent({ album, }: { album: Albums}) {
                 className={`object-cover object-center lg:h-[120px] lg:w-[120px] h-auto w-full max-w-[400px] aspect-square rounded-lg`}
                 src={`/artwork/${imgSrc}.png`}
                 alt="アートワーク"
+                />
+                <img
+                className={currentSnowParam.snowIsValid==='0'||album.colleFlg===1
+                    ?'hidden':` absolute left-[42px] top-[159px] lg:left-[90px] lg:top-[159px] w-[130px] `}
+                src={snowImgSrc}
+                alt="snow"
                 />
             </div>
             {/* 情報 */}
@@ -148,10 +161,13 @@ export default function AlbumContent({ album, }: { album: Albums}) {
                 />
             </div>
 
-            <div  className="w-fit
-                pt-12 lg:text-base text-sm font-sans break-all
-                "
-            >
+            <div className={album.description===''?'hidden':`
+                w-fit pt-6 lg:text-base text-sm font-sans font-semibold
+            `}>{'※'}{album.description}
+            </div>
+            <div className="
+                w-fit pt-3 lg:text-base text-sm font-sans break-all
+            ">
                 <p>リリースページ：
                     <a 
                     className ="

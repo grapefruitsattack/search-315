@@ -29,7 +29,13 @@
     { "productId": "6TH_TO_L",  "youtubeId": "10hE7OQVd8I",  "type": "sp",  "typeName": "特典映像",  "livePerId": ""}, 
     { "productId": "6TH_TO_N",  "youtubeId": "0OXdx2G63k8",  "type": "digest",  "typeName": "ライブ本編",  "livePerId": ""}, 
     { "productId": "6TH_HO",  "youtubeId": "adoeumIO0Us",  "type": "digest",  "typeName": "ライブ本編",  "livePerId": ""}, 
-    { "productId": "",  "youtubeId": "JD5Ngpb3oY8",  "type": "takeastump",  "typeName": "Take a StuMp!",  "livePerId": "7TH_ST1"}, 
-    { "productId": "7TH_ST",  "youtubeId": "mgcuEBU_9FI",  "type": "digest",  "typeName": "ライブ本編",  "livePerId": ""},
-    { "productId": "7TH_SU",  "youtubeId": "zlskohnb8o4",  "type": "digest",  "typeName": "ライブ本編",  "livePerId": ""}
-    ]
+    { "productId": "7TH_ST",  "youtubeId": "mgcuEBU_9FI",  "type": "digest",  "typeName": "ライブ本編",  "livePerId": ""}, 
+    { "productId": "7TH_SU",  "youtubeId": "zlskohnb8o4",  "type": "digest",  "typeName": "ライブ本編",  "livePerId": ""}, 
+    { "productId": "ANIMEFSP",  "youtubeId": "0R_U04ji2mY",  "type": "digest",  "typeName": "公演本編",  "livePerId": ""}, 
+    { "productId": "",  "youtubeId": "9nlNE7lCBXk",  "type": "digest",  "typeName": "ライブ本編",  "livePerId": "MOIW2023_DAY1"}, 
+    { "productId": "",  "youtubeId": "5j_zn8Fdpaw",  "type": "digest",  "typeName": "ライブ本編",  "livePerId": "MOIW2023_DAY2"}, 
+    { "productId": "PM19",  "youtubeId": "79pHiO4iXww",  "type": "digest",  "typeName": "公演本編",  "livePerId": ""}, 
+    { "productId": "PM21",  "youtubeId": "v8Up9L3omZs",  "type": "digest",  "typeName": "公演本編",  "livePerId": ""}, 
+    { "productId": "PM22",  "youtubeId": "INW6t73OgHo",  "type": "digest",  "typeName": "公演本編",  "livePerId": ""}, 
+    { "productId": "PRS23",  "youtubeId": "OAwQSAUa6TE",  "type": "digest",  "typeName": "公演本編",  "livePerId": ""}
+]

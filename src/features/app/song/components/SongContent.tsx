@@ -17,7 +17,7 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
     //MV情報
     const mv : MvInfo[] = GetMv(result);
     //ライブ情報
-    const live : LiveMaster[] = SearchLiveBySongId(result);
+    const live : LiveMaster[] = SearchLiveBySongId(result).slice().reverse();
     //アートワーク
     const imgSrc: string = GetArtWorkSrc(albumResult.sereisId||'',result.isSoloColle,result.isUnitColle);
     //リリース日
@@ -26,6 +26,15 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
             Number(result.releaseDate.substring(0,4))
             ,Number(result.releaseDate.substring(4,6))-1
             ,Number(result.releaseDate.substring(6,8))).toLocaleDateString();
+
+    
+    //雪を積もらせる
+    //ローカルストレージ
+    const jsonStr = localStorage.getItem('snowParam');
+    const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string} 
+        = jsonStr===null?{snowIsValid:'1',noticeCheckedYear:''}:JSON.parse(jsonStr);
+    const snowImgSrc: string ='/snow/artworksnow'+String(Math.floor(Math.random() * 3)+1)+'.png';
+
 
     return(
         <article className="pt-32 pb-96 px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
@@ -62,6 +71,12 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                     className={`object-cover object-center lg:h-[120px] lg:w-[120px] h-auto w-full max-w-[400px] aspect-square rounded-lg`}
                     src={`/artwork/${imgSrc}.png`}
                     alt="アートワーク"
+                    />
+                    <img
+                    className={currentSnowParam.snowIsValid==='0'||result.colleFlg===1
+                        ?'hidden':` absolute left-[42px] top-[159px] lg:left-[90px] lg:top-[159px] h-auto w-[130px] `}
+                    src={snowImgSrc}
+                    alt="snow"
                     />
                 </div>
                 {/* 情報 */}
@@ -166,23 +181,22 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                 />
             </div>
 
-            <div  className="w-fit
-                pt-12 lg:text-base text-sm font-sans break-all
-                "
-            >
+            <div className={result.description===''?'hidden':`
+                w-fit pt-6 lg:text-base text-sm font-sans font-semibold
+            `}>{'※'}{result.description}
+            </div>
+            <div className="
+                w-fit pt-3 lg:text-base text-sm font-sans break-all
+            ">
                 <p>リリースページ：
                     <a 
                     className ="
-                    underline 
-                    text-slate-400
-                    hover:text-sky-300 
-                    fill-slate-500
-                    hover:fill-sky-500 
+                    underline text-slate-400 hover:text-sky-300 fill-slate-500 hover:fill-sky-500 
                     "
                     href={albumResult.releasePage}
                     target="_blank"
                     rel="noopener noreferrer"
-                    >
+                >
                         <span>
                         {albumResult.releasePage} 
                         <span className="pl-0.5">
