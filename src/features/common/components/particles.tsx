@@ -395,7 +395,7 @@ const ParticlesComponent = () => {
     }
   };
 
-  return (
+  return currentSnowParam.snowIsValid==='1'?(
     <Particles
       className={`${currentSnowParam.snowIsValid==='1'?'':'hidden'}`}    
       id="particles"
@@ -403,7 +403,7 @@ const ParticlesComponent = () => {
       options={options}
       loaded={particlesLoaded}
     />
-  )
+  ):(<></>)
 }
 
 export default ParticlesComponent
