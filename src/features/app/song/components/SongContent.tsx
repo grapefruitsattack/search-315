@@ -64,17 +64,17 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                 {/* アートワーク */}
                 <div 
                     className={`
-                        row-span-6 lg:w-auto w-[120px] inline-block 
+                        row-span-6 w-[135px] inline-block relative
                     `}
                 >
                     <img
-                    className={`object-cover object-center lg:h-[120px] lg:w-[120px] h-auto w-full max-w-[400px] aspect-square rounded-lg`}
+                    className={`object-cover object-center h-[120px] w-[120px] max-w-[400px] aspect-square rounded-lg`}
                     src={`/artwork/${imgSrc}.png`}
                     alt="アートワーク"
                     />
                     <img
                     className={currentSnowParam.snowIsValid==='0'||result.colleFlg===1
-                        ?'hidden':` absolute left-[42px] top-[159px] lg:left-[90px] lg:top-[159px] h-auto w-[130px] `}
+                        ?'hidden':` absolute left-[-7px] top-[-9px] h-auto w-[130px] `}
                     src={snowImgSrc}
                     alt="snow"
                     />
