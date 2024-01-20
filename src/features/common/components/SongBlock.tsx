@@ -1,12 +1,11 @@
 'use client'
 import SubscButton from "./SubscButton";
+import YoutubeButton from "./YoutubeButton";
 import type { SongMaster, Albums } from '../../../data/types';
-import songMasters from '../../../data/songMaster.json';
 import albumMasters from '../../../data/albumMaster.json';
-import {YoutubeModal} from "./YoutubeModal";
 import {ShareYoutubeModal} from "../../app/shareModal/ShareYoutubeModal";
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {Tooltip} from "@chakra-ui/react";
 import Link from 'next/link';
 import GetArtWorkSrc from '../utils/GetArtWorkSrc';
@@ -163,7 +162,13 @@ export default function SongBlock(
       :
       <div className="">
       {song?.youtubeId===''
-            ?<div className = 'hidden'></div>
+            ?song?.trialYoutubeId===''
+              ?<div className = 'hidden'></div>
+              :
+              <div className="grid grid-cols-5 h-[36px]">
+              <div className = 'flex col-span-5 h-[36px] max-w-[280px]'>
+              <YoutubeButton youtubeId={''} trialYoutubeId={song?.trialYoutubeId}/>
+              </div></div>
             :
             <div className="grid grid-cols-5 h-[36px]">
             <div className = 'flex col-span-5 h-[36px] max-w-[280px]'>
