@@ -3573,5 +3573,21 @@
 {"trackNo": 1, "albumId": "CHOSHI100", "songId": "CHOSHI100_1", "singingInfoId": "JUP00", "releaseDate": "20240315", "type": "u"},
 {"trackNo": 1, "albumId": "CHOSHI100", "songId": "CHOSHI100_1", "singingInfoId": "JUP01", "releaseDate": "20240315", "type": ""},
 {"trackNo": 1, "albumId": "CHOSHI100", "songId": "CHOSHI100_1", "singingInfoId": "JUP02", "releaseDate": "20240315", "type": ""},
-{"trackNo": 1, "albumId": "CHOSHI100", "songId": "CHOSHI100_1", "singingInfoId": "JUP03", "releaseDate": "20240315", "type": ""}
+{"trackNo": 1, "albumId": "CHOSHI100", "songId": "CHOSHI100_1", "singingInfoId": "JUP03", "releaseDate": "20240315", "type": ""},
+{"trackNo": 1, "albumId": "COD07", "songId": "COD07_1", "singingInfoId": "FLG00", "releaseDate": "20240327", "type": "u"},
+{"trackNo": 1, "albumId": "COD07", "songId": "COD07_1", "singingInfoId": "FLG01", "releaseDate": "20240327", "type": ""},
+{"trackNo": 1, "albumId": "COD07", "songId": "COD07_1", "singingInfoId": "FLG02", "releaseDate": "20240327", "type": ""},
+{"trackNo": 1, "albumId": "COD07", "songId": "COD07_1", "singingInfoId": "FLG03", "releaseDate": "20240327", "type": ""},
+{"trackNo": 3, "albumId": "COD07", "songId": "COD07_3", "singingInfoId": "FLG00", "releaseDate": "20240327", "type": "u"},
+{"trackNo": 3, "albumId": "COD07", "songId": "COD07_3", "singingInfoId": "FLG01", "releaseDate": "20240327", "type": ""},
+{"trackNo": 3, "albumId": "COD07", "songId": "COD07_3", "singingInfoId": "FLG02", "releaseDate": "20240327", "type": ""},
+{"trackNo": 3, "albumId": "COD07", "songId": "COD07_3", "singingInfoId": "FLG03", "releaseDate": "20240327", "type": ""},
+{"trackNo": 1, "albumId": "COD08", "songId": "COD08_1", "singingInfoId": "KGD00", "releaseDate": "20240327", "type": "u"},
+{"trackNo": 1, "albumId": "COD08", "songId": "COD08_1", "singingInfoId": "KGD01", "releaseDate": "20240327", "type": ""},
+{"trackNo": 1, "albumId": "COD08", "songId": "COD08_1", "singingInfoId": "KGD02", "releaseDate": "20240327", "type": ""},
+{"trackNo": 1, "albumId": "COD08", "songId": "COD08_1", "singingInfoId": "KGD03", "releaseDate": "20240327", "type": ""},
+{"trackNo": 3, "albumId": "COD08", "songId": "COD08_3", "singingInfoId": "KGD00", "releaseDate": "20240327", "type": "u"},
+{"trackNo": 3, "albumId": "COD08", "songId": "COD08_3", "singingInfoId": "KGD01", "releaseDate": "20240327", "type": ""},
+{"trackNo": 3, "albumId": "COD08", "songId": "COD08_3", "singingInfoId": "KGD02", "releaseDate": "20240327", "type": ""},
+{"trackNo": 3, "albumId": "COD08", "songId": "COD08_3", "singingInfoId": "KGD03", "releaseDate": "20240327", "type": ""}
 ]
