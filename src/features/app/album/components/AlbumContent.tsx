@@ -1,5 +1,6 @@
 'use client'
-import type { SongMaster,Albums } from '../../../../data/types';
+import type { Albums } from '../../../../data/types';
+import subscAlbums from '../../../../data/subscAlbums.json';
 import GetArtWorkSrc from '../../../common/utils/GetArtWorkSrc';
 import {ShareYoutubeModal} from "../../../app/shareModal/ShareYoutubeModal";
 import CopyButton from "../../../common/components/CopyButton";
@@ -19,6 +20,12 @@ export default function AlbumContent({ album, }: { album: Albums}) {
             ,Number(album.releaseDate.substring(4,6))-1
             ,Number(album.releaseDate.substring(6,8))).toLocaleDateString();
 
+    //YoutubeURL取得
+    const youtubeId: string
+      = album.subscFlg===1
+        ?subscAlbums.find(data=>album.albumId===data.id)?.youtubeId || ''
+        :'';
+    
     //雪を積もらせる
     //ローカルストレージ
     const jsonStr = localStorage.getItem('snowParam');
@@ -90,7 +97,7 @@ export default function AlbumContent({ album, }: { album: Albums}) {
                 lg:w-1/2
             '>
                 {/* Youtube */}
-                {album.youtubeId==='' && album.trialYoutubeId===''
+                {youtubeId==='' && album.trialYoutubeId===''
                 ?<></>
                 :
                 <div 
@@ -99,7 +106,7 @@ export default function AlbumContent({ album, }: { album: Albums}) {
                     `}
                 >
                     <a className="w-full"
-                    href={`${album.youtubeId===''?'https://youtu.be/'+album.trialYoutubeId:'https://youtube.com/playlist?list='+album.youtubeId}`}
+                    href={`${youtubeId===''?'https://youtu.be/'+album.trialYoutubeId:'https://youtube.com/playlist?list='+youtubeId}`}
                     target="_blank" rel="noopener noreferrer">
                         <motion.button
                             className='rounded-lg border-2 border-red-500 w-full h-full
@@ -118,7 +125,7 @@ export default function AlbumContent({ album, }: { album: Albums}) {
                                 flex flex-wrap justify-center items-center font-sans font-black 
                                 mobileM:my-1 my-2
                             '>
-                                {album.youtubeId===''?'試聴動画':'YouTube'}
+                                {youtubeId===''?'試聴動画':'YouTube'}
                                 <span className="">
                                 <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
                                 </span>
@@ -129,7 +136,7 @@ export default function AlbumContent({ album, }: { album: Albums}) {
                 </div>    
                 }
                 {/* YouTube Music */}
-                {album.youtubeId===''
+                {youtubeId===''
                 ?album.trialYoutubeId===''?<></>:<div></div>
                 :
                 <div 
@@ -137,7 +144,7 @@ export default function AlbumContent({ album, }: { album: Albums}) {
                         lg:w-auto inline-block row-span-1
                     `}
                 >
-                    <SubscButton songId="" albumId={album.albumId} youtubeId={album.youtubeId}/>
+                    <SubscButton songId="" albumId={album.albumId} />
                 </div>    
                 }
                 <div 
@@ -146,7 +153,7 @@ export default function AlbumContent({ album, }: { album: Albums}) {
                     `}
                 >
                 <ShareYoutubeModal 
-                        youtubeUrl={album.youtubeId===''?'':`https://youtube.com/playlist?list=`+ album.youtubeId}
+                        youtubeUrl={youtubeId===''?'':`https://youtube.com/playlist?list=`+ youtubeId}
                         title={album.albumTitleFull} 
                         artistName={album.displayArtist}
                         pass={'album/'+album.albumId}

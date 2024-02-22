@@ -10,7 +10,7 @@ export default function AlbumSeries({ albumId, seriesId }: { albumId: string, se
         = albumMaster.filter(data => data.albumId !== albumId && data.sereisId === seriesId)||[];
 
     const resultsSort : Albums[]
-        = results.filter(data => data.youtubeId !== '').concat(results.filter(data => data.youtubeId === ''));
+        = results.filter(data => data.subscFlg === 1).concat(results.filter(data => data.subscFlg !== 1));
 
     const [isOpen, setISopen] = useState(resultsSort.length < 20);
 

@@ -6,8 +6,8 @@ import SongBlock from "../../../common/components/SongBlock";
 
 export default function AlbumSongs({ albumId }: { albumId: string }) {
 
-    const results : SongMaster[] | undefined 
-        = songMaster.filter(data => data.albumId === albumId);
+    const results : SongMaster[]
+        = songMaster.filter(data => data.albumId === albumId) || [];
 
     const [isOpen, setISopen] = useState(true);
 
@@ -40,7 +40,7 @@ export default function AlbumSongs({ albumId }: { albumId: string }) {
           key={index} 
           albumId={result.albumId} 
           trackNo={result.trackNo} 
-          results={result}
+          song={result}
           existsButton={false}
         />
         ))}

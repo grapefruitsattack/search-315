@@ -1,7 +1,7 @@
 'use client'
 import { motion } from "framer-motion";
 import type { SongMaster,Albums,MvInfo,LiveMaster } from '../../../../data/types';
-import MvInfos from '../../../../data/mvInfo.json';
+import subscSongs from '../../../../data/subscSongs.json';
 import GetArtWorkSrc from '../../../common/utils/GetArtWorkSrc';
 import GetMv from '../../../common/utils/GetMv';
 import SearchLiveBySongId from '../../../common/utils/SearchLive';
@@ -27,6 +27,11 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
             ,Number(result.releaseDate.substring(4,6))-1
             ,Number(result.releaseDate.substring(6,8))).toLocaleDateString();
 
+    //YoutubeURL取得
+    const youtubeId: string
+      = result.subscFlg===1
+        ?subscSongs.find(data=>result.songId===data.id)?.youtubeId || ''
+        :'';
     
     //雪を積もらせる
     //ローカルストレージ
@@ -110,7 +115,7 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                 lg:w-1/2 
             '>
                 {/* Youtube */}
-                {result.youtubeId==='' && result.trialYoutubeId===''
+                {youtubeId==='' && result.trialYoutubeId===''
                 ?<></>
                 :
                 <div 
@@ -120,7 +125,7 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                     `}
                 >
                     <a className=""
-                    href={`https://youtu.be/${result.youtubeId===''?result.trialYoutubeId:result.youtubeId}`}
+                    href={`https://youtu.be/${youtubeId===''?result.trialYoutubeId:youtubeId}`}
                     target="_blank" rel="noopener noreferrer">
                         <motion.button
                             className='rounded-lg border-2 border-red-500 w-full h-full
@@ -139,7 +144,7 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                                 flex flex-wrap justify-center items-center font-sans font-black 
                                 mobileM:my-1 my-2
                             '>
-                                {result.youtubeId===''?'試聴動画':'YouTube'}
+                                {youtubeId===''?'試聴動画':'YouTube'}
                                 <span className="">
                                 <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
                                 </span>
@@ -149,7 +154,7 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                 </div>    
                 }
                 {/* YouTube Music */}
-                {result.youtubeId===''
+                {youtubeId===''
                 ?result.trialYoutubeId===''?<></>:<div></div>
                 :
                 <div 
@@ -157,7 +162,7 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                         lg:w-auto inline-block row-span-1 h-[44px]
                     `}
                 >
-                    <SubscButton songId={result.songId} albumId="" youtubeId={result.youtubeId}/>
+                    <SubscButton songId={result.songId} albumId=""/>
                 </div>    
                 }
                 <div 
@@ -166,7 +171,7 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                     `}
                 >
                 <ShareYoutubeModal 
-                        youtubeUrl ={result.youtubeId===''?'':`https://youtu.be/`+ result.youtubeId}
+                        youtubeUrl ={youtubeId===''?'':`https://youtu.be/`+ youtubeId}
                         title={result.songTitle} 
                         artistName={result.displayArtist}
                         pass={'song/'+result.songId}

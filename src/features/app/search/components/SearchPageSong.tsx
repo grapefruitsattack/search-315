@@ -76,7 +76,7 @@ export default function SearchPageSong({ }: {}) {
               key={index} 
               albumId={result.albumId} 
               trackNo={result.trackNo} 
-              results={result}
+              song={result}
               existsButton={true}
             />
             ))}

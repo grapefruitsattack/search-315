@@ -160,7 +160,7 @@ export default function IdolPage({ id }: { id: string }) {
             <SongBlock 
               albumId={result.albumId} 
               trackNo={result.trackNo} 
-              results={result}
+              song={result}
               existsButton={false}
             />
             </div>
@@ -183,7 +183,7 @@ export default function IdolPage({ id }: { id: string }) {
             <SongBlock 
               albumId={result.albumId} 
               trackNo={result.trackNo} 
-              results={result}
+              song={result}
               existsButton={false}
             />
             </div>
@@ -210,7 +210,7 @@ export default function IdolPage({ id }: { id: string }) {
                 <SongBlock 
                   albumId={result.albumId} 
                   trackNo={result.trackNo} 
-                  results={result}
+                  song={result}
                   existsButton={false}
                 />
                 </div>
@@ -235,7 +235,7 @@ export default function IdolPage({ id }: { id: string }) {
             <SongBlock 
               albumId={result.albumId} 
               trackNo={result.trackNo} 
-              results={result}
+              song={result}
               existsButton={false}
             />
             </div>

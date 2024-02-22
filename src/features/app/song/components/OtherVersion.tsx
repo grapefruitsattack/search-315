@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react";
 import songMaster from '../../../../data/songMaster.json';
-import type { SongMaster,Albums } from '../../../../data/types';
+import type { SongMaster } from '../../../../data/types';
 import SongBlock from "../../../common/components/SongBlock";
 import GetSongOtherVersion from '../../../common/utils/GetSongOtherVersion';
 
@@ -9,7 +9,7 @@ export default function OtherVersion({ id ,commonSongId }: { id: string, commonS
 
     const result : SongMaster[] = GetSongOtherVersion(id,commonSongId);
     const resultSort : SongMaster[] | undefined 
-        = result.filter(data => data.youtubeId !== '').concat(result.filter(data => data.youtubeId === ''));
+        = result.filter(data => data.subscFlg === 1).concat(result.filter(data => data.subscFlg !== 1));
 
     const [isOpen, setISopen] = useState(result.length < 10);
 
@@ -42,7 +42,7 @@ export default function OtherVersion({ id ,commonSongId }: { id: string, commonS
               key={index} 
               albumId={result.albumId} 
               trackNo={result.trackNo} 
-              results={result}
+              song={result}
               existsButton={false}
             />
             ))}

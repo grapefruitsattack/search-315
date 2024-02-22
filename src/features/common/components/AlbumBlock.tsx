@@ -1,5 +1,6 @@
 'use client'
-import type { SongMaster, Albums } from '../../../data/types';
+import type { Albums } from '../../../data/types';
+import subscAlbums from '../../../data/subscAlbums.json';
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import GetArtWorkSrc from '../utils/GetArtWorkSrc';
@@ -17,6 +18,12 @@ export default function AlbumBlock(
 
   const [tooltipOn, setTooltipOn] = useState<boolean>(false);
 
+  //サブスクURL一覧取得
+  const youtubeId: string
+    = results.subscFlg===1
+      ?subscAlbums.find(data=>results.albumId===data.id)?.youtubeId || ''
+      :'';
+
   function copyTextToClipboard(text: string) {
       navigator.clipboard.writeText(text)
       .then(function() {
@@ -29,7 +36,7 @@ export default function AlbumBlock(
   return (
       <section className={`
       rounded-md 
-      ${results.youtubeId === ''
+      ${youtubeId === ''
       ?'bg-purple-50 border-purple-400/30 border-t-2 border-l-2'
       :'bg-white border-cyan-600/30 border-t-[5px] border-l-[6px]'}
       `}>
@@ -121,11 +128,11 @@ export default function AlbumBlock(
           ?
           <div className="hidden tablet:grid grid-cols-3 gap-x-1 mt-auto">
             <div className='lg:relative static w-full '>
-              {results.youtubeId===''
+              {youtubeId===''
                 ?<div className='inline-block lg:relative static lg:w-full'></div>
                 :
                 <a className="w-full"
-                  href={`https://youtube.com/playlist?list=${results.youtubeId}`}
+                  href={`https://youtube.com/playlist?list=${youtubeId}`}
                 target="_blank" rel="noopener noreferrer">
                 <motion.button
                   className='rounded-lg 
@@ -160,7 +167,7 @@ export default function AlbumBlock(
             <div className='inline-block relative w-full'>
               <div className='h-[30px] w-full absolute bottom-0'>
                 <ShareYoutubeModal 
-                  youtubeUrl={results.youtubeId===''?'':`https://youtube.com/playlist?list=`+ results.youtubeId}
+                  youtubeUrl={youtubeId===''?'':`https://youtube.com/playlist?list=`+ youtubeId}
                   title={results.albumTitleFull} 
                   artistName={results.displayArtist}
                   pass={'album/'+results.albumId}
@@ -204,11 +211,11 @@ export default function AlbumBlock(
           ?
           <div className="grid tablet:hidden grid-cols-3 gap-x-1 mt-auto">
             <div className='lg:relative static w-full '>
-              {results.youtubeId===''
+              {youtubeId===''
                 ?<div className='inline-block lg:relative static lg:w-full'></div>
                 :
                 <a className="w-full"
-                  href={`https://youtube.com/playlist?list=${results.youtubeId}`}
+                  href={`https://youtube.com/playlist?list=${youtubeId}`}
                 target="_blank" rel="noopener noreferrer">
                 <motion.button
                   className='rounded-lg font-sans leading-tight
@@ -242,7 +249,7 @@ export default function AlbumBlock(
             <div className='inline-block relative w-full'>
               <div className='h-[30px] w-full absolute bottom-0'>
                 <ShareYoutubeModal 
-                  youtubeUrl={results.youtubeId===''?'':`https://youtube.com/playlist?list=`+ results.youtubeId}
+                  youtubeUrl={youtubeId===''?'':`https://youtube.com/playlist?list=`+ youtubeId}
                   title={results.albumTitleFull} 
                   artistName={results.displayArtist}
                   pass={'album/'+results.albumId}

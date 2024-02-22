@@ -16,7 +16,7 @@ const subscServiceNames: {
     ,{id:'towerrecord',name:'タワレコ',nameSub:'\u00a0Music'}
   ]
 
-export function getSubscUrl(songId: string, albumId: string, youtubeId: string, subscServiceId: string): string
+export function getSubscUrl(songId: string, albumId: string, subscServiceId: string): string
 {
     if(songId==='' && albumId===''){
         return '';
@@ -24,7 +24,12 @@ export function getSubscUrl(songId: string, albumId: string, youtubeId: string, 
 
     switch (subscServiceId) {
         case 'youtube':
-            return getYoutubeUrl(songId,albumId,youtubeId);
+            if(songId!==''){
+                return getYoutubeMusicUrl(songId,albumId,subscSongs.find((data)=>data.id===songId)?.youtubeId||'');
+            }
+            else {
+                return getYoutubeMusicUrl(songId,albumId,subscAlbums.find((data)=>data.id===albumId)?.youtubeId||'');
+            };
         case 'amazon':
             if(songId!==''){
                 return subscSongs.find((data)=>data.id===songId)?.amazonMusicUrl||'';
@@ -72,7 +77,7 @@ export function getSubscUrl(songId: string, albumId: string, youtubeId: string, 
     }
 }
 
-export function getYoutubeUrl(songId: string, albumId: string, youtubeId: string): string
+export function getYoutubeMusicUrl(songId: string, albumId: string, youtubeId: string): string
 {
     if(songId!==''){return `https://music.youtube.com/watch?v=${youtubeId}`}
     else {return `https://music.youtube.com/playlist?list=${youtubeId}`}

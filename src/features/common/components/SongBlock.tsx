@@ -1,7 +1,8 @@
 'use client'
 import SubscButton from "./SubscButton";
 import YoutubeButton from "./YoutubeButton";
-import type { SongMaster, Albums } from '../../../data/types';
+import type { SongMaster } from '../../../data/types';
+import subscSongs from '../../../data/subscSongs.json';
 import albumMasters from '../../../data/albumMaster.json';
 import {ShareYoutubeModal} from "../../app/shareModal/ShareYoutubeModal";
 import React, { useState } from "react";
@@ -11,13 +12,18 @@ import Link from 'next/link';
 import GetArtWorkSrc from '../utils/GetArtWorkSrc';
 
 export default function SongBlock(
-  { albumId,trackNo,results,existsButton }: { albumId: string, trackNo: number, results: SongMaster, existsButton: boolean}
+  { albumId,trackNo,song,existsButton }: { albumId: string, trackNo: number, song: SongMaster, existsButton: boolean}
 ) {
-  const song = results;
+  
   const albam = albumMasters.find(data => data.albumId === song?.albumId);
-  const imgSrc: string = GetArtWorkSrc(albam?.sereisId||'',results.isSoloColle,results.isUnitColle);
-  
-  
+  const imgSrc: string = GetArtWorkSrc(albam?.sereisId||'',song.isSoloColle,song.isUnitColle);
+ 
+  //YoutubeURL取得
+  const youtubeId: string
+    = song.subscFlg===1
+      ?subscSongs.find(data=>song.songId===data.id)?.youtubeId || ''
+      :'';
+
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   const [tooltipOn, setTooltipOn] = useState<boolean>(false);
@@ -37,7 +43,7 @@ export default function SongBlock(
       group
       rounded-md
       font-sans 
-      ${results.youtubeId === ''
+      ${youtubeId === ''
       ?'bg-purple-50 border-purple-400/30 border-t border-l'
       :'bg-white border-cyan-600/30 border-t-4 border-l-4'}
     `}
@@ -114,7 +120,7 @@ export default function SongBlock(
           ">
             <a 
               className ="text-xs text-gray-500 underline hover:text-gray-400"
-              href={`/album/` + results.albumId}
+              href={`/album/` + song.albumId}
             >{albam?.albumTitleFull}</a>
           </div>
       </div>
@@ -123,16 +129,16 @@ export default function SongBlock(
       {existsButton
       ?
       <div className="grid grid-cols-5 gap-x-2 h-[36px]">
-      {song?.youtubeId===''
+      {song?.subscFlg!==1
             ?<div className = 'inline-block col-span-3'></div>
             :
             <div className = 'flex col-span-3 h-[36px]'>
-            <SubscButton songId={song?.songId} albumId="" youtubeId={song?.youtubeId}/>
+            <SubscButton songId={song?.songId} albumId=""/>
             </div>
       }
 
       <ShareYoutubeModal 
-        youtubeUrl ={song?.youtubeId===''?'':`https://youtu.be/`+ song?.youtubeId}
+        youtubeUrl ={song?.subscFlg!==1?'':`https://youtu.be/`+ youtubeId}
         title={song?.songTitle} 
         artistName={song?.displayArtist}
         pass={'song/'+song?.songId}
@@ -161,7 +167,7 @@ export default function SongBlock(
       </div>
       :
       <div className="">
-      {song?.youtubeId===''
+      {song?.subscFlg!==1
             ?song?.trialYoutubeId===''
               ?<div className = 'hidden'></div>
               :
@@ -172,7 +178,7 @@ export default function SongBlock(
             :
             <div className="grid grid-cols-5 h-[36px]">
             <div className = 'flex col-span-5 h-[36px] max-w-[280px]'>
-            <SubscButton songId={song?.songId} albumId="" youtubeId={song?.youtubeId}/>
+            <SubscButton songId={song?.songId} albumId="" />
             </div>
             </div>
       }

@@ -1,5 +1,5 @@
 'use client'
-import { getSubscUrl, getYoutubeUrl } from '../utils/SubscUtils'
+import { getSubscUrl, getYoutubeMusicUrl } from '../utils/SubscUtils'
 import { useSubscService } from '../hooks/useSubscService'
 import subscSongs from '../../../data/subscSongs.json';
 import subscAlbums from '../../../data/subscAlbums.json';
@@ -13,8 +13,7 @@ import {
   ModalHeader,
   useDisclosure, 
  } from "@chakra-ui/react";
- import { useRouter, useSearchParams, usePathname } from 'next/navigation';
-import { YoutubeModal } from '@/features/common/components/YoutubeModal';
+import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 
  const subscServiceNames: {
   id: string;
@@ -33,7 +32,7 @@ import { YoutubeModal } from '@/features/common/components/YoutubeModal';
 const STORAGE_SUBSC_SERVICE = 'subscService';
 
 export default function SubscButton(
-    { songId, albumId, youtubeId }: { songId: string, albumId: string, youtubeId: string}
+    { songId, albumId }: { songId: string, albumId: string}
   ) {
     //リロード用準備
     const searchParams = useSearchParams();
@@ -49,7 +48,7 @@ export default function SubscButton(
         ?subscSongs.find(data=>data.id===songId)
         :subscAlbums.find(data=>data.id===albumId);
     //デフォルト表示用サブスクサービス
-    const href: string = getSubscUrl(songId,albumId,youtubeId,localStorage.getItem(STORAGE_SUBSC_SERVICE) || 'youtube');
+    const href: string = getSubscUrl(songId,albumId,localStorage.getItem(STORAGE_SUBSC_SERVICE) || 'youtube');
     const subscServiceName: string = href===''
       ?subscServiceNames[0].name
       :subscServiceNames.find((data)=>data.id===localStorage.getItem(STORAGE_SUBSC_SERVICE) || '')?.name||subscServiceNames[0].name;
@@ -61,7 +60,7 @@ export default function SubscButton(
     return(
     <div className="grid grid-cols-[4fr_2fr] divide-x w-full h-full">
     <a className="w-full h-full"
-    href={href===''?getYoutubeUrl(songId,albumId,youtubeId):href}
+    href={href===''?getYoutubeMusicUrl(songId,albumId,subscUrl?.youtubeId||''):href}
     target="_blank" rel="noopener noreferrer">
     <motion.button
         className='rounded-l-lg border-t-2 border-l-2 border-b-2 border-orange-500 w-full h-full
@@ -158,7 +157,7 @@ export default function SubscButton(
                 hover:bg-white hover:text-red-500 hover:fill-red-500
                 transition-all duration-500 ease-out
                `}
-              href={getYoutubeUrl(songId,albumId,youtubeId)}
+              href={getYoutubeMusicUrl(songId,albumId,subscUrl?.youtubeId||'')}
               target="_blank" rel="noopener noreferrer"
               onClick={()=>{
                 setTimeout(()=>{

@@ -1,6 +1,6 @@
 'use client'
 import songMaster from '../../../data/songMaster.json';
-import type { SongMaster,Albums } from '../../../data/types';
+import type { SongMaster } from '../../../data/types';
 
 export default function GetSongOtherVersion(
     id: string, commonSongId: string
