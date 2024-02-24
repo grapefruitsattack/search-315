@@ -3570,10 +3570,6 @@
 {"trackNo": 4, "albumId": "FC06", "songId": "FC06_4", "singingInfoId": "CLF01", "releaseDate": "20240306", "type": ""},
 {"trackNo": 4, "albumId": "FC06", "songId": "FC06_4", "singingInfoId": "CLF02", "releaseDate": "20240306", "type": ""},
 {"trackNo": 4, "albumId": "FC06", "songId": "FC06_4", "singingInfoId": "CLF03", "releaseDate": "20240306", "type": ""},
-{"trackNo": 1, "albumId": "CHOSHI100", "songId": "CHOSHI100_1", "singingInfoId": "JUP00", "releaseDate": "20240315", "type": "u"},
-{"trackNo": 1, "albumId": "CHOSHI100", "songId": "CHOSHI100_1", "singingInfoId": "JUP01", "releaseDate": "20240315", "type": ""},
-{"trackNo": 1, "albumId": "CHOSHI100", "songId": "CHOSHI100_1", "singingInfoId": "JUP02", "releaseDate": "20240315", "type": ""},
-{"trackNo": 1, "albumId": "CHOSHI100", "songId": "CHOSHI100_1", "singingInfoId": "JUP03", "releaseDate": "20240315", "type": ""},
 {"trackNo": 1, "albumId": "COD07", "songId": "COD07_1", "singingInfoId": "FLG00", "releaseDate": "20240327", "type": "u"},
 {"trackNo": 1, "albumId": "COD07", "songId": "COD07_1", "singingInfoId": "FLG01", "releaseDate": "20240327", "type": ""},
 {"trackNo": 1, "albumId": "COD07", "songId": "COD07_1", "singingInfoId": "FLG02", "releaseDate": "20240327", "type": ""},
@@ -3589,5 +3585,12 @@
 {"trackNo": 3, "albumId": "COD08", "songId": "COD08_3", "singingInfoId": "KGD00", "releaseDate": "20240327", "type": "u"},
 {"trackNo": 3, "albumId": "COD08", "songId": "COD08_3", "singingInfoId": "KGD01", "releaseDate": "20240327", "type": ""},
 {"trackNo": 3, "albumId": "COD08", "songId": "COD08_3", "singingInfoId": "KGD02", "releaseDate": "20240327", "type": ""},
-{"trackNo": 3, "albumId": "COD08", "songId": "COD08_3", "singingInfoId": "KGD03", "releaseDate": "20240327", "type": ""}
+{"trackNo": 3, "albumId": "COD08", "songId": "COD08_3", "singingInfoId": "KGD03", "releaseDate": "20240327", "type": ""},
+{"trackNo": 1, "albumId": "CHOSHI100", "songId": "CHOSHI100_1", "singingInfoId": "JUP00", "releaseDate": "20240531", "type": "u"},
+{"trackNo": 1, "albumId": "CHOSHI100", "songId": "CHOSHI100_1", "singingInfoId": "JUP01", "releaseDate": "20240531", "type": ""},
+{"trackNo": 1, "albumId": "CHOSHI100", "songId": "CHOSHI100_1", "singingInfoId": "JUP02", "releaseDate": "20240531", "type": ""},
+{"trackNo": 1, "albumId": "CHOSHI100", "songId": "CHOSHI100_1", "singingInfoId": "JUP03", "releaseDate": "20240531", "type": ""},
+{"trackNo": 2, "albumId": "CHOSHI100", "songId": "CHOSHI100_2", "singingInfoId": "JUP01", "releaseDate": "20240531", "type": "sver"},
+{"trackNo": 3, "albumId": "CHOSHI100", "songId": "CHOSHI100_3", "singingInfoId": "JUP02", "releaseDate": "20240531", "type": "sver"},
+{"trackNo": 4, "albumId": "CHOSHI100", "songId": "CHOSHI100_4", "singingInfoId": "JUP03", "releaseDate": "20240531", "type": "sver"}
 ]
