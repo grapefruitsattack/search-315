@@ -53,8 +53,9 @@ export default function HeaderAndFooter() {
     //雪を積もらせる
     //ローカルストレージ
     const jsonStr = localStorage.getItem('snowParam');
-    const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string} 
-        = jsonStr===null?{snowIsValid:'1',noticeCheckedYear:''}:JSON.parse(jsonStr);
+    // const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string} 
+    //     = jsonStr===null?{snowIsValid:'1',noticeCheckedYear:''}:JSON.parse(jsonStr);
+    const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string}  = {snowIsValid:'0',noticeCheckedYear:''};
     const snowImgSrc: string ='/snow/artworksnow'+String(Math.floor(Math.random() * 3)+1)+'.png';
 
     
@@ -145,7 +146,7 @@ export default function HeaderAndFooter() {
                         <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
                         </span>
                     </a>
-                    <Link className="
+                    {/* <Link className="
                         p-2 font-semibold
                         inline-block w-full hover:bg-gray-200 text-blue-600
                         transition-all duration-500 ease-out
@@ -154,7 +155,7 @@ export default function HeaderAndFooter() {
                         href={`/setting`}
                         rel="noopener noreferrer">
                         設定
-                    </Link>
+                    </Link> */}
                     <Link className="
                         p-2
                         inline-block w-full bg-gray-600 hover:bg-gray-200/0 
