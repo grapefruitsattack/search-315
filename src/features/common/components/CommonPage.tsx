@@ -28,7 +28,7 @@ const CommonPage = ({ children }: Props ,{ Component, pageProps, router }: AppPr
         <HeaderAndFooter />
         <>{children}</>
         <ParticlesComponent/>
-        <div className="
+        {/* <div className="
           flex pb-2 justify-center underline 
           text-blue-600 mobileL:text-lg mobileM:text-base text-sm
         ">
@@ -37,7 +37,7 @@ const CommonPage = ({ children }: Props ,{ Component, pageProps, router }: AppPr
           href={`/setting`}
           rel="noopener noreferrer"
         >雪の降る演出のON・OFFはこちら</Link>
-        </div>
+        </div> */}
         <div className="
           flex pb-2 justify-center underline text-gray-600 mobileL:text-base mobileM:text-sm text-xs
         ">
