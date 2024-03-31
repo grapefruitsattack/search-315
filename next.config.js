@@ -14,17 +14,13 @@ const nextConfig = {
       return nextBuildId({ dir: __dirname });
     }
 }
+
 const withPWA = require('next-pwa')({
-  dest: 'public'
+  dest: "public",
+  register: true,
+  skipWaiting: true,
 })
 
 module.exports = withPWA({
-  pwa: {
-    dest: "public",
-    register: true,
-    skipWaiting: true,
-  },
-  reactStrinctMode: true,
+  nextConfig
 });
-
-module.exports = nextConfig
