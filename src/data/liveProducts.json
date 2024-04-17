@@ -69,5 +69,9 @@
     { "productId": "PM22",  "productName": "THE IDOLM@STER SideM PRODUCER MEETING 315 BE@T OF PASSION FESTIVAL!!! EVENT Blu-ray",  "livePerId": "PM22_DAY1",  "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LABX-8616.html",  "releaseDate": "20221109"}, 
     { "productId": "PM22",  "productName": "THE IDOLM@STER SideM PRODUCER MEETING 315 BE@T OF PASSION FESTIVAL!!! EVENT Blu-ray",  "livePerId": "PM22_DAY2",  "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LABX-8616.html",  "releaseDate": "20221109"}, 
     { "productId": "PRS23",  "productName": "THE IDOLM@STER SideM PASSIONABLE READING SHOW ー超常事変～対立スル正義～ー EVENT Blu-ray",  "livePerId": "PRS23_DAY1",  "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LABX-8719.html",  "releaseDate": "20231129"}, 
-    { "productId": "PRS23",  "productName": "THE IDOLM@STER SideM PASSIONABLE READING SHOW ー超常事変～対立スル正義～ー EVENT Blu-ray",  "livePerId": "PRS23_DAY2",  "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LABX-8719.html",  "releaseDate": "20231129"}
-    ]
+    { "productId": "PRS23",  "productName": "THE IDOLM@STER SideM PASSIONABLE READING SHOW ー超常事変～対立スル正義～ー EVENT Blu-ray",  "livePerId": "PRS23_DAY2",  "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LABX-8719.html",  "releaseDate": "20231129"},
+{"productId": "PRS24", "productName": "THE IDOLM@STER SideM PASSIONABLE READING SHOW ～天地四心伝～ EVENT Blu-ray", "livePerId": "PRS24_DAY1", "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LABX-8763.html", "releaseDate": "20241106"},
+{"productId": "PRS24", "productName": "THE IDOLM@STER SideM PASSIONABLE READING SHOW ～天地四心伝～ EVENT Blu-ray", "livePerId": "PRS24_DAY2", "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LABX-8763.html", "releaseDate": "20241106"},
+{"productId": "FCL_HM", "productName": "315 Production presents F@NTASTIC COMBINATION LIVE ～HEARTMAKER!!!!～ LIVE Blu-ray", "livePerId": "FCL_HM_SW", "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LABX-8767.html", "releaseDate": "20241023"},
+{"productId": "FCL_HM", "productName": "315 Production presents F@NTASTIC COMBINATION LIVE ～HEARTMAKER!!!!～ LIVE Blu-ray", "livePerId": "FCL_HM_BM", "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LABX-8767.html", "releaseDate": "20241023"}
+]
