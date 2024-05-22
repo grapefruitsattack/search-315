@@ -20,7 +20,7 @@ export default function SearchSongForSingingInfoId(
     songInfoDistinctResults.forEach(distinctSongId => {
       const res = songMaster.find((data) =>
       data.albumId === distinctSongId.albumId && data.trackNo === distinctSongId.trackNo
-      && (subscExists === 0 || data.subscFlg === 0)
+      && (subscExists === 0 || data.subscFlg === 1)
       && (colleFlg === 0 || data.colleFlg === 0)
      );
       if(res != null){songMasterResults.push(res)};

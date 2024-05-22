@@ -15,7 +15,7 @@ export default function SearchSongForSingingInfoId(
     distinctAlbumIds.forEach(albumId => {
       const res = albumMaster.find((data) =>
       data.albumId === albumId
-      && (subscExists === 0 || data.subscFlg === 0)
+      && (subscExists === 0 || data.subscFlg === 1)
       && (colleFlg === 0 || data.colleFlg === 0)
      );
       if(res != null){albumMasterResults.push(res)};
