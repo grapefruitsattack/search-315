@@ -1,5 +1,6 @@
 'use client'
 import type { Albums } from '../../../../data/types';
+import albumMaster from '../../../../data/albumMaster.json';
 import subscAlbums from '../../../../data/subscAlbums.json';
 import GetArtWorkSrc from '../../../common/utils/GetArtWorkSrc';
 import {ShareYoutubeModal} from "../../../app/shareModal/ShareYoutubeModal";
@@ -20,6 +21,9 @@ export default function AlbumContent({ album, }: { album: Albums}) {
             ,Number(album.releaseDate.substring(4,6))-1
             ,Number(album.releaseDate.substring(6,8))).toLocaleDateString();
 
+    const series : Albums[] | undefined 
+        = albumMaster.filter(data => data.albumId !== album.albumId && data.sereisId === album.sereisId)||[];
+    
     //YoutubeURL取得
     const youtubeId: string
       = album.subscFlg===1
@@ -208,7 +212,7 @@ export default function AlbumContent({ album, }: { album: Albums}) {
             {/* シリーズ */}
             <section className="mt-10">
             {
-            album.sereisId === undefined || album.sereisId === ''
+            album.sereisId === undefined || album.sereisId === '' || series.length < 2
             ?<></>
             :<AlbumSeries albumId={album.albumId} seriesId={album.sereisId}/>
             }
