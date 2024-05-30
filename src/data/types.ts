@@ -9,6 +9,7 @@ export type Albums = {
   isUnitColle: number;
   releaseDate: string;
   displayArtist: string;
+  artist: string;
   releasePage: string;
   trialYoutubeId: string;
   description: string;
@@ -39,6 +40,7 @@ export type SongMaster = {
   songId: string;
   songTitle: string;
   displayArtist: string;
+  artist: string;
   commonSong: string;
   trialYoutubeId: string;
   subscFlg: number;

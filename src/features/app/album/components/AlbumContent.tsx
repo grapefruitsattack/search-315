@@ -3,6 +3,7 @@ import type { Albums } from '../../../../data/types';
 import albumMaster from '../../../../data/albumMaster.json';
 import subscAlbums from '../../../../data/subscAlbums.json';
 import GetArtWorkSrc from '../../../common/utils/GetArtWorkSrc';
+import GetArtistJsx from '../../../common/utils/GetArtistJsx';
 import {ShareYoutubeModal} from "../../../app/shareModal/ShareYoutubeModal";
 import CopyButton from "../../../common/components/CopyButton";
 import SubscButton from "../../../common/components/SubscButton";
@@ -85,8 +86,8 @@ export default function AlbumContent({ album, }: { album: Albums}) {
                     lg:w-auto inline-block row-span-4 mx-2
                 `}
             >
-                <div className="lg:text-xl text-base font-sans text-slate-500">
-                    {album.displayArtist}
+                <div className="lg:text-xl text-base font-sans text-blue-800/80">
+                    <GetArtistJsx artist={album.artist}></GetArtistJsx>
                 </div>
                 <div className="lg:text-3xl text-xl font-mono font-bold inline-block">
                     {album.albumTitleFull}

@@ -19,6 +19,7 @@ export default function SetLists({ livePerId, type }: { livePerId: string, type:
                         songId: '',
                         songTitle: data.name,
                         displayArtist: data.displayArtist,
+                        artist: '',
                         commonSong: '',
                         trialYoutubeId: '',
                         subscFlg: 0,

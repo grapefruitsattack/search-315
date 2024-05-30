@@ -5,6 +5,7 @@ import subscSongs from '../../../../data/subscSongs.json';
 import GetArtWorkSrc from '../../../common/utils/GetArtWorkSrc';
 import GetMv from '../../../common/utils/GetMv';
 import SearchLiveBySongId from '../../../common/utils/SearchLive';
+import GetArtistJsx from '../../../common/utils/GetArtistJsx';
 import CopyButton from "../../../common/components/CopyButton";
 import SubscButton from "../../../common/components/SubscButton";
 import {ShareYoutubeModal} from "../../../app/shareModal/ShareYoutubeModal";
@@ -101,8 +102,8 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                     <div className="text-2xl tablet:text-3xl font-mono font-bold inline-block">
                         {result.songTitle}
                     </div>
-                    <div className="tablet:text-xl text-base font-sans text-slate-500">
-                        {result.displayArtist}
+                    <div className="tablet:text-xl text-base font-sans text-blue-800/80">
+                        <GetArtistJsx artist={result.artist}></GetArtistJsx>
                     </div>
                     <div className="tablet:text-base text-sm font-sans text-slate-400 pt-px">
                         {releaseDate}
