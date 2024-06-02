@@ -7,7 +7,6 @@ export default function GetArtistJsx({ artist }: { artist: string }): JSX.Elemen
   var artistArray: { str: string, isLink: boolean }[] = [];
 
   while(artist.length > 0){
-    console.log(artist)
     if(artist.indexOf('[') < 0){
       artistArray.push({str: artist, isLink: false});
       artist = '';
@@ -40,7 +39,7 @@ export default function GetArtistJsx({ artist }: { artist: string }): JSX.Elemen
           );
         } else {
           return(
-            <>{result.str}</>
+            <span key={index}>{result.str}</span>
           );
         };
       })}
