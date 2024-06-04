@@ -69,8 +69,11 @@ export type SubscUrls = {
 
 export type MvInfo = {
   songId: string;
-  mvType: string;
+  title: string;
+  siteType: string;
   url: string;
+  embedUrl: string;
+  thumbnailUrl: string;
   songName: string;
 };
 
@@ -108,7 +111,7 @@ export type LiveMovie = {
   productId: string;
   youtubeId: string;
   type: string;
-  typeName: string;
+  title: string;
   livePerId: string;
 };
 
