@@ -52,9 +52,9 @@ export default function QaPage({ }: { }) {
         </p>
         <h2 className="text-2xl pb-2 font-bold">このサイトのスクショをSNSや自分のサイトに載せても大丈夫？</h2>
         <p className=" pb-8">
-            <span className="text-red-700">「他SNSのロゴが表示されている画面（シェア画面）以外」</span>でしたら自由に掲載いただいて構いません。<br/>
-            切り取り、書き込みなどの加工も問題ございませんが、サイトの全部または一部を素材として使用するような形はご遠慮ください。<br/>
-            （「他SNSのロゴが表示されている画面（シェア画面）以外」の条件のみ注意いただければ、個人的利用は基本的に問題ございません。不明な点がありましたらお問い合わせ下さい）<br/>
+            このサイトの画面であるとわかる状態であれば、切り取り・書き込みなどの加工含め自由に掲載いただいて問題ございませんが、掲載の際は以下の要素を含まないようご注意ください。<br/>
+            <span className="text-red-700">「YouTube埋め込み動画・YouTubeサムネイル画像の表示されている画面」</span><br/>
+            <span className="text-red-700">「他SNSのロゴが表示されている画面（シェア画面）」</span><br/>
         </p>
         <h2 className="text-2xl pb-2 font-bold">不完全なコンテンツはいつ完成する？/こんな機能が欲しい</h2>
         <p className=" pb-8">
