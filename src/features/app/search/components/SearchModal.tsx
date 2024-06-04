@@ -121,10 +121,10 @@ export const SearchModal: React.VFC = () => {
         </div>
      <Modal 
       isOpen={isOpen} onClose={onClose}
-      scrollBehavior={'inside'}
+      scrollBehavior={'inside'} size={'full'}
      >
        <ModalOverlay />
-       <ModalContent maxW="80vw" maxH="80vh">
+       <ModalContent >
        <ModalHeader>
        <div
           className="flex justify-between items center border-b border-gray-200 py-2"
@@ -142,12 +142,12 @@ export const SearchModal: React.VFC = () => {
           </button>
           </div>
         </ModalHeader>
-      <ModalBody pb=''>
+      <ModalBody p={1}>
 
 
         <div className="bg-white  rounded-md text-center ">
 
-        <div className="bg-white lg:px-8 px-8 pb-2 rounded-md text-center">
+        <div className="bg-white lg:px-8 px-1 pb-2 rounded-md text-center">
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-2 justify-center '>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-JUP00'>
@@ -338,9 +338,20 @@ export const SearchModal: React.VFC = () => {
             
       </ModalBody>
        <ModalHeader>
-       <div className='flex mt-1 px-10 gap-2 justify-end'>
+       <div className='flex mt-1 px-8 gap-2 justify-end'>
 
 
+       <button className='rounded-lg
+                text-white text-sm font-bold leading-tight
+                bg-gray-500
+                transition-all duration-500 ease-out
+                w-[200px] p-2'
+                onClick={onClose}
+            >
+            <div className='flex flex-wrap justify-center items-center'>
+                <div>キャンセル</div>
+            </div>
+            </button>
        <Tooltip hasArrow label='1人以上選択してください' bg='red.600' isOpen = {tooltipOn}>
             <motion.button className='rounded-lg
                 text-white text-sm font-bold leading-tight
