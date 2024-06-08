@@ -41,9 +41,9 @@ export const SearchModal: React.VFC = () => {
     
 
     //OPENボタン用設定
-    let searchText: string = '';
     const searchTextArray: string[] = [];
     const searchParam :string[] = urlSearchParams.get('q')?.split(' ') || [];
+    let searchText: string = searchParam.length > 0 ?'' :'　';
     singingMaster.forEach((data)=>{
         if(searchParam.includes(data.singingInfoId)){
             searchText = searchText + '　' + data.singingInfoName;

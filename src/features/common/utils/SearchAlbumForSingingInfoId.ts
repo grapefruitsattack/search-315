@@ -5,7 +5,10 @@ import albumMaster from '../../../data/albumMaster.json';
 export default function SearchSongForSingingInfoId(
   singingInfoId: string[], songInfo: SongInfo[], subscExists :number, colleFlg :number 
 ): Albums[] {
-    const songInfoResults = songInfo.filter(data => singingInfoId.includes(data.singingInfoId));
+    const songInfoResults 
+      = singingInfoId.length > 0
+        ?songInfo.filter(data => singingInfoId.includes(data.singingInfoId))
+        :songInfo;
 
     const distinctAlbumIds :string[] = Array.from(new Set(songInfoResults.map(data => {
         return data.albumId;
