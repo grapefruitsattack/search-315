@@ -40,7 +40,7 @@ export default function SongBlock(
       
     <section 
     className={`
-      group
+      group w-full
       rounded-md
       font-sans 
       ${youtubeId === ''
@@ -130,7 +130,12 @@ export default function SongBlock(
       ?
       <div className="grid grid-cols-5 gap-x-2 h-[36px]">
       {song?.subscFlg!==1
-            ?<div className = 'inline-block col-span-3'></div>
+            ?song?.trialYoutubeId===''
+              ?<div className = 'inline-block col-span-3'></div>
+              :
+              <div className = 'flex col-span-3 h-[36px]'>
+              <YoutubeButton youtubeId={''} trialYoutubeId={song?.trialYoutubeId}/>
+              </div>
             :
             <div className = 'flex col-span-3 h-[36px]'>
             <SubscButton songId={song?.songId} albumId=""/>

@@ -61,13 +61,13 @@ export default function SearchPageSong({ }: {}) {
       </section>
       <AnimatePresence initial={false} mode="wait">
       <motion.div
-          key={page + order  + `${subscExists}${colleFlg}${searchParams.get('q') === null?'':searchParams.get('q')}` }
+        key={page + order  + `${subscExists}${colleFlg}${searchParams.get('q') === null?'':searchParams.get('q')}` }
         initial={{ opacity: 0 }} // 初期状態
         animate={{ opacity: 1 }} // マウント時
         exit={{ opacity: 0 }}    // アンマウント時
       >
-        <section className="lg:flex px-10 lg:px-16">
-        <section className="grid items-start gap-4 grid-cols-1 lg:grid-cols-3 ">
+        <section className="lg:flex px-10 lg:px-16 w-full">
+        <section className="grid grid-flow-row-dense items-start gap-4 grid-cols-1 lg:grid-cols-3 w-full">
     
             {displayResults.length===0 
             ? <div>結果なし</div>
