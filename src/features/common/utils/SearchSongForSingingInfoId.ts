@@ -6,7 +6,7 @@ export default function SearchSongForSingingInfoId(
   singingInfoId: string[], songInfo: SongInfo[], subscExists :number, colleFlg :number 
 ): SongMaster[] {
     const songInfoResults 
-      = singingInfoId.length > 0
+      = singingInfoId.length > 0 && (singingInfoId[0].trim()!=='')
         ?songInfo.filter(data => singingInfoId.includes(data.singingInfoId))
         :songInfo;
 

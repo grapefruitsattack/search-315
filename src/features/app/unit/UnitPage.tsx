@@ -29,7 +29,6 @@ export default function IdolPage({ id }: { id: string }) {
   const unitmember: string[] 
     = singingMaster.filter(data=>data.personFlg===1 && data.singingInfoId.substring(0, 3)===id.substring(0, 3))
     .map(data=>data.singingInfoId);
-  const qStr: string = unitmember.join(' ');
 
   //ユニット曲取得
   const unitSongInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === id && data.type === 'u').map(data=>data.songId);
@@ -335,7 +334,7 @@ export default function IdolPage({ id }: { id: string }) {
   <section>
         <div className="flex justify-center m-auto">
             <Link 
-          href={{ pathname: '/search', query: {q: qStr, colle: 1}}}
+          href={{ pathname: '/search', query: {q: id, colle: 1}}}
           className='
                 flex p-0.5 bg-gradient-to-r from-indigo-300 to-emerald-300 items-center 
                 hover:drop-shadow-xl cursor-pointer select-none

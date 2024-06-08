@@ -8,7 +8,6 @@ export default function SearchModalCheckbox(
   {
 
     const idolId = unitPrefix + idolNum;
-    const unitId = unitPrefix + "00";
     const idolName: string = singingMaster.find(data=>data.singingInfoId === idolId)?.singingInfoName || "";
 
   // 選択した値を管理
@@ -33,7 +32,7 @@ export default function SearchModalCheckbox(
             <div className={`text-left
                     justify-center px-2 
                     text-stone-500
-                    peer-checked:text-green-400`  +` 
+                    peer-checked:text-green-400
                     font-sans text-sm lg:text-base 
                     bg-stone-200/20 peer-checked:bg-stone-200/0
                     hover:bg-green-200/20
@@ -43,7 +42,8 @@ export default function SearchModalCheckbox(
                     rounded-lg peer-checked:rounded-none
                     drop-shadow-md peer-checked:drop-shadow-none
                     transition-all duration-500 ease-out
-                     select-none`}>
+                    select-none ${idolNum === '00'?` font-bold`:``}`
+                  }>
                 {idolName}
             </div>
 

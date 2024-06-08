@@ -43,13 +43,14 @@ export const SearchModal: React.VFC = () => {
     //OPENボタン用設定
     const searchTextArray: string[] = [];
     const searchParam :string[] = urlSearchParams.get('q')?.split(' ') || [];
-    let searchText: string = searchParam.length > 0 ?'' :'　';
+    let searchText: string = '';
     singingMaster.forEach((data)=>{
         if(searchParam.includes(data.singingInfoId)){
             searchText = searchText + '　' + data.singingInfoName;
             searchTextArray.push(data.singingInfoName);
         };
     });
+    searchText = searchText === ''?'　':searchText;
 
     const { isOpen, onClose, onOpen } = useDisclosure();
 
@@ -152,6 +153,9 @@ export const SearchModal: React.VFC = () => {
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-2 justify-center '>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-JUP00'>
         <SearchModalCheckbox 
+            unitPrefix="JUP" idolNum="00" searchParams={values}
+            changeSearchParams={changeSearchParamsIdolId} />
+        <SearchModalCheckbox 
             unitPrefix="JUP" idolNum="01" searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
         <SearchModalCheckbox 
@@ -162,6 +166,9 @@ export const SearchModal: React.VFC = () => {
             changeSearchParams={changeSearchParamsIdolId} />
         </div>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-DRS00'>
+        <SearchModalCheckbox 
+            unitPrefix="DRS" idolNum="00" searchParams={values}
+            changeSearchParams={changeSearchParamsIdolId} />
         <SearchModalCheckbox 
             unitPrefix="DRS" idolNum="01" searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
@@ -174,6 +181,9 @@ export const SearchModal: React.VFC = () => {
         </div>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-ALT00'>
         <SearchModalCheckbox 
+            unitPrefix="ALT" idolNum="00" searchParams={values}
+            changeSearchParams={changeSearchParamsIdolId} />
+        <SearchModalCheckbox 
             unitPrefix="ALT" idolNum="01" searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
         <SearchModalCheckbox 
@@ -181,6 +191,9 @@ export const SearchModal: React.VFC = () => {
             changeSearchParams={changeSearchParamsIdolId} />
         </div>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-BEI00'>
+        <SearchModalCheckbox 
+            unitPrefix="BEI" idolNum="00" searchParams={values}
+            changeSearchParams={changeSearchParamsIdolId} />
         <SearchModalCheckbox 
             unitPrefix="BEI" idolNum="01" searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
@@ -193,13 +206,19 @@ export const SearchModal: React.VFC = () => {
         </div>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-DBL00'>
         <SearchModalCheckbox 
-            unitPrefix="DBL" idolNum="01" searchParams={values}
+            unitPrefix="DBL" idolNum="00" searchParams={values}
+            changeSearchParams={changeSearchParamsIdolId} />
+        <SearchModalCheckbox 
+            unitPrefix="DBL" idolNum="01"  searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
         <SearchModalCheckbox 
             unitPrefix="DBL" idolNum="02"  searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
         </div>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-FRM00'>
+        <SearchModalCheckbox 
+            unitPrefix="FRM" idolNum="00"  searchParams={values}
+            changeSearchParams={changeSearchParamsIdolId} />
         <SearchModalCheckbox 
             unitPrefix="FRM" idolNum="01" searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
@@ -212,6 +231,9 @@ export const SearchModal: React.VFC = () => {
         </div>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-SAI00'>
         <SearchModalCheckbox 
+            unitPrefix="SAI" idolNum="00" searchParams={values}
+            changeSearchParams={changeSearchParamsIdolId} />
+        <SearchModalCheckbox 
             unitPrefix="SAI" idolNum="01" searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
         <SearchModalCheckbox 
@@ -223,6 +245,9 @@ export const SearchModal: React.VFC = () => {
         </div>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-SSK00'>
         <SearchModalCheckbox 
+            unitPrefix="SSK" idolNum="00" searchParams={values}
+            changeSearchParams={changeSearchParamsIdolId} />
+        <SearchModalCheckbox 
             unitPrefix="SSK" idolNum="01" searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
         <SearchModalCheckbox 
@@ -230,6 +255,9 @@ export const SearchModal: React.VFC = () => {
             changeSearchParams={changeSearchParamsIdolId} />
         </div>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-HIJ00'>
+        <SearchModalCheckbox 
+            unitPrefix="HIJ" idolNum="00" searchParams={values}
+            changeSearchParams={changeSearchParamsIdolId} />
         <SearchModalCheckbox 
             unitPrefix="HIJ" idolNum="01" searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
@@ -248,6 +276,9 @@ export const SearchModal: React.VFC = () => {
         </div>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-CFP00'>
         <SearchModalCheckbox 
+            unitPrefix="CFP" idolNum="00" searchParams={values}
+            changeSearchParams={changeSearchParamsIdolId} />
+        <SearchModalCheckbox 
             unitPrefix="CFP" idolNum="01" searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
         <SearchModalCheckbox 
@@ -265,6 +296,9 @@ export const SearchModal: React.VFC = () => {
         </div>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-MFM00'>
         <SearchModalCheckbox 
+            unitPrefix="MFM" idolNum="00" searchParams={values}
+            changeSearchParams={changeSearchParamsIdolId} />
+        <SearchModalCheckbox 
             unitPrefix="MFM" idolNum="01" searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
         <SearchModalCheckbox 
@@ -275,6 +309,9 @@ export const SearchModal: React.VFC = () => {
             changeSearchParams={changeSearchParamsIdolId} />
         </div>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-SEM00'>
+        <SearchModalCheckbox 
+            unitPrefix="SEM" idolNum="00" searchParams={values}
+            changeSearchParams={changeSearchParamsIdolId} />
         <SearchModalCheckbox 
             unitPrefix="SEM" idolNum="01" searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
@@ -287,6 +324,9 @@ export const SearchModal: React.VFC = () => {
         </div>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-KGD00'>
         <SearchModalCheckbox 
+            unitPrefix="KGD" idolNum="00" searchParams={values}
+            changeSearchParams={changeSearchParamsIdolId} />
+        <SearchModalCheckbox 
             unitPrefix="KGD" idolNum="01" searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
         <SearchModalCheckbox 
@@ -297,6 +337,9 @@ export const SearchModal: React.VFC = () => {
             changeSearchParams={changeSearchParamsIdolId} />
         </div>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-FLG00'>
+        <SearchModalCheckbox 
+            unitPrefix="FLG" idolNum="00" searchParams={values}
+            changeSearchParams={changeSearchParamsIdolId} />
         <SearchModalCheckbox 
             unitPrefix="FLG" idolNum="01" searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
@@ -309,6 +352,9 @@ export const SearchModal: React.VFC = () => {
         </div>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-LGN00'>
         <SearchModalCheckbox 
+            unitPrefix="LGN" idolNum="00" searchParams={values}
+            changeSearchParams={changeSearchParamsIdolId} />
+        <SearchModalCheckbox 
             unitPrefix="LGN" idolNum="01" searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
         <SearchModalCheckbox 
@@ -319,6 +365,9 @@ export const SearchModal: React.VFC = () => {
             changeSearchParams={changeSearchParamsIdolId} />
         </div>
         <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-2 border-CLF00'>
+        <SearchModalCheckbox 
+            unitPrefix="CLF" idolNum="00" searchParams={values}
+            changeSearchParams={changeSearchParamsIdolId} />
         <SearchModalCheckbox 
             unitPrefix="CLF" idolNum="01" searchParams={values}
             changeSearchParams={changeSearchParamsIdolId} />
