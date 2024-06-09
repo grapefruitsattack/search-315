@@ -49,7 +49,6 @@ export default function SetLists({ livePerId, type }: { livePerId: string, type:
     
     //開閉
     const [isOpen, setISopen] = useState(true);
-console.log(type==='ex')
     return(
     <>
         <a 

@@ -32,7 +32,6 @@ export default function HeaderAndFooter() {
         isSearchPage = true;
         search = searchParams.get('q')?.split(' ')||[];
         const searchTargetStr: string = getSearchTargetStr(search);
-        console.log(searchParams.get('tab'))
         switch (searchParams.get('tab')) {
             case 'song' :
             case null :

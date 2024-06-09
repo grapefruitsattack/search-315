@@ -16,7 +16,6 @@ const CommonPage = ({ children }: Props ,{ Component, pageProps, router }: AppPr
   React.useEffect(() => {
     const handleRouteChange = (url: string) => {
       if (shouldReload()) {
-        console.log('reload');
         nextrouter.refresh();
       }
     }
