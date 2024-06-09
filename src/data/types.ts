@@ -43,8 +43,10 @@ export type SongMaster = {
   artist: string;
   commonSong: string;
   trialYoutubeId: string;
+  type: string;
   subscFlg: number;
   execFlg: number;
+  originalFlg: number;
   colleFlg: number;
   isSoloColle: number;
   isUnitColle: number;
