@@ -5,6 +5,8 @@ const dummySeriesId:string[]
         ,'SH'
         ,'PM'
         ,'CODS'
+        ,'8ST'
+        ,'9ST'
         ,''
     ];
 
