@@ -3,26 +3,26 @@ import { useState } from "react";
 import singingMaster from '../../../../data/singingMaster.json';
 
 export default function SearchModalCheckbox(
-    { unitPrefix,idolNum,searchParams,changeSearchParams }
-    : { unitPrefix: string, idolNum: string, searchParams: SearchParams, changeSearchParams: (idolId:string, onFlg: boolean) => void; })
+    { unitPrefix,idolNum,isValid,changeSearchParams,onChange }
+    : { unitPrefix: string, idolNum: string, isValid: string
+      , changeSearchParams: (idolId:string, onFlg: boolean) => void
+      , onChange: (filterId:string, onFlg: boolean) => void; })
   {
 
     const idolId = unitPrefix + idolNum;
     const idolName: string = singingMaster.find(data=>data.singingInfoId === idolId)?.singingInfoName || "";
 
-  // 選択した値を管理
-  const [val, setVal] = useState(searchParams[idolId]==="1");
 
     return (
         <label className='flex flex-row relative cursor-pointer'>
 
             <input 
-                type="checkbox" id={idolId} checked={val}
+                type="checkbox" id={idolId} checked={isValid==="1"}
                 className='hidden peer
                 '
                 onChange={(e) => {
-                    setVal(e.target.checked);
-                    changeSearchParams(idolId,e.target.checked);
+                  onChange(idolId,e.target.checked);
+                  changeSearchParams(idolId,e.target.checked);
                 }}
             />
             {/* <span className='h-6 w-6 absolute rounded-full pointer-events-none

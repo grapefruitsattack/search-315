@@ -27,29 +27,12 @@ export default function SearchPage() {
 
     return (
       <CommonPage>
+      <SearchModal/>
       <section className="pt-24 bg-white lg:max-w-[1500px] lg:m-auto">
 
       <div className='mb-5'>
-      <SearchModal/>
       </div>
-        <TabComponent 
-        tabs = {[{
-          title: 'song',
-          id: 'song',
-          icon: 'song',
-          color: '',
-          disabled:false,
-          content: (<SearchPageSong />)
-        },
-        {
-          title: 'album',
-          id: 'album',
-          icon: 'album',
-          color: '',
-          disabled:false,
-          content: (<SearchPageAlbum/>)
-        }]}
-        />
+      <SearchPageSong />
     
     </section>
       </CommonPage>

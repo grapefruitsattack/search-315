@@ -23,6 +23,7 @@ export default function HeaderAndFooter() {
     const searchParams = useSearchParams();
     let isSearchPage: boolean = false;
     let search: string[] = [];
+    let filter: string[] = [];
     let shareStr: string = '';
     let sharePass: string = '';
     if(usePathname()==='/search/'){
@@ -31,16 +32,17 @@ export default function HeaderAndFooter() {
         const colleFlg :number = Number(searchParams.get('colle')) || 0;
         isSearchPage = true;
         search = searchParams.get('q')?.split(' ')||[];
+        filter = searchParams.get('f')?.split(' ')||[];
         const searchTargetStr: string = getSearchTargetStr(search);
         switch (searchParams.get('tab')) {
             case 'song' :
             case null :
                 shareStr = searchTargetStr===''?'曲検索結果':'「'+searchTargetStr+'」曲一覧';
-                sharePass = `search/?q=${search.join('+')}&tab=song&order=${order}&colle=${colleFlg}&subsc=${subscExists}`;
+                sharePass = `search/?q=${search.join('+')}&tab=song&order=${order}&f=${filter.join('+')}`;
                 break;
             case 'album':
                 shareStr = searchTargetStr===''?'アルバム検索結果':'「'+searchTargetStr+'」アルバム一覧';
-                sharePass = `search/?q=${search.join('+')}&tab=album&order=${order}&colle=${colleFlg}&subsc=${subscExists}`;
+                sharePass = `search/?q=${search.join('+')}&tab=album&order=${order}&f=${filter.join('+')}`;
                 break;
             default:
                 shareStr = '検索結果';

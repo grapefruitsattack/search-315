@@ -4,19 +4,11 @@ import { useEffect } from 'react';
 import { useParams,useSearchParams,  } from 'next/navigation'
 
 export default function GetTotalPage
-(paramPage: string | null, contentsLength: number, redirectRoot: string, maxCon: number )
+(paramPage: number, contentsLength: number, redirectRoot: string, maxCon: number )
 {
     const totalPage: number = Math.ceil((contentsLength) / maxCon);
     const searchParams = useSearchParams();
     const params = new URLSearchParams(searchParams.toString());
-    // ページパラメータが不正だった場合、リダイレクト
-    if(Number.isInteger(Number(paramPage)) === false){ 
-        params.delete('page');
-        redirect(`/${redirectRoot}${params.size === 0?'':'/?' + params.toString()} `);
-    } else if(Number(paramPage) > totalPage){
-        params.set('page',String(totalPage));
-        redirect(`/${redirectRoot}${params.size === 0?'':'/?' + params.toString()} `);
-    };
 
     return totalPage;
 }

@@ -308,7 +308,7 @@ export default function UnitPage({ id }: { id: string  }) {
   <section>
         <div className="flex justify-center m-auto">
             <Link 
-          href={{ pathname: '/search', query: {q: id, colle: 1}}}
+          href={{ pathname: '/search', query: {q: id}}}
           className='
                 flex p-0.5 bg-gradient-to-r from-indigo-300 to-emerald-300 items-center 
                 hover:drop-shadow-xl cursor-pointer select-none
