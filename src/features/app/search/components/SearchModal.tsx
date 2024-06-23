@@ -122,8 +122,8 @@ export const SearchModal: React.VFC = () => {
     return (
         <>
         {/* ボタン部 */}
-        <div className="z-50  py-2 fixed  bottom-14 flex flex-row w-full items-center  justify-center">  
-        <div className="absolute right-8">
+        <div className="z-50  py-2 fixed lg:bottom-[6rem] bottom-[5.5rem] right-8 flex flex-row w-full justify-end">  
+        <div className="absolute">
                 <button 
                     className='rounded-full lg:p-5 p-4 bg-gradient-to-r from-indigo-200/90 to-emerald-100/90  items-center
                     text-teal-700 font-bold lg:text-xl text-lm shadow-lg shadow-emerald-600/70'
@@ -133,7 +133,7 @@ export const SearchModal: React.VFC = () => {
                         onOpen();
                     }}
                 >  
-                    <span>
+                    <span className="">
                     {'検索条件変更'}
                     <svg xmlns="http://www.w3.org/2000/svg" 
                         className="icon icon-tabler icon-tabler-search inline-block pl-1

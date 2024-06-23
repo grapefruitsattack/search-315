@@ -66,7 +66,7 @@ export default function SearchPageSong({ }: {}) {
   return (
     <>
     {/* ボタン部 */}
-    <section className="z-50 py-2 fixed  bottom-14 flex flex-row w-full items-center  justify-center">  
+    <section className="z-40  py-2 fixed  bottom-14 flex flex-row w-full items-center  justify-center">  
     <div className="absolute left-8">
             <button 
                 className='rounded-full p-3 bg-gradient-to-r from-red-200/90 to-amber-300/90  items-center
