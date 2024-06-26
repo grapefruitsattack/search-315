@@ -2,14 +2,10 @@
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useEffect, useState } from "react";
 import type { SongMaster } from '../../../../data/types';
-import getTotalPage from '../../../common/utils/GetTotalPage';
 import SearchSong from '../../../common/utils/SearchSong';
 import SongBlock from "../../../common/components/SongBlock";
-import Pagination from "../../../common/components/Pagination";
 import { motion } from 'framer-motion'
 import { AnimatePresence } from "framer-motion";
-import SortSelect from "./SortSelect";
-import FilterSelect from "./FilterSelect";
 import songInfoAsc from '../../../../data/songInfoAsc.json';
 
 export default function SearchPageSong({ }: {}) {
@@ -20,12 +16,11 @@ export default function SearchPageSong({ }: {}) {
   const search :string[] = searchParams.get('q')?.split(' ')||[];
   const filters :string[] = searchParams.get('f')?.split(' ')||[];
 
-  let page :number = Number(searchParams.get('page')) || 1;
-  page = page < 1 ?1:page;
   const order :string = searchParams.get('order') || 'desc';
   const andor :string = searchParams.get('andor') || 'desc';
   const subscExists :number = Number(searchParams.get('subsc')) || 0;
   const colleFlg :number = Number(searchParams.get('colle')) || 0;
+  const displayCoefficient :number = Number(searchParams.get('display')) || 1;
   //サブスク過去Verクエリ対応
   if((subscExists===1) && (filters.includes('sbsc'))){
     filters.push('sbsc');
@@ -51,16 +46,20 @@ export default function SearchPageSong({ }: {}) {
       ,order === 'asc' ? songInfoAsc : songInfoDesc
       ,andor
     );
-    setDisplayResults(results.length > 36? results.slice(0,36): results);
-    setDisplayShowMorebutton(results.length > 36);
+    const newDisplayResults: SongMaster[] 
+      = results.length > 36? results.slice(0, displayCoefficient < 1? 36: displayCoefficient*36): results;
+    setDisplayResults(newDisplayResults);
+    setDisplayShowMorebutton(results.length > newDisplayResults.length);
   }, [searchParams]);
 
-  const totalPage: number = getTotalPage(page,results.length,'search?search='+search,18);
-  page = page > totalPage?1:page;
 
   function showMore(): void {
-    setDisplayResults(results.length > displayResults.length? results.slice(0,displayResults.length + 36): results);
-    setDisplayShowMorebutton(results.length > displayResults.length + 36);
+    const newDisplayResults: SongMaster[] 
+      = results.length > displayResults.length? results.slice(0, displayResults.length + 36): results;
+    setDisplayResults(newDisplayResults);
+    setDisplayShowMorebutton(results.length > newDisplayResults.length);
+    params.set('display', Math.floor((newDisplayResults.length + 35)/36).toString());
+    router.push(currentPath + '?' + params.toString(), {scroll: false});
   };
 
   return (
@@ -101,7 +100,7 @@ export default function SearchPageSong({ }: {}) {
                                   ${order==="desc"? 'text-white' : 'text-slate-400 '}`}
                               onClick={() => {
                                 params.set('order','desc');
-                                params.delete('page');
+                                params.delete('display');
                                 router.push(currentPath + '?'  + params.toString());}}
                           >リリース日新しい順
                           <span className={`${order==="desc"? 'text-indigo-200' : 'text-slate-400 '}`}></span>
@@ -129,7 +128,7 @@ export default function SearchPageSong({ }: {}) {
     </section>
     <AnimatePresence initial={false} mode="wait">
     <motion.div
-      key={page + order  + `${subscExists}${colleFlg}${searchParams.get('q') === null?'':searchParams.get('q')}` }
+      key={order  + `${subscExists}${colleFlg}${searchParams.get('q') === null?'':searchParams.get('q')}` }
       initial={{ opacity: 0 }} // 初期状態
       animate={{ opacity: 1 }} // マウント時
       exit={{ opacity: 0 }}   // アンマウント時

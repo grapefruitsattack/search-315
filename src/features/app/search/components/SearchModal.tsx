@@ -596,8 +596,8 @@ export const SearchModal: React.VFC = () => {
                                     if(errorCheck()){
                                         setTooltipOn(false);
                                         const workParam: URLSearchParams = new URLSearchParams(params.toString());
-                                        workParam.delete('page');
-                                        workParam.set('page','1');
+                                        workParam.delete('display');
+                                        workParam.set('display','1');
                                         router.push(currentPath + '?'  + decodeURIComponent(workParam.toString()));
                                         onClose();
                                     } else {
