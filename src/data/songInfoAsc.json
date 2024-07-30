@@ -3892,5 +3892,16 @@
 {"trackNo": 3, "albumId": "FC10", "songId": "FC10_3", "singingInfoId": "KGD00", "releaseDate": "20240807", "type": ""},
 {"trackNo": 3, "albumId": "FC10", "songId": "FC10_3", "singingInfoId": "KGD01", "releaseDate": "20240807", "type": ""},
 {"trackNo": 3, "albumId": "FC10", "songId": "FC10_3", "singingInfoId": "KGD02", "releaseDate": "20240807", "type": ""},
-{"trackNo": 3, "albumId": "FC10", "songId": "FC10_3", "singingInfoId": "KGD03", "releaseDate": "20240807", "type": ""}
+{"trackNo": 3, "albumId": "FC10", "songId": "FC10_3", "singingInfoId": "KGD03", "releaseDate": "20240807", "type": ""},
+{"trackNo": 1, "albumId": "INYSM", "songId": "INYSM_1", "singingInfoId": "DRS00", "releaseDate": "20241211", "type": "c"},
+{"trackNo": 1, "albumId": "INYSM", "songId": "INYSM_1", "singingInfoId": "DRS01", "releaseDate": "20241211", "type": ""},
+{"trackNo": 1, "albumId": "INYSM", "songId": "INYSM_1", "singingInfoId": "DRS02", "releaseDate": "20241211", "type": ""},
+{"trackNo": 1, "albumId": "INYSM", "songId": "INYSM_1", "singingInfoId": "DRS03", "releaseDate": "20241211", "type": ""},
+{"trackNo": 3, "albumId": "INYSM", "songId": "INYSM_3", "singingInfoId": "DRS00", "releaseDate": "20241211", "type": "uver"},
+{"trackNo": 3, "albumId": "INYSM", "songId": "INYSM_3", "singingInfoId": "DRS01", "releaseDate": "20241211", "type": ""},
+{"trackNo": 3, "albumId": "INYSM", "songId": "INYSM_3", "singingInfoId": "DRS02", "releaseDate": "20241211", "type": ""},
+{"trackNo": 3, "albumId": "INYSM", "songId": "INYSM_3", "singingInfoId": "DRS03", "releaseDate": "20241211", "type": ""},
+{"trackNo": 4, "albumId": "INYSM", "songId": "INYSM_4", "singingInfoId": "DRS01", "releaseDate": "20241211", "type": "sver"},
+{"trackNo": 5, "albumId": "INYSM", "songId": "INYSM_5", "singingInfoId": "DRS02", "releaseDate": "20241211", "type": "sver"},
+{"trackNo": 6, "albumId": "INYSM", "songId": "INYSM_6", "singingInfoId": "DRS03", "releaseDate": "20241211", "type": "sver"}
 ]
