@@ -6,6 +6,8 @@ export default function GetSongOtherVersion(
     id: string, commonSongId: string
   ): SongMaster[] {
 
-    return songMaster.filter(data => data.songId !== id && data.commonSong === commonSongId) || [];
+    return commonSongId === ''
+      ?[]
+      :songMaster.filter(data => data.songId !== id && data.commonSong === commonSongId) || [];
     
 }

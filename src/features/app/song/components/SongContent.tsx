@@ -4,6 +4,7 @@ import type { SongMaster,Albums,MvInfo,LiveMaster } from '../../../../data/types
 import subscSongs from '../../../../data/subscSongs.json';
 import GetArtWorkSrc from '../../../common/utils/GetArtWorkSrc';
 import GetMv from '../../../common/utils/GetMv';
+import GetSongOtherVersion from '../../../common/utils/GetSongOtherVersion';
 import SearchLiveBySongId from '../../../common/utils/SearchLive';
 import GetArtistJsx from '../../../common/utils/GetArtistJsx';
 import CopyButton from "../../../common/components/CopyButton";
@@ -20,7 +21,7 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
     //ライブ情報
     const live : LiveMaster[] = SearchLiveBySongId(result).slice().reverse();
     //アートワーク
-    const imgSrc: string = GetArtWorkSrc(albumResult.sereisId||'',result.isSoloColle,result.isUnitColle);
+    const imgSrc: string = GetArtWorkSrc(albumResult.sereisId||'',albumResult.isSoloColle,albumResult.isUnitColle);
     //リリース日
     const releaseDate: string 
         = new Date(
@@ -33,6 +34,8 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
       = result.subscFlg===1
         ?subscSongs.find(data=>result.songId===data.id)?.youtubeId || ''
         :'';
+    // 他バージョン曲取得
+    const otherVersionSongs : SongMaster[] = GetSongOtherVersion(result.songId,result.commonSong);
     
     //雪を積もらせる
     //ローカルストレージ
@@ -237,11 +240,11 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
 
         {/* 他のバージョン */}
         {
-        result.commonSong === ''
+        otherVersionSongs.length < 2
         ?<></>
         :
         <section className=" mt-10">
-            <OtherVersion id={result.songId} commonSongId={result.commonSong}/>
+            <OtherVersion id={result.songId} otherVersionSongs={otherVersionSongs}/>
         </section>
         }
 

@@ -3,11 +3,10 @@ import { useState } from "react";
 import songMaster from '../../../../data/songMaster.json';
 import type { SongMaster } from '../../../../data/types';
 import SongBlock from "../../../common/components/SongBlock";
-import GetSongOtherVersion from '../../../common/utils/GetSongOtherVersion';
 
-export default function OtherVersion({ id ,commonSongId }: { id: string, commonSongId: string }) {
+export default function OtherVersion({ id ,otherVersionSongs }: { id: string, otherVersionSongs: SongMaster[] }) {
 
-    const result : SongMaster[] = GetSongOtherVersion(id,commonSongId);
+    const result : SongMaster[] = otherVersionSongs;
     const resultSort : SongMaster[] | undefined 
         = result.filter(data => data.subscFlg === 1).concat(result.filter(data => data.subscFlg !== 1));
 

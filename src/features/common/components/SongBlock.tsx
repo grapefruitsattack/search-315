@@ -16,7 +16,7 @@ export default function SongBlock(
 ) {
   
   const albam = albumMasters.find(data => data.albumId === song?.albumId);
-  const imgSrc: string = GetArtWorkSrc(albam?.sereisId||'',song.isSoloColle,song.isUnitColle);
+  const imgSrc: string = GetArtWorkSrc(albam?.sereisId||'',albam?.isSoloColle||0,albam?.isUnitColle||0);
  
   //YoutubeURL取得
   const youtubeId: string
