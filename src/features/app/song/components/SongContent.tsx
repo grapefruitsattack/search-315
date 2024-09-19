@@ -240,7 +240,7 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
 
         {/* 他のバージョン */}
         {
-        otherVersionSongs.length < 2
+        otherVersionSongs.length < 1
         ?<></>
         :
         <section className=" mt-10">
