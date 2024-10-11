@@ -213,7 +213,7 @@ export default function AlbumContent({ album, }: { album: Albums}) {
             {/* シリーズ */}
             <section className="mt-10">
             {
-            album.sereisId === undefined || album.sereisId === '' || series.length < 2
+            album.sereisId === undefined || album.sereisId === '' || series.length < 1
             ?<></>
             :<AlbumSeries albumId={album.albumId} seriesId={album.sereisId}/>
             }
