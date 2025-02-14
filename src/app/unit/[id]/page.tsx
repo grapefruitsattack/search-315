@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     description: `「${unitName}」の楽曲情報・サブスク配信状況をチェック！ |  サーチサイコー`
   };
 }
-const UnitPage = dynamic(() => import("../../../features/app/unit/UnitPage"), { ssr: false });
+const UnitPage = dynamic(() => import("../../../features/app/unit/UnitPage"), { ssr: true });
 export default function Page({ params }: { params: { id: string } }) {
 
   return (

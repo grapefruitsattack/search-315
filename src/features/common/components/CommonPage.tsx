@@ -9,7 +9,7 @@ import Link from 'next/link';
 import ParticlesComponent from './particles';
 
 
-const CommonPage = ({ children }: Props ,{ Component, pageProps, router }: AppProps)=> {
+const CommonPage = ({ children }: Props )=> {
   const { shouldReload } = useBuildId();
   const nextrouter = useRouter();
   

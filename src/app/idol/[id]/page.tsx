@@ -16,7 +16,7 @@ export function generateStaticParams() {
       description: `「${idolName}」の楽曲情報・サブスク配信状況をチェック！ |  サーチサイコー`
     };
   }
-const IdolPage = dynamic(() => import("../../../features/app/idol/IdolPage"), { ssr: false });
+const IdolPage = dynamic(() => import("../../../features/app/idol/IdolPage"), { ssr: true });
 export default function Page({ params }: { params: { id: string } }) {
 
   return (

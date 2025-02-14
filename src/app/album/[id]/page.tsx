@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import albumMaster from '../../../data/albumMaster.json';
 import dynamic from "next/dynamic";
 
-const AlbumPage = dynamic(() => import("../../../features/app/album/AlbumPage"), { ssr: false });
+const AlbumPage = dynamic(() => import("../../../features/app/album/AlbumPage"), { ssr: true });
 
 export function generateStaticParams() {
   // return [
@@ -16,10 +16,7 @@ export function generateStaticParams() {
     return {id: e.albumId}
   });
 }
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const albumTitleFull: string = albumMaster.find((data)=>data.albumId === params.id)?.albumTitle||'';
-  return { title: `${albumTitleFull} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー` };
-}
+
 export default function Songs({ params }: { params: { id: string } }) {
 
   return (

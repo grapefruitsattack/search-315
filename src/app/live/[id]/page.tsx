@@ -4,7 +4,7 @@ import liveMaster from '../../../data/liveMaster.json';
 import { LiveMaster } from '../../../data/types';
 import dynamic from "next/dynamic";
 
-const LivePage = dynamic(() => import("../../../features/app/live/LivePage"), { ssr: false });
+const LivePage = dynamic(() => import("../../../features/app/live/LivePage"), { ssr: true });
 
 export function generateStaticParams() {
   // return [

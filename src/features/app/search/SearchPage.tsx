@@ -9,6 +9,7 @@ export default function SearchPage() {
 
     return (
       <CommonPage>
+        <title>{ '検索結果 | サーチサイコー'}</title>
       <SearchModal/>
       <section className="pt-24 bg-white lg:max-w-[1500px] lg:m-auto">
 

@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import songMaster from '../../../data/songMaster.json';
 import dynamic from "next/dynamic";
 
-const SongPage = dynamic(() => import("../../../features/app/song/SongPage"), { ssr: false });
+const SongPage = dynamic(() => import("../../../features/app/song/SongPage"), { ssr: true });
 
 export function generateStaticParams() {
   // return [
