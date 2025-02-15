@@ -17,9 +17,14 @@ export function generateStaticParams() {
   });
 }
 
-export default function Songs({ params }: { params: { id: string } }) {
-
+const Albums = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
+  const { id } = await params;
   return (
-    <AlbumPage albumId={params.id} />
+    <AlbumPage albumId={id} />
   );
 }
+export default Albums;

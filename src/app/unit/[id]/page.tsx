@@ -8,17 +8,17 @@ export function generateStaticParams() {
     return {id: e.singingInfoId}
   });
 }
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const unitName: string = singingMaster.find((data)=>data.singingInfoId=== params.id)?.singingInfoName||'';
-  return { 
-    title: `${unitName} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー` ,
-    description: `「${unitName}」の楽曲情報・サブスク配信状況をチェック！ |  サーチサイコー`
-  };
-}
-const UnitPage = dynamic(() => import("../../../features/app/unit/UnitPage"), { ssr: true });
-export default function Page({ params }: { params: { id: string } }) {
 
-  return (
-    <UnitPage id = {params.id} />
+const UnitPage = dynamic(() => import("../../../features/app/unit/UnitPage"), { ssr: true });
+
+  const Units = async ({
+    params,
+  }: {
+    params: Promise<{ id: string }>;
+  }) => {
+    const { id } = await params;
+    return (
+      <UnitPage id={id} />
     );
   }
+  export default Units;

@@ -88,7 +88,7 @@ export default function SetLists({ livePerId, type }: { livePerId: string, type:
         <div className={`
              items-start gap-3 grid-cols-1 lg:grid-cols-3 mt-5
              ${isOpen?'lg:grid grid':'lg:grid hidden'}    
-        `}>
+        `} >
         {/* 注釈　スマホ版 */}
         <div className={
             type==='ex'

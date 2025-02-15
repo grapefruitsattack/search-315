@@ -17,15 +17,15 @@ export function generateStaticParams() {
     return {id: e.livePerId}
   });
 }
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const liveInfo: LiveMaster | undefined = liveMaster.find((data)=>data.livePerId === params.id);
-  return { title: 
-    `${liveInfo === undefined?'':liveInfo.displayLiveName+'\u00a0'+liveInfo.displayPerName
-    +'\u00a0\u00a0|\u00a0\u00a0'}サーチサイコー` };
-}
-export default function Songs({ params }: { params: { id: string } }) {
 
+const Lives = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
+  const { id } = await params;
   return (
-    <LivePage livePerId={params.id} />
+    <LivePage livePerId={id} />
   );
 }
+export default Lives;

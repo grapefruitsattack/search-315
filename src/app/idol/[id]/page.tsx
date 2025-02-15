@@ -8,18 +8,18 @@ export function generateStaticParams() {
   return idols.map((e)=>{
     return {id: e.singingInfoId}
   });
-  }
-  export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-    const idolName: string = singingMaster.find((data)=>data.singingInfoId=== params.id)?.singingInfoName||'';
-    return { 
-      title: `${idolName} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー` ,
-      description: `「${idolName}」の楽曲情報・サブスク配信状況をチェック！ |  サーチサイコー`
-    };
-  }
-const IdolPage = dynamic(() => import("../../../features/app/idol/IdolPage"), { ssr: true });
-export default function Page({ params }: { params: { id: string } }) {
+}
 
+const IdolPage = dynamic(() => import("../../../features/app/idol/IdolPage"), { ssr: true });
+ 
+const Idols = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
+  const { id } = await params;
   return (
-    <IdolPage id = {params.id} />
-    );
-  }
+    <IdolPage singingInfoId={id} />
+  );
+}
+export default Idols;

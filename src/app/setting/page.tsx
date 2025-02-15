@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 
 const SettingPage = dynamic(() => import("../../features/app/setting/SettingPage"), { ssr: false });
 
-export default function Songs({ params }: { params: { id: string } }) {
+export default function Setting() {
   // クライアント側でリダイレクト
   redirect("/");
   // return (
