@@ -35,7 +35,6 @@ export default function Movie({ results }: { results: LiveMovie[] }) {
     <div className="flex flex-col gap-4">
         <div className="flex flex-wrap gap-10" >
         {results.map((result, index) => (
-            <>
             <div className='max-w-[310px]' key={index} >
             <div className=''>
                 <YoutubeModal 
@@ -48,7 +47,6 @@ export default function Movie({ results }: { results: LiveMovie[] }) {
                 {result.title}
             </p>
             </div>
-            </>
         ))}
     </div>
     </div>
