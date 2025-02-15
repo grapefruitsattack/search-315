@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import liveMaster from '../../../data/liveMaster.json';
 import { LiveMaster } from '../../../data/types';
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
 const LivePage = dynamic(() => import("../../../features/app/live/LivePage"), { ssr: true });
 
@@ -25,7 +26,9 @@ const Lives = async ({
 }) => {
   const { id } = await params;
   return (
+    <Suspense>
     <LivePage livePerId={id} />
+    </Suspense>
   );
 }
 export default Lives;

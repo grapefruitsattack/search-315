@@ -3,6 +3,7 @@ import CommonPage from "../features/common/components/CommonPage";
 import IdolBlock from "../features/common/components/IdolBlock";
 import UnitBlock from "../features/common/components/UnitBlock";
 import { motion,AnimatePresence } from 'framer-motion'
+import { Suspense } from "react";
 
 
 interface ItemCSS extends React.CSSProperties{
@@ -12,6 +13,7 @@ interface ItemCSS extends React.CSSProperties{
 export default function Home() {
   return (
     
+    <Suspense>
     <CommonPage>
     <AnimatePresence mode="wait">
       <motion.div
@@ -181,5 +183,6 @@ export default function Home() {
   </AnimatePresence>
     
 </CommonPage>
+    </Suspense>
   )
 }

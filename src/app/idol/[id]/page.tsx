@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import dynamic from "next/dynamic";
 import singingMaster from '../../../data/singingMaster.json';
 import albumMaster from '../../../data/albumMaster.json';
+import { Suspense } from "react";
 
 export function generateStaticParams() {
   const idols = singingMaster.filter(data=>data.personFlg===1);
@@ -19,7 +20,9 @@ const Idols = async ({
 }) => {
   const { id } = await params;
   return (
+    <Suspense>
     <IdolPage singingInfoId={id} />
+    </Suspense>
   );
 }
 export default Idols;

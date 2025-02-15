@@ -11,7 +11,7 @@ const ParticlesComponent = () => {
   
   //ローカルストレージ
   const [snowParam, setSnowParam] = useSnowParam({snowIsValid:'',noticeCheckedYear:''});
-  const jsonStr = localStorage.getItem(STORAGE_SNOW_PARAM);
+  //const jsonStr = localStorage.getItem(STORAGE_SNOW_PARAM);
   // const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string} 
   //   = jsonStr===null?{snowIsValid:'1',noticeCheckedYear:''}:JSON.parse(jsonStr);
   const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string}  = {snowIsValid:'0',noticeCheckedYear:''};

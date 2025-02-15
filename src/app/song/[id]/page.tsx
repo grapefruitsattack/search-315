@@ -2,6 +2,7 @@
 import { Metadata } from 'next'
 import songMaster from '../../../data/songMaster.json';
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
 const SongPage = dynamic(() => import("../../../features/app/song/SongPage"), { ssr: true });
 
@@ -24,7 +25,9 @@ const Songs = async ({
 }) => {
   const { id } = await params;
   return (
+    <Suspense>
     <SongPage songId={id} />
+    </Suspense>
   );
 }
 export default Songs;

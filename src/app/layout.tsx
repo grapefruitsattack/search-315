@@ -21,7 +21,7 @@ export const metadata: Metadata = {
       ]
     },
   manifest: "/favicons/site.webmanifest",
-  themeColor: '#ffffff',
+  //themeColor: '#ffffff',
   openGraph: {
     title: 'サーチサイコー',
     description: 'SideM非公式検索ツール',

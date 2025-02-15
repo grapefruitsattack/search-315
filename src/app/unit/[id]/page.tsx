@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import singingMaster from '../../../data/singingMaster.json';
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
 export function generateStaticParams() {
   const idols = singingMaster.filter(data=>data.personFlg===0);
@@ -18,7 +19,9 @@ const UnitPage = dynamic(() => import("../../../features/app/unit/UnitPage"), { 
   }) => {
     const { id } = await params;
     return (
+      <Suspense>
       <UnitPage id={id} />
+      </Suspense>
     );
   }
   export default Units;

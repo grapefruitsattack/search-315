@@ -47,14 +47,18 @@ export default function SubscButton(
       = songId!==''
         ?subscSongs.find(data=>data.id===songId)
         :subscAlbums.find(data=>data.id===albumId);
+    const localStorage_subsc = 'youtube';
+    if (typeof window !== 'undefined') {
+      const item = localStorage.getItem(STORAGE_SUBSC_SERVICE)
+    }
     //デフォルト表示用サブスクサービス
-    const href: string = getSubscUrl(songId,albumId,localStorage.getItem(STORAGE_SUBSC_SERVICE) || 'youtube');
+    const href: string = getSubscUrl(songId,albumId,localStorage_subsc || 'youtube');
     const subscServiceName: string = href===''
       ?subscServiceNames[0].name
-      :subscServiceNames.find((data)=>data.id===localStorage.getItem(STORAGE_SUBSC_SERVICE) || '')?.name||subscServiceNames[0].name;
+      :subscServiceNames.find((data)=>data.id===localStorage_subsc || '')?.name||subscServiceNames[0].name;
     const subscServiceNameSub: string = href===''
       ?subscServiceNames[0].nameSub
-      :subscServiceNames.find((data)=>data.id===localStorage.getItem(STORAGE_SUBSC_SERVICE) || '')?.nameSub||subscServiceNames[0].nameSub;
+      :subscServiceNames.find((data)=>data.id===localStorage_subsc || '')?.nameSub||subscServiceNames[0].nameSub;
 
 
     return(

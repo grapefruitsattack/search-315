@@ -39,7 +39,7 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
     
     //雪を積もらせる
     //ローカルストレージ
-    const jsonStr = localStorage.getItem('snowParam');
+    //const jsonStr = localStorage.getItem('snowParam');
     // const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string} 
     //     = jsonStr===null?{snowIsValid:'1',noticeCheckedYear:''}:JSON.parse(jsonStr);
     const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string}  = {snowIsValid:'0',noticeCheckedYear:''};
