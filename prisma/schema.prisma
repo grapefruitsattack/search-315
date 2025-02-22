@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model m_story {
+  storyId        String    @id @db.VarChar
+  media          String    @db.VarChar
+  category       String    @db.VarChar
+  website        String?   @db.VarChar
+  headTitle      String?   @db.VarChar
+  storyTitle     String    @db.VarChar
+  releaseDate    DateTime? @db.Date
+  subCnt         Int?
+  voiceAtRelease Int?      @db.SmallInt
+  voice          Int?      @db.SmallInt
+  still          Int?      @db.SmallInt
+  url            String?   @db.VarChar
+  created_at     DateTime  @default(now()) @db.Timestamptz(6)
+}
