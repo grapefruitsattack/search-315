@@ -1,4 +1,4 @@
-
+'use client'
 import { Props } from "next/script";
 import HeaderAndFooter from "./HeaderAndFooter";
 import { AppProps } from "next/app";
