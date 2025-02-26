@@ -30,7 +30,7 @@ module.exports = withPWA({
   trailingSlash: true,
   assetPrefix: process.env.BASE_PATH || '',
   basePath: process.env.BASE_PATH || '',
-  output: 'export',
+  //output: 'export',
   generateBuildId: async () => {
     return nextBuildId({ dir: __dirname });
   },
