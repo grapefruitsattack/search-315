@@ -1,26 +1,26 @@
-'use client'
+"use server"
 import { Props } from "next/script";
 import HeaderAndFooter from "./HeaderAndFooter";
 import { AppProps } from "next/app";
-import { useRouter } from "next/navigation"
+//import { useRouter } from "next/navigation"
 import React from "react";
-import useBuildId from "../utils/useBuildId"
+//import useBuildId from "../utils/useBuildId"
 import Link from 'next/link';
 import ParticlesComponent from './particles';
 
 
 const CommonPage = ({ children }: Props )=> {
-  const { shouldReload } = useBuildId();
-  const nextrouter = useRouter();
+  //const { shouldReload } = useBuildId();
+  //const nextrouter = useRouter();
   
-  React.useEffect(() => {
-    const handleRouteChange = (url: string) => {
-      if (shouldReload()) {
-        nextrouter.refresh();
-      }
-    }
+  // React.useEffect(() => {
+  //   const handleRouteChange = (url: string) => {
+  //     if (shouldReload()) {
+  //       nextrouter.refresh();
+  //     }
+  //   }
 
-  }, [shouldReload])
+  // }, [shouldReload])
 
     return (
     <main className=" min-h-screen">
