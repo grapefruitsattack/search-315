@@ -1,6 +1,6 @@
-import { signIn } from "../../../../auth"
+import { signIn, signOut } from "../../../../auth"
  
-export default function SignIn() {
+export function SignIn() {
   return (
     <form
       action={async () => {
@@ -12,3 +12,17 @@ export default function SignIn() {
     </form>
   )
 } 
+
+export function SignOut() {
+  return (
+    <form
+      action={async () => {
+        "use server"
+        await signOut()
+      }}
+    >
+      <button type="submit">SignOut</button>
+    </form>
+  )
+} 
+

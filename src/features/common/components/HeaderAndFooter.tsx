@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import HeaderDrawerButton from './HeaderDrawerButton';
-import SignIn from "../../management/auth/SignIn";
+import {SignIn} from "../../management/auth/SignIn";
 
 export default function HeaderAndFooter() {
 
