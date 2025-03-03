@@ -10,7 +10,7 @@ export default function LivePage({ livePerId }: { livePerId: string }) {
       = liveMaster.find(data => data.livePerId === livePerId);
       
     return (
-        <CommonPage>
+        <>
 
         <title>{ `${result === undefined?'':result.displayLiveName+'\u00a0'+result.displayPerName
             +'\u00a0\u00a0|\u00a0\u00a0'}サーチサイコー`}</title>
@@ -19,6 +19,6 @@ export default function LivePage({ livePerId }: { livePerId: string }) {
             ?<div>結果なし</div>
             :<LiveContent result={result} />
             }
-        </CommonPage>
+        </>
       );
 }

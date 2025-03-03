@@ -1,6 +1,7 @@
 
 import { Metadata } from 'next'
 import albumMaster from '../../../data/albumMaster.json';
+import CommonPage from "../../../features/common/components/CommonPage";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 
@@ -26,7 +27,9 @@ const Albums = async ({
   const { id } = await params;
   return (
     <Suspense>
+    <CommonPage>
     <AlbumPage albumId={id} />
+    </CommonPage>
     </Suspense>
   );
 }

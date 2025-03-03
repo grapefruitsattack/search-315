@@ -13,12 +13,12 @@ export default function SearchPage({ songId }: { songId: string }) {
       = albumMaster.find(data => data.albumId === result?.albumId);
 
     return (
-      <CommonPage>
+      <>
         <title>{  `${result?.songTitle} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー`}</title>
           {result === undefined || album === undefined
           ?<div>結果なし</div>
           :<SongContent result={result} albumResult={album}/>
           }
-      </CommonPage>
+      </>
     );
 }

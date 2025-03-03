@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import singingMaster from '../../../data/singingMaster.json';
+import CommonPage from "../../../features/common/components/CommonPage";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 
@@ -20,7 +21,9 @@ const UnitPage = dynamic(() => import("../../../features/app/unit/UnitPage"), { 
     const { id } = await params;
     return (
       <Suspense>
+      <CommonPage>
       <UnitPage id={id} />
+      </CommonPage>
       </Suspense>
     );
   }
