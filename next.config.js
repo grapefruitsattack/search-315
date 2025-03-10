@@ -35,4 +35,5 @@ module.exports = withPWA({
     return nextBuildId({ dir: __dirname });
   },
   reactStrictMode: true,
+  cacheMaxMemorySize: 50 * 1024 * 1024
 })

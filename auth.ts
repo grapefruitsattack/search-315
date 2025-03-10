@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import type { NextAuthConfig } from "next-auth";
 import Google from "next-auth/providers/google";
 import { SupabaseAdapter } from "@auth/supabase-adapter"
-import jwt from "jsonwebtoken"
+import { SignJWT, jwtVerify } from 'jose';
 
 const authConfig: NextAuthConfig = {
     providers: [
@@ -20,7 +20,7 @@ const authConfig: NextAuthConfig = {
     //    return token;
     //  },
      async session({ session, user }) {
-       const signingSecret = process.env.SUPABASE_JWT_SECRET
+       const signingSecret = new TextEncoder().encode(process.env.SUPABASE_JWT_SECRET);
        if (signingSecret) {
          const payload = {
            aud: "authenticated",
@@ -29,7 +29,10 @@ const authConfig: NextAuthConfig = {
            email: user.email,
            role: "authenticated",
          }
-         session.supabaseAccessToken = jwt.sign(payload, signingSecret)
+         session.supabaseAccessToken = await new SignJWT(payload)
+         .setProtectedHeader({ alg: 'HS256' })
+         .setExpirationTime('2h')
+         .sign(signingSecret);
        }
        return session
      },

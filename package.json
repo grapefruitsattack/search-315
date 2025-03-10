@@ -28,6 +28,7 @@
     "framer-motion": "^10.12.18",
     "fs": "^0.0.1-security",
     "holderjs": "^2.9.9",
+    "jose": "^6.0.8",
     "jsonwebtoken": "^9.0.2",
     "license-checker": "^25.0.1",
     "next": "^15.1.7",
