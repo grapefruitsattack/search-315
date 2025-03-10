@@ -7,7 +7,7 @@ import { auth } from "../../../../auth";
 import {SignIn,SignOut} from "../../management/auth/SignIn";
 
 export default async function StoryPage(): Promise<JSX.Element> {
-    const prismares = await prisma.m_story.findMany();
+    //const prismares = await prisma.m_story.findMany();
       
     const session = await auth();
  
@@ -23,12 +23,12 @@ export default async function StoryPage(): Promise<JSX.Element> {
               :<SignIn></SignIn>}
       </div>
         <h1 className="text-3xl pb-8 font-bold">テスト</h1>
-        <h2 className="text-2xl pb-2 font-bold">
+        {/* <h2 className="text-2xl pb-2 font-bold">
         {prismares.map((res) => (
           <div key={res.storyId} className="text-sm text-gray-500">
             {res.storyTitle}{}
           </div>
-        ))}</h2>
+        ))}</h2> */}
        
         </section>
         </article>
