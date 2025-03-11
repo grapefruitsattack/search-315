@@ -1,15 +1,29 @@
 
 import React from "react"
-import { GetStaticProps } from "next"
 import CommonPage from "../../common/components/CommonPage";
-import prisma from '../../../../lib/prisma';
 import { auth } from "../../../../auth";
 import {SignIn,SignOut} from "../../management/auth/SignIn";
+import { createClient } from '@supabase/supabase-js'
 
 export default async function StoryPage(): Promise<JSX.Element> {
-    //const prismares = await prisma.m_story.findMany();
-      
+    
     const session = await auth();
+    const supabaseAccessToken = session?.supabaseAccessToken;
+    const supabase = createClient(
+      process.env.SUPABASE_URL||'',
+      process.env.SUPABASE_ANON_KEY||'',
+      {
+        global: {
+          headers: {
+            Authorization: `Bearer ${supabaseAccessToken}`,
+          },
+        },
+      }
+    )
+    const { data, error } = await supabase.from("users").select("*");
+    console.log(data)
+    console.log(error)
+    const post = data||[];
  
 
     return (
@@ -19,7 +33,7 @@ export default async function StoryPage(): Promise<JSX.Element> {
         <section className="pb-20">
           <div className="">
           {session?.user
-              ?<><SignOut></SignOut>{session.user.name} : {session.user.email}</>
+              ?<><SignOut></SignOut>{session.user.name} : {session.user.email} {post[0].name} </>
               :<SignIn></SignIn>}
       </div>
         <h1 className="text-3xl pb-8 font-bold">テスト</h1>

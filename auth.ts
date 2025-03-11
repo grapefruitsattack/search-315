@@ -30,7 +30,8 @@ const authConfig: NextAuthConfig = {
            role: "authenticated",
          }
          session.supabaseAccessToken = await new SignJWT(payload)
-         .setProtectedHeader({ alg: 'HS256' })
+         .setProtectedHeader({ alg: 'HS256', typ: 'JWT' })
+         .setIssuedAt()
          .setExpirationTime('2h')
          .sign(signingSecret);
        }
