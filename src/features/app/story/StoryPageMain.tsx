@@ -33,7 +33,7 @@ export default async function StoryPage(): Promise<JSX.Element> {
         <section className="pb-20">
           <div className="">
           {session?.user
-              ?<><SignOut></SignOut>{session.user.name} : {session.user.email} {post[0].name} </>
+              ?<><SignOut></SignOut>{session.user.id} : {session.user.email} {post[0].id} </>
               :<SignIn></SignIn>}
       </div>
         <h1 className="text-3xl pb-8 font-bold">テスト</h1>
