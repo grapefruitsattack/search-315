@@ -10,6 +10,9 @@ import { GetStaticProps, GetStaticPaths } from "next"
 import { createClient } from '@supabase/supabase-js'
 import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
+import type { Story } from '../../../data/types';
+import CommonPage from "../../../features/common/components/CommonPage";
+import StoryPage from "../../../features/app/story/StoryPage";
 
 export const revalidate = 600; // 10分ごとに再検証する
 
@@ -26,7 +29,21 @@ const getData = cache(async (id: string) => {
     process.env.SUPABASE_URL||'',
     process.env.SUPABASE_ANON_KEY||'',
   )
-  const { data, error } = await supabase.from('m_story').select('storyId,storyTitle').eq('storyId',id);
+  const { data, error } = await supabase.from('m_story').select(`
+    storyId,
+    media,
+    category,
+    website,
+    headTitle,
+    storyTitle,
+    releaseDate,
+    subCnt,
+    voiceAtRelease,
+    voice,
+    still,
+    url,
+    info_story(infoId,personFlg)
+  `).eq('storyId',id).single();
   if (!data) notFound()
   return data
 })
@@ -60,15 +77,18 @@ const Post = async ({
 }: {
   params: Promise<{ id: string }>;
 }) => {
-  //const { id } = await params;
-  const { id } = await params
-  const post = await getData(id)
-
+  const { id } = await params;
+  const post :Story = await getData(id);
   return (
-    <article>
-      <h1>{post[0].storyTitle}</h1>
-      <p>{post[0].storyId}</p>
-    </article>
+    <Suspense>
+    <CommonPage>
+      <article className="pt-32 pb-96 px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
+
+      {/* @ts-expect-error Server Component */}
+      <StoryPage data={post}/>
+      </article>
+    </CommonPage>
+    </Suspense>
   );
 }
 export default Post;

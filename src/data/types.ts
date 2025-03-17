@@ -130,3 +130,35 @@ export type LivePerformer = {
   livePerId: string;
   singingInfoId: string;
 };
+
+export type Story = {
+  storyId: string;
+  media: number;
+  category: string;
+  website: string;
+  headTitle: string;
+  storyTitle: string;
+  releaseDate: Date;
+  subCnt: number;
+  voiceAtRelease: number;
+  voice: number;
+  still: number;
+  url: string;
+  info_story: {
+      infoId: string;
+      personFlg: number;
+  }[];
+};
+
+export type CreditMaster = {
+  creditId: string;
+  name: string;
+};
+
+export type SongCredit = {
+  songId: string;
+  songTitle: string;
+  creditType: string;
+  creditId: string;
+  displayName: string;
+};
