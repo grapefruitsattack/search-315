@@ -6,7 +6,7 @@ import {SignIn,SignOut} from "../../management/auth/SignIn";
 import { createClient } from '@supabase/supabase-js'
 import type { Story } from '../../../data/types';
 import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName } from '../../common/utils/GetStoryInfomation';
-import CreateIdolLabel from '../../common/components/IdolLabel';
+import IdolLabel from '../../common/components/IdolLabel';
 import StoryReadingButton from "./components/StoryReadingButton";
 import { Suspense } from "react";
 
@@ -47,7 +47,7 @@ export default async function StoryPage({ data }: { data: Story }): Promise<JSX.
         <section className='flex flex-wrap relative text-sm font-mono gap-1 mb-2'>
           {data.info_story.length === 0
             ?<></>
-            :data.info_story.filter(data=>data.personFlg===1).map((result, index) => (<div key={index}><CreateIdolLabel singingInfoId={result.infoId}/></div>))}
+            :data.info_story.filter(data=>data.personFlg===1).map((result, index) => (<div key={index}><IdolLabel singingInfoId={result.infoId}/></div>))}
         </section>
         <Suspense>
         <section className='flex flex-wrap relative text-sm font-mono gap-1 mb-2'>
