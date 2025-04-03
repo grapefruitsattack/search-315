@@ -26,7 +26,6 @@ import { useRouter, useSearchParams, usePathname } from 'next/navigation';
   ,{id:'apple',name:'Apple',nameSub:'\u00a0Music'}
   ,{id:'spotify',name:'Spotify',nameSub:''}
   ,{id:'awa',name:'AWA',nameSub:''}
-  ,{id:'towerrecord',name:'タワレコ',nameSub:'\u00a0Music'}
 ]
 
 const STORAGE_SUBSC_SERVICE = 'subscService';
@@ -264,30 +263,6 @@ export default function SubscButton(
               }}>
                 <p>
                 AWA
-                  <span className="">
-                  <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
-                  </span>
-                </p>
-            </a>
-            {/* タワレコ */}
-            <a 
-              className={`${subscUrl===undefined||subscUrl.towerRecordsMusic===''?'hidden':''}
-                w-full inline-block drop-shadow rounded
-                py-2 px-4 bg-[#FDD000] text-red-600 fill-red-600 font-bold
-                hover:bg-white 
-                transition-all duration-500 ease-out
-               `}
-              href={subscUrl?.towerRecordsMusic}
-              target="_blank" rel="noopener noreferrer"
-              onClick={()=>{
-                setTimeout(()=>{
-                  window.location.reload();
-                },100);
-                setSubscService('towerrecord');
-                onClose();
-              }}>
-                <p>
-                TOWER RECORDS MUSIC
                   <span className="">
                   <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
                   </span>

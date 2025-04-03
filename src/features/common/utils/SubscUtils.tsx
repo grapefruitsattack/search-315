@@ -65,15 +65,13 @@ export function getSubscUrl(songId: string, albumId: string, subscServiceId: str
             else {
                 return subscAlbums.find((data)=>data.id===albumId)?.awaUrl||'';
             };
-        case 'towerrecord':
+        default:
             if(songId!==''){
-                return subscSongs.find((data)=>data.id===songId)?.towerRecordsMusic||'';
+                return getYoutubeMusicUrl(songId,albumId,subscSongs.find((data)=>data.id===songId)?.youtubeId||'');
             }
             else {
-                return subscAlbums.find((data)=>data.id===albumId)?.towerRecordsMusic||'';
+                return getYoutubeMusicUrl(songId,albumId,subscAlbums.find((data)=>data.id===albumId)?.youtubeId||'');
             };
-        default:
-            return '';
     }
 }
 
