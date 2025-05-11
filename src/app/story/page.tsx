@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import React from "react"
 import { GetStaticProps } from "next"
-import StoryPage from "../../features/app/story/StoryPageMain";
+import StoryPage from "../../features/app/story/StoryPage";
 import prisma from '../../../lib/prisma';
 
 export default async function Page() {
@@ -14,5 +14,5 @@ export default async function Page() {
         {/* @ts-expect-error Server Component */}
         <StoryPage />
       </Suspense>
-      );
+      ); 
   }

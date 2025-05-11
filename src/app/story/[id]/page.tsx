@@ -12,7 +12,7 @@ import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
 import type { Story, RelationStory } from '../../../data/types';
 import CommonPage from "../../../features/common/components/CommonPage";
-import StoryPage from "../../../features/app/story/StoryPage";
+import StoryPage from "../../../features/app/story/StoryDetailedPage";
 
 export const revalidate = 600; // 10分ごとに再検証する
 
