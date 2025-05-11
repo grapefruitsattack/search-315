@@ -60,7 +60,7 @@ const getData = cache(async (id: string) => {
   `).eq('storyId',id).eq('isValid',1).single()).data;
   if (!storyData) notFound()
   //関連ストーリーが存在するときのみ関連ストーリー情報を取得
-  let relationStoryData: RelationStory[]|null = []
+  let relationStoryData;
   if(storyData.relationExists == 1){
     relationStoryData = (await supabase.from('relation_story').select(`
       storyId,
@@ -128,14 +128,14 @@ const Post = async ({
   params: Promise<{ id: string }>;
 }) => {
   const { id } = await params;
-  const post :{ storyData: Story; relationStoryData: RelationStory[] } = await getData(id);
+  const post = await getData(id);
   return (
     <Suspense>
     <CommonPage>
       <article className="pt-32 pb-96 px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
 
       {/* @ts-expect-error Server Component */}
-      <StoryPage data={post.storyData}/>
+      <StoryPage data={post}/>
       </article>
     </CommonPage>
     </Suspense>

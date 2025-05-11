@@ -152,25 +152,27 @@ export type Story = {
   howtoview_story: {
     howToView: string;
   }[];
-  m_sub_story: {
-    subStoryId: string;
-    subStoryNo: string;
-    media: number;
-    category: string;
-    subStoryTitle: string;
-    releaseDate: Date;
-    voiceAtRelease: number;
-    url: string;
-    info_sub_story: {
-      infoId: string;
-      personFlg: number;
-    }[];
+  m_sub_story: SubStory[];
+};
+
+export type SubStory = {
+  subStoryId: string;
+  subStoryNo: string;
+  media: number;
+  category: string;
+  subStoryTitle: string;
+  releaseDate: Date;
+  voiceAtRelease: number;
+  url: string;
+  info_sub_story: {
+    infoId: string;
+    personFlg: number;
   }[];
 };
 
 export type RelationStory = {
   storyId: string;
-  m_story: Story[];
+  m_story: Story;
 };
 
 export type CreditMaster = {
