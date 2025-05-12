@@ -63,25 +63,21 @@ export default async function StoryPage(
             className="
                 mobileL:text-2xl text-xl font-mono flex items-center w-full
                 after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-                
+                mt-5
             "
         >
-            <svg className="fill-cyan-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path d="M20 3V17C20 19.2091 18.2091 21 16 21C13.7909 21 12 19.2091 12 17C12 14.7909 13.7909 13 16 13C16.7286 13 17.4117 13.1948 18 13.5351V5H9V17C9 19.2091 7.20914 21 5 21C2.79086 21 1 19.2091 1 17C1 14.7909 2.79086 13 5 13C5.72857 13 6.41165 13.1948 7 13.5351V3H20ZM5 19C6.10457 19 7 18.1046 7 17C7 15.8954 6.10457 15 5 15C3.89543 15 3 15.8954 3 17C3 18.1046 3.89543 19 5 19ZM16 19C17.1046 19 18 18.1046 18 17C18 15.8954 17.1046 15 16 15C14.8954 15 14 15.8954 14 17C14 18.1046 14.8954 19 16 19Z"></path></svg>
-            {'別のバージョン'}
+            <svg className="fill-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+            <path d="M13 21V23H11V21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H9C10.1947 3 11.2671 3.52375 12 4.35418C12.7329 3.52375 13.8053 3 15 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H13ZM20 19V5H15C13.8954 5 13 5.89543 13 7V19H20ZM11 19V7C11 5.89543 10.1046 5 9 5H4V19H11Z"></path></svg>
+            {'関連ストーリー'}
         </div>
         <section className={`
-            items-start gap-4 grid-cols-1 lg:grid-cols-3 mt-5
+            items-start gap-4 grid-cols-1 lg:grid-cols-2 mt-2
             lg:grid grid       
         `}>
         {data.relationStoryData.map((result, index) => (
         <StoryBlock 
           key={index} 
-          storyId={result.m_story.storyId}
-          media={result.m_story.media}
-          category={result.m_story.category}
-          storyTitle={result.m_story.storyTitle}
-          url={result.m_story.url}
+          data={result.m_story}
         />
         ))}
         </section>
