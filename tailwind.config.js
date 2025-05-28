@@ -31,7 +31,7 @@ module.exports = {
   			tablet: '768px',
   			mobileL: '425px',
   			mobileM: '375px',
-  			mobileS: '320px'
+  			mobileS: '340px'
   		},
   		backgroundImage: {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

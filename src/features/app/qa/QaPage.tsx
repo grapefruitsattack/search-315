@@ -7,7 +7,7 @@ export default function QaPage({ }: { }) {
     return (
         <>
         <title>{`Q&A${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー`}</title>
-        <article className="pt-32 pb-48 px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
+        <article className="pt-32 pb-48 px-2 mobileS:px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
         <section className="pb-20">
         <h1 className="text-3xl pb-12 font-bold font-sans">Q&A</h1>
         <h2 className="text-2xl pb-2 font-bold">ここってどんなサイト？</h2>
