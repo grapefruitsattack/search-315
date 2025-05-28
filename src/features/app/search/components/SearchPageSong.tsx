@@ -89,7 +89,7 @@ export default function SearchPageSong({ }: {}) {
 
     </div>
     </section>
-    <section className="lg:px-24 px-8 p-2 flex flex-wrap items-center gap-4">
+    <section className="lg:px-24 px-2 mobileS:px-8 p-2 flex flex-wrap items-center gap-4">
               <div className={`relative flex w-[400px] p-1 border border-teal-200 rounded-full mb-8`}>
                           <span className={`absolute inset-0 m-1 pointer-events-none`}>
                               <span className={`absolute inset-0 w-1/2 bg-teal-400 rounded-full shadow-sm shadow-indigo-950/10 transform transition-transform duration-150 ease-in-out 
@@ -133,7 +133,7 @@ export default function SearchPageSong({ }: {}) {
       animate={{ opacity: 1 }} // マウント時
       exit={{ opacity: 0 }}   // アンマウント時
     >
-      <section className="lg:flex px-10 lg:px-16 w-full">
+      <section className="lg:flex px-2 mobileS:px-10 lg:px-16 w-full">
       <section className="grid grid-flow-row-dense items-start gap-4 grid-cols-1 lg:grid-cols-3 w-full">
   
           {displayResults.length===0 
@@ -153,7 +153,7 @@ export default function SearchPageSong({ }: {}) {
           ))}
           </section>
       </section>
-          <div className = {`pt-4 lg:px-24 px-8 mt-3 p-2${displayShowMorebutton?' ':' hidden'}`}>
+          <div className = {`pt-4 lg:px-24 px-8 mt-3 p-2 ${displayShowMorebutton?' ':' hidden'}`}>
           <button
             className={`relative flex w-full p-1 border-2 border-teal-300 text-teal-700 underline rounded-full text-sm font-bold justify-center`}
             onClick={() => {showMore()}}

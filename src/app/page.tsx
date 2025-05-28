@@ -20,7 +20,7 @@ export default function Home() {
         animate={{ opacity: 1 }} // マウント時
         exit={{ opacity: 0 }}    // アンマウント時
       >
-<section className="min-h-screen flex-col items-center justify-between pt-24 pb-72 px-12 lg:px-24">
+<section className="min-h-screen flex-col items-center justify-between pt-24 pb-72 px-2 mobileS:px-12 lg:px-24">
 
 
 <p className={`
