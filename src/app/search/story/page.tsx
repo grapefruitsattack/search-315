@@ -12,7 +12,16 @@ import StoryPage from "../../../features/app/story/StoryDetailedPage";
 
 export const revalidate = 600; // 10分ごとに再検証する
 
-const getData = cache(async (id: string) => {
+type Props = {
+  params: Promise<{
+    slug: string;
+  }>;
+  searchParams: Promise<{
+    dk?: string;
+  }>;
+};
+
+const getData = cache(async (infoIdArray: string[]) => {
   const supabase = createClient(
     process.env.SUPABASE_URL||'',
     process.env.SUPABASE_SERVICE_ROLE_KEY||'', 
@@ -24,72 +33,74 @@ const getData = cache(async (id: string) => {
     }
   )
   //ストーリー情報取得
-  const storyData: Story|null = (await supabase.from('m_story').select(`
-    storyId,
-    media,
-    category,
-    website,
-    headTitle,
-    storyTitle,
-    releaseDate,
-    subCnt,
-    voiceAtRelease,
-    voice,
-    still,
-    url,
-    relationExists,
-    info_story(infoId,personFlg),
-    howtoview_story(howToView),
-    m_sub_story(
-      subStoryId,
-      subStoryNo,
-      media,
-      category,
-      subStoryTitle,
-      releaseDate,
-      voiceAtRelease,
-      url,
-      info_sub_story(infoId,personFlg)
-      )
-  `).eq('storyId',id).eq('isValid',1).single()).data;
-  if (!storyData) notFound()
-  //関連ストーリーが存在するときのみ関連ストーリー情報を取得
-  let relationStoryData;
-  if(storyData.relationExists == 1){
-    relationStoryData = (await supabase.from('relation_story').select(`
-      storyId,
-      m_story!relationStoryId(
-        storyId,
-        media,
-        category,
-        website,
-        headTitle,
-        storyTitle,
-        releaseDate,
-        subCnt,
-        voiceAtRelease,
-        voice,
-        still,
-        url,
-        relationExists,
-        info_story(infoId,personFlg),
-        howtoview_story(howToView),
-        m_sub_story(
-          subStoryId,
-          subStoryNo,
-          media,
-          category,
-          subStoryTitle,
-          releaseDate,
-          voiceAtRelease,
-          url,
-          info_sub_story(infoId,personFlg)
-          )
-      )
-    `).eq('storyId',id)).data;
-    if (!relationStoryData) notFound()
-  }
-  return {storyData,relationStoryData};
+  const testdata = await supabase.rpc('get_posts',{info_id_array: infoIdArray});
+  console.log(testdata.data.length)
+  // const storyData: Story|null = (await supabase.from('m_story').select(`
+  //   storyId,
+  //   media,
+  //   category,
+  //   website,
+  //   headTitle,
+  //   storyTitle,
+  //   releaseDate,
+  //   subCnt,
+  //   voiceAtRelease,
+  //   voice,
+  //   still,
+  //   url,
+  //   relationExists,
+  //   info_story(infoId,personFlg),
+  //   howtoview_story(howToView),
+  //   m_sub_story(
+  //     subStoryId,
+  //     subStoryNo,
+  //     media,
+  //     category,
+  //     subStoryTitle,
+  //     releaseDate,
+  //     voiceAtRelease,
+  //     url,
+  //     info_sub_story(infoId,personFlg)
+  //     )
+  // `).eq('storyId',id).eq('isValid',1).single()).data;
+  // if (!storyData) notFound()
+  // //関連ストーリーが存在するときのみ関連ストーリー情報を取得
+  // let relationStoryData;
+  // if(storyData.relationExists == 1){
+  //   relationStoryData = (await supabase.from('relation_story').select(`
+  //     storyId,
+  //     m_story!relationStoryId(
+  //       storyId,
+  //       media,
+  //       category,
+  //       website,
+  //       headTitle,
+  //       storyTitle,
+  //       releaseDate,
+  //       subCnt,
+  //       voiceAtRelease,
+  //       voice,
+  //       still,
+  //       url,
+  //       relationExists,
+  //       info_story(infoId,personFlg),
+  //       howtoview_story(howToView),
+  //       m_sub_story(
+  //         subStoryId,
+  //         subStoryNo,
+  //         media,
+  //         category,
+  //         subStoryTitle,
+  //         releaseDate,
+  //         voiceAtRelease,
+  //         url,
+  //         info_sub_story(infoId,personFlg)
+  //         )
+  //     )
+  //   `).eq('storyId',id)).data;
+  //   if (!relationStoryData) notFound()
+  // }
+  return {};
 })
 
 const SearchStoryPage = dynamic(() => import("../../../features/app/search/SearchStoryPage"), { ssr: true });
@@ -99,18 +110,21 @@ const Page = async ({
   searchParams,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ q?: string; f?: string; }>;
 }) => {
-  const qparm = searchParams.q;
-  const fparm = searchParams.f;
+  const {q} = await searchParams || '';
+  const {f} = await searchParams || '';
+  const infoIdArray: string[] = q?.split(' ') || [];
+  //const fparm = await searchParams.f;
+  console.log(f?.split(' ') || [])
+  getData(infoIdArray);
     return (
     <Suspense>
     <CommonPage>
     
     <SearchStoryPage />
       {"テスト"}
-      {qparm}
-      {fparm}
+      {q}
     </CommonPage>
     </Suspense>
   );
