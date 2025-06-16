@@ -19,6 +19,7 @@ export type SingingMaster = {
   singingInfoId: string;
   personFlg: number;
   singingInfoName: string;
+  singingInfoShortName: string;
   singingInfoReadingName: string;
   singingInfoRomajiName: string;
   color: string;
