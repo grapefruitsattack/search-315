@@ -1,6 +1,6 @@
 'use client'
 import SubscButton from "./../SubscButton";
-import type { Story,SongMaster } from '../../../../data/types';
+import type { Story,InfoStory } from '../../../../data/types';
 import subscSongs from '../../../../data/subscSongs.json';
 import singingMaster from '../../../../data/singingMaster.json';
 import {ShareYoutubeModal} from "../../../app/shareModal/ShareYoutubeModal";
@@ -10,12 +10,14 @@ import {Tooltip} from "@chakra-ui/react";
 import Link from 'next/link';
 import GetArtWorkSrc from '../../utils/GetArtWorkSrc';
 import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName } from '../../utils/GetStoryInfomation';
+import IdolBadge from '../IdolBadge';
 
 export default function StoryBlock(
-  { data }:{ data: Story }
+  { storyId,media,category,headTitle,storyTitle,infoStory }
+  :{ storyId: string, media: number, category: string, headTitle: string, storyTitle: string, infoStory: InfoStory[], }
 ) {
   const member: string  
-    = data.info_story
+    = infoStory
       .filter(data=>data.personFlg===1)
       .map((result, index) => (singingMaster.find(data => data.singingInfoId === result.infoId)?.singingInfoName||''))
       .join("、");
@@ -43,15 +45,15 @@ export default function StoryBlock(
     `}
     >
     <section className='flex flex-wrap relative text-xs tablet:text-sm font-mono text-white gap-1'>
-      <div className="justify-center bg-teal-500 rounded-lg px-1 py-0.5">{GetStoryMediaName(data.media)}</div>
-      <div className="justify-center bg-sky-400 rounded-lg px-1 py-0.5">{GetStoryCategoryName(data.category)}</div>
+      <div className="justify-center bg-teal-500 rounded-lg px-1 py-0.5">{GetStoryMediaName(media)}</div>
+      <div className="justify-center bg-sky-400 rounded-lg px-1 py-0.5">{GetStoryCategoryName(category)}</div>
     </section>
     <div className ="
       row-span-1 col-span-2 
       text-sm leading-tight
       pt-0.5 pl-1
     ">
-    {data.headTitle}
+    {headTitle}
     </div>
     <Link
       className ="
@@ -69,16 +71,16 @@ export default function StoryBlock(
         hover:text-cyan-900 
         duration-500 ease-out
       "
-      href={`/story/` + data.storyId}
+      href={`/story/` + storyId}
       >
-          {data.storyTitle}
+          {storyTitle}
     </Link>
-    <div className ="
-      row-span-1 col-span-2 
-      text-sm leading-tight text-zinc-700
-      pt-1 pl-1
-    ">
-    {member}
+    <div className ='flex flex-wrap relative text-sm font-mono gap-0.5 mb-1 mx-1'>
+        {infoStory.length === 0
+          ?<></>
+          :infoStory.filter(data=>data.personFlg===1).map(
+            (result, index) => (<div key={index}><IdolBadge id={result.infoId} useShortName={1} size={'block'}/></div>))
+        }
     </div>
     </section>
     

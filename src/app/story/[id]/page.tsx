@@ -10,7 +10,7 @@ import { GetStaticProps, GetStaticPaths } from "next"
 import { createClient } from '@supabase/supabase-js'
 import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
-import type { Story, RelationStory } from '../../../data/types';
+import type { Story } from '../../../data/types';
 import CommonPage from "../../../features/common/components/CommonPage";
 import StoryPage from "../../../features/app/story/StoryDetailedPage";
 
@@ -30,72 +30,20 @@ const getData = cache(async (id: string) => {
     process.env.SUPABASE_SERVICE_ROLE_KEY||'',
   )
   //ストーリー情報取得
-  const storyData: Story|null = (await supabase.from('m_story').select(`
-    storyId,
-    media,
-    category,
-    website,
-    headTitle,
-    storyTitle,
-    releaseDate,
-    subCnt,
-    voiceAtRelease,
-    voice,
-    still,
-    url,
-    relationExists,
-    info_story(infoId,personFlg),
-    howtoview_story(howToView),
-    m_sub_story(
-      subStoryId,
-      subStoryNo,
-      media,
-      category,
-      subStoryTitle,
-      releaseDate,
-      voiceAtRelease,
-      url,
-      info_sub_story(infoId,personFlg)
-      )
-  `).eq('storyId',id).eq('isValid',1).single()).data;
+    //ストーリー情報取得
+  const {data, error} = (await supabase.from('m_story_json_data').select(`
+  storyId,
+  jsonData
+  `).eq('storyId',id).single());
+  if (!data) notFound()
+  const storyData: Story = data?.jsonData;
+  
   if (!storyData) notFound()
-  //関連ストーリーが存在するときのみ関連ストーリー情報を取得
-  let relationStoryData;
-  if(storyData.relationExists == 1){
-    relationStoryData = (await supabase.from('relation_story').select(`
-      storyId,
-      m_story!relationStoryId(
-        storyId,
-        media,
-        category,
-        website,
-        headTitle,
-        storyTitle,
-        releaseDate,
-        subCnt,
-        voiceAtRelease,
-        voice,
-        still,
-        url,
-        relationExists,
-        info_story(infoId,personFlg),
-        howtoview_story(howToView),
-        m_sub_story(
-          subStoryId,
-          subStoryNo,
-          media,
-          category,
-          subStoryTitle,
-          releaseDate,
-          voiceAtRelease,
-          url,
-          info_sub_story(infoId,personFlg)
-          )
-      )
-    `).eq('storyId',id)).data;
-    if (!relationStoryData) notFound()
-  }
-  return {storyData,relationStoryData};
+  console.log('test')
+  console.log(storyData.relationStory)
+  console.log('test')
+ 
+  return {storyData};
 })
 
 // 動的ルートのパラメータを生成して、デプロイ時にファイルを生成する
@@ -132,10 +80,10 @@ const Post = async ({
   return (
     <Suspense>
     <CommonPage>
-      <article className="pt-32 pb-96 px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
+      <article className="pt-32 pb-96 px-2 mobileS:px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
 
       {/* @ts-expect-error Server Component */}
-      <StoryPage data={post}/>
+      <StoryPage data={post.storyData}/>
       </article>
     </CommonPage>
     </Suspense>
