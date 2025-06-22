@@ -85,3 +85,13 @@ export function GetStoryHowtoviewName(howtoview: string)
     }
     return '';
 }
+export function GetVoiceStateName(voice: number, voiceAtRelease: number)
+{
+    if(voice === 1){
+        return 'ボイスあり'
+    }
+    if(voiceAtRelease === 1){
+        return '過去ボイス実装あり'
+    }
+    return '';
+}

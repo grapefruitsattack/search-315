@@ -12,7 +12,7 @@ import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
 import type { Story } from '../../../data/types';
 import CommonPage from "../../../features/common/components/CommonPage";
-import StoryPage from "../../../features/app/story/StoryDetailedPage";
+import StoryDetailedPage from "../../../features/app/story/StoryDetailedPage";
 
 export const revalidate = 600; // 10分ごとに再検証する
 
@@ -83,7 +83,7 @@ const Post = async ({
       <article className="pt-32 pb-96 px-2 mobileS:px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
 
       {/* @ts-expect-error Server Component */}
-      <StoryPage data={post.storyData}/>
+      <StoryDetailedPage data={post.storyData}/>
       </article>
     </CommonPage>
     </Suspense>
