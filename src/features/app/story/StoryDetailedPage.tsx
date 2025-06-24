@@ -5,7 +5,7 @@ import { auth } from "../../../../auth";
 import {SignIn,SignOut} from "../../management/auth/SignIn";
 import { createClient } from '@supabase/supabase-js'
 import type { Story } from '../../../data/types';
-import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName,GetVoiceStateName } from '../../common/utils/Story/GetStoryInfomation';
+import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName,GetVoiceStateName,GetStoryHowtoviewName } from '../../common/utils/Story/GetStoryInfomation';
 import IdolBadge from '../../common/components/IdolBadge';
 import StoryReadingButton from "./components/StoryReadingButton";
 import { Suspense } from "react";
@@ -17,7 +17,7 @@ export default async function StoryDetailedPage(
 {
   const websiteName: string = GetStoryWebsiteName(data.website);
   const voiceStateName: string = GetVoiceStateName(data.voice,data.voiceAtRelease);
-
+  data.howtoviewStory
     return (
         <>
         <section className="mb-2 bg-gradient-to-r from-green-500/70 from-50% rounded">
@@ -36,21 +36,39 @@ export default async function StoryDetailedPage(
               </p>
             </div>
         </section>
-        <section className='flex flex-wrap relative text-sm tablet:text-xl font-mono text-white gap-1 mb-1'>
+        <section className='flex flex-wrap relative text-sm tablet:text-xl font-mono font-bold text-white gap-1 mb-1'>
           <div className="justify-center bg-teal-500 rounded-lg p-1">{GetStoryMediaName(data.media)}</div>
           <div className="justify-center bg-sky-400 rounded-lg p-1">{GetStoryCategoryName(data.category)}</div>
         </section>
-        <section className='flex flex-wrap relative text-xs tablet:text-base font-mono text-white gap-1 mb-2'>
-          
+
+        <section className='flex flex-wrap relative text-xs tablet:text-sm font-mono text-white gap-1 mb-1'>
         {voiceStateName===''
         ?<></>
-        :<div className="justify-center bg-red-500 rounded-lg p-1">{voiceStateName}</div>
+        :<div className="justify-center text-red-500 border border-red-500 rounded-sm p-1">{voiceStateName}</div>
         }
         {data.still===0
         ?<></>
-        :<div className="justify-center bg-red-400 rounded-lg p-1">{'スチル'+data.still+'枚'}</div>
+        :<div className="justify-center text-red-500 border border-red-500 rounded-sm p-1">{'スチル'+data.still+'枚'}</div>
         }
         </section>
+
+        {data.website!=='asb' || data.howtoviewStory===null || data.howtoviewStory.length===0
+        ?<></>
+        :<section className='w-fit rounded-sm text-xs tablet:text-sm font-mono text-black gap-1 mb-2 bg-orange-200'>
+          <a className=" text-black p-1">{'視聴方法：'}</a>
+          {data.howtoviewStory.map((result, index) => (
+          <a key={index} className="text-orange-800 p-1">{GetStoryHowtoviewName(result)}</a>
+          ))}
+        {/* {data.howtoviewStory.length===0
+        ?<a className=" text-orange-800 p-1">{'ログイン不要'}</a>
+        :<>
+        {data.howtoviewStory.map((result, index) => (
+        <a key={index} className="text-orange-800 p-1">{GetStoryHowtoviewName(result)}</a>
+        ))}</>
+        } */}
+        </section>
+        }
+        
 
         <section className='mb-2 flex flex-col'>
           <div className="text-base mobileM:text-xl tablet:text-2xl font-mono font-bold inline-block">
@@ -65,7 +83,7 @@ export default async function StoryDetailedPage(
         ?<></>
         :
         <section className=''>
-        <a className="w-full"
+        <a className="w-full transition-opacity duration-300 hover:opacity-20"
       href={data.url}
       target="_blank" rel="noopener noreferrer">
           <div className='

@@ -72,10 +72,10 @@ export function GetStoryHowtoviewName(howtoview: string)
         return 'アソビストアログイン'
     }
     if(howtoview === 'asb_prem'){
-        return 'アソビストアプレミアム会員'
+        return 'アソストプレ会員特典'
     }
     if(howtoview === 'asb_pur'){
-        return 'バンダイナムココイン購入'
+        return 'バナコイン購入'
     }
     if(howtoview === 'asb_scode_cd'){
         return 'CD封入シリアルコード認証'
