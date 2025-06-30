@@ -6,8 +6,9 @@ import { Suspense } from "react";
 import { cache } from 'react'
 import dynamic from "next/dynamic";
 import { createClient } from '@supabase/supabase-js'
-import type { Story } from '../../../data/types';
+import type { StorySearchResult } from '../../../data/types';
 import CommonPage from "../../../features/common/components/CommonPage";
+import SearchStoryPage from "../../../features/app/search/SearchStoryPage";
 
 export const revalidate = 600; // 10分ごとに再検証する
 
@@ -20,7 +21,12 @@ type Props = {
   }>;
 };
 
-const getData = cache(async (infoIdArray: string[]) => {
+const getData = cache(async (
+  infoIdArray: string[],
+  mediaArray: number[],
+  voiceType: number,
+  SortedAsc: number
+  ) => {
   const supabase = createClient(
     process.env.SUPABASE_URL||'',
     process.env.SUPABASE_SERVICE_ROLE_KEY||'', 
@@ -32,80 +38,13 @@ const getData = cache(async (infoIdArray: string[]) => {
     }
   )
   //ストーリー情報取得
-  const {data, error} = await supabase.rpc('story_test',{story_id: '7a3jscj3slssdecu'})
-  console.log(infoIdArray)
-  const a = data[0]
-  console.log(a)
-  console.log(a.relation_story === null || a.relation_story.length === 0)
-  // const storyData: Story|null = (await supabase.from('m_story').select(`
-  //   storyId,
-  //   media,
-  //   category,
-  //   website,
-  //   headTitle,
-  //   storyTitle,
-  //   releaseDate,
-  //   subCnt,
-  //   voiceAtRelease,
-  //   voice,
-  //   still,
-  //   url,
-  //   relationExists,
-  //   info_story(infoId,personFlg),
-  //   howtoview_story(howToView),
-  //   m_sub_story(
-  //     subStoryId,
-  //     subStoryNo,
-  //     media,
-  //     category,
-  //     subStoryTitle,
-  //     releaseDate,
-  //     voiceAtRelease,
-  //     url,
-  //     info_sub_story(infoId,personFlg)
-  //     )
-  // `).eq('storyId',id).eq('isValid',1).single()).data;
-  // if (!storyData) notFound()
-  // //関連ストーリーが存在するときのみ関連ストーリー情報を取得
-  // let relationStoryData;
-  // if(storyData.relationExists == 1){
-  //   relationStoryData = (await supabase.from('relation_story').select(`
-  //     storyId,
-  //     m_story!relationStoryId(
-  //       storyId,
-  //       media,
-  //       category,
-  //       website,
-  //       headTitle,
-  //       storyTitle,
-  //       releaseDate,
-  //       subCnt,
-  //       voiceAtRelease,
-  //       voice,
-  //       still,
-  //       url,
-  //       relationExists,
-  //       info_story(infoId,personFlg),
-  //       howtoview_story(howToView),
-  //       m_sub_story(
-  //         subStoryId,
-  //         subStoryNo,
-  //         media,
-  //         category,
-  //         subStoryTitle,
-  //         releaseDate,
-  //         voiceAtRelease,
-  //         url,
-  //         info_sub_story(infoId,personFlg)
-  //         )
-  //     )
-  //   `).eq('storyId',id)).data;
-  //   if (!relationStoryData) notFound()
-  // }
-  return {};
+  const {data, error} = await supabase.rpc(
+    'search_story_and',
+    {info_id_array: infoIdArray,media_array:mediaArray,voicetype:voiceType,sortedasc:SortedAsc});
+  const storySearchResult: StorySearchResult[] = data;
+  return {storySearchResult};
 })
 
-const SearchStoryPage = dynamic(() => import("../../../features/app/search/SearchStoryPage"), { ssr: true });
 
 const Page = async ({
   params,
@@ -119,12 +58,13 @@ const Page = async ({
   const infoIdArray: string[] = q?.split(' ') || [];
   //const fparm = await searchParams.f;
   console.log(f?.split(' ') || [])
-  getData(infoIdArray);
+  const post = await getData(infoIdArray,[],0,0);
     return (
     <Suspense>
     <CommonPage>
     
-    <SearchStoryPage />
+      {/* @ts-expect-error Server Component */}
+      <SearchStoryPage data={post.storySearchResult}/>
       {"テスト"}
       {q}
     </CommonPage>

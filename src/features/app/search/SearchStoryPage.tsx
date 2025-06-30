@@ -1,10 +1,14 @@
-'use client'
+
 import { useSearchParams } from 'next/navigation'
 import CommonPage from "../../common/components/CommonPage";
 import SearchPageSong from "./components/SearchPageSong";
 import {SearchModal} from "./components/SearchModal";
+import type { StorySearchResult } from '../../../data/types';
 
-export default function SearchStoryPage() {
+export default async function SearchStoryPage(
+  { data }: { data: StorySearchResult;}
+  ): Promise<JSX.Element> 
+ {
 
     return (
       <>

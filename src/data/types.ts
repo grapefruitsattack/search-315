@@ -180,6 +180,22 @@ export type SubStory = {
   infoSubStory: InfoStory[];
 };
 
+export type StorySearchResult = {
+  story_id: string;
+  media: number;
+  category: string;
+  website: string;
+  head_title: string;
+  story_title: string;
+  release_date: Date;
+  voice_at_release: number;
+  voice: number;
+  still: number;
+  url: string;
+  isValid: number;
+};
+
+
 export type CreditMaster = {
   creditId: string;
   name: string;
