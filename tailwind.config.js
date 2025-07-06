@@ -69,7 +69,7 @@ module.exports = {
 			LGN_BADGE_BG: '#6880A0',
 			LGN_BADGE_TX: '#E6E9ED',
 			CLF_BADGE_BG: '#00CCBB',
-			CLF_BADGE_TX: '#D8EDEB',
+			CLF_BADGE_TX: '#FFFFFF',
   			JUP00: '#42DB42',
   			JUP01: '#F14A4A',
   			JUP02: '#87C010',
