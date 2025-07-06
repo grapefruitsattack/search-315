@@ -21,8 +21,7 @@ export default async function StoryPage(): Promise<JSX.Element> {
       }
     )
     const { data, error } = await supabase.from("users").select("*");
-    console.log(data)
-    console.log(error)
+
     const post = data||[];
  
 

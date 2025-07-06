@@ -192,6 +192,7 @@ export type StorySearchResult = {
   voice: number;
   still: number;
   url: string;
+  info_id: InfoStory[];
   isValid: number;
 };
 

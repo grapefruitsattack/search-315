@@ -39,8 +39,9 @@ const getData = cache(async (
   )
   //ストーリー情報取得
   const {data, error} = await supabase.rpc(
-    'search_story_and',
-    {info_id_array: infoIdArray,media_array:mediaArray,voicetype:voiceType,sortedasc:SortedAsc});
+    'search_story',
+    {info_id_array: infoIdArray,media_array:mediaArray,voicetype:voiceType,andor:'and',sortedasc:SortedAsc});
+    console.log(error)
   const storySearchResult: StorySearchResult[] = data;
   return {storySearchResult};
 })
@@ -57,7 +58,6 @@ const Page = async ({
   const {f} = await searchParams || '';
   const infoIdArray: string[] = q?.split(' ') || [];
   //const fparm = await searchParams.f;
-  console.log(f?.split(' ') || [])
   const post = await getData(infoIdArray,[],0,0);
     return (
     <Suspense>

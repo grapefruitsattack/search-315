@@ -1,14 +1,18 @@
 'use client'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useEffect, useState } from "react";
-import type { SongMaster } from '../../../../data/types';
+import type { SongMaster,StorySearchResult } from '../../../../data/types';
 import SearchSong from '../../../common/utils/SearchSong';
 import SongBlock from "../../../common/components/SongBlock";
+import StoryBlock from "../../../common/components/story/StoryBlock";
 import { motion } from 'framer-motion'
 import { AnimatePresence } from "framer-motion";
 import songInfoAsc from '../../../../data/songInfoAsc.json';
 
-export default function SearchPageStory({ }: {}) {
+export default function SearchPageStory({ data }: { data: StorySearchResult[];}) {
+  console.log('post.storySearchResult')
+  console.log(data[0].info_id)
+  console.log('post.storySearchResult')
   const router = useRouter();
   const searchParams = useSearchParams();
   const params = new URLSearchParams(searchParams.toString());
@@ -53,18 +57,10 @@ export default function SearchPageStory({ }: {}) {
   }, [searchParams]);
 
 
-  function showMore(): void {
-    const newDisplayResults: SongMaster[] 
-      = results.length > displayResults.length? results.slice(0, displayResults.length + 36): results;
-    setDisplayResults(newDisplayResults);
-    setDisplayShowMorebutton(results.length > newDisplayResults.length);
-    params.set('display', Math.floor((newDisplayResults.length + 35)/36).toString());
-    router.push(currentPath + '?' + params.toString(), {scroll: false});
-  };
 
   return (
     <>
-    {/* ボタン部 */}
+    {/* トップ移動ボタン */}
     <section className="z-40  py-2 fixed  bottom-14 flex flex-row w-full items-center  justify-center">  
     <div className="absolute left-8">
             <button 
@@ -115,57 +111,34 @@ export default function SearchPageStory({ }: {}) {
                           >
                           リリース日古い順</button>
               </div>
-      {/* <div className="flex-none ">
-      <SortSelect 
-          currentValue={order}
-          paramId ='order'/>
-      </div>
-      <div className="flex-none">
-      <FilterSelect 
-          currentValueSubsc={subscExists}
-          currentValueColle={colleFlg}/>
-      </div> */}
     </section>
-    <AnimatePresence initial={false} mode="wait">
-    <motion.div
-      key={order  + `${subscExists}${colleFlg}${searchParams.get('q') === null?'':searchParams.get('q')}` }
-      initial={{ opacity: 0 }} // 初期状態
-      animate={{ opacity: 1 }} // マウント時
-      exit={{ opacity: 0 }}   // アンマウント時
-    >
-      <section className="lg:flex px-2 mobileS:px-10 lg:px-16 w-full">
-      <section className="grid grid-flow-row-dense items-start gap-4 grid-cols-1 lg:grid-cols-3 w-full">
+    {/* ストーリー一覧 */}
+    <section className="lg:flex px-2 mobileS:px-10 lg:px-16 w-full">
+    <section className="grid grid-flow-row-dense items-start gap-4 grid-cols-1 lg:grid-cols-3 w-full">
   
-          {displayResults.length===0 
+          {data.length===0 
           ?
           <div className="flex flex-col justify-center items-start ">
             <div>検索条件に該当する楽曲がありません</div>
             <div>検索条件を変更してください</div>
           </div>
-          :displayResults.map((result, index) => (
-          <SongBlock 
+          :data.map((data, index) => (
+          <StoryBlock 
             key={index} 
-            albumId={result.albumId} 
-            trackNo={result.trackNo} 
-            song={result}
-            existsButton={true}
+            storyId={data.story_id}
+            category={data.category}
+            headTitle={data.head_title}
+            infoStory={data.info_id}
+            media={data.media}
+            storyTitle={data.story_title}
+            url={data.url}
           />
           ))}
           </section>
       </section>
-          <div className = {`pt-4 lg:px-24 px-8 mt-3 p-2 ${displayShowMorebutton?' ':' hidden'}`}>
-          <button
-            className={`relative flex w-full p-1 border-2 border-teal-300 text-teal-700 underline rounded-full text-sm font-bold justify-center`}
-            onClick={() => {showMore()}}
-          >
-            {'さらに表示'}
-          </button>
-          </div>
 
-      </motion.div>
-      </AnimatePresence>
-      <section className=" pb-48">
-      </section>
+    <section className=" pb-48">
+    </section>
     </>
   );
 }

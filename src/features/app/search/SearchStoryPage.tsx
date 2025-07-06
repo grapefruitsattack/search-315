@@ -1,12 +1,12 @@
 
 import { useSearchParams } from 'next/navigation'
 import CommonPage from "../../common/components/CommonPage";
-import SearchPageSong from "./components/SearchPageSong";
+import SearchPageStory from "./components/SearchPageStory";
 import {SearchModal} from "./components/SearchModal";
 import type { StorySearchResult } from '../../../data/types';
 
 export default async function SearchStoryPage(
-  { data }: { data: StorySearchResult;}
+  { data }: { data: StorySearchResult[];}
   ): Promise<JSX.Element> 
  {
 
@@ -18,7 +18,7 @@ export default async function SearchStoryPage(
 
       <div className='mb-5'>
       </div>
-      <SearchPageSong />
+      <SearchPageStory data={data} />
     
       </section>
       </>
