@@ -83,7 +83,6 @@ const Page = async ({
   // 検索結果取得
   const post = await getData(infoIdArray,mediaArray,categoryArray,v||0,htv||0,andor||'or',SortedAsc);
 
-  console.log(post)
     return (
     <Suspense>
     <CommonPage>

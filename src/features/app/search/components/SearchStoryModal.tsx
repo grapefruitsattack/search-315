@@ -1,7 +1,6 @@
 'use client'
-import { motion, AnimatePresence } from "framer-motion";
 import { usePathname, useSearchParams,useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SearchParams } from '../class/SearchParams';
 import SearchModalCheckbox from "./SearchModalCheckbox";
 import SearchModalFilterCheckbox from "./SearchModalFilterCheckbox";
@@ -18,11 +17,14 @@ import {
   Tooltip
  } from "@chakra-ui/react";
 
-export const SearchStoryModal: React.VFC = () => {
+export default function SearchStoryModal({ cnt }: { cnt: number;}) {
 
     const router = useRouter();
     const currentPath: string = usePathname();
     const urlSearchParams = useSearchParams();
+    //検索結果がゼロ件の場合、モーダルを自動で開く
+    const [defaultIsOpen, setDefaultIsOpen] = useState(cnt<=0);
+    const { isOpen, onClose, onOpen } = useDisclosure({defaultIsOpen:defaultIsOpen,});
 
     //useState設定
     const [params, setParams] = useState(new URLSearchParams(urlSearchParams.toString()));
@@ -36,6 +38,12 @@ export const SearchStoryModal: React.VFC = () => {
                 ,songInfoAsc
                 ,params.get('andor') || 'or'
             ).length);
+
+    // 遷移時処理
+    useEffect(() => {
+        console.log(cnt)
+        setDefaultIsOpen(cnt<=0)
+    }, [currentPath.toString(),urlSearchParams.toString(), cnt]);
 
     //パラメータクリア関数
     function switchAndOr(andor: string): void{
@@ -103,8 +111,6 @@ export const SearchStoryModal: React.VFC = () => {
         };
     });
     searchText = searchText === ''?'　':searchText;
-
-    const { isOpen, onClose, onOpen } = useDisclosure();
 
     //エラーツールチップ表示用
     const [tooltipOn, setTooltipOn] = useState<boolean>(false);
@@ -600,6 +606,7 @@ export const SearchStoryModal: React.VFC = () => {
                                         workParam.set('display','1');
                                         router.push(currentPath + '?'  + decodeURIComponent(workParam.toString()));
                                         onClose();
+                                        router.refresh();
                                     } else {
                                         setTooltipOn(true);
                                         window.setTimeout(function(){setTooltipOn(false);}, 2000);

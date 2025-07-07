@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import type { SongMaster,StorySearchResult } from '../../../../data/types';
 import SearchSong from '../../../common/utils/SearchSong';
 import SongBlock from "../../../common/components/SongBlock";
+import SearchStoryModal from "../components/SearchStoryModal";
 import StoryBlock from "../../../common/components/story/StoryBlock";
 import { motion } from 'framer-motion'
 import { AnimatePresence } from "framer-motion";
@@ -39,6 +40,7 @@ export default function SearchPageStory({ data }: { data: StorySearchResult[];})
   );
   const [displayResults, setDisplayResults] = useState(results.length > 36? results.slice(0,36): results);
   const [displayShowMorebutton, setDisplayShowMorebutton] = useState(results.length > 36);
+  const [dataCnt, setDataCnt] = useState(data.length);
   // 遷移時処理
   useEffect(() => {
     results = SearchSong(
@@ -52,7 +54,9 @@ export default function SearchPageStory({ data }: { data: StorySearchResult[];})
       = results.length > 36? results.slice(0, displayCoefficient < 1? 36: displayCoefficient*36): results;
     setDisplayResults(newDisplayResults);
     setDisplayShowMorebutton(results.length > newDisplayResults.length);
-  }, [searchParams]);
+  console.log(dataCnt)
+  setDataCnt(data.length)
+  }, [data]);
 
 
 
@@ -60,6 +64,7 @@ export default function SearchPageStory({ data }: { data: StorySearchResult[];})
     <>
     {/* トップ移動ボタン */}
     <section className="z-40  py-2 fixed  bottom-14 flex flex-row w-full items-center  justify-center">  
+    <SearchStoryModal cnt={dataCnt}/>
     <div className="absolute left-8">
             <button 
                 className='rounded-full p-3 bg-gradient-to-r from-red-200/90 to-amber-300/90  items-center
