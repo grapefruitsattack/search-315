@@ -16,6 +16,7 @@ export default function StoryBlock(
   { storyId,media,category,headTitle,storyTitle,infoStory, url }
   :{ storyId: string, media: number, category: string, headTitle: string, storyTitle: string, infoStory: InfoStory[], url: string }
 ) {
+  
   const member: string  
     = infoStory
       .filter(data=>data.personFlg===1)
@@ -44,44 +45,50 @@ export default function StoryBlock(
       bg-white border-green-600/30 border-t-4 border-l-4
     `}
     >
-    <section className='flex flex-wrap relative text-xs mobileS:text-sm font-mono text-white gap-1'>
-      <div className="justify-center bg-teal-500 rounded-lg px-1 py-0.5">{GetStoryMediaName(media)}</div>
-      <div className="justify-center bg-sky-400 rounded-lg px-1 py-0.5">{GetStoryCategoryName(category)}</div>
-    </section>
-    <div className ="
-      row-span-1 col-span-2 
-      leading-tight
-      pl-1
-    ">
-    {headTitle}
-    </div>
     <Link
       className ="
         inline-block
-        tablet:text-xl text-base
         rounded-md
-        underline
-        leading-tight
-        font-sans
         row-span-1 col-span-2 
-        rounded-md px-1 
+        rounded-md
         from-cyan-100/30 to-violet-200/30
-        text-zinc-800
         hover:bg-gradient-to-tl
         hover:text-cyan-900 
         duration-500 ease-out
+        w-full
       "
       href={`/story/` + storyId}
       >
+      <section className='flex flex-wrap relative text-xs mobileS:text-sm font-mono text-white gap-1'>
+        <div className="justify-center bg-teal-500 rounded-lg px-1 py-0.5">{GetStoryCategoryName(category)}</div>
+        <div className="justify-center bg-sky-400 rounded-lg px-1 py-0.5">{GetStoryMediaName(media)}</div>
+      </section>
+      <section className='px-1 '>
+      <div className ="
+        row-span-1 col-span-2 
+        leading-tight
+        pl-1
+      ">
+      {headTitle}
+      </div>
+      <div className ="
+        tablet:text-xl text-base
+        underline
+        leading-tight
+        font-sans
+        text-zinc-800
+      ">
           {storyTitle}
+      </div>
+      </section>
+      <section className ='flex flex-wrap relative text-sm font-mono gap-0.5 mb-1 mx-1'>
+          {infoStory.length === 0
+            ?<></>
+            :infoStory.filter(data=>data.personFlg===1).map(
+              (result, index) => (<div key={index}><IdolBadge id={result.infoId} useShortName={1} size={'block'}/></div>))
+          }
+      </section>
     </Link>
-    <div className ='flex flex-wrap relative text-sm font-mono gap-0.5 mb-1 mx-1'>
-        {infoStory.length === 0
-          ?<></>
-          :infoStory.filter(data=>data.personFlg===1).map(
-            (result, index) => (<div key={index}><IdolBadge id={result.infoId} useShortName={1} size={'block'}/></div>))
-        }
-    </div>
     
     {url===null || url===''
         ?<></>

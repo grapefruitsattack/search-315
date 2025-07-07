@@ -10,9 +10,7 @@ import { AnimatePresence } from "framer-motion";
 import songInfoAsc from '../../../../data/songInfoAsc.json';
 
 export default function SearchPageStory({ data }: { data: StorySearchResult[];}) {
-  console.log('post.storySearchResult')
-  console.log(data[0].info_id)
-  console.log('post.storySearchResult')
+
   const router = useRouter();
   const searchParams = useSearchParams();
   const params = new URLSearchParams(searchParams.toString());

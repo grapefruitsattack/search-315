@@ -18,7 +18,7 @@ import {
   Tooltip
  } from "@chakra-ui/react";
 
-export const SearchModal: React.VFC = () => {
+export const SearchStoryModal: React.VFC = () => {
 
     const router = useRouter();
     const currentPath: string = usePathname();
