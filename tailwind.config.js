@@ -38,38 +38,38 @@ module.exports = {
   			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
   		},
   		colors: {
-			JUP_BADGE_BG: '#80ed6f',
-			JUP_BADGE_TX: '#076907',
-			DRS_BADGE_BG: '#ffc65e',
-			DRS_BADGE_TX: '#664609',
-			ALT_BADGE_BG: '#F6F45E',
-			ALT_BADGE_TX: '#52511F',
-			BEI_BADGE_BG: '#26D4FF',
-			BEI_BADGE_TX: '#115F73',
-			DBL_BADGE_BG: '#F7D828',
-			DBL_BADGE_TX: '#6B5E11',
-			FRM_BADGE_BG: '#338033',
-			FRM_BADGE_TX: '#BAF7BA',
-			SAI_BADGE_BG: '#7E31CC',
-			SAI_BADGE_TX: '#EBE1F5',
-			HIJ_BADGE_BG: '#FF0000',
-			HIJ_BADGE_TX: '#050404',
-			SSK_BADGE_BG: '#D3DAE0',
-			SSK_BADGE_TX: '#474A4D',
-			CFP_BADGE_BG: '#CC66CC',
-			CFP_BADGE_TX: '#FFF0FF',
-			MFM_BADGE_BG: '#FF99D6',
-			MFM_BADGE_TX: '#6E4C60',
-			SEM_BADGE_BG: '#FF70E2',
-			SEM_BADGE_TX: '#632C58',
-			KGD_BADGE_BG: '#4A4A4A',
-			KGD_BADGE_TX: '#EBEBEB',
-			FLG_BADGE_BG: '#3D51FF',
-			FLG_BADGE_TX: '#E8EAFF',
-			LGN_BADGE_BG: '#6880A0',
-			LGN_BADGE_TX: '#E6E9ED',
-			CLF_BADGE_BG: '#00CCBB',
-			CLF_BADGE_TX: '#FFFFFF',
+  			JUP_BADGE_BG: '#80ed6f',
+  			JUP_BADGE_TX: '#076907',
+  			DRS_BADGE_BG: '#ffc65e',
+  			DRS_BADGE_TX: '#664609',
+  			ALT_BADGE_BG: '#F6F45E',
+  			ALT_BADGE_TX: '#52511F',
+  			BEI_BADGE_BG: '#26D4FF',
+  			BEI_BADGE_TX: '#115F73',
+  			DBL_BADGE_BG: '#F7D828',
+  			DBL_BADGE_TX: '#6B5E11',
+  			FRM_BADGE_BG: '#338033',
+  			FRM_BADGE_TX: '#BAF7BA',
+  			SAI_BADGE_BG: '#7E31CC',
+  			SAI_BADGE_TX: '#EBE1F5',
+  			HIJ_BADGE_BG: '#FF0000',
+  			HIJ_BADGE_TX: '#050404',
+  			SSK_BADGE_BG: '#D3DAE0',
+  			SSK_BADGE_TX: '#474A4D',
+  			CFP_BADGE_BG: '#CC66CC',
+  			CFP_BADGE_TX: '#FFF0FF',
+  			MFM_BADGE_BG: '#FF99D6',
+  			MFM_BADGE_TX: '#6E4C60',
+  			SEM_BADGE_BG: '#FF70E2',
+  			SEM_BADGE_TX: '#632C58',
+  			KGD_BADGE_BG: '#4A4A4A',
+  			KGD_BADGE_TX: '#EBEBEB',
+  			FLG_BADGE_BG: '#3D51FF',
+  			FLG_BADGE_TX: '#E8EAFF',
+  			LGN_BADGE_BG: '#6880A0',
+  			LGN_BADGE_TX: '#E6E9ED',
+  			CLF_BADGE_BG: '#00CCBB',
+  			CLF_BADGE_TX: '#FFFFFF',
   			JUP00: '#42DB42',
   			JUP01: '#F14A4A',
   			JUP02: '#87C010',
@@ -181,6 +181,28 @@ module.exports = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
   		}
   	}
   },

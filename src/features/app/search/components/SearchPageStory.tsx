@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { SongMaster,StorySearchResult } from '../../../../data/types';
 import SearchSong from '../../../common/utils/SearchSong';
 import SongBlock from "../../../common/components/SongBlock";
-import SearchStoryModal from "../components/SearchStoryModal";
+import SearchStoryController from "../components/SearchStoryController";
 import StoryBlock from "../../../common/components/story/StoryBlock";
 import { motion } from 'framer-motion'
 import { AnimatePresence } from "framer-motion";
@@ -18,6 +18,7 @@ export default function SearchPageStory({ data }: { data: StorySearchResult[];})
   const currentPath: string = usePathname();
   const search :string[] = searchParams.get('q')?.split(' ')||[];
   const filters :string[] = searchParams.get('f')?.split(' ')||[];
+  const isOpen :number = Number(searchParams.get('open')) || 0;
 
   const order :string = searchParams.get('order') || 'desc';
   const andor :string = searchParams.get('andor') || 'desc';
@@ -54,7 +55,7 @@ export default function SearchPageStory({ data }: { data: StorySearchResult[];})
       = results.length > 36? results.slice(0, displayCoefficient < 1? 36: displayCoefficient*36): results;
     setDisplayResults(newDisplayResults);
     setDisplayShowMorebutton(results.length > newDisplayResults.length);
-  console.log(dataCnt)
+
   setDataCnt(data.length)
   }, [data]);
 
@@ -64,7 +65,7 @@ export default function SearchPageStory({ data }: { data: StorySearchResult[];})
     <>
     {/* トップ移動ボタン */}
     <section className="z-40  py-2 fixed  bottom-14 flex flex-row w-full items-center  justify-center">  
-    <SearchStoryModal cnt={dataCnt}/>
+    
     <div className="absolute left-8">
             <button 
                 className='rounded-full p-3 bg-gradient-to-r from-red-200/90 to-amber-300/90  items-center
@@ -87,6 +88,9 @@ export default function SearchPageStory({ data }: { data: StorySearchResult[];})
             </button>
 
     </div>
+    </section>
+    <section className="lg:px-24 px-2 mobileS:px-8 p-2 flex flex-wrap items-center gap-4">
+    <SearchStoryController firstIsOpen={isOpen===1}/>
     </section>
     <section className="lg:px-24 px-2 mobileS:px-8 p-2 flex flex-wrap items-center gap-4">
               <div className={`relative flex w-[400px] p-1 border border-teal-200 rounded-full mb-8`}>

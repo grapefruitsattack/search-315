@@ -17,13 +17,14 @@ import {
   Tooltip
  } from "@chakra-ui/react";
 
-export default function SearchStoryModal({ firstIsOpen }: { firstIsOpen: boolean;}) {
+
+export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: boolean;}) {
 
     const router = useRouter();
     const currentPath: string = usePathname();
     const urlSearchParams = useSearchParams();
     //検索結果がゼロ件の場合、モーダルを自動で開く
-    const { isOpen, onClose, onOpen } = useDisclosure({defaultIsOpen:firstIsOpen,});
+    const [isOpen, setISopen] = useState(firstIsOpen);
 
     //useState設定
     const [params, setParams] = useState(new URLSearchParams(urlSearchParams.toString()));
@@ -121,16 +122,20 @@ export default function SearchStoryModal({ firstIsOpen }: { firstIsOpen: boolean
     
     return (
         <>
-        {/* ボタン部 */}
+        {/* 下部固定ボタン */}
         <div className="z-50  py-2 fixed lg:bottom-[6rem] bottom-[5.5rem] right-8 flex flex-row w-full justify-end">  
-        <div className="absolute">
+        <div className={`absolute ${isOpen?'hidden':' '}`}>
                 <button 
                     className='rounded-full lg:p-5 p-4 bg-gradient-to-r from-indigo-200/90 to-emerald-100/90  items-center
                     text-teal-700 font-bold lg:text-xl text-lm shadow-lg shadow-emerald-600/70'
                     onClick={() => {
                         setValues(new SearchParams(urlSearchParams));
                         setParams(new URLSearchParams(urlSearchParams.toString()));
-                        onOpen();
+                        setISopen(!isOpen)
+                        window.scroll({
+                          top: 0,
+                          behavior: "smooth",
+                        });
                     }}
                 >  
                     <span className="">
@@ -148,32 +153,62 @@ export default function SearchStoryModal({ firstIsOpen }: { firstIsOpen: boolean
 
         </div>
         </div>
-    <div className={`flex items-center h-max `}>
-        {/* モーダル部 */}
-        <Modal 
-        isOpen={isOpen} onClose={onClose}
-        scrollBehavior={'inside'} size={'full'}
-        >
-            <ModalOverlay />
-            <ModalContent >
-                <ModalHeader>
-                    <div className="flex justify-between items center border-b border-gray-200 py-2">
-                    <div>検索</div>
-                    <button
-                        className="bg-gray-300 hover:bg-gray-500 cursor-pointer hover:text-gray-300 font-sans text-gray-500 w-8 h-8 flex items-center justify-center rounded-full"
-                        onClick={onClose}
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M18 6l-12 12"></path>
-                        <path d="M6 6l12 12"></path>
-                        </svg>
-                    </button>
+        {/* 上部ボタン */}
+        <div className="flex justify-center m-auto">  
+        
+                <a 
+                    className='justify-center
+                    flex p-0.5 bg-gradient-to-r from-indigo-300 to-emerald-300 items-center 
+                    hover:drop-shadow-xl cursor-pointer select-none
+                    transition-all duration-500 ease-out
+                    '
+                    onClick={() => {
+                        setValues(new SearchParams(urlSearchParams));
+                        setParams(new URLSearchParams(urlSearchParams.toString()));
+                        setISopen(!isOpen)
+                    }}
+                >  
+                <div
+                    className='flex flex-row
+                        bg-gradient-to-r from-indigo-50 to-emerald-50 
+                        border-2 border-white
+                        text-teal-700
+                        font-sans tablet:text-xl text-base
+                        font-bold
+                        p-1 items-center  justify-center w-[60vw]' 
+                >
+                    <div className=''>
+                    <span>
+                    {'検索条件変更'}
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                        className="icon icon-tabler icon-tabler-search inline-block pl-1
+                        w-[26px] h-[26px] lg:w-[32px] lg:h-[32px]"
+                        viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
+                    <path d="M21 21l-6 -6"></path>
+                    </svg>
+                    <svg className="icon-tabler-search inline-block fill-indigo-500 shrink-0 ml-8" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                        <rect y="7" width="16" height="2" rx="1" className={`ttransform origin-center transition duration-200 ease-out ${isOpen && '!rotate-180'}`} />
+                        <rect y="7" width="16" height="2" rx="1" className={`transform origin-center rotate-90 transition duration-200 ease-out ${isOpen && '!rotate-180'}`} />
+                    </svg>   
+                    </span>    
                     </div>
-                </ModalHeader>
-                <ModalBody p={1}>
-                    <div className="bg-white  rounded-md text-center mb-8">
-                    <div className="bg-white lg:px-8 px-1 pb-2 rounded-md text-center">
+                </div>
+                </a>
+
+        </div>
+    {/* 条件選択部 */}
+    <div className={`flex h-max pt-4 flex-col justify-center  w-full`}>
+            <section className={`
+                  grid pb-4 overflow-hidden transition-all
+                  duration-300 ease-in-out
+                ${isOpen
+                    ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}  
+            `}>
+            <div className=" shadow-lg shadow-emerald-300/70 overflow-hidden">
+                    <div className="  rounded-md text-center mb-8">
+                    <div className=" lg:px-8 px-1 pb-2 rounded-md text-center">
                         <div className="flex justify-center text-lg lg:text-xl font-bold">
                             {'絞り込み'}
                         </div>
@@ -533,11 +568,8 @@ export default function SearchStoryModal({ firstIsOpen }: { firstIsOpen: boolean
                         </div>
                     </div>
                     </div>
-                </ModalBody>
-                <ModalHeader className='bg-sky-100/60 shadow shadow-blue-950' >
                     
                 <div className={`flex mt-1 px-8 gap-2 justify-center text-sm`}>
-                <div>{searchResultCnt}曲選択中</div>
                 </div>
                 <div className={`flex mt-1 px-8 gap-2 justify-center`}>
                 <div className={`relative flex w-[600px] p-1 bg-slate-900 rounded-full`}>
@@ -567,7 +599,7 @@ export default function SearchStoryModal({ firstIsOpen }: { firstIsOpen: boolean
                                 bg-gray-500
                                 transition-all duration-500 ease-out
                                 w-[200px] p-2'
-                            onClick={onClose}
+                            // onClick={onClose}
                         >
                         <div className='flex flex-wrap justify-center items-center'>
                             <div>キャンセル</div>
@@ -586,27 +618,25 @@ export default function SearchStoryModal({ firstIsOpen }: { firstIsOpen: boolean
                         </div>
                         </button>
                         <Tooltip hasArrow label='1曲以上該当するよう条件を設定してください' bg='red.600' isOpen = {tooltipOn}>
-                            <a className='rounded-lg
+                        <button className='rounded-lg
                                 text-white text-sm font-bold leading-tight
                                 hover:bg-green-500/70
                                 bg-green-500
                                 transition-all duration-500 ease-out
                                 w-[200px] p-2'
-                                href={`/search/story/` + '?'  + decodeURIComponent(new URLSearchParams(params.toString()).toString())}
-                                // onClick={() => {
-                                //     if(errorCheck()){
-                                //         setTooltipOn(false);
-                                //         const workParam: URLSearchParams = new URLSearchParams(params.toString());
-                                //         workParam.delete('display');
-                                //         workParam.set('display','1');
-                                //         router.push(currentPath + '?'  + decodeURIComponent(workParam.toString()));
-                                //         onClose();
-                                //         router.refresh();
-                                //     } else {
-                                //         setTooltipOn(true);
-                                //         window.setTimeout(function(){setTooltipOn(false);}, 2000);
-                                //     }
-                                // }}
+                                onClick={() => {
+                                    if(errorCheck()){
+                                        setTooltipOn(false);
+                                        const workParam: URLSearchParams = new URLSearchParams(params.toString());
+                                        workParam.delete('display');
+                                        workParam.set('display','1');
+                                        router.push(currentPath + '?'  + decodeURIComponent(workParam.toString()));
+                                        setISopen(false)
+                                    } else {
+                                        setTooltipOn(true);
+                                        window.setTimeout(function(){setTooltipOn(false);}, 2000);
+                                    }
+                                }}
                             //    whileTap={{ scale: 0.8 }}
                             //    transition={{ duration: 0.05 }}
                             >
@@ -620,12 +650,11 @@ export default function SearchStoryModal({ firstIsOpen }: { firstIsOpen: boolean
                                     </svg>
                                 <div>検索</div>
                                 </div>
-                            </a>
+                            </button>
                         </Tooltip>
                     </div>
-                </ModalHeader>
-            </ModalContent>
-        </Modal>
+        </div>
+        </section>
         </div>
         </>
     );
