@@ -1,14 +1,8 @@
-'use client'
-import SubscButton from "./../SubscButton";
+
 import type { Story,InfoStory } from '../../../../data/types';
-import subscSongs from '../../../../data/subscSongs.json';
 import singingMaster from '../../../../data/singingMaster.json';
-import {ShareYoutubeModal} from "../../../app/shareModal/ShareYoutubeModal";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import {Tooltip} from "@chakra-ui/react";
+import React from "react";
 import Link from 'next/link';
-import GetArtWorkSrc from '../../utils/GetArtWorkSrc';
 import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName } from '../../utils/Story/GetStoryInfomation';
 import IdolBadge from '../IdolBadge';
 
@@ -23,18 +17,6 @@ export default function StoryBlock(
       .map((result, index) => (singingMaster.find(data => data.singingInfoId === result.infoId)?.singingInfoName||''))
       .join("、");
 
-  const [isOpen, setIsOpen] = useState<boolean>(false)
-
-  const [tooltipOn, setTooltipOn] = useState<boolean>(false);
-
-  function copyTextToClipboard(text: string) {
-    navigator.clipboard.writeText(text)
-    .then(function() {
-      setTooltipOn(true);
-      window.setTimeout(function(){setTooltipOn(false);}, 1500);
-    }, function(err) {
-    });
-  }
     return (
       
     <section 
