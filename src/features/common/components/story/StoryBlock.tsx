@@ -41,7 +41,7 @@ export default function StoryBlock(
       "
       href={`/story/` + storyId}
       >
-      <section className='flex flex-wrap relative text-xs mobileS:text-sm font-mono text-white gap-1'>
+      <section className='flex flex-wrap relative text-xs mobileS:text-sm font-mono font-bold text-white gap-1'>
         <div className="justify-center bg-teal-500 rounded-lg px-1 py-0.5">{GetStoryCategoryName(category)}</div>
         <div className="justify-center bg-sky-400 rounded-lg px-1 py-0.5">{GetStoryMediaName(media)}</div>
       </section>
