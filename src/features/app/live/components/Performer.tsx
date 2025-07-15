@@ -5,14 +5,15 @@ import singingMaster from '../../../../data/singingMaster.json';
 
 export default function Performer({ livePerId }: { livePerId: string }) {
 
-    const LivePerformerResults: LivePerformer[] 
-        = livePerformer.filter(data=>data.livePerId === livePerId && data.singingInfoId.substring(3, 5) !== '00')||[];
-    const results:SingingMaster[] 
-        = LivePerformerResults.map(data=>{
-            return singingMaster.find(s=>s.singingInfoId===data.singingInfoId)})
-            .filter((item): item is SingingMaster => typeof item == 'object');
-    const resultsSlice:SingingMaster[][] =[
-            results.slice(0,Math.floor(results.length/2))
+    const livePerformerResults: LivePerformer[] 
+        = livePerformer.filter(data=>data.livePerId === livePerId && (data.singingInfoId.substring(3, 5) !== '00'||data.singingInfoId===''))||[];
+
+    const results: {singingInfoId: string; singingInfoName: string;}[]
+        = livePerformerResults.map(data=>{
+            return {singingInfoId:data.singingInfoId,singingInfoName:singingMaster.find(s=>s.singingInfoId===data.singingInfoId)?.singingInfoName||data.singingInfoName}
+        });
+    const resultsSlice: {singingInfoId: string; singingInfoName: string;}[][] =[
+        results.slice(0,Math.floor(results.length/2))
             ,results.slice(Math.floor(results.length/2),results.length)
         ];
     
@@ -32,58 +33,58 @@ export default function Performer({ livePerId }: { livePerId: string }) {
         </div>
         <div className={`flex pt-2
         `}>
-        <div className={`flex flex-col gap-2 flex-wrap items-start w-[140px]`}>
-        {resultsSlice[0].map((result, index) => (
-            <div key={index} className = "w-[120px] flex justify-start">
-                <a
-                className ={`
-                rounded-md
-                bg-white 
-                place-items-start
-                lg:text-base text-sm
-                underline
-                leading-tight
-                font-sans
-                text-cyan-900
-                hover:text-cyan-700 
-                duration-500 ease-out
-                w-fit h-fit
-                `}
-                href={`/idol/` + result.singingInfoId}
-                >
-                    <p className ="text-center">
-                        {result.singingInfoId==='CFP03'?'アスラン＝BBⅡ世':result.singingInfoName}
-                    </p>
-                </a>
+        
+        {resultsSlice.map((results, index) => (
+            <div key={index} className={`flex flex-col gap-2 flex-wrap items-start w-[140px]`}>
+                {results.map((result, index) => (
+                    result.singingInfoId === ""
+                    ?
+                    <div key={index} className = "w-[120px] flex justify-start">
+                        <div
+                        className ={`
+                        rounded-md
+                        bg-white 
+                        place-items-start
+                        lg:text-base text-sm
+                        leading-tight
+                        font-sans
+                        text-cyan-900
+                        duration-500 ease-out
+                        w-fit h-fit
+                        `}
+                        >
+                            <p className ="text-center">
+                                {result.singingInfoName}
+                            </p>
+                        </div>
+                    </div>
+                    :
+                    <div key={index} className = "w-[120px] flex justify-start">
+                        <a
+                        className ={`
+                        rounded-md
+                        bg-white 
+                        place-items-start
+                        lg:text-base text-sm
+                        underline
+                        leading-tight
+                        font-sans
+                        text-cyan-900
+                        hover:text-cyan-700 
+                        duration-500 ease-out
+                        w-fit h-fit
+                        `}
+                        href={`/idol/` + result.singingInfoId}
+                        >
+                            <p className ="text-center">
+                                {result.singingInfoId==='CFP03'?'アスラン＝BBⅡ世':result.singingInfoName}
+                            </p>
+                        </a>
+                    </div>
+                ))}
             </div>
         ))}
-        </div>
-        <div className={`flex flex-col gap-2 flex-wrap items-start`}>
-        {resultsSlice[1].map((result, index) => (
-            <div key={index} className = "w-[120px] flex justify-start">
-                <a
-                className ={`
-                rounded-md
-                bg-white 
-                place-items-start
-                lg:text-base text-sm
-                underline
-                leading-tight
-                font-sans
-                text-cyan-900
-                hover:text-cyan-700 
-                duration-500 ease-out
-                w-fit h-fit
-                `}
-                href={`/idol/` + result.singingInfoId}
-                >
-                    <p className ="text-center">
-                        {result.singingInfoId==='CFP03'?'アスラン＝BBⅡ世':result.singingInfoName}
-                    </p>
-                </a>
-            </div>
-        ))}
-        </div>
+
         </div>
     </>
     )
