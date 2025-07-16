@@ -1,7 +1,7 @@
 
 import { redirect } from 'next/navigation'
 import { useEffect } from 'react';
-import { useParams,useSearchParams,  } from 'next/navigation'
+import { MEDIA } from '../../const/StoryInfoConst'
 
 export function GetStoryMediaName(media: number)
 {

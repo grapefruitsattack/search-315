@@ -22,6 +22,8 @@ export default async function StoryDetailedPage(
   const voiceStateName: string = GetVoiceStateName(data.voice,data.voiceAtRelease);
   const mediaName: string = GetStoryMediaName(data.media);
   const categoryName: string = GetStoryCategoryName(data.category);
+  const shareText: string = data.media===1&&data.category==='dof'?'':'【'+categoryName+'】'+'';
+
   data.howtoviewStory
     return (
         <>
@@ -90,12 +92,48 @@ export default async function StoryDetailedPage(
             grid grid-cols-2 mt-4 gap-y-[5px] 
             lg:w-1/2 
         '>
-          <CopyButton 
-              copyText={data.storyTitle} 
-              buttonText={'タイトルコピー'}
-              tootipText={'タイトルをコピーしました'}
-              placement='bottom'
-          />
+          <div className='col-span-2'>
+              <a className=""
+              href={data.url}
+              target="_blank" rel="noopener noreferrer">
+                  <button
+                      className='rounded-lg border-2 border-red-500 w-full h-full
+                      text-red-500 font-sans leading-tight
+                      hover:bg-red-500 hover:text-red-100 
+                      transition-all duration-500 ease-out
+                      fill-red-500 hover:fill-red-50 
+                      text-sm mobileL:text-base lg:text-lg
+                      '
+                  >
+                      <div className='
+                        flex flex-wrap justify-center items-center font-sans font-black 
+                        mobileM:my-0.5 my-1 
+                      '>
+                          {websiteName+'で読む'}
+                          <span className="">
+                          <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+                          </span>
+                      </div>
+                  </button>
+              </a>
+          </div>
+          <div>
+            <ShareModal 
+              shareUrl={data.url}
+              shareSiteTitle={websiteName}
+              shareText={`${data.media === 1&&data.category==='dof'?'':'【'+categoryName+'】'}${data.storyTitle}`}
+              buttonText=""
+              pass={'story/'+data.storyId}
+            />
+          </div>
+          <div>
+            <CopyButton 
+                copyText={data.storyTitle} 
+                buttonText={'タイトルコピー'}
+                tootipText={'タイトルをコピーしました'}
+                placement='bottom'
+            />
+          </div>
         </div>
         {data.url===null || data.url===''
         ?<></>
