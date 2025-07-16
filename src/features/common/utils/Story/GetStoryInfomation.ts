@@ -1,87 +1,87 @@
 
 import { redirect } from 'next/navigation'
 import { useEffect } from 'react';
-import { MEDIA } from '../../const/StoryInfoConst'
+import { MEDIA,CATEGORY,WEBSITE,HOW_TO_VIEW } from '../../const/StoryInfoConst'
 
 export function GetStoryMediaName(media: number)
 {
-    if(media === 1){
-        return 'モバエム'
+    if(media === MEDIA.moba.id){
+        return MEDIA.moba.name
     }
-    if(media === 2){
-        return 'サイスタ'
+    if(media === MEDIA.gs.id){
+        return MEDIA.gs.name
     }
-    if(media === 3){
-        return '315プロエピソード'
+    if(media === MEDIA.proe.id){
+        return MEDIA.proe.name
     }
     return '';
 }
 export function GetStoryCategoryName(category: string)
 {
-    if(category === 'main'){
-        return 'メインストーリー'
+    if(category === CATEGORY.main.id){
+        return CATEGORY.main.name
     }
-    if(category === 'event'){
-        return 'イベント'
+    if(category === CATEGORY.event.id){
+        return CATEGORY.event.name
     }
-    if(category === 'idole'){
-        return 'アイドルエピソード'
+    if(category === CATEGORY.idolEpisode.id){
+        return CATEGORY.idolEpisode.name
     }
-    if(category === 'comicn'){
-        return '雑誌通常号'
+    if(category === CATEGORY.comicNomral.id){
+        return CATEGORY.comicNomral.name
     }
-    if(category === 'comics'){
-        return '雑誌特別号'
+    if(category === CATEGORY.comicSpecial.id){
+        return CATEGORY.comicSpecial.name
     }
-    if(category === 'smemo'){
-        return 'SideMemories'
+    if(category === CATEGORY.SideMemories.id){
+        return CATEGORY.SideMemories.name
     }
-    if(category === 'dof'){
-        return '日常での１コマ'
+    if(category === CATEGORY.dailyOneFrame.id){
+        return CATEGORY.dailyOneFrame.name
     }
-    if(category === 'epiz'){
-        return 'エピソードゼロ'
+    if(category === CATEGORY.episodeZero.id){
+        return CATEGORY.episodeZero.name
     }
-    if(category === 'cwm'){
-        return 'CONNECT WITH MUSIC！'
+    if(category === CATEGORY.connectWithMusic.id){
+        return CATEGORY.connectWithMusic.name
     }
-    if(category === 'cws'){
-        return 'CONNECT WITH STAGE！'
+    if(category === CATEGORY.connectWithStage.id){
+        return CATEGORY.connectWithStage.name
     }
-    if(category === 'cwo'){
-        return 'CONNECT WITH OTHERS！'
+    if(category === CATEGORY.connectWithOthers.id){
+        return CATEGORY.connectWithOthers.name
     }
-    if(category === 'iof'){
-        return 'アイドルたちの１コマ'
+    if(category === CATEGORY.idolOneFrame.id){
+        return CATEGORY.idolOneFrame.name
     }
     return '';
 }
 export function GetStoryWebsiteName(website: string)
 {
-    if(website === 'yt'){
-        return 'YouTube'
+    if(website === WEBSITE.youtube.id){
+        return WEBSITE.youtube.name
     }
-    if(website === 'asb'){
-        return 'アソビストーリー'
+    if(website === WEBSITE.asobiStory.id){
+        return WEBSITE.asobiStory.name
     }
     return '';
 }
 export function GetStoryHowtoviewName(howtoview: string)
 {
-    if(howtoview === 'asb_login'){
-        return 'アソビストアログイン'
+    if(howtoview === HOW_TO_VIEW.asbLogin.id){
+        return HOW_TO_VIEW.asbLogin.name
     }
-    if(howtoview === 'asb_prem'){
-        return 'アソストプレ会員特典'
+    if(howtoview === HOW_TO_VIEW.asbPremium.id){
+        return  HOW_TO_VIEW.asbPremium.name
     }
-    if(howtoview === 'asb_pur'){
-        return 'バナコイン購入'
+    if(howtoview ===  HOW_TO_VIEW.asbPurchase.id){
+        return  HOW_TO_VIEW.asbPurchase.name
     }
-    if(howtoview === 'asb_scode_cd'){
-        return 'CD封入シリアルコード認証'
+    if(howtoview ===  HOW_TO_VIEW.asbSerialcodeCD.id){
+        return  HOW_TO_VIEW.asbSerialcodeCD.name
     }
-    if(howtoview === 'asb_scode'){
-        return 'シリアルコード認証'
+    if(howtoview ===  HOW_TO_VIEW.asbSerialcode.id){
+        return  HOW_TO_VIEW.asbSerialcode.name
     }
     return '';
 }
