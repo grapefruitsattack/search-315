@@ -9,6 +9,7 @@ import {SignIn,SignOut} from "../../management/auth/SignIn";
 import { createClient } from '@supabase/supabase-js'
 import type { Story } from '../../../data/types';
 import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName,GetVoiceStateName,GetStoryHowtoviewName } from '../../common/utils/Story/GetStoryInfomation';
+import { MEDIA,CATEGORY,WEBSITE,HOW_TO_VIEW } from '../../common/const/StoryInfoConst'
 import IdolBadge from '../../common/components/IdolBadge';
 import StoryReadingButton from "./components/StoryReadingButton";
 import { Suspense } from "react";
@@ -121,7 +122,7 @@ export default async function StoryDetailedPage(
             <ShareModal 
               shareUrl={data.url}
               shareSiteTitle={websiteName}
-              shareText={`${data.media === 1&&data.category==='dof'?'':'【'+categoryName+'】'}${data.storyTitle}`}
+              shareText={`${data.media===MEDIA.moba.id&&data.category===CATEGORY.dailyOneFrame.id?'#SideM ':'【#SideM '+categoryName+'】\n'}${data.storyTitle}  |  <サイト名>\n#search315`}
               buttonText=""
               pass={'story/'+data.storyId}
             />
@@ -135,26 +136,6 @@ export default async function StoryDetailedPage(
             />
           </div>
         </div>
-        {data.url===null || data.url===''
-        ?<></>
-        :
-        <section className=''>
-        <a className="w-full transition-opacity duration-300 hover:opacity-20"
-      href={data.url}
-      target="_blank" rel="noopener noreferrer">
-          <div className='
-              flex flex-wrap justify-center items-center font-sans font-black 
-              mobileM:my-0.5 my-1
-          '>
-              {websiteName+'で読む'}
-              <span className="">
-              <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
-              </span>
-
-          </div>
-    </a>
-        </section>
-        }
 
       <div 
         className="
@@ -200,69 +181,87 @@ export default async function StoryDetailedPage(
               items-start gap-2 grid-cols-1 mt-2
               grid max-w-[700px]
           `}>
-            {data.mSubStory.map((result, index) => (
-            <div key={Number(result.subStoryNo)} className="bg-white border-orange-700/30 border-t-4 border-l-4 bg-orange-50/50 text-xl">
-              <div className=" text-xl ">
-              {/* モバエム雑誌のときのみアイドル名を表示 */}
-              {data.media === 1 && ['comicn','comics'].includes(data.category) && !(result.infoSubStory===null || result.infoSubStory.length===0)
-              &&
-                <div className={`w-fit`}>
-                <IdolBadge id={result.infoSubStory[0].infoId} useShortName={0} size={'block'}/>
+            {data.mSubStory.map((result, index) => {
+              let shareText: string = '';
+                if(data.media===MEDIA.moba.id&&data.category===CATEGORY.dailyOneFrame.id){
+                  //日常での１コマ
+                  shareText = `【#SideM ${categoryName}】\n${result.subStoryTitle}  |  <サイト名>\n#search315`;
+                } else if(data.media===MEDIA.moba.id&&(data.category===CATEGORY.comicSpecial.id||data.category===CATEGORY.comicNomral.id)){
+                  //雑誌
+                  shareText = `【#SideM ${categoryName} ${data.storyTitle}】\n${
+                    data.media === 1 && ['comicn','comics'].includes(data.category) && !(result.infoSubStory===null || result.infoSubStory.length===0)
+                    ?GetUnitIdolName(result.infoSubStory[0].infoId,0,1):''
+                  }「${result.subStoryTitle}」  |  <サイト名>\n#search315`;
+                } else {
+                  //そのほか
+                  shareText = `【#SideM ${mediaName} ${categoryName} ${data.storyTitle}】\n${result.subStoryTitle}  |  <サイト名>\n#search315`;
+                }
+              return(
+                <div key={Number(result.subStoryNo)} className="bg-white border-orange-700/30 border-t-4 border-l-4 bg-orange-50/50 text-xl">
+                  <div className=" text-xl ">
+                  {/* モバエム雑誌のときのみアイドル名を表示 */}
+                  {data.media === 1 && ['comicn','comics'].includes(data.category) && !(result.infoSubStory===null || result.infoSubStory.length===0)
+                  &&
+                    <div className={`w-fit`}>
+                    <IdolBadge id={result.infoSubStory[0].infoId} useShortName={0} size={'block'}/>
+                    </div>
+                  }
+                    {result.subStoryTitle}
+                  </div>
+                  {/* サブストーリーボタン部  */}
+                  <div className='
+                      grid grid-cols-5 mt-1 gap-[5px] 
+                      
+                  '>
+                    <div className='col-span-3'>
+                        <a className=""
+                        href={result.url}
+                        target="_blank" rel="noopener noreferrer">
+                            <button
+                                className='rounded-lg border-2 border-red-500 w-full h-full
+                                text-red-500 font-sans leading-tight
+                                hover:bg-red-500 hover:text-red-100 
+                                transition-all duration-500 ease-out
+                                fill-red-500 hover:fill-red-50 
+                                text-sm mobileL:text-base lg:text-lg
+                                '
+                            >
+                                <div className='
+                                  flex flex-wrap justify-center items-center font-sans font-black 
+                                  mobileM:my-0.5 my-1 
+                                '>
+                                    {websiteName}
+                                    <span className="">
+                                    <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+                                    </span>
+                                </div>
+                            </button>
+                        </a>
+                    </div>
+                    <div>
+                      <ShareModal 
+                        shareUrl={result.url}
+                        shareSiteTitle={websiteName}
+                        shareText={shareText}
+                        // shareText={`${data.media === 1&&data.category==='dof'?'':'【'+categoryName+'】'}${data.storyTitle}${
+                        //   data.media === 1 && ['comicn','comics'].includes(data.category) && !(result.infoSubStory===null || result.infoSubStory.length===0)
+                        //   ?'　'+GetUnitIdolName(result.infoSubStory[0].infoId,0,1):''
+                        // }「${result.subStoryTitle}」`}
+                  //shareText={`${data.media === 1&&data.category==='dof'?'':'【#SideM '+categoryName+'】\n'}${data.storyTitle}  |  <サイト名>\n#search315`}
+                        buttonText=""
+                        pass={'story/'+data.storyId}
+                      />
+                    </div>
+                    <CopyButton 
+                        copyText={result.subStoryTitle} 
+                        buttonText={''}
+                        tootipText={'タイトルをコピーしました'}
+                        placement='bottom'
+                    />
+                  </div>
                 </div>
-              }
-                {result.subStoryTitle}
-              </div>
-              {/* サブストーリーボタン部  */}
-              <div className='
-                  grid grid-cols-5 mt-1 gap-[5px] 
-                  
-              '>
-                <div className='col-span-3'>
-                    <a className=""
-                    href={result.url}
-                    target="_blank" rel="noopener noreferrer">
-                        <button
-                            className='rounded-lg border-2 border-red-500 w-full h-full
-                            text-red-500 font-sans leading-tight
-                            hover:bg-red-500 hover:text-red-100 
-                            transition-all duration-500 ease-out
-                            fill-red-500 hover:fill-red-50 
-                            text-sm mobileL:text-base lg:text-lg
-                            '
-                        >
-                            <div className='
-                              flex flex-wrap justify-center items-center font-sans font-black 
-                              mobileM:my-0.5 my-1 
-                            '>
-                                {websiteName}
-                                <span className="">
-                                <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
-                                </span>
-                            </div>
-                        </button>
-                    </a>
-                </div>
-                <div>
-                  <ShareModal 
-                    shareUrl={result.url}
-                    shareSiteTitle={websiteName}
-                    shareText={`${data.media === 1&&data.category==='dof'?'':'【'+categoryName+'】'}${data.storyTitle}${
-                      data.media === 1 && ['comicn','comics'].includes(data.category) && !(result.infoSubStory===null || result.infoSubStory.length===0)
-                      ?'　'+GetUnitIdolName(result.infoSubStory[0].infoId,0,1):''
-                    }「${result.subStoryTitle}」`}
-                    buttonText=""
-                    pass={'story/'+data.storyId}
-                  />
-                </div>
-                <CopyButton 
-                    copyText={result.subStoryTitle} 
-                    buttonText={''}
-                    tootipText={'タイトルをコピーしました'}
-                    placement='bottom'
-                />
-              </div>
-            </div>
-            ))}
+              )
+            })}
 
           </section>
 

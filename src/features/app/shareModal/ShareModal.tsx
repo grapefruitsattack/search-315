@@ -86,7 +86,7 @@ export const ShareModal = (
           disabled: shareUrl==='',
           content: (
             <ShareModuleContent 
-              text={`${shareText}  |  ${shareSiteTitle}\n#SideM #search315`} 
+              text={shareText.replace('<サイト名>', shareSiteTitle)} 
               url={shareUrl}/>
             )
         },
@@ -98,7 +98,7 @@ export const ShareModal = (
           disabled:false,
           content: (
             <ShareModuleContent 
-              text={`${shareText}  |  サーチサイコー\n#SideM #search315`} 
+              text={shareText.replace('<サイト名>', 'サーチサイコー')} 
               url={`https://search315.com/`+pass+'/'}/>
             )
         },
