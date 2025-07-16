@@ -130,6 +130,7 @@ export type Tabs = {
 export type LivePerformer = {
   livePerId: string;
   singingInfoId: string;
+  singingInfoName: string;
 };
 
 export type Story = {
