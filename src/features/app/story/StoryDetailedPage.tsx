@@ -147,26 +147,29 @@ export default async function StoryDetailedPage(
             />
           </div>
         </div>
-
-      <div 
-        className="
-            mobileL:text-2xl text-xl font-mono flex items-center w-full
-            after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-            mt-5
-        "
-        >{'登場アイドル'}
-        </div>
-        <section className='flex flex-wrap relative text-sm font-mono gap-1 mb-2'>
-          {infoStoryPerson.length === 0
+      {
+        infoStoryPerson.length === 0
             ?<></>
-            :infoStoryPerson.length === 49
-              //参加アイドルが49人の場合、「315プロダクション」表記
-              ?<div><IdolBadge id={'315pro'} useShortName={0} size={'normal'}/></div>
-              :infoStoryPerson.map(
-                (result, index) => (<div key={index}><IdolBadge id={result.infoId} useShortName={0} size={'normal'}/></div>))
-              
-            }
-        </section>
+            :<>
+              <div 
+                className="
+                    mobileL:text-2xl text-xl font-mono flex items-center w-full
+                    after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
+                    mt-5
+                "
+                >{'登場アイドル'}
+              </div>
+              <section className='flex flex-wrap relative text-sm font-mono gap-1 mb-2'>
+                {infoStoryPerson.length === 49
+                  //参加アイドルが49人の場合、「315プロダクション」表記
+                  ?<div><IdolBadge id={'315pro'} useShortName={0} size={'normal'}/></div>
+                  :infoStoryPerson.map(
+                    (result, index) => (<div key={index}><IdolBadge id={result.infoId} useShortName={0} size={'normal'}/></div>))
+                  }
+              </section>
+            </>
+      }
+      
 
 
         <Suspense>
