@@ -23,9 +23,21 @@ export default async function StoryDetailedPage(
   const voiceStateName: string = GetVoiceStateName(data.voice,data.voiceAtRelease);
   const mediaName: string = GetStoryMediaName(data.media);
   const categoryName: string = GetStoryCategoryName(data.category);
-  const shareText: string = data.media===1&&data.category==='dof'?'':'【'+categoryName+'】'+'';
+  //const shareText: string = data.media===1&&data.category==='dof'?'':'【'+categoryName+'】'+'';
 
-  data.howtoviewStory
+  // シェア文章
+  let shareText: string = '';
+  if(data.media===MEDIA.moba.id&&data.category===CATEGORY.dailyOneFrame.id){
+    // 日常ひとコマ
+    shareText = `【${mediaName}】\n${data.storyTitle}  |  <サイト名>\n#SideM #search315`
+  } else if(!(data.headTitle === null || data.headTitle === '')){
+    // 
+    shareText = `【${mediaName} - ${categoryName}】\n［${data.headTitle}］${data.storyTitle}  |  <サイト名>\n#SideM #search315`
+  } else {
+    shareText = `【${mediaName} - ${categoryName}】\n${data.storyTitle}  |  <サイト名>\n#SideM #search315`
+  }
+  //const shareText: string = `${data.media===MEDIA.moba.id&&data.category===CATEGORY.dailyOneFrame.id?'#SideM ':'【#SideM '+categoryName+'】\n'}${data.storyTitle}  |  <サイト名>\n#search315`
+
     return (
         <>
         <title>{  `${data.storyTitle} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー`}</title>
@@ -90,7 +102,7 @@ export default async function StoryDetailedPage(
 
         {/* ボタン */}
         <div className='
-            grid grid-cols-2 mt-4 gap-y-[5px] 
+            grid grid-cols-2 mt-4 gap-[5px] 
             lg:w-1/2 
         '>
           <div className='col-span-2'>
@@ -122,7 +134,7 @@ export default async function StoryDetailedPage(
             <ShareModal 
               shareUrl={data.url}
               shareSiteTitle={websiteName}
-              shareText={`${data.media===MEDIA.moba.id&&data.category===CATEGORY.dailyOneFrame.id?'#SideM ':'【#SideM '+categoryName+'】\n'}${data.storyTitle}  |  <サイト名>\n#search315`}
+              shareText={shareText}
               buttonText=""
               pass={'story/'+data.storyId}
             />
@@ -182,19 +194,20 @@ export default async function StoryDetailedPage(
               grid max-w-[700px]
           `}>
             {data.mSubStory.map((result, index) => {
+              // サブストーリー用シェア文章
               let shareText: string = '';
                 if(data.media===MEDIA.moba.id&&data.category===CATEGORY.dailyOneFrame.id){
                   //日常での１コマ
-                  shareText = `【#SideM ${categoryName}】\n${result.subStoryTitle}  |  <サイト名>\n#search315`;
+                  shareText = `【${mediaName} - ${categoryName}】\n${result.subStoryTitle}  |  <サイト名>\n#SideM #search315`;
                 } else if(data.media===MEDIA.moba.id&&(data.category===CATEGORY.comicSpecial.id||data.category===CATEGORY.comicNomral.id)){
                   //雑誌
-                  shareText = `【#SideM ${categoryName} ${data.storyTitle}】\n${
+                  shareText = `【${mediaName} - ${categoryName} - ${data.storyTitle}】\n${
                     data.media === 1 && ['comicn','comics'].includes(data.category) && !(result.infoSubStory===null || result.infoSubStory.length===0)
                     ?GetUnitIdolName(result.infoSubStory[0].infoId,0,1):''
-                  }「${result.subStoryTitle}」  |  <サイト名>\n#search315`;
+                  }「${result.subStoryTitle}」  |  <サイト名>\n#SideM #search315`;
                 } else {
                   //そのほか
-                  shareText = `【#SideM ${mediaName} ${categoryName} ${data.storyTitle}】\n${result.subStoryTitle}  |  <サイト名>\n#search315`;
+                  shareText = `【${mediaName} - ${categoryName} - ${data.storyTitle}】\n${result.subStoryTitle}  |  <サイト名>\n#SideM #search315`;
                 }
               return(
                 <div key={Number(result.subStoryNo)} className="bg-white border-orange-700/30 border-t-4 border-l-4 bg-orange-50/50 text-xl">
