@@ -7,7 +7,7 @@ import {ShareModal} from "../../app/shareModal/ShareModal";
 import { auth } from "../../../../auth";
 import {SignIn,SignOut} from "../../management/auth/SignIn";
 import { createClient } from '@supabase/supabase-js'
-import type { Story } from '../../../data/types';
+import type { Story,InfoStory } from '../../../data/types';
 import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName,GetVoiceStateName,GetStoryHowtoviewName } from '../../common/utils/Story/GetStoryInfomation';
 import { MEDIA,CATEGORY,WEBSITE,HOW_TO_VIEW } from '../../common/const/StoryInfoConst'
 import IdolBadge from '../../common/components/IdolBadge';
@@ -23,7 +23,7 @@ export default async function StoryDetailedPage(
   const voiceStateName: string = GetVoiceStateName(data.voice,data.voiceAtRelease);
   const mediaName: string = GetStoryMediaName(data.media);
   const categoryName: string = GetStoryCategoryName(data.category);
-  //const shareText: string = data.media===1&&data.category==='dof'?'':'【'+categoryName+'】'+'';
+  const infoStoryPerson: InfoStory[] = data.infoStory.filter(data=>data.personFlg===1);
 
   // シェア文章
   let shareText: string = '';
@@ -35,8 +35,7 @@ export default async function StoryDetailedPage(
     shareText = `【${mediaName} - ${categoryName}】\n［${data.headTitle}］${data.storyTitle}  |  <サイト名>\n#SideM #search315`
   } else {
     shareText = `【${mediaName} - ${categoryName}】\n${data.storyTitle}  |  <サイト名>\n#SideM #search315`
-  }
-  //const shareText: string = `${data.media===MEDIA.moba.id&&data.category===CATEGORY.dailyOneFrame.id?'#SideM ':'【#SideM '+categoryName+'】\n'}${data.storyTitle}  |  <サイト名>\n#search315`
+  };
 
     return (
         <>
@@ -158,10 +157,14 @@ export default async function StoryDetailedPage(
         >{'登場アイドル'}
         </div>
         <section className='flex flex-wrap relative text-sm font-mono gap-1 mb-2'>
-          {data.infoStory.length === 0
+          {infoStoryPerson.length === 0
             ?<></>
-            :data.infoStory.filter(data=>data.personFlg===1).map(
-              (result, index) => (<div key={index}><IdolBadge id={result.infoId} useShortName={0} size={'normal'}/></div>))
+            :infoStoryPerson.length === 49
+              //参加アイドルが49人の場合、「315プロダクション」表記
+              ?<div><IdolBadge id={'315pro'} useShortName={0} size={'normal'}/></div>
+              :infoStoryPerson.map(
+                (result, index) => (<div key={index}><IdolBadge id={result.infoId} useShortName={0} size={'normal'}/></div>))
+              
             }
         </section>
 

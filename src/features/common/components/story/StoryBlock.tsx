@@ -11,6 +11,8 @@ export default function StoryBlock(
   :{ storyId: string, media: number, category: string, headTitle: string, storyTitle: string, infoStory: InfoStory[], url: string }
 ) {
   
+  const infoStoryPerson: InfoStory[] = infoStory.filter(data=>data.personFlg===1);
+
   const member: string  
     = infoStory
       .filter(data=>data.personFlg===1)
@@ -64,10 +66,13 @@ export default function StoryBlock(
       </div>
       </section>
       <section className ='flex flex-wrap relative text-sm font-mono gap-0.5 mb-1 mx-1'>
-          {infoStory.length === 0
+          {infoStoryPerson.length === 0
             ?<></>
-            :infoStory.filter(data=>data.personFlg===1).map(
-              (result, index) => (<div key={index}><IdolBadge id={result.infoId} useShortName={1} size={'block'}/></div>))
+            :infoStoryPerson.length === 49
+              //参加アイドルが49人の場合、「315プロダクション」表記
+              ?<div><IdolBadge id={'315pro'} useShortName={1} size={'block'}/></div>
+              :infoStoryPerson.map(
+                (result, index) => (<div key={index}><IdolBadge id={result.infoId} useShortName={1} size={'block'}/></div>))
           }
       </section>
     </Link>

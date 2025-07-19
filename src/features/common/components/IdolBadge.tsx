@@ -10,6 +10,25 @@ interface ItemCSS extends React.CSSProperties{
     'textShadow':string
   }
 export default function IdolBadge({ id, useShortName, size }: { id: string, useShortName: number, size: string }) {
+
+    if(id === '315pro'){
+        return(
+        <div 
+            className={`
+            justify-center 
+            font-bold
+            bg-sky-600
+            text-white
+            ${size==='block'
+                ?` rounded-sm p-0.5 text-xs mobileS:text-xs tablet:text-sm`
+                :` rounded-md p-1 text-xs mobileS:text-sm tablet:text-base`}
+            `}
+        >
+        <p className={``}>{'315プロダクション'}</p>
+        </div>
+        )
+    };
+
     const data: SingingMaster | undefined  = singingMaster.find(data => data.singingInfoId === id);
     const name: string 
         = useShortName===0?data?.singingInfoName||'': data?.singingInfoShortName||'';
@@ -48,59 +67,5 @@ export default function IdolBadge({ id, useShortName, size }: { id: string, useS
         `}>
         </p>
         </div>
-    )
-
-    switch(unitPrefix){
-        case 'JUP':
-            return(
-            <div 
-                className={`
-                justify-center 
-                bg-JUP_BADGE_BG text-JUP_BADGE_TX
-                font-bold
-                ${size==='block'
-                    ?` rounded-sm p-0.5 text-xs mobileS:text-xs tablet:text-sm`
-                    :` rounded-md p-1 text-xs mobileS:text-sm tablet:text-base`}
-                `}
-            >
-            <p className={``}>{name}</p>
-            </div>)
-        break;
-        case 'DRS':
-            return(
-            <div 
-                className={
-                `justify-center
-                bg-DRS_BADGE_BG text-DRS_BADGE_TX
-                font-bold
-                ${size==='block'
-                    ?` rounded-sm p-0.5 text-xs mobileS:text-xs tablet:text-sm`
-                    :` rounded-md p-1 text-xs mobileS:text-sm tablet:text-base`}
-                `}
-            >
-            <p className={``}>{name}</p>
-            </div>)
-        break;
-        case 'ALT':
-            return(
-                <div 
-                    className={
-                    `justify-center
-                    bg-ALT_BADGE_BG text-ALT_BADGE_TX
-                    font-bold
-                    ${size==='block'
-                        ?` rounded-sm p-0.5 text-xs mobileS:text-xs tablet:text-sm`
-                        :` rounded-md p-1 text-xs mobileS:text-sm tablet:text-base`}
-                    `}
-                >
-            <p className={``}>{name}</p>
-            </div>)
-        break;
-        default:
-            return(<div className={`justify-center border-[3px] rounded-md p-1 `}>
-            <p className={``}>{name}</p>
-            </div>)
-        break;
-    }
-
+    );
   }
