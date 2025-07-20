@@ -113,7 +113,7 @@ export default async function StoryDetailedPage(
                       text-red-500 font-sans leading-tight
                       hover:bg-red-500 hover:text-red-100 
                       transition-all duration-500 ease-out
-                      fill-red-500 hover:fill-red-50 
+                      fill-red-500 hover:fill-red-50
                       text-sm mobileL:text-base lg:text-lg
                       '
                   >
@@ -146,6 +146,15 @@ export default async function StoryDetailedPage(
                 placement='bottom'
             />
           </div>
+          <div>
+            <Suspense>
+            <section className='flex flex-wrap relative text-sm font-mono gap-1 mb-2'>
+              {/* @ts-expect-error Server Component */}
+              <StoryReadingButton storyId={data.storyId}/>
+            </section>
+            </Suspense>
+          </div>
+
         </div>
       {
         infoStoryPerson.length === 0
@@ -170,16 +179,6 @@ export default async function StoryDetailedPage(
             </>
       }
       
-
-
-        <Suspense>
-        <section className='flex flex-wrap relative text-sm font-mono gap-1 mb-2'>
-          {/* @ts-expect-error Server Component */}
-          <StoryReadingButton storyId={data.storyId}/>
-        </section>
-        </Suspense>
-
-        
         {/* サブストーリー */}
         {data.mSubStory===null || data.mSubStory.length===0
         ?<></>

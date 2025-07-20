@@ -197,6 +197,12 @@ export type StorySearchResult = {
   isValid: number;
 };
 
+export type UserReading = {
+  id: string;
+  storyId: string;
+  readingDate: Date;
+  deleteFlg: number;
+};
 
 export type CreditMaster = {
   creditId: string;
