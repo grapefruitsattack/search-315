@@ -34,16 +34,51 @@ export default async function StoryReadingButton({ storyId }: { storyId: String 
       {session?.user
           ?isRead
             ?<>
-            登録完了
+            <div className="grid grid-cols-[2fr_4fr]  w-full h-full">
+            <button
+                className='rounded-l-lg border-2 border-red-500 w-full h-full
+                text-red-500 font-sans font-black leading-tight
+                bg-red-500 text-white
+                transition-all duration-500 ease-out
+                fill-red-500 hover:fill-red-50 
+                text-sm mobileL:text-base lg:text-lg
+                '
+            >
+              <div className='
+                flex flex-wrap justify-center items-center font-sans font-black 
+                mobileM:my-0.5 my-1 
+              '>
+               既読
+              </div>
+            </button>
+            <button
+              className='rounded-r-lg border-2 border-red-500 w-full h-full
+              text-red-500 font-sans font-black leading-tight
+              hover:bg-red-500 hover:text-red-100 
+              transition-all duration-500 ease-out
+              fill-red-500 hover:fill-red-50 
+              text-sm mobileL:text-base lg:text-lg
+              '
+            >
+              <div className='
+                flex flex-wrap justify-center items-center font-sans font-black 
+                mobileM:my-0.5 my-1 
+              '>
+              既読情報を編集する
+              </div>
+            </button>
+            </div>
             </>
             :<>
               <form
-              action={async () => {
-                  "use server"
-                  await createOrder(storyId)}}>
+                className='w-full h-full'
+                action={async () => {
+                    "use server"
+                    await createOrder(storyId)}}
+                >
                   <button
                       className='rounded-lg border-2 border-red-500 w-full h-full
-                      text-red-500 font-sans leading-tight
+                      text-red-500 font-sans font-black leading-tight
                       hover:bg-red-500 hover:text-red-100 
                       transition-all duration-500 ease-out
                       fill-red-500 hover:fill-red-50 
@@ -51,7 +86,12 @@ export default async function StoryReadingButton({ storyId }: { storyId: String 
                       '
                       type="submit"
                   >
-                    登録
+                    <div className='
+                      flex flex-wrap justify-center items-center font-sans font-black 
+                      mobileM:my-0.5 my-1 
+                    '>
+                    既読にする
+                    </div>
                   </button>
               </form>
             </>
