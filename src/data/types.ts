@@ -201,7 +201,7 @@ export type UserReading = {
   id: string;
   storyId: string;
   readingDate: Date;
-  deleteFlg: number;
+  readLater: number;
 };
 
 export type CreditMaster = {

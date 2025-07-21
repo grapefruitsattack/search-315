@@ -24,8 +24,8 @@ export default async function StoryReadingButton({ storyId }: { storyId: String 
         :'';
     const { data, error } 
       = await supabase.from("user_reading")
-        .select("id,storyId,readingDate,deleteFlg")
-        .eq('storyId',storyId).eq('deleteFlg',0).eq('id',userId).single()
+        .select("id,storyId,readingDate,readLater")
+        .eq('storyId',storyId).eq('readLater',0).eq('id',userId).single()
         ||[];
     const isRead: boolean = data?.id;
     const userReading: UserReading|null = data;
@@ -115,11 +115,18 @@ async function createOrder(storyId: String) {
       }
     );
 
-    const { data, error } = await supabase
-        .from('user_reading')
-        .insert({ id:session?.user?.id,storyId:storyId,readingDate:'2025-03-17',deleteFlg:0  })
-        .select();
+    //データ更新
+    const { error } = await supabase.rpc(
+      'update_user_reading',
+      {
+        	user_id: session?.user?.id,
+          story_id: storyId,
+          reading_date: '2025-03-17',
+          read_later: 0
+      }
+    );
     console.log(error);
+    // リロード
     revalidatePath("/");
     // if (!data[0].id) {
     //   throw new Error('Failed to insert record');
