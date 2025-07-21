@@ -101,12 +101,10 @@ export default async function StoryDetailedPage(
 
         {/* ボタン */}
         <div className='
-            grid grid-cols-1 lg:grid-cols-2 gap-4
+            grid
+            grid-flow-col grid-rows-2  gap-[5px]
         '>
-          <div className='
-            grid grid-cols-2 mt-4 gap-[5px]
-          '>
-            <div className='col-span-2'>
+            <div className='h-fit'>
                 <a className=""
                 href={data.url}
                 target="_blank" rel="noopener noreferrer">
@@ -131,6 +129,9 @@ export default async function StoryDetailedPage(
                     </button>
                 </a>
             </div>
+          <div className='
+            grid grid-cols-2 gap-[5px] h-fit
+          '>
             <div>
               <ShareModal 
                 shareUrl={data.url}
@@ -150,17 +151,13 @@ export default async function StoryDetailedPage(
             </div>
             </div>
             <div className='
-                grid grid-cols-2 mt-4 gap-[5px] 
-                
+                row-span-2
+                h-full
             '>
-              <div className='col-span-2'>
                 <Suspense>
-                <section className='flex flex-wrap relative text-sm font-mono gap-1 mb-2'>
                   {/* @ts-expect-error Server Component */}
                   <StoryReadingButton storyId={data.storyId}/>
-                </section>
                 </Suspense>
-              </div>
             </div>
         </div>
       {
