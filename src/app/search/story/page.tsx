@@ -1,10 +1,8 @@
-import { Metadata } from 'next'
-import { headers } from "next/headers";
-import { notFound } from 'next/navigation'
+
+import { auth } from "../../../../auth";
 import React from "react"
 import { Suspense } from "react";
 import { cache } from 'react'
-import dynamic from "next/dynamic";
 import { createClient } from '@supabase/supabase-js'
 import type { StorySearchResult } from '../../../data/types';
 import CommonPage from "../../../features/common/components/CommonPage";
@@ -30,19 +28,40 @@ const getData = cache(async (
   andor: string,
   SortedAsc: number
   ) => {
-  const supabase = createClient(
-    process.env.SUPABASE_URL||'',
-    process.env.SUPABASE_SERVICE_ROLE_KEY||'', 
-    {
-      auth: {
-        autoRefreshToken: false,
-        persistSession: false
-      }
-    }
-  )
+  const session = await auth();
+  const supabaseAccessToken = session?.supabaseAccessToken;
+  const supabase = session?.user
+    ?
+      createClient(
+        process.env.SUPABASE_URL||'',
+        process.env.SUPABASE_ANON_KEY||'',
+        {
+          global: {
+            headers: {
+              Authorization: `Bearer ${supabaseAccessToken}`,
+            },
+          },
+        }
+      )
+    :
+      createClient(
+        process.env.SUPABASE_URL||'',
+        process.env.SUPABASE_ANON_KEY||'',
+        {
+          auth: {
+            autoRefreshToken: false,
+            persistSession: false
+          }
+        }
+      )
+  ;
+  const userId: string | null
+    = session?.user
+      ?session.user.id||null
+      :null;
   //ストーリー情報取得
   const {data, error} = await supabase.rpc(
-      'search_story',
+      'search_story_with_user',
       {
         info_id_array: infoIdArray,
         media_array:mediaArray,
@@ -50,9 +69,13 @@ const getData = cache(async (
         voice_type:voiceType,
         howtoview_type:howtoviewType,
         andor:andor,
-        sortedasc:SortedAsc
+        sorted_asc:SortedAsc,
+        user_id:userId,
       }
   );
+  console.log(userId)
+  console.log(data)
+  console.log(error)
   const storySearchResult: StorySearchResult[] = data;
   return {storySearchResult};
 })

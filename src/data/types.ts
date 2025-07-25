@@ -195,6 +195,7 @@ export type StorySearchResult = {
   url: string;
   info_id: InfoStory[];
   isValid: number;
+  user_read_later: number;
 };
 
 export type UserReading = {
