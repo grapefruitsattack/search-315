@@ -93,6 +93,7 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
             url={data.url}
             login={login}
             userReadLater={data.user_read_later}
+            displayLogin={true}
           />
           ))}
           </section>

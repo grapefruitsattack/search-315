@@ -19,6 +19,9 @@ import { motion } from "framer-motion";
 export default async function StoryDetailedPage(
   { data }: { data: Story;}): Promise<JSX.Element> 
 {
+  const session = await auth();
+  const login: boolean = session?.user?true:false;
+
   const websiteName: string = GetStoryWebsiteName(data.website);
   const voiceStateName: string = GetVoiceStateName(data.voice,data.voiceAtRelease);
   const mediaName: string = GetStoryMediaName(data.media);
@@ -318,6 +321,9 @@ export default async function StoryDetailedPage(
               storyTitle={result.storyTitle} 
               infoStory={result.infoStory} 
               url={result.url} 
+              login={false}
+              userReadLater={0}
+              displayLogin={false}
             />
             ))}
 
