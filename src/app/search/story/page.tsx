@@ -73,11 +73,9 @@ const getData = cache(async (
         user_id:userId,
       }
   );
-  console.log(userId)
-  console.log(data)
-  console.log(error)
+
   const storySearchResult: StorySearchResult[] = data;
-  return {storySearchResult};
+  return {result:storySearchResult, login:session?.user?true:false};
 })
 
 
@@ -110,7 +108,7 @@ const Page = async ({
     <Suspense>
     <CommonPage>
       {/* @ts-expect-error Server Component */}
-      <SearchStoryPage data={post.storySearchResult}/>
+      <SearchStoryPage data={post}/>
       {q}
     </CommonPage>
     </Suspense>

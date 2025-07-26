@@ -6,9 +6,10 @@ import SearchStoryModal from "./components/SearchStoryModal";
 import type { StorySearchResult } from '../../../data/types';
 
 export default async function SearchStoryPage(
-  { data }: { data: StorySearchResult[];}
+  { data }: { data: {result:StorySearchResult[],login:boolean}}
   ): Promise<JSX.Element> 
  {
+  console.log(data.result)
 
     return (
       <>

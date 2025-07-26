@@ -7,8 +7,13 @@ import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName } from '../.
 import IdolBadge from '../IdolBadge';
 
 export default function StoryBlock(
-  { storyId,media,category,headTitle,storyTitle,infoStory, url }
-  :{ storyId: string, media: number, category: string, headTitle: string, storyTitle: string, infoStory: InfoStory[], url: string }
+  { storyId,media,category,headTitle,storyTitle,infoStory,url,login,userReadLater }
+  :{ 
+    storyId: string,media: number, category: string,
+    headTitle: string, storyTitle: string, infoStory: InfoStory[],
+    url: string, login:boolean, userReadLater: number 
+
+  }
 ) {
   
   const infoStoryPerson: InfoStory[] = infoStory.filter(data=>data.personFlg===1);
@@ -81,9 +86,16 @@ export default function StoryBlock(
         ?<></>
         :
     <div className='grid grid-cols-6 grid-rows-1 gap-1'>
-    <div className="w-full col-span-1">
-      {'未読'}
-    </div>
+      {login
+      ?
+        <div className="w-full col-span-1">
+          {userReadLater===0?'既読':'未読'}
+        </div>
+      :
+        <div className="w-full col-span-1">
+        </div>
+      }
+
     <div className="w-full col-span-2 ">
       <button
           className='rounded-lg border-2 border-blue-500 w-full h-full

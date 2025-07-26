@@ -4,8 +4,9 @@ import SearchStoryController from "../components/SearchStoryController";
 import SortButton from "../components/SortButton";
 import StoryBlock from "../../../common/components/story/StoryBlock";
 
-export default function SearchPageStory({ data }: { data: StorySearchResult[];}) {
-
+export default function SearchPageStory({ data }: { data: {result:StorySearchResult[],login:boolean};}) {
+  const resultData: StorySearchResult[] = data.result;
+  const login: boolean = data.login;
   // const router = useRouter();
   // const searchParams = useSearchParams();
   // const params = new URLSearchParams(searchParams.toString());
@@ -74,13 +75,13 @@ export default function SearchPageStory({ data }: { data: StorySearchResult[];})
     <section className="lg:flex px-2 mobileS:px-10 lg:px-16 w-full">
     <section className="grid grid-flow-row-dense items-start gap-4 grid-cols-1 lg:grid-cols-3 w-full">
   
-          {data.length===0 
+          {resultData.length===0 
           ?
           <div className="flex flex-col justify-center items-start ">
             <div>検索条件に該当する楽曲がありません</div>
             <div>検索条件を変更してください</div>
           </div>
-          :data.map((data, index) => (
+          :resultData.map((data, index) => (
           <StoryBlock 
             key={index} 
             storyId={data.story_id}
@@ -90,6 +91,8 @@ export default function SearchPageStory({ data }: { data: StorySearchResult[];})
             media={data.media}
             storyTitle={data.story_title}
             url={data.url}
+            login={login}
+            userReadLater={data.user_read_later}
           />
           ))}
           </section>
