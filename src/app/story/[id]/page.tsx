@@ -49,7 +49,7 @@ const Post = async ({
     <CommonPage>
       <article className="pt-32 pb-96 px-2 mobileS:px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
       {/* @ts-expect-error Server Component */}
-      <StoryDetailedPage data={post.storyData}/>
+      <StoryDetailedPage storyData={post.storyData}/>
       </article>
     </CommonPage>
     </Suspense>

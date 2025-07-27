@@ -5,6 +5,7 @@ import CopyButton from "../../common/components/CopyButton";
 import GetUnitIdolName from "../../common/utils/GetUnitIdolName";
 import {ShareModal} from "../../app/shareModal/ShareModal";
 import { auth } from "../../../../auth";
+import { createClient } from '@supabase/supabase-js'
 import {SignIn,SignOut} from "../../management/auth/SignIn";
 import type { Story,InfoStory } from '../../../data/types';
 import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName,GetVoiceStateName,GetStoryHowtoviewName } from '../../common/utils/Story/GetStoryInfomation';
@@ -16,32 +17,56 @@ import StoryBlock from "../../common/components/story/StoryBlock";
 import { motion } from "framer-motion";
 
 export default async function StoryDetailedPage(
-  { data }: { data: Story;}): Promise<JSX.Element> 
+  { storyData }: { storyData: Story;}): Promise<JSX.Element> 
 {
   const session = await auth();
+  const supabaseAccessToken = session?.supabaseAccessToken;
+  const supabase = createClient(
+    process.env.SUPABASE_URL||'',
+    process.env.SUPABASE_ANON_KEY||'',
+    {
+      global: {
+        headers: {
+          Authorization: `Bearer ${supabaseAccessToken}`,
+        },
+      },
+    }
+  );
+  const userId: string
+    = session?.user
+      ?session.user.id||''
+      :'';
+  const { data, error } 
+    = await supabase.from("user_reading")
+      .select("id,storyId,readingDate,readLater")
+      .eq('storyId',storyData.storyId).eq('id',userId).single()
+      ||[];
+  const isRead: boolean = data!==null&&data?.readLater!==null&&data.readLater===0;
+  const isReadLeater: boolean = data!==null&&data?.readLater!==null&&data.readLater===1;
+
   const login: boolean = session?.user?true:false;
 
-  const websiteName: string = GetStoryWebsiteName(data.website);
-  const voiceStateName: string = GetVoiceStateName(data.voice,data.voiceAtRelease);
-  const mediaName: string = GetStoryMediaName(data.media);
-  const categoryName: string = GetStoryCategoryName(data.category);
-  const infoStoryPerson: InfoStory[] = data.infoStory.filter(data=>data.personFlg===1);
+  const websiteName: string = GetStoryWebsiteName(storyData.website);
+  const voiceStateName: string = GetVoiceStateName(storyData.voice,storyData.voiceAtRelease);
+  const mediaName: string = GetStoryMediaName(storyData.media);
+  const categoryName: string = GetStoryCategoryName(storyData.category);
+  const infoStoryPerson: InfoStory[] = storyData.infoStory.filter(storyData=>storyData.personFlg===1);
 
   // シェア文章
   let shareText: string = '';
-  if(data.media===MEDIA.moba.id&&data.category===CATEGORY.dailyOneFrame.id){
+  if(storyData.media===MEDIA.moba.id&&storyData.category===CATEGORY.dailyOneFrame.id){
     // 日常ひとコマ
-    shareText = `【${mediaName}】\n${data.storyTitle}  |  <サイト名>\n#SideM #search315`
-  } else if(!(data.headTitle === null || data.headTitle === '')){
+    shareText = `【${mediaName}】\n${storyData.storyTitle}  |  <サイト名>\n#SideM #search315`
+  } else if(!(storyData.headTitle === null || storyData.headTitle === '')){
     // 
-    shareText = `【${mediaName} - ${categoryName}】\n［${data.headTitle}］${data.storyTitle}  |  <サイト名>\n#SideM #search315`
+    shareText = `【${mediaName} - ${categoryName}】\n［${storyData.headTitle}］${storyData.storyTitle}  |  <サイト名>\n#SideM #search315`
   } else {
-    shareText = `【${mediaName} - ${categoryName}】\n${data.storyTitle}  |  <サイト名>\n#SideM #search315`
+    shareText = `【${mediaName} - ${categoryName}】\n${storyData.storyTitle}  |  <サイト名>\n#SideM #search315`
   };
 
     return (
         <>
-        <title>{  `${data.storyTitle} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー`}</title>
+        <title>{  `${storyData.storyTitle} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー`}</title>
         <section className="mb-2 bg-gradient-to-r from-green-500/70 from-50% rounded">
             <div 
                 className="
@@ -67,23 +92,23 @@ export default async function StoryDetailedPage(
         ?<></>
         :<div className="justify-center text-red-500 border border-red-500 rounded-sm p-1">{voiceStateName}</div>
         }
-        {data.still===0
+        {storyData.still===0
         ?<></>
-        :<div className="justify-center text-red-500 border border-red-500 rounded-sm p-1">{'スチル'+data.still+'枚'}</div>
+        :<div className="justify-center text-red-500 border border-red-500 rounded-sm p-1">{'スチル'+storyData.still+'枚'}</div>
         }
         </section>
 
-        {data.website!=='asb' || data.howtoviewStory===null || data.howtoviewStory.length===0
+        {storyData.website!=='asb' || storyData.howtoviewStory===null || storyData.howtoviewStory.length===0
         ?<></>
         :<section className='w-fit rounded-sm text-xs tablet:text-sm font-mono text-black gap-1 mb-2 bg-orange-200'>
           <a className=" text-black p-1">{'視聴方法：'}</a>
-          {data.howtoviewStory.map((result, index) => (
+          {storyData.howtoviewStory.map((result, index) => (
           <a key={index} className="text-orange-800 p-1">{GetStoryHowtoviewName(result)}</a>
           ))}
-        {/* {data.howtoviewStory.length===0
+        {/* {storyData.howtoviewStory.length===0
         ?<a className=" text-orange-800 p-1">{'ログイン不要'}</a>
         :<>
-        {data.howtoviewStory.map((result, index) => (
+        {storyData.howtoviewStory.map((result, index) => (
         <a key={index} className="text-orange-800 p-1">{GetStoryHowtoviewName(result)}</a>
         ))}</>
         } */}
@@ -93,10 +118,10 @@ export default async function StoryDetailedPage(
 
         <section className='mb-2 flex flex-col'>
           <div className="text-base mobileM:text-xl tablet:text-2xl font-mono font-bold inline-block">
-              {data.headTitle}
+              {storyData.headTitle}
           </div>
           <div className="text-2xl mobileM:text-3xl tablet:text-4xl font-mono font-bold inline-block">
-              {data.storyTitle}
+              {storyData.storyTitle}
           </div>
         </section>
 
@@ -107,7 +132,7 @@ export default async function StoryDetailedPage(
         '>
           <div className='col-span-2 h-fit'>
               <a className=""
-              href={data.url}
+              href={storyData.url}
               target="_blank" rel="noopener noreferrer">
                   <button
                       className='rounded-lg border-2 border-red-500 w-full h-full
@@ -133,17 +158,17 @@ export default async function StoryDetailedPage(
           <div className='col-span-1'
           >
               <ShareModal 
-                shareUrl={data.url}
+                shareUrl={storyData.url}
                 shareSiteTitle={websiteName}
                 shareText={shareText}
                 buttonText=""
-                pass={'story/'+data.storyId}
+                pass={'story/'+storyData.storyId}
               />
             </div>
           <div className='col-span-1'
           >
               <CopyButton 
-                  copyText={data.storyTitle} 
+                  copyText={storyData.storyTitle} 
                   buttonText={'タイトルコピー'}
                   tootipText={'タイトルをコピーしました'}
                   placement='bottom'
@@ -166,8 +191,7 @@ export default async function StoryDetailedPage(
             h-full
         '>
             <Suspense>
-              {/* @ts-expect-error Server Component */}
-              <StoryReadingButton storyId={data.storyId}/>
+              <StoryReadingButton storyId={storyData.storyId} isRead={isRead} isReadLeater={isReadLeater}/>
             </Suspense>
         </div>
       {
@@ -194,7 +218,7 @@ export default async function StoryDetailedPage(
       }
       
         {/* サブストーリー */}
-        {data.mSubStory===null || data.mSubStory.length===0
+        {storyData.mSubStory===null || storyData.mSubStory.length===0
         ?<></>
         :<>
         <div 
@@ -212,27 +236,27 @@ export default async function StoryDetailedPage(
               items-start gap-2 grid-cols-1 mt-2 ml-8
               grid max-w-[700px]
           `}>
-            {data.mSubStory.map((result, index) => {
+            {storyData.mSubStory.map((result, index) => {
               // サブストーリー用シェア文章
               let shareText: string = '';
-                if(data.media===MEDIA.moba.id&&data.category===CATEGORY.dailyOneFrame.id){
+                if(storyData.media===MEDIA.moba.id&&storyData.category===CATEGORY.dailyOneFrame.id){
                   //日常での１コマ
                   shareText = `【${mediaName} - ${categoryName}】\n${result.subStoryTitle}  |  <サイト名>\n#SideM #search315`;
-                } else if(data.media===MEDIA.moba.id&&(data.category===CATEGORY.comicSpecial.id||data.category===CATEGORY.comicNomral.id)){
+                } else if(storyData.media===MEDIA.moba.id&&(storyData.category===CATEGORY.comicSpecial.id||storyData.category===CATEGORY.comicNomral.id)){
                   //雑誌
-                  shareText = `【${mediaName} - ${categoryName} - ${data.storyTitle}】\n${
-                    data.media === 1 && ['comicn','comics'].includes(data.category) && !(result.infoSubStory===null || result.infoSubStory.length===0)
+                  shareText = `【${mediaName} - ${categoryName} - ${storyData.storyTitle}】\n${
+                    storyData.media === 1 && ['comicn','comics'].includes(storyData.category) && !(result.infoSubStory===null || result.infoSubStory.length===0)
                     ?GetUnitIdolName(result.infoSubStory[0].infoId,0,1):''
                   }「${result.subStoryTitle}」  |  <サイト名>\n#SideM #search315`;
                 } else {
                   //そのほか
-                  shareText = `【${mediaName} - ${categoryName} - ${data.storyTitle}】\n${result.subStoryTitle}  |  <サイト名>\n#SideM #search315`;
+                  shareText = `【${mediaName} - ${categoryName} - ${storyData.storyTitle}】\n${result.subStoryTitle}  |  <サイト名>\n#SideM #search315`;
                 }
               return(
                 <div key={Number(result.subStoryNo)} className="bg-white border-orange-700/30 border-t-4 border-l-4 bg-orange-50/50 text-xl">
                   <div className=" text-xl ">
                   {/* モバエム雑誌のときのみアイドル名を表示 */}
-                  {data.media === 1 && ['comicn','comics'].includes(data.category) && !(result.infoSubStory===null || result.infoSubStory.length===0)
+                  {storyData.media === 1 && ['comicn','comics'].includes(storyData.category) && !(result.infoSubStory===null || result.infoSubStory.length===0)
                   &&
                     <div className={`w-fit`}>
                     <IdolBadge id={result.infoSubStory[0].infoId} useShortName={0} size={'block'}/>
@@ -275,13 +299,13 @@ export default async function StoryDetailedPage(
                         shareUrl={result.url}
                         shareSiteTitle={websiteName}
                         shareText={shareText}
-                        // shareText={`${data.media === 1&&data.category==='dof'?'':'【'+categoryName+'】'}${data.storyTitle}${
-                        //   data.media === 1 && ['comicn','comics'].includes(data.category) && !(result.infoSubStory===null || result.infoSubStory.length===0)
+                        // shareText={`${storyData.media === 1&&storyData.category==='dof'?'':'【'+categoryName+'】'}${storyData.storyTitle}${
+                        //   storyData.media === 1 && ['comicn','comics'].includes(storyData.category) && !(result.infoSubStory===null || result.infoSubStory.length===0)
                         //   ?'　'+GetUnitIdolName(result.infoSubStory[0].infoId,0,1):''
                         // }「${result.subStoryTitle}」`}
-                  //shareText={`${data.media === 1&&data.category==='dof'?'':'【#SideM '+categoryName+'】\n'}${data.storyTitle}  |  <サイト名>\n#search315`}
+                  //shareText={`${storyData.media === 1&&storyData.category==='dof'?'':'【#SideM '+categoryName+'】\n'}${storyData.storyTitle}  |  <サイト名>\n#search315`}
                         buttonText=""
-                        pass={'story/'+data.storyId}
+                        pass={'story/'+storyData.storyId}
                       />
                     </div>
                     <CopyButton 
@@ -300,7 +324,7 @@ export default async function StoryDetailedPage(
         </>}
 
         {/* 関連ストーリー */}
-        {data.relationStory===null || data.relationStory.length===0
+        {storyData.relationStory===null || storyData.relationStory.length===0
         ?<></>
         :<>
           <div 
@@ -318,7 +342,7 @@ export default async function StoryDetailedPage(
               items-start gap-4 grid-cols-1 lg:grid-cols-2 mt-2
               lg:grid grid       
           `}>
-            {data.relationStory.map((result, index) => (
+            {storyData.relationStory.map((result, index) => (
             <StoryBlock 
               key={index} 
               storyId={result.storyId} 

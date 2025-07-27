@@ -1,37 +1,19 @@
-import { cookies } from 'next/headers';
+'use client';
+import { useEffect, useState } from 'react';
 import { UserReading } from "@/data/types";
 import { auth } from "../../../../../auth";
 import { createClient } from '@supabase/supabase-js'
 import { revalidatePath } from "next/cache";
 import SetLocalDateCookie  from "../../../common/utils/SetLocalDateCookie";
+import {UpdateReadingData}  from "../../actions/UpdateReadingData";
+import {DeleteReadingData}  from "../../actions/DeleteReadingData";
 import { Toaster } from "@/components/ui/sonner"
 import { toast } from "sonner"
+import { Session } from "next-auth";
  
-export default async function StoryReadingButton({ storyId }: { storyId: String }) {
-    const session = await auth();
-    const supabaseAccessToken = session?.supabaseAccessToken;
-    const supabase = createClient(
-      process.env.SUPABASE_URL||'',
-      process.env.SUPABASE_ANON_KEY||'',
-      {
-        global: {
-          headers: {
-            Authorization: `Bearer ${supabaseAccessToken}`,
-          },
-        },
-      }
-    );
-    const userId: string
-      = session?.user
-        ?session.user.id||''
-        :'';
-    const { data, error } 
-      = await supabase.from("user_reading")
-        .select("id,storyId,readingDate,readLater")
-        .eq('storyId',storyId).eq('id',userId).single()
-        ||[];
-    const isRead: boolean = data!==null&&data?.readLater!==null&&data.readLater===0;
-    const isReadLeater: boolean = data!==null&&data?.readLater!==null&&data.readLater===1;
+export default function StoryReadingButton(
+  { storyId, isRead, isReadLeater }: { storyId: string, isRead: boolean, isReadLeater: boolean }) {
+
 
     const dt = new Date();
     const serverDate = [
@@ -100,10 +82,8 @@ export default async function StoryReadingButton({ storyId }: { storyId: String 
                 <form
                   className=' w-full h-full'
                   action={async () => {
-                      "use server"
-                      const cookieStore = cookies();
-                      const localDate = (await cookieStore).get('localDate')?.value||'serverDate';
-                      await updateReadingData(storyId,localDate,0)}}
+                      const localDate = serverDate;
+                      await UpdateReadingData(storyId,localDate,0)}}
                   >
                     <button
                         className='w-full h-full py-2
@@ -131,10 +111,8 @@ export default async function StoryReadingButton({ storyId }: { storyId: String 
                   <form
                     className=' w-full h-full'
                     action={async () => {
-                        "use server"
-                        const cookieStore = cookies();
-                        const localDate = (await cookieStore).get('localDate')?.value||serverDate;
-                        await deleteReadingData(storyId)}
+                        const localDate = serverDate;
+                        await DeleteReadingData(storyId)}
                       }
                     >
                       <button
@@ -170,10 +148,8 @@ export default async function StoryReadingButton({ storyId }: { storyId: String 
                   <form
                     className=' w-full h-full'
                     action={async () => {
-                        "use server"
-                        const cookieStore = cookies();
-                        const localDate = (await cookieStore).get('localDate')?.value||serverDate;
-                        await updateReadingData(storyId,localDate,1)}
+                        const localDate = serverDate;
+                        await UpdateReadingData(storyId,localDate,1)}
                       }
                     >
                       <button
@@ -203,68 +179,4 @@ export default async function StoryReadingButton({ storyId }: { storyId: String 
             </>)
 
     }
-}
-
-async function updateReadingData(storyId: String, localDate: string, readLater: number) {
-    const session = await auth();
-    const supabaseAccessToken = session?.supabaseAccessToken;
-    const supabase = createClient(
-      process.env.SUPABASE_URL||'',
-      process.env.SUPABASE_ANON_KEY||'',
-      {
-        global: {
-          headers: {
-            Authorization: `Bearer ${supabaseAccessToken}`,
-          },
-        },
-      }
-    );
-
-    //データ更新
-    const { error } = await supabase.rpc(
-      'update_user_reading',
-      {
-        	user_id: session?.user?.id,
-          story_id: storyId,
-          reading_date: localDate,
-          read_later: readLater
-      }
-    );
-    console.log(error);
-    // リロード
-    revalidatePath("/");
-    //toast("Event has been created.")
-    // if (!data[0].id) {
-    //   throw new Error('Failed to insert record');
-    // }
-  }
-
-
-async function deleteReadingData(storyId: String) {
-    const session = await auth();
-    const supabaseAccessToken = session?.supabaseAccessToken;
-    const supabase = createClient(
-      process.env.SUPABASE_URL||'',
-      process.env.SUPABASE_ANON_KEY||'',
-      {
-        global: {
-          headers: {
-            Authorization: `Bearer ${supabaseAccessToken}`,
-          },
-        },
-      }
-    );
-
-    //データ更新
-    const { error } = await supabase
-      .from('user_reading')
-      .delete() 
-      .eq('id', session?.user?.id).eq('storyId',storyId);
-    console.log(error);
-    // リロード
-    revalidatePath("/");
-    //toast("Event has been created.")
-    // if (!data[0].id) {
-    //   throw new Error('Failed to insert record');
-    // }
 }
