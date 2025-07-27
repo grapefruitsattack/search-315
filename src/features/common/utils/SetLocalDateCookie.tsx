@@ -11,7 +11,7 @@ export default function SetLocalDateCookie() {
       ('0' + dt.getDate()).slice(-2),
     ].join('-');
 
-    // Cookieに保存（1日間有効）
+    // Cookieに保存
     document.cookie = `localDate=${date}; path=/; max-age=10`;
   }, []);
 

@@ -6,7 +6,6 @@ import GetUnitIdolName from "../../common/utils/GetUnitIdolName";
 import {ShareModal} from "../../app/shareModal/ShareModal";
 import { auth } from "../../../../auth";
 import {SignIn,SignOut} from "../../management/auth/SignIn";
-import { createClient } from '@supabase/supabase-js'
 import type { Story,InfoStory } from '../../../data/types';
 import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName,GetVoiceStateName,GetStoryHowtoviewName } from '../../common/utils/Story/GetStoryInfomation';
 import { MEDIA,CATEGORY,WEBSITE,HOW_TO_VIEW } from '../../common/const/StoryInfoConst'

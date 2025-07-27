@@ -4,7 +4,9 @@ import { auth } from "../../../../../auth";
 import { createClient } from '@supabase/supabase-js'
 import { revalidatePath } from "next/cache";
 import SetLocalDateCookie  from "../../../common/utils/SetLocalDateCookie";
-
+import { Toaster } from "@/components/ui/sonner"
+import { toast } from "sonner"
+ 
 export default async function StoryReadingButton({ storyId }: { storyId: String }) {
     const session = await auth();
     const supabaseAccessToken = session?.supabaseAccessToken;
@@ -42,6 +44,7 @@ export default async function StoryReadingButton({ storyId }: { storyId: String 
     return(<>
           {/* クライアントの現在時刻をCookieにセット */}
           <SetLocalDateCookie />
+          <Toaster />
             <div className="grid grid-cols-[2fr_5fr] w-full h-full">
             <button
                 className='rounded-l-lg border-2 border-cyan-500 w-full h-full
@@ -92,6 +95,7 @@ export default async function StoryReadingButton({ storyId }: { storyId: String 
     return(<>
           {/* クライアントの現在時刻をCookieにセット */}
           <SetLocalDateCookie />
+          <Toaster />
               <div className="grid tablet:grid-cols-[4fr_2fr] lg:grid-cols-1 grid-cols-1 w-full h-full gap-3">
                 <form
                   className=' w-full h-full'
@@ -130,7 +134,7 @@ export default async function StoryReadingButton({ storyId }: { storyId: String 
                         "use server"
                         const cookieStore = cookies();
                         const localDate = (await cookieStore).get('localDate')?.value||serverDate;
-                        await updateReadingData(storyId,localDate,0)}
+                        await deleteReadingData(storyId)}
                       }
                     >
                       <button
@@ -229,6 +233,7 @@ async function updateReadingData(storyId: String, localDate: string, readLater: 
     console.log(error);
     // リロード
     revalidatePath("/");
+    //toast("Event has been created.")
     // if (!data[0].id) {
     //   throw new Error('Failed to insert record');
     // }
@@ -258,6 +263,7 @@ async function deleteReadingData(storyId: String) {
     console.log(error);
     // リロード
     revalidatePath("/");
+    //toast("Event has been created.")
     // if (!data[0].id) {
     //   throw new Error('Failed to insert record');
     // }
