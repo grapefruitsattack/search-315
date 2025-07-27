@@ -1,20 +1,20 @@
 export const MEDIA = {
   moba: {id:1,name:'モバエム'},
   gs: {id:2,name:'サイスタ'},
-  proe: {id:3,name:'315プロエピ'},
+  proe: {id:3,name:'アイマスポータル'},
 };
 export const CATEGORY = {
   main: {id:'main',name:'メインストーリー'},
-  event: {id:'event',name:'イベスト'},
+  event: {id:'event',name:'イベントストーリー'},
   idolEpisode: {id:'idole',name:'アイドルエピソード'},
   comicNomral: {id:'comicn',name:'雑誌通常号'},
   comicSpecial: {id:'comics',name:'雑誌特別号'},
   SideMemories: {id:'smemo',name:'SideMemories'},
   dailyOneFrame: {id:'dof',name:'日常での１コマ'},
   episodeZero: {id:'epiz',name:'エピソードゼロ'},
-  connectWithMusic: {id:'cwm',name:'CONNECT WITH MUSIC！'},
-  connectWithStage: {id:'cws',name:'CONNECT WITH STAGE！'},
-  connectWithOthers: {id:'cwo',name:'CONNECT WITH OTHERS！'},
+  connectWithMusic: {id:'cwm',name:'楽曲連動ストーリー'},
+  connectWithStage: {id:'cws',name:'ライブ連動ストーリー'},
+  connectWithOthers: {id:'cwo',name:'そのほか連動ストーリー'},
   idolOneFrame: {id:'iof',name:'アイドルたちの１コマ'},
 };
 export const WEBSITE = {
