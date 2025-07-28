@@ -4,7 +4,7 @@ import { createClient } from '@supabase/supabase-js';
 import { auth } from '../../../../auth';
 import { revalidatePath } from 'next/cache';
 
-export async function DeleteReadingData(storyId: string) {
+export async function DeleteReadingData(storyId: string, readLater: number) {
   const session = await auth();
   const supabaseAccessToken = session?.supabaseAccessToken;
 
@@ -20,15 +20,17 @@ export async function DeleteReadingData(storyId: string) {
     }
   );
 
-  const { error } = await supabase
+  const { data,error } = await supabase
     .from('user_reading')
     .delete()
     .eq('id', session?.user?.id)
-    .eq('storyId', storyId);
+    .eq('storyId', storyId)
+    .eq('readLater', readLater).select();
 
-  if (error) {
+    console.log(data);
+  if (error||data===null||data.length===0) {
     console.error('Delete error:', error);
-    throw new Error('削除に失敗しました');
+    throw ('削除に失敗しました');
   }
   revalidatePath("/");
   // revalidatePath などもここで使える

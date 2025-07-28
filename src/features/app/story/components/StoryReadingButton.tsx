@@ -13,7 +13,7 @@ import { Session } from "next-auth";
  
 export default function StoryReadingButton(
   { storyId, isRead, isReadLeater }: { storyId: string, isRead: boolean, isReadLeater: boolean }) {
-
+ 
 
     const dt = new Date();
     const serverDate = [
@@ -111,8 +111,18 @@ export default function StoryReadingButton(
                   <form
                     className=' w-full h-full'
                     action={async () => {
-                        const localDate = serverDate;
-                        await DeleteReadingData(storyId)}
+                      console.log('test')
+                        await DeleteReadingData(storyId,1).then(() => {
+                          console.log('OK')
+                          toast("ok")
+                        }).catch((e) => {
+                          console.log('エラー')
+                          console.log(e)
+                          toast("エラー")
+                        }).finally(() => {
+                          console.log('finish')
+                        })
+                        }
                       }
                     >
                       <button
