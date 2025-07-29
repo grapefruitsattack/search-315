@@ -23,7 +23,6 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
     const router = useRouter();
     const currentPath: string = usePathname();
     const urlSearchParams = useSearchParams();
-    //検索結果がゼロ件の場合、モーダルを自動で開く
     const [isOpen, setISopen] = useState(firstIsOpen);
 
     //useState設定
@@ -46,7 +45,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
         const workParam: URLSearchParams = new URLSearchParams(params.toString());
         workParam.set('andor',andor);
         setParams(workParam);
-        setSearchResultCnt(
+        setSearchResultCnt( 
             SearchSong(
                 params.get('q')?.split(' ')||[], [], params.get('f')?.split(' ')||[], songInfoAsc, andor
             ).length);
@@ -206,7 +205,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                 ${isOpen
                     ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}  
             `}>
-            <div className=" shadow-lg shadow-emerald-300/70 overflow-hidden">
+            <div className=" shadow-lg rounded-md border overflow-hidden py-2">
                     <div className="  rounded-md text-center mb-8">
                     <div className=" lg:px-8 px-1 pb-2 rounded-md text-center">
                         <div className="flex justify-center text-lg lg:text-xl font-bold">
@@ -599,7 +598,9 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                                 bg-gray-500
                                 transition-all duration-500 ease-out
                                 w-[200px] p-2'
-                            // onClick={onClose}
+                                onClick={() => {
+                                    setISopen(false)
+                                }}
                         >
                         <div className='flex flex-wrap justify-center items-center'>
                             <div>キャンセル</div>

@@ -66,7 +66,8 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
     </div>
     </section>
     <section className="lg:px-24 px-2 mobileS:px-8 p-2 flex flex-wrap items-center gap-4">
-    <SearchStoryController firstIsOpen={false}/>
+    {/* 検索結果がゼロ件の場合、検索エリアを自動で開く */}
+    <SearchStoryController firstIsOpen={resultData.length===0}/>
     </section>
     <section className="lg:px-24 px-2 mobileS:px-8 p-2 flex flex-wrap items-center gap-4">
       <SortButton/>
