@@ -1,41 +1,29 @@
-
+'use client'
 import type { StorySearchResult } from '../../../../data/types';
 import SearchStoryController from "../components/SearchStoryController";
 import SortButton from "../components/SortButton";
 import StoryBlock from "../../../common/components/story/StoryBlock";
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+
 
 export default function SearchPageStory({ data }: { data: {result:StorySearchResult[],login:boolean};}) {
   const resultData: StorySearchResult[] = data.result;
   const login: boolean = data.login;
-  // const router = useRouter();
-  // const searchParams = useSearchParams();
-  // const params = new URLSearchParams(searchParams.toString());
-  // const currentPath: string = usePathname();
 
-  //サブスク過去Verクエリ対応
-  // if((subscExists===1) && (filters.includes('sbsc'))){
-  //   filters.push('sbsc');
-  // };
+  const [loading, setLoading] = useState(false);
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
+  useEffect(() => {
+    setLoading(true);
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 500); // ある程度の時間をローディング表示
 
-
-  // 遷移時処理
-  // useEffect(() => {
-  //   // results = SearchSong(
-  //   //   search
-  //   //   ,[]
-  //   //   ,filters
-  //   //   ,order === 'asc' ? songInfoAsc : songInfoDesc
-  //   //   ,andor
-  //   // );
-  //   // const newDisplayResults: SongMaster[] 
-  //   //   = results.length > 36? results.slice(0, displayCoefficient < 1? 36: displayCoefficient*36): results;
-  //   // setDisplayResults(newDisplayResults);
-  //   // setDisplayShowMorebutton(results.length > newDisplayResults.length);
-
-  // }, [data]);
-
-
+    return () => clearTimeout(timeout);
+  }, [searchParams.toString()]);
 
   return (
     <>
@@ -75,7 +63,7 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
     {/* ストーリー一覧 */}
     <section className="lg:flex px-2 mobileS:px-10 lg:px-16 w-full">
     <section className="grid grid-flow-row-dense items-start gap-4 grid-cols-1 lg:grid-cols-3 w-full">
-  
+      {loading?<div>Loading Test...</div>:<>
           {resultData.length===0 
           ?
           <div className="flex flex-col justify-center items-start ">
@@ -97,6 +85,7 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
             displayLogin={true}
           />
           ))}
+          </>}
           </section>
       </section>
 

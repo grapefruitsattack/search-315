@@ -9,7 +9,7 @@ export default async function SearchStoryPage(
   { data }: { data: {result:StorySearchResult[],login:boolean}}
   ): Promise<JSX.Element> 
  {
-  console.log(data.result)
+
 
     return (
       <>

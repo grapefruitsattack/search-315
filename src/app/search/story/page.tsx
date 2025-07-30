@@ -7,6 +7,7 @@ import { createClient } from '@supabase/supabase-js'
 import type { StorySearchResult } from '../../../data/types';
 import CommonPage from "../../../features/common/components/CommonPage";
 import SearchStoryPage from "../../../features/app/search/SearchStoryPage";
+import Loading from '../../loading'
 
 export const revalidate = 600; // 10分ごとに再検証する
 
@@ -105,11 +106,10 @@ const Page = async ({
   const post = await getData(infoIdArray,mediaArray,categoryArray,v||0,htv||0,andor||'or',SortedAsc);
 
     return (
-    <Suspense>
+    <Suspense fallback={<Loading />}>
     <CommonPage>
       {/* @ts-expect-error Server Component */}
       <SearchStoryPage data={post}/>
-      {q}
     </CommonPage>
     </Suspense>
   );
