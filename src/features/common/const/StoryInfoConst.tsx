@@ -14,7 +14,7 @@ export const CATEGORY = {
   episodeZero: {id:'epiz',name:'エピソードゼロ'},
   connectWithMusic: {id:'cwm',name:'楽曲連動ストーリー'},
   connectWithStage: {id:'cws',name:'ライブ連動ストーリー'},
-  connectWithOthers: {id:'cwo',name:'そのほか連動ストーリー'},
+  connectWithOthers: {id:'cwo',name:'連動ストーリー'},
   idolOneFrame: {id:'iof',name:'アイドルたちの１コマ'},
 };
 export const WEBSITE = {
@@ -25,6 +25,6 @@ export const HOW_TO_VIEW = {
   asbLogin: {id:'asb_login',name:'アソビストアログイン'},
   asbPremium: {id:'asb_prem',name:'アソストプレ会員特典'},
   asbPurchase: {id:'asb_pur',name:'バナコイン購入'},
-  asbSerialcodeCD: {id:'asb_scode_cd',name:'CD封入シリアルコード認証'},
-  asbSerialcode: {id:'asb_scode',name:'シリアルコード認証'},
+  asbSerialcodeCD: {id:'asb_scode_cd',name:'CD封入シリアルコード'},
+  asbSerialcode: {id:'asb_scode',name:'シリアルコード'},
 };

@@ -3,10 +3,10 @@ import { ReadonlyURLSearchParams } from 'next/navigation';
 export class SearchStoryParams {
   order: string;
   andor: string;
-  media: { [key: number]: string; };
+  media: { [key: string]: string; };
   category: { [key: string]: string; };
-  voice: number;
-  howToView: number;
+  voice: string;
+  howToView: string;
   info: { [key: string]: string; };
 
   constructor(urlSearchParams : ReadonlyURLSearchParams) {
@@ -22,8 +22,8 @@ export class SearchStoryParams {
       category.forEach(data=>{
         this.category[data] = '1';
       });
-      this.voice = Number(urlSearchParams.get('v')) || 0;
-      this.howToView = Number(urlSearchParams.get('htv')) || 0;
+      this.voice = urlSearchParams.get('v') || '0';
+      this.howToView = urlSearchParams.get('htv') || '0';
       const info: string[] = urlSearchParams.get('q')?.split(' ') || [];
       this.info ={};
       info.forEach(data=>{

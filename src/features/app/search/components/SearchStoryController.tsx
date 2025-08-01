@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import { SearchStoryParams } from '../class/SearchStoryParams';
 import SearchModalCheckbox from "./SearchModalCheckbox";
 import SearchModalFilterCheckbox from "./SearchModalFilterCheckbox";
+import SearchModalRadioButton from "./SearchModalRadioButton";
 import SearchSong from '../../../common/utils/SearchSong';
+import {CATEGORY,MEDIA,WEBSITE} from '../../../common/const/StoryInfoConst';
 import singingMaster from '../../../../data/singingMaster.json';
 import songInfoAsc from '../../../../data/songInfoAsc.json';
 import {
@@ -28,38 +30,42 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
     //useState設定
     const [params, setParams] = useState(new URLSearchParams(urlSearchParams.toString()));
     const [values, setValues] = useState(new SearchStoryParams(urlSearchParams));
-    const [searchResultCnt, setSearchResultCnt] 
-        = useState(
-            SearchSong(
-                params.get('q')?.split(' ')||[]
-                ,[]
-                ,params.get('f')?.split(' ')||[]
-                ,songInfoAsc
-                ,params.get('andor') || 'or'
-            ).length);
 
 
     //パラメータクリア関数
-    function switchAndOr(andor: string): void{
-        setValues({...values, andor:andor});
-        const workParam: URLSearchParams = new URLSearchParams(params.toString());
-        workParam.set('andor',andor);
-        setParams(workParam);
-        setSearchResultCnt( 
-            SearchSong(
-                params.get('q')?.split(' ')||[], [], params.get('f')?.split(' ')||[], songInfoAsc, andor
-            ).length);
-    };
     function clearParam(): void {
         const workParam: URLSearchParams = new URLSearchParams(params.toString());
         workParam.set('q','');
         workParam.set('f','');
         setParams(workParam);
-        setValues({andor:values['andor'],order:'desc',voice:0,howToView:0,media:{},category:{},info:{}});
-        setSearchResultCnt(
-            SearchSong(
-                [], [], [], songInfoAsc, values['andor']
-            ).length);
+        setValues({andor:values['andor'],order:'desc',voice:'0',howToView:'0',media:{},category:{},info:{}});
+    };
+
+    function switchHowToView(howToView: string): void{
+        setValues({...values, howToView:howToView});
+        const workParam: URLSearchParams = new URLSearchParams(params.toString());
+        if(howToView==='null'){
+            workParam.set('htv','');
+        }else{
+            workParam.set('htv',howToView);
+        }
+        setParams(workParam);
+    };
+    function switchVoice(voice: string): void{
+        setValues({...values, voice:voice});
+        const workParam: URLSearchParams = new URLSearchParams(params.toString());
+        if(voice==='null'){
+            workParam.set('v','');
+        }else{
+            workParam.set('v',voice);
+        }
+        setParams(workParam);
+    };
+    function switchAndOr(andor: string): void{
+        setValues({...values, andor:andor});
+        const workParam: URLSearchParams = new URLSearchParams(params.toString());
+        workParam.set('andor',andor);
+        setParams(workParam);
     };
     function changeSearchParamsIdolId(idolId:string, onFlg: boolean): void {
         values.info[idolId] = onFlg? "1": "0";
@@ -72,10 +78,30 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
         const workParam: URLSearchParams = new URLSearchParams(params.toString());
         workParam.set('q',newTmpStrArray.length===0? '': newTmpStrArray.join(' '));
         setParams(workParam);
-        setSearchResultCnt(
-            SearchSong(
-                newTmpStrArray, [], params.get('f')?.split(' ')||[], songInfoAsc, values['andor']
-            ).length);
+    };
+    function changeSearchParamsMedia(mediaId:string, onFlg: boolean): void {
+        values.media[mediaId] = onFlg? "1": "0";
+        const tmpStr: string = params.get('m')||'';
+        const tmpIdolIdStrArray: string[] = tmpStr.split(' ');
+        const newTmpStrArray: string[] = tmpIdolIdStrArray.filter(str => str !== mediaId && str !== '');
+        if(onFlg){
+            newTmpStrArray.push(mediaId);
+        };
+        const workParam: URLSearchParams = new URLSearchParams(params.toString());
+        workParam.set('m',newTmpStrArray.length===0? '': newTmpStrArray.join(' '));
+        setParams(workParam);
+    };
+    function changeSearchParamsCategory(categoryId:string, onFlg: boolean): void {
+        values.category[categoryId] = onFlg? "1": "0";
+        const tmpStr: string = params.get('c')||'';
+        const tmpIdolIdStrArray: string[] = tmpStr.split(' ');
+        const newTmpStrArray: string[] = tmpIdolIdStrArray.filter(str => str !== categoryId && str !== '');
+        if(onFlg){
+            newTmpStrArray.push(categoryId);
+        };
+        const workParam: URLSearchParams = new URLSearchParams(params.toString());
+        workParam.set('c',newTmpStrArray.length===0? '': newTmpStrArray.join(' '));
+        setParams(workParam);
     };
     function changeSearchParamsFilter(filterType:string, onFlg: boolean): void {
         values.info[filterType] = onFlg? "1": "0";
@@ -88,10 +114,6 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
         const workParam: URLSearchParams = new URLSearchParams(params.toString());
         workParam.set('f',newTmpStrArray.length===0? '': newTmpStrArray.join(' '));
         setParams(workParam);
-        setSearchResultCnt(
-            SearchSong(
-                params.get('q')?.split(' ')||[], [], newTmpStrArray, songInfoAsc, values['andor']
-            ).length);
     };
 
     //OPENボタン用設定
@@ -110,13 +132,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
     const [tooltipOn, setTooltipOn] = useState<boolean>(false);
     //エラーチェック
     function errorCheck(): boolean {
-        const tmpStr: string = params.get('q')||'';
-        const tmpStrArray: string[] = tmpStr.split(' ');
-        if(searchResultCnt > 0){
-            return true;
-        } else {
-            return false;
-        }
+        return true;
     }
     
     return (
@@ -220,6 +236,26 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                                     filterId="sbsc" isValid={values.info["sbsc"]} labelStr="サブスク対応曲のみ表示"
                                     changeSearchParams={changeSearchParamsFilter} 
                                     onChange={() => values.info["sbsc"]==="1"} />
+                        </div>
+                        <div className="flex justify-center text-lg lg:text-xl font-bold">
+                            {'閲覧方法'}
+                        </div>
+                        <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
+                            <SearchModalRadioButton
+                            radioName="radio-howtoview"
+                            data={[
+                                { filterId: "null", labelStr: "すべて" },
+                                { filterId: "1", labelStr: "無料で読める" },
+                                { filterId: "2", labelStr: "プレミアム会員読み放題対象" },
+                            ]}
+                            selectedId={values.howToView}
+                            onChange={(id) => {
+                                console.log(id)
+                                console.log(values.howToView)
+                                setValues({ ...values, howToView: id })
+                            }}
+                            changeSearchParams={(id) =>switchHowToView(id)}
+                            />
                         </div>
                         <div className="flex justify-center text-lg lg:text-xl font-bold mt-4">
                             {'ユニット・アイドル'}
@@ -517,6 +553,23 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                                 changeSearchParams={changeSearchParamsIdolId} 
                                 onChange={() => values.info["CLF03"]==="1"} />
                             </div>
+                        </div>
+                        <div className="flex justify-center text-lg lg:text-xl font-bold mt-4">
+                            {'その他条件'}
+                        </div>
+                        <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
+                            <SearchModalFilterCheckbox 
+                                filterId={MEDIA.proe.id.toString()} isValid={values.media[MEDIA.proe.id.toString()]} labelStr={MEDIA.proe.name}
+                                changeSearchParams={(id,isValid) =>changeSearchParamsMedia(id,isValid)}
+                                onChange={() => values.media[MEDIA.proe.id.toString()]==="1"} />
+                            <SearchModalFilterCheckbox 
+                                filterId={MEDIA.gs.id.toString()} isValid={values.media[MEDIA.gs.id.toString()]} labelStr={MEDIA.gs.name}
+                                changeSearchParams={(id,isValid) =>changeSearchParamsMedia(id,isValid)}
+                                onChange={() => values.media[MEDIA.gs.id.toString()]==="1"} />
+                            <SearchModalFilterCheckbox 
+                                filterId={MEDIA.moba.id.toString()} isValid={values.media[MEDIA.moba.id.toString()]} labelStr={MEDIA.moba.name}
+                                changeSearchParams={(id,isValid) =>changeSearchParamsMedia(id,isValid)}
+                                onChange={() => values.media[MEDIA.moba.id.toString()]==="1"} />
                         </div>
                         <div className="flex justify-center text-lg lg:text-xl font-bold mt-4">
                             {'その他条件'}
