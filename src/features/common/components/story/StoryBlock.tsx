@@ -61,10 +61,10 @@ export default function StoryBlock(
       {headTitle}
       </div>
       <div className ="
-        tablet:text-xl text-base
+        lg:text-2xl text-xl
         underline
         leading-tight
-        font-sans
+        font-sans font-black
         text-zinc-800
       ">
           {storyTitle}
