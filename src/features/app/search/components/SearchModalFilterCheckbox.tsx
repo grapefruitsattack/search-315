@@ -3,9 +3,9 @@ import { Dispatch, SetStateAction, useState } from "react";
 import singingMaster from '../../../../data/singingMaster.json';
 
 export default function SearchModalFilterCheckbox(
-    { filterId,isValid,labelStr,changeSearchParams,onChange }
+    { filterId,isValid,labelStr,disabled,changeSearchParams,onChange }
     : { 
-        filterId: string, isValid: string, labelStr: string
+        filterId: string, isValid: string, labelStr: string, disabled?:boolean
         , changeSearchParams: (filterId:string, onFlg: boolean) => void
         , onChange: (filterId:string, onFlg: boolean) => void;
       })
@@ -31,7 +31,7 @@ export default function SearchModalFilterCheckbox(
             '>
             </span> */}
             <div className={`text-left
-                    justify-center px-2 
+                    justify-center px-2 py-0 lg:py-1
                     text-stone-500
                     peer-checked:text-green-400
                     font-sans text-sm lg:text-base 
@@ -40,6 +40,7 @@ export default function SearchModalFilterCheckbox(
                     hover:text-green-400
                     border-green-300/0 border-2
                     peer-checked:border-green-300 peer-checked:border-2
+                    peer-distbled:border-green-900
                     rounded-lg peer-checked:rounded-none
                     drop-shadow-md peer-checked:drop-shadow-none
                     transition-all duration-500 ease-out
