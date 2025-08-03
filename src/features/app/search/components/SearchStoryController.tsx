@@ -2,8 +2,8 @@
 import { usePathname, useSearchParams,useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { SearchStoryParams } from '../class/SearchStoryParams';
-import SearchModalCheckbox from "./SearchModalCheckbox";
-import SearchModalFilterCheckbox from "./SearchModalFilterCheckbox";
+import SearchInfoCheckbox from "./SearchInfoCheckbox";
+import SearchStoryFilterCheckbox from "./SearchStoryFilterCheckbox";
 import SearchModalRadioButton from "./SearchModalRadioButton";
 import SearchSong from '../../../common/utils/SearchSong';
 import {CATEGORY,MEDIA,WEBSITE} from '../../../common/const/StoryInfoConst';
@@ -40,7 +40,20 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
         setParams(workParam);
         setValues({andor:values['andor'],order:'desc',voice:'0',howToView:'0',media:{},category:{},info:{}});
     };
-
+    function createUrlSearchParm(searchStoryParams:SearchStoryParams):URLSearchParams{
+        const workParam: URLSearchParams = new URLSearchParams();
+        const infoKeys = Object.keys(searchStoryParams.info).filter(str => searchStoryParams.info[str]);
+        const mediaKeys = Object.keys(searchStoryParams.media).filter(str => searchStoryParams.info[str]);
+        const categoryKeys = Object.keys(searchStoryParams.category).filter(str => searchStoryParams.info[str]);
+        workParam.set('q',infoKeys.length===0? '': infoKeys.join(' '));
+        workParam.set('m',mediaKeys.length===0? '': mediaKeys.join(' '));
+        workParam.set('c',categoryKeys.length===0? '': categoryKeys.join(' '));
+        workParam.set('order',searchStoryParams.order);
+        workParam.set('andor',searchStoryParams.andor);
+        workParam.set('v',searchStoryParams.voice);
+        workParam.set('htv',searchStoryParams.howToView);
+        return workParam;
+    }
     function switchHowToView(howToView: string): void{
         setValues({...values, howToView:howToView});
         const workParam: URLSearchParams = new URLSearchParams(params.toString());
@@ -68,7 +81,6 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
         setParams(workParam);
     };
     function changeSearchParamsIdolId(idolId:string, onFlg: boolean): void {
-        values.info[idolId] = onFlg? "1": "0";
         const tmpStr: string = params.get('q')||'';
         const tmpIdolIdStrArray: string[] = tmpStr.split(' ');
         const newTmpStrArray: string[] = tmpIdolIdStrArray.filter(str => str !== idolId && str !== '');
@@ -79,20 +91,10 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
         workParam.set('q',newTmpStrArray.length===0? '': newTmpStrArray.join(' '));
         setParams(workParam);
     };
-    function changeSearchParamsMedia(mediaId:string, onFlg: boolean): void {
-        values.media[mediaId] = onFlg? "1": "0";
-        const tmpStr: string = params.get('m')||'';
-        const tmpIdolIdStrArray: string[] = tmpStr.split(' ');
-        const newTmpStrArray: string[] = tmpIdolIdStrArray.filter(str => str !== mediaId && str !== '');
-        if(onFlg){
-            newTmpStrArray.push(mediaId);
-        };
-        const workParam: URLSearchParams = new URLSearchParams(params.toString());
-        workParam.set('m',newTmpStrArray.length===0? '': newTmpStrArray.join(' '));
-        setParams(workParam);
-    };
     function changeSearchParamsCategory(categoryId:string, onFlg: boolean): void {
-        values.category[categoryId] = onFlg? "1": "0";
+
+        setValues({...values, category: {...values.category,[CATEGORY.connectWithMusic.id]:onFlg}})
+
         const tmpStr: string = params.get('c')||'';
         const tmpIdolIdStrArray: string[] = tmpStr.split(' ');
         const newTmpStrArray: string[] = tmpIdolIdStrArray.filter(str => str !== categoryId && str !== '');
@@ -102,9 +104,9 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
         const workParam: URLSearchParams = new URLSearchParams(params.toString());
         workParam.set('c',newTmpStrArray.length===0? '': newTmpStrArray.join(' '));
         setParams(workParam);
+        
     };
     function changeSearchParamsFilter(filterType:string, onFlg: boolean): void {
-        values.info[filterType] = onFlg? "1": "0";
         const tmpStr: string = params.get('f')||'';
         const tmpFilterStrArray: string[] = tmpStr.split(' ');
         const newTmpStrArray: string[] = tmpFilterStrArray.filter(str => str !== filterType && str !== '');
@@ -228,14 +230,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                             {'絞り込み'}
                         </div>
                         <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
-                                <SearchModalFilterCheckbox 
-                                    filterId="org" isValid={values.info["org"]} labelStr="オリジナル曲のみ表示（別Ver曲を非表示）"
-                                    changeSearchParams={changeSearchParamsFilter} 
-                                    onChange={() => values.info["org"]==="1"} />
-                                <SearchModalFilterCheckbox 
-                                    filterId="sbsc" isValid={values.info["sbsc"]} labelStr="サブスク対応曲のみ表示"
-                                    changeSearchParams={changeSearchParamsFilter} 
-                                    onChange={() => values.info["sbsc"]==="1"} />
+
                         </div>
                         <div className="flex justify-center text-lg lg:text-xl font-bold">
                             {'閲覧方法'}
@@ -249,11 +244,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                                 { filterId: "2", labelStr: "プレミアム会員読み放題対象" },
                             ]}
                             selectedId={values.howToView}
-                            onChange={(id) => {
-                                console.log(id)
-                                console.log(values.howToView)
-                                setValues({ ...values, howToView: id })
-                            }}
+                            onChange={(id) => setValues({ ...values, howToView: id })}
                             changeSearchParams={(id) =>switchHowToView(id)}
                             />
                         </div>
@@ -262,361 +253,325 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                         </div>
                         <div className='grid grid-cols-1 lg:grid-cols-2 gap-2 justify-center px-2'>
                             <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-t-2 border-l-4 border-JUP00'>
-                            <SearchModalCheckbox 
+                            <SearchInfoCheckbox 
                                 unitPrefix="JUP" idolNum="00" isValid={values.info["JUP00"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["JUP00"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="JUP" idolNum="01" isValid={values.info["JUP01"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["JUP01"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="JUP" idolNum="02" isValid={values.info["JUP02"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["JUP02"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="JUP" idolNum="03" isValid={values.info["JUP03"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["JUP03"]==="1"} />
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
                             </div>
                             <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-t-2 border-l-4 border-DRS00'>
-                            <SearchModalCheckbox 
+                            <SearchInfoCheckbox 
                                 unitPrefix="DRS" idolNum="00" isValid={values.info["DRS00"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["DRS00"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="DRS" idolNum="01" isValid={values.info["DRS01"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["DRS01"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="DRS" idolNum="02" isValid={values.info["DRS02"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["DRS02"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="DRS" idolNum="03" isValid={values.info["DRS03"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["DRS03"]==="1"} />
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
                             </div>
                             <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-t-2 border-l-4 border-ALT00'>
-                            <SearchModalCheckbox 
+                            <SearchInfoCheckbox 
                                 unitPrefix="ALT" idolNum="00" isValid={values.info["ALT00"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["ALT00"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="ALT" idolNum="01" isValid={values.info["ALT01"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["ALT01"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="ALT" idolNum="02" isValid={values.info["ALT02"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["ALT02"]==="1"} />
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
                             </div>
                             <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-t-2 border-l-4 border-BEI00'>
-                            <SearchModalCheckbox 
+                            <SearchInfoCheckbox 
                                 unitPrefix="BEI" idolNum="00" isValid={values.info["BEI00"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["BEI00"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="BEI" idolNum="01" isValid={values.info["BEI01"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["BEI01"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="BEI" idolNum="02" isValid={values.info["BEI02"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["BEI02"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="BEI" idolNum="03" isValid={values.info["BEI03"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["BEI03"]==="1"} />
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
                             </div>
                             <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-t-2 border-l-4 border-DBL00'>
-                            <SearchModalCheckbox 
+                            <SearchInfoCheckbox 
                                 unitPrefix="DBL" idolNum="00" isValid={values.info["DBL00"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["DBL00"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="DBL" idolNum="01" isValid={values.info["DBL01"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["DBL01"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="DBL" idolNum="02" isValid={values.info["DBL02"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["DBL02"]==="1"} />
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
                             </div>
                             <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-t-2 border-l-4 border-FRM00'>
-                            <SearchModalCheckbox 
+                            <SearchInfoCheckbox 
                                 unitPrefix="FRM" idolNum="00" isValid={values.info["FRM00"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["FRM00"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="FRM" idolNum="01" isValid={values.info["FRM01"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["FRM01"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="FRM" idolNum="02" isValid={values.info["FRM02"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["FRM02"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="FRM" idolNum="03" isValid={values.info["FRM03"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["FRM03"]==="1"} />
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
                             </div>
                             <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-t-2 border-l-4 border-SAI00'>
-                            <SearchModalCheckbox 
+                            <SearchInfoCheckbox 
                                 unitPrefix="SAI" idolNum="00" isValid={values.info["SAI00"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["SAI00"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="SAI" idolNum="01" isValid={values.info["SAI01"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["SAI01"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="SAI" idolNum="02" isValid={values.info["SAI02"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["SAI02"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="SAI" idolNum="03" isValid={values.info["SAI03"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["SAI03"]==="1"} />
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
                             </div>
                             <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-t-2 border-l-4 border-SSK00'>
-                            <SearchModalCheckbox 
+                            <SearchInfoCheckbox 
                                 unitPrefix="SSK" idolNum="00" isValid={values.info["SSK00"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["SSK00"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="SSK" idolNum="01" isValid={values.info["SSK01"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["SSK01"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="SSK" idolNum="02" isValid={values.info["SSK02"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["SSK02"]==="1"} />
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
                             </div>
                             <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-t-2 border-l-4 border-HIJ00'>
-                            <SearchModalCheckbox 
+                            <SearchInfoCheckbox 
                                 unitPrefix="HIJ" idolNum="00" isValid={values.info["HIJ00"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["HIJ00"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="HIJ" idolNum="01" isValid={values.info["HIJ01"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["HIJ01"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="HIJ" idolNum="02" isValid={values.info["HIJ02"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["HIJ02"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="HIJ" idolNum="03" isValid={values.info["HIJ03"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["HIJ03"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="HIJ" idolNum="04" isValid={values.info["HIJ04"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["HIJ04"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="HIJ" idolNum="05" isValid={values.info["HIJ05"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["HIJ05"]==="1"} />
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
                             </div>
                             <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-t-2 border-l-4 border-CFP00'>
-                            <SearchModalCheckbox 
+                            <SearchInfoCheckbox 
                                 unitPrefix="CFP" idolNum="00" isValid={values.info["CFP00"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["CFP00"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="CFP" idolNum="01" isValid={values.info["CFP01"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["CFP01"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="CFP" idolNum="02" isValid={values.info["CFP02"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["CFP02"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="CFP" idolNum="03" isValid={values.info["CFP03"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["CFP03"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="CFP" idolNum="04" isValid={values.info["CFP04"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["CFP04"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="CFP" idolNum="05" isValid={values.info["CFP05"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["CFP05"]==="1"} />
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
                             </div>
                             <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-t-2 border-l-4 border-MFM00'>
-                            <SearchModalCheckbox 
+                            <SearchInfoCheckbox 
                                 unitPrefix="MFM" idolNum="00" isValid={values.info["MFM00"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["MFM00"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="MFM" idolNum="01" isValid={values.info["MFM01"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["MFM01"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="MFM" idolNum="02" isValid={values.info["MFM02"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["MFM02"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="MFM" idolNum="03" isValid={values.info["MFM03"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["MFM03"]==="1"} />
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
                             </div>
                             <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-t-2 border-l-4 border-SEM00'>
-                            <SearchModalCheckbox 
+                            <SearchInfoCheckbox 
                                 unitPrefix="SEM" idolNum="00" isValid={values.info["SEM00"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["SEM00"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="SEM" idolNum="01" isValid={values.info["SEM01"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["SEM01"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="SEM" idolNum="02" isValid={values.info["SEM02"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["SEM02"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="SEM" idolNum="03" isValid={values.info["SEM03"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["SEM03"]==="1"} />
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
                             </div>
                             <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-t-2 border-l-4 border-KGD00'>
-                            <SearchModalCheckbox 
+                            <SearchInfoCheckbox 
                                 unitPrefix="KGD" idolNum="00" isValid={values.info["KGD00"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["KGD00"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="KGD" idolNum="01" isValid={values.info["KGD01"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["KGD01"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="KGD" idolNum="02" isValid={values.info["KGD02"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["KGD02"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="KGD" idolNum="03" isValid={values.info["KGD03"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["KGD03"]==="1"} />
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
                             </div>
                             <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-t-2 border-l-4 border-FLG00'>
-                            <SearchModalCheckbox 
+                            <SearchInfoCheckbox 
                                 unitPrefix="FLG" idolNum="00" isValid={values.info["FLG00"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["FLG00"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="FLG" idolNum="01" isValid={values.info["FLG01"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["FLG01"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="FLG" idolNum="02" isValid={values.info["FLG02"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["FLG02"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="FLG" idolNum="03" isValid={values.info["FLG03"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["FLG03"]==="1"} />
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
                             </div>
                             <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-t-2 border-l-4 border-LGN00'>
-                            <SearchModalCheckbox 
+                            <SearchInfoCheckbox 
                                 unitPrefix="LGN" idolNum="00" isValid={values.info["LGN00"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["LGN00"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="LGN" idolNum="01" isValid={values.info["LGN01"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["LGN01"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="LGN" idolNum="02" isValid={values.info["LGN02"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["LGN02"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="LGN" idolNum="03" isValid={values.info["LGN03"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["LGN03"]==="1"} />
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
                             </div>
                             <div className='flex flex-wrap p-1 gap-3 justify-center items-center border-t-2 border-l-4 border-CLF00'>
-                            <SearchModalCheckbox 
+                            <SearchInfoCheckbox 
                                 unitPrefix="CLF" idolNum="00" isValid={values.info["CLF00"]}
-                                changeSearchParams={changeSearchParamsIdolId}
-                                onChange={() => values.info["CLF00"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="CLF" idolNum="01" isValid={values.info["CLF01"]}
-                                changeSearchParams={changeSearchParamsIdolId} 
-                                onChange={() => values.info["CLF01"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="CLF" idolNum="02" isValid={values.info["CLF02"]}
-                                changeSearchParams={changeSearchParamsIdolId} 
-                                onChange={() => values.info["CLF02"]==="1"} />
-                            <SearchModalCheckbox 
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
+                            <SearchInfoCheckbox 
                                 unitPrefix="CLF" idolNum="03" isValid={values.info["CLF03"]}
-                                changeSearchParams={changeSearchParamsIdolId} 
-                                onChange={() => values.info["CLF03"]==="1"} />
+                                onChange={(id,isValid) => {setValues({...values,info:{...values.info,[id]:isValid}})}}
+                            />
                             </div>
                         </div>
                         <div className="flex justify-center text-lg lg:text-xl font-bold mt-4">
                             {'その他条件'}
                         </div>
                         <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
-                            <SearchModalFilterCheckbox 
-                                filterId={MEDIA.proe.id.toString()} isValid={values.media[MEDIA.proe.id.toString()]} labelStr={MEDIA.proe.name}
-                                changeSearchParams={(id,isValid) =>changeSearchParamsMedia(id,isValid)}
-                                onChange={() => values.media[MEDIA.proe.id.toString()]==="1"} />
-                            <SearchModalFilterCheckbox 
+                            <SearchStoryFilterCheckbox 
+                                filterId={MEDIA.proe.id.toString()}
+                                isValid={values.media[MEDIA.proe.id.toString()]}
+                                labelStr={MEDIA.proe.name}
+                                changeSearchParams={(id,isValid) =>{}}
+                                onChange={(id,isValid) => {setValues({...values,media:{...values.media,[id]:isValid}})}} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.connectWithMusic.id}
+                                isValid={values.category[CATEGORY.connectWithMusic.id]}
+                                labelStr={CATEGORY.connectWithMusic.name}
+                                disabled={!(values.media[MEDIA.proe.id.toString()])}
+                                changeSearchParams={(id,isValid) =>changeSearchParamsCategory(id,isValid)}
+                                onChange={() => {}} />
+                        </div>
+                        <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
+                            {/* <SearchStoryFilterCheckbox 
                                 filterId={MEDIA.gs.id.toString()} isValid={values.media[MEDIA.gs.id.toString()]} labelStr={MEDIA.gs.name}
                                 changeSearchParams={(id,isValid) =>changeSearchParamsMedia(id,isValid)}
                                 onChange={() => values.media[MEDIA.gs.id.toString()]==="1"} />
-                            <SearchModalFilterCheckbox 
+                            <SearchStoryFilterCheckbox 
                                 filterId={MEDIA.moba.id.toString()} isValid={values.media[MEDIA.moba.id.toString()]} labelStr={MEDIA.moba.name}
                                 changeSearchParams={(id,isValid) =>changeSearchParamsMedia(id,isValid)}
-                                onChange={() => values.media[MEDIA.moba.id.toString()]==="1"} />
-                        </div>
-                        <div className="flex justify-center text-lg lg:text-xl font-bold mt-4">
-                            {'その他条件'}
-                        </div>
-                        <div className=''>
-                            <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
-                                <SearchModalFilterCheckbox 
-                                    filterId="cover" isValid={values.info["cover"]} labelStr="カバー曲"
-                                    changeSearchParams={changeSearchParamsFilter} 
-                                    onChange={() => values.info["cover"]==="1"} />
-                                <SearchModalFilterCheckbox 
-                                    filterId="u" isValid={values.info["u"]} labelStr="ユニット曲"
-                                    changeSearchParams={changeSearchParamsFilter} 
-                                    onChange={() => values.info["u"]==="1"} />
-                                <SearchModalFilterCheckbox 
-                                    filterId="s" isValid={values.info["s"]} labelStr="ソロ曲"
-                                    changeSearchParams={changeSearchParamsFilter} 
-                                    onChange={() => values.info["s"]==="1"} />
-                                <SearchModalFilterCheckbox 
-                                    filterId="all" isValid={values.info["all"]} labelStr="全体曲"
-                                    changeSearchParams={changeSearchParamsFilter} 
-                                    onChange={() => values.info["all"]==="1"} />
-                                <SearchModalFilterCheckbox 
-                                    filterId="anniv" isValid={values.info["anniv"]} labelStr="アニバ曲"
-                                    changeSearchParams={changeSearchParamsFilter} 
-                                    onChange={() => values.info["anniv"]==="1"} />
-                                <SearchModalFilterCheckbox 
-                                    filterId="type" isValid={values.info["type"]} labelStr="属性曲"
-                                    changeSearchParams={changeSearchParamsFilter} 
-                                    onChange={() => values.info["type"]==="1"} />
-                                <SearchModalFilterCheckbox 
-                                    filterId="imas" isValid={values.info["imas"]} labelStr="アイマス"
-                                    changeSearchParams={changeSearchParamsFilter} 
-                                    onChange={() => values.info["imas"]==="1"} />
-                                <SearchModalFilterCheckbox 
-                                    filterId="prs" isValid={values.info["prs"]} labelStr="PRS"
-                                    changeSearchParams={changeSearchParamsFilter} 
-                                    onChange={() => values.info["prs"]==="1"} />
-                                <SearchModalFilterCheckbox 
-                                    filterId="psvote" isValid={values.info["psvote"]} labelStr="パッション投票"
-                                    changeSearchParams={changeSearchParamsFilter} 
-                                    onChange={() => values.info["psvote"]==="1"} />
-                                <SearchModalFilterCheckbox 
-                                    filterId="colle" isValid={values.info["colle"]} labelStr="ユニコレ・ソロコレ"
-                                    changeSearchParams={changeSearchParamsFilter} 
-                                    onChange={() => values.info["colle"]==="1"} />
-                            </div>
+                                onChange={() => values.media[MEDIA.moba.id.toString()]==="1"} /> */}
                         </div>
                     </div>
                     </div>
@@ -681,7 +636,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                                 onClick={() => {
                                     if(errorCheck()){
                                         setTooltipOn(false);
-                                        const workParam: URLSearchParams = new URLSearchParams(params.toString());
+                                        const workParam: URLSearchParams = createUrlSearchParm(values);
                                         workParam.delete('display');
                                         workParam.set('display','1');
                                         router.push(currentPath + '?'  + decodeURIComponent(workParam.toString()));

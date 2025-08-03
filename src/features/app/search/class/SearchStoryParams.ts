@@ -3,11 +3,11 @@ import { ReadonlyURLSearchParams } from 'next/navigation';
 export class SearchStoryParams {
   order: string;
   andor: string;
-  media: { [key: string]: string; };
-  category: { [key: string]: string; };
+  media: { [key: string]: boolean; };
+  category: { [key: string]: boolean; };
   voice: string;
   howToView: string;
-  info: { [key: string]: string; };
+  info: { [key: string]: boolean; };
 
   constructor(urlSearchParams : ReadonlyURLSearchParams) {
       this.order = urlSearchParams.get('order') || 'desc';
@@ -15,19 +15,19 @@ export class SearchStoryParams {
       const media: string[] = urlSearchParams.get('m')?.split(' ') || [];
       this.media ={};
       media.forEach(data=>{
-        this.media[Number(data)] = '1';
+        this.media[data] = true;
       });
       const category: string[] = urlSearchParams.get('c')?.split(' ') || [];
       this.category ={};
       category.forEach(data=>{
-        this.category[data] = '1';
+        this.category[data] = true;
       });
-      this.voice = urlSearchParams.get('v') || '0';
-      this.howToView = urlSearchParams.get('htv') || '0';
+      this.voice = urlSearchParams.get('v') || '';
+      this.howToView = urlSearchParams.get('htv') || '';
       const info: string[] = urlSearchParams.get('q')?.split(' ') || [];
       this.info ={};
       info.forEach(data=>{
-        this.info[data] = '1';
+        this.info[data] = true;
       });
   };
 }

@@ -21,8 +21,11 @@ export function GetStoryCategoryName(category: string)
     if(category === CATEGORY.main.id){
         return CATEGORY.main.name
     }
-    if(category === CATEGORY.event.id){
-        return CATEGORY.event.name
+    if(category === CATEGORY.mobaEvent.id){
+        return CATEGORY.mobaEvent.name
+    }
+    if(category === CATEGORY.gsEvent.id){
+        return CATEGORY.gsEvent.name
     }
     if(category === CATEGORY.idolEpisode.id){
         return CATEGORY.idolEpisode.name

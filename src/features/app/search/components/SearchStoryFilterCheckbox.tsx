@@ -2,10 +2,10 @@ import { SearchParams } from '../class/SearchParams';
 import { Dispatch, SetStateAction, useState } from "react";
 import singingMaster from '../../../../data/singingMaster.json';
 
-export default function SearchModalFilterCheckbox(
+export default function SearchStoryFilterCheckbox(
     { filterId,isValid,labelStr,disabled,changeSearchParams,onChange }
     : { 
-        filterId: string, isValid: string, labelStr: string, disabled?:boolean
+        filterId: string, isValid: boolean, labelStr: string, disabled?:boolean
         , changeSearchParams: (filterId:string, onFlg: boolean) => void
         , onChange: (filterId:string, onFlg: boolean) => void;
       })
@@ -16,7 +16,7 @@ export default function SearchModalFilterCheckbox(
     return (
         <label className='flex flex-row relative cursor-pointer'>
             <input 
-                type="checkbox" id={filterId} checked={isValid==="1"}
+                type="checkbox" id={filterId} checked={isValid}
                 className='hidden peer
                 '
                 disabled={inputDisabled}
