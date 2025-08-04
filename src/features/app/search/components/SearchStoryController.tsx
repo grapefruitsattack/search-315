@@ -6,7 +6,7 @@ import SearchInfoCheckbox from "./SearchInfoCheckbox";
 import SearchStoryFilterCheckbox from "./SearchStoryFilterCheckbox";
 import SearchModalRadioButton from "./SearchModalRadioButton";
 import SearchSong from '../../../common/utils/SearchSong';
-import {CATEGORY,MEDIA,WEBSITE} from '../../../common/const/StoryInfoConst';
+import {CATEGORY,MEDIA,getCategoryByMedia,getMediaByCategory} from '../../../common/const/StoryInfoConst';
 import singingMaster from '../../../../data/singingMaster.json';
 import songInfoAsc from '../../../../data/songInfoAsc.json';
 import {
@@ -31,7 +31,6 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
     const [params, setParams] = useState(new URLSearchParams(urlSearchParams.toString()));
     const [values, setValues] = useState(new SearchStoryParams(urlSearchParams));
 
-
     //パラメータクリア関数
     function clearParam(): void {
         const workParam: URLSearchParams = new URLSearchParams(params.toString());
@@ -43,15 +42,13 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
     function createUrlSearchParm(searchStoryParams:SearchStoryParams):URLSearchParams{
         const workParam: URLSearchParams = new URLSearchParams();
         const infoKeys = Object.keys(searchStoryParams.info).filter(str => searchStoryParams.info[str]);
-        const mediaKeys = Object.keys(searchStoryParams.media).filter(str => searchStoryParams.info[str]);
-        const categoryKeys = Object.keys(searchStoryParams.category).filter(str => searchStoryParams.info[str]);
-        workParam.set('q',infoKeys.length===0? '': infoKeys.join(' '));
-        workParam.set('m',mediaKeys.length===0? '': mediaKeys.join(' '));
-        workParam.set('c',categoryKeys.length===0? '': categoryKeys.join(' '));
-        workParam.set('order',searchStoryParams.order);
-        workParam.set('andor',searchStoryParams.andor);
-        workParam.set('v',searchStoryParams.voice);
-        workParam.set('htv',searchStoryParams.howToView);
+        const categoryKeys = Object.keys(searchStoryParams.category).filter(str => searchStoryParams.category[str]);
+        if(infoKeys.length>0) workParam.set('q',infoKeys.join(' '));
+        if(categoryKeys.length>0) workParam.set('c',categoryKeys.join(' '));
+        if(searchStoryParams.order!=='') workParam.set('order',searchStoryParams.order);
+        if(searchStoryParams.andor!=='') workParam.set('andor',searchStoryParams.andor);
+        if(searchStoryParams.voice!=='') workParam.set('v',searchStoryParams.voice);
+        if(searchStoryParams.howToView!=='') workParam.set('htv',searchStoryParams.howToView);
         return workParam;
     }
     function switchHowToView(howToView: string): void{
@@ -91,20 +88,40 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
         workParam.set('q',newTmpStrArray.length===0? '': newTmpStrArray.join(' '));
         setParams(workParam);
     };
+    function changeSearchParamsMedia(mediaId:number, onFlg: boolean): void {
+
+        let valuesMedia = values.media;
+        let valuesCategory = values.category;
+        valuesMedia = {...valuesMedia,[mediaId]:onFlg};
+        getCategoryByMedia(mediaId).forEach((item)=>{
+            valuesCategory = {...valuesCategory,[item.categoryId]:onFlg};
+        });
+        setValues({...values,media:valuesMedia,category:valuesCategory});
+
+        console.log(values)
+    };
     function changeSearchParamsCategory(categoryId:string, onFlg: boolean): void {
-
-        setValues({...values, category: {...values.category,[CATEGORY.connectWithMusic.id]:onFlg}})
-
-        const tmpStr: string = params.get('c')||'';
-        const tmpIdolIdStrArray: string[] = tmpStr.split(' ');
-        const newTmpStrArray: string[] = tmpIdolIdStrArray.filter(str => str !== categoryId && str !== '');
+        let workValue: SearchStoryParams = values;
+        workValue = {...workValue,category:{...workValue.category,[categoryId]:onFlg}};
+        const targetMediaId: number = getMediaByCategory(categoryId);
         if(onFlg){
-            newTmpStrArray.push(categoryId);
-        };
-        const workParam: URLSearchParams = new URLSearchParams(params.toString());
-        workParam.set('c',newTmpStrArray.length===0? '': newTmpStrArray.join(' '));
-        setParams(workParam);
-        
+            // カテゴリーがONになるとき
+            //  →対象メディアをON
+            workValue = {...workValue,media:{...workValue.media,[targetMediaId]:true}};
+        } else {
+            // カテゴリーがOFFになるとき
+            //  →対象メディアのカテゴリがすべてOFFの場合、対象メディアもOFF
+            let mediaValid: boolean = false;
+            for(const data of getCategoryByMedia(targetMediaId)){
+              if(workValue.category[data.categoryId]){
+                mediaValid = true;
+                break;
+              };
+            };
+            workValue = {...workValue,media:{...workValue.media,[targetMediaId]:mediaValid}};
+        }
+
+        setValues(workValue);
     };
     function changeSearchParamsFilter(filterType:string, onFlg: boolean): void {
         const tmpStr: string = params.get('f')||'';
@@ -551,27 +568,88 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                         <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
                             <SearchStoryFilterCheckbox 
                                 filterId={MEDIA.proe.id.toString()}
-                                isValid={values.media[MEDIA.proe.id.toString()]}
+                                isValid={values.media[MEDIA.proe.id]}
                                 labelStr={MEDIA.proe.name}
-                                changeSearchParams={(id,isValid) =>{}}
-                                onChange={(id,isValid) => {setValues({...values,media:{...values.media,[id]:isValid}})}} />
+                                onChange={(id,isValid) => changeSearchParamsMedia(MEDIA.proe.id,isValid)} />
                             <SearchStoryFilterCheckbox 
                                 filterId={CATEGORY.connectWithMusic.id}
                                 isValid={values.category[CATEGORY.connectWithMusic.id]}
                                 labelStr={CATEGORY.connectWithMusic.name}
-                                disabled={!(values.media[MEDIA.proe.id.toString()])}
-                                changeSearchParams={(id,isValid) =>changeSearchParamsCategory(id,isValid)}
-                                onChange={() => {}} />
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.connectWithMusic.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.connectWithStage.id}
+                                isValid={values.category[CATEGORY.connectWithStage.id]}
+                                labelStr={CATEGORY.connectWithStage.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.connectWithStage.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.connectWithOthers.id}
+                                isValid={values.category[CATEGORY.connectWithOthers.id]}
+                                labelStr={CATEGORY.connectWithOthers.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.connectWithOthers.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.idolOneFrame.id}
+                                isValid={values.category[CATEGORY.idolOneFrame.id]}
+                                labelStr={CATEGORY.idolOneFrame.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.idolOneFrame.id,isValid)} />
                         </div>
                         <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
-                            {/* <SearchStoryFilterCheckbox 
-                                filterId={MEDIA.gs.id.toString()} isValid={values.media[MEDIA.gs.id.toString()]} labelStr={MEDIA.gs.name}
-                                changeSearchParams={(id,isValid) =>changeSearchParamsMedia(id,isValid)}
-                                onChange={() => values.media[MEDIA.gs.id.toString()]==="1"} />
                             <SearchStoryFilterCheckbox 
-                                filterId={MEDIA.moba.id.toString()} isValid={values.media[MEDIA.moba.id.toString()]} labelStr={MEDIA.moba.name}
-                                changeSearchParams={(id,isValid) =>changeSearchParamsMedia(id,isValid)}
-                                onChange={() => values.media[MEDIA.moba.id.toString()]==="1"} /> */}
+                                filterId={MEDIA.gs.id.toString()}
+                                isValid={values.media[MEDIA.gs.id]}
+                                labelStr={MEDIA.gs.name}
+                                onChange={(id,isValid) => changeSearchParamsMedia(MEDIA.gs.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.main.id}
+                                isValid={values.category[CATEGORY.main.id]}
+                                labelStr={CATEGORY.main.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.main.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.gsEvent.id}
+                                isValid={values.category[CATEGORY.gsEvent.id]}
+                                labelStr={CATEGORY.gsEvent.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.gsEvent.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.episodeZero.id}
+                                isValid={values.category[CATEGORY.episodeZero.id]}
+                                labelStr={CATEGORY.episodeZero.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.episodeZero.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.idolEpisode.id}
+                                isValid={values.category[CATEGORY.idolEpisode.id]}
+                                labelStr={CATEGORY.idolEpisode.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.idolEpisode.id,isValid)} />
+                        </div>
+                        <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
+                            <SearchStoryFilterCheckbox 
+                                filterId={MEDIA.moba.id.toString()}
+                                isValid={values.media[MEDIA.moba.id]}
+                                labelStr={MEDIA.moba.name}
+                                onChange={(id,isValid) => changeSearchParamsMedia(MEDIA.moba.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.SideMemories.id}
+                                isValid={values.category[CATEGORY.SideMemories.id]}
+                                labelStr={CATEGORY.SideMemories.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.SideMemories.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.comicNomral.id}
+                                isValid={values.category[CATEGORY.comicNomral.id]}
+                                labelStr={CATEGORY.comicNomral.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.comicNomral.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.comicSpecial.id}
+                                isValid={values.category[CATEGORY.comicSpecial.id]}
+                                labelStr={CATEGORY.comicSpecial.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.comicSpecial.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.mobaEvent.id}
+                                isValid={values.category[CATEGORY.mobaEvent.id]}
+                                labelStr={CATEGORY.mobaEvent.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.mobaEvent.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.dailyOneFrame.id}
+                                isValid={values.category[CATEGORY.dailyOneFrame.id]}
+                                labelStr={CATEGORY.dailyOneFrame.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.dailyOneFrame.id,isValid)} />
                         </div>
                     </div>
                     </div>

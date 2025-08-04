@@ -3,26 +3,28 @@ import { Dispatch, SetStateAction, useState } from "react";
 import singingMaster from '../../../../data/singingMaster.json';
 
 export default function SearchStoryFilterCheckbox(
-    { filterId,isValid,labelStr,disabled,changeSearchParams,onChange }
+    { filterId,isValid,labelStr,disabled,onChange }
     : { 
-        filterId: string, isValid: boolean, labelStr: string, disabled?:boolean
-        , changeSearchParams: (filterId:string, onFlg: boolean) => void
-        , onChange: (filterId:string, onFlg: boolean) => void;
+        filterId: string,
+        isValid: boolean,
+        labelStr: string,
+        disabled?:boolean,
+        onChange: (filterId:string, onFlg: boolean) => void;
       })
 {
   const inputDisabled = disabled===undefined?false:disabled;
 
-
     return (
         <label className='flex flex-row relative cursor-pointer'>
             <input 
-                type="checkbox" id={filterId} checked={isValid}
+                type="checkbox"
+                id={filterId}
+                checked={typeof isValid === "boolean" ? isValid : false}
                 className='hidden peer
                 '
                 disabled={inputDisabled}
                 onChange={(e) => {
                   onChange(filterId,e.target.checked);
-                  changeSearchParams(filterId,e.target.checked);
                 }}
             />
             {/* <span className='h-6 w-6 absolute rounded-full pointer-events-none

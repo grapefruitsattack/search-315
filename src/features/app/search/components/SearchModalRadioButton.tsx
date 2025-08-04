@@ -37,7 +37,8 @@ export default function SearchModalRadioButton({
             }}
           />
           <div
-            className={`text-left justify-center px-2 text-stone-500
+            className={`text-left justify-center px-2 py-0 lg:py-1
+              text-stone-500
               peer-checked:text-green-400
               font-sans text-sm lg:text-base 
               bg-stone-200/20 peer-checked:bg-stone-200/0

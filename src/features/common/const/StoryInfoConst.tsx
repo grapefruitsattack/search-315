@@ -29,3 +29,58 @@ export const HOW_TO_VIEW = {
   asbSerialcodeCD: {id:'asb_scode_cd',name:'CD封入シリアルコード'},
   asbSerialcode: {id:'asb_scode',name:'シリアルコード'},
 };
+
+export function getMediaByCategory(categoryId:string):number{
+  type CategoryKey = keyof typeof CATEGORY;
+  const keys: CategoryKey[] = Object.keys(CATEGORY) as CategoryKey[];
+  const targetKey = keys.find((key)=>CATEGORY[key].id===categoryId)||"mobaEvent";
+
+  return CATEGORY[targetKey].mediaId||1;
+};
+export function getCategoryByMedia(mediaId:number):{categoryId:string,name:string}[]{
+  type CategoryKey = keyof typeof CATEGORY;
+  const keys: CategoryKey[] = Object.keys(CATEGORY) as CategoryKey[];
+  const result: {categoryId:string,name:string}[] = [];
+  
+  keys.forEach((key) => {
+    const item = CATEGORY[key];
+    if(item.mediaId === mediaId) result.push({categoryId:item.id,name:item.name});
+  });
+
+  return result;
+};
+export function getMediaArrayByCategory(categoryIds:string[]):number[]{
+  type MediaKey = keyof typeof MEDIA;
+  const keys: MediaKey[] = Object.keys(MEDIA) as MediaKey[];
+  const result: number[] = [];
+
+  keys.forEach((key) => {
+    const item = MEDIA[key];
+    let isExist: boolean = true;
+    for(const data of getCategoryByMedia(item.id)){
+      if(!(categoryIds.includes(data.categoryId))){
+        isExist = false;
+        break;
+      };
+    };
+  });
+
+  return result;
+};
+export function getAllMediaWithCategoryArray():{mediaId:number,categoryIds:string[]}[]{
+  type MediaKey = keyof typeof MEDIA;
+  type CategoryKey = keyof typeof CATEGORY;
+  const mediaKeys: MediaKey[] = Object.keys(MEDIA) as MediaKey[];
+  const categoryKeys: CategoryKey[] = Object.keys(CATEGORY) as CategoryKey[];
+  const result: {mediaId:number,categoryIds:string[]}[] = [];
+  mediaKeys.forEach((mediaKey) => {
+    const media = MEDIA[mediaKey];
+    const targetCategoryIds: string[] = [];
+    categoryKeys.forEach((categoryKey) => {
+      if(MEDIA[mediaKey].id===CATEGORY[categoryKey].mediaId) targetCategoryIds.push(CATEGORY[categoryKey].id);
+    });
+    result.push({mediaId:MEDIA[mediaKey].id,categoryIds:targetCategoryIds});
+  });
+
+  return result;
+}

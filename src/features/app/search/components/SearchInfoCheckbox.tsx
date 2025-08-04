@@ -4,19 +4,24 @@ import singingMaster from '../../../../data/singingMaster.json';
 
 export default function SearchInfoCheckbox(
     { unitPrefix,idolNum,isValid,onChange }
-    : { unitPrefix: string, idolNum: string, isValid: boolean
-      , onChange: (filterId:string, onFlg: boolean) => void; })
+    : { 
+      unitPrefix: string,
+      idolNum: string,
+      isValid: boolean,
+      onChange: (filterId:string, onFlg: boolean) => void;
+    })
   {
 
     const idolId = unitPrefix + idolNum;
     const idolName: string = singingMaster.find(data=>data.singingInfoId === idolId)?.singingInfoName || "";
 
-
     return (
         <label className='flex flex-row relative cursor-pointer'>
 
             <input 
-                type="checkbox" id={idolId} checked={isValid}
+                type="checkbox"
+                id={idolId} 
+                checked={typeof isValid === "boolean" ? isValid : false}
                 className='hidden peer
                 '
                 onChange={(e) => {

@@ -1,9 +1,10 @@
 import { ReadonlyURLSearchParams } from 'next/navigation';
+import {getAllMediaWithCategoryArray} from '../../../common/const/StoryInfoConst';
 
 export class SearchStoryParams {
   order: string;
   andor: string;
-  media: { [key: string]: boolean; };
+  media: { [key: number]: boolean; };
   category: { [key: string]: boolean; };
   voice: string;
   howToView: string;
@@ -12,18 +13,28 @@ export class SearchStoryParams {
   constructor(urlSearchParams : ReadonlyURLSearchParams) {
       this.order = urlSearchParams.get('order') || 'desc';
       this.andor = urlSearchParams.get('andor') || 'or';
-      const media: string[] = urlSearchParams.get('m')?.split(' ') || [];
-      this.media ={};
-      media.forEach(data=>{
-        this.media[data] = true;
-      });
+      this.voice = urlSearchParams.get('v') || '';
+      this.howToView = urlSearchParams.get('htv') || '';
+
       const category: string[] = urlSearchParams.get('c')?.split(' ') || [];
       this.category ={};
       category.forEach(data=>{
         this.category[data] = true;
       });
-      this.voice = urlSearchParams.get('v') || '';
-      this.howToView = urlSearchParams.get('htv') || '';
+
+      const allMediaCategory = getAllMediaWithCategoryArray();
+      this.media ={};
+      allMediaCategory.forEach(data=>{
+        var isTarget = true;
+        for(const categoryId of data.categoryIds){
+          if(!(category.includes(categoryId))){
+            isTarget = false;
+            break;
+          };
+        };
+        if(isTarget) this.media[data.mediaId] = true;
+      });
+      
       const info: string[] = urlSearchParams.get('q')?.split(' ') || [];
       this.info ={};
       info.forEach(data=>{
