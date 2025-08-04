@@ -24,8 +24,8 @@ export async function DeleteReadingData(storyId: string, readLater: number) {
     .from('user_reading')
     .delete()
     .eq('id', session?.user?.id)
-    .eq('storyId', storyId)
-    .eq('readLater', readLater).select();
+    .eq('story_id', storyId)
+    .eq('read_later', readLater).select();
 
     console.log(data);
   if (error||data===null||data.length===0) {

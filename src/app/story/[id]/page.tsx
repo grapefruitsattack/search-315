@@ -25,11 +25,11 @@ const getData = cache(async (id: string) => {
   )
   //ストーリー情報取得
   const {data, error} = (await supabase.from('m_story_json_data').select(`
-  storyId,
-  jsonData
-  `).eq('storyId',id).single());
+  story_id,
+  json_data
+  `).eq('story_id',id).single());
   if (!data) notFound()
-  const storyData: Story = data?.jsonData;
+  const storyData: Story = data?.json_data;
   
   if (!storyData) notFound()
  

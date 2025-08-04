@@ -1,15 +1,9 @@
 'use client';
-import { useEffect, useState } from 'react';
-import { UserReading } from "@/data/types";
-import { auth } from "../../../../../auth";
-import { createClient } from '@supabase/supabase-js'
-import { revalidatePath } from "next/cache";
 import SetLocalDateCookie  from "../../../common/utils/SetLocalDateCookie";
 import {UpdateReadingData}  from "../../actions/UpdateReadingData";
 import {DeleteReadingData}  from "../../actions/DeleteReadingData";
 import { Toaster } from "@/components/ui/sonner"
 import { toast } from "sonner"
-import { Session } from "next-auth";
  
 export default function StoryReadingButton(
   { storyId, isRead, isReadLeater }: { storyId: string, isRead: boolean, isReadLeater: boolean }) {

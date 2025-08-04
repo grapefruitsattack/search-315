@@ -38,11 +38,11 @@ export default async function StoryDetailedPage(
       :'';
   const { data, error } 
     = await supabase.from("user_reading")
-      .select("id,storyId,readingDate,readLater")
-      .eq('storyId',storyData.storyId).eq('id',userId).single()
+      .select("id,story_id,reading_date,read_later")
+      .eq('story_id',storyData.storyId).eq('id',userId).single()
       ||[];
-  const isRead: boolean = data!==null&&data?.readLater!==null&&data.readLater===0;
-  const isReadLeater: boolean = data!==null&&data?.readLater!==null&&data.readLater===1;
+  const isRead: boolean = data!==null&&data?.read_later!==null&&data.read_later===0;
+  const isReadLeater: boolean = data!==null&&data?.read_later!==null&&data.read_later===1;
 
   const login: boolean = session?.user?true:false;
 
