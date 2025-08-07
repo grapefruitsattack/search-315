@@ -27,7 +27,8 @@ const getData = cache(async (
   voiceType: number,
   howtoviewType: number,
   andor: string,
-  SortedAsc: number
+  SortedAsc: number,
+  page: number,
   ) => {
   const session = await auth();
   const supabaseAccessToken = session?.supabaseAccessToken;
@@ -61,6 +62,7 @@ const getData = cache(async (
       ?session.user.id||null
       :null;
   //ストーリー情報取得
+  const displayCnt: number = 18;
   const {data, error} = await supabase.rpc(
       'search_story_with_user',
       {
@@ -73,7 +75,7 @@ const getData = cache(async (
         sorted_asc:SortedAsc,
         user_id:userId,
       }
-  );
+  ).range(displayCnt*(page-1), (displayCnt*page)-1);
 
   const storySearchResult: StorySearchResult[] = data;
   return {result:storySearchResult, login:session?.user?true:false};
@@ -85,7 +87,7 @@ const Page = async ({
   searchParams,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ q?: string; m?: string; c?: string; v?: number; htv?: number; andor?: string; order?: string; }>;
+  searchParams: Promise<{ q?: string; m?: string; c?: string; v?: number; htv?: number; andor?: string; order?: string; page?: string; }>;
 }) => {
   // パラメータ取得
   const {q} = await searchParams || '';
@@ -95,15 +97,17 @@ const Page = async ({
   const {htv} = await searchParams || '';
   const {andor} = await searchParams || '';
   const {order} = await searchParams || '';
+  const {page} = await searchParams || '';
   // パラメータ編集
   const infoIdArray: string[] = q===undefined?[]:q.split(' ').filter(s => s !== '');
   const mediaArray: number[] = m===undefined?[]:m.split(' ').map(Number).filter(s => s !== 0);
   const categoryArray: string[] = c===undefined?[]:c.split(' ').filter(s => s !== '');
   const SortedAsc: number = order==='asc'?1:0;
+  const pageNum: number = Number(page)||1;
   //TODO パラメータ確認
 
   // 検索結果取得
-  const post = await getData(infoIdArray,mediaArray,categoryArray,v||0,htv||0,andor||'or',SortedAsc);
+  const post = await getData(infoIdArray,mediaArray,categoryArray,v||0,htv||0,andor||'or',SortedAsc,pageNum);
 
     return (
     <Suspense fallback={<Loading />}>
