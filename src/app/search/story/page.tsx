@@ -62,22 +62,22 @@ const getData = cache(async (
       ?session.user.id||null
       :null;
   //ストーリー情報取得
-  const displayCnt: number = 18;
+  const displayPageSize: number = 18;
   const {data, error} = await supabase.rpc(
-      'search_story_with_user',
+      'search_story_login',
       {
         info_id_array: infoIdArray,
-        media_array:mediaArray,
         category_array:categoryArray,
         voice_type:voiceType,
         howtoview_type:howtoviewType,
         andor:andor,
         sorted_asc:SortedAsc,
-        user_id:userId,
+        page:page,
+        page_size:displayPageSize,
+        user_id:userId
       }
-  ).range(displayCnt*(page-1), (displayCnt*page)-1);
-
-  const storySearchResult: StorySearchResult[] = data;
+  );
+  const storySearchResult: StorySearchResult[] = data[0]?.json_data;
   return {result:storySearchResult, login:session?.user?true:false};
 })
 

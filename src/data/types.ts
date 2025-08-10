@@ -194,7 +194,7 @@ export type StorySearchResult = {
   still: number;
   url: string;
   info_id: InfoStory[];
-  isValid: number;
+  is_valid: number;
   user_read_later: number;
 };
 
