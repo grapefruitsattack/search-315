@@ -5,6 +5,7 @@ import React from "react";
 import Link from 'next/link';
 import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName } from '../../utils/Story/GetStoryInfomation';
 import IdolBadge from '../IdolBadge';
+import CategoryBadge from '../../components/story/CategoryBadge';
 
 export default function StoryBlock(
   { storyId,media,category,headTitle,storyTitle,infoStory,url,login,userReadLater,displayLogin }
@@ -49,7 +50,7 @@ export default function StoryBlock(
       href={`/story/` + storyId}
       >
       <section className='flex flex-wrap relative text-xs mobileS:text-sm font-mono font-bold text-white gap-1'>
-        <div className="justify-center bg-teal-500 rounded-lg px-1 py-0.5">{GetStoryCategoryName(category)}</div>
+        <CategoryBadge id={category} size='block'/>
         <div className="justify-center bg-sky-400 rounded-lg px-1 py-0.5">{GetStoryMediaName(media)}</div>
       </section>
       <section className='px-1 '>

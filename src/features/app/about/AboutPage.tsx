@@ -93,7 +93,39 @@ export default function AboutPage({ }: { }) {
             </a>
             （
             <a className="underline" href={`https://github.com/Remix-Design/remixicon/blob/master/License`} target="_blank" rel="noopener noreferrer">
-            Apache License
+            Apache License 2.0
+            <span className="">
+            <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+            </span>
+            </a>
+            ）
+        </p>
+        <p className=" pb-4">
+            <a className="underline" href={`https://www.mingcute.com/`} target="_blank" rel="noopener noreferrer">
+            MingCute Icon
+                <span className="">
+                <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+                </span>
+            </a>
+            （
+            <a className="underline" href={`https://github.com/Richard9394/MingCute/blob/main/LICENSE`} target="_blank" rel="noopener noreferrer">
+            Apache License 2.0
+            <span className="">
+            <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+            </span>
+            </a>
+            ）
+        </p>
+        <p className=" pb-4">
+            <a className="underline" href={`https://fonts.google.com/icons`} target="_blank" rel="noopener noreferrer">
+            Google Fonts Icons
+                <span className="">
+                <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+                </span>
+            </a>
+            （
+            <a className="underline" href={`https://www.apache.org/licenses/LICENSE-2.0.html`} target="_blank" rel="noopener noreferrer">
+            Apache License 2.0
             <span className="">
             <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
             </span>

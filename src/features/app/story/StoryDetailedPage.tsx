@@ -11,6 +11,7 @@ import type { Story,InfoStory } from '../../../data/types';
 import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName,GetVoiceStateName,GetStoryHowtoviewName } from '../../common/utils/Story/GetStoryInfomation';
 import { MEDIA,CATEGORY,WEBSITE,HOW_TO_VIEW } from '../../common/const/StoryInfoConst'
 import IdolBadge from '../../common/components/IdolBadge';
+import CategoryBadge from '../../common/components/story/CategoryBadge';
 import StoryReadingButton from "./components/StoryReadingButton";
 import { Suspense } from "react";
 import StoryBlock from "../../common/components/story/StoryBlock";
@@ -83,7 +84,7 @@ export default async function StoryDetailedPage(
             </div>
         </section>
         <section className='flex flex-wrap relative text-sm tablet:text-xl font-mono font-bold text-white gap-1 mb-1'>
-          <div className="justify-center bg-sky-400 rounded-lg p-1">{categoryName}</div>
+          <CategoryBadge id={storyData.category} size={'normal'}/>
           <div className="justify-center bg-teal-500 rounded-lg p-1">{mediaName}</div>
         </section>
 

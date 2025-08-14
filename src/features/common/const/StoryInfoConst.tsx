@@ -13,8 +13,8 @@ export const CATEGORY = {
   SideMemories: {id:'smemo',name:'SideMemories',mediaId:1},
   dailyOneFrame: {id:'dof',name:'日常での１コマ',mediaId:1},
   episodeZero: {id:'epiz',name:'エピソードゼロ',mediaId:2},
-  connectWithMusic: {id:'cwm',name:'楽曲連動ストーリー',mediaId:3},
-  connectWithStage: {id:'cws',name:'ライブ連動ストーリー',mediaId:3},
+  connectWithMusic: {id:'cwm',name:'楽曲連動',mediaId:3},
+  connectWithStage: {id:'cws',name:'ライブ連動',mediaId:3},
   connectWithOthers: {id:'cwo',name:'連動ストーリー',mediaId:3},
   idolOneFrame: {id:'iof',name:'アイドルたちの１コマ',mediaId:3},
 };
