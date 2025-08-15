@@ -5186,5 +5186,13 @@
 {"trackNo": 3, "albumId": "FC16", "songId": "FC16_3", "singingInfoId": "FLG00", "releaseDate": "20250806", "type": ""},
 {"trackNo": 3, "albumId": "FC16", "songId": "FC16_3", "singingInfoId": "FLG01", "releaseDate": "20250806", "type": ""},
 {"trackNo": 3, "albumId": "FC16", "songId": "FC16_3", "singingInfoId": "FLG02", "releaseDate": "20250806", "type": ""},
-{"trackNo": 3, "albumId": "FC16", "songId": "FC16_3", "singingInfoId": "FLG03", "releaseDate": "20250806", "type": ""}
+{"trackNo": 3, "albumId": "FC16", "songId": "FC16_3", "singingInfoId": "FLG03", "releaseDate": "20250806", "type": ""},
+{"trackNo": 1, "albumId": "TT01", "songId": "TT01_1", "singingInfoId": "JUP01", "releaseDate": "20251001", "type": "c"},
+{"trackNo": 1, "albumId": "TT01", "songId": "TT01_1", "singingInfoId": "FRM01", "releaseDate": "20251001", "type": "c"},
+{"trackNo": 1, "albumId": "TT01", "songId": "TT01_1", "singingInfoId": "CFP04", "releaseDate": "20251001", "type": "c"},
+{"trackNo": 1, "albumId": "TT01", "songId": "TT01_1", "singingInfoId": "KGD03", "releaseDate": "20251001", "type": "c"},
+{"trackNo": 2, "albumId": "TT01", "songId": "TT01_2", "singingInfoId": "JUP01", "releaseDate": "20251001", "type": "sver"},
+{"trackNo": 3, "albumId": "TT01", "songId": "TT01_3", "singingInfoId": "FRM01", "releaseDate": "20251001", "type": "sver"},
+{"trackNo": 4, "albumId": "TT01", "songId": "TT01_4", "singingInfoId": "CFP04", "releaseDate": "20251001", "type": "sver"},
+{"trackNo": 5, "albumId": "TT01", "songId": "TT01_5", "singingInfoId": "KGD03", "releaseDate": "20251001", "type": "sver"}
 ]
