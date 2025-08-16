@@ -12,6 +12,7 @@ import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName,GetVoiceStat
 import { MEDIA,CATEGORY,WEBSITE,HOW_TO_VIEW } from '../../common/const/StoryInfoConst'
 import IdolBadge from '../../common/components/IdolBadge';
 import CategoryBadge from '../../common/components/story/CategoryBadge';
+import MediaBadge from '../../common/components/story/MediaBadge';
 import StoryReadingButton from "./components/StoryReadingButton";
 import { Suspense } from "react";
 import StoryBlock from "../../common/components/story/StoryBlock";
@@ -85,7 +86,7 @@ export default async function StoryDetailedPage(
         </section>
         <section className='flex flex-wrap relative text-sm tablet:text-xl font-mono font-bold text-white gap-1 mb-1'>
           <CategoryBadge id={storyData.category} size={'normal'}/>
-          <div className="justify-center bg-teal-500 rounded-lg p-1">{mediaName}</div>
+          <MediaBadge id={storyData.media} size={'normal'}/>
         </section>
 
         <section className='flex flex-wrap relative text-xs tablet:text-sm font-mono text-white gap-1 mb-1'>
