@@ -3,9 +3,11 @@ import type { StorySearchResult } from '../../../../data/types';
 import SearchStoryController from "../components/SearchStoryController";
 import SortButton from "../components/SortButton";
 import StoryBlock from "../../../common/components/story/StoryBlock";
+import Pagination from "../../../common/components/Pagination";
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
+import { Skeleton } from "@/components/ui/skeleton"
 
 export default function SearchPageStory({ data }: { data: {result:StorySearchResult[],totalCnt:number,login:boolean};}) {
   const resultData: StorySearchResult[] = data.result;
@@ -15,8 +17,11 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
   const searchParams = useSearchParams();
   const urlSearchParams = useSearchParams();
   const router = useRouter();
+  const [firstIsOpenController, setFirstIsOpenController] = useState(resultData === null || resultData.length===0);
+
 
   useEffect(() => {
+  setFirstIsOpenController(resultData === null || resultData.length === 0);
     setLoading(true);
     const timeout = setTimeout(() => {
       setLoading(false);
@@ -26,43 +31,20 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
   }, [searchParams.toString()]);
 
   // ページネーション
-  const currentPage: number = Number(urlSearchParams.get('page')) || 1;
   const pageSize: number = 18;
+  const maxPage: number = Math.ceil(data.totalCnt/pageSize);
+  let currentPage: number = Number(urlSearchParams.get('page')) || 1;
+  currentPage = currentPage>maxPage?maxPage:currentPage;
 
   return (
     <>
-    {/* トップ移動ボタン */}
-    <section className="z-40  py-2 fixed  bottom-14 flex flex-row w-full items-center  justify-center">  
-    
-    <div className="absolute left-8">
-            {/* <button 
-                className='rounded-full p-3 bg-gradient-to-r from-red-200/90 to-amber-300/90  items-center
-                text-teal-700 font-bold lg:text-xl text-lm shadow-lg shadow-red-600/70'
-                onClick={() => {
-                  window.scroll({
-                    top: 0,
-                    behavior: "smooth",
-                  });
-                }}
-            >  
-                <span>
-                {''}
-                <svg xmlns="http://www.w3.org/2000/svg" 
-                    className="icon icon-tabler icon-tabler-search inline-block pl-1 stroke-red-800 fill-red-800 
-                      w-[32px] h-[32px] lg:w-[42px] lg:h-[42px]"
-                     viewBox="0 0 26 26" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M13.0001 7.82843V20H11.0001V7.82843L5.63614 13.1924L4.22192 11.7782L12.0001 4L19.7783 11.7782L18.3641 13.1924L13.0001 7.82843Z"></path></svg>
-                </span>
-            </button> */}
-
-    </div>
-    </section>
     <section className="lg:px-24 px-2 mobileS:px-8 p-2 flex flex-wrap items-center gap-4">
     {/* 検索結果がゼロ件の場合、検索エリアを自動で開く */}
-    <SearchStoryController firstIsOpen={resultData.length===0}/>
+    <SearchStoryController 
+          key={searchParams.toString()} firstIsOpen={resultData === null || resultData.length===0}/>
     </section>
     <section className="lg:px-24 px-2 mobileS:px-8 p-2 flex flex-wrap items-center gap-4">
-
+      <Pagination currentPage={currentPage} totalPage={maxPage}/>
     </section>
     <section className="lg:px-24 px-2 mobileS:px-8 p-2 flex flex-wrap items-center gap-4">
       <SortButton/>
@@ -70,11 +52,23 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
     {/* ストーリー一覧 */}
     <section className="lg:flex px-2 mobileS:px-10 lg:px-16 w-full">
     <section className="grid grid-flow-row-dense items-start gap-4 grid-cols-1 lg:grid-cols-3 w-full">
-      {loading?<div>Loading Test...</div>:<>
-          {resultData.length===0 
+      {loading
+        ?
+        // ローディング表示（スケルトン）
+        <>
+          <Skeleton className="h-[120px] rounded-sm" />
+          <Skeleton className="h-[150px] rounded-sm" />
+          <Skeleton className="h-[150px] rounded-sm" />
+          <Skeleton className="h-[120px] rounded-sm" />
+          <Skeleton className="h-[120px] rounded-sm" />
+          <Skeleton className="h-[120px] rounded-sm" />
+        </>
+        :<>
+          {resultData === null || resultData.length===0 
           ?
           <div className="flex flex-col justify-center items-start ">
-            <div>検索条件に該当する楽曲がありません</div>
+            {/* TODO アラート化 */}
+            <div>検索条件に該当するストーリーがありません</div>
             <div>検索条件を変更してください</div>
           </div>
           :resultData.map((data, index) => (

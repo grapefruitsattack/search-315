@@ -182,12 +182,12 @@ export default function Pagination({ currentPage,totalPage }: { currentPage: num
 function pagenationNumberCurrent(pageNum: number, href: Url) {
   return(
     <li key={pageNum}>
-    <Link className="mx-1 flex h-9 w-7 lg:h-9 lg:w-9 
+    <p className="mx-1 flex h-9 w-7 lg:h-9 lg:w-9 
       items-center justify-center rounded-lg  
       bg-gradient-to-tr from-blue-800 to-teal-300 p-0 text-sm text-white shadow-md shadow-blue-500/20 transition duration-150 ease-in-out" 
-    href={href}>
+    >
       {pageNum}
-    </Link>
+    </p>
     </li>
   )
 };

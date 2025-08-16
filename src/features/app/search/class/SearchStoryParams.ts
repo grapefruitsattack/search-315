@@ -25,10 +25,11 @@ export class SearchStoryParams {
       const allMediaCategory = getAllMediaWithCategoryArray();
       this.media ={};
       allMediaCategory.forEach(data=>{
-        var isTarget = true;
+        var isTarget = false;
+        // 該当カテゴリーを1つでも含む場合、そのメディアをONにする
         for(const categoryId of data.categoryIds){
-          if(!(category.includes(categoryId))){
-            isTarget = false;
+          if(category.includes(categoryId)){
+            isTarget = true;
             break;
           };
         };

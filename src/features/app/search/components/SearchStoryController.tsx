@@ -26,6 +26,9 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
     const currentPath: string = usePathname();
     const urlSearchParams = useSearchParams();
     const [isOpen, setISopen] = useState(firstIsOpen);
+    useEffect(() => {
+        setISopen(firstIsOpen);
+    }, [firstIsOpen]);
 
     //useState設定
     const [params, setParams] = useState(new URLSearchParams(urlSearchParams.toString()));
@@ -98,7 +101,6 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
         });
         setValues({...values,media:valuesMedia,category:valuesCategory});
 
-        console.log(values)
     };
     function changeSearchParamsCategory(categoryId:string, onFlg: boolean): void {
         let workValue: SearchStoryParams = values;
@@ -233,9 +235,13 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
 
         </div>
     {/* 条件選択部 */}
-    <div className={`flex h-max pt-4 flex-col justify-center  w-full`}>
+    <div className={`
+        grid h-min pt-1 justify-center w-full 
+                ${isOpen
+                    ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}  
+        `}>
             <section className={`
-                  grid pb-4 overflow-hidden transition-all
+                  grid pb-1 overflow-hidden transition-all
                   duration-300 ease-in-out
                 ${isOpen
                     ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}  
@@ -243,9 +249,6 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
             <div className=" shadow-lg rounded-md border overflow-hidden py-2">
                     <div className="  rounded-md text-center mb-8">
                     <div className=" lg:px-8 px-1 pb-2 rounded-md text-center">
-                        <div className="flex justify-center text-lg lg:text-xl font-bold">
-                            {'絞り込み'}
-                        </div>
                         <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
 
                         </div>
@@ -258,12 +261,121 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                             data={[
                                 { filterId: "null", labelStr: "すべて" },
                                 { filterId: "1", labelStr: "無料で読める" },
-                                { filterId: "2", labelStr: "プレミアム会員読み放題対象" },
+                                { filterId: "2", labelStr: "プレ会員読み放題" },
                             ]}
                             selectedId={values.howToView}
                             onChange={(id) => setValues({ ...values, howToView: id })}
                             changeSearchParams={(id) =>switchHowToView(id)}
                             />
+                        </div>
+                        <div className="grid grid-cols-1 justify-items-center text-lg lg:text-xl font-bold mt-4">
+                        <div className="flex text-lg lg:text-xl font-bold mt-4">
+                            {'ストーリー種別'}
+                        </div>
+                        <div className='
+                            flex flex-wrap justify-center items-center 
+                            p-1 mb-2 gap-x-3 gap-y-1 w-fit
+                            rounded-md border border-teal-400
+                            '>
+                            {/* アイマスポータル */}
+                            <SearchStoryFilterCheckbox 
+                                filterId={MEDIA.proe.id.toString()}
+                                isValid={values.media[MEDIA.proe.id]}
+                                labelStr={MEDIA.proe.name}
+                                isMain={true}
+                                onChange={(id,isValid) => changeSearchParamsMedia(MEDIA.proe.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.connectWithMusic.id}
+                                isValid={values.category[CATEGORY.connectWithMusic.id]}
+                                labelStr={CATEGORY.connectWithMusic.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.connectWithMusic.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.connectWithStage.id}
+                                isValid={values.category[CATEGORY.connectWithStage.id]}
+                                labelStr={CATEGORY.connectWithStage.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.connectWithStage.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.connectWithOthers.id}
+                                isValid={values.category[CATEGORY.connectWithOthers.id]}
+                                labelStr={CATEGORY.connectWithOthers.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.connectWithOthers.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.idolOneFrame.id}
+                                isValid={values.category[CATEGORY.idolOneFrame.id]}
+                                labelStr={CATEGORY.idolOneFrame.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.idolOneFrame.id,isValid)} />
+                        </div>
+                        <div className='
+                            flex flex-wrap justify-center items-center 
+                            p-1 mb-2 gap-x-3 gap-y-1 w-fit
+                            rounded-md border border-sky-400
+                            '>
+                            {/* サイスタ */}
+                            <SearchStoryFilterCheckbox 
+                                filterId={MEDIA.gs.id.toString()}
+                                isValid={values.media[MEDIA.gs.id]}
+                                labelStr={MEDIA.gs.name}
+                                isMain={true}
+                                onChange={(id,isValid) => changeSearchParamsMedia(MEDIA.gs.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.main.id}
+                                isValid={values.category[CATEGORY.main.id]}
+                                labelStr={CATEGORY.main.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.main.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.gsEvent.id}
+                                isValid={values.category[CATEGORY.gsEvent.id]}
+                                labelStr={CATEGORY.gsEvent.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.gsEvent.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.episodeZero.id}
+                                isValid={values.category[CATEGORY.episodeZero.id]}
+                                labelStr={CATEGORY.episodeZero.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.episodeZero.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.idolEpisode.id}
+                                isValid={values.category[CATEGORY.idolEpisode.id]}
+                                labelStr={CATEGORY.idolEpisode.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.idolEpisode.id,isValid)} />
+                        </div>
+                        <div className='
+                            flex flex-wrap justify-center items-center 
+                            p-1 mb-2 gap-x-3 gap-y-1 w-fit
+                            rounded-md border border-blue-500
+                            '>
+                            {/* モバエム */}
+                            <SearchStoryFilterCheckbox 
+                                filterId={MEDIA.moba.id.toString()}
+                                isValid={values.media[MEDIA.moba.id]}
+                                labelStr={MEDIA.moba.name}
+                                isMain={true}
+                                onChange={(id,isValid) => changeSearchParamsMedia(MEDIA.moba.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.SideMemories.id}
+                                isValid={values.category[CATEGORY.SideMemories.id]}
+                                labelStr={CATEGORY.SideMemories.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.SideMemories.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.comicNomral.id}
+                                isValid={values.category[CATEGORY.comicNomral.id]}
+                                labelStr={CATEGORY.comicNomral.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.comicNomral.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.comicSpecial.id}
+                                isValid={values.category[CATEGORY.comicSpecial.id]}
+                                labelStr={CATEGORY.comicSpecial.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.comicSpecial.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.mobaEvent.id}
+                                isValid={values.category[CATEGORY.mobaEvent.id]}
+                                labelStr={CATEGORY.mobaEvent.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.mobaEvent.id,isValid)} />
+                            <SearchStoryFilterCheckbox 
+                                filterId={CATEGORY.dailyOneFrame.id}
+                                isValid={values.category[CATEGORY.dailyOneFrame.id]}
+                                labelStr={CATEGORY.dailyOneFrame.name}
+                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.dailyOneFrame.id,isValid)} />
+                        </div>
                         </div>
                         <div className="flex justify-center text-lg lg:text-xl font-bold mt-4">
                             {'ユニット・アイドル'}
@@ -562,95 +674,6 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                             />
                             </div>
                         </div>
-                        <div className="flex justify-center text-lg lg:text-xl font-bold mt-4">
-                            {'その他条件'}
-                        </div>
-                        <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
-                            <SearchStoryFilterCheckbox 
-                                filterId={MEDIA.proe.id.toString()}
-                                isValid={values.media[MEDIA.proe.id]}
-                                labelStr={MEDIA.proe.name}
-                                onChange={(id,isValid) => changeSearchParamsMedia(MEDIA.proe.id,isValid)} />
-                            <SearchStoryFilterCheckbox 
-                                filterId={CATEGORY.connectWithMusic.id}
-                                isValid={values.category[CATEGORY.connectWithMusic.id]}
-                                labelStr={CATEGORY.connectWithMusic.name}
-                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.connectWithMusic.id,isValid)} />
-                            <SearchStoryFilterCheckbox 
-                                filterId={CATEGORY.connectWithStage.id}
-                                isValid={values.category[CATEGORY.connectWithStage.id]}
-                                labelStr={CATEGORY.connectWithStage.name}
-                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.connectWithStage.id,isValid)} />
-                            <SearchStoryFilterCheckbox 
-                                filterId={CATEGORY.connectWithOthers.id}
-                                isValid={values.category[CATEGORY.connectWithOthers.id]}
-                                labelStr={CATEGORY.connectWithOthers.name}
-                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.connectWithOthers.id,isValid)} />
-                            <SearchStoryFilterCheckbox 
-                                filterId={CATEGORY.idolOneFrame.id}
-                                isValid={values.category[CATEGORY.idolOneFrame.id]}
-                                labelStr={CATEGORY.idolOneFrame.name}
-                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.idolOneFrame.id,isValid)} />
-                        </div>
-                        <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
-                            <SearchStoryFilterCheckbox 
-                                filterId={MEDIA.gs.id.toString()}
-                                isValid={values.media[MEDIA.gs.id]}
-                                labelStr={MEDIA.gs.name}
-                                onChange={(id,isValid) => changeSearchParamsMedia(MEDIA.gs.id,isValid)} />
-                            <SearchStoryFilterCheckbox 
-                                filterId={CATEGORY.main.id}
-                                isValid={values.category[CATEGORY.main.id]}
-                                labelStr={CATEGORY.main.name}
-                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.main.id,isValid)} />
-                            <SearchStoryFilterCheckbox 
-                                filterId={CATEGORY.gsEvent.id}
-                                isValid={values.category[CATEGORY.gsEvent.id]}
-                                labelStr={CATEGORY.gsEvent.name}
-                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.gsEvent.id,isValid)} />
-                            <SearchStoryFilterCheckbox 
-                                filterId={CATEGORY.episodeZero.id}
-                                isValid={values.category[CATEGORY.episodeZero.id]}
-                                labelStr={CATEGORY.episodeZero.name}
-                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.episodeZero.id,isValid)} />
-                            <SearchStoryFilterCheckbox 
-                                filterId={CATEGORY.idolEpisode.id}
-                                isValid={values.category[CATEGORY.idolEpisode.id]}
-                                labelStr={CATEGORY.idolEpisode.name}
-                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.idolEpisode.id,isValid)} />
-                        </div>
-                        <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
-                            <SearchStoryFilterCheckbox 
-                                filterId={MEDIA.moba.id.toString()}
-                                isValid={values.media[MEDIA.moba.id]}
-                                labelStr={MEDIA.moba.name}
-                                onChange={(id,isValid) => changeSearchParamsMedia(MEDIA.moba.id,isValid)} />
-                            <SearchStoryFilterCheckbox 
-                                filterId={CATEGORY.SideMemories.id}
-                                isValid={values.category[CATEGORY.SideMemories.id]}
-                                labelStr={CATEGORY.SideMemories.name}
-                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.SideMemories.id,isValid)} />
-                            <SearchStoryFilterCheckbox 
-                                filterId={CATEGORY.comicNomral.id}
-                                isValid={values.category[CATEGORY.comicNomral.id]}
-                                labelStr={CATEGORY.comicNomral.name}
-                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.comicNomral.id,isValid)} />
-                            <SearchStoryFilterCheckbox 
-                                filterId={CATEGORY.comicSpecial.id}
-                                isValid={values.category[CATEGORY.comicSpecial.id]}
-                                labelStr={CATEGORY.comicSpecial.name}
-                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.comicSpecial.id,isValid)} />
-                            <SearchStoryFilterCheckbox 
-                                filterId={CATEGORY.mobaEvent.id}
-                                isValid={values.category[CATEGORY.mobaEvent.id]}
-                                labelStr={CATEGORY.mobaEvent.name}
-                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.mobaEvent.id,isValid)} />
-                            <SearchStoryFilterCheckbox 
-                                filterId={CATEGORY.dailyOneFrame.id}
-                                isValid={values.category[CATEGORY.dailyOneFrame.id]}
-                                labelStr={CATEGORY.dailyOneFrame.name}
-                                onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.dailyOneFrame.id,isValid)} />
-                        </div>
                     </div>
                     </div>
                     
@@ -686,6 +709,10 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                                 w-[200px] p-2'
                                 onClick={() => {
                                     setISopen(false)
+                                    window.scroll({
+                                        top: 0,
+                                        behavior: "smooth",
+                                    });
                                 }}
                         >
                         <div className='flex flex-wrap justify-center items-center'>
@@ -698,7 +725,9 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                                 bg-blue-500
                                 transition-all duration-500 ease-out
                                 w-[200px] p-2'
-                            onClick={clearParam}
+                            onClick={()=>{
+                                clearParam();
+                            }}
                         >
                         <div className='flex flex-wrap justify-center items-center'>
                             <div>クリア</div>
@@ -715,8 +744,8 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                                     if(errorCheck()){
                                         setTooltipOn(false);
                                         const workParam: URLSearchParams = createUrlSearchParm(values);
-                                        workParam.delete('display');
-                                        workParam.set('display','1');
+                                        workParam.delete('page');
+                                        workParam.set('page','1');
                                         router.push(currentPath + '?'  + decodeURIComponent(workParam.toString()));
                                         setISopen(false)
                                     } else {

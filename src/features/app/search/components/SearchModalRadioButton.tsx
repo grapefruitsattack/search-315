@@ -19,7 +19,7 @@ export default function SearchModalRadioButton({
     onChange: (filterId: string) => void;
 }) {
   return (
-    <div className="flex flex-row gap-0 divide-x-2 divide-gray-300">
+    <div className="flex flex-row flex-wrap gap-0 divide-x-2 divide-gray-300">
       {data.map((item) => (
         <label
           key={item.filterId}

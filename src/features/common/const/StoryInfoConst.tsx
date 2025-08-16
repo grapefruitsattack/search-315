@@ -15,7 +15,7 @@ export const CATEGORY = {
   episodeZero: {id:'epiz',name:'エピソードゼロ',mediaId:2},
   connectWithMusic: {id:'cwm',name:'楽曲連動',mediaId:3},
   connectWithStage: {id:'cws',name:'ライブ連動',mediaId:3},
-  connectWithOthers: {id:'cwo',name:'連動ストーリー',mediaId:3},
+  connectWithOthers: {id:'cwo',name:'その他連動',mediaId:3},
   idolOneFrame: {id:'iof',name:'アイドルたちの１コマ',mediaId:3},
 };
 export const WEBSITE = {
