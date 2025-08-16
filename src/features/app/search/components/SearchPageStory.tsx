@@ -7,13 +7,13 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
-
-export default function SearchPageStory({ data }: { data: {result:StorySearchResult[],login:boolean};}) {
+export default function SearchPageStory({ data }: { data: {result:StorySearchResult[],totalCnt:number,login:boolean};}) {
   const resultData: StorySearchResult[] = data.result;
   const login: boolean = data.login;
 
   const [loading, setLoading] = useState(false);
   const searchParams = useSearchParams();
+  const urlSearchParams = useSearchParams();
   const router = useRouter();
 
   useEffect(() => {
@@ -24,6 +24,10 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
 
     return () => clearTimeout(timeout);
   }, [searchParams.toString()]);
+
+  // ページネーション
+  const currentPage: number = Number(urlSearchParams.get('page')) || 1;
+  const pageSize: number = 18;
 
   return (
     <>
@@ -56,6 +60,9 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
     <section className="lg:px-24 px-2 mobileS:px-8 p-2 flex flex-wrap items-center gap-4">
     {/* 検索結果がゼロ件の場合、検索エリアを自動で開く */}
     <SearchStoryController firstIsOpen={resultData.length===0}/>
+    </section>
+    <section className="lg:px-24 px-2 mobileS:px-8 p-2 flex flex-wrap items-center gap-4">
+
     </section>
     <section className="lg:px-24 px-2 mobileS:px-8 p-2 flex flex-wrap items-center gap-4">
       <SortButton/>
