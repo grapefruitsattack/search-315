@@ -262,6 +262,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                                 { filterId: "null", labelStr: "すべて" },
                                 { filterId: "1", labelStr: "無料で読める" },
                                 { filterId: "2", labelStr: "プレ会員読み放題" },
+                                { filterId: "3", labelStr: "有償購入のみ" },
                             ]}
                             selectedId={values.howToView}
                             onChange={(id) => setValues({ ...values, howToView: id })}

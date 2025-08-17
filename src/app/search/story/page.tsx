@@ -7,6 +7,7 @@ import { createClient } from '@supabase/supabase-js'
 import type { StorySearchResult } from '../../../data/types';
 import CommonPage from "../../../features/common/components/CommonPage";
 import SearchStoryPage from "../../../features/app/search/SearchStoryPage";
+import {CheckSingingInfoParm,CheckStoryCategoryParm} from "../../../features/common/utils/CheckSearchParm";
 import Loading from '../../loading'
 
 export const revalidate = 600; // 10分ごとに再検証する
@@ -22,13 +23,13 @@ type Props = {
 
 const getData = cache(async (
   infoIdArray: string[],
-  mediaArray: number[],
   categoryArray: string[],
   voiceType: number,
   howtoviewType: number,
   andor: string,
   SortedAsc: number,
   page: number,
+  readLater: string
   ) => {
   const session = await auth();
   const supabaseAccessToken = session?.supabaseAccessToken;
@@ -74,9 +75,11 @@ const getData = cache(async (
         sorted_asc:SortedAsc,
         page:page,
         page_size:displayPageSize,
-        user_id:userId
+        user_id:userId,
+        read_later:readLater
       }
   );
+  console.log(error)
   const storySearchResult: StorySearchResult[] = data[0]?.json_data;
   const totalCnt: number = data[0]?.total_cnt;
   return {result:storySearchResult, totalCnt:totalCnt, login:session?.user?true:false};
@@ -88,27 +91,25 @@ const Page = async ({
   searchParams,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ q?: string; m?: string; c?: string; v?: number; htv?: number; andor?: string; order?: string; page?: string; }>;
+  searchParams: Promise<{ q?:string; c?:string; v?:number; htv?:string; andor?:string; rl?:string; order?:string; page?:string; }>;
 }) => {
   // パラメータ取得
   const {q} = await searchParams || '';
-  const {m} = await searchParams || '';
   const {c} = await searchParams || '';
   const {v} = await searchParams || '';
   const {htv} = await searchParams || '';
   const {andor} = await searchParams || '';
   const {order} = await searchParams || '';
+  const {rl} = await searchParams || '';
   const {page} = await searchParams || '';
   // パラメータ編集
-  const infoIdArray: string[] = q===undefined?[]:q.split(' ').filter(s => s !== '');
-  const mediaArray: number[] = m===undefined?[]:m.split(' ').map(Number).filter(s => s !== 0);
-  const categoryArray: string[] = c===undefined?[]:c.split(' ').filter(s => s !== '');
+  const infoIdArray: string[] = q===undefined?[]:CheckSingingInfoParm((q).split(' ').filter(s => s !== ''));
+  const categoryArray: string[] = c===undefined?[]:CheckStoryCategoryParm(c.split(' ').filter(s => s !== ''));
   const SortedAsc: number = order==='asc'?1:0;
   const pageNum: number = Number(page)||1;
-  //TODO パラメータ確認
 
   // 検索結果取得
-  const post = await getData(infoIdArray,mediaArray,categoryArray,v||0,htv||0,andor||'or',SortedAsc,pageNum);
+  const post = await getData(infoIdArray,categoryArray,v||0,Number(htv)||0,andor||'or',SortedAsc,pageNum,rl||'');
 
     return (
     <Suspense fallback={<Loading />}>
