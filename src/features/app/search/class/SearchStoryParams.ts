@@ -6,15 +6,15 @@ export class SearchStoryParams {
   andor: string;
   media: { [key: number]: boolean; };
   category: { [key: string]: boolean; };
-  voice: string;
-  howToView: string;
+  voice: number;
+  howToView: number;
   info: { [key: string]: boolean; };
 
   constructor(urlSearchParams : ReadonlyURLSearchParams) {
       this.order = urlSearchParams.get('order') || 'desc';
       this.andor = urlSearchParams.get('andor') || 'or';
-      this.voice = urlSearchParams.get('v') || '';
-      this.howToView = urlSearchParams.get('htv') || '';
+      this.voice = Number(urlSearchParams.get('v')) || 0;
+      this.howToView = Number(urlSearchParams.get('htv')) || 0;
 
       const category: string[] = urlSearchParams.get('c')?.split(' ') || [];
       this.category ={};

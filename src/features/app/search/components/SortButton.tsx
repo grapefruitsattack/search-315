@@ -18,7 +18,7 @@ export default function SortButton(
 
 
     return (
-        <div className={`relative flex w-[400px] p-1 border border-teal-200 rounded-full mb-8`}>
+        <div className={`relative flex w-[400px] p-1 border border-teal-200 rounded-full`}>
                     <span className={`absolute inset-0 m-1 pointer-events-none`}>
                         <span className={`absolute inset-0 w-1/2 bg-teal-400 rounded-full shadow-sm shadow-indigo-950/10 transform transition-transform duration-150 ease-in-out 
                         ${order==="desc"?'translate-x-0':'translate-x-full'}`}></span>

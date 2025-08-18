@@ -40,7 +40,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
         workParam.set('q','');
         workParam.set('f','');
         setParams(workParam);
-        setValues({andor:values['andor'],order:'desc',voice:'0',howToView:'0',media:{},category:{},info:{}});
+        setValues({andor:values['andor'],order:'desc',voice:0,howToView:0,media:{},category:{},info:{}});
     };
     function createUrlSearchParm(searchStoryParams:SearchStoryParams):URLSearchParams{
         const workParam: URLSearchParams = new URLSearchParams();
@@ -50,29 +50,15 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
         if(categoryKeys.length>0) workParam.set('c',categoryKeys.join(' '));
         if(searchStoryParams.order!=='') workParam.set('order',searchStoryParams.order);
         if(searchStoryParams.andor!=='') workParam.set('andor',searchStoryParams.andor);
-        if(searchStoryParams.voice!=='') workParam.set('v',searchStoryParams.voice);
-        if(searchStoryParams.howToView!=='') workParam.set('htv',searchStoryParams.howToView);
+        if(searchStoryParams.voice!==0) workParam.set('v',searchStoryParams.voice.toString());
+        if(searchStoryParams.howToView!==0) workParam.set('htv',searchStoryParams.howToView.toString());
         return workParam;
     }
-    function switchHowToView(howToView: string): void{
+    function switchHowToView(howToView: number): void{
         setValues({...values, howToView:howToView});
-        const workParam: URLSearchParams = new URLSearchParams(params.toString());
-        if(howToView==='null'){
-            workParam.set('htv','');
-        }else{
-            workParam.set('htv',howToView);
-        }
-        setParams(workParam);
     };
-    function switchVoice(voice: string): void{
+    function switchVoice(voice: number): void{
         setValues({...values, voice:voice});
-        const workParam: URLSearchParams = new URLSearchParams(params.toString());
-        if(voice==='null'){
-            workParam.set('v','');
-        }else{
-            workParam.set('v',voice);
-        }
-        setParams(workParam);
     };
     function switchAndOr(andor: string): void{
         setValues({...values, andor:andor});
@@ -259,14 +245,30 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                             <SearchModalRadioButton
                             radioName="radio-howtoview"
                             data={[
-                                { filterId: "null", labelStr: "すべて" },
+                                { filterId: "0", labelStr: "すべて" },
                                 { filterId: "1", labelStr: "無料で読める" },
                                 { filterId: "2", labelStr: "プレ会員読み放題" },
                                 { filterId: "3", labelStr: "有償購入のみ" },
                             ]}
-                            selectedId={values.howToView}
-                            onChange={(id) => setValues({ ...values, howToView: id })}
-                            changeSearchParams={(id) =>switchHowToView(id)}
+                            selectedId={values.howToView.toString()}
+                            onChange={(id) => setValues({ ...values, howToView: Number(id)||0 })}
+                            changeSearchParams={(id) =>switchHowToView(Number(id)||0)}
+                            />
+                        </div>
+                        <div className="flex justify-center text-lg lg:text-xl font-bold">
+                            {'ボイス'}
+                        </div>
+                        <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
+                            <SearchModalRadioButton
+                            radioName="radio-voice"
+                            data={[
+                                { filterId: "0", labelStr: "すべて" },
+                                { filterId: "1", labelStr: "ボイスあり" },
+                                { filterId: "2", labelStr: "過去にボイス実装あり" },
+                            ]}
+                            selectedId={values.voice.toString()}
+                            onChange={(id) => setValues({ ...values, voice: Number(id)||0 })}
+                            changeSearchParams={(id) =>switchVoice(Number(id)||0)}
                             />
                         </div>
                         <div className="grid grid-cols-1 justify-items-center text-lg lg:text-xl font-bold mt-4">

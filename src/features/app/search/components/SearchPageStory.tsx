@@ -43,11 +43,11 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
     <SearchStoryController 
           key={searchParams.toString()} firstIsOpen={resultData === null || resultData.length===0}/>
     </section>
-    <section className="lg:px-24 px-2 mobileS:px-8 p-2 flex flex-wrap items-center gap-4">
-      <Pagination currentPage={currentPage} totalPage={maxPage}/>
-    </section>
-    <section className="lg:px-24 px-2 mobileS:px-8 p-2 flex flex-wrap items-center gap-4">
+    <section className="lg:px-24 px-2 mobileS:px-8 pt-2 flex flex-wrap items-center gap-4">
       <SortButton/>
+    </section>
+    <section className="lg:px-24 px-2 mobileS:px-8 pb-2 flex flex-wrap items-center gap-4">
+      <Pagination currentPage={currentPage} totalPage={maxPage}/>
     </section>
     {/* ストーリー一覧 */}
     <section className="lg:flex px-2 mobileS:px-10 lg:px-16 w-full">
@@ -89,6 +89,9 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
           </>}
           </section>
       </section>
+    <section className="lg:px-24 px-2 mobileS:px-8 pt-4 flex flex-wrap items-center gap-4">
+      <Pagination currentPage={currentPage} totalPage={maxPage}/>
+    </section>
 
     <section className=" pb-48">
     </section>
