@@ -11,7 +11,7 @@ export default async function Page() {
 
     return (
       <Suspense>
-        {/* @ts-expect-error Server Component */}
+        {/* @ts-ignore Server Component */}
         <StoryPage />
       </Suspense>
       ); 

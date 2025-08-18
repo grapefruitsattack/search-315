@@ -114,7 +114,7 @@ const Page = async ({
     return (
     <Suspense fallback={<Loading />}>
     <CommonPage>
-      {/* @ts-expect-error Server Component */}
+      {/* @ts-ignore Server Component */}
       <SearchStoryPage data={post}/>
     </CommonPage>
     </Suspense>

@@ -1,4 +1,4 @@
-"use server"
+
 import React from "react"
 import CommonPage from "../../common/components/CommonPage";
 import CopyButton from "../../common/components/CopyButton";
@@ -19,34 +19,13 @@ import StoryBlock from "../../common/components/story/StoryBlock";
 import { motion } from "framer-motion";
 
 export default async function StoryDetailedPage(
-  { storyData }: { storyData: Story;}): Promise<JSX.Element> 
+  { resultData }: { resultData:{storyData:Story, login:boolean, isRead:boolean, isReadLeater:boolean;}})
+  : Promise<JSX.Element> 
 {
-  const session = await auth();
-  const supabaseAccessToken = session?.supabaseAccessToken;
-  const supabase = createClient(
-    process.env.SUPABASE_URL||'',
-    process.env.SUPABASE_ANON_KEY||'',
-    {
-      global: {
-        headers: {
-          Authorization: `Bearer ${supabaseAccessToken}`,
-        },
-      },
-    }
-  );
-  const userId: string
-    = session?.user
-      ?session.user.id||''
-      :'';
-  const { data, error } 
-    = await supabase.from("user_reading")
-      .select("id,story_id,reading_date,read_later")
-      .eq('story_id',storyData.storyId).eq('id',userId).single()
-      ||[];
-  const isRead: boolean = data!==null&&data?.read_later!==null&&data.read_later===0;
-  const isReadLeater: boolean = data!==null&&data?.read_later!==null&&data.read_later===1;
-
-  const login: boolean = session?.user?true:false;
+  const storyData: Story = resultData.storyData;
+  const login: boolean = resultData.login;
+  const isRead: boolean = resultData.isRead;
+  const isReadLeater: boolean = resultData.isReadLeater;
 
   const websiteName: string = GetStoryWebsiteName(storyData.website);
   const voiceStateName: string = GetVoiceStateName(storyData.voice,storyData.voiceAtRelease);
@@ -127,6 +106,22 @@ export default async function StoryDetailedPage(
           </div>
         </section>
 
+      {
+        infoStoryPerson.length === 0
+            ?<></>
+            :<>
+
+              <section className='flex flex-wrap relative text-sm font-mono gap-1 mb-8'>
+                {infoStoryPerson.length === 49
+                  //対象アイドルが49人の場合、「315プロダクション」表記
+                  ?<div><IdolBadge id={'315pro'} useShortName={0} size={'normal'}/></div>
+                  :infoStoryPerson.map(
+                    (result, index) => (<div key={index}><IdolBadge id={result.infoId} useShortName={0} size={'normal'}/></div>))
+                  }
+              </section>
+            </>
+      }
+
         {/* ボタン */}
         <div className='
             grid lg:w-1/2 
@@ -196,28 +191,6 @@ export default async function StoryDetailedPage(
               <StoryReadingButton storyId={storyData.storyId} isRead={isRead} isReadLeater={isReadLeater}/>
             </Suspense>
         </div>
-      {
-        infoStoryPerson.length === 0
-            ?<></>
-            :<>
-              <div 
-                className="
-                    mobileL:text-2xl text-xl font-mono flex items-center w-full
-                    after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-                    mt-5
-                "
-                >{'登場アイドル'}
-              </div>
-              <section className='flex flex-wrap relative text-sm font-mono gap-1 mb-2'>
-                {infoStoryPerson.length === 49
-                  //参加アイドルが49人の場合、「315プロダクション」表記
-                  ?<div><IdolBadge id={'315pro'} useShortName={0} size={'normal'}/></div>
-                  :infoStoryPerson.map(
-                    (result, index) => (<div key={index}><IdolBadge id={result.infoId} useShortName={0} size={'normal'}/></div>))
-                  }
-              </section>
-            </>
-      }
       
         {/* サブストーリー */}
         {storyData.mSubStory===null || storyData.mSubStory.length===0
