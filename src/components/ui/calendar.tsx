@@ -1,4 +1,6 @@
 "use client"
+import { ja } from "date-fns/locale";
+import { format, } from "date-fns";
 
 import * as React from "react"
 import {
@@ -24,9 +26,10 @@ function Calendar({
   buttonVariant?: React.ComponentProps<typeof Button>["variant"]
 }) {
   const defaultClassNames = getDefaultClassNames()
-
+  
   return (
     <DayPicker
+      locale={ja}
       showOutsideDays={showOutsideDays}
       className={cn(
         "bg-background group/calendar p-3 [--cell-size:2rem] [[data-slot=card-content]_&]:bg-transparent [[data-slot=popover-content]_&]:bg-transparent",

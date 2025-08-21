@@ -16,6 +16,7 @@ import {
   useDisclosure, 
   Tooltip
  } from "@chakra-ui/react";
+import { format } from "date-fns";
  
 export default function StoryReadingButton(
   { storyId, isRead, isReadLeater }: { storyId: string, isRead: boolean, isReadLeater: boolean }
@@ -148,6 +149,11 @@ export default function StoryReadingButton(
                               defaultMonth={date}
                               selected={date}
                               onSelect={setDate}
+                              captionLayout={'dropdown'}
+                              startMonth={new Date(2000, 1)}
+                              disabled={(date) =>
+                                date > new Date() || date < new Date("1900-01-01")
+                              }
                               className="rounded-lg border shadow-sm"
                             />
                         </div>
