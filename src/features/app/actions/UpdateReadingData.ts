@@ -7,10 +7,18 @@ import { revalidatePath } from 'next/cache';
 export async function UpdateReadingData(storyId: string, readingDate: string, readLater: number) {
 
   const dt = new Date();
-  const serverDate = [
+  const serverDateArray = [
     dt.getFullYear().toString(),
     ('0' + (dt.getMonth() + 1)).slice(-2),
     ('0' + dt.getDate()).slice(-2),
+  ];
+  const jpDateStr: string = new Date().toLocaleString('ja-JP');
+  const pattern = /[0-9]+/g;
+  const array = jpDateStr.match(pattern)?.map((str)=> str)||serverDateArray;
+  const jpDate = [
+    array[0],
+    array[1],
+    array[2],
   ].join('-');
 
   const cookieStore = cookies();
@@ -18,7 +26,7 @@ export async function UpdateReadingData(storyId: string, readingDate: string, re
 
   const useReadingDate 
     = readingDate===''
-      ?localDate===''?serverDate:localDate
+      ?localDate===''?jpDate:localDate
       :readingDate;
 
   const session = await auth();

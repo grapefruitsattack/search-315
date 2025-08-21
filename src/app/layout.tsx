@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 import { Providers } from "./providers";
 import ScriptGoogleAnalytics from "../features/management/ScriptGoogleAnalytics";
+import CookieConsentBanner from "@/components/CookieConsentBanner";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -57,6 +58,7 @@ export default function RootLayout({
     <body className={inter.className}>
       <Providers>
       {children}
+      <CookieConsentBanner />
       </Providers>
       <Script id="holder-js" src="//cdnjs.cloudflare.com/ajax/libs/holder/2.9.6/holder.js" strategy="lazyOnload">
       </Script>

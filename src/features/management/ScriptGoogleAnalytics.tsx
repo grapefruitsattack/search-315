@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Script from "next/script";
+import { hasAnalyticsConsent } from "@/lib/analytics";
 
 const ScriptGoogleAnalytics = () => {
     const [hasMovedMouse, setHasMovedMouse] = useState(false);
@@ -13,8 +14,13 @@ const ScriptGoogleAnalytics = () => {
       window.removeEventListener("scroll", insertScriptGa);
       setHasMovedMouse(true);
     };
- 
+
     if (!hasMovedMouse) return <></>;
+
+    if (!hasAnalyticsConsent()) {
+      return null;
+    };
+
   return (
     <>
       <Script
