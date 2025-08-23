@@ -171,6 +171,34 @@ export default async function StoryDetailedPage(
                   placement='bottom'
               />
             </div>
+            {storyData.media===MEDIA.gs.id||[CATEGORY.gsEvent.id].includes(storyData.category)
+            ?
+            <div className='col-span-2 h-fit'>
+                <a className=""
+                href={'https://www.google.com/search?q=SideM+'+storyData.storyTitle}
+                target="_blank" rel="noopener noreferrer">
+                    <button
+                        className='rounded-lg border-2 border-pink-500 w-full h-full
+                        text-pink-500 font-sans leading-tight
+                        hover:bg-pink-500 hover:text-pink-100 
+                        transition-all duration-500 ease-out
+                        fill-red-500 hover:fill-pink-50
+                        text-sm mobileL:text-base lg:text-lg
+                        '
+                    >
+                        <div className='
+                          flex flex-wrap justify-center items-center font-sans font-black 
+                          mobileM:my-0.5 my-1 
+                        '>
+                          {'Googleで検索'}
+                            <span className="">
+                            <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+                            </span>
+                        </div>
+                    </button>
+                </a>
+            </div>
+            :<></>}
         </div>
         {/* 既読系ボタン */}
         <div 
