@@ -34,7 +34,7 @@ export default function StoryReadingButton(
     return(<>
           {/* クライアントの現在時刻をCookieにセット */}
           <SetLocalDateCookie />
-          <Toaster />
+          <Toaster position="top-center"/>
             <div className="grid grid-cols-[2fr_5fr] w-full h-full">
             <button
                 className='rounded-l-lg border-2 border-cyan-500 w-full h-full
@@ -85,7 +85,7 @@ export default function StoryReadingButton(
     return(<>
           {/* クライアントの現在時刻をCookieにセット */}
           <SetLocalDateCookie />
-          <Toaster />
+          <Toaster position="top-center"/>
               <div className="grid tablet:grid-cols-[4fr_2fr] lg:grid-cols-1 grid-cols-1 w-full h-full gap-3">
                 <div
                   className=' w-full h-full'

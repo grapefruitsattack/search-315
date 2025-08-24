@@ -1,12 +1,15 @@
-
+'use client'
 import type { Story,InfoStory } from '../../../../data/types';
 import singingMaster from '../../../../data/singingMaster.json';
-import React from "react";
+import React, { useState } from "react";
 import Link from 'next/link';
 import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName } from '../../utils/Story/GetStoryInfomation';
 import IdolBadge from '../IdolBadge';
-import CategoryBadge from '../../components/story/CategoryBadge';
 import MediaBadge from './MediaBadge';
+import CategoryBadge from './CategoryBadge';
+import {UpdateReadingData}  from "@/features/app/actions/UpdateReadingData";
+import {DeleteReadingData}  from "@/features/app/actions/DeleteReadingData";
+import { toast } from 'sonner';
 
 export default function StoryBlock(
   { storyId,media,category,headTitle,storyTitle,infoStory,url,login,userReadLater,displayLogin }
@@ -20,28 +23,71 @@ export default function StoryBlock(
   
   const infoStoryPerson: InfoStory[] = infoStory.filter(data=>data.personFlg===1);
 
-  const member: string  
-    = infoStory
-      .filter(data=>data.personFlg===1)
-      .map((result, index) => (singingMaster.find(data => data.singingInfoId === result.infoId)?.singingInfoName||''))
-      .join("、");
+  // 後で読むボタン用
+  const [loading, setLoading] = useState<boolean>(false);
+
+  async function addIsReading (storyId: string) {
+    await UpdateReadingData(storyId,'',1)
+    .then(() => {
+      setLoading(true);
+      return new Promise<void>((resolve) => {
+        window.setTimeout(() => {
+          setLoading(false);
+          resolve();
+        }, 1000);
+      });
+    })
+    .then(() => {
+      toast("「後で読む」リストに新規追加しました", {
+        action: {
+          label: "OK",
+          onClick: () => console.log("Undo"),
+        },
+      });
+    }).catch((e) => {
+      console.log(e);
+    }).finally(() => {
+    })
+  };
+  async function deleteIsReading (storyId: string) {
+    await DeleteReadingData(storyId,1)
+    .then(() => {
+      setLoading(true);
+      return new Promise<void>((resolve) => {
+        window.setTimeout(() => {
+          setLoading(false);
+          resolve();
+        }, 1000);
+      });
+    })
+    .then(() => {
+      toast("「後で読む」リストから削除しました", {
+        action: {
+          label: "OK",
+          onClick: () => console.log("Undo"),
+        },
+      });
+    }).catch((e) => {
+      console.log(e);
+    }).finally(() => {
+    })
+  };
+  
 
     return (
-      
     <section 
     className={`
       group w-full
       rounded-md
       font-sans 
-      bg-white border-green-600/30 border-t-4 border-l-4
+      bg-white border-green-600/30 border-2 shadow-lg
     `}
     >
     <Link
       className ="
         inline-block
-        rounded-md
         row-span-1 col-span-2 
-        rounded-md
+        bg-white
         from-cyan-100/30 to-violet-200/30
         hover:bg-gradient-to-tl
         hover:text-cyan-900 
@@ -84,49 +130,69 @@ export default function StoryBlock(
       </section>
     </Link>
     
+    <section className ='bg-green-300/30'>
     {url===null || url===''
         ?<></>
         :
           displayLogin?
-            <div className='grid grid-cols-6 grid-rows-1 gap-1'>
-              {login
+            <div className='grid grid-cols-4 grid-rows-1 gap-1'>
+              {userReadLater===0
               ?
-                <div className="w-full col-span-1">
-                  {userReadLater===0?'既読':'未読'}
+                <div className="w-full h-full col-span-2 ">
+                  {'既読'}
                 </div>
               :
-                <div className="w-full col-span-1">
-                </div>
-              }
-
-            <div className="w-full col-span-2 ">
-              <button
-                  className='rounded-lg border-2 border-blue-500 w-full h-full
-                  text-blue-500 font-sans leading-tight
-                  hover:bg-blue-500 hover:text-blue-100 
-                  transition-all duration-500 ease-out
-                  fill-blue-500 hover:fill-blue-100 
-                  text-xs mobileS:text-sm lg:text-lg
-                  font-sans font-black 
-                  '
-              >
-              <span className="">
-              <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="2 2 22 24" width="18" height="18"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z"></path></svg>
-              </span>
-              <span>{'後で読む'}</span>
-              </button>
+              loading
+              ?<div className="w-full h-full col-span-2 flex justify-center p-2">
+                <div className="animate-spin h-5 w-5 border-4 border-blue-500 rounded-full border-t-transparent"></div>
+              </div>
+              :
+            <div className="w-full h-full col-span-2 ">
+              <form
+                className='w-full h-full'
+                action={async () => {
+                  if(login){
+                    if(userReadLater===1){
+                      deleteIsReading(storyId);
+                    }else if(userReadLater!==1&&userReadLater!==0){
+                      addIsReading(storyId);
+                    }
+                  }
+                }}
+                >
+                <button
+                    className={`flex justify-center
+                    rounded-lg border-2 border-amber-500 w-full h-full
+                    text-amber-500 font-sans leading-tight
+                    hover:text-amber-100 
+                    bg-white hover:bg-amber-500
+                    transition-all duration-500 ease-out
+                    fill-amber-500 hover:fill-amber-100 
+                    text-xs mobileS:text-sm 
+                    ${userReadLater===1?' lg:text-base':' lg:text-lg'}
+                    font-sans font-black 
+                    `}
+                >
+                <span className={`flex items-center ${userReadLater===1?'hidden':''}`}>
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px" viewBox="0 -960 960 960">
+                  <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                </span>
+                <span className='flex items-center'>{userReadLater===1?'「後で読む」追加済み':'後で読む'}</span>
+                </button>
+              </form>
             </div>
-            <a className="w-full col-span-3"
+              }
+            <a className="w-full col-span-2"
               href={url}
               target="_blank" rel="noopener noreferrer">
               <button
-                  className='rounded-lg border-2 border-red-500 w-full h-full
+                  className={`rounded-lg border-2 border-red-500 w-full h-full
                   text-red-500 font-sans leading-tight
-                  hover:bg-red-500 hover:text-red-100 
+                  bg-white hover:bg-red-500 hover:text-red-100 
                   transition-all duration-500 ease-out
                   fill-red-500 hover:fill-red-100 
                   text-xs mobileS:text-sm lg:text-lg
-                  '
+                  `}
               >
                   <div className='
                       flex flex-wrap justify-center items-center font-sans font-black 
@@ -142,7 +208,6 @@ export default function StoryBlock(
             </a>
             </div>
           :
-              
             <div className='grid grid-cols-6 grid-rows-1 gap-1'>
             <a className="w-full col-span-6"
               href={url}
@@ -150,7 +215,7 @@ export default function StoryBlock(
               <button
                   className='rounded-lg border-2 border-red-500 w-full h-full
                   text-red-500 font-sans leading-tight
-                  hover:bg-red-500 hover:text-red-100 
+                  bg-white hover:bg-red-500 hover:text-red-100 
                   transition-all duration-500 ease-out
                   fill-red-500 hover:fill-red-100 
                   text-xs mobileS:text-sm lg:text-lg
@@ -171,5 +236,5 @@ export default function StoryBlock(
             </div>
     }
     </section>
-    
+    </section>
     )}

@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import { Skeleton } from "@/components/ui/skeleton"
+import { Toaster } from 'sonner';
 
 export default function SearchPageStory({ data }: { data: {result:StorySearchResult[],totalCnt:number,login:boolean};}) {
   const resultData: StorySearchResult[] = data.result;
@@ -39,6 +40,7 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
   return (
     <>
     <section className="lg:px-24 px-2 mobileS:px-8 p-2 flex flex-wrap items-center gap-4">
+    <Toaster position="top-center"/>
     {/* 検索結果がゼロ件の場合、検索エリアを自動で開く */}
     <SearchStoryController 
           key={searchParams.toString()} firstIsOpen={resultData === null || resultData.length===0}/>
