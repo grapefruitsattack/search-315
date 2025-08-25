@@ -8,6 +8,11 @@ import { Toaster } from "@/components/ui/sonner"
 import { Calendar } from "@/components/ui/calendar"
 import { toast } from "sonner"
 import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+import {
   Modal,
   ModalBody,
   ModalOverlay,
@@ -24,7 +29,7 @@ export default function StoryReadingButton(
   
     //既読編集モーダル用
     const { isOpen, onClose, onOpen } = useDisclosure();
-
+    const [popoverOpen, setPopoverOpen] = useState(false);
     const [date, setDate] = useState<Date>();
     
     const [loading, setLoading] = useState<boolean>(false);
@@ -87,11 +92,11 @@ export default function StoryReadingButton(
           <SetLocalDateCookie />
           <Toaster position="top-center"/>
               <div className="grid tablet:grid-cols-[4fr_2fr] lg:grid-cols-1 grid-cols-1 w-full h-full gap-3">
+                <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
+                <PopoverTrigger asChild>
                 <div
                   className=' w-full h-full'
-                  // action={async () => {
-                  //     await UpdateReadingData(storyId,0)}}
-                  >
+                >
                     <button
                         className='w-full h-full py-2
                         rounded-xl drop-shadow-md
@@ -104,7 +109,7 @@ export default function StoryReadingButton(
                         text-sm mobileL:text-lg lg:text-xl
                         '
                         onClick={() => {
-                            onOpen();
+                            //onOpen();
                         }}
                     >
                       <div className='
@@ -118,31 +123,7 @@ export default function StoryReadingButton(
                       <div>「既読」に追加する</div>
                       </div>
                     </button>
-                    <div className={`flex items-center h-max `}>
-                        {/* モーダル部 */}
-                        <Modal 
-                        isOpen={isOpen} onClose={onClose}
-                        >
-                        <ModalOverlay />
-                        <ModalContent minW="50vw" w="calc(100vw - 20px - 2rem)">
-                        <ModalHeader>
-                        <div className="flex justify-between items center border-b border-gray-200 py-2">
-                          <div className="flex items-center justify-center">
-                            <p className="text-xl font-bold text-gray-800">「既読」に追加</p>
-                          </div>
-                          <button
-                            className="bg-gray-300 hover:bg-gray-500 cursor-pointer hover:text-gray-300 font-sans text-gray-500 w-8 h-8 flex items-center justify-center rounded-full"
-                            onClick={onClose}
-                          >
-                            <svg 
-                              className="icon icon-tabler icon-tabler-x"
-                              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                              <path d="M12.0007 10.5865L16.9504 5.63672L18.3646 7.05093L13.4149 12.0007L18.3646 16.9504L16.9504 18.3646L12.0007 13.4149L7.05093 18.3646L5.63672 16.9504L10.5865 12.0007L5.63672 7.05093L7.05093 5.63672L12.0007 10.5865Z"></path></svg>
-                          </button>
-                        </div>
-                        </ModalHeader>
-                        <ModalBody>
-                        <div className="h-auto mx-4 p-4 rounded-xl">
+                    <PopoverContent  className="w-auto overflow-hidden p-0" align="start">
                         
                             <Calendar
                               mode="single"
@@ -156,12 +137,10 @@ export default function StoryReadingButton(
                               }
                               className="rounded-lg border shadow-sm"
                             />
-                        </div>
-                        </ModalBody>
-                        </ModalContent >
-                        </Modal>
-                      </div>
+                      </PopoverContent>
                 </div>
+                </PopoverTrigger>
+                </Popover>
                 {isReadLeater
                 ?
                   <form
