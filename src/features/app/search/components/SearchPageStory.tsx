@@ -64,12 +64,15 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
           <Skeleton className="h-[120px] rounded-sm" />
           <Skeleton className="h-[120px] rounded-sm" />
           <Skeleton className="h-[120px] rounded-sm" />
+          <Skeleton className="h-[150px] rounded-sm" />
+          <Skeleton className="h-[150px] rounded-sm" />
+          <Skeleton className="h-[150px] rounded-sm" />
         </>
         :<>
           {resultData === null || resultData.length===0 
           ?
           <div className="flex flex-col justify-center items-start ">
-            {/* TODO アラート化 */}
+            {/* // TODO アラート化 */}
             <div>検索条件に該当するストーリーがありません</div>
             <div>検索条件を変更してください</div>
           </div>

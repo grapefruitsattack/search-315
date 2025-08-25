@@ -77,7 +77,7 @@ export default function StoryBlock(
     return (
     <section 
     className={`
-      group w-full
+      w-full
       rounded-md
       font-sans 
       bg-white border-green-600/30 border-2 shadow-lg
@@ -138,8 +138,20 @@ export default function StoryBlock(
             <div className='grid grid-cols-4 grid-rows-1 gap-1'>
               {userReadLater===0
               ?
-                <div className="w-full h-full col-span-2 ">
-                  {'既読'}
+                <div className="
+                  w-full h-full col-span-2 
+                  flex justify-center
+                  rounded-lg w-full h-full
+                  bg-cyan-500 text-white fill-white
+                  font-sans font-black leading-tight
+                  transition-all duration-500 ease-out
+                  text-xs mobileS:text-sm lg:text-lg
+                ">
+                  <span className={`flex items-center `}>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px" viewBox="0 -0.5 24 24">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM17.4571 9.45711L11 15.9142L6.79289 11.7071L8.20711 10.2929L11 13.0858L16.0429 8.04289L17.4571 9.45711Z"></path></svg>
+                  </span>
+                  <span className='flex items-center'>{'既読'}</span>
                 </div>
               :
               loading
@@ -161,15 +173,24 @@ export default function StoryBlock(
                 }}
                 >
                 <button
-                    className={`flex justify-center
+                    className={`group 
+                    flex justify-center
                     rounded-lg border-2 border-amber-500 w-full h-full
-                    text-amber-500 font-sans leading-tight
-                    hover:text-amber-100 
-                    bg-white hover:bg-amber-500
+                    font-sans leading-tight
                     transition-all duration-500 ease-out
-                    fill-amber-500 hover:fill-amber-100 
                     text-xs mobileS:text-sm 
-                    ${userReadLater===1?' lg:text-base':' lg:text-lg'}
+                    ${userReadLater===1
+                      ?` lg:text-base
+                        text-amber-700 hover:text-amber-500 
+                        bg-amber-200 hover:bg-white
+                        fill-amber-700 hover:fill-amber-500 
+                      `
+                      :` lg:text-lg
+                        text-amber-500 hover:text-amber-100 
+                        bg-white hover:bg-amber-500
+                        fill-amber-500 hover:fill-amber-100 
+                        `
+                    }
                     font-sans font-black 
                     `}
                 >
@@ -177,7 +198,8 @@ export default function StoryBlock(
                 <svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px" viewBox="0 -960 960 960">
                   <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
                 </span>
-                <span className='flex items-center'>{userReadLater===1?'「後で読む」追加済み':'後で読む'}</span>
+                <span className='flex items-center group-hover:hidden'>{userReadLater===1?'「後で読む」追加済み':'後で読む'}</span>
+                <span className='hidden items-center group-hover:flex'>{userReadLater===1?'「後で読む」から削除':'後で読む'}</span>
                 </button>
               </form>
             </div>
