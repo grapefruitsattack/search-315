@@ -5,9 +5,7 @@ import { SupabaseAdapter } from "@auth/supabase-adapter"
 import { SignJWT, jwtVerify } from 'jose';
 
 const authConfig: NextAuthConfig = {
-    providers: [
-      Google,
-    ],
+    providers: [Google],
     adapter: SupabaseAdapter({
       url: process.env.SUPABASE_URL||'',
       secret: process.env.SUPABASE_SERVICE_ROLE_KEY||'',
@@ -38,6 +36,10 @@ const authConfig: NextAuthConfig = {
        return session
      },
    },
+    pages: {
+      signIn: "/auth/signin",
+    },
   };
+
 
 export const { handlers, auth, signIn, signOut } = NextAuth(authConfig);
