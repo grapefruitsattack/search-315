@@ -1,16 +1,24 @@
-"use client"  // サインインボタンをクライアントコンポーネント化する
 
-import { signIn } from "next-auth/react"
 
-export default function SignInPage() {
+import { Suspense } from "react";
+import React from "react"
+import { redirect } from "next/navigation";
+import { auth } from "../../../../auth";
+import CommonPage from "@/features/common/components/CommonPage";
+import SigninPage from "@/features/app/signin/SigninPage";
+
+export default async function Page() {
+  const session = await auth();
+  const login: boolean = session?.user?true:false;
+  if (login) redirect('/mypage');
+
   return (
-    <div className="flex flex-col gap-2">
-      <button
-        onClick={() => signIn("google")}
-        className="border px-4 py-2"
-      >
-        Sign in with Google
-      </button>
-    </div>
-  )
-}
+    <Suspense>
+    <CommonPage>
+    <article className="pt-32 pb-96 px-2 mobileS:px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
+      <SigninPage />
+    </article>
+    </CommonPage>
+    </Suspense>
+    ); 
+  }
