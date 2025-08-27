@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import HeaderDrawerButton from './HeaderDrawerButton';
 import {SignIn} from "../../management/auth/SignIn";
+import UserButton from "./UserButton";
 
 export default function HeaderAndFooter() {
 
@@ -50,7 +51,7 @@ export default function HeaderAndFooter() {
     return (
         <>
         <div className="w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-            <div className="z-50  py-2 fixed left-0 top-0 flex flex-row w-full items-center  justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl">  
+            <div className="z-50 py-1 tablet:py-2 fixed left-0 top-0 flex flex-row w-full items-center  justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl">  
             {/* <div className="absolute right-2">
                 {isSearchPage? 
                     <ShareSearchResultModal 
@@ -76,8 +77,10 @@ export default function HeaderAndFooter() {
                 />
                 </Link>
             </code>
-            <SignIn></SignIn>
-
+            <div className="absolute right-2" >
+            {/* @ts-ignore Server Component */}
+            <UserButton/>
+            </div>
             </div>
         </div>
         </>
