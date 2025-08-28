@@ -145,7 +145,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
     return (
         <>
         {/* 下部固定ボタン */}
-        <div className="z-50  py-2 fixed lg:bottom-[6rem] bottom-[5.5rem] right-8 flex flex-row w-full justify-end">  
+        <div className={`z-50  py-2 fixed lg:bottom-[6rem] bottom-[5.5rem] right-8 ${isOpen?' hidden':' flex'} flex-row w-full justify-end`}>  
         <div className={`absolute ${isOpen?'hidden':' '}`}>
                 <button 
                     className='rounded-full lg:p-5 p-4 bg-gradient-to-r from-indigo-200/90 to-emerald-100/90  items-center
