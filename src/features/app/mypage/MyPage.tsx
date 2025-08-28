@@ -1,9 +1,6 @@
 'use client'
-import React from "react"
-import CommonPage from "../../common/components/CommonPage";
-import { auth } from "../../../../auth";
-import {SignIn,SignOut} from "../../management/auth/SignIn";
-import { createClient } from '@supabase/supabase-js'
+import React from "react";
+import { GetPercentageInfo } from "@/features/common/utils/PercentageUtils";
 import {
   Label,
   PolarGrid,
@@ -11,12 +8,31 @@ import {
   RadialBar,
   RadialBarChart,
 } from "recharts"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { ChartConfig, ChartContainer } from "@/components/ui/chart"
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
 
 export default function MyPage(
-  { data }: { data: {storyCnt:number,readStoryCnt:number}}
-  ): JSX.Element {
-    
+  { storyCnt,readStoryCnt }: { storyCnt:number,readStoryCnt:number }
+): JSX.Element {
+  const {percentageStr,endAngle} = GetPercentageInfo(readStoryCnt,storyCnt);
+
   const chartData = [
     { browser: "safari", visitors: 110, fill: "var(--color-safari)", },
   ];
@@ -32,16 +48,27 @@ export default function MyPage(
  
 
     return (<>
+      <Card className="flex flex-col">
+        <CardHeader className="items-center pb-0">
+          <CardTitle>
+            <div className="flex flex-col items-center">
+              <div>{`あなたは`}<p className="inline text-red-500 px-1">{readStoryCnt}</p>{`個のストーリーを読破しました！`}</div>
+              <div className="text-base">{`全`}<p className="inline px-1">{storyCnt}</p>{`ストーリー中`}</div>
+            </div>
+          </CardTitle>
+          <CardDescription>January - June 2024</CardDescription>
+        </CardHeader>
+        <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
           className="mx-auto aspect-square max-h-[250px]"
         >
           <RadialBarChart
             data={chartData}
-            endAngle={200}
+            endAngle={endAngle}
             innerRadius={80}
             outerRadius={140}
-            dataKey='uv'
+            dataKey={'readStory'}
           >
             <PolarGrid
               gridType="circle"
@@ -67,14 +94,14 @@ export default function MyPage(
                           y={viewBox.cy}
                           className="fill-foreground text-4xl font-bold"
                         >
-                          {chartData[0].visitors.toString()+'/'+data.storyCnt.toString()}
+                          {percentageStr}
                         </tspan>
                         <tspan
                           x={viewBox.cx}
                           y={(viewBox.cy || 0) + 24}
                           className="fill-muted-foreground"
                         >
-                          ストーリー
+                          読了済み
                         </tspan>
                       </text>
                     )
@@ -84,6 +111,22 @@ export default function MyPage(
             </PolarRadiusAxis>
           </RadialBarChart>
         </ChartContainer>
+      </CardContent>
+      <CardFooter className="flex-col gap-2 text-sm">
+        <div>
+          <Select onValueChange={()=>{}}>
+            <SelectTrigger className="w-[240px]">
+              <SelectValue placeholder="ユニット・アイドルを選択" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="light">Light</SelectItem>
+              <SelectItem value="dark">Dark</SelectItem>
+              <SelectItem value="system">System</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </CardFooter>
+    </Card>
     </>
       );
   }

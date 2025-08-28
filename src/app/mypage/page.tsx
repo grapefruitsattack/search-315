@@ -35,8 +35,8 @@ export default async function Page() {
     .select('*', {count: 'exact', head: true})
     .eq('id',session?.user?.id||'')
     .eq('read_later',1);
-  console.log(storyCount.count);
-  console.log(readStoryCount.count);
+  // console.log(storyCount.count);
+  // console.log(readStoryCount.count);
   const storyCnt: number = storyCount.count||0;
   const readStoryCnt: number = readStoryCount.count||0;
 
@@ -47,7 +47,7 @@ export default async function Page() {
       
       {'マイページ'}
       <div>
-      <MyPage data={{storyCnt,readStoryCnt}}/>
+      <MyPage storyCnt={storyCnt} readStoryCnt={20}/>
       </div>
       </article>
     </CommonPage>
