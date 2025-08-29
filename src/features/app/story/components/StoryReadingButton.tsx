@@ -205,8 +205,10 @@ export default function StoryReadingButton(
                           });
                         })
                         .then(() => {
-                          console.log('OK')
                           toast("ok")
+                        }).catch((e) => {
+                          console.log('エラー')
+                          toast("エラー")
                         })
                       }}
                     >

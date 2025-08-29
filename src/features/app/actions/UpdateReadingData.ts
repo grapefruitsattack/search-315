@@ -53,7 +53,10 @@ export async function UpdateReadingData(storyId: string, readingDate: string, re
           read_later: readLater
       }
     );
-    console.log(error);
+    if (error !== null) {
+      console.log(error);
+      throw ('更新に失敗しました');
+    }
     // リロード
     revalidatePath("/");
     //toast("Event has been created.")
