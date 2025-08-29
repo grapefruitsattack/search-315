@@ -84,9 +84,10 @@ export default function UnitPage({ singingInfoId }: { singingInfoId: string  }) 
             `}
         >
         <ShareSearch315Modal 
-                text={`「${idolName}」の楽曲情報・サブスク配信状況をチェック！ |  サーチサイコー\n#SideM #search315`} 
-                pass={'idol/'+id}
-            />
+            buttonText="このページをシェア"
+            shareText={`「${idolName}」の楽曲情報・サブスク配信状況をチェック！ |  サーチサイコー\n#SideM #search315`} 
+            pass={'idol/'+id}
+        />
         </div>
       </div>
       <div  className="w-fit

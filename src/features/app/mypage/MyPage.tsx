@@ -1,6 +1,7 @@
 'use client'
 import React from "react";
 import { GetPercentageInfo } from "@/features/common/utils/PercentageUtils";
+import {ShareSearch315Modal} from "@/features/app/shareModal/ShareSearch315Modal";
 import {
   Label,
   PolarGrid,
@@ -34,15 +35,15 @@ export default function MyPage(
   const {percentageStr,endAngle} = GetPercentageInfo(readStoryCnt,storyCnt);
 
   const chartData = [
-    { browser: "safari", visitors: 110, fill: "var(--color-safari)", },
+    { browser: "main", visitors: 110, fill: "var(--color-main)", }, 
   ];
   const chartConfig = {
     visitors: {
       label: "Visitors",
     },
-    safari: {
-      label: "Safari",
-      color: "#3ff2ff",
+    main: {
+      label: "Main",
+      color: "#80ffff",
     },
   } satisfies ChartConfig
  
@@ -51,12 +52,17 @@ export default function MyPage(
       <Card className="flex flex-col">
         <CardHeader className="items-center pb-0">
           <CardTitle>
-            <div className="flex flex-col items-center">
-              <div>{`あなたは`}<p className="inline text-red-500 px-1">{readStoryCnt}</p>{`個のストーリーを読破しました！`}</div>
-              <div className="text-base">{`全`}<p className="inline px-1">{storyCnt}</p>{`ストーリー中`}</div>
+            <div className="flex flex-col items-center text-center leading-7">
+              <div>
+                {`あなたは`}
+                <p className="inline text-red-500 px-1 text-4xl">{readStoryCnt}</p>
+                {`個の`}
+                <p className="inline pl-1 ">{'SideM'}</p>
+                {`ストーリーを読破しました！`}
+              </div>
             </div>
           </CardTitle>
-          <CardDescription>January - June 2024</CardDescription>
+          {/* <CardDescription></CardDescription> */}
         </CardHeader>
         <CardContent className="flex-1 pb-0">
         <ChartContainer
@@ -91,15 +97,22 @@ export default function MyPage(
                       >
                         <tspan
                           x={viewBox.cx}
+                          y={(viewBox.cy || 0) - 26}
+                          className="fill-muted-foreground text-sm"
+                        >
+                          {`全${storyCnt}ストーリー中`}
+                        </tspan>
+                        <tspan
+                          x={viewBox.cx}
                           y={viewBox.cy}
                           className="fill-foreground text-4xl font-bold"
                         >
-                          {percentageStr}
+                          <tspan className="fill-foreground text-xl font-bold ">{'約'}</tspan>{percentageStr}
                         </tspan>
                         <tspan
                           x={viewBox.cx}
                           y={(viewBox.cy || 0) + 24}
-                          className="fill-muted-foreground"
+                          className="fill-muted-foreground text-sm"
                         >
                           読了済み
                         </tspan>
@@ -113,10 +126,22 @@ export default function MyPage(
         </ChartContainer>
       </CardContent>
       <CardFooter className="flex-col gap-2 text-sm">
+        <div>{'※現在公式媒体で読むことが可能なストーリーをカウント対象としています'}</div>
+        <div 
+            className={`
+            w-auto inline-block row-span-1 lg:pr-2 pr-1 h-8
+            `}
+        >
+        <ShareSearch315Modal 
+            buttonText="このページをシェア"
+            shareText={` |  サーチサイコー\n#SideM #search315`} 
+            pass={'unit/'}
+          />
+        </div>
         <div>
           <Select onValueChange={()=>{}}>
             <SelectTrigger className="w-[240px]">
-              <SelectValue placeholder="ユニット・アイドルを選択" />
+              <SelectValue placeholder="ユニット・アイドル別表示" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="light">Light</SelectItem>

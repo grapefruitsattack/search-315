@@ -47,7 +47,7 @@ export default async function Page() {
       
       {'マイページ'}
       <div>
-      <MyPage storyCnt={storyCnt} readStoryCnt={20}/>
+      <MyPage storyCnt={storyCnt} readStoryCnt={readStoryCnt}/>
       </div>
       </article>
     </CommonPage>

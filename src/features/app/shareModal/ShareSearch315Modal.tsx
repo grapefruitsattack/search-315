@@ -13,7 +13,7 @@ import {
 
 
 export const ShareSearch315Modal = (
-  { text, pass }: { text: string, pass: string }
+  { buttonText, shareText, pass }: { buttonText:string, shareText: string, pass: string }
 ) => {
     //モーダル
 
@@ -32,7 +32,7 @@ export const ShareSearch315Modal = (
             transition={{ duration: 0.05 }}
           onClick={onOpen}>
         <div className='flex flex-wrap justify-center items-center '>
-        <div className="lg:inline-block  font-bold">このページをシェア</div> 
+        <div className="lg:inline-block  font-bold">{buttonText}</div> 
         <svg 
               className="icon icon-tabler icon-tabler-x " 
               xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
@@ -75,7 +75,7 @@ export const ShareSearch315Modal = (
 
         <div className=''>
         <ShareModuleContent 
-              text={text} 
+              text={shareText} 
               url={`https://search315.com/`+ pass+'/'}/>
       </div>
       </div>
