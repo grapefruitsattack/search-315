@@ -81,10 +81,10 @@ export default async function StoryDetailedPage(
 
         {storyData.website!=='asb' || storyData.howtoviewStory===null || storyData.howtoviewStory.length===0
         ?<></>
-        :<section className='w-fit rounded-sm text-xs tablet:text-sm font-mono text-black gap-1 mb-2 bg-orange-200'>
-          <a className=" text-black p-1">{'視聴方法：'}</a>
+        :<section className='flex w-fit rounded-sm text-xs tablet:text-sm font-mono text-black mb-2'>
+          <a className=" text-black p-1">{'閲覧方法：'}</a>
           {storyData.howtoviewStory.map((result, index) => (
-          <a key={index} className="text-orange-800 p-1">{GetStoryHowtoviewName(result)}</a>
+          <a key={index} className="justify-center text-orange-900 bg-orange-200 rounded-sm p-1 mr-1">{GetStoryHowtoviewName(result)}</a>
           ))}
         {/* {storyData.howtoviewStory.length===0
         ?<a className=" text-orange-800 p-1">{'ログイン不要'}</a>
