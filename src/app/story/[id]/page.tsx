@@ -51,8 +51,13 @@ const getData = cache(async (id: string) => {
   ;
   //ストーリー情報取得
   const client = new Redis(process.env.REDIS_URL||'');
-  const cached = await client.get('story_'+id);
+  let cached: string | null;
   let storyData: Story;
+  try {
+    cached = await client.get('story_'+id);
+  } catch (error) {
+    cached = null;
+  };
   if (cached) {
     storyData = JSON.parse(cached);
   }else{
