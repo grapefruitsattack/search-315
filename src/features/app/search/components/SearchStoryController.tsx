@@ -145,8 +145,8 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
     return (
         <>
         {/* 下部固定ボタン */}
-        <div className={`z-50  py-2 fixed lg:bottom-[6rem] bottom-[5.5rem] right-8 ${isOpen?' hidden':' flex'} flex-row w-full justify-end`}>  
-        <div className={`absolute ${isOpen?'hidden':' '}`}>
+        <div className={`z-50  py-2 fixed lg:bottom-[3rem] bottom-[0.5rem] right-8 ${isOpen?' hidden':' flex'} flex-row w-fit justify-end`}>  
+
                 <button 
                     className='rounded-full lg:p-5 p-4 bg-gradient-to-r from-indigo-200/90 to-emerald-100/90  items-center
                     text-teal-700 font-bold lg:text-xl text-lm shadow-lg shadow-emerald-600/70'
@@ -173,7 +173,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                     </span>
                 </button>
 
-        </div>
+
         </div>
         {/* 上部ボタン */}
         <div className="flex justify-center m-auto">  
