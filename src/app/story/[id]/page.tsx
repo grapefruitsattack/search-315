@@ -2,6 +2,7 @@
 import { cache } from 'react'
 import { Suspense } from "react";
 import React from "react"
+import Redis from 'ioredis';
 import { createClient } from '@supabase/supabase-js'
 import { auth } from "../../../../auth";
 import { notFound } from 'next/navigation'
@@ -49,13 +50,23 @@ const getData = cache(async (id: string) => {
       )
   ;
   //ストーリー情報取得
-  const {data, error} = (await supabase.from('m_story_json_data').select(`
-  story_id,
-  json_data
-  `).eq('story_id',id).single());
-  if (!data) notFound()
-  const storyData: Story = data?.json_data;
-  
+  const client = new Redis(process.env.REDIS_URL||'');
+  const cached = await client.get('story_'+id);
+  let storyData: Story;
+  if (cached) {
+    storyData = JSON.parse(cached);
+  }else{
+    const {data, error} = (await supabase.from('m_story_json_data').select(`
+    story_id,
+    json_data,
+    created_at
+    `).eq('story_id',id).single());
+    if (!data) notFound()
+    storyData = data?.json_data;
+    
+    if (storyData) await client.setex('story_'+id, 600, JSON.stringify(storyData));
+  }
+
   if (!storyData) notFound()
 
   let isRead: boolean = false;
@@ -90,6 +101,8 @@ const Post = async ({
 }) => {
   const { id } = await params;
   const post = await getData(id);
+
+
   return (
     <Suspense>
     <CommonPage>
