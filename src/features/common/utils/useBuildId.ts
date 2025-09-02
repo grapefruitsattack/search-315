@@ -33,7 +33,7 @@ const useBuildId = () => {
     request.send(null)
 
     return request.status === 404
-  }, [])
+  }, [basePath])
 
   return {
     shouldReload,

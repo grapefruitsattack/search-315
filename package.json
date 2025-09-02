@@ -27,7 +27,6 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
-    "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "framer-motion": "^10.12.18",
     "fs": "^0.0.1-security",
@@ -63,11 +62,14 @@
     "typescript": "^5.1.6"
   },
   "devDependencies": {
+    "@react-native/eslint-config": "^0.80.2",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/proper-url-join": "^2.1.1",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
     "@types/react-modal-video": "^1.2.0",
+    "eslint": "^8.57.1",
+    "prettier": "^3.6.2",
     "prisma": "^6.4.1",
     "serve": "^14.2.0"
   }
