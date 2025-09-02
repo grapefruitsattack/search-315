@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import SubscButton from "./SubscButton";
 import YoutubeButton from "./YoutubeButton";
 import type { SongMaster } from '../../../data/types';
@@ -65,7 +66,7 @@ export default function SongBlock(
           >
           {imgSrc===''
             ?
-            <img 
+            <Image 
               className={`object-cover object-center rounded 
                 h-[50px] w-[49px] 
                 mobileM:h-[60px] mobileM:w-[59px] 
@@ -73,7 +74,7 @@ export default function SongBlock(
               src={`/artwork/dummy.png`}
               alt="アートワーク"
             />
-            :<img
+            :<Image
             className={`object-cover object-center rounded 
               h-[50px] w-[49px] 
               mobileM:h-[60px] mobileM:w-[59px] 

@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import type { Albums } from '../../../data/types';
 import subscAlbums from '../../../data/subscAlbums.json';
 import { motion, AnimatePresence } from "framer-motion";
@@ -54,7 +55,7 @@ export default function AlbumBlock(
           >
             {imgSrc===''
               ?
-              <img 
+              <Image 
                 className={`
                   object-cover object-center rounded
                   h-[60px] w-[59px] 
@@ -65,7 +66,7 @@ export default function AlbumBlock(
                 alt="アートワーク"
               />
               :
-              <img
+              <Image
               className={`
                 object-cover object-center rounded
                 h-[60px] w-[59px] 

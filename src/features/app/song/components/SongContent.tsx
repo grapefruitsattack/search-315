@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import { motion } from "framer-motion";
 import type { SongMaster,Albums,MvInfo,LiveMaster } from '../../../../data/types';
 import subscSongs from '../../../../data/subscSongs.json';
@@ -77,12 +78,12 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                         row-span-6 w-[135px] inline-block relative
                     `}
                 >
-                    <img
+                    <Image
                     className={`object-cover object-center h-[120px] w-[120px] max-w-[400px] aspect-square rounded-lg`}
                     src={`/artwork/${imgSrc}.png`}
                     alt="アートワーク"
                     />
-                    <img
+                    <Image
                     className={currentSnowParam.snowIsValid==='0'||result.colleFlg===1
                         ?'hidden':` absolute left-[-7px] top-[-9px] h-auto w-[130px] `}
                     src={snowImgSrc}

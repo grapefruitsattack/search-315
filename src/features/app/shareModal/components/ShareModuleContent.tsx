@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {Tooltip} from "@chakra-ui/react";
@@ -54,7 +55,7 @@ export default function ShareModuleContent(
                 rel="noopener noreferrer"
             >
             {/* Twitter logo by https://about.twitter.com/ja/who-we-are/brand-toolkit */}
-            <img
+            <Image
               className={`h-[24px] w-[24px]`}
               src={`/twitter_Logo_blue.svg`}
               alt="アートワーク"
@@ -82,7 +83,7 @@ export default function ShareModuleContent(
                 rel="noopener noreferrer"
             >
             {/* Mastodon logo by https://joinmastodon.org/ja/branding */}
-            <img
+            <Image
               className={`h-[24px] w-[24px]`}
               src={`/Mastodon_icon.svg`}
               alt="アートワーク"
@@ -109,7 +110,7 @@ export default function ShareModuleContent(
                 rel="noopener noreferrer"
             >
             {/* misskey logo by https://misskey-hub.net/appendix/assets.html */}
-            <img
+            <Image
               className={`h-[36px] w-[36px]`}
               src={`/misskey_icon.png`}
               alt="アートワーク"

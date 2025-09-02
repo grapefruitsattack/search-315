@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import type { Albums } from '../../../../data/types';
 import albumMaster from '../../../../data/albumMaster.json';
 import subscAlbums from '../../../../data/subscAlbums.json';
@@ -68,12 +69,12 @@ export default function AlbumContent({ album, }: { album: Albums}) {
                 row-span-6 w-[135px] inline-block relative
                 `}
             >
-                <img
+                <Image
                     className={`object-cover object-center h-[120px] w-[120px] max-w-[400px] aspect-square rounded-lg`}
                 src={`/artwork/${imgSrc}.png`}
                 alt="アートワーク"
                 />
-                <img
+                <Image
                 className={currentSnowParam.snowIsValid==='0'||album.colleFlg===1
                 ?'hidden':` absolute left-[-7px] top-[-9px] h-auto w-[130px] `}
                 src={snowImgSrc}
