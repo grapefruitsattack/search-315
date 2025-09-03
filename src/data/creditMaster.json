@@ -1,0 +1,926 @@
+[
+    {
+      "creditId": "d1c62556365452cfa391e1354d47a1d4",
+      "name": "Aira(Dream Monster)"
+    },
+    {
+      "creditId": "08587ee5fb29669110d68822a1e60ae1",
+      "name": "ats-"
+    },
+    {
+      "creditId": "08dfde201b7f981e28b10df8d1f67f4a",
+      "name": "BNSI(トリ音)"
+    },
+    {
+      "creditId": "b690f7bdea7007fdb6f7aacb08246df2",
+      "name": "BNSI(ミフメイ)"
+    },
+    {
+      "creditId": "3a2e5792f39b49a4bfbb09559dacaf16",
+      "name": "柿埜嘉奈子"
+    },
+    {
+      "creditId": "da19c7993f1643f5cf17b12fd07283df",
+      "name": "BNSI(佐藤貴文)"
+    },
+    {
+      "creditId": "ab942cba6b2c55f6bf035a0b310181b9",
+      "name": "cota"
+    },
+    {
+      "creditId": "d5e2dc884671e25a849aa6494eb96818",
+      "name": "Dr. Lilcom"
+    },
+    {
+      "creditId": "329776785633217545674ae7401e68da",
+      "name": "EFFY"
+    },
+    {
+      "creditId": "920c1f90568f9c52220fbe53958587ba",
+      "name": "h-wonder"
+    },
+    {
+      "creditId": "8b747d38048a19a7f8d4b9567fbd299c",
+      "name": "Haggy Rock(Dream Monster)"
+    },
+    {
+      "creditId": "5349915534f2cdb9dbfb3ae5cb7c5724",
+      "name": "hana20"
+    },
+    {
+      "creditId": "5bd2ba5fce3f0c169d8ede490228f650",
+      "name": "Hanazabu"
+    },
+    {
+      "creditId": "4d4c2a598456f5e7b25e44056ec5ab5a",
+      "name": "Hayato Yamamoto"
+    },
+    {
+      "creditId": "78d7e40929d1ac7577b45714724d924b",
+      "name": "JunPayer"
+    },
+    {
+      "creditId": "8bf6157dd21c4b87d64be93eea027f09",
+      "name": "Kanata Okajima"
+    },
+    {
+      "creditId": "18bfb15b5de8a6f300bf080724444c88",
+      "name": "KOHTA YAMAMOTO"
+    },
+    {
+      "creditId": "2837b5ef4cdc57d174b9894a319ff9be",
+      "name": "Kon-K"
+    },
+    {
+      "creditId": "46e710d419b483ed808f69d4e899c2c8",
+      "name": "KoTa"
+    },
+    {
+      "creditId": "e88b4464fe326a51e6e6dfae28dd536d",
+      "name": "Len"
+    },
+    {
+      "creditId": "8328bb1edd409d9e15ee843e70aafa74",
+      "name": "MEG.ME"
+    },
+    {
+      "creditId": "ad38fe63a2b3021129853f6310eefd1d",
+      "name": "Mr.LIVE"
+    },
+    {
+      "creditId": "4e7b84008a3162da38a7dd32a11aeb1a",
+      "name": "mu-ray"
+    },
+    {
+      "creditId": "147ddbbccd0e1a138ad9eafdd0d5f074",
+      "name": "NBGI(Jesahm)"
+    },
+    {
+      "creditId": "2cc07a0757c83bee3a326baecccc2e4f",
+      "name": "NBGI(渡辺量)"
+    },
+    {
+      "creditId": "adc363136d34d82055e010a0de7189ae",
+      "name": "NBGI(濱本理央)、BNSI(濱本理央)"
+    },
+    {
+      "creditId": "2516cd7ecbac1814b56266d623c292c1",
+      "name": "Nika Lenz(Arte Refact)"
+    },
+    {
+      "creditId": "6439e7b7ad7de30abfbfb3a54ec95e00",
+      "name": "no_my"
+    },
+    {
+      "creditId": "d67c1e27e0d8409bec2b32c592172b2d",
+      "name": "Ryu"
+    },
+    {
+      "creditId": "82a00e242ece3bab0350bf354f890cf3",
+      "name": "Safari Natsukawa"
+    },
+    {
+      "creditId": "2c16117640f0d2d37ec2799432abeb25",
+      "name": "SHINTA-LOW(Arte Refact)"
+    },
+    {
+      "creditId": "f8aed0e8fb02c2652f7f3a1cce815e06",
+      "name": "SprightS"
+    },
+    {
+      "creditId": "5b7a9213edae7857ab5718c35983d068",
+      "name": "Sugane Masato"
+    },
+    {
+      "creditId": "4e0655684ae5da5bdc48903679113568",
+      "name": "Tak Miyazawa"
+    },
+    {
+      "creditId": "68becc2611895b48e4aa7d0675264dbb",
+      "name": "TKC"
+    },
+    {
+      "creditId": "f2759ce688ddd7589f6235f77b70e65c",
+      "name": "TOMISIRO"
+    },
+    {
+      "creditId": "84a200b1f802e55a9994cb063e417a1b",
+      "name": "UiNA"
+    },
+    {
+      "creditId": "8239c3bfc7d370e98232be34356b25bb",
+      "name": "Wiggy"
+    },
+    {
+      "creditId": "84ef52aa4e8c79aa9e602c39ebfcb13a",
+      "name": "YASUHIRO(康寛)"
+    },
+    {
+      "creditId": "c23b2d9b27e5059f25e45fab88db70b6",
+      "name": "YASUSHI WATANABE"
+    },
+    {
+      "creditId": "455ad15beba0aa041916c330f98b2639",
+      "name": "Yo-SK"
+    },
+    {
+      "creditId": "bc759e17ff6499e8537e1f34eac176f5",
+      "name": "yura"
+    },
+    {
+      "creditId": "80f8e2314f76de13e6b1c702a9906397",
+      "name": "ZAQ"
+    },
+    {
+      "creditId": "3caa2d96536bc80f81e420ab23bee48c",
+      "name": "Zeyun"
+    },
+    {
+      "creditId": "d7b62c63b7a097e948887479f01204a6",
+      "name": "アオワイファイ"
+    },
+    {
+      "creditId": "8994513ebd53b6f76545c0cfa30766d6",
+      "name": "アッシュ井上(Dream Monster)"
+    },
+    {
+      "creditId": "16e8d2e81598ec981e810402a5fad306",
+      "name": "イケガミキヨシ"
+    },
+    {
+      "creditId": "08b0299851b88c8aa6d825dba96d1dde",
+      "name": "オオヤギヒロオ"
+    },
+    {
+      "creditId": "0dc89e262ba1f860a101fbe7818c8844",
+      "name": "オタユキ"
+    },
+    {
+      "creditId": "875e1eecc83c08c060f8527fda7b706e",
+      "name": "サイトウヨシヒロ"
+    },
+    {
+      "creditId": "35fe880bf9758534d2512b2310c2047e",
+      "name": "サイトウリョースケ"
+    },
+    {
+      "creditId": "61ce03460d1fce46eb76a37c86a0c7fd",
+      "name": "シバタトモキ"
+    },
+    {
+      "creditId": "cca676076ef106dfbd68f0ff3313572a",
+      "name": "ナカムラジュンキ(Blue Bird's Nest)"
+    },
+    {
+      "creditId": "43cd01f4aa279bc20889df4dc7c4c913",
+      "name": "ヒゲドライバー"
+    },
+    {
+      "creditId": "d74324345cdb416ebfdd28b847a6e90d",
+      "name": "フワリ、フワリ(Dream Monster)"
+    },
+    {
+      "creditId": "20989cd6910400588a99630499050138",
+      "name": "マイクスギヤマ"
+    },
+    {
+      "creditId": "fee9abb615e13e81ccfb6a67e992e693",
+      "name": "ミディ"
+    },
+    {
+      "creditId": "8a71cb8a522652dd4565b86b45b7010f",
+      "name": "めんま"
+    },
+    {
+      "creditId": "ecb41e849f28e5790445644f622e4721",
+      "name": "モモキエイジ"
+    },
+    {
+      "creditId": "ae5a58e5cb658a18dc09b49e5ad5e79e",
+      "name": "ラムシーニ"
+    },
+    {
+      "creditId": "b665a108d2949684feeef11f70e5404b",
+      "name": "安岡洋一郎"
+    },
+    {
+      "creditId": "c1650f3fcddc1bcf7c98e61bd5beeacb",
+      "name": "伊藤賢"
+    },
+    {
+      "creditId": "b70cf25550587e22016e00df3abe0896",
+      "name": "伊藤立"
+    },
+    {
+      "creditId": "d6c56897c2eb2ef4ee2101b48ae3599d",
+      "name": "伊藤和馬(Arte Refact)"
+    },
+    {
+      "creditId": "a93d89765594a7cb96e21ac08c5d9c5c",
+      "name": "井上馨太(MONACA)"
+    },
+    {
+      "creditId": "258ed3085f5f2901434afab2692c9e6a",
+      "name": "磯崎健史"
+    },
+    {
+      "creditId": "292623e1ce5911e68f6de6b1f7bf3167",
+      "name": "茨木わたる(MYSTICAL NIGHT)"
+    },
+    {
+      "creditId": "0ee9e66f4777c6ffcc4ea452ce60d2f4",
+      "name": "烏屋茶房"
+    },
+    {
+      "creditId": "7ae0cec315ed60577941703a3a792ed2",
+      "name": "永井正道"
+    },
+    {
+      "creditId": "9b8a4779c1863927e0296e19785cd258",
+      "name": "遠藤フビト"
+    },
+    {
+      "creditId": "1764b64534af23bb63a9923543c35eb8",
+      "name": "遠藤直弥"
+    },
+    {
+      "creditId": "a4ce64bd92986e42ba67d1fafea8d471",
+      "name": "奥田もとい"
+    },
+    {
+      "creditId": "95d9bc3f1cc65badb058029a1c11c1be",
+      "name": "岡本健介"
+    },
+    {
+      "creditId": "6eba0c2d2bb1dce28818b7e3472373a8",
+      "name": "加藤冴人"
+    },
+    {
+      "creditId": "f6f72a10e89870d18e7cd0922201dc80",
+      "name": "家原正樹"
+    },
+    {
+      "creditId": "ef47a5ffb150f54ad133fa757ed97a2b",
+      "name": "河合英嗣"
+    },
+    {
+      "creditId": "f4f8b22a403d8cc466bbab905e334335",
+      "name": "河合泰志(Arte Refact)"
+    },
+    {
+      "creditId": "3fb902e7d0a50f41e5b44bca5e7c6060",
+      "name": "河田貴央"
+    },
+    {
+      "creditId": "6204862c7cdadb5c35d76884650d4b7a",
+      "name": "柿迫ヒカル"
+    },
+    {
+      "creditId": "d04d3d8af8b87d49e07c85506274cf9b",
+      "name": "叶人"
+    },
+    {
+      "creditId": "90295b7761764cea094e68b3f84b206c",
+      "name": "間瀬公司"
+    },
+    {
+      "creditId": "1660c06028fb266914d05a7d9689fe51",
+      "name": "関口晶大"
+    },
+    {
+      "creditId": "649316d17db0fdfa44020f9090db7527",
+      "name": "丸山真由子(Blue Bird's Nest)"
+    },
+    {
+      "creditId": "2ae1f60ad85af666bc1908716f1d7b00",
+      "name": "岩越涼大"
+    },
+    {
+      "creditId": "4bc510a7c3aad2bbf8b4784598e62c52",
+      "name": "亀山耕一郎"
+    },
+    {
+      "creditId": "52e3e7dd09307ba2d4a7bb83a6907bfe",
+      "name": "吉田勝弥"
+    },
+    {
+      "creditId": "09839b9d8d9b2a876d5a58f82bcebb4f",
+      "name": "吉田穣"
+    },
+    {
+      "creditId": "7384d100a7464ff4ab0a39bcf9bd4a7a",
+      "name": "宮崎まゆ"
+    },
+    {
+      "creditId": "0335dac7b9a9825617aad8f6dbb0f539",
+      "name": "玉木千尋"
+    },
+    {
+      "creditId": "3989dc5d904a4e805349cf1bd39fece0",
+      "name": "近藤秀次"
+    },
+    {
+      "creditId": "3f30ebfa9f9c692175d472eba7ff59f4",
+      "name": "金子雄紀"
+    },
+    {
+      "creditId": "2f040e7eae2f077a955cea1bcc056c7d",
+      "name": "桑原聖(Arte Refact)"
+    },
+    {
+      "creditId": "3cff94ae1051a8e1e7fa44d711ed9946",
+      "name": "桑原佑介"
+    },
+    {
+      "creditId": "a08df9dd26d067a5e8e07968abf77efc",
+      "name": "結城アイラ"
+    },
+    {
+      "creditId": "4deb2adb0e327b69e3991b84a28c9595",
+      "name": "原田アツシ"
+    },
+    {
+      "creditId": "1e3d4e4a93f2ab56e8975168396b6c18",
+      "name": "原田篤(Arte Refact)"
+    },
+    {
+      "creditId": "f2d4899820fcbb61a4fa1679d150a56f",
+      "name": "古屋真"
+    },
+    {
+      "creditId": "571eddb6eab835bda5f16d7d14f4e117",
+      "name": "光増ハジメ"
+    },
+    {
+      "creditId": "86f33116c33e551caa9bd39dc6bc7b7f",
+      "name": "江並哲志"
+    },
+    {
+      "creditId": "4a353b7abcae88de36ad821a0a1915cf",
+      "name": "高橋修平"
+    },
+    {
+      "creditId": "95ec537d37ea928e2c72245332c408a8",
+      "name": "高田暁"
+    },
+    {
+      "creditId": "89bdf10c0c26c0d1a5c86b182015186f",
+      "name": "佐々木裕"
+    },
+    {
+      "creditId": "05f6a82219507dcb6128d1f78bc2f413",
+      "name": "佐藤厚仁(Dream Monster)"
+    },
+    {
+      "creditId": "256143613103862e2973d6b6a3ac889c",
+      "name": "斎藤仁久"
+    },
+    {
+      "creditId": "515dd44cedea18707696e75fc6544f6d",
+      "name": "三井真一(Dream Monster)"
+    },
+    {
+      "creditId": "c917881c5b4a131944ba49b9e6f81f71",
+      "name": "三浦誠司"
+    },
+    {
+      "creditId": "61052a09f5de2d06f1a794b4b9968d13",
+      "name": "三好啓太"
+    },
+    {
+      "creditId": "a21c93003df9d987457539c96f4abb4b",
+      "name": "山下洋介"
+    },
+    {
+      "creditId": "127263c1af84cb9c16fa59ea3419946d",
+      "name": "山元祐介"
+    },
+    {
+      "creditId": "8069723e504917365ffb8781d8e141ce",
+      "name": "山口朗彦"
+    },
+    {
+      "creditId": "a28368f40e94899324966726744de0e9",
+      "name": "山崎寛子"
+    },
+    {
+      "creditId": "af5e6fa1f0feb9c580b513eccc1a3e02",
+      "name": "山田竜平"
+    },
+    {
+      "creditId": "f05b0866e31b4dc9b9a40ed116cb75af",
+      "name": "山本恭平(Arte Refact)"
+    },
+    {
+      "creditId": "8a34ce9da16a50d345536582ae4e26dc",
+      "name": "山本翔馬"
+    },
+    {
+      "creditId": "3893e00c899723f4f8e96e7562cd7ad5",
+      "name": "志村真白"
+    },
+    {
+      "creditId": "31c27ac0376f9ff3d5b5bf94ca59fdbd",
+      "name": "篠崎あやと"
+    },
+    {
+      "creditId": "d944afae9986e3d76824774fe8f12680",
+      "name": "酒井拓也(Arte Refact)"
+    },
+    {
+      "creditId": "3294df1633134ae3849a9bbb9c04004a",
+      "name": "春川仁志"
+    },
+    {
+      "creditId": "18249b4bff498597bea9f12736afe10b",
+      "name": "小高光太郎"
+    },
+    {
+      "creditId": "e5fa88155eaa7dc74744d5f5b8eccc97",
+      "name": "小川裕司"
+    },
+    {
+      "creditId": "9b621ae46f5e29b877b66955678f4f70",
+      "name": "小椋健司"
+    },
+    {
+      "creditId": "5fedac966caaa303fd61e7f7cc2d37b6",
+      "name": "小野貴光"
+    },
+    {
+      "creditId": "bf0af8cdd777538ba3ad56a3388830b2",
+      "name": "松井俊介"
+    },
+    {
+      "creditId": "c8d1df7cf464e4b374fee905d9a117ab",
+      "name": "松井洋平"
+    },
+    {
+      "creditId": "8c6cfeaa691418a56f96bdb65adad00f",
+      "name": "松下昇平"
+    },
+    {
+      "creditId": "0e9080a7ba253687e5d1292923b873ef",
+      "name": "上江州誠"
+    },
+    {
+      "creditId": "99352e136bff5fc8d9ae0c97e5ae8f2d",
+      "name": "信政誠"
+    },
+    {
+      "creditId": "e1f10b4126589acda78f557bf5a85905",
+      "name": "新谷風太"
+    },
+    {
+      "creditId": "09c65698e643e16fc793d656cd8a50a0",
+      "name": "新田目駿"
+    },
+    {
+      "creditId": "04bf9a62c9b32eee43085d186a8dbbfd",
+      "name": "森本貴大(CoRecTive)"
+    },
+    {
+      "creditId": "42b60a9d62c125a8464f77f32c3a9e03",
+      "name": "真崎エリカ"
+    },
+    {
+      "creditId": "f764e32030da046c9c7b1b41bb1b5c12",
+      "name": "神前暁(MONACA)"
+    },
+    {
+      "creditId": "460f217462fc4c0c3dbaba58f09d2671",
+      "name": "神谷礼"
+    },
+    {
+      "creditId": "bf2183783186dafb93b3240437a19128",
+      "name": "神津裕之"
+    },
+    {
+      "creditId": "3c373f3155568e8f1e7694d9b09e85c8",
+      "name": "神田ジョン"
+    },
+    {
+      "creditId": "06e91b137ed67a4064f7ca8b3c7a82c6",
+      "name": "水永ここ"
+    },
+    {
+      "creditId": "4e4a5d6be10724d8a95573e49ab96a0b",
+      "name": "成瀬裕介"
+    },
+    {
+      "creditId": "3e48b39e2f16b946ab0bfeac940162b8",
+      "name": "星野孝文"
+    },
+    {
+      "creditId": "78e23b0f86f8aed2a0178a26fbed9afb",
+      "name": "清水昭男"
+    },
+    {
+      "creditId": "89fa06a69e180bb00a6ee6e27fbae308",
+      "name": "清水武仁(Blue Bird's Nest)"
+    },
+    {
+      "creditId": "47d2cb441755946795efe6dfb122d6ad",
+      "name": "清田直人"
+    },
+    {
+      "creditId": "6420d97e2390f2bee62ce54255482399",
+      "name": "西川サスケ"
+    },
+    {
+      "creditId": "e6962e9cc6bba1fa7d64bddb463ce8a3",
+      "name": "青海佑樹"
+    },
+    {
+      "creditId": "3d859a3b8313007e8278b8bfa83f9e00",
+      "name": "青木康平"
+    },
+    {
+      "creditId": "43c8070ce07cbaa984a8da674d81bca8",
+      "name": "石井健太郎"
+    },
+    {
+      "creditId": "0c4595bbd2214f9e7807cdca04cedcc4",
+      "name": "石倉誉之"
+    },
+    {
+      "creditId": "5358c1662c18899e68b9d9e298425904",
+      "name": "石田秀登"
+    },
+    {
+      "creditId": "620878e8858930c0862bff45403d1f16",
+      "name": "石濱翔(MONACA)"
+    },
+    {
+      "creditId": "541446c696b589e5e07de61722966648",
+      "name": "折倉俊則"
+    },
+    {
+      "creditId": "c98f819ffb407d4204b6feb5eaa69526",
+      "name": "前迫潤哉"
+    },
+    {
+      "creditId": "8b1aadaa8b70cb6d7cb4b279527c0625",
+      "name": "草野将史"
+    },
+    {
+      "creditId": "307f6998bd316ab56b73e56680a8bc18",
+      "name": "増田武史"
+    },
+    {
+      "creditId": "9d8565a982a52fc47cbdaea6423b0b57",
+      "name": "村井大"
+    },
+    {
+      "creditId": "cf7fc3a667823e82c09cbecdb587743b",
+      "name": "大熊淳生(Arte Refact)"
+    },
+    {
+      "creditId": "c70e17481012bfafe138cc4ba57b71b9",
+      "name": "大西克巳(Blue Bird's Nest)"
+    },
+    {
+      "creditId": "84c6ae8cbb817f336ff61f7a2cfba95d",
+      "name": "大川茂伸"
+    },
+    {
+      "creditId": "baa041ba97d73dee04c2ee0b818ab967",
+      "name": "大濱健悟"
+    },
+    {
+      "creditId": "94bfc6ccb2fdc8b467512281c77f57e5",
+      "name": "滝澤俊輔[TRYTONELABO]"
+    },
+    {
+      "creditId": "7633eab3b041b455da7a9aff885caaa0",
+      "name": "中土智博"
+    },
+    {
+      "creditId": "01e74b0b547228def783965cefb4ffb7",
+      "name": "中島慧"
+    },
+    {
+      "creditId": "8a9218f0cfc2a8814881eb9254fb6566",
+      "name": "中野領太"
+    },
+    {
+      "creditId": "7d9aae36087e79645282980f6521ced7",
+      "name": "塚田耕平(Dream Monster)"
+    },
+    {
+      "creditId": "22392cd56865ecb779260566ef5deeac",
+      "name": "椿山日南子(Dream Monster)"
+    },
+    {
+      "creditId": "c67330c5b772714bf92e7a5367e44aa0",
+      "name": "鶴﨑輝一"
+    },
+    {
+      "creditId": "a44c84341dd1a5cb7fb107e544613674",
+      "name": "田熊知存(Dream Monster)"
+    },
+    {
+      "creditId": "cb5db38f7f074586433ac8c6a6bcf556",
+      "name": "田尻知之(note native)"
+    },
+    {
+      "creditId": "89c17d8c5e9b226a8838d635d6fac091",
+      "name": "田中俊亮"
+    },
+    {
+      "creditId": "86ae393834789301d1f8780cb79ac342",
+      "name": "渡辺拓也"
+    },
+    {
+      "creditId": "f9365220a77f36f0bf714d08816c6553",
+      "name": "渡辺徹"
+    },
+    {
+      "creditId": "f48fdea4bb48b36d0f57dd5a3ca16a87",
+      "name": "渡辺未来"
+    },
+    {
+      "creditId": "1b43a2ec15f41893ab6a8d0fa9c26fe8",
+      "name": "渡辺和紀"
+    },
+    {
+      "creditId": "9c19244baecb01dd4ee7f012d70e7bee",
+      "name": "渡邉俊彦"
+    },
+    {
+      "creditId": "2aff4a3f2d872e521d5540366787f126",
+      "name": "唐沢美帆"
+    },
+    {
+      "creditId": "e88d97b4d49ad7a7e7c69da77e510cdd",
+      "name": "島崎貴光"
+    },
+    {
+      "creditId": "ec31ab2d6443eb2e3320e593ee02d8fa",
+      "name": "藤井健太郎(HANO)"
+    },
+    {
+      "creditId": "24c62d085a27ecd52b2cec44896b8bf6",
+      "name": "藤井亮太"
+    },
+    {
+      "creditId": "5272a76e1127ab8599e46cd88f3781f0",
+      "name": "藤原彩豊"
+    },
+    {
+      "creditId": "405e2935247c51f43743bd0373f722fb",
+      "name": "藤林聖子"
+    },
+    {
+      "creditId": "893ade7841ffd5daa4dd352a65f1693f",
+      "name": "藤澤健至"
+    },
+    {
+      "creditId": "6aca69cbbae0e1cf0820f123d81e6a57",
+      "name": "陶山隼"
+    },
+    {
+      "creditId": "e3958451dcd870db554f27b0a09ccfb9",
+      "name": "徳田光希"
+    },
+    {
+      "creditId": "da423cd8ff7ae121cfc8e67688cd068d",
+      "name": "南田健吾"
+    },
+    {
+      "creditId": "e23da3b877ec2ed66947368701c06474",
+      "name": "日置江佑一朗"
+    },
+    {
+      "creditId": "92239c7ca47dbedecebb46b79cd5d456",
+      "name": "日比野裕史"
+    },
+    {
+      "creditId": "3917b6f5faea8a5975e4b50f47ad29a6",
+      "name": "梅堀淳"
+    },
+    {
+      "creditId": "575ffc09e7dd1d050a6817c135501c87",
+      "name": "白戸佑輔(Dream Monster)"
+    },
+    {
+      "creditId": "ab14f1d08f234314378a5cdb9da44515",
+      "name": "白瀬彩"
+    },
+    {
+      "creditId": "763cfdccaa527d2b8e33cad4de879690",
+      "name": "板垣祐介"
+    },
+    {
+      "creditId": "968a5abc7e91ca7f990aeaffc8d80c80",
+      "name": "武田将弥(Dream Monster)"
+    },
+    {
+      "creditId": "ec159b2df8150003b08aac60ab7cb758",
+      "name": "福田陽司"
+    },
+    {
+      "creditId": "ed36d5ea7719736246389e4748d28248",
+      "name": "牧野太洋"
+    },
+    {
+      "creditId": "724d8f6dceaed9fb0df8607ea94e0c89",
+      "name": "堀秀彰"
+    },
+    {
+      "creditId": "4e5ba76e0cf70bdd1e1a16c11e35ef79",
+      "name": "本多友紀(Arte Refact)"
+    },
+    {
+      "creditId": "1aa45285b83d2a081831d05fc14387ef",
+      "name": "本田光史郎"
+    },
+    {
+      "creditId": "5db1c9920e4f7314c323eb311ee2283b",
+      "name": "本澤尚之"
+    },
+    {
+      "creditId": "a566c4ce9cdebf22db44ea7f3890c752",
+      "name": "無敵DEAD SNAKE"
+    },
+    {
+      "creditId": "1b781a497393230232c87931eee1a86b",
+      "name": "夜兎"
+    },
+    {
+      "creditId": "ae316a651a85f5bd9ccc46ae119d32ca",
+      "name": "矢鴇つかさ(Arte Refact)"
+    },
+    {
+      "creditId": "f32110673fff3049b71394a5e4db7eae",
+      "name": "矢野達也"
+    },
+    {
+      "creditId": "88e1c2882ca4f4d091dfe3fe83a5fa35",
+      "name": "流歌"
+    },
+    {
+      "creditId": "fc9da6b170357826f6ad8d1767a0e48d",
+      "name": "鈴木航海"
+    },
+    {
+      "creditId": "17e4740fd16fe38146f5b44a6db7796f",
+      "name": "鈴木盛広"
+    },
+    {
+      "creditId": "636ee927fd247e3974e4f940f516fd20",
+      "name": "鈴木裕哉"
+    },
+    {
+      "creditId": "d4269edf57d797e7cf249df6d35ca8a6",
+      "name": "和賀裕希"
+    },
+    {
+      "creditId": "9d5f8ca2e3f8ee03c703087ff9d7774e",
+      "name": "脇眞富(Arte Refact)"
+    },
+    {
+      "creditId": "1b87ecf2b5f0e127003a2b67d100d4c1",
+      "name": "廣中トキワ"
+    },
+    {
+      "creditId": "98ed8bfe07364089dccfec9f62d80478",
+      "name": "廣澤優也"
+    },
+    {
+      "creditId": "0ebcb0f3aa67c5b2d95fed42499f8f0d",
+      "name": "濱田幹浩"
+    },
+    {
+      "creditId": "866decebc57f239d2a2fb18ff5855751",
+      "name": "齋藤大(Dream Monster)"
+    },
+    {
+      "creditId": "a998ae98795972d63aac94395d137c0c",
+      "name": "mft(オノダヒロユキ)"
+    },
+    {
+      "creditId": "d688305a9215768ee0dda797285b1f0e",
+      "name": "中川浩二(Bandai Namco Studios Inc.)"
+    },
+    {
+      "creditId": "54780052231b31718dcd1a3c7fd576e7",
+      "name": "小林啓樹"
+    },
+    {
+      "creditId": "fdbf08ad599f84671851c2333f47e829",
+      "name": "高木龍一(Dream Monster)"
+    },
+    {
+      "creditId": "456cf26dbb86b4df1eeecdee412ecb9b",
+      "name": "山崎光(Arte Refact)"
+    },
+    {
+      "creditId": "f42315cc4f439b4d72362975cddc60f7",
+      "name": "水野谷怜(Arte Refact)"
+    },
+    {
+      "creditId": "024e464e9e7db3d659ef6bbc86f161f0",
+      "name": "浅利進吾"
+    },
+    {
+      "creditId": "d1bc9f29e31c1f5f71c32db3a1aba37c",
+      "name": "OzaShin"
+    },
+    {
+      "creditId": "6d5d08ff9b1b0d889db2ba030527126b",
+      "name": "ByRIN"
+    },
+    {
+      "creditId": "1e8f0c4edbbac6c0a8c2d62431d05f85",
+      "name": "浅原康浩"
+    },
+    {
+      "creditId": "fffa8e7dbdde225094513b53dae07820",
+      "name": "安瀬聖"
+    },
+    {
+      "creditId": "ec0110bd9f5fe61c01d832b5c2ff9184",
+      "name": "SUNHEE"
+    },
+    {
+      "creditId": "08a27e6829040d209e6c1e7088c086db",
+      "name": "凛々咲"
+    },
+    {
+      "creditId": "6b3cc487b7038f5ed86bbdef20c4dbe9",
+      "name": "T4K"
+    },
+    {
+      "creditId": "9ef45f5b922f0e88fa48d97c93756fa7",
+      "name": "加藤祐平"
+    },
+    {
+      "creditId": "6b0eb7d3c862374fb610d1103f33a422",
+      "name": "whatsme"
+    },
+    {
+      "creditId": "ebff6557761c3c43564f215ed880e4c0",
+      "name": "Tayuto Nakasu"
+    },
+    {
+      "creditId": "d9bf78346b9f609a594e5b7510e2dd0d",
+      "name": "after all"
+    },
+    {
+      "creditId": "9a15fc34532e9d73389bd730125a641c",
+      "name": "Mitsu.J(Digz, Inc. Group)"
+    },
+    {
+      "creditId": "feb97895cef26fcb8e09e088354363a7",
+      "name": "ladyhood(Digz, Inc. Group)"
+    },
+    {
+      "creditId": "136c197565ecb0ff55b5437ad8c5a13e",
+      "name": "錦織孝宏(TRYTONELABO)"
+    },
+    {
+      "creditId": "60134c400374bfdabe7790cc5417cccf",
+      "name": "a2c(MintJam)"
+    }
+  ]

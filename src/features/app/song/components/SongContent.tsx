@@ -5,6 +5,7 @@ import type { SongMaster,Albums,MvInfo,LiveMaster } from '../../../../data/types
 import subscSongs from '../../../../data/subscSongs.json';
 import GetArtWorkSrc from '../../../common/utils/GetArtWorkSrc';
 import GetMv from '../../../common/utils/GetMv';
+import GetCreditJsx from '../../../common/utils/GetCreditJsx';
 import GetSongOtherVersion from '../../../common/utils/GetSongOtherVersion';
 import SearchLiveBySongId from '../../../common/utils/SearchLive';
 import GetArtistJsx from '../../../common/utils/GetArtistJsx';
@@ -195,6 +196,8 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                     placement='bottom'
                 />
             </div>
+
+            <div className='mt-4'><GetCreditJsx songId={result.songId} targetCreditId=''/></div>
 
             <div className={result.description===''?'hidden':`
                 w-fit pt-6 lg:text-base text-sm font-sans font-semibold
