@@ -2,7 +2,7 @@
 import { cache } from 'react'
 import { Suspense } from "react";
 import React from "react"
-import Redis from 'ioredis';
+//import Redis from 'ioredis';
 import { createClient } from '@supabase/supabase-js'
 import { auth } from "../../../../auth";
 import { notFound } from 'next/navigation'
@@ -50,17 +50,17 @@ const getData = cache(async (id: string) => {
       )
   ;
   //ストーリー情報取得
-  const client = new Redis(process.env.REDIS_URL||'');
+  //const client = new Redis(process.env.REDIS_URL||'');
   let cached: string | null;
   let storyData: Story;
-  try {
-    cached = await client.get('story_'+id);
-  } catch (error) {
-    cached = null;
-  };
-  if (cached) {
-    storyData = JSON.parse(cached);
-  }else{
+  // try {
+  //   cached = await client.get('story_'+id);
+  // } catch (error) {
+  //   cached = null;
+  // };
+  // if (cached) {
+  //   storyData = JSON.parse(cached);
+  // }else{
     const {data, error} = (await supabase.from('m_story_json_data').select(`
     story_id,
     json_data,
@@ -69,8 +69,8 @@ const getData = cache(async (id: string) => {
     if (!data) notFound()
     storyData = data?.json_data;
     
-    if (storyData) await client.setex('story_'+id, 600, JSON.stringify(storyData));
-  }
+    //if (storyData) await client.setex('story_'+id, 600, JSON.stringify(storyData));
+  //}
 
   if (!storyData) notFound()
 
