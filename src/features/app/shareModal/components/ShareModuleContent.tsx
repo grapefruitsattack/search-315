@@ -59,6 +59,8 @@ export default function ShareModuleContent(
               className={`h-[24px] w-[24px]`}
               src={`/twitter_Logo_blue.svg`}
               alt="アートワーク"
+              width={24}
+              height={24}
             />
             </a>
         </div>
@@ -87,6 +89,8 @@ export default function ShareModuleContent(
               className={`h-[24px] w-[24px]`}
               src={`/Mastodon_icon.svg`}
               alt="アートワーク"
+              width={24}
+              height={24}
             />
             </a>
         </div>
@@ -114,6 +118,8 @@ export default function ShareModuleContent(
               className={`h-[36px] w-[36px]`}
               src={`/misskey_icon.png`}
               alt="アートワーク"
+              width={36}
+              height={36}
             />
             </a>
         </div>

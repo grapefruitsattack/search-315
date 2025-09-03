@@ -75,6 +75,8 @@ export default function HeaderAndFooter() {
                     ?'hidden':` absolute left-[3px] top-[3px] tablet:left-[4px] tablet:top-[-5px] h-auto tablet:w-[195px] w-[146px]  `}
                 src={'/snow/logosnow.png'}
                 alt="logosnow"
+                width={195}
+                height={195}
                 />
                 </Link>
             </code>

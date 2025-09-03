@@ -73,12 +73,16 @@ export default function AlbumContent({ album, }: { album: Albums}) {
                     className={`object-cover object-center h-[120px] w-[120px] max-w-[400px] aspect-square rounded-lg`}
                 src={`/artwork/${imgSrc}.png`}
                 alt="アートワーク"
+                width={400}
+                height={400}
                 />
                 <Image
                 className={currentSnowParam.snowIsValid==='0'||album.colleFlg===1
                 ?'hidden':` absolute left-[-7px] top-[-9px] h-auto w-[130px] `}
                 src={snowImgSrc}
                 alt="snow"
+                width={130}
+                height={130}
                 />
             </div>
             {/* 情報 */}

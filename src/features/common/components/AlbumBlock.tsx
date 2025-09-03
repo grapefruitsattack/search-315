@@ -64,6 +64,8 @@ export default function AlbumBlock(
                 `}
                 src="https://placehold.jp/bdbdbd/ffffff/150x150.png?text=no%20image"
                 alt="アートワーク"
+                width={100}
+                height={100}
               />
               :
               <Image
@@ -75,6 +77,8 @@ export default function AlbumBlock(
               `}
                 src={`/artwork/${imgSrc}.png`}
                 alt="アートワーク"
+                width={100}
+                height={100}
               />
               }
           </Link>

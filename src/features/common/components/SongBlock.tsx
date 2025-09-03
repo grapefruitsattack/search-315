@@ -67,20 +67,22 @@ export default function SongBlock(
           {imgSrc===''
             ?
             <Image 
-              className={`object-cover object-center rounded 
-                h-[50px] w-[49px] 
-                mobileM:h-[60px] mobileM:w-[59px] 
+              className={` object-cover object-center rounded 
+                h-[60px] w-[59px] 
               `}
               src={`/artwork/dummy.png`}
               alt="アートワーク"
+              width={60}
+              height={60}
             />
             :<Image
-            className={`object-cover object-center rounded 
-              h-[50px] w-[49px] 
-              mobileM:h-[60px] mobileM:w-[59px] 
-            `}
+              className={` object-cover object-center rounded 
+              h-[60px] w-[59px] 
+              `}
               src={`/artwork/${imgSrc}.png`}
               alt="アートワーク"
+              width={60}
+              height={60}
             />
             }
           </Link>
