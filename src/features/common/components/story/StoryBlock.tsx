@@ -3,7 +3,7 @@ import type { Story,InfoStory } from '../../../../data/types';
 import singingMaster from '../../../../data/singingMaster.json';
 import React, { useState } from "react";
 import Link from 'next/link';
-import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName } from '../../utils/Story/GetStoryInfomation';
+import { GetStoryWebsiteName } from '../../utils/Story/GetStoryInfomation';
 import IdolBadge from '../IdolBadge';
 import MediaBadge from './MediaBadge';
 import CategoryBadge from './CategoryBadge';
@@ -12,9 +12,9 @@ import {DeleteReadingData}  from "@/features/app/actions/DeleteReadingData";
 import { toast } from 'sonner';
 
 export default function StoryBlock(
-  { storyId,media,category,headTitle,storyTitle,infoStory,url,login,userReadLater,displayLogin }
+  { storyId,media,category,website,headTitle,storyTitle,infoStory,url,login,userReadLater,displayLogin }
   :{ 
-    storyId: string,media: number, category: string,
+    storyId: string,media: number, category: string, website: string,
     headTitle: string, storyTitle: string, infoStory: InfoStory[],
     url: string, login:boolean, userReadLater: number,
     displayLogin: boolean
@@ -22,6 +22,7 @@ export default function StoryBlock(
 ) {
   
   const infoStoryPerson: InfoStory[] = infoStory.filter(data=>data.personFlg===1);
+  const websiteName: string = GetStoryWebsiteName(website);
 
   // 後で読むボタン用
   const [loading, setLoading] = useState<boolean>(false);
@@ -220,7 +221,7 @@ export default function StoryBlock(
                       flex flex-wrap justify-center items-center font-sans font-black 
                       mobileM:my-0.5 my-1
                   '>
-                      {'アソビストーリー'}
+                      {websiteName}
                       <span className="">
                       <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
                       </span>
@@ -247,7 +248,7 @@ export default function StoryBlock(
                       flex flex-wrap justify-center items-center font-sans font-black 
                       mobileM:my-0.5 my-1
                   '>
-                      {'アソビストーリー'}
+                      {websiteName}
                       <span className="">
                       <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
                       </span>
