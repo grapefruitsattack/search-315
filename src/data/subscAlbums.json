@@ -2077,5 +2077,49 @@
     "lineMusicUrl": "https://music.line.me/webapp/album/mb000000000464a203",
     "awaUrl": "https://s.awa.fm/album/2e13da0a384efd474518",
     "towerRecordsMusic": ""
+  },
+  {
+    "id": "FC13",
+    "title": "THE IDOLM@STER SideM F＠NTASTIC COMBINATION～CHOCOFFICERANGER!!～ FRAME",
+    "youtubeId": "OLAK5uy_lTuoRZzxZYQVOgPQaXBBw08NUVm6u7-Zg",
+    "spotifyUrl": "https://open.spotify.com/album/0pwU9cyvWZ7KpZB5vmpKiC",
+    "appleMusicUrl": "https://music.apple.com/jp/album/the-idolm-ster-sidem-f-ntastic-combination/1825101566",
+    "amazonMusicUrl": "https://music.amazon.co.jp/albums/B0FGXVFNZD",
+    "lineMusicUrl": "https://music.line.me/webapp/album/mb0000000004869e41",
+    "awaUrl": "https://s.awa.fm/album/59cfc066bbdae7781455",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "FC14",
+    "title": "THE IDOLM@STER SideM F＠NTASTIC COMBINATION～CHOCOFFICERANGER!!～ もふもふえん",
+    "youtubeId": "OLAK5uy_mhr-mVuI9B7oEZSBbAr11ST7dhOmXbLFk",
+    "spotifyUrl": "https://open.spotify.com/album/5fDwC789MK3hwW4WJlSuvJ",
+    "appleMusicUrl": "https://music.apple.com/jp/album/the-idolm-ster-sidem-f-ntastic-combination/1825102521",
+    "amazonMusicUrl": "https://music.amazon.co.jp/albums/B0FGXXKVY6",
+    "lineMusicUrl": "https://music.line.me/webapp/album/mb0000000004869e40",
+    "awaUrl": "https://s.awa.fm/album/f9c4e5e608b3b3b17556",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "FC15",
+    "title": "THE IDOLM@STER SideM F＠NTASTIC COMBINATION～AtoZto!!～ Jupiter",
+    "youtubeId": "OLAK5uy_nFQ1IUdgDEygh3TmoTOrO9wUvdv21-d0Y",
+    "spotifyUrl": "https://open.spotify.com/album/474lvVL2N9ddonHzw2WvfS",
+    "appleMusicUrl": "https://music.apple.com/jp/album/the-idolm-ster-sidem-f-ntastic-combination-atozto/1825102182",
+    "amazonMusicUrl": "https://music.amazon.co.jp/albums/B0FGXWBWWX",
+    "lineMusicUrl": "https://music.line.me/webapp/album/mb0000000004869e3f",
+    "awaUrl": "https://s.awa.fm/album/ca5949e91dd4b77eb259",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "FC16",
+    "title": "THE IDOLM@STER SideM F＠NTASTIC COMBINATION～AtoZto!!～ F-LAGS",
+    "youtubeId": "OLAK5uy_kCDKGviIz1rk-HrgPoc6yFki1GQG48tMk",
+    "spotifyUrl": "https://open.spotify.com/album/4SmiqfaUjnm58glJnVIMer",
+    "appleMusicUrl": "https://music.apple.com/jp/album/the-idolm-ster-sidem-f-ntastic-combination-atozto-f-lags-ep/1825102047",
+    "amazonMusicUrl": "https://music.amazon.co.jp/albums/B0FGXSV1NW",
+    "lineMusicUrl": "https://music.line.me/webapp/album/mb0000000004869e3d",
+    "awaUrl": "https://s.awa.fm/album/302bd53e22bb85719060",
+    "towerRecordsMusic": ""
   }
 ]
