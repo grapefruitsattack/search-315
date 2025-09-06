@@ -107,7 +107,6 @@ const Post = async ({
   const { id } = await params;
   const post = await getData(id);
 
-
   return (
     <Suspense>
     <CommonPage>

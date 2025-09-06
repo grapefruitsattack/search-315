@@ -110,7 +110,7 @@ export default function SearchPageSong({ }: {}) {
                                   ${order==="desc"? 'text-slate-400 ' : 'text-white'}`}
                                   onClick={() => {
                                     params.set('order','asc');
-                                    params.delete('asc');
+                                    params.delete('display');
                                     router.push(currentPath + '?'  + params.toString());}}
                           >
                           リリース日古い順</button>
