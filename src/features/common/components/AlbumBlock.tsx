@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import type { Albums } from '../../../data/types';
 import subscAlbums from '../../../data/subscAlbums.json';
 import { motion, AnimatePresence } from "framer-motion";
@@ -54,7 +55,7 @@ export default function AlbumBlock(
           >
             {imgSrc===''
               ?
-              <img 
+              <Image 
                 className={`
                   object-cover object-center rounded
                   h-[60px] w-[59px] 
@@ -63,9 +64,11 @@ export default function AlbumBlock(
                 `}
                 src="https://placehold.jp/bdbdbd/ffffff/150x150.png?text=no%20image"
                 alt="アートワーク"
+                width={100}
+                height={100}
               />
               :
-              <img
+              <Image
               className={`
                 object-cover object-center rounded
                 h-[60px] w-[59px] 
@@ -74,6 +77,8 @@ export default function AlbumBlock(
               `}
                 src={`/artwork/${imgSrc}.png`}
                 alt="アートワーク"
+                width={100}
+                height={100}
               />
               }
           </Link>

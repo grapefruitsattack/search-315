@@ -4,6 +4,7 @@ import CommonPage from "../../common/components/CommonPage";
 import CopyButton from "../../common/components/CopyButton";
 import GetUnitIdolName from "../../common/utils/GetUnitIdolName";
 import {ShareModal} from "../../app/shareModal/ShareModal";
+import {ShareSearch315Modal} from "../../app/shareModal/ShareSearch315Modal";
 import { auth } from "../../../../auth";
 import { createClient } from '@supabase/supabase-js'
 import {SignIn,SignOut} from "../../management/auth/SignIn";
@@ -127,33 +128,45 @@ export default async function StoryDetailedPage(
             grid lg:w-1/2 
             grid-cols-2 gap-[5px]
         '>
-          <div className='col-span-2 h-fit'>
-              <a className=""
-              href={storyData.url}
-              target="_blank" rel="noopener noreferrer">
-                  <button
-                      className='rounded-lg border-2 border-red-500 w-full h-full
-                      text-red-500 font-sans leading-tight
-                      hover:bg-red-500 hover:text-red-100 
-                      transition-all duration-500 ease-out
-                      fill-red-500 hover:fill-red-50
-                      text-sm mobileL:text-base lg:text-lg
-                      '
-                  >
-                      <div className='
-                        flex flex-wrap justify-center items-center font-sans font-black 
-                        mobileM:my-0.5 my-1 
-                      '>
-                          {websiteName+'で読む'}
-                          <span className="">
-                          <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
-                          </span>
-                      </div>
-                  </button>
-              </a>
-          </div>
+          {storyData.url===null||storyData.url===''
+            ?<></>
+            :
+            <div className='col-span-2 h-fit'>
+                <a className=""
+                href={storyData.url}
+                target="_blank" rel="noopener noreferrer">
+                    <button
+                        className='rounded-lg border-2 border-red-500 w-full h-full
+                        text-red-500 font-sans leading-tight
+                        hover:bg-red-500 hover:text-red-100 
+                        transition-all duration-500 ease-out
+                        fill-red-500 hover:fill-red-50
+                        text-sm mobileL:text-base lg:text-lg
+                        '
+                    >
+                        <div className='
+                          flex flex-wrap justify-center items-center font-sans font-black 
+                          mobileM:my-0.5 my-1 
+                        '>
+                            {websiteName+'で読む'}
+                            <span className="">
+                            <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+                            </span>
+                        </div>
+                    </button>
+                </a>
+            </div>
+          }
           <div className='col-span-1'
           >
+            {storyData.url===null||storyData.url===''
+            ?
+            <ShareSearch315Modal 
+              shareText={shareText}
+              buttonText=""
+              pass={'story/'+storyData.storyId}
+            />
+            :
               <ShareModal 
                 shareUrl={storyData.url}
                 shareSiteTitle={websiteName}
@@ -161,6 +174,7 @@ export default async function StoryDetailedPage(
                 buttonText=""
                 pass={'story/'+storyData.storyId}
               />
+            }
             </div>
           <div className='col-span-1'
           >
@@ -201,24 +215,32 @@ export default async function StoryDetailedPage(
             :<></>}
         </div>
         {/* 既読系ボタン */}
-        <div 
-          className="
-              mobileL:text-2xl text-xl font-mono flex items-center w-full
-              after:h-[0.5px] after:grow after:bg-slate-900/50 after:mx-[1rem] 
-              mt-4 lg:w-1/2 
-          "
-        >
-          {''}
-        </div>
-        <div className='
-            pt-4 pb-2
-            lg:w-1/2 
-            h-full
-        '>
-            <Suspense>
-              <StoryReadingButton storyId={storyData.storyId} isRead={isRead} isReadLeater={isReadLeater}/>
-            </Suspense>
-        </div>
+        {storyData.url===null||storyData.url===''
+          ?<></>
+          :<>
+            <div 
+              className="
+                  mobileL:text-2xl text-xl font-mono flex items-center w-full
+                  after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
+                  mt-5
+              "
+            >
+              <svg className="fill-cyan-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -960 960 960">
+                <path d="M320-320h480v-480h-80v280l-100-60-100 60v-280H320v480Zm0 80q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm360-720h200-200Zm-200 0h480-480Z"/>
+              </svg>
+              {'閲覧データ管理'}
+            </div>
+            <div className='
+                pt-4 pb-2
+                lg:w-1/2 
+                h-full
+            '>
+                <Suspense>
+                  <StoryReadingButton storyId={storyData.storyId} isRead={isRead} isReadLeater={isReadLeater}/>
+                </Suspense>
+            </div>
+          </>
+          }
       
         {/* サブストーリー */}
         {storyData.mSubStory===null || storyData.mSubStory.length===0
@@ -233,7 +255,7 @@ export default async function StoryDetailedPage(
         >
           <svg className="fill-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
           <path d="M13 21V23H11V21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H9C10.1947 3 11.2671 3.52375 12 4.35418C12.7329 3.52375 13.8053 3 15 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H13ZM20 19V5H15C13.8954 5 13 5.89543 13 7V19H20ZM11 19V7C11 5.89543 10.1046 5 9 5H4V19H11Z"></path></svg>
-          {''}
+          {'各話'}
         </div>
           <section className={`
               items-start gap-2 grid-cols-1 mt-2 ml-8
@@ -351,6 +373,7 @@ export default async function StoryDetailedPage(
               storyId={result.storyId} 
               media={result.media} 
               category={result.category} 
+              website={result.website}
               headTitle={result.headTitle} 
               storyTitle={result.storyTitle} 
               infoStory={result.infoStory} 

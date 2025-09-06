@@ -26,7 +26,7 @@ const CommonPage = ({ children }: Props )=> {
     <main className=" min-h-screen">
         <HeaderAndFooter />
         <>{children}</>
-        <ParticlesComponent/>
+        {/* <ParticlesComponent/> */}
         {/* <div className="
           flex pb-2 justify-center underline 
           text-blue-600 mobileL:text-lg mobileM:text-base text-sm

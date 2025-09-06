@@ -17,7 +17,7 @@ export function useSnowParam(
     if(defaultValue!==currentSnowParam){
       setStorageInternal(currentSnowParam);
     };
-  }, [setStorageInternal]);
+  }, [setStorageInternal,defaultValue]);
 
   // 外部からのセッター呼び出し時にローカルストレージに値を保存する
   const setData = useCallback(

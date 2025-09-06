@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import HeaderDrawerButton from './HeaderDrawerButton';
 import {SignIn} from "../../management/auth/SignIn";
 import UserButton from "./UserButton";
@@ -68,12 +69,14 @@ export default function HeaderAndFooter() {
                     href={`/`}
                     rel="noopener noreferrer"
                 >
-                <img className="tablet:w-[200px] w-[150px] h-[50px]" src="/search315_logo.svg" width="200" height="200" alt="ホームアイコン" />
-                <img
+                <Image className="tablet:w-[200px] w-[150px] h-[50px]" src="/search315_logo.svg" width="200" height="200" alt="ホームアイコン" />
+                <Image
                 className={currentSnowParam.snowIsValid==='0'
                     ?'hidden':` absolute left-[3px] top-[3px] tablet:left-[4px] tablet:top-[-5px] h-auto tablet:w-[195px] w-[146px]  `}
                 src={'/snow/logosnow.png'}
                 alt="logosnow"
+                width={195}
+                height={195}
                 />
                 </Link>
             </code>

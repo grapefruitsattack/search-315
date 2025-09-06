@@ -1,9 +1,11 @@
 'use client'
+import Image from 'next/image';
 import { motion } from "framer-motion";
 import type { SongMaster,Albums,MvInfo,LiveMaster } from '../../../../data/types';
 import subscSongs from '../../../../data/subscSongs.json';
 import GetArtWorkSrc from '../../../common/utils/GetArtWorkSrc';
 import GetMv from '../../../common/utils/GetMv';
+import GetCreditJsx from '../../../common/utils/GetCreditJsx';
 import GetSongOtherVersion from '../../../common/utils/GetSongOtherVersion';
 import SearchLiveBySongId from '../../../common/utils/SearchLive';
 import GetArtistJsx from '../../../common/utils/GetArtistJsx';
@@ -77,16 +79,20 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                         row-span-6 w-[135px] inline-block relative
                     `}
                 >
-                    <img
+                    <Image
                     className={`object-cover object-center h-[120px] w-[120px] max-w-[400px] aspect-square rounded-lg`}
                     src={`/artwork/${imgSrc}.png`}
                     alt="アートワーク"
+                    width={400}
+                    height={400}
                     />
-                    <img
+                    <Image
                     className={currentSnowParam.snowIsValid==='0'||result.colleFlg===1
                         ?'hidden':` absolute left-[-7px] top-[-9px] h-auto w-[130px] `}
                     src={snowImgSrc}
                     alt="snow"
+                    width={130}
+                    height={130}
                     />
                 </div>
                 {/* 情報 */}
@@ -190,6 +196,8 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                     placement='bottom'
                 />
             </div>
+
+            <div className='mt-4'><GetCreditJsx songId={result.songId} targetCreditId=''/></div>
 
             <div className={result.description===''?'hidden':`
                 w-fit pt-6 lg:text-base text-sm font-sans font-semibold

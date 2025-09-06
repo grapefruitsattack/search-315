@@ -75,7 +75,7 @@ export const ShareSearch315Modal = (
 
         <div className=''>
         <ShareModuleContent 
-              text={shareText} 
+              text={shareText.replace('<サイト名>', 'サーチサイコー')} 
               url={`https://search315.com/`+ pass+'/'}/>
       </div>
       </div>

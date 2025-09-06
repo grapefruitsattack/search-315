@@ -81,6 +81,7 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
             key={index} 
             storyId={data.story_id}
             category={data.category}
+            website={data.website}
             headTitle={data.head_title}
             infoStory={data.info_id}
             media={data.media}
