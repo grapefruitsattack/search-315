@@ -50,19 +50,21 @@ export default async function StoryDetailedPage(
         <>
         <title>{  `${storyData.storyTitle} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー`}</title>
         <section className="mb-2 bg-gradient-to-r from-green-500/70 from-50% rounded">
-            <div 
-                className="
-                    flex items-center w-full ml-2
-                    text-2xl font-mono
-                    text-white
-                     gap-2
-                ">
-              <svg className="fill-green-500 bg-white rounded" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path d="M13 21V23H11V21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H9C10.1947 3 11.2671 3.52375 12 4.35418C12.7329 3.52375 13.8053 3 15 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H13ZM20 19V5H15C13.8954 5 13 5.89543 13 7V19H20ZM11 19V7C11 5.89543 10.1046 5 9 5H4V19H11Z"></path></svg>
-              <p className="pr-2">
-                {'ストーリー'}
-              </p>
-            </div>
+          <div 
+            className="
+              flex items-center w-full ml-2
+              text-2xl font-mono
+              text-white
+              gap-2"
+          >
+            {/* Google Fonts Icons */}
+            <svg className="fill-green-500 bg-white rounded px-[0.5px]" xmlns="http://www.w3.org/2000/svg" height="24px" width="26px" viewBox="10 -960 960 960">
+              <path d="M260-320q47 0 91.5 10.5T440-278v-394q-41-24-87-36t-93-12q-36 0-71.5 7T120-692v396q35-12 69.5-18t70.5-6Zm260 42q44-21 88.5-31.5T700-320q36 0 70.5 6t69.5 18v-396q-33-14-68.5-21t-71.5-7q-47 0-93 12t-87 36v394Zm-40 118q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113.5 15T480-740q51-30 106.5-45T700-800q52 0 102 12t96 36q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59ZM280-494Z"/>
+            </svg>
+            <p className="pr-2">
+              {'ストーリー'}
+            </p>
+          </div>
         </section>
         <section className='flex flex-wrap relative text-sm tablet:text-xl font-mono font-bold text-white gap-1 mb-1'>
           <CategoryBadge id={storyData.category} size={'normal'}/>
