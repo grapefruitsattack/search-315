@@ -6,6 +6,7 @@ import { Suspense, cache } from "react";
 import { auth } from "../../../../auth";
 import { createClient } from '@supabase/supabase-js';
 import type { StorySearchResult } from '../../../data/types';
+import { MEDIA, CATEGORY, getCategoryByMedia } from '@/features/common/const/StoryInfoConst'
 
 export function generateStaticParams() {
   const idols = singingMaster.filter(data=>data.personFlg===0);
@@ -57,27 +58,42 @@ const getData = cache(async (
     = session?.user
       ?session.user.id||null
       :null;
+
   //ストーリー情報取得
-  const displayPageSize: number = 18;
-  const {data, error} = await supabase.rpc(
+  const displayPageSize: number = 3;
+  const storySearchResult: StorySearchResult[] = [];
+  const recentStoryResult: StorySearchResult[] = (await supabase.rpc(
       'search_story_login',
       {
         info_id_array: infoIdArray,
-        category_array:categoryArray,
-        voice_type:voiceType,
-        howtoview_type:howtoviewType,
-        andor:andor,
-        sorted_asc:SortedAsc,
-        page:page,
+        category_array:getCategoryByMedia(MEDIA.proe.id).map((res)=>res.categoryId),
+        voice_type:0,
+        howtoview_type:0,
+        andor:'or',
+        sorted_asc:0,
+        page:1,
         page_size:displayPageSize,
         user_id:userId,
-        read_later:readLater
+        read_later:''
       }
-  );
-  console.log(error)
-  const storySearchResult: StorySearchResult[] = data[0]?.json_data;
-  const totalCnt: number = data[0]?.total_cnt;
-  return {result:storySearchResult, totalCnt:totalCnt, login:session?.user?true:false};
+  )).data[0]?.json_data;
+  const randStoryResult: StorySearchResult[] = (await supabase.rpc(
+      'search_story_login',
+      {
+        info_id_array: infoIdArray,
+        category_array:getCategoryByMedia(MEDIA.moba.id).map((res)=>res.categoryId).concat(getCategoryByMedia(MEDIA.gs.id).map((res)=>res.categoryId)),
+        voice_type:0,
+        howtoview_type:0,
+        andor:'or',
+        sorted_asc:2,
+        page:1,
+        page_size:displayPageSize,
+        user_id:userId,
+        read_later:''
+      }
+  )).data[0]?.json_data;
+  
+  return {result:[{type:'recent',storyData:recentStoryResult},{type:'random',storyData:randStoryResult}], login:session?.user?true:false};
 });
 
   const Units = async ({
@@ -90,14 +106,19 @@ const getData = cache(async (
     const { id } = await params;
     const {t} = await searchParams;
     const type: string = t || 'music';
-    let storyData = 0;
-    if(type==='story') storyData = (await getData([id],[],0,0,'or',1,1,'')).totalCnt;
+    let result: {type: string; storyData: StorySearchResult[];}[] = [];
+    let login: boolean = false;
 
+    if(type==='story') {
+      const post = await getData([id],getCategoryByMedia(MEDIA.proe.id).map((res)=>res.categoryId),0,0,'or',0,1,'');
+      result = post.result;
+      login = post.login;
+    };
 
     return (
       <Suspense>
       <CommonPage>
-      <UnitPage unitId={id} type={type} storyData={storyData}/>
+      <UnitPage unitId={id} type={type} result={result} login={login}/>
       </CommonPage>
       </Suspense>
     );
