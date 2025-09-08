@@ -238,7 +238,7 @@ export default async function StoryDetailedPage(
                 h-full
             '>
                 <Suspense>
-                  <StoryReadingButton storyId={storyData.storyId} isRead={isRead} isReadLeater={isReadLeater}/>
+                  <StoryReadingButton storyId={storyData.storyId} login={login} isRead={isRead} isReadLeater={isReadLeater}/>
                 </Suspense>
             </div>
           </>
