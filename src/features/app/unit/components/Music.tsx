@@ -12,32 +12,32 @@ import IdolBlock from "@/features/common/components/IdolBlock";
 import {ShareSearch315Modal} from "../../shareModal/ShareSearch315Modal";
 import Link from "next/link";
 
-export default function Music({ id }: { id: string }) {
+export default function Music({ unitId }: { unitId: string }) {
 
-    const unitName:string = singingMaster.find(data => data.singingInfoId === id)?.singingInfoName||'';
+    const unitName:string = singingMaster.find(data => data.singingInfoId === unitId)?.singingInfoName||'';
     //ユニット曲取得
-    const unitSongInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === id && data.type === 'u').map(data=>data.songId);
+    const unitSongInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === unitId && data.type === 'u').map(data=>data.songId);
     const unitSongs: SongMaster[] 
         = unitSongInfos.map(songid=>songMaster.find(data=>songid===data.songId && data.isSoloColle === 0 && data.isUnitColle === 0))
         .filter((item): item is SongMaster => typeof item == 'object').slice().reverse();
     //合同系曲取得
-    const collaboUnitInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === id && data.type === 'c').map(data=>data.songId);
+    const collaboUnitInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === unitId && data.type === 'c').map(data=>data.songId);
     const collaboSongs: SongMaster[] 
         = collaboUnitInfos.map(songid=>songMaster.find(data=>songid===data.songId))
         .filter((item): item is SongMaster => typeof item == 'object').slice().reverse();
     //カバー曲
-    const coverSongInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === id && data.type === 'cover').map(data=>data.songId);
+    const coverSongInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === unitId && data.type === 'cover').map(data=>data.songId);
     const coverSongs: SongMaster[] 
         = coverSongInfos.map(songid=>songMaster.find(data=>songid===data.songId))
         .filter((item): item is SongMaster => typeof item == 'object').slice().reverse();
     //ユニコレ・ユニットバージョン曲取得
-    const unitVerSongInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === id && data.type === 'uver').map(data=>data.songId);
+    const unitVerSongInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === unitId && data.type === 'uver').map(data=>data.songId);
     const unitVerSongs: SongMaster[] 
         = unitVerSongInfos.map(songid=>songMaster.find(data=>songid===data.songId && data.isSoloColle === 0))
         .filter((item): item is SongMaster => typeof item == 'object').slice().reverse();
 
     //ライブ情報
-    const livePerIds: string[] = livePerformer.filter(data => data.singingInfoId === id).map(data=>data.livePerId);
+    const livePerIds: string[] = livePerformer.filter(data => data.singingInfoId === unitId).map(data=>data.livePerId);
     const liveInfos: LiveMaster[] 
         = livePerIds.map(livePerId=>liveMaster.find(data=>livePerId===data.livePerId))
         .filter((item): item is LiveMaster => typeof item == 'object').slice().reverse();
@@ -228,7 +228,7 @@ export default function Music({ id }: { id: string }) {
   <section>
         <div className="flex justify-center m-auto">
             <Link 
-          href={{ pathname: '/search', query: {q: id}}}
+          href={{ pathname: '/search', query: {q: unitId}}}
           className='
                 flex p-0.5 bg-gradient-to-r from-indigo-300 to-emerald-300 items-center 
                 hover:drop-shadow-xl cursor-pointer select-none

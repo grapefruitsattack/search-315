@@ -6,7 +6,7 @@ import { Suspense, cache } from "react";
 import { auth } from "../../../../auth";
 import { createClient } from '@supabase/supabase-js';
 import type { StorySearchResult } from '../../../data/types';
-import { MEDIA, CATEGORY, getCategoryByMedia } from '@/features/common/const/StoryInfoConst'
+import { MEDIA, CATEGORY, getCategoryByMedia } from '@/features/common/const/StoryInfoConst';
 
 export function generateStaticParams() {
   const idols = singingMaster.filter(data=>data.personFlg===0);
@@ -109,11 +109,11 @@ const getData = cache(async (
     let result: {type: string; storyData: StorySearchResult[];}[] = [];
     let login: boolean = false;
 
-    if(type==='story') {
-      const post = await getData([id],getCategoryByMedia(MEDIA.proe.id).map((res)=>res.categoryId),0,0,'or',0,1,'');
-      result = post.result;
-      login = post.login;
-    };
+    // if(type==='story') {
+    //   const post = await getData([id],getCategoryByMedia(MEDIA.proe.id).map((res)=>res.categoryId),0,0,'or',0,1,'');
+    //   result = post.result;
+    //   login = post.login;
+    // };
 
     return (
       <Suspense>

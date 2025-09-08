@@ -173,8 +173,8 @@ export default function IdolPage({ unitId, type, result, login }
       {type==='story'
         ?loading
           ?<>loading</>
-          :<Story id={unitId} result={result} login={login}/>
-        :<Music id={unitId}/>
+          :<Story unitId={unitId} result={result} login={login}/>
+        :<Music unitId={unitId}/>
       }
     </section>
 
