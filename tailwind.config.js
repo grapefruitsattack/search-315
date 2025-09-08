@@ -28,6 +28,7 @@ module.exports = {
   			]
   		},
   		screens: {
+  			pc: '1000px',
   			tablet: '768px',
   			mobileL: '425px',
   			mobileM: '375px',

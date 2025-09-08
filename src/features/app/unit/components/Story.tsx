@@ -103,7 +103,7 @@ export default function Music({ unitId, result, login }
     </section>
     <section 
       className="
-      grid grid-cols-1 tablet:grid-cols-2
+      grid grid-cols-1 tablet:grid-cols-2 pc:grid-cols-3
       gap-x-4 gap-y-4
       "
     >
@@ -123,7 +123,7 @@ export default function Music({ unitId, result, login }
         titleJsx={
           <div 
             className="flex items-center w-fit rounded-t-lg px-1
-              text-lg tablet:text-xl font-mono text-white bg-blue-500"
+              text-base mobileS:text-lg tablet:text-xl font-mono text-white bg-blue-500"
           >
             {/* Remix Icon */}
             <svg className="fill-blue-100 mr-1" xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
@@ -133,10 +133,10 @@ export default function Music({ unitId, result, login }
             {'Connect With Music!'}
           </div>
         }
+        howtoviews={['有償のみ','期間限定無料公開あり']}
         descriptionJsx={
           <>
             <p>{'　新曲と連動したストーリー。'}</p>
-            <p>{'　現在有料会員特典,有料購入のみ。キャンペーンで無料公開されることもある。'}</p>
           </>
         }
         backgroundColor='bg-blue-50'
@@ -159,7 +159,7 @@ export default function Music({ unitId, result, login }
         titleJsx={
           <div 
           className="flex items-center w-fit rounded-t-lg px-1
-          text-lg tablet:text-xl font-mono text-white bg-blue-700"
+          text-base mobileS:text-lg tablet:text-xl font-mono text-white bg-blue-700"
         >
           {/* MingCute Icon */}
           <svg className="fill-blue-200 mr-1" xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
@@ -171,10 +171,10 @@ export default function Music({ unitId, result, login }
           {'Connect With Stage!'}
         </div>
         }
+        howtoviews={['無料あり','一部有償','期間限定無料公開あり']}
         descriptionJsx={
           <>
             <p>{'　リアルライブ・リアルイベントと連動したストーリー。'}</p>
-            <p>{'　無料ストーリーあり。ボイス付き長編ストーリーは有料購入が多い。キャンペーンで無料公開されることもある。'}</p>
           </>
         }
         backgroundColor='bg-blue-100'
@@ -197,7 +197,7 @@ export default function Music({ unitId, result, login }
         titleJsx={
           <div 
             className="flex items-center w-fit rounded-t-lg pl-1 pr-2
-            text-lg tablet:text-xl font-mono text-white bg-orange-600"
+            text-base mobileS:text-lg tablet:text-xl font-mono text-white bg-orange-600"
           >
             {/* Google Fonts Icons  */}
             <svg className="fill-orange-200 mr-1" xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='50 -910 880 860'>
@@ -206,10 +206,10 @@ export default function Music({ unitId, result, login }
             {'アイドルたちの1コマ'}
           </div>
         }
+        howtoviews={['無料']}
         descriptionJsx={
           <>
-            <p>{'　毎週土日更新、配信番組等でも更新あり。'}</p>
-            <p>{'　現在すべて無料で閲覧可能。'}</p>
+            <p>{'　毎週土日更新。配信番組等でも更新あり。現在すべて無料で閲覧可能。'}</p>
           </>
         }
         backgroundColor='bg-orange-100'
@@ -232,7 +232,7 @@ export default function Music({ unitId, result, login }
         titleJsx={
           <div 
           className="flex items-center w-fit rounded-t-lg px-1
-            text-lg tablet:text-xl font-mono text-white bg-sky-400 "
+            text-base mobileS:text-lg tablet:text-xl font-mono text-white bg-sky-400 "
         >
           {/* MingCute Icon  */}
           <svg className="fill-blue-200 mr-1" xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='1 1 22 22'>
@@ -244,10 +244,10 @@ export default function Music({ unitId, result, login }
           {'CONNECT WITH OTHERS！'}
         </div>
         }
+        howtoviews={['無料']}
         descriptionJsx={
           <>
-            <p>{'　楽曲ライブ以外の連動ストーリー。'}</p>
-            <p>{'　現在すべて無料で閲覧可能。'}</p>
+            <p>{'　楽曲ライブ以外の連動ストーリー。現在すべて無料で閲覧可能。'}</p>
           </>
         }
         backgroundColor='bg-sky-100'
@@ -282,13 +282,14 @@ export default function Music({ unitId, result, login }
 
 
 function StoryInfoBlock(
-  { unitId, categoryId, storyCnt, storyData, titleJsx, descriptionJsx, backgroundColor, login }
+  { unitId, categoryId, storyCnt, storyData, titleJsx, howtoviews, descriptionJsx, backgroundColor, login }
   : { 
     unitId: string;
     categoryId: string;
     storyCnt: number;
     storyData: StorySearchResult;
     titleJsx: JSX.Element;
+    howtoviews: string[];
     descriptionJsx: JSX.Element;
     backgroundColor: string;
     login: boolean;
@@ -302,6 +303,17 @@ function StoryInfoBlock(
     <div 
       className={`rounded-b-lg rounded-r-lg px-1 pb-2 ${backgroundColor}`}
     >
+      {howtoviews.length <= 0
+      ?<></>
+      :
+      <div className='flex flex-wrap text-xs mobileM:text-sm px-1 pt-1 gap-1'>
+        {howtoviews.map((str, index) => (
+        <a key={index} className="justify-center border border-red-500 text-red-600 font-bold bg-white rounded-sm px-1">
+          {str}
+        </a>
+        ))}
+      </div>
+      }
       <div className='text-xs mobileM:text-sm p-1 mb-1'>
         {descriptionJsx}
       </div>
