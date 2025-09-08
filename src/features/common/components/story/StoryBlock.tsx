@@ -14,9 +14,9 @@ import { toast } from 'sonner';
 export default function StoryBlock(
   { storyId,media,category,website,headTitle,storyTitle,infoStory,url,login,userReadLater,displayLogin }
   :{ 
-    storyId: string,media: number, category: string, website: string,
+    storyId: string,media: number|null, category: string|null, website: string,
     headTitle: string, storyTitle: string, infoStory: InfoStory[],
-    url: string, login:boolean, userReadLater: number,
+    url: string, login:boolean, userReadLater: number|null,
     displayLogin: boolean
   }
 ) {
@@ -88,7 +88,7 @@ export default function StoryBlock(
       className ="
         inline-block
         row-span-1 col-span-2 
-        bg-white
+        bg-white rounded-md
         from-cyan-100/30 to-violet-200/30
         hover:bg-gradient-to-tl
         hover:text-cyan-900 
@@ -98,8 +98,8 @@ export default function StoryBlock(
       href={`/story/` + storyId}
       >
       <section className='flex flex-wrap relative text-xs mobileS:text-sm font-mono font-bold text-white gap-1'>
-        <CategoryBadge id={category} size='block'/>
-        <MediaBadge id={media} size='block'/>
+        {category===''||category===null?<></>:<CategoryBadge id={category} size='block'/>}
+        {media===null?<></>:<MediaBadge id={media} size='block'/>}
       </section>
       <section className='px-1 '>
       <div className ="
