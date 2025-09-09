@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from "react";
-import SetLocalDateCookie  from "../../../common/utils/SetLocalDateCookie";
+import GetLocalDate  from "@/features/common/utils/GetLocalDate";
 import {UpdateReadingData}  from "../../actions/UpdateReadingData";
 import {DeleteReadingData}  from "../../actions/DeleteReadingData";
 import { DayPicker } from "react-day-picker";
@@ -27,20 +27,20 @@ export default function StoryReadingButton(
   { storyId, login, isRead, isReadLeater }
   : { storyId: string, login: boolean, isRead: boolean, isReadLeater: boolean }
 ): JSX.Element {
-
   //既読編集モーダル用
   const { isOpen, onClose, onOpen } = useDisclosure();
   const [popoverOpen, setPopoverOpen] = useState(false);
-  const [date, setDate] = useState<Date>();
+  const [selectedDate, setDate] = useState<Date | undefined>(new Date());
   
   const [loading, setLoading] = useState<boolean>(false);
 
+  const timezone: string = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const dateTimeFormat = new Intl.DateTimeFormat('ja-JP',{timeZone:timezone});
 
   if(isRead){
   // 既読済みの場合
     return(<>
       {/* クライアントの現在時刻をCookieにセット */}
-      <SetLocalDateCookie />
       <Toaster position="top-center"/>
         <div className="grid grid-cols-[2fr_5fr] w-full h-full">
         <button
@@ -90,10 +90,9 @@ export default function StoryReadingButton(
   // 未読の場合
   return(<>
     {/* クライアントの現在時刻をCookieにセット */}
-    <SetLocalDateCookie />
     <Toaster position="top-center"/>
     <button className='p-2 rounded border text-gray-400'>
-      {2020/1/1}
+      {dateTimeFormat.format(selectedDate)}
     </button>
     <div className="grid tablet:grid-cols-[4fr_2fr] lg:grid-cols-1 grid-cols-1 w-full h-full gap-3">
       <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
@@ -128,13 +127,19 @@ export default function StoryReadingButton(
           <div>「既読」に追加する</div>
           </div>
         </button>
+      </div>
+      </PopoverTrigger>
         <PopoverContent  className="w-auto overflow-hidden p-0" align="start">
-            
+
                 <Calendar
+                  timeZone={timezone}
                   mode="single"
-                  defaultMonth={date}
-                  selected={date}
-                  onSelect={setDate}
+                  defaultMonth={selectedDate}
+                  selected={selectedDate}
+                  onSelect={(date) => {
+                    setDate(date)
+                    setPopoverOpen(false)
+                  }}
                   captionLayout={'dropdown'}
                   startMonth={new Date(2000, 1)}
                   disabled={(date) =>
@@ -143,8 +148,6 @@ export default function StoryReadingButton(
                   className="rounded-lg border shadow-sm"
                 />
           </PopoverContent>
-      </div>
-      </PopoverTrigger>
       </Popover>
       {isReadLeater
       ?

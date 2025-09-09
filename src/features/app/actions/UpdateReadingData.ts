@@ -3,30 +3,15 @@ import { cookies } from 'next/headers';
 import { createClient } from '@supabase/supabase-js';
 import { auth } from '../../../../auth';
 import { revalidatePath } from 'next/cache';
+import GetLocalDate  from "@/features/common/utils/GetLocalDate";
 
 export async function UpdateReadingData(storyId: string, readingDate: string, readLater: number) {
 
-  const dt = new Date();
-  const serverDateArray = [
-    dt.getFullYear().toString(),
-    ('0' + (dt.getMonth() + 1)).slice(-2),
-    ('0' + dt.getDate()).slice(-2),
-  ];
-  const jpDateStr: string = new Date().toLocaleString('ja-JP');
-  const pattern = /[0-9]+/g;
-  const array = jpDateStr.match(pattern)?.map((str)=> str)||serverDateArray;
-  const jpDate = [
-    array[0],
-    array[1],
-    array[2],
-  ].join('-');
-
-  const cookieStore = cookies();
-  const localDate = (await cookieStore).get('localDate')?.value||'';
+  const localDate: string = await GetLocalDate();
 
   const useReadingDate 
     = readingDate===''
-      ?localDate===''?jpDate:localDate
+      ?localDate
       :readingDate;
 
   const session = await auth();

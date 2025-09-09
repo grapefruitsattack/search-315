@@ -1,23 +1,25 @@
 
 import React from "react"
-import CommonPage from "../../common/components/CommonPage";
-import CopyButton from "../../common/components/CopyButton";
-import GetUnitIdolName from "../../common/utils/GetUnitIdolName";
-import {ShareModal} from "../../app/shareModal/ShareModal";
-import {ShareSearch315Modal} from "../../app/shareModal/ShareSearch315Modal";
+import CopyButton from "@/features/common/components/CopyButton";
+import GetUnitIdolName from "@/features/common/utils/GetUnitIdolName";
+import {ShareModal} from "@/features/app/shareModal/ShareModal";
+import {ShareSearch315Modal} from "@/features/app/shareModal/ShareSearch315Modal";
 import { auth } from "../../../../auth";
 import { createClient } from '@supabase/supabase-js'
 import {SignIn,SignOut} from "../../management/auth/SignIn";
 import type { Story,InfoStory } from '../../../data/types';
-import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName,GetVoiceStateName,GetStoryHowtoviewName } from '../../common/utils/Story/GetStoryInfomation';
-import { MEDIA,CATEGORY,WEBSITE,HOW_TO_VIEW } from '../../common/const/StoryInfoConst'
-import IdolBadge from '../../common/components/IdolBadge';
-import CategoryBadge from '../../common/components/story/CategoryBadge';
-import MediaBadge from '../../common/components/story/MediaBadge';
+import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName,GetVoiceStateName,GetStoryHowtoviewName } from '@/features/common/utils/Story/GetStoryInfomation';
+import { MEDIA,CATEGORY,WEBSITE,HOW_TO_VIEW } from '@/features/common/const/StoryInfoConst'
+import IdolBadge from '@/features/common/components/IdolBadge';
+import CategoryBadge from '@/features/common/components/story/CategoryBadge';
+import MediaBadge from '@/features/common/components/story/MediaBadge';
+import SetLocalDateCookie  from "@/features/common/utils/SetLocalDateCookie";
+import GetLocalDate  from "@/features/common/utils/GetLocalDate";
 import StoryReadingButton from "./components/StoryReadingButton";
 import { Suspense } from "react";
-import StoryBlock from "../../common/components/story/StoryBlock";
+import StoryBlock from "@/features/common/components/story/StoryBlock";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 
 export default async function StoryDetailedPage(
   { resultData }: { resultData:{storyData:Story, login:boolean, isRead:boolean, isReadLeater:boolean;}})
@@ -33,6 +35,8 @@ export default async function StoryDetailedPage(
   const mediaName: string = GetStoryMediaName(storyData.media);
   const categoryName: string = GetStoryCategoryName(storyData.category);
   const infoStoryPerson: InfoStory[] = storyData.infoStory.filter(storyData=>storyData.personFlg===1);
+  
+  const localDate: string = await GetLocalDate();
 
   // シェア文章
   let shareText: string = '';
@@ -50,6 +54,7 @@ export default async function StoryDetailedPage(
         <>
         <title>{  `${storyData.storyTitle} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー`}</title>
         <section className="mb-2 bg-gradient-to-r from-green-500/70 from-50% rounded">
+        <SetLocalDateCookie />
           <div 
             className="
               flex items-center w-full ml-2
@@ -238,7 +243,9 @@ export default async function StoryDetailedPage(
                 h-full
             '>
                 <Suspense>
-                  <StoryReadingButton storyId={storyData.storyId} login={login} isRead={isRead} isReadLeater={isReadLeater}/>
+                  <StoryReadingButton 
+                    storyId={storyData.storyId} login={login} isRead={isRead} isReadLeater={isReadLeater}
+                    />
                 </Suspense>
             </div>
           </>
