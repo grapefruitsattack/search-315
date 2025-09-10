@@ -12,7 +12,7 @@ import IdolBlock from "@/features/common/components/IdolBlock";
 import {ShareSearch315Modal} from "../../shareModal/ShareSearch315Modal";
 import Link from "next/link";
 
-export default function Music({ unitId }: { unitId: string }) {
+export default function UnitMusic({ unitId }: { unitId: string }) {
 
     const unitName:string = singingMaster.find(data => data.singingInfoId === unitId)?.singingInfoName||'';
     //ユニット曲取得

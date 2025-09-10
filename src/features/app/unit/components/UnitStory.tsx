@@ -5,7 +5,7 @@ import { MEDIA, CATEGORY } from '@/features/common/const/StoryInfoConst';
 import CategoryBadge from '@/features/common/components/story/CategoryBadge';
 import Link from 'next/link';
 
-export default function Music({ unitId, result, login }
+export default function UnitStory({ unitId, result, login }
   : { unitId: string; result:{type: string; storyData: StorySearchResult[];}[]; login: boolean })
 {
   const recentStoryData = result.find((data)=>data.type==='recent')?.storyData||[];
@@ -14,19 +14,43 @@ export default function Music({ unitId, result, login }
   return (
   
     <>
-    <section 
-      className="
-      text-2xl font-mono flex items-center w-full pb-1
-      after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-      "
-    >
-      {/* MingCute Icon */}
-      <svg className="" xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
-      <g id="document_3_line" fill='none'>
-        <path d='M24 0v24H0V0zM12.593 23.258l-.011.002-.071.035-.02.004-.014-.004-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113-.013.002-.185.093-.01.01-.003.011.018.43.005.012.008.007.201.093c.012.004.023 0 .029-.008l.004-.014-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014-.034.614c0 .012.007.02.017.024l.015-.002.201-.093.01-.008.004-.011.017-.43-.003-.012-.01-.01z'/>
-        <path className="fill-green-700" d='M18 2a2 2 0 0 1 2 2v11.586A2 2 0 0 1 19.414 17L15 21.414a2 2 0 0 1-1.414.586H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2H6v16h6v-4.5a1.5 1.5 0 0 1 1.5-1.5H18zm-.414 12H14v3.586zM10 11a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2zm5-4a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2Z'/></g>
-      </svg>
-      {'新着ストーリー'}
+    <section className="flex items-center ">
+      <div 
+        className="flex flex-col tablet:flex-row justify-start w-fit
+        text-2xl font-mono pb-1
+        "
+      >
+        <div className='flex items-center justify-start'>
+          {/* MingCute Icon */}
+          <svg className="" xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
+          <g id="document_3_line" fill='none'>
+            <path d='M24 0v24H0V0zM12.593 23.258l-.011.002-.071.035-.02.004-.014-.004-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113-.013.002-.185.093-.01.01-.003.011.018.43.005.012.008.007.201.093c.012.004.023 0 .029-.008l.004-.014-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014-.034.614c0 .012.007.02.017.024l.015-.002.201-.093.01-.008.004-.011.017-.43-.003-.012-.01-.01z'/>
+            <path className="fill-green-700" d='M18 2a2 2 0 0 1 2 2v11.586A2 2 0 0 1 19.414 17L15 21.414a2 2 0 0 1-1.414.586H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2H6v16h6v-4.5a1.5 1.5 0 0 1 1.5-1.5H18zm-.414 12H14v3.586zM10 11a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2zm5-4a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2Z'/></g>
+          </svg>
+          {'新着ストーリー'}
+        </div>
+        <div className=' ml-4 tablet:ml-2 ml-4'>
+            <Link
+              className='flex z-10 items-center w-fit gap-1
+              border-2 border-green-700 text-green-800 bg-white
+              text-sm tablet:text-base font-bold
+              '
+              href={{ pathname: '/search/story', query: {q: unitId, order:'desc'}}}
+            >
+              <span className='ml-1'>{'全'}</span>
+              <span className=''>{'100'}</span>
+              <span className='mr-1'>{'ストーリーを見る'}</span>
+              <span className='bg-green-700 fill-white'>
+                <svg className='w-[22px] h-[22px] tablet:w-[24px] tablet:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -950 900 950">
+                <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/>
+                </svg>
+            </span>
+            </Link>
+        </div>
+      </div>
+      <div className='h-[0.5px] grow bg-slate-900/50 ml-[1rem] '>
+      {''}
+      </div>
     </section>
     <section className="grid grid-flow-row-dense items-start pb-8 gap-4 grid-cols-1 lg:grid-cols-3 w-full">
       {recentStoryData.length===0 
@@ -56,34 +80,10 @@ export default function Music({ unitId, result, login }
       after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
       "
     >
-      {/* MingCute Icon */}
-      <svg className="" xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
-      <g id="document_3_line" fill='none'>
-        <path d='M24 0v24H0V0zM12.593 23.258l-.011.002-.071.035-.02.004-.014-.004-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113-.013.002-.185.093-.01.01-.003.011.018.43.005.012.008.007.201.093c.012.004.023 0 .029-.008l.004-.014-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014-.034.614c0 .012.007.02.017.024l.015-.002.201-.093.01-.008.004-.011.017-.43-.003-.012-.01-.01z'/>
-        <path className="fill-green-700" d='M18 2a2 2 0 0 1 2 2v11.586A2 2 0 0 1 19.414 17L15 21.414a2 2 0 0 1-1.414.586H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2H6v16h6v-4.5a1.5 1.5 0 0 1 1.5-1.5H18zm-.414 12H14v3.586zM10 11a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2zm5-4a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2Z'/></g>
+      {/* Remix Icon */}
+      <svg className="fill-pink-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M5.76282 17H20V5H4V18.3851L5.76282 17ZM6.45455 19L2 22.5V4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4V18C22 18.5523 21.5523 19 21 19H6.45455ZM11 14H13V16H11V14ZM8.56731 8.81346C8.88637 7.20919 10.302 6 12 6C13.933 6 15.5 7.567 15.5 9.5C15.5 11.433 13.933 13 12 13H11V11H12C12.8284 11 13.5 10.3284 13.5 9.5C13.5 8.67157 12.8284 8 12 8C11.2723 8 10.6656 8.51823 10.5288 9.20577L8.56731 8.81346Z"></path>
       </svg>
-      {'アーカイブストーリー（ランダム表示）'}
-    </section>
-    <section className="grid grid-flow-row-dense items-start pb-8 gap-4 grid-cols-1 lg:grid-cols-3 w-full">
-      {randStoryData.length===0 
-            ? <div>結果なし</div>
-            :randStoryData.map((data, index) => (
-            <div className="flex flex-col justify-center items-start " key={index}>
-              <StoryBlock 
-                key={index} 
-                storyId={data.story_id}
-                category={data.category}
-                website={data.website}
-                headTitle={data.head_title}
-                infoStory={data.info_id}
-                media={data.media}
-                storyTitle={data.story_title}
-                url={data.url}
-                login={login}
-                userReadLater={data.user_read_later}
-                displayLogin={true}
-              />
-            </div>))}
+      {''}
     </section>
 
     {/* アイマスポータル */}

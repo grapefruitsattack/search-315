@@ -6,8 +6,8 @@ import singingMaster from '@/data/singingMaster.json';
 import type { StorySearchResult } from '@/data/types';
 import IdolBlock from "@/features/common/components/IdolBlock";
 import {ShareSearch315Modal} from "../shareModal/ShareSearch315Modal";
-import Music from "./components/Music";
-import Story from "./components/Story";
+import UnitMusic from "./components/UnitMusic";
+import UnitStory from "./components/UnitStory";
 
 interface ItemCSS extends React.CSSProperties{
   '--c':string
@@ -173,8 +173,8 @@ export default function IdolPage({ unitId, type, result, login }
       {type==='story'
         ?loading
           ?<>loading</>
-          :<Story unitId={unitId} result={result} login={login}/>
-        :<Music unitId={unitId}/>
+          :<UnitStory unitId={unitId} result={result} login={login}/>
+        :<UnitMusic unitId={unitId}/>
       }
     </section>
 
