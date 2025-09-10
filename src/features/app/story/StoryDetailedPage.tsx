@@ -59,7 +59,7 @@ export default async function StoryDetailedPage(
             className="
               flex items-center w-full ml-2
               text-2xl font-mono
-              text-white
+              text-white 
               gap-2"
           >
             {/* Google Fonts Icons */}

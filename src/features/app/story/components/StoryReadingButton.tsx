@@ -91,46 +91,25 @@ export default function StoryReadingButton(
   return(<>
     {/* クライアントの現在時刻をCookieにセット */}
     <Toaster position="top-center"/>
-    <button className='p-2 rounded border text-gray-400'>
-      {dateTimeFormat.format(selectedDate)}
-    </button>
-    <div className="grid tablet:grid-cols-[4fr_2fr] lg:grid-cols-1 grid-cols-1 w-full h-full gap-3">
-      <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
-      <PopoverTrigger asChild>
-      <div
-        className=' w-full h-full'>
+    <div className="grid tablet:grid-cols-1 grid-cols-1 w-full h-full gap-3">
 
-          
-        <button
-            className='w-full h-full py-2
-            rounded-xl drop-shadow-md
-            border-2 border-cyan-500 
-            hover:border-cyan-500
-            bg-white text-cyan-500 
-            hover:bg-cyan-500 hover:text-white font-sans font-black leading-tight
-            transition-all duration-500 ease-out
-            fill-cyan-500 hover:fill-white
-            text-sm mobileL:text-lg lg:text-xl
-            '
-            onClick={() => {
-                //onOpen();
-            }}
-        >
-          <div className='
-            flex justify-center items-center font-sans font-black 
-            mobileM:my-0.5 my-1 
-          '>
-          <div>
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" >
-            <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-          </div>
-          <div>「既読」に追加する</div>
-          </div>
+    <div className="flex bg-sky-50 p-2 rounded-md border-2 border-cyan-500 gap-2 mobileS:gap-4 tablet:gap-6">
+      <div className="">
+        <label>{'読了日'}</label>
+        <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
+        <PopoverTrigger asChild>
+        <button className='flex justify-between w-30 tablet:w-40 p-2 rounded border shadow-md
+          text-gray-900 fill-sky-300 bg-white hover:bg-sky-100 
+          transition-all duration-500 ease-out'
+          >
+          <span className='px-0 mobileS:px-2 font-sans text-xs mobileS:text-sm tablet:text-base '>{dateTimeFormat.format(selectedDate)}</span>
+          <span className='px-0 mobileS:px-2 font-sans '>
+          <svg className='w-[14px] h-[14px] mobileS:w-[20px] mobileS:h-[20px] tablet:w-[22px] tablet:h-[22px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20"><path d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"></path>
+          </svg>
+          </span>
         </button>
-      </div>
       </PopoverTrigger>
         <PopoverContent  className="w-auto overflow-hidden p-0" align="start">
-
                 <Calendar
                   timeZone={timezone}
                   mode="single"
@@ -149,6 +128,36 @@ export default function StoryReadingButton(
                 />
           </PopoverContent>
       </Popover>
+      </div>
+      <div
+        className='self-end w-full h-fit'>
+        <button
+            className='w-full h-full py-2
+            rounded-xl hover:shadow-lg hover:shadow-cyan-200
+            hover:border-cyan-500
+            bg-cyan-500 text-white
+            hover:bg-cyan-500 hover:text-white font-sans font-black leading-tight
+            transition-all duration-500 ease-out
+            fill-white hover:fill-white
+            text-sm mobileS:text-base mobileL:text-lg tablet:text-xl
+            '
+            onClick={() => {
+                //onOpen();
+            }}
+        >
+          <div className='
+            flex justify-center items-center font-sans font-black 
+            mobileM:my-0.5 my-1 
+          '>
+          <div>
+          <svg className='w-[20px] h-[20px] mobileS:w-[22px] mobileS:h-[22px] tablet:w-[24px] tablet:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+            <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+          </div>
+          <div>「既読」に追加</div>
+          </div>
+        </button>
+      </div>
+    </div>
       {isReadLeater
       ?
         <form
