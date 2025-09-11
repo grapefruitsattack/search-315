@@ -40,14 +40,50 @@ export default async function StoryDetailedPage(
 
   // シェア文章
   let shareText: string = '';
-  if(storyData.media===MEDIA.moba.id&&storyData.category===CATEGORY.dailyOneFrame.id){
-    // 日常ひとコマ
-    shareText = `【${mediaName}】\n${storyData.storyTitle}  |  <サイト名>\n#SideM #search315`
-  } else if(!(storyData.headTitle === null || storyData.headTitle === '')){
-    // 
-    shareText = `【${mediaName} - ${categoryName}】\n［${storyData.headTitle}］${storyData.storyTitle}  |  <サイト名>\n#SideM #search315`
+  if (storyData.media===MEDIA.proe.id){
+    if(storyData.headTitle === null || storyData.headTitle === ''){
+      // アイマスポータル ヘッダータイトルなし
+      shareText = `【${categoryName}】\n${storyData.storyTitle}  |  <サイト名>\n#SideM #search315`;
+    } else{
+      // アイマスポータル ヘッダータイトルあり
+      shareText = `【${categoryName}】\n［${storyData.headTitle}］${storyData.storyTitle}  |  <サイト名>\n#SideM #search315`
+    }
+  }else if(storyData.media===MEDIA.moba.id){
+    if(storyData.category===CATEGORY.dailyOneFrame.id){
+      // モバエム 日常ひとコマ
+      shareText = `【${mediaName}アーカイブ】\n${storyData.storyTitle}  |  <サイト名>\n#SideM #search315`;
+    } else if(storyData.category===CATEGORY.mobaEvent.id){
+      // モバエム イベスト
+      shareText = `【${mediaName}アーカイブ】\nイベスト「${storyData.storyTitle}」  |  <サイト名>\n#SideM #search315`;
+    } else{
+      // モバエム 上記以外
+      shareText = `【${mediaName}アーカイブ】\n${categoryName}「${storyData.storyTitle}」  |  <サイト名>\n#SideM #search315`;
+    }
+  }else if(storyData.media===MEDIA.gs.id){
+    if(storyData.category===CATEGORY.main.id){
+      // サイスタ メインスト
+      shareText = `【${mediaName}アーカイブ】\nメインスト ${storyData.headTitle}「${storyData.storyTitle}」  |  <サイト名>\n#SideM #search315`;
+    } else if(storyData.category===CATEGORY.gsEvent.id){
+      // サイスタ イベスト
+      shareText = `【${mediaName}アーカイブ】\n イベスト「${storyData.headTitle} - ${storyData.storyTitle}」  |  <サイト名>\n#SideM #search315`;
+    } else{
+      // サイスタ 上記以外
+      shareText = `【${mediaName}アーカイブ】\n${categoryName}「${storyData.storyTitle}」  |  <サイト名>\n#SideM #search315`;
+    }
   } else {
-    shareText = `【${mediaName} - ${categoryName}】\n${storyData.storyTitle}  |  <サイト名>\n#SideM #search315`
+    shareText = `【${categoryName} - ${mediaName}アーカイブ】\n${storyData.storyTitle}  |  <サイト名>\n#SideM #search315`
+  };
+
+  // 検索文字列
+  let searchText: string = '';
+  if(CATEGORY.mobaEvent.id===storyData.category||CATEGORY.comicSpecial.id===storyData.category){
+    searchText = `モバエム+${storyData.storyTitle}`;
+  } else if(storyData.media===MEDIA.gs.id){
+    if(CATEGORY.gsEvent.id===storyData.category){
+      searchText = `サイスタ+イベントストーリー+${storyData.headTitle}`;
+    } else {
+      searchText = `サイスタ+${categoryName}+${storyData.storyTitle}`;
+    }
   };
 
     return (
@@ -71,25 +107,10 @@ export default async function StoryDetailedPage(
             </p>
           </div>
         </section>
-        <section className='flex flex-wrap relative text-sm tablet:text-xl font-mono font-bold text-white gap-1 mb-1'>
-          <CategoryBadge id={storyData.category} size={'normal'}/>
-          <MediaBadge id={storyData.media} size={'normal'}/>
-        </section>
-
-        <section className='flex flex-wrap relative text-xs tablet:text-sm font-mono text-white gap-1 mb-1'>
-        {voiceStateName===''
-        ?<></>
-        :<div className="justify-center text-red-500 border border-red-500 rounded-sm p-1">{voiceStateName}</div>
-        }
-        {storyData.still===0
-        ?<></>
-        :<div className="justify-center text-red-500 border border-red-500 rounded-sm p-1">{'スチル'+storyData.still+'枚'}</div>
-        }
-        </section>
 
         {storyData.website!=='asb' || storyData.howtoviewStory===null || storyData.howtoviewStory.length===0
         ?<></>
-        :<section className='flex w-fit rounded-sm text-xs tablet:text-sm font-mono text-black mb-2'>
+        :<section className='flex w-fit rounded-sm text-xs tablet:text-sm font-mono text-black mb-1'>
           <a className=" text-black p-1">{'閲覧方法：'}</a>
           {storyData.howtoviewStory.map((result, index) => (
           <a key={index} className="justify-center text-orange-900 bg-orange-200 rounded-sm p-1 mr-1">{GetStoryHowtoviewName(result)}</a>
@@ -103,7 +124,22 @@ export default async function StoryDetailedPage(
         } */}
         </section>
         }
-        
+
+        <section className='flex flex-wrap relative text-xs tablet:text-sm font-mono text-white gap-1 mb-2'>
+          {voiceStateName===''
+            ?<></>
+            :<div className="justify-center text-red-500 border border-red-500 rounded-sm p-1">{voiceStateName}</div>
+          }
+          {storyData.still===0
+            ?<></>
+            :<div className="justify-center text-red-500 border border-red-500 rounded-sm p-1">{'スチル'+storyData.still+'枚'}</div>
+          }
+        </section>
+
+        <section className='flex flex-wrap relative text-sm tablet:text-xl font-mono font-bold text-white gap-1 mb-1'>
+          <CategoryBadge id={storyData.category} size={'normal'}/>
+          <MediaBadge id={storyData.media} size={'normal'}/>
+        </section>
 
         <section className='mb-2 flex flex-col'>
           <div className="text-base mobileM:text-xl tablet:text-2xl font-mono font-bold inline-block">
@@ -192,11 +228,11 @@ export default async function StoryDetailedPage(
                   placement='bottom'
               />
             </div>
-            {storyData.media===MEDIA.gs.id||[CATEGORY.gsEvent.id].includes(storyData.category)
+            {searchText!==''
             ?
             <div className='col-span-2 h-fit'>
                 <a className=""
-                href={'https://www.google.com/search?q=SideM+'+storyData.storyTitle}
+                href={'https://www.google.com/search?q='+searchText}
                 target="_blank" rel="noopener noreferrer">
                     <button
                         className='rounded-lg border-2 border-pink-500 w-full h-full
