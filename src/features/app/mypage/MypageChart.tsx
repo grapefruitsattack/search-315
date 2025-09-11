@@ -1,5 +1,8 @@
 'use client'
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useRouter, usePathname, useSearchParams } from 'next/navigation'
+import type { StoryCntData, SingingMaster } from '@/data/types';
+import singingMaster from '@/data/singingMaster.json';
 import { GetPercentageInfo } from "@/features/common/utils/PercentageUtils";
 import {ShareSearch315Modal} from "@/features/app/shareModal/ShareSearch315Modal";
 import {
@@ -29,10 +32,21 @@ import {
 } from "@/components/ui/select"
 
 
-export default function MyPage(
-  { storyCnt,readStoryCnt }: { storyCnt:number,readStoryCnt:number }
+export default function MypageChart(
+  { storyCntData }
+  : { storyCntData:StoryCntData }
 ): JSX.Element {
-  const {percentageStr,endAngle} = GetPercentageInfo(readStoryCnt,storyCnt);
+  const idols: SingingMaster[] = singingMaster.filter(data=>data.personFlg===1);
+  const units: SingingMaster[] = singingMaster.filter(data=>data.personFlg===0);
+  const router = useRouter();
+  const currentPath: string = usePathname();
+
+  const [displayData, setDisplayData] = useState({storyCnt:storyCntData.all_story_cnt,readStoryCnt:storyCntData.read_all_story_cnt});
+  useEffect(() => {
+    setDisplayData({storyCnt:storyCntData.all_story_cnt,readStoryCnt:storyCntData.read_all_story_cnt});
+  }, [storyCntData]);
+
+  const {percentageStr,endAngle} = GetPercentageInfo(displayData.readStoryCnt,displayData.storyCnt);
 
   const chartData = [
     { browser: "main", visitors: 110, fill: "var(--color-main)", }, 
@@ -55,7 +69,7 @@ export default function MyPage(
             <div className="flex flex-col items-center text-center leading-7">
               <div>
                 {`あなたは`}
-                <p className="inline text-red-500 px-1 text-4xl">{readStoryCnt}</p>
+                <p className="inline text-red-500 px-1 text-4xl">{displayData.readStoryCnt}</p>
                 {`個の`}
                 <p className="inline pl-1 ">{'SideM'}</p>
                 {`ストーリーを読破しました！`}
@@ -67,7 +81,7 @@ export default function MyPage(
         <CardContent className="flex-1 pb-0" >
         <ChartContainer 
           config={chartConfig}
-          className="mx-auto aspect-square max-h-[250px]"
+          className="mx-auto aspect-square max-h-[250px] "
         >
           <RadialBarChart
             data={chartData}
@@ -100,7 +114,7 @@ export default function MyPage(
                           y={(viewBox.cy || 0) - 26}
                           className="fill-muted-foreground text-sm"
                         >
-                          {`全${storyCnt}ストーリー中`}
+                          {`全${displayData.storyCnt}ストーリー中`}
                         </tspan>
                         <tspan
                           x={viewBox.cx}
@@ -139,14 +153,14 @@ export default function MyPage(
           />
         </div>
         <div>
-          <Select onValueChange={()=>{}}>
+          <Select onValueChange={(value)=>{router.push('/mypage/chart/?q='+value);}}>
             <SelectTrigger className="w-[240px]">
               <SelectValue placeholder="ユニット・アイドル別表示" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
+              {singingMaster.map((data, index) => (
+                <SelectItem key={index} value={data.singingInfoId}>{data.singingInfoName}</SelectItem>
+              ))}
             </SelectContent>
           </Select>
         </div>

@@ -217,3 +217,11 @@ export type SongCredit = {
   creditId: string;
   displayName: string;
 };
+
+export type StoryCntData = {
+  all_story_cnt: number;
+  read_all_story_cnt: number;
+  free_story_cnt: number;
+  read_free_story_cnt: number;
+  res_info_id: string;
+};
