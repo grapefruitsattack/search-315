@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import React from "react"
 //import Redis from 'ioredis';
 import { createClient } from '@supabase/supabase-js'
-import { auth } from "../../../../auth";
+import { auth } from "@/auth";
 import { notFound } from 'next/navigation'
 import type { Story } from '../../../data/types';
 import CommonPage from "../../../features/common/components/CommonPage";

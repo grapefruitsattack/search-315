@@ -1,7 +1,7 @@
 'use server'
 import { cookies } from 'next/headers';
 import { createClient } from '@supabase/supabase-js';
-import { auth } from '../../../../auth';
+import { auth } from "@/auth";
 import { revalidatePath } from 'next/cache';
 import GetLocalDate  from "@/features/common/utils/GetLocalDate";
 

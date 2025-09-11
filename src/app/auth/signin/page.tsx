@@ -3,7 +3,7 @@
 import { Suspense } from "react";
 import React from "react"
 import { redirect } from "next/navigation";
-import { auth } from "../../../../auth";
+import { auth } from "@/auth";
 import CommonPage from "@/features/common/components/CommonPage";
 import SigninPage from "@/features/app/signin/SigninPage";
 

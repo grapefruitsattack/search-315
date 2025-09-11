@@ -1,5 +1,5 @@
 
-import { auth } from "../../../../auth";
+import { auth } from "@/auth";
 import React from "react"
 import { Suspense } from "react";
 import { cache } from 'react'

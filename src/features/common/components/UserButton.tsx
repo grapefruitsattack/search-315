@@ -1,7 +1,7 @@
 
 import React from "react"
 import CommonPage from "./CommonPage";
-import { auth } from "../../../../auth";
+import { auth } from "@/auth";
 import {SignIn,SignOut} from "../../management/auth/SignIn";
 import { createClient } from '@supabase/supabase-js'
 import Link from "next/link";

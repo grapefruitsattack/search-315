@@ -1,7 +1,7 @@
 'use server'
 
 import { createClient } from '@supabase/supabase-js';
-import { auth } from '../../../../auth';
+import { auth } from "@/auth";
 import { revalidatePath } from 'next/cache';
 
 export async function DeleteReadingData(storyId: string, readLater: number) {
