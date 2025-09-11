@@ -40,7 +40,6 @@ export default function StoryReadingButton(
   if(isRead){
   // 既読済みの場合
     return(<>
-      {/* クライアントの現在時刻をCookieにセット */}
       <Toaster position="top-center"/>
         <div className="grid grid-cols-[2fr_5fr] w-full h-full">
         <button
@@ -89,7 +88,6 @@ export default function StoryReadingButton(
   }else{
   // 未読の場合
   return(<>
-    {/* クライアントの現在時刻をCookieにセット */}
     <Toaster position="top-center"/>
     <div className="grid tablet:grid-cols-1 grid-cols-1 w-full h-full gap-3">
 
@@ -131,31 +129,53 @@ export default function StoryReadingButton(
       </div>
       <div
         className='self-end w-full h-fit'>
-        <button
-            className='w-full h-full py-2
-            rounded-xl hover:shadow-lg hover:shadow-cyan-200
-            hover:border-cyan-500
-            bg-cyan-500 text-white
-            hover:bg-cyan-500 hover:text-white font-sans font-black leading-tight
-            transition-all duration-500 ease-out
-            fill-white hover:fill-white
-            text-sm mobileS:text-base mobileL:text-lg tablet:text-xl
-            '
-            onClick={() => {
-                //onOpen();
+        <form
+          className=' w-full h-full'
+          action={async () => {
+              await UpdateReadingData(storyId,dateTimeFormat.format(selectedDate),0)
+              .then(() => {
+                setLoading(true);
+                return new Promise<void>((resolve) => {
+                  window.setTimeout(() => {
+                    setLoading(false);
+                    resolve();
+                  }, 1500);
+                });
+              })
+              .then(() => {
+                toast("ok")
+              }).catch((e) => {
+                console.log('エラー')
+                toast("エラー")
+              })
             }}
-        >
-          <div className='
-            flex justify-center items-center font-sans font-black 
-            mobileM:my-0.5 my-1 
-          '>
-          <div>
-          <svg className='w-[20px] h-[20px] mobileS:w-[22px] mobileS:h-[22px] tablet:w-[24px] tablet:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-            <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-          </div>
-          <div>「既読」に追加</div>
-          </div>
-        </button>
+          >
+          <button
+              className='w-full h-full py-2
+              rounded-xl hover:shadow-lg hover:shadow-cyan-200
+              hover:border-cyan-500
+              bg-cyan-500 text-white
+              hover:bg-cyan-500 hover:text-white font-sans font-black leading-tight
+              transition-all duration-500 ease-out
+              fill-white hover:fill-white
+              text-sm mobileS:text-base mobileL:text-lg tablet:text-xl
+              '
+              onClick={() => {
+                  //onOpen();
+              }}
+          >
+            <div className='
+              flex justify-center items-center font-sans font-black 
+              mobileM:my-0.5 my-1 
+            '>
+            <div>
+            <svg className='w-[20px] h-[20px] mobileS:w-[22px] mobileS:h-[22px] tablet:w-[24px] tablet:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+              <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            </div>
+            <div>「既読」に追加</div>
+            </div>
+          </button>
+        </form>
       </div>
     </div>
       {isReadLeater
