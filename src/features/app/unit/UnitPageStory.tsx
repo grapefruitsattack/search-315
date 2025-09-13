@@ -1,13 +1,110 @@
-
+'use server'
+import { cache } from 'react';
+import Link from 'next/link';
+import { auth } from "@/auth";
+import { createClient } from '@supabase/supabase-js';
 import type { StorySearchResult } from '@/data/types';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
-import { MEDIA, CATEGORY } from '@/features/common/const/StoryInfoConst';
+import { MEDIA, CATEGORY, getCategoryByMedia } from '@/features/common/const/StoryInfoConst';
 import CategoryBadge from '@/features/common/components/story/CategoryBadge';
-import Link from 'next/link';
 
-export default function UnitStory({ unitId, result, login }
-  : { unitId: string; result:{type: string; storyData: StorySearchResult[];}[]; login: boolean })
+async function getData(
+  infoIdArray: string[],
+  categoryArray: string[],
+  voiceType: number,
+  howtoviewType: number,
+  andor: string,
+  SortedAsc: number,
+  page: number, 
+  readLater: string
+):Promise<{
+  result:{
+  type: string;
+  storyData: StorySearchResult[];
+}[],login:boolean}> {
+  const session = await auth();
+  const supabaseAccessToken = session?.supabaseAccessToken;
+  const supabase = session?.user
+    ?
+      createClient(
+        process.env.SUPABASE_URL||'',
+        process.env.SUPABASE_ANON_KEY||'',
+        {
+          global: {
+            headers: {
+              Authorization: `Bearer ${supabaseAccessToken}`,
+            },
+          },
+        }
+      )
+    :
+      createClient(
+        process.env.SUPABASE_URL||'',
+        process.env.SUPABASE_ANON_KEY||'',
+        {
+          auth: {
+            autoRefreshToken: false,
+            persistSession: false
+          }
+        }
+      )
+  ;
+  const userId: string | null
+    = session?.user
+      ?session.user.id||null
+      :null;
+
+  //ストーリー情報取得
+  const displayPageSize: number = 3;
+  const storySearchResult: StorySearchResult[] = [];
+  const recentStoryResult: StorySearchResult[] = (await supabase.rpc(
+      'search_story_login',
+      {
+        info_id_array: infoIdArray,
+        category_array:getCategoryByMedia(MEDIA.proe.id).map((res)=>res.categoryId),
+        voice_type:0,
+        howtoview_type:0,
+        andor:'or',
+        sorted_asc:0,
+        page:1,
+        page_size:displayPageSize,
+        user_id:userId,
+        read_later:''
+      }
+  )).data[0]?.json_data;
+  const randStoryResult: StorySearchResult[] = (await supabase.rpc(
+      'search_story_login',
+      {
+        info_id_array: infoIdArray,
+        category_array:getCategoryByMedia(MEDIA.moba.id).map((res)=>res.categoryId).concat(getCategoryByMedia(MEDIA.gs.id).map((res)=>res.categoryId)),
+        voice_type:0,
+        howtoview_type:0,
+        andor:'or',
+        sorted_asc:2,
+        page:1,
+        page_size:displayPageSize,
+        user_id:userId,
+        read_later:''
+      }
+  )).data[0]?.json_data;
+
+  return new Promise((resolve) => {
+    setTimeout(async () => {
+      resolve(
+        {result:[{type:'recent',storyData:recentStoryResult},{type:'random',storyData:randStoryResult}], login:session?.user?true:false}
+      );
+    }, 500); // ある程度の時間をローディング表示
+  });
+}
+
+
+export default async function UnitPageStory(
+  { unitId }: { unitId: string;}): Promise<JSX.Element> 
 {
+  const post = await getData([unitId],getCategoryByMedia(MEDIA.proe.id).map((res)=>res.categoryId),0,0,'or',0,1,'');
+  const result = post.result;
+  const login = post.login;
+
   const recentStoryData = result.find((data)=>data.type==='recent')?.storyData||[];
   const randStoryData = result.find((data)=>data.type==='random')?.storyData||[];
 

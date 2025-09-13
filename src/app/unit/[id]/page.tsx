@@ -5,8 +5,10 @@ import dynamic from "next/dynamic";
 import { Suspense, cache } from "react";
 import { auth } from "@/auth";
 import { createClient } from '@supabase/supabase-js';
-import type { StorySearchResult } from '../../../data/types';
+import type { StorySearchResult } from '@/data/types';
 import { MEDIA, CATEGORY, getCategoryByMedia } from '@/features/common/const/StoryInfoConst';
+import UnitPageStory from "@/features/app/unit/UnitPageStory";
+import UnitPageTabs from "@/features/app/unit/components/UnitPageTabs";
 
 export function generateStaticParams() {
   const idols = singingMaster.filter(data=>data.personFlg===0);
@@ -15,86 +17,8 @@ export function generateStaticParams() {
   });
 }
 
-const UnitPage = dynamic(() => import("../../../features/app/unit/UnitPage"), { ssr: true });
-
-const getData = cache(async (
-  infoIdArray: string[],
-  categoryArray: string[],
-  voiceType: number,
-  howtoviewType: number,
-  andor: string,
-  SortedAsc: number,
-  page: number,
-  readLater: string
-  ) => {
-  const session = await auth();
-  const supabaseAccessToken = session?.supabaseAccessToken;
-  const supabase = session?.user
-    ?
-      createClient(
-        process.env.SUPABASE_URL||'',
-        process.env.SUPABASE_ANON_KEY||'',
-        {
-          global: {
-            headers: {
-              Authorization: `Bearer ${supabaseAccessToken}`,
-            },
-          },
-        }
-      )
-    :
-      createClient(
-        process.env.SUPABASE_URL||'',
-        process.env.SUPABASE_ANON_KEY||'',
-        {
-          auth: {
-            autoRefreshToken: false,
-            persistSession: false
-          }
-        }
-      )
-  ;
-  const userId: string | null
-    = session?.user
-      ?session.user.id||null
-      :null;
-
-  //ストーリー情報取得
-  const displayPageSize: number = 3;
-  const storySearchResult: StorySearchResult[] = [];
-  const recentStoryResult: StorySearchResult[] = (await supabase.rpc(
-      'search_story_login',
-      {
-        info_id_array: infoIdArray,
-        category_array:getCategoryByMedia(MEDIA.proe.id).map((res)=>res.categoryId),
-        voice_type:0,
-        howtoview_type:0,
-        andor:'or',
-        sorted_asc:0,
-        page:1,
-        page_size:displayPageSize,
-        user_id:userId,
-        read_later:''
-      }
-  )).data[0]?.json_data;
-  const randStoryResult: StorySearchResult[] = (await supabase.rpc(
-      'search_story_login',
-      {
-        info_id_array: infoIdArray,
-        category_array:getCategoryByMedia(MEDIA.moba.id).map((res)=>res.categoryId).concat(getCategoryByMedia(MEDIA.gs.id).map((res)=>res.categoryId)),
-        voice_type:0,
-        howtoview_type:0,
-        andor:'or',
-        sorted_asc:2,
-        page:1,
-        page_size:displayPageSize,
-        user_id:userId,
-        read_later:''
-      }
-  )).data[0]?.json_data;
-  
-  return {result:[{type:'recent',storyData:recentStoryResult},{type:'random',storyData:randStoryResult}], login:session?.user?true:false};
-});
+const UnitPageMain = dynamic(() => import("@/features/app/unit/UnitPageMain"), { ssr: true });
+const UnitPageMusic = dynamic(() => import("@/features/app/unit/UnitPageMusic"), { ssr: true });
 
   const Units = async ({
     params,
@@ -108,6 +32,7 @@ const getData = cache(async (
     const type: string = t || 'music';
     let result: {type: string; storyData: StorySearchResult[];}[] = [];
     let login: boolean = false;
+    const unitName: string = singingMaster.find(data => data.singingInfoId === id)?.singingInfoName||'';
 
     // if(type==='story') {
     //   const post = await getData([id],getCategoryByMedia(MEDIA.proe.id).map((res)=>res.categoryId),0,0,'or',0,1,'');
@@ -118,7 +43,24 @@ const getData = cache(async (
     return (
       <Suspense>
       <CommonPage>
-      <UnitPage unitId={id} type={type} result={result} login={login}/>
+        <title>{ `${unitName} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー`}</title>
+        <meta name="description" content={`「${unitName}」の楽曲情報・サブスク配信状況をチェック！ |  サーチサイコー`}/>
+        <p className={`after:bg-[#42DB42] after:bg-[#F14A4A] after:bg-[#87C010] after:bg-[#4757C9] after:bg-[#FFA90A] after:bg-[#CC313B] after:bg-[#1767D9] after:bg-[#24AA2C] after:bg-[#F6F45E] after:bg-[#A584E5] after:bg-[#225B9D] after:bg-[#26D4FF] after:bg-[#309AC1] after:bg-[#54BC26] after:bg-[#E86D85] after:bg-[#F7D828] after:bg-[#F4BA07] after:bg-[#3BA12E] after:bg-[#338033] after:bg-[#3696D0] after:bg-[#EF7A30] after:bg-[#7F9D1E] after:bg-[#7E31CC] after:bg-[#E7B12C] after:bg-[#834DBD] after:bg-[#4C8DD0] after:bg-[#FF0000] after:bg-[#EC7B23] after:bg-[#1B66CF] after:bg-[#25B1BC] after:bg-[#58C038] after:bg-[#BF48A7] after:bg-[#9FA5AB] after:bg-[#E13E33] after:bg-[#334ABA] after:bg-[#CC66CC] after:bg-[#D1594C] after:bg-[#12967F] after:bg-[#6664C6] after:bg-[#CD9D2F] after:bg-[#EB64A0] after:bg-[#FF99D6] after:bg-[#484393] after:bg-[#E44635] after:bg-[#F28198] after:bg-[#FF70E2] after:bg-[#3B6FBC] after:bg-[#E1B21F] after:bg-[#EE8D2B] after:bg-[#4A4A4A] after:bg-[#344DCB] after:bg-[#EE972F] after:bg-[#CB3546] after:bg-[#3D51FF] after:bg-[#59C13B] after:bg-[#E34238] after:bg-[#D2931B] after:bg-[#6880A0] after:bg-[#192F5D] after:bg-[#3A782E] after:bg-[#21A1B4] after:bg-[#00CCBB] after:bg-[#2A92CF] after:bg-[#91BE1C] after:bg-[#D03743] `}>
+        </p>
+      <article className="pt-32 pb-96 font-sans">
+        <UnitPageMain unitId={id} type={type}/>
+      <section  className="w-full mt-5 px-2 mobileS:px-10 lg:px-16 bg-white lg:max-w-[1500px] lg:m-auto">
+      <UnitPageTabs type={type}/>
+      {type==='story'
+        ?
+        <Suspense fallback={<>{'story loading'}</>}>
+        {/* @ts-ignore Server Component */}
+        <UnitPageStory unitId={id}/>
+        </Suspense>
+        :<UnitPageMusic unitId={id}/>
+      }
+      </section>
+      </article>
       </CommonPage>
       </Suspense>
     );

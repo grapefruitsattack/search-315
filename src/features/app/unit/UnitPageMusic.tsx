@@ -9,7 +9,7 @@ import type { SongMaster, LiveMaster } from '@/data/types';
 import SongBlock from "@/features/common/components/SongBlock";
 import CommonPage from "@/features/common/components/CommonPage";
 import IdolBlock from "@/features/common/components/IdolBlock";
-import {ShareSearch315Modal} from "../../shareModal/ShareSearch315Modal";
+import {ShareSearch315Modal} from "../shareModal/ShareSearch315Modal";
 import Link from "next/link";
 
 export default function UnitMusic({ unitId }: { unitId: string }) {
