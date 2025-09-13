@@ -46,6 +46,8 @@ export default function MypageChart(
     setDisplayData({storyCnt:storyCntData.all_story_cnt,readStoryCnt:storyCntData.read_all_story_cnt});
   }, [storyCntData]);
 
+  const [selectInfos, setSelectInfos] = useState({ placeholder:'ユニットを選択', selectItems:units });
+
   const {percentageStr,endAngle} = GetPercentageInfo(displayData.readStoryCnt,displayData.storyCnt);
 
   const chartData = [
@@ -143,27 +145,27 @@ export default function MypageChart(
         <div>{'※現在公式媒体で読むことが可能なストーリーをカウント対象としています'}</div>
         <div 
             className={`
-            w-auto inline-block row-span-1 lg:pr-2 pr-1 h-8
+            w-max inline-block row-span-1 lg:pr-2 pr-1 h-8
             `}
         >
         <ShareSearch315Modal 
-            buttonText="このページをシェア"
+            buttonText="読破結果をシェア"
             shareText={` |  サーチサイコー\n#SideM #search315`} 
             pass={'unit/'}
           />
         </div>
-        <div>
+        <div className="flex">
           <Select onValueChange={(value)=>{router.push('/mypage/chart/?q='+value);}}>
             <SelectTrigger className="w-[240px]">
-              <SelectValue placeholder="ユニット・アイドル別表示" />
+              <SelectValue placeholder={selectInfos.placeholder} />
             </SelectTrigger>
             <SelectContent>
-              {singingMaster.map((data, index) => (
+              {selectInfos.selectItems.map((data, index) => (
                 <SelectItem key={index} value={data.singingInfoId}>{data.singingInfoName}</SelectItem>
               ))}
             </SelectContent>
           </Select>
-        </div>
+          </div>
       </CardFooter>
     </Card>
     </>

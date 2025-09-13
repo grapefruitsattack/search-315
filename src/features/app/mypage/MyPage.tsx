@@ -1,157 +1,22 @@
-'use client'
-import React from "react";
-import { GetPercentageInfo } from "@/features/common/utils/PercentageUtils";
-import {ShareSearch315Modal} from "@/features/app/shareModal/ShareSearch315Modal";
-import {
-  Label,
-  PolarGrid,
-  PolarRadiusAxis,
-  RadialBar,
-  RadialBarChart,
-} from "recharts"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { ChartConfig, ChartContainer } from "@/components/ui/chart"
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 
-
-export default function MyPage(
-  { storyCnt,readStoryCnt }: { storyCnt:number,readStoryCnt:number }
-): JSX.Element {
-  const {percentageStr,endAngle} = GetPercentageInfo(readStoryCnt,storyCnt);
-
-  const chartData = [
-    { browser: "main", visitors: 110, fill: "var(--color-main)", }, 
-  ];
-  const chartConfig = {
-    visitors: {
-      label: "Visitors",
-    },
-    main: {
-      label: "Main",
-      color: "#80ffff",
-    },
-  } satisfies ChartConfig
- 
-
-    return (<>
-      <Card className="flex flex-col">
-        <CardHeader className="items-center pb-0">
-          <CardTitle>
-            <div className="flex flex-col items-center text-center leading-7">
-              <div>
-                {`あなたは`}
-                <p className="inline text-red-500 px-1 text-4xl">{readStoryCnt}</p>
-                {`個の`}
-                <p className="inline pl-1 ">{'SideM'}</p>
-                {`ストーリーを読破しました！`}
-              </div>
-            </div>
-          </CardTitle>
-          {/* <CardDescription></CardDescription> */}
-        </CardHeader>
-        <CardContent className="flex-1 pb-0" >
-        <ChartContainer 
-          config={chartConfig}
-          className="mx-auto aspect-square max-h-[250px]"
-        >
-          <RadialBarChart
-            data={chartData}
-            endAngle={endAngle}
-            innerRadius={100}
-            outerRadius={160}
-            dataKey={'readStory'}
-          >
-            <PolarGrid
-              gridType="circle"
-              radialLines={false}
-              stroke="none"
-              className="first:fill-muted last:fill-background"
-              polarRadius={[106, 94]}
-            />
-            <RadialBar dataKey="visitors" background />
-            <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
-              <Label
-                content={({ viewBox }) => {
-                  if (viewBox && "cx" in viewBox && "cy" in viewBox) {
-                    return (
-                      <text
-                        x={viewBox.cx}
-                        y={viewBox.cy}
-                        textAnchor="middle"
-                        dominantBaseline="middle"
-                      >
-                        <tspan
-                          x={viewBox.cx}
-                          y={(viewBox.cy || 0) - 26}
-                          className="fill-muted-foreground text-sm"
-                        >
-                          {`全${storyCnt}ストーリー中`}
-                        </tspan>
-                        <tspan
-                          x={viewBox.cx}
-                          y={viewBox.cy}
-                          className="fill-foreground text-4xl font-bold"
-                        >
-                          <tspan className="fill-foreground text-xl font-bold ">{'約'}</tspan>{percentageStr}
-                        </tspan>
-                        <tspan
-                          x={viewBox.cx}
-                          y={(viewBox.cy || 0) + 24}
-                          className="fill-muted-foreground text-sm"
-                        >
-                          読了済み
-                        </tspan>
-                      </text>
-                    )
-                  }
-                }}
-              />
-            </PolarRadiusAxis>
-          </RadialBarChart>
-        </ChartContainer>
-      </CardContent>
-      <CardFooter className="flex-col gap-2 text-sm">
-        <div>{'※現在公式媒体で読むことが可能なストーリーをカウント対象としています'}</div>
-        <div 
-            className={`
-            w-auto inline-block row-span-1 lg:pr-2 pr-1 h-8
-            `}
-        >
-        <ShareSearch315Modal 
-            buttonText="このページをシェア"
-            shareText={` |  サーチサイコー\n#SideM #search315`} 
-            pass={'unit/'}
-          />
-        </div>
-        <div>
-          <Select onValueChange={()=>{}}>
-            <SelectTrigger className="w-[240px]">
-              <SelectValue placeholder="ユニット・アイドル別表示" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-      </CardFooter>
-    </Card>
-    </>
-      );
-  }
+export default function Mypage(){
+  return(
+    <section className="mb-4 bg-gradient-to-r from-red-500 from-70% rounded">
+      <div 
+        className="
+          flex items-center w-full ml-2
+          text-2xl font-mono
+          text-white 
+          gap-2"
+      >
+        {/* Google Fonts Icons */}
+        <svg className="fill-red-500 bg-white rounded px-[0.5px]" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="100 -860 760 760" width="24px">
+          <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/>
+        </svg>
+        <p className="pr-2">
+          {'マイページ'}
+        </p>
+      </div>
+    </section>
+  )
+}

@@ -7,6 +7,8 @@ import { auth } from "@/auth";
 import { notFound, redirect } from 'next/navigation'
 import type { StoryCntData } from '@/data/types';
 import CommonPage from "@/features/common/components/CommonPage";
+import Mypage from "@/features/app/mypage/Mypage";
+import MypageTabs from "@/features/app/mypage/components/MypageTabs";
 import MypageChart from "@/features/app/mypage/MypageChart";
 
 export default async function Page() {
@@ -45,8 +47,8 @@ export default async function Page() {
     <CommonPage>
     <title>{ `${'マイページ'} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー`}</title>
       <article className="pt-32 pb-96 px-2 mobileS:px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
-      
-      {'マイページ'}
+      <Mypage/>
+      <MypageTabs type='chart'/>
       <div>
       <MypageChart storyCntData={storyCntData} />
       </div>
