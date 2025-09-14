@@ -9,5 +9,7 @@ export default function GetUnitIdolName(
     const data: SingingMaster | undefined  = singingMaster.find(data => data.singingInfoId === id);
     const name: string 
         = useShortName===0?data?.singingInfoName||'': data?.singingInfoShortName||'';
+    const personFlg: number = data===undefined?0:data.personFlg;
+    if(personFlg===0) return name;
     return replaceSpace===1?name.replace(/\s+/g, ""):name;
 }

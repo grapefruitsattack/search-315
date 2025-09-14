@@ -51,6 +51,8 @@ const Page = async ({
         }
     );
   const storyCntData: StoryCntData = data[0];
+  {all_story_cnt: 1338;
+    read_all_story_cnt: 1338;free_story_cnt: 1286; read_free_story_cnt: 1286;res_info_id: '';}
   return (
     <Suspense>
     <CommonPage>
@@ -60,6 +62,7 @@ const Page = async ({
       <MypageTabs type='chart'/>
       <div>
       <MypageChart storyCntData={storyCntData} />
+      <MypageChart storyCntData={{all_story_cnt: 1338,read_all_story_cnt: 1330,free_story_cnt: 1286,read_free_story_cnt: 1286,res_info_id: ''}} />
       </div>
       </article>
     </CommonPage>

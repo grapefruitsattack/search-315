@@ -5,7 +5,7 @@ export function GetPercentageInfo
     let endAngle: number = 0;
     let percentageStr: string = '0%';
     if(numerator>=denominator||denominator<=0){
-      endAngle = 30;
+      endAngle = 360;
       percentageStr = '100%';
     }else if(numerator===0){
       endAngle = 0;
