@@ -57,12 +57,12 @@ const Page = async ({
     <Suspense>
     <CommonPage>
       <title>{ `${'マイページ'} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー`}</title>
-      <article className="pt-32 pb-96 px-2 mobileS:px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
+      <article className="pt-32 pb-96 px-2 mobileM:px-8 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
       <Mypage/>
       <MypageTabs type='chart'/>
       <div>
       <MypageChart storyCntData={storyCntData} />
-      <MypageChart storyCntData={{all_story_cnt: 1338,read_all_story_cnt: 1330,free_story_cnt: 1286,read_free_story_cnt: 1286,res_info_id: ''}} />
+      {/* <MypageChart storyCntData={{all_story_cnt: 1338,read_all_story_cnt: 1330,free_story_cnt: 1286,read_free_story_cnt: 1286,res_info_id: ''}} /> */}
       </div>
       </article>
     </CommonPage>
