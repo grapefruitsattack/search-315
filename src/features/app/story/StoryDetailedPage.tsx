@@ -41,12 +41,10 @@ export default async function StoryDetailedPage(
   // シェア文章
   let shareText: string = '';
   if (storyData.media===MEDIA.proe.id){
-    if(storyData.headTitle === null || storyData.headTitle === ''){
-      // アイマスポータル ヘッダータイトルなし
-      shareText = `【${categoryName}】\n${storyData.storyTitle}  |  <サイト名>\n#SideM #search315`;
-    } else{
-      // アイマスポータル ヘッダータイトルあり
-      shareText = `【${categoryName}】\n［${storyData.headTitle}］${storyData.storyTitle}  |  <サイト名>\n#SideM #search315`
+    if (storyData.category===CATEGORY.idolOneFrame.id){
+      shareText = `【${categoryName}】\n${storyData.headTitle === null || storyData.headTitle === ''?'':`《${storyData.headTitle}》\n`}${storyData.storyTitle}  |  <サイト名>\n#SideM #search315`
+    } else {
+      shareText = `【${categoryName}ストーリー】\n${storyData.headTitle === null || storyData.headTitle === ''?'':`《${storyData.headTitle}》\n`}${storyData.storyTitle}  |  <サイト名>\n#SideM #search315`
     }
   }else if(storyData.media===MEDIA.moba.id){
     if(storyData.category===CATEGORY.dailyOneFrame.id){
