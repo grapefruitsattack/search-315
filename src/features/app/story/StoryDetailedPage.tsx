@@ -36,7 +36,11 @@ export default async function StoryDetailedPage(
   const categoryName: string = GetStoryCategoryName(storyData.category);
   const infoStoryPerson: InfoStory[] = storyData.infoStory.filter(storyData=>storyData.personFlg===1);
   
-  const localDate: string = await GetLocalDate();
+  const releaseDate: string 
+    = new Date(
+        Number(storyData.releaseDate.substring(0,4))
+        ,Number(storyData.releaseDate.substring(5,7))-1
+        ,Number(storyData.releaseDate.substring(9,11))).toLocaleDateString();
 
   // シェア文章
   let shareText: string = '';
@@ -122,6 +126,11 @@ export default async function StoryDetailedPage(
         } */}
         </section>
         }
+      <section className='flex w-fit
+      lg:text-base text-sm font-sans text-slate-600 '>
+          <a className="">{releaseDate}</a>
+          <a className="">{'更新'}</a>
+      </section>
 
         <section className='flex flex-wrap relative text-xs tablet:text-sm font-mono text-white gap-1 mb-2'>
           {voiceStateName===''

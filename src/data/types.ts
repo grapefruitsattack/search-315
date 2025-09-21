@@ -140,7 +140,7 @@ export type Story = {
   website: string;
   headTitle: string;
   storyTitle: string;
-  releaseDate: Date;
+  releaseDate: string;
   subCnt: number;
   voiceAtRelease: number;
   voice: number;
