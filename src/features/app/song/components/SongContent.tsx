@@ -197,14 +197,15 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                 />
             </div>
 
-            <div className='mt-4'><GetCreditJsx songId={result.songId} targetCreditId=''/></div>
-
+            <div className='mt-4 px-2 py-1 w-fit rounded border-2 border-green-500/20'>
+                <GetCreditJsx songId={result.commonSong===''?result.songId:result.commonSong} targetCreditId=''/>
+            </div> 
             <div className={result.description===''?'hidden':`
-                w-fit pt-6 lg:text-base text-sm font-sans font-semibold
+                w-fit mt-4 lg:text-base text-sm font-sans font-semibold
             `}>{'※'}{result.description}
             </div>
             <div className="
-                w-fit pt-3 lg:text-base text-sm font-sans break-all
+                w-fit mt-4 lg:text-base text-sm font-sans break-all
             ">
                 <p>リリースページ：
                     <a 
@@ -224,6 +225,7 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                     </a>
                 </p>
             </div>
+
         </section>
 
         {/* MV */}
