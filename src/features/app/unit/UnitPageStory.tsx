@@ -1,7 +1,7 @@
 'use server'
 import { cache } from 'react';
 import Link from 'next/link';
-import { auth } from "@/auth";
+import { useSession } from "@/auth-client";
 import { createClient } from '@supabase/supabase-js';
 import type { StorySearchResult } from '@/data/types';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
@@ -22,8 +22,8 @@ async function getData(
   type: string;
   storyData: StorySearchResult[];
 }[],login:boolean}> {
-  const session = await auth();
-  const supabaseAccessToken = session?.supabaseAccessToken;
+  const session = useSession().data;
+  const supabaseAccessToken = session?.session.token;
   const supabase = session?.user
     ?
       createClient(

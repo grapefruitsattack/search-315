@@ -1,25 +1,18 @@
 
 import React from "react"
 import CommonPage from "../../common/components/CommonPage";
-import { auth } from "@/auth";
+import { auth, createSupabaseClient } from "@/auth";
+import { headers } from "next/headers";
 import {SignIn,SignOut} from "../../management/auth/SignIn";
 import { createClient } from '@supabase/supabase-js'
 
 export default async function StoryPage(): Promise<JSX.Element> {
-    
-    const session = await auth();
-    const supabaseAccessToken = session?.supabaseAccessToken;
-    const supabase = createClient(
-      process.env.SUPABASE_URL||'',
-      process.env.SUPABASE_ANON_KEY||'',
-      {
-        global: {
-          headers: {
-            Authorization: `Bearer ${supabaseAccessToken}`,
-          },
-        },
-      }
-    )
+  const h = await headers();
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+  const supabaseAccessToken = session?.session.token;
+  const supabase = await createSupabaseClient(session);
     const { data, error } = await supabase.from("users").select("*");
 
     const post = data||[];

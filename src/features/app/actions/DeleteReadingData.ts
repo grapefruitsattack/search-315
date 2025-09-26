@@ -1,12 +1,12 @@
 'use server'
 
 import { createClient } from '@supabase/supabase-js';
-import { auth } from "@/auth";
+import { useSession } from "@/auth-client";
 import { revalidatePath } from 'next/cache';
 
 export async function DeleteReadingData(storyId: string, readLater: number) {
-  const session = await auth();
-  const supabaseAccessToken = session?.supabaseAccessToken;
+  const session = useSession().data;
+  const supabaseAccessToken = session?.session.token;
 
   const supabase = createClient(
     process.env.SUPABASE_URL || '',

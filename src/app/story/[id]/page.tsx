@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import React from "react"
 //import Redis from 'ioredis';
 import { createClient } from '@supabase/supabase-js'
-import { auth } from "@/auth";
+import { useSession } from "@/auth-client";
 import { notFound } from 'next/navigation'
 import type { Story } from '../../../data/types';
 import CommonPage from "../../../features/common/components/CommonPage";
@@ -21,8 +21,8 @@ type Props = {
 };
 
 const getData = cache(async (id: string) => {
-  const session = await auth();
-  const supabaseAccessToken = session?.supabaseAccessToken;
+  const session = useSession().data;
+  const supabaseAccessToken = session?.session.token;
   const login: boolean = session?.user?true:false;
   const supabase = login
     ?

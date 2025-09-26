@@ -22,10 +22,10 @@ const withPWA = require('next-pwa')({
 })
 
 module.exports = withPWA({
+  swcMinify: false,
+  appDir:true,
   experimental: {
       scrollRestoration: true,
-      swcMinify: false,
-      appDir:true
   },
   trailingSlash: true,
   assetPrefix: process.env.BASE_PATH || '',

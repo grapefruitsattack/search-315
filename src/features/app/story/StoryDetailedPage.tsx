@@ -4,9 +4,6 @@ import CopyButton from "@/features/common/components/CopyButton";
 import GetUnitIdolName from "@/features/common/utils/GetUnitIdolName";
 import {ShareModal} from "@/features/app/shareModal/ShareModal";
 import {ShareSearch315Modal} from "@/features/app/shareModal/ShareSearch315Modal";
-import { auth } from "@/auth";
-import { createClient } from '@supabase/supabase-js'
-import {SignIn,SignOut} from "../../management/auth/SignIn";
 import type { Story,InfoStory } from '../../../data/types';
 import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName,GetVoiceStateName,GetStoryHowtoviewName } from '@/features/common/utils/Story/GetStoryInfomation';
 import { MEDIA,CATEGORY,WEBSITE,HOW_TO_VIEW } from '@/features/common/const/StoryInfoConst'

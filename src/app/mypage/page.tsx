@@ -3,7 +3,8 @@ import { cache } from 'react'
 import { Suspense } from "react";
 import React from "react"
 import { createClient } from '@supabase/supabase-js'
-import { auth } from "@/auth";
+import { auth, createSupabaseClient } from "@/auth";
+import { headers } from "next/headers";
 import { notFound, redirect } from 'next/navigation'
 import type { StoryCntData } from '@/data/types';
 import CommonPage from "@/features/common/components/CommonPage";
@@ -12,27 +13,16 @@ import MypageTabs from "@/features/app/mypage/components/MypageTabs";
 import MypageChart from "@/features/app/mypage/MypageChart";
 
 export default async function Page() {
-  const session = await auth();
-  const supabaseAccessToken = session?.supabaseAccessToken;
+  const session = await auth.api.getSession({
+      headers: await headers(),
+  });
   const login: boolean = session?.user?true:false;
   if (!login) redirect('/auth/signin?callbackUrl=/mypage');
   const userId: string | null
     = session?.user
       ?session.user.id||null
       :null;
-
-  const supabase = 
-    createClient(
-      process.env.SUPABASE_URL||'',
-      process.env.SUPABASE_ANON_KEY||'',
-      {
-        global: {
-          headers: {
-            Authorization: `Bearer ${supabaseAccessToken}`,
-          },
-        },
-      }
-    );
+  const supabase = await createSupabaseClient(session);
   //ストーリー情報取得
   const {data, error} = await supabase.rpc(
       'get_user_reading_cnt',

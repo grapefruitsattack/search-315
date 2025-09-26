@@ -3,7 +3,8 @@ import { cache } from 'react'
 import { Suspense } from "react";
 import React from "react"
 import { createClient } from '@supabase/supabase-js'
-import { auth } from "@/auth";
+import { auth, createSupabaseClient } from "@/auth";
+import { headers } from "next/headers";
 import { notFound, redirect } from 'next/navigation'
 import type { StoryCntData } from '@/data/types';
 import CommonPage from "@/features/common/components/CommonPage";
@@ -21,8 +22,10 @@ const Page = async ({
   const infoIdCheckResult = CheckSingingInfoParm([q||'']);
   const infoId: string = infoIdCheckResult.length<=0?'':infoIdCheckResult[0];
 
-  const session = await auth();
-  const supabaseAccessToken = session?.supabaseAccessToken;
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+  const supabaseAccessToken = session?.session.token;
   const login: boolean = session?.user?true:false;
   if (!login) redirect('/auth/signin?callbackUrl=/mypage');
   const userId: string | null
@@ -30,26 +33,16 @@ const Page = async ({
       ?session.user.id||null
       :null;
 
-  const supabase = 
-    createClient(
-      process.env.SUPABASE_URL||'',
-      process.env.SUPABASE_ANON_KEY||'',
+
+  const supabase = await createSupabaseClient(session);
+  //ストーリー情報取得
+  const {data, error} = await supabase.rpc(
+      'get_user_reading_cnt',
       {
-        global: {
-          headers: {
-            Authorization: `Bearer ${supabaseAccessToken}`,
-          },
-        },
+        user_id:userId,
+        info_id:infoId
       }
-    );
-    //ストーリー情報取得
-    const {data, error} = await supabase.rpc(
-        'get_user_reading_cnt',
-        {
-          user_id:userId,
-          info_id:infoId
-        }
-    );
+  );
   const storyCntData: StoryCntData = data[0];
   {all_story_cnt: 1338;
     read_all_story_cnt: 1338;free_story_cnt: 1286; read_free_story_cnt: 1286;res_info_id: '';}

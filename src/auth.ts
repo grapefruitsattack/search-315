@@ -1,45 +1,62 @@
-import NextAuth from "next-auth";
-import type { NextAuthConfig } from "next-auth";
-import Google from "next-auth/providers/google";
-import { SupabaseAdapter } from "@auth/supabase-adapter"
-import { SignJWT, jwtVerify } from 'jose';
-
-const authConfig: NextAuthConfig = {
-    providers: [Google],
-    adapter: SupabaseAdapter({
-      url: process.env.SUPABASE_URL||'',
-      secret: process.env.SUPABASE_SERVICE_ROLE_KEY||'',
-    }),
-   callbacks: {
-    //  async jwt({ token, user, account }) {
-    //    if (user && account?.id_token) {
-    //      token.idToken = account?.id_token;
-    //    }
-    //    return token;
-    //  },
-     async session({ session, user }) {
-       const signingSecret = new TextEncoder().encode(process.env.SUPABASE_JWT_SECRET);
-       if (signingSecret) {
-         const payload = {
-           aud: "authenticated",
-           exp: Math.floor(new Date(session.expires).getTime() / 1000),
-           sub: user.id,
-           email: user.email,
-           role: "authenticated",
-         }
-         session.supabaseAccessToken = await new SignJWT(payload)
-         .setProtectedHeader({ alg: 'HS256', typ: 'JWT' })
-         .setIssuedAt()
-         .setExpirationTime('2h')
-         .sign(signingSecret);
-       }
-       return session
-     },
-   },
-    pages: {
-      signIn: "/auth/signin",
-    },
-  };
+import { betterAuth } from "better-auth";
+import { Pool } from 'pg';
+import { jwt, bearer } from "better-auth/plugins"
+import { SignJWT } from 'jose';
+import { createClient } from '@supabase/supabase-js';
 
 
-export const { handlers, auth, signIn, signOut } = NextAuth(authConfig);
+export const auth = betterAuth({
+  database: new Pool({
+      connectionString: process.env.DATABASE_URL,
+  }),
+  emailAndPassword: {
+    enabled: false, 
+  }, 
+  socialProviders: {
+      google: { 
+          clientId: process.env.AUTH_GOOGLE_ID as string, 
+          clientSecret: process.env.AUTH_GOOGLE_SECRET as string, 
+      }, 
+  },
+});
+
+
+/**
+ * Better Auth セッションから Supabase 用 JWT を生成
+ * @param session Better Auth の session オブジェクト
+ */
+export async function createSupabaseJWT(session: any): Promise<string> {
+  if (!session || !session.user) {
+    throw new Error('No user session found');
+  }
+
+  const userId = session.user.id; // Better Auth のユーザーID
+  const encoder = new TextEncoder();
+
+  const jwt = await new SignJWT({ sub: userId })
+    .setProtectedHeader({ alg: 'HS256' })
+    .setIssuedAt()
+    .setExpirationTime('1h') // 有効期限 1時間
+    .sign(encoder.encode(process.env.SUPABASE_JWT_SECRET!));
+
+  return jwt;
+}
+
+/**
+ * Supabase Client を生成（サーバーサイド用）
+ * @param session Better Auth の session
+ */
+export async function createSupabaseClient(session: any) {
+  const token = await createSupabaseJWT(session);
+
+  const supabase = createClient(
+    process.env.SUPABASE_URL!, 
+    process.env.SUPABASE_ANON_KEY!,
+    {
+      accessToken: async () => token,
+      global: { headers: { Authorization: `Bearer ${token}` } },
+    }
+  );
+
+  return supabase;
+}

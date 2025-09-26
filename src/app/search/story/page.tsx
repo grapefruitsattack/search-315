@@ -1,5 +1,6 @@
 
 import { auth } from "@/auth";
+import { headers } from "next/headers";
 import React from "react"
 import { Suspense } from "react";
 import { cache } from 'react'
@@ -31,8 +32,10 @@ const getData = cache(async (
   page: number,
   readLater: string
   ) => {
-  const session = await auth();
-  const supabaseAccessToken = session?.supabaseAccessToken;
+  const session = await auth.api.getSession({
+      headers: await headers(),
+  });
+  const supabaseAccessToken = session?.session.token;
   const supabase = session?.user
     ?
       createClient(

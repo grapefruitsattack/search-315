@@ -1,11 +1,28 @@
-import { signIn, signOut } from "@/auth"
+import { auth } from "@/auth";
+import { signIn, signOut, authClient } from "@/auth-client"
+import { headers } from "next/headers";
+
+export const signInGoogle = async () => {
+  const data = await signIn.social({
+      provider: "google"
+  });
+  return data;
+};
+const signOutGoogle = async () => {
+  const data = await authClient.signOut();
+  return data;
+};
  
 export function SignIn() {
   return (
     <form
       action={async () => {
         "use server"
-        await signIn()
+        await signIn.social({
+          provider: "google",
+          // 遷移先を変更する場合はここを変更
+          callbackURL: "/",
+        });
       }}
     >
     <button type="submit" className='grid grid-cols-1 justify-items-center'>
@@ -20,14 +37,17 @@ export function SignIn() {
 
 export function SignOut() {
   return (
-    <form
-      action={async () => {
+    <button
+      onClick={async () => {
         "use server"
-        await signOut()
+        await auth.api.signOut({
+          // This endpoint requires session cookies.
+          headers: await headers(),
+      });
       }}
     >
-      <button type="submit">SignOut</button>
-    </form>
+    SignOut
+    </button>
   )
 } 
 
