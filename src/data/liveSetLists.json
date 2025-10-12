@@ -9630,6 +9630,33 @@
     "displayArtist": ""
   },
   {
+    "livePerId": "10TH_PM_PB",
+    "trackNo": 1,
+    "liveTrackID": "10TH_PM_PB_1",
+    "songId": "GS01_4",
+    "coverFlg": "",
+    "name": "NEXT STAGE！",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "10TH_PM_PB",
+    "trackNo": 2,
+    "liveTrackID": "10TH_PM_PB_2",
+    "songId": "5A01_5",
+    "coverFlg": "",
+    "name": "GLORIOUS RO@D",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "10TH_PM_PB",
+    "trackNo": 3,
+    "liveTrackID": "10TH_PM_PB_3",
+    "songId": "GS01_2",
+    "coverFlg": "",
+    "name": "DRIVE A LIVE",
+    "displayArtist": ""
+  },
+  {
     "livePerId": "FCL_PT_M",
     "trackNo": 1,
     "liveTrackID": "FCL_PT_M_1",
@@ -9970,6 +9997,114 @@
     "coverFlg": "",
     "name": "DRIVE A LIVE (PINATATIME!! Ver.)",
     "displayArtist": "High×Joker、Café Parade"
+  },
+  {
+    "livePerId": "10TH_PM_PSP",
+    "trackNo": 1,
+    "liveTrackID": "10TH_PM_PSP_1",
+    "songId": "GS01_1",
+    "coverFlg": "",
+    "name": "Growing Smiles！",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "10TH_PM_PSP",
+    "trackNo": 2,
+    "liveTrackID": "10TH_PM_PSP_2",
+    "songId": "WT01_2",
+    "coverFlg": "",
+    "name": "MEET THE WORLD!",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "10TH_PM_PSP",
+    "trackNo": 3,
+    "liveTrackID": "10TH_PM_PSP_3",
+    "songId": "GS01_2",
+    "coverFlg": "",
+    "name": "DRIVE A LIVE",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "10TH_PM_PSU_DAY1",
+    "trackNo": 1,
+    "liveTrackID": "10TH_PM_PSU_DAY1_1",
+    "songId": "9ST01_1",
+    "coverFlg": "",
+    "name": "Gather Round!",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "10TH_PM_PSU_DAY1",
+    "trackNo": 2,
+    "liveTrackID": "10TH_PM_PSU_DAY1_2",
+    "songId": "GS01_3",
+    "coverFlg": "",
+    "name": "Beyond The Dream",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "10TH_PM_PSU_DAY1",
+    "trackNo": 3,
+    "liveTrackID": "10TH_PM_PSU_DAY1_3",
+    "songId": "GS01_2",
+    "coverFlg": "",
+    "name": "DRIVE A LIVE",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "10TH_PM_PSU_DAY2_M",
+    "trackNo": 1,
+    "liveTrackID": "10TH_PM_PSU_DAY2_M_1",
+    "songId": "GS15_1",
+    "coverFlg": "",
+    "name": "Take a StuMp!",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "10TH_PM_PSU_DAY2_M",
+    "trackNo": 2,
+    "liveTrackID": "10TH_PM_PSU_DAY2_M_2",
+    "songId": "8ST01_1",
+    "coverFlg": "",
+    "name": "Hands & Claps!",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "10TH_PM_PSU_DAY2_M",
+    "trackNo": 3,
+    "liveTrackID": "10TH_PM_PSU_DAY2_M_3",
+    "songId": "GS01_2",
+    "coverFlg": "",
+    "name": "DRIVE A LIVE",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "10TH_PM_PSU_DAY2_S",
+    "trackNo": 1,
+    "liveTrackID": "10TH_PM_PSU_DAY2_S_1",
+    "songId": "GS15_1",
+    "coverFlg": "",
+    "name": "Take a StuMp!",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "10TH_PM_PSU_DAY2_S",
+    "trackNo": 2,
+    "liveTrackID": "10TH_PM_PSU_DAY2_S_2",
+    "songId": "5A01_1",
+    "coverFlg": "",
+    "name": "PRIDE STAR",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "10TH_PM_PSU_DAY2_S",
+    "trackNo": 3,
+    "liveTrackID": "10TH_PM_PSU_DAY2_S_3",
+    "songId": "GS01_2",
+    "coverFlg": "",
+    "name": "DRIVE A LIVE",
+    "displayArtist": ""
   },
   {
     "livePerId": "FCL_COR_M",
