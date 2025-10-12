@@ -7478,5 +7478,665 @@
     "livePerId": "10TH_S_DAY2",
     "singingInfoId": "LGN03",
     "singingInfoName": "古論 クリス"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "DRS00",
+    "singingInfoName": "DRAMATIC STARS"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "DRS01",
+    "singingInfoName": "天道 輝"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "DRS02",
+    "singingInfoName": "桜庭 薫"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "DRS03",
+    "singingInfoName": "柏木 翼"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "FRM00",
+    "singingInfoName": "FRAME"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "FRM01",
+    "singingInfoName": "握野 英雄"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "FRM02",
+    "singingInfoName": "木村 龍"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "FRM03",
+    "singingInfoName": "信玄 誠司"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "SAI00",
+    "singingInfoName": "彩"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "SAI01",
+    "singingInfoName": "猫柳 キリオ"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "SAI02",
+    "singingInfoName": "華村 翔真"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "SAI03",
+    "singingInfoName": "清澄 九郎"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "HIJ00",
+    "singingInfoName": "High×Joker"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "HIJ01",
+    "singingInfoName": "秋山 隼人"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "HIJ02",
+    "singingInfoName": "冬美 旬"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "HIJ03",
+    "singingInfoName": "榊 夏来"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "HIJ04",
+    "singingInfoName": "若里 春名"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "HIJ05",
+    "singingInfoName": "伊瀬谷 四季"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "SSK00",
+    "singingInfoName": "神速一魂"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "SSK01",
+    "singingInfoName": "紅井 朱雀"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "SSK02",
+    "singingInfoName": "黒野 玄武"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "KGD00",
+    "singingInfoName": "THE 虎牙道"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "KGD01",
+    "singingInfoName": "大河 タケル"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "KGD02",
+    "singingInfoName": "円城寺 道流"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "KGD03",
+    "singingInfoName": "牙崎 漣"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "FLG00",
+    "singingInfoName": "F-LAGS"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "FLG01",
+    "singingInfoName": "秋月 涼"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "FLG02",
+    "singingInfoName": "兜 大吾"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "FLG03",
+    "singingInfoName": "九十九 一希"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "LGN00",
+    "singingInfoName": "Legenders"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "LGN01",
+    "singingInfoName": "葛之葉 雨彦"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "LGN02",
+    "singingInfoName": "北村 想楽"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_M",
+    "singingInfoId": "LGN03",
+    "singingInfoName": "古論 クリス"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "DRS00",
+    "singingInfoName": "DRAMATIC STARS"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "DRS01",
+    "singingInfoName": "天道 輝"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "DRS02",
+    "singingInfoName": "桜庭 薫"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "DRS03",
+    "singingInfoName": "柏木 翼"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "FRM00",
+    "singingInfoName": "FRAME"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "FRM01",
+    "singingInfoName": "握野 英雄"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "FRM02",
+    "singingInfoName": "木村 龍"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "FRM03",
+    "singingInfoName": "信玄 誠司"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "SAI00",
+    "singingInfoName": "彩"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "SAI01",
+    "singingInfoName": "猫柳 キリオ"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "SAI02",
+    "singingInfoName": "華村 翔真"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "SAI03",
+    "singingInfoName": "清澄 九郎"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "HIJ00",
+    "singingInfoName": "High×Joker"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "HIJ01",
+    "singingInfoName": "秋山 隼人"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "HIJ02",
+    "singingInfoName": "冬美 旬"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "HIJ03",
+    "singingInfoName": "榊 夏来"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "HIJ04",
+    "singingInfoName": "若里 春名"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "HIJ05",
+    "singingInfoName": "伊瀬谷 四季"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "SSK00",
+    "singingInfoName": "神速一魂"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "SSK01",
+    "singingInfoName": "紅井 朱雀"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "SSK02",
+    "singingInfoName": "黒野 玄武"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "KGD00",
+    "singingInfoName": "THE 虎牙道"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "KGD01",
+    "singingInfoName": "大河 タケル"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "KGD02",
+    "singingInfoName": "円城寺 道流"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "KGD03",
+    "singingInfoName": "牙崎 漣"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "FLG00",
+    "singingInfoName": "F-LAGS"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "FLG01",
+    "singingInfoName": "秋月 涼"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "FLG02",
+    "singingInfoName": "兜 大吾"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "FLG03",
+    "singingInfoName": "九十九 一希"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "LGN00",
+    "singingInfoName": "Legenders"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "LGN01",
+    "singingInfoName": "葛之葉 雨彦"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "LGN02",
+    "singingInfoName": "北村 想楽"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY1_S",
+    "singingInfoId": "LGN03",
+    "singingInfoName": "古論 クリス"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "DRS00",
+    "singingInfoName": "DRAMATIC STARS"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "DRS01",
+    "singingInfoName": "天道 輝"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "DRS02",
+    "singingInfoName": "桜庭 薫"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "DRS03",
+    "singingInfoName": "柏木 翼"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "FRM00",
+    "singingInfoName": "FRAME"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "FRM01",
+    "singingInfoName": "握野 英雄"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "FRM02",
+    "singingInfoName": "木村 龍"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "FRM03",
+    "singingInfoName": "信玄 誠司"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "SAI00",
+    "singingInfoName": "彩"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "SAI01",
+    "singingInfoName": "猫柳 キリオ"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "SAI02",
+    "singingInfoName": "華村 翔真"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "SAI03",
+    "singingInfoName": "清澄 九郎"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "HIJ00",
+    "singingInfoName": "High×Joker"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "HIJ01",
+    "singingInfoName": "秋山 隼人"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "HIJ02",
+    "singingInfoName": "冬美 旬"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "HIJ03",
+    "singingInfoName": "榊 夏来"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "HIJ04",
+    "singingInfoName": "若里 春名"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "HIJ05",
+    "singingInfoName": "伊瀬谷 四季"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "SSK00",
+    "singingInfoName": "神速一魂"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "SSK01",
+    "singingInfoName": "紅井 朱雀"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "SSK02",
+    "singingInfoName": "黒野 玄武"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "KGD00",
+    "singingInfoName": "THE 虎牙道"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "KGD01",
+    "singingInfoName": "大河 タケル"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "KGD02",
+    "singingInfoName": "円城寺 道流"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "KGD03",
+    "singingInfoName": "牙崎 漣"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "FLG00",
+    "singingInfoName": "F-LAGS"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "FLG01",
+    "singingInfoName": "秋月 涼"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "FLG02",
+    "singingInfoName": "兜 大吾"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "FLG03",
+    "singingInfoName": "九十九 一希"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "LGN00",
+    "singingInfoName": "Legenders"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "LGN01",
+    "singingInfoName": "葛之葉 雨彦"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "LGN02",
+    "singingInfoName": "北村 想楽"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_M",
+    "singingInfoId": "LGN03",
+    "singingInfoName": "古論 クリス"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "DRS00",
+    "singingInfoName": "DRAMATIC STARS"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "DRS01",
+    "singingInfoName": "天道 輝"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "DRS02",
+    "singingInfoName": "桜庭 薫"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "DRS03",
+    "singingInfoName": "柏木 翼"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "FRM00",
+    "singingInfoName": "FRAME"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "FRM01",
+    "singingInfoName": "握野 英雄"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "FRM02",
+    "singingInfoName": "木村 龍"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "FRM03",
+    "singingInfoName": "信玄 誠司"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "SAI00",
+    "singingInfoName": "彩"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "SAI01",
+    "singingInfoName": "猫柳 キリオ"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "SAI02",
+    "singingInfoName": "華村 翔真"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "SAI03",
+    "singingInfoName": "清澄 九郎"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "HIJ00",
+    "singingInfoName": "High×Joker"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "HIJ01",
+    "singingInfoName": "秋山 隼人"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "HIJ02",
+    "singingInfoName": "冬美 旬"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "HIJ03",
+    "singingInfoName": "榊 夏来"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "HIJ04",
+    "singingInfoName": "若里 春名"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "HIJ05",
+    "singingInfoName": "伊瀬谷 四季"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "SSK00",
+    "singingInfoName": "神速一魂"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "SSK01",
+    "singingInfoName": "紅井 朱雀"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "SSK02",
+    "singingInfoName": "黒野 玄武"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "KGD00",
+    "singingInfoName": "THE 虎牙道"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "KGD01",
+    "singingInfoName": "大河 タケル"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "KGD02",
+    "singingInfoName": "円城寺 道流"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "KGD03",
+    "singingInfoName": "牙崎 漣"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "FLG00",
+    "singingInfoName": "F-LAGS"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "FLG01",
+    "singingInfoName": "秋月 涼"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "FLG02",
+    "singingInfoName": "兜 大吾"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "FLG03",
+    "singingInfoName": "九十九 一希"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "LGN00",
+    "singingInfoName": "Legenders"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "LGN01",
+    "singingInfoName": "葛之葉 雨彦"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "LGN02",
+    "singingInfoName": "北村 想楽"
+  },
+  {
+    "livePerId": "FBF_WGF_M_DAY2_S",
+    "singingInfoId": "LGN03",
+    "singingInfoName": "古論 クリス"
   }
 ]
