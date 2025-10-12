@@ -3742,5 +3742,53 @@
     "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24762.html",
     "trialYoutubeId": "ws_aCJ6Ergw",
     "description": ""
+  },
+  {
+    "sereisId": "MTS",
+    "albumId": "MTS01",
+    "albumTitleFull": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 01 S.E.M",
+    "albumTitle": "MONTHLY THEME SONG 01 S.E.M",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20251126",
+    "displayArtist": "S.E.M",
+    "artist": "[SEM00]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24781.html",
+    "trialYoutubeId": "LgkA_hHvpSE",
+    "description": ""
+  },
+  {
+    "sereisId": "TT",
+    "albumId": "TT03",
+    "albumTitleFull": "THE IDOLM@STER SideM TRANSCENDENT T@LES 03",
+    "albumTitle": "TRANSCENDENT T@LES 03",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20251203",
+    "displayArtist": "伊集院北斗、桜庭薫、榊夏来、葛之葉雨彦",
+    "artist": "[JUP03]、[DRS02]、[HIJ03]、[LGN01]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24763.html",
+    "trialYoutubeId": "sf5fTwAagDo",
+    "description": ""
+  },
+  {
+    "sereisId": "PM",
+    "albumId": "PM25",
+    "albumTitleFull": "パッション爆裂！楽曲シャッフル大作戦！10thプロミ幕張版 LIVE音源CD（イベントBDアソビストア特装版特典）",
+    "albumTitle": "10thプロミシャッフルCD",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20251203",
+    "displayArtist": "",
+    "artist": "",
+    "releasePage": "https://idolmaster-official.jp/news/01_17031",
+    "trialYoutubeId": "",
+    "description": ""
   }
 ]
