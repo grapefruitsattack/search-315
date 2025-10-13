@@ -1,6 +1,6 @@
 'use server'
 import { cookies } from 'next/headers';
-import { createClient } from '@supabase/supabase-js';
+import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
 import { useSession } from "@/auth-client";
 import { revalidatePath } from 'next/cache';
 import GetLocalDate  from "@/features/common/utils/GetLocalDate";
@@ -15,18 +15,7 @@ export async function UpdateReadingData(storyId: string, readingDate: string, re
       :readingDate;
 
   const session = useSession().data;
-  const supabaseAccessToken = session?.session.token;
-    const supabase = createClient(
-      process.env.SUPABASE_URL||'',
-      process.env.SUPABASE_ANON_KEY||'',
-      {
-        global: {
-          headers: {
-            Authorization: `Bearer ${supabaseAccessToken}`,
-          },
-        },
-      }
-    );
+  const supabase = await createSupabaseClientWithLogin(session);
 
     //データ更新
     const { error } = await supabase.rpc(

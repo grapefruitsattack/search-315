@@ -1,10 +1,9 @@
 
-import { auth } from "@/auth";
+import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
 import { headers } from "next/headers";
 import React from "react"
 import { Suspense } from "react";
 import { cache } from 'react'
-import { createClient } from '@supabase/supabase-js'
 import type { StorySearchResult } from '../../../data/types';
 import CommonPage from "../../../features/common/components/CommonPage";
 import SearchStoryPage from "../../../features/app/search/SearchStoryPage";
@@ -35,31 +34,9 @@ const getData = cache(async (
   const session = await auth.api.getSession({
       headers: await headers(),
   });
-  const supabaseAccessToken = session?.session.token;
   const supabase = session?.user
-    ?
-      createClient(
-        process.env.SUPABASE_URL||'',
-        process.env.SUPABASE_ANON_KEY||'',
-        {
-          global: {
-            headers: {
-              Authorization: `Bearer ${supabaseAccessToken}`,
-            },
-          },
-        }
-      )
-    :
-      createClient(
-        process.env.SUPABASE_URL||'',
-        process.env.SUPABASE_ANON_KEY||'',
-        {
-          auth: {
-            autoRefreshToken: false,
-            persistSession: false
-          }
-        }
-      )
+    ?await createSupabaseClientWithLogin(session)
+    :await createSupabaseClient()
   ;
   const userId: string | null
     = session?.user

@@ -2,8 +2,7 @@
 import { cache } from 'react'
 import { Suspense } from "react";
 import React from "react"
-import { createClient } from '@supabase/supabase-js'
-import { auth, createSupabaseClient } from "@/auth";
+import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
 import { headers } from "next/headers";
 import { notFound, redirect } from 'next/navigation'
 import type { StoryCntData } from '@/data/types';
@@ -22,7 +21,7 @@ export default async function Page() {
     = session?.user
       ?session.user.id||null
       :null;
-  const supabase = await createSupabaseClient(session);
+  const supabase = await createSupabaseClientWithLogin(session);
   //ストーリー情報取得
   const {data, error} = await supabase.rpc(
       'get_user_reading_cnt',

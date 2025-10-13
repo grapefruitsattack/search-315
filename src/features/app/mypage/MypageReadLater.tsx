@@ -1,35 +1,13 @@
 'use server'
+import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
 import { useSession } from "@/auth-client";
-import { createClient } from '@supabase/supabase-js';
 import { notFound } from "next/navigation";
 
 async function getData():Promise<string[]> {
   const session = useSession().data;
-  const supabaseAccessToken = session?.session.token;
   const supabase = session?.user
-    ?
-      createClient(
-        process.env.SUPABASE_URL||'',
-        process.env.SUPABASE_ANON_KEY||'',
-        {
-          global: {
-            headers: {
-              Authorization: `Bearer ${supabaseAccessToken}`,
-            },
-          },
-        }
-      )
-    :
-      createClient(
-        process.env.SUPABASE_URL||'',
-        process.env.SUPABASE_ANON_KEY||'',
-        {
-          auth: {
-            autoRefreshToken: false,
-            persistSession: false
-          }
-        }
-      )
+    ?await createSupabaseClientWithLogin(session)
+    :await createSupabaseClient()
   ;
   const userId: string | null
     = session?.user

@@ -1,8 +1,9 @@
 'use server'
 import { cache } from 'react';
 import Link from 'next/link';
+import { headers } from "next/headers";
+import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
 import { useSession } from "@/auth-client";
-import { createClient } from '@supabase/supabase-js';
 import type { StorySearchResult } from '@/data/types';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 import { MEDIA, CATEGORY, getCategoryByMedia } from '@/features/common/const/StoryInfoConst';
@@ -22,32 +23,13 @@ async function getData(
   type: string;
   storyData: StorySearchResult[];
 }[],login:boolean}> {
-  const session = useSession().data;
+  const session = await auth.api.getSession({
+      headers: await headers(),
+  });
   const supabaseAccessToken = session?.session.token;
   const supabase = session?.user
-    ?
-      createClient(
-        process.env.SUPABASE_URL||'',
-        process.env.SUPABASE_ANON_KEY||'',
-        {
-          global: {
-            headers: {
-              Authorization: `Bearer ${supabaseAccessToken}`,
-            },
-          },
-        }
-      )
-    :
-      createClient(
-        process.env.SUPABASE_URL||'',
-        process.env.SUPABASE_ANON_KEY||'',
-        {
-          auth: {
-            autoRefreshToken: false,
-            persistSession: false
-          }
-        }
-      )
+      ?await createSupabaseClientWithLogin(session)
+      :await createSupabaseClient()
   ;
   const userId: string | null
     = session?.user

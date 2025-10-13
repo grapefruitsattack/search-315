@@ -3,6 +3,7 @@ import { Pool } from 'pg';
 import { jwt, bearer } from "better-auth/plugins"
 import { SignJWT } from 'jose';
 import { createClient } from '@supabase/supabase-js';
+import { createBrowserClient } from '@supabase/ssr';
 
 
 export const auth = betterAuth({
@@ -42,11 +43,26 @@ export async function createSupabaseJWT(session: any): Promise<string> {
   return jwt;
 }
 
+export async function createSupabaseClient() {
+
+  const supabase = createClient(
+    process.env.SUPABASE_URL!, 
+    process.env.SUPABASE_ANON_KEY!,
+    {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false
+      }
+    }
+  );
+
+  return supabase;
+}
 /**
  * Supabase Client を生成（サーバーサイド用）
  * @param session Better Auth の session
  */
-export async function createSupabaseClient(session: any) {
+export async function createSupabaseClientWithLogin(session: any) {
   const token = await createSupabaseJWT(session);
 
   const supabase = createClient(

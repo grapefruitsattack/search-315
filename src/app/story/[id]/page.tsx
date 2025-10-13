@@ -3,7 +3,7 @@ import { cache } from 'react'
 import { Suspense } from "react";
 import React from "react"
 //import Redis from 'ioredis';
-import { createClient } from '@supabase/supabase-js'
+import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
 import { useSession } from "@/auth-client";
 import { notFound } from 'next/navigation'
 import type { Story } from '../../../data/types';
@@ -25,29 +25,8 @@ const getData = cache(async (id: string) => {
   const supabaseAccessToken = session?.session.token;
   const login: boolean = session?.user?true:false;
   const supabase = login
-    ?
-      createClient(
-        process.env.SUPABASE_URL||'',
-        process.env.SUPABASE_ANON_KEY||'',
-        {
-          global: {
-            headers: {
-              Authorization: `Bearer ${supabaseAccessToken}`,
-            },
-          },
-        }
-      )
-    :
-      createClient(
-        process.env.SUPABASE_URL||'',
-        process.env.SUPABASE_ANON_KEY||'',
-        {
-          auth: {
-            autoRefreshToken: false,
-            persistSession: false
-          }
-        }
-      )
+    ?await createSupabaseClientWithLogin(session)
+    :await createSupabaseClient()
   ;
   //ストーリー情報取得
   //const client = new Redis(process.env.REDIS_URL||'');

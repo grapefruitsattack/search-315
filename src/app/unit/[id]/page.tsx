@@ -3,7 +3,6 @@ import singingMaster from '../../../data/singingMaster.json';
 import CommonPage from "../../../features/common/components/CommonPage";
 import dynamic from "next/dynamic";
 import { Suspense, cache } from "react";
-import { createClient } from '@supabase/supabase-js';
 import type { StorySearchResult } from '@/data/types';
 import { MEDIA, CATEGORY, getCategoryByMedia } from '@/features/common/const/StoryInfoConst';
 import UnitPageStory from "@/features/app/unit/UnitPageStory";

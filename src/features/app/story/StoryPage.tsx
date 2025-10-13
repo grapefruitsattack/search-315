@@ -1,10 +1,9 @@
 
 import React from "react"
 import CommonPage from "../../common/components/CommonPage";
-import { auth, createSupabaseClient } from "@/auth";
+import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
 import { headers } from "next/headers";
 import {SignIn,SignOut} from "../../management/auth/SignIn";
-import { createClient } from '@supabase/supabase-js'
 
 export default async function StoryPage(): Promise<JSX.Element> {
   const h = await headers();
@@ -12,8 +11,11 @@ export default async function StoryPage(): Promise<JSX.Element> {
     headers: await headers(),
   });
   const supabaseAccessToken = session?.session.token;
-  const supabase = await createSupabaseClient(session);
-    const { data, error } = await supabase.from("users").select("*");
+  const supabase = session?.user
+    ?await createSupabaseClientWithLogin(session)
+    :await createSupabaseClient()
+  ;
+  const { data, error } = await supabase.from("users").select("*");
 
     const post = data||[];
  
