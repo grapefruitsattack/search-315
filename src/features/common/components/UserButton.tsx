@@ -1,18 +1,15 @@
-
+'use client'
 import React from "react"
 import CommonPage from "./CommonPage";
-import { auth } from "@/auth";
+import { useSession } from "@/auth-client";
 import { headers } from "next/headers";
 import {SignIn,SignOut} from "../../management/auth/SignIn";
-import { createClient } from '@supabase/supabase-js'
 import Link from "next/link";
 
-export default async function UserButton(): Promise<JSX.Element> {
+export default function UserButton() {
 
-  const session = await auth.api.getSession({
-      headers: await headers(),
-  });
-  const login: boolean = session?.user?true:false;
+  const { data } = useSession();
+  const login: boolean = data?.user?true:false;
 
     return (
         <section className="">
