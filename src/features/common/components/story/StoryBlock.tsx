@@ -1,6 +1,5 @@
 'use client'
 import type { Story,InfoStory } from '../../../../data/types';
-import singingMaster from '../../../../data/singingMaster.json';
 import React, { useState } from "react";
 import Link from 'next/link';
 import { GetStoryWebsiteName } from '../../utils/Story/GetStoryInfomation';
@@ -77,21 +76,21 @@ export default function StoryBlock(
 
     return (
     <section 
-    className={`
-      w-full
-      rounded-md
-      font-sans 
-      bg-white border-green-600/30 border-2 shadow-lg
-    `}
+      className={`
+        w-full
+        rounded-md
+        font-sans 
+        bg-white hover:outline-green-400 hover:outline-4 shadow-lg
+        outline-none outline-green-400 outline-offset-1
+      `}
     >
     <Link
       className ="
+        group 
         inline-block
         row-span-1 col-span-2 
         bg-white rounded-md
         from-cyan-100/30 to-violet-200/30
-        hover:bg-gradient-to-tl
-        hover:text-cyan-900 
         duration-500 ease-out
         w-full
       "
@@ -101,7 +100,7 @@ export default function StoryBlock(
         {category===''||category===null?<></>:<CategoryBadge id={category} size='block'/>}
         {media===null?<></>:<MediaBadge id={media} size='block'/>}
       </section>
-      <section className='px-1 '>
+      <section className='px-1 mb-1'>
       <div className ="
         row-span-1 col-span-2 
         leading-tight
@@ -111,7 +110,8 @@ export default function StoryBlock(
       </div>
       <div className ="
         lg:text-2xl text-xl
-        underline
+        underline underline-offset-2 decoration-green-400
+        decoration-1 group-hover:decoration-4
         leading-tight
         font-sans font-black
         text-zinc-800
