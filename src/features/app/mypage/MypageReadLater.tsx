@@ -1,10 +1,12 @@
 'use server'
+import { headers } from "next/headers";
 import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
-import { useSession } from "@/auth-client";
 import { notFound } from "next/navigation";
 
 async function getData():Promise<string[]> {
-  const session = useSession().data;
+  const session = await auth.api.getSession({
+      headers: await headers(),
+  });
   const supabase = session?.user
     ?await createSupabaseClientWithLogin(session)
     :await createSupabaseClient()

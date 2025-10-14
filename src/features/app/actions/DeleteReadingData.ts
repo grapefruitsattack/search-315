@@ -1,11 +1,13 @@
 'use server'
 
+import { headers } from "next/headers";
 import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
-import { useSession } from "@/auth-client";
 import { revalidatePath } from 'next/cache';
 
 export async function DeleteReadingData(storyId: string, readLater: number) {
-  const session = useSession().data;
+  const session = await auth.api.getSession({
+      headers: await headers(),
+  });
   const supabase = await createSupabaseClientWithLogin(session);
 
   const { data,error } = await supabase

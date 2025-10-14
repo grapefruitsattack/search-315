@@ -1,7 +1,6 @@
 'use server'
-import { cookies } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
-import { useSession } from "@/auth-client";
 import { revalidatePath } from 'next/cache';
 import GetLocalDate  from "@/features/common/utils/GetLocalDate";
 
@@ -14,7 +13,9 @@ export async function UpdateReadingData(storyId: string, readingDate: string, re
       ?localDate
       :readingDate;
 
-  const session = useSession().data;
+  const session = await auth.api.getSession({
+      headers: await headers(),
+  });
   const supabase = await createSupabaseClientWithLogin(session);
 
     //データ更新

@@ -29,13 +29,7 @@ export function SignIn() {
 export function SignOut() {
   return (
     <button
-      // onClick={async () => {
-      //   "use server"
-      //   await auth.api.signOut({
-      //     // This endpoint requires session cookies.
-      //     headers: await headers(),
-      // });
-      // }}
+    onClick={() => signOut()}
     >
     SignOut
     </button>

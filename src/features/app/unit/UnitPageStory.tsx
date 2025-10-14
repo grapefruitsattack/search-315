@@ -3,7 +3,6 @@ import { cache } from 'react';
 import Link from 'next/link';
 import { headers } from "next/headers";
 import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
-import { useSession } from "@/auth-client";
 import type { StorySearchResult } from '@/data/types';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 import { MEDIA, CATEGORY, getCategoryByMedia } from '@/features/common/const/StoryInfoConst';
@@ -26,7 +25,6 @@ async function getData(
   const session = await auth.api.getSession({
       headers: await headers(),
   });
-  const supabaseAccessToken = session?.session.token;
   const supabase = session?.user
       ?await createSupabaseClientWithLogin(session)
       :await createSupabaseClient()
