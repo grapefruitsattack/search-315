@@ -9,6 +9,7 @@ const dummySeriesId:string[]
         ,'9ST'
         ,'MESP'
         ,''
+        ,'MTS' //TODO 該当アートワーク作成後削除
     ];
 
 export default function GetArtWorkSrc

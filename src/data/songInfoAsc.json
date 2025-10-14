@@ -41630,5 +41630,717 @@
     "singingInfoId": "CLF01",
     "releaseDate": "20251105",
     "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS01",
+    "songId": "MTS01_1",
+    "singingInfoId": "SEM00",
+    "releaseDate": "20251126",
+    "type": "u"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS01",
+    "songId": "MTS01_1",
+    "singingInfoId": "SEM01",
+    "releaseDate": "20251126",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS01",
+    "songId": "MTS01_1",
+    "singingInfoId": "SEM02",
+    "releaseDate": "20251126",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS01",
+    "songId": "MTS01_1",
+    "singingInfoId": "SEM03",
+    "releaseDate": "20251126",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "MTS01",
+    "songId": "MTS01_2",
+    "singingInfoId": "SEM01",
+    "releaseDate": "20251126",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "MTS01",
+    "songId": "MTS01_3",
+    "singingInfoId": "SEM02",
+    "releaseDate": "20251126",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "MTS01",
+    "songId": "MTS01_4",
+    "singingInfoId": "SEM03",
+    "releaseDate": "20251126",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT03",
+    "songId": "TT03_1",
+    "singingInfoId": "JUP03",
+    "releaseDate": "20251203",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT03",
+    "songId": "TT03_1",
+    "singingInfoId": "DRS02",
+    "releaseDate": "20251203",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT03",
+    "songId": "TT03_1",
+    "singingInfoId": "HIJ03",
+    "releaseDate": "20251203",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT03",
+    "songId": "TT03_1",
+    "singingInfoId": "LGN01",
+    "releaseDate": "20251203",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "TT03",
+    "songId": "TT03_2",
+    "singingInfoId": "JUP03",
+    "releaseDate": "20251203",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "TT03",
+    "songId": "TT03_3",
+    "singingInfoId": "DRS02",
+    "releaseDate": "20251203",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "TT03",
+    "songId": "TT03_4",
+    "singingInfoId": "HIJ03",
+    "releaseDate": "20251203",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "TT03",
+    "songId": "TT03_5",
+    "singingInfoId": "LGN01",
+    "releaseDate": "20251203",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "PM25",
+    "songId": "PM25_1",
+    "singingInfoId": "JUP01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "PM25",
+    "songId": "PM25_1",
+    "singingInfoId": "FRM02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "PM25",
+    "songId": "PM25_1",
+    "singingInfoId": "CFP03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "PM25",
+    "songId": "PM25_1",
+    "singingInfoId": "MFM02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "PM25",
+    "songId": "PM25_1",
+    "singingInfoId": "KGD03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "PM25",
+    "songId": "PM25_1",
+    "singingInfoId": "FLG02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "PM25",
+    "songId": "PM25_2",
+    "singingInfoId": "HIJ03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "PM25",
+    "songId": "PM25_2",
+    "singingInfoId": "FLG03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "PM25",
+    "songId": "PM25_2",
+    "singingInfoId": "LGN01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "PM25",
+    "songId": "PM25_3",
+    "singingInfoId": "ALT02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "PM25",
+    "songId": "PM25_3",
+    "singingInfoId": "DBL02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "PM25",
+    "songId": "PM25_3",
+    "singingInfoId": "FRM01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "PM25",
+    "songId": "PM25_4",
+    "singingInfoId": "SAI02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "PM25",
+    "songId": "PM25_4",
+    "singingInfoId": "CFP01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "PM25",
+    "songId": "PM25_4",
+    "singingInfoId": "CFP04",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "PM25",
+    "songId": "PM25_4",
+    "singingInfoId": "SEM02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "PM25",
+    "songId": "PM25_4",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "PM25",
+    "songId": "PM25_4",
+    "singingInfoId": "CLF02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "PM25",
+    "songId": "PM25_5",
+    "singingInfoId": "JUP01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "PM25",
+    "songId": "PM25_5",
+    "singingInfoId": "ALT02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "PM25",
+    "songId": "PM25_5",
+    "singingInfoId": "HIJ03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "PM25",
+    "songId": "PM25_5",
+    "singingInfoId": "KGD03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "PM25",
+    "songId": "PM25_5",
+    "singingInfoId": "FLG03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 6,
+    "albumId": "PM25",
+    "songId": "PM25_6",
+    "singingInfoId": "DBL02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 6,
+    "albumId": "PM25",
+    "songId": "PM25_6",
+    "singingInfoId": "CFP04",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 6,
+    "albumId": "PM25",
+    "songId": "PM25_6",
+    "singingInfoId": "MFM02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 6,
+    "albumId": "PM25",
+    "songId": "PM25_6",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 6,
+    "albumId": "PM25",
+    "songId": "PM25_6",
+    "singingInfoId": "FLG02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 6,
+    "albumId": "PM25",
+    "songId": "PM25_6",
+    "singingInfoId": "CLF02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 7,
+    "albumId": "PM25",
+    "songId": "PM25_7",
+    "singingInfoId": "FRM01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 7,
+    "albumId": "PM25",
+    "songId": "PM25_7",
+    "singingInfoId": "FRM02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 7,
+    "albumId": "PM25",
+    "songId": "PM25_7",
+    "singingInfoId": "SAI02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 7,
+    "albumId": "PM25",
+    "songId": "PM25_7",
+    "singingInfoId": "CFP01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 7,
+    "albumId": "PM25",
+    "songId": "PM25_7",
+    "singingInfoId": "CFP03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 7,
+    "albumId": "PM25",
+    "songId": "PM25_7",
+    "singingInfoId": "SEM02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 7,
+    "albumId": "PM25",
+    "songId": "PM25_7",
+    "singingInfoId": "LGN01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "PM25",
+    "songId": "PM25_8",
+    "singingInfoId": "ALT01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "PM25",
+    "songId": "PM25_8",
+    "singingInfoId": "BEI02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "PM25",
+    "songId": "PM25_8",
+    "singingInfoId": "DBL01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "PM25",
+    "songId": "PM25_8",
+    "singingInfoId": "FRM03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "PM25",
+    "songId": "PM25_8",
+    "singingInfoId": "SAI03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "PM25",
+    "songId": "PM25_8",
+    "singingInfoId": "HIJ04",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "PM25",
+    "songId": "PM25_8",
+    "singingInfoId": "LGN02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 9,
+    "albumId": "PM25",
+    "songId": "PM25_9",
+    "singingInfoId": "HIJ01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 9,
+    "albumId": "PM25",
+    "songId": "PM25_9",
+    "singingInfoId": "CFP05",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 9,
+    "albumId": "PM25",
+    "songId": "PM25_9",
+    "singingInfoId": "KGD02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 10,
+    "albumId": "PM25",
+    "songId": "PM25_10",
+    "singingInfoId": "BEI03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 10,
+    "albumId": "PM25",
+    "songId": "PM25_10",
+    "singingInfoId": "SSK01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 10,
+    "albumId": "PM25",
+    "songId": "PM25_10",
+    "singingInfoId": "KGD01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 10,
+    "albumId": "PM25",
+    "songId": "PM25_10",
+    "singingInfoId": "CLF03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 11,
+    "albumId": "PM25",
+    "songId": "PM25_11",
+    "singingInfoId": "JUP03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 11,
+    "albumId": "PM25",
+    "songId": "PM25_11",
+    "singingInfoId": "HIJ02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 11,
+    "albumId": "PM25",
+    "songId": "PM25_11",
+    "singingInfoId": "CFP02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 11,
+    "albumId": "PM25",
+    "songId": "PM25_11",
+    "singingInfoId": "MFM01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 11,
+    "albumId": "PM25",
+    "songId": "PM25_11",
+    "singingInfoId": "CLF01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 12,
+    "albumId": "PM25",
+    "songId": "PM25_12",
+    "singingInfoId": "BEI02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 12,
+    "albumId": "PM25",
+    "songId": "PM25_12",
+    "singingInfoId": "HIJ02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 12,
+    "albumId": "PM25",
+    "songId": "PM25_12",
+    "singingInfoId": "HIJ04",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 12,
+    "albumId": "PM25",
+    "songId": "PM25_12",
+    "singingInfoId": "SSK01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 12,
+    "albumId": "PM25",
+    "songId": "PM25_12",
+    "singingInfoId": "KGD01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 12,
+    "albumId": "PM25",
+    "songId": "PM25_12",
+    "singingInfoId": "CLF01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 12,
+    "albumId": "PM25",
+    "songId": "PM25_12",
+    "singingInfoId": "CLF03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 13,
+    "albumId": "PM25",
+    "songId": "PM25_13",
+    "singingInfoId": "JUP03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 13,
+    "albumId": "PM25",
+    "songId": "PM25_13",
+    "singingInfoId": "ALT01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 13,
+    "albumId": "PM25",
+    "songId": "PM25_13",
+    "singingInfoId": "BEI03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 13,
+    "albumId": "PM25",
+    "songId": "PM25_13",
+    "singingInfoId": "FRM03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 13,
+    "albumId": "PM25",
+    "songId": "PM25_13",
+    "singingInfoId": "CFP02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 13,
+    "albumId": "PM25",
+    "songId": "PM25_13",
+    "singingInfoId": "KGD02",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 14,
+    "albumId": "PM25",
+    "songId": "PM25_14",
+    "singingInfoId": "DBL01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 14,
+    "albumId": "PM25",
+    "songId": "PM25_14",
+    "singingInfoId": "SAI03",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 14,
+    "albumId": "PM25",
+    "songId": "PM25_14",
+    "singingInfoId": "HIJ01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 14,
+    "albumId": "PM25",
+    "songId": "PM25_14",
+    "singingInfoId": "CFP05",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 14,
+    "albumId": "PM25",
+    "songId": "PM25_14",
+    "singingInfoId": "MFM01",
+    "releaseDate": "20251203",
+    "type": "cover"
+  },
+  {
+    "trackNo": 14,
+    "albumId": "PM25",
+    "songId": "PM25_14",
+    "singingInfoId": "LGN02",
+    "releaseDate": "20251203",
+    "type": "cover"
   }
 ]
