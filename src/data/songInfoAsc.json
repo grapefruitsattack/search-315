@@ -41566,5 +41566,69 @@
     "singingInfoId": "KGD03",
     "releaseDate": "20251001",
     "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT02",
+    "songId": "TT02_1",
+    "singingInfoId": "BEI01",
+    "releaseDate": "20251105",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT02",
+    "songId": "TT02_1",
+    "singingInfoId": "SAI02",
+    "releaseDate": "20251105",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT02",
+    "songId": "TT02_1",
+    "singingInfoId": "LGN03",
+    "releaseDate": "20251105",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT02",
+    "songId": "TT02_1",
+    "singingInfoId": "CLF01",
+    "releaseDate": "20251105",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "TT02",
+    "songId": "TT02_2",
+    "singingInfoId": "BEI01",
+    "releaseDate": "20251105",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "TT02",
+    "songId": "TT02_3",
+    "singingInfoId": "SAI02",
+    "releaseDate": "20251105",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "TT02",
+    "songId": "TT02_4",
+    "singingInfoId": "LGN03",
+    "releaseDate": "20251105",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "TT02",
+    "songId": "TT02_5",
+    "singingInfoId": "CLF01",
+    "releaseDate": "20251105",
+    "type": "sver"
   }
 ]
