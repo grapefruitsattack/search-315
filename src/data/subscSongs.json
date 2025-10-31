@@ -4,7 +4,7 @@
     "title": "BRAND NEW FIELD",
     "youtubeId": "JQJx0PSwoOk",
     "spotifyUrl": "https://open.spotify.com/track/21ywPlwnm92NXKHPpezl1t",
-    "appleMusicUrl": "https://music.apple.com/jp/album/brand-new-field/1731760883?i=1731760884",
+    "appleMusicUrl": "https://music.apple.com/jp/album/brand-nAew-field/1731760883?i=1731760884",
     "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0CVWZ8ZG5",
     "lineMusicUrl": "https://music.line.me/webapp/track/mt000000001e0454f4",
     "awaUrl": "https://s.awa.fm/track/732e55a9aa269cf01008",
@@ -8324,6 +8324,17 @@
     "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0FGXR15J6",
     "lineMusicUrl": "https://music.line.me/webapp/track/mt0000000023031ad3",
     "awaUrl": "https://s.awa.fm/track/6f6a07a9207042056d78",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "TT01_1",
+    "title": "Wonderlander's Party",
+    "youtubeId": "ojpde-ShjAE",
+    "spotifyUrl": "https://open.spotify.com/track/292Tl8Udr7d3EBqH36vwQq",
+    "appleMusicUrl": "https://music.apple.com/jp/song/wonderlanders-party/1836324789",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0FP4PHM5M",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt0000000023693d50",
+    "awaUrl": "https://s.awa.fm/track/31731140886586d26748",
     "towerRecordsMusic": ""
   }
 ]
