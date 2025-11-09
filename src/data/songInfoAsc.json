@@ -42342,5 +42342,69 @@
     "singingInfoId": "LGN02",
     "releaseDate": "20251203",
     "type": "cover"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT04",
+    "songId": "TT04_1",
+    "singingInfoId": "ALT02",
+    "releaseDate": "20260107",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT04",
+    "songId": "TT04_1",
+    "singingInfoId": "BEI03",
+    "releaseDate": "20260107",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT04",
+    "songId": "TT04_1",
+    "singingInfoId": "CFP03",
+    "releaseDate": "20260107",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT04",
+    "songId": "TT04_1",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260107",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "TT04",
+    "songId": "TT04_2",
+    "singingInfoId": "ALT02",
+    "releaseDate": "20260107",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "TT04",
+    "songId": "TT04_3",
+    "singingInfoId": "BEI03",
+    "releaseDate": "20260107",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "TT04",
+    "songId": "TT04_4",
+    "singingInfoId": "CFP03",
+    "releaseDate": "20260107",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "TT04",
+    "songId": "TT04_5",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260107",
+    "type": "sver"
   }
 ]
