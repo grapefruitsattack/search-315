@@ -12677,7 +12677,7 @@
     "liveTrackID": "FBF_WGF_M_DAY1_M_27",
     "songId": "",
     "coverFlg": "",
-    "name": "",
+    "name": "ダンスバトル",
     "displayArtist": ""
   },
   {
@@ -12695,7 +12695,7 @@
     "liveTrackID": "FBF_WGF_M_DAY1_M_29",
     "songId": "",
     "coverFlg": "",
-    "name": "",
+    "name": "ボーカルバトル",
     "displayArtist": ""
   },
   {
@@ -12803,7 +12803,7 @@
     "liveTrackID": "FBF_WGF_M_DAY1_M_41",
     "songId": "",
     "coverFlg": "",
-    "name": "",
+    "name": "ビジュアルバトル",
     "displayArtist": ""
   },
   {
@@ -12819,7 +12819,7 @@
     "livePerId": "FBF_WGF_M_DAY1_M",
     "trackNo": 43,
     "liveTrackID": "FBF_WGF_M_DAY1_M_43",
-    "songId": "",
+    "songId": "FBFWGFCUS_1",
     "coverFlg": "",
     "name": "CROWN US KING!",
     "displayArtist": ""
@@ -12828,9 +12828,9 @@
     "livePerId": "FBF_WGF_M_DAY1_M",
     "trackNo": 44,
     "liveTrackID": "FBF_WGF_M_DAY1_M_44",
-    "songId": "10A17_1",
+    "songId": "FBFWGFCUS_2",
     "coverFlg": "",
-    "name": "SUPREME STARS !!!",
+    "name": "SUPREME STARS !!! (Who goes first Ver.)",
     "displayArtist": ""
   },
   {
@@ -13073,7 +13073,7 @@
     "liveTrackID": "FBF_WGF_M_DAY1_S_27",
     "songId": "",
     "coverFlg": "",
-    "name": "",
+    "name": "ビジュアルバトル",
     "displayArtist": ""
   },
   {
@@ -13091,7 +13091,7 @@
     "liveTrackID": "FBF_WGF_M_DAY1_S_29",
     "songId": "",
     "coverFlg": "",
-    "name": "",
+    "name": "ボーカルバトル",
     "displayArtist": ""
   },
   {
@@ -13199,7 +13199,7 @@
     "liveTrackID": "FBF_WGF_M_DAY1_S_41",
     "songId": "",
     "coverFlg": "",
-    "name": "",
+    "name": "ダンスバトル",
     "displayArtist": ""
   },
   {
@@ -13215,7 +13215,7 @@
     "livePerId": "FBF_WGF_M_DAY1_S",
     "trackNo": 43,
     "liveTrackID": "FBF_WGF_M_DAY1_S_43",
-    "songId": "",
+    "songId": "FBFWGFCUS_1",
     "coverFlg": "",
     "name": "CROWN US KING!",
     "displayArtist": ""
@@ -13224,9 +13224,9 @@
     "livePerId": "FBF_WGF_M_DAY1_S",
     "trackNo": 44,
     "liveTrackID": "FBF_WGF_M_DAY1_S_44",
-    "songId": "10A17_1",
+    "songId": "FBFWGFCUS_2",
     "coverFlg": "",
-    "name": "SUPREME STARS !!!",
+    "name": "SUPREME STARS !!! (Who goes first Ver.)",
     "displayArtist": ""
   },
   {
@@ -13469,7 +13469,7 @@
     "liveTrackID": "FBF_WGF_M_DAY2_M_27",
     "songId": "",
     "coverFlg": "",
-    "name": "",
+    "name": "ビジュアルバトル",
     "displayArtist": ""
   },
   {
@@ -13487,7 +13487,7 @@
     "liveTrackID": "FBF_WGF_M_DAY2_M_29",
     "songId": "",
     "coverFlg": "",
-    "name": "",
+    "name": "ダンスバトル",
     "displayArtist": ""
   },
   {
@@ -13505,7 +13505,7 @@
     "liveTrackID": "FBF_WGF_M_DAY2_M_31",
     "songId": "",
     "coverFlg": "",
-    "name": "",
+    "name": "ボーカルバトル",
     "displayArtist": ""
   },
   {
@@ -13611,7 +13611,7 @@
     "livePerId": "FBF_WGF_M_DAY2_M",
     "trackNo": 43,
     "liveTrackID": "FBF_WGF_M_DAY2_M_43",
-    "songId": "",
+    "songId": "FBFWGFCUS_1",
     "coverFlg": "",
     "name": "CROWN US KING!",
     "displayArtist": ""
@@ -13620,9 +13620,9 @@
     "livePerId": "FBF_WGF_M_DAY2_M",
     "trackNo": 44,
     "liveTrackID": "FBF_WGF_M_DAY2_M_44",
-    "songId": "10A17_1",
+    "songId": "FBFWGFCUS_2",
     "coverFlg": "",
-    "name": "SUPREME STARS !!!",
+    "name": "SUPREME STARS !!! (Who goes first Ver.)",
     "displayArtist": ""
   },
   {
@@ -13865,7 +13865,7 @@
     "liveTrackID": "FBF_WGF_M_DAY2_S_27",
     "songId": "",
     "coverFlg": "",
-    "name": "",
+    "name": "ボーカルバトル",
     "displayArtist": ""
   },
   {
@@ -13973,7 +13973,7 @@
     "liveTrackID": "FBF_WGF_M_DAY2_S_39",
     "songId": "",
     "coverFlg": "",
-    "name": "",
+    "name": "ビジュアルバトル",
     "displayArtist": ""
   },
   {
@@ -13991,7 +13991,7 @@
     "liveTrackID": "FBF_WGF_M_DAY2_S_41",
     "songId": "",
     "coverFlg": "",
-    "name": "",
+    "name": "ダンスバトル",
     "displayArtist": ""
   },
   {
@@ -14007,7 +14007,7 @@
     "livePerId": "FBF_WGF_M_DAY2_S",
     "trackNo": 43,
     "liveTrackID": "FBF_WGF_M_DAY2_S_43",
-    "songId": "",
+    "songId": "FBFWGFCUS_1",
     "coverFlg": "",
     "name": "CROWN US KING!",
     "displayArtist": ""
@@ -14016,9 +14016,1557 @@
     "livePerId": "FBF_WGF_M_DAY2_S",
     "trackNo": 44,
     "liveTrackID": "FBF_WGF_M_DAY2_S_44",
-    "songId": "10A17_1",
+    "songId": "FBFWGFCUS_2",
     "coverFlg": "",
-    "name": "SUPREME STARS !!!",
+    "name": "SUPREME STARS !!! (Who goes first Ver.)",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 1,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_1",
+    "songId": "NS10_4",
+    "coverFlg": "",
+    "name": "FOCUS ON YOUR LIFE",
+    "displayArtist": "Legenders"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 2,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_2",
+    "songId": "NS15_4",
+    "coverFlg": "",
+    "name": "Hope's Journey",
+    "displayArtist": "F-LAGS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 3,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_3",
+    "songId": "5A06_3",
+    "coverFlg": "",
+    "name": "PROOF OF ONESELF",
+    "displayArtist": "THE 虎牙道"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 4,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_4",
+    "songId": "NS06_4",
+    "coverFlg": "",
+    "name": "喜怒哀楽万国共通-Burn it up!-",
+    "displayArtist": "神速一魂"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 5,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_5",
+    "songId": "10A08_1",
+    "coverFlg": "",
+    "name": "The Radical JOKER",
+    "displayArtist": "High×Joker"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 6,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_6",
+    "songId": "SL07_3",
+    "coverFlg": "",
+    "name": "和風堂々！～WAnderful NIPPON！～",
+    "displayArtist": "彩"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 7,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_7",
+    "songId": "SL08_3",
+    "coverFlg": "",
+    "name": "MISSION is ピースフル！",
+    "displayArtist": "FRAME"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 8,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_8",
+    "songId": "AP07_1",
+    "coverFlg": "",
+    "name": "ARRIVE TO STAR",
+    "displayArtist": "DRAMATIC STARS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 9,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_9",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 10,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_10",
+    "songId": "GS06_1",
+    "coverFlg": "",
+    "name": "いとをかし！～一彩×合彩～",
+    "displayArtist": "彩"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 11,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_11",
+    "songId": "10A07_1",
+    "coverFlg": "",
+    "name": "縁会！～ENTERTAINMENTS！～",
+    "displayArtist": "彩"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 12,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_12",
+    "songId": "COD08_3",
+    "coverFlg": "",
+    "name": "究極…FIGHTING",
+    "displayArtist": "THE 虎牙道"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 13,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_13",
+    "songId": "SL12_3",
+    "coverFlg": "",
+    "name": "情熱...FIGHTER",
+    "displayArtist": "THE 虎牙道"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 14,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_14",
+    "songId": "SL02_3",
+    "coverFlg": "",
+    "name": "DRAMATIC NONFICTION",
+    "displayArtist": "DRAMATIC STARS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 15,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_15",
+    "songId": "COD13_1",
+    "coverFlg": "",
+    "name": "劇星☆戦隊ドラスターズ",
+    "displayArtist": "DRAMATIC STARS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 16,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_16",
+    "songId": "SL15_1",
+    "coverFlg": "",
+    "name": "Legacy of Spirit",
+    "displayArtist": "Legenders"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 17,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_17",
+    "songId": "3A01_3",
+    "coverFlg": "",
+    "name": "Symphonic Brave",
+    "displayArtist": "Legenders"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 18,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_18",
+    "songId": "3A02_3",
+    "coverFlg": "",
+    "name": "♡Cupids!",
+    "displayArtist": "F-LAGS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 19,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_19",
+    "songId": "49E10_1",
+    "coverFlg": "",
+    "name": "Tricolor Rendezvous",
+    "displayArtist": "F-LAGS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 20,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_20",
+    "songId": "10A06_2",
+    "coverFlg": "",
+    "name": "ULTIMATE FLAME",
+    "displayArtist": "FRAME"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 21,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_21",
+    "songId": "49E09_1",
+    "coverFlg": "",
+    "name": "ONE to DREAM！",
+    "displayArtist": "FRAME"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 22,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_22",
+    "songId": "AP06_1",
+    "coverFlg": "",
+    "name": "Sunset★Colors",
+    "displayArtist": "High×Joker"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 23,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_23",
+    "songId": "SL04_3",
+    "coverFlg": "",
+    "name": "JOKER➚オールマイティ",
+    "displayArtist": "High×Joker"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 24,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_24",
+    "songId": "3A03_2",
+    "coverFlg": "",
+    "name": "RIGHT WAY, SOUL MATE",
+    "displayArtist": "神速一魂"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 25,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_25",
+    "songId": "COD09_3",
+    "coverFlg": "",
+    "name": "Godspeed IGNITION!!",
+    "displayArtist": "神速一魂"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 26,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_26",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 27,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_27",
+    "songId": "",
+    "coverFlg": "",
+    "name": "ビジュアルバトル",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 28,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_28",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 29,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_29",
+    "songId": "",
+    "coverFlg": "",
+    "name": "ダンスバトル",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 30,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_30",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 31,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_31",
+    "songId": "",
+    "coverFlg": "",
+    "name": "ボーカルバトル",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 32,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_32",
+    "songId": "GS05_3",
+    "coverFlg": "",
+    "name": "PERMAFROST",
+    "displayArtist": "北村 想楽"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 33,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_33",
+    "songId": "SLBS_29",
+    "coverFlg": "",
+    "name": "With…STORY",
+    "displayArtist": "秋月 涼"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 34,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_34",
+    "songId": "GS09_3",
+    "coverFlg": "",
+    "name": "CATCH ME IF YOU CAN",
+    "displayArtist": "円城寺 道流"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 35,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_35",
+    "songId": "GS11_3",
+    "coverFlg": "",
+    "name": "タソガレドキ、Bluesy",
+    "displayArtist": "紅井 朱雀"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 36,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_36",
+    "songId": "2A01_3",
+    "coverFlg": "",
+    "name": "OUR SONG -それは世界でひとつだけ-",
+    "displayArtist": "冬美 旬、伊瀬谷 四季"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 37,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_37",
+    "songId": "COD11_1",
+    "coverFlg": "",
+    "name": "君と咲いた未来へ",
+    "displayArtist": "華村 翔真"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 38,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_38",
+    "songId": "10A06_1",
+    "coverFlg": "",
+    "name": "スターチスを束にして",
+    "displayArtist": "握野 英雄"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 39,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_39",
+    "songId": "GS14_3",
+    "coverFlg": "",
+    "name": "Rainy Memories",
+    "displayArtist": "桜庭 薫"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 40,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_40",
+    "songId": "5A01_5",
+    "coverFlg": "",
+    "name": "GLORIOUS RO@D",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 41,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_41",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 42,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_42",
+    "songId": "FBFWGFCUS_1",
+    "coverFlg": "",
+    "name": "CROWN US KING!",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "trackNo": 43,
+    "liveTrackID": "FBF_WGF_O_DAY1_M_43",
+    "songId": "FBFWGFCUS_2",
+    "coverFlg": "",
+    "name": "SUPREME STARS !!! (Who goes first Ver.)",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 1,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_1",
+    "songId": "NS10_4",
+    "coverFlg": "",
+    "name": "FOCUS ON YOUR LIFE",
+    "displayArtist": "Legenders"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 2,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_2",
+    "songId": "NS15_4",
+    "coverFlg": "",
+    "name": "Hope's Journey",
+    "displayArtist": "F-LAGS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 3,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_3",
+    "songId": "5A06_3",
+    "coverFlg": "",
+    "name": "PROOF OF ONESELF",
+    "displayArtist": "THE 虎牙道"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 4,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_4",
+    "songId": "NS06_4",
+    "coverFlg": "",
+    "name": "喜怒哀楽万国共通-Burn it up!-",
+    "displayArtist": "神速一魂"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 5,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_5",
+    "songId": "10A08_1",
+    "coverFlg": "",
+    "name": "The Radical JOKER",
+    "displayArtist": "High×Joker"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 6,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_6",
+    "songId": "SL07_3",
+    "coverFlg": "",
+    "name": "和風堂々！～WAnderful NIPPON！～",
+    "displayArtist": "彩"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 7,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_7",
+    "songId": "SL08_3",
+    "coverFlg": "",
+    "name": "MISSION is ピースフル！",
+    "displayArtist": "FRAME"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 8,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_8",
+    "songId": "AP07_1",
+    "coverFlg": "",
+    "name": "ARRIVE TO STAR",
+    "displayArtist": "DRAMATIC STARS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 9,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_9",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 10,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_10",
+    "songId": "SL15_1",
+    "coverFlg": "",
+    "name": "Legacy of Spirit",
+    "displayArtist": "Legenders"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 11,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_11",
+    "songId": "10A15_2",
+    "coverFlg": "",
+    "name": "I’ll show you",
+    "displayArtist": "Legenders"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 12,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_12",
+    "songId": "AP06_1",
+    "coverFlg": "",
+    "name": "Sunset★Colors",
+    "displayArtist": "High×Joker"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 13,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_13",
+    "songId": "5A05_3",
+    "coverFlg": "",
+    "name": "SEASON IN THE FIVE",
+    "displayArtist": "High×Joker"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 14,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_14",
+    "songId": "3A03_2",
+    "coverFlg": "",
+    "name": "RIGHT WAY, SOUL MATE",
+    "displayArtist": "神速一魂"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 15,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_15",
+    "songId": "10A09_2",
+    "coverFlg": "",
+    "name": "Stillness≒Movement",
+    "displayArtist": "神速一魂"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 16,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_16",
+    "songId": "GS06_1",
+    "coverFlg": "",
+    "name": "いとをかし！～一彩×合彩～",
+    "displayArtist": "彩"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 17,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_17",
+    "songId": "NS14_4",
+    "coverFlg": "",
+    "name": "装 -So Beautiful-",
+    "displayArtist": "彩"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 18,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_18",
+    "songId": "COD08_3",
+    "coverFlg": "",
+    "name": "究極…FIGHTING",
+    "displayArtist": "THE 虎牙道"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 19,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_19",
+    "songId": "10A13_1",
+    "coverFlg": "",
+    "name": "SUPERNOVA",
+    "displayArtist": "THE 虎牙道"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 20,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_20",
+    "songId": "3A02_3",
+    "coverFlg": "",
+    "name": "♡Cupids!",
+    "displayArtist": "F-LAGS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 21,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_21",
+    "songId": "10A14_6",
+    "coverFlg": "",
+    "name": "Waving FLAGS",
+    "displayArtist": "F-LAGS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 22,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_22",
+    "songId": "SL02_3",
+    "coverFlg": "",
+    "name": "DRAMATIC NONFICTION",
+    "displayArtist": "DRAMATIC STARS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 23,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_23",
+    "songId": "5A02_1",
+    "coverFlg": "",
+    "name": "ASTERISK",
+    "displayArtist": "DRAMATIC STARS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 24,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_24",
+    "songId": "10A06_2",
+    "coverFlg": "",
+    "name": "ULTIMATE FLAME",
+    "displayArtist": "FRAME"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 25,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_25",
+    "songId": "5A04_1",
+    "coverFlg": "",
+    "name": "スリーブレス",
+    "displayArtist": "FRAME"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 26,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_26",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 27,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_27",
+    "songId": "",
+    "coverFlg": "",
+    "name": "ボーカルバトル",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 28,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_28",
+    "songId": "GS05_3",
+    "coverFlg": "",
+    "name": "PERMAFROST",
+    "displayArtist": "北村 想楽"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 29,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_29",
+    "songId": "SLBS_29",
+    "coverFlg": "",
+    "name": "With…STORY",
+    "displayArtist": "秋月 涼"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 30,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_30",
+    "songId": "GS09_3",
+    "coverFlg": "",
+    "name": "CATCH ME IF YOU CAN",
+    "displayArtist": "円城寺 道流"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 31,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_31",
+    "songId": "GS11_3",
+    "coverFlg": "",
+    "name": "タソガレドキ、Bluesy",
+    "displayArtist": "紅井 朱雀"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 32,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_32",
+    "songId": "2A01_3",
+    "coverFlg": "",
+    "name": "OUR SONG -それは世界でひとつだけ-",
+    "displayArtist": "冬美 旬、伊瀬谷 四季"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 33,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_33",
+    "songId": "COD11_1",
+    "coverFlg": "",
+    "name": "君と咲いた未来へ",
+    "displayArtist": "華村 翔真"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 34,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_34",
+    "songId": "10A06_1",
+    "coverFlg": "",
+    "name": "スターチスを束にして",
+    "displayArtist": "握野 英雄"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 35,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_35",
+    "songId": "GS14_3",
+    "coverFlg": "",
+    "name": "Rainy Memories",
+    "displayArtist": "桜庭 薫"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 36,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_36",
+    "songId": "5A01_5",
+    "coverFlg": "",
+    "name": "GLORIOUS RO@D",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 37,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_37",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 38,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_38",
+    "songId": "",
+    "coverFlg": "",
+    "name": "ダンスバトル",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 39,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_39",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 40,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_40",
+    "songId": "",
+    "coverFlg": "",
+    "name": "ビジュアルバトル",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 41,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_41",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 42,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_42",
+    "songId": "FBFWGFCUS_1",
+    "coverFlg": "",
+    "name": "CROWN US KING!",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "trackNo": 43,
+    "liveTrackID": "FBF_WGF_O_DAY1_S_43",
+    "songId": "FBFWGFCUS_2",
+    "coverFlg": "",
+    "name": "SUPREME STARS !!! (Who goes first Ver.)",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 1,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_1",
+    "songId": "NS10_4",
+    "coverFlg": "",
+    "name": "FOCUS ON YOUR LIFE",
+    "displayArtist": "Legenders"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 2,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_2",
+    "songId": "NS15_4",
+    "coverFlg": "",
+    "name": "Hope's Journey",
+    "displayArtist": "F-LAGS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 3,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_3",
+    "songId": "5A06_3",
+    "coverFlg": "",
+    "name": "PROOF OF ONESELF",
+    "displayArtist": "THE 虎牙道"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 4,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_4",
+    "songId": "NS06_4",
+    "coverFlg": "",
+    "name": "喜怒哀楽万国共通-Burn it up!-",
+    "displayArtist": "神速一魂"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 5,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_5",
+    "songId": "10A08_1",
+    "coverFlg": "",
+    "name": "The Radical JOKER",
+    "displayArtist": "High×Joker"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 6,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_6",
+    "songId": "SL07_3",
+    "coverFlg": "",
+    "name": "和風堂々！～WAnderful NIPPON！～",
+    "displayArtist": "彩"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 7,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_7",
+    "songId": "SL08_3",
+    "coverFlg": "",
+    "name": "MISSION is ピースフル！",
+    "displayArtist": "FRAME"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 8,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_8",
+    "songId": "AP07_1",
+    "coverFlg": "",
+    "name": "ARRIVE TO STAR",
+    "displayArtist": "DRAMATIC STARS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 9,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_9",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 10,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_10",
+    "songId": "COD08_3",
+    "coverFlg": "",
+    "name": "究極…FIGHTING",
+    "displayArtist": "THE 虎牙道"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 11,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_11",
+    "songId": "3A03_3",
+    "coverFlg": "",
+    "name": "RAY OF LIGHT",
+    "displayArtist": "THE 虎牙道"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 12,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_12",
+    "songId": "10A06_2",
+    "coverFlg": "",
+    "name": "ULTIMATE FLAME",
+    "displayArtist": "FRAME"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 13,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_13",
+    "songId": "NS11_4",
+    "coverFlg": "",
+    "name": "リビングアイズヒーロー",
+    "displayArtist": "FRAME"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 14,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_14",
+    "songId": "3A03_2",
+    "coverFlg": "",
+    "name": "RIGHT WAY, SOUL MATE",
+    "displayArtist": "神速一魂"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 15,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_15",
+    "songId": "10A09_6",
+    "coverFlg": "",
+    "name": "オモイノウタ",
+    "displayArtist": "神速一魂"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 16,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_16",
+    "songId": "SL15_1",
+    "coverFlg": "",
+    "name": "Legacy of Spirit",
+    "displayArtist": "Legenders"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 17,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_17",
+    "songId": "10A15_6",
+    "coverFlg": "",
+    "name": "Make New Legend",
+    "displayArtist": "Legenders"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 18,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_18",
+    "songId": "GS06_1",
+    "coverFlg": "",
+    "name": "いとをかし！～一彩×合彩～",
+    "displayArtist": "彩"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 19,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_19",
+    "songId": "GS06_3",
+    "coverFlg": "",
+    "name": "彩リノ歌",
+    "displayArtist": "彩"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 20,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_20",
+    "songId": "SL02_3",
+    "coverFlg": "",
+    "name": "DRAMATIC NONFICTION",
+    "displayArtist": "DRAMATIC STARS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 21,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_21",
+    "songId": "10A01_1",
+    "coverFlg": "",
+    "name": "STAR over STAR",
+    "displayArtist": "DRAMATIC STARS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 22,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_22",
+    "songId": "AP06_1",
+    "coverFlg": "",
+    "name": "Sunset★Colors",
+    "displayArtist": "High×Joker"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 23,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_23",
+    "songId": "GS18_3",
+    "coverFlg": "",
+    "name": "Toward Pole Star",
+    "displayArtist": "High×Joker"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 24,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_24",
+    "songId": "3A02_3",
+    "coverFlg": "",
+    "name": "♡Cupids!",
+    "displayArtist": "F-LAGS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 25,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_25",
+    "songId": "10A14_1",
+    "coverFlg": "",
+    "name": "BRIGHT SUNNY DAY",
+    "displayArtist": "F-LAGS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 26,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_26",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 27,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_27",
+    "songId": "",
+    "coverFlg": "",
+    "name": "ビジュアルバトル",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 28,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_28",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 29,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_29",
+    "songId": "",
+    "coverFlg": "",
+    "name": "ボーカルバトル",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 30,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_30",
+    "songId": "GS05_3",
+    "coverFlg": "",
+    "name": "PERMAFROST",
+    "displayArtist": "北村 想楽"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 31,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_31",
+    "songId": "SLBS_29",
+    "coverFlg": "",
+    "name": "With…STORY",
+    "displayArtist": "秋月 涼"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 32,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_32",
+    "songId": "GS09_3",
+    "coverFlg": "",
+    "name": "CATCH ME IF YOU CAN",
+    "displayArtist": "円城寺 道流"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 33,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_33",
+    "songId": "GS11_3",
+    "coverFlg": "",
+    "name": "タソガレドキ、Bluesy",
+    "displayArtist": "紅井 朱雀"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 34,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_34",
+    "songId": "2A01_3",
+    "coverFlg": "",
+    "name": "OUR SONG -それは世界でひとつだけ-",
+    "displayArtist": "冬美 旬、伊瀬谷 四季"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 35,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_35",
+    "songId": "COD11_1",
+    "coverFlg": "",
+    "name": "君と咲いた未来へ",
+    "displayArtist": "華村 翔真"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 36,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_36",
+    "songId": "10A06_1",
+    "coverFlg": "",
+    "name": "スターチスを束にして",
+    "displayArtist": "握野 英雄"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 37,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_37",
+    "songId": "GS14_3",
+    "coverFlg": "",
+    "name": "Rainy Memories",
+    "displayArtist": "桜庭 薫"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 38,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_38",
+    "songId": "5A01_5",
+    "coverFlg": "",
+    "name": "GLORIOUS RO@D",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 39,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_39",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 40,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_40",
+    "songId": "",
+    "coverFlg": "",
+    "name": "ダンスバトル",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 41,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_41",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 42,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_42",
+    "songId": "FBFWGFCUS_1",
+    "coverFlg": "",
+    "name": "CROWN US KING!",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "trackNo": 43,
+    "liveTrackID": "FBF_WGF_O_DAY2_M_43",
+    "songId": "FBFWGFCUS_2",
+    "coverFlg": "",
+    "name": "SUPREME STARS !!! (Who goes first Ver.)",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 1,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_1",
+    "songId": "NS10_4",
+    "coverFlg": "",
+    "name": "FOCUS ON YOUR LIFE",
+    "displayArtist": "Legenders"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 2,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_2",
+    "songId": "NS15_4",
+    "coverFlg": "",
+    "name": "Hope's Journey",
+    "displayArtist": "F-LAGS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 3,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_3",
+    "songId": "5A06_3",
+    "coverFlg": "",
+    "name": "PROOF OF ONESELF",
+    "displayArtist": "THE 虎牙道"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 4,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_4",
+    "songId": "NS06_4",
+    "coverFlg": "",
+    "name": "喜怒哀楽万国共通-Burn it up!-",
+    "displayArtist": "神速一魂"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 5,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_5",
+    "songId": "10A08_1",
+    "coverFlg": "",
+    "name": "The Radical JOKER",
+    "displayArtist": "High×Joker"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 6,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_6",
+    "songId": "SL07_3",
+    "coverFlg": "",
+    "name": "和風堂々！～WAnderful NIPPON！～",
+    "displayArtist": "彩"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 7,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_7",
+    "songId": "SL08_3",
+    "coverFlg": "",
+    "name": "MISSION is ピースフル！",
+    "displayArtist": "FRAME"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 8,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_8",
+    "songId": "AP07_1",
+    "coverFlg": "",
+    "name": "ARRIVE TO STAR",
+    "displayArtist": "DRAMATIC STARS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 9,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_9",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 10,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_10",
+    "songId": "3A03_2",
+    "coverFlg": "",
+    "name": "RIGHT WAY, SOUL MATE",
+    "displayArtist": "神速一魂"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 11,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_11",
+    "songId": "SL09_1",
+    "coverFlg": "",
+    "name": "バーニン・クールで輝いて",
+    "displayArtist": "神速一魂"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 12,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_12",
+    "songId": "3A02_3",
+    "coverFlg": "",
+    "name": "♡Cupids!",
+    "displayArtist": "F-LAGS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 13,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_13",
+    "songId": "COD07_3",
+    "coverFlg": "",
+    "name": "FANTASTIC DISCOTHEQUE",
+    "displayArtist": "F-LAGS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 14,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_14",
+    "songId": "10A06_2",
+    "coverFlg": "",
+    "name": "ULTIMATE FLAME",
+    "displayArtist": "FRAME"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 15,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_15",
+    "songId": "COD02_1",
+    "coverFlg": "",
+    "name": "Amber Color Oasis",
+    "displayArtist": "FRAME"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 16,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_16",
+    "songId": "SL02_3",
+    "coverFlg": "",
+    "name": "DRAMATIC NONFICTION",
+    "displayArtist": "DRAMATIC STARS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 17,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_17",
+    "songId": "10A01_5",
+    "coverFlg": "",
+    "name": "MOON NIGHTのせいにして",
+    "displayArtist": "DRAMATIC STARS"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 18,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_18",
+    "songId": "SL15_1",
+    "coverFlg": "",
+    "name": "Legacy of Spirit",
+    "displayArtist": "Legenders"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 19,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_19",
+    "songId": "COD16_1",
+    "coverFlg": "",
+    "name": "リフレインアトリウム",
+    "displayArtist": "Legenders"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 20,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_20",
+    "songId": "AP06_1",
+    "coverFlg": "",
+    "name": "Sunset★Colors",
+    "displayArtist": "High×Joker"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 21,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_21",
+    "songId": "GS18_1",
+    "coverFlg": "",
+    "name": "JOYFUL HEART MAKER",
+    "displayArtist": "High×Joker"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 22,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_22",
+    "songId": "COD08_3",
+    "coverFlg": "",
+    "name": "究極…FIGHTING",
+    "displayArtist": "THE 虎牙道"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 23,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_23",
+    "songId": "COD08_1",
+    "coverFlg": "",
+    "name": "宵闇のイリュージョン",
+    "displayArtist": "THE 虎牙道"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 24,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_24",
+    "songId": "GS06_1",
+    "coverFlg": "",
+    "name": "いとをかし！～一彩×合彩～",
+    "displayArtist": "彩"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 25,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_25",
+    "songId": "49E15_1",
+    "coverFlg": "",
+    "name": "愛笑華！",
+    "displayArtist": "彩"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 26,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_26",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 27,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_27",
+    "songId": "",
+    "coverFlg": "",
+    "name": "ダンスバトル",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 28,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_28",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 29,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_29",
+    "songId": "",
+    "coverFlg": "",
+    "name": "ボーカルバトル",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 30,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_30",
+    "songId": "GS05_3",
+    "coverFlg": "",
+    "name": "PERMAFROST",
+    "displayArtist": "北村 想楽"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 31,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_31",
+    "songId": "SLBS_29",
+    "coverFlg": "",
+    "name": "With…STORY",
+    "displayArtist": "秋月 涼"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 32,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_32",
+    "songId": "GS09_3",
+    "coverFlg": "",
+    "name": "CATCH ME IF YOU CAN",
+    "displayArtist": "円城寺 道流"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 33,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_33",
+    "songId": "GS11_3",
+    "coverFlg": "",
+    "name": "タソガレドキ、Bluesy",
+    "displayArtist": "紅井 朱雀"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 34,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_34",
+    "songId": "2A01_3",
+    "coverFlg": "",
+    "name": "OUR SONG -それは世界でひとつだけ-",
+    "displayArtist": "冬美 旬、伊瀬谷 四季"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 35,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_35",
+    "songId": "COD11_1",
+    "coverFlg": "",
+    "name": "君と咲いた未来へ",
+    "displayArtist": "華村 翔真"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 36,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_36",
+    "songId": "10A06_1",
+    "coverFlg": "",
+    "name": "スターチスを束にして",
+    "displayArtist": "握野 英雄"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 37,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_37",
+    "songId": "GS14_3",
+    "coverFlg": "",
+    "name": "Rainy Memories",
+    "displayArtist": "桜庭 薫"
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 38,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_38",
+    "songId": "5A01_5",
+    "coverFlg": "",
+    "name": "GLORIOUS RO@D",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 39,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_39",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 40,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_40",
+    "songId": "",
+    "coverFlg": "",
+    "name": "ビジュアルバトル",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 41,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_41",
+    "songId": "",
+    "coverFlg": "",
+    "name": "",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 42,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_42",
+    "songId": "FBFWGFCUS_1",
+    "coverFlg": "",
+    "name": "CROWN US KING!",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "trackNo": 43,
+    "liveTrackID": "FBF_WGF_O_DAY2_S_43",
+    "songId": "FBFWGFCUS_2",
+    "coverFlg": "",
+    "name": "SUPREME STARS !!! (Who goes first Ver.)",
     "displayArtist": ""
   }
 ]

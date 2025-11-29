@@ -684,5 +684,33 @@
     "livePerId": "FBF_WGF_M_DAY2_S",
     "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LABX-8814.html",
     "releaseDate": "20260715"
+  },
+  {
+    "productId": "FBF_WGF",
+    "productName": "315 Production presents F＠NTASTIC BATTLE FES ～Who goes first～ LIVE Blu-ray",
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LABX-8814.html",
+    "releaseDate": "20260715"
+  },
+  {
+    "productId": "FBF_WGF",
+    "productName": "315 Production presents F＠NTASTIC BATTLE FES ～Who goes first～ LIVE Blu-ray",
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LABX-8814.html",
+    "releaseDate": "20260715"
+  },
+  {
+    "productId": "FBF_WGF",
+    "productName": "315 Production presents F＠NTASTIC BATTLE FES ～Who goes first～ LIVE Blu-ray",
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LABX-8814.html",
+    "releaseDate": "20260715"
+  },
+  {
+    "productId": "FBF_WGF",
+    "productName": "315 Production presents F＠NTASTIC BATTLE FES ～Who goes first～ LIVE Blu-ray",
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LABX-8814.html",
+    "releaseDate": "20260715"
   }
 ]
