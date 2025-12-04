@@ -4,7 +4,7 @@
     "title": "BRAND NEW FIELD",
     "youtubeId": "JQJx0PSwoOk",
     "spotifyUrl": "https://open.spotify.com/track/21ywPlwnm92NXKHPpezl1t",
-    "appleMusicUrl": "https://music.apple.com/jp/album/brand-nAew-field/1731760883?i=1731760884",
+    "appleMusicUrl": "https://music.apple.com/jp/album/brand-new-field/1731760883?i=1731760884",
     "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0CVWZ8ZG5",
     "lineMusicUrl": "https://music.line.me/webapp/track/mt000000001e0454f4",
     "awaUrl": "https://s.awa.fm/track/732e55a9aa269cf01008",
@@ -8335,6 +8335,17 @@
     "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0FP4PHM5M",
     "lineMusicUrl": "https://music.line.me/webapp/track/mt0000000023693d50",
     "awaUrl": "https://s.awa.fm/track/31731140886586d26748",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "TT02_1",
+    "title": "竜宮逢幻記",
+    "youtubeId": "7oan-Y2FZa4",
+    "spotifyUrl": "https://open.spotify.com/track/2bCltL4LgxsrgImPcKWcHC",
+    "appleMusicUrl": "https://music.apple.com/jp/song/%E7%AB%9C%E5%AE%AE%E9%80%A2%E5%B9%BB%E8%A8%98/1843564768",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0FTLKTT8P",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt0000000023becf8c",
+    "awaUrl": "https://s.awa.fm/track/51de9727fe0907604c34",
     "towerRecordsMusic": ""
   }
 ]
