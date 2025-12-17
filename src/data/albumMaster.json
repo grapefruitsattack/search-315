@@ -3824,6 +3824,22 @@
     "description": ""
   },
   {
+    "sereisId": "MTS",
+    "albumId": "MTS03",
+    "albumTitleFull": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 03 W",
+    "albumTitle": "MONTHLY THEME SONG 03 W",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260128",
+    "displayArtist": "W",
+    "artist": "[DBL00]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24783.html",
+    "trialYoutubeId": "95aOJ7pCFFs",
+    "description": ""
+  },
+  {
     "sereisId": "FBF",
     "albumId": "FBFWGFCUS",
     "albumTitleFull": "THE IDOLM@STER SideM F＠NTASTIC BATTLE FES ～Who goes first～ 「CROWN US KING!」",
@@ -3837,6 +3853,22 @@
     "artist": "[DRS00]、[FRM00]、[SAI00]、[HIJ00]、[SSK00]、[KGD00]、[FLG00]、[LGN00]",
     "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACA-19156.html",
     "trialYoutubeId": "",
+    "description": ""
+  },
+  {
+    "sereisId": "TT",
+    "albumId": "TT05",
+    "albumTitleFull": "THE IDOLM@STER SideM TRANSCENDENT T@LES 05",
+    "albumTitle": "TRANSCENDENT T@LES 05",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260204",
+    "displayArtist": "木村龍、清澄九郎、岡村直央、舞田類",
+    "artist": "[FRM02]、[SAI03]、[MFM01]、[SEM02]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24765.html",
+    "trialYoutubeId": "k0VIdzKN5ss",
     "description": ""
   }
 ]
