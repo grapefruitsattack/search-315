@@ -994,5 +994,29 @@
     "perDate": "20251116",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fbfes_wgf/",
     "type": ""
+  },
+  {
+    "liveId": "MOIW2025",
+    "perId": "DAY1",
+    "livePerId": "MOIW2025_DAY1",
+    "displayLiveName": "MOIW2025",
+    "displayPerName": "DAY1",
+    "liveName": "THE IDOLM@STER M@STERS OF IDOL WORLD 2025",
+    "perName": "DAY1",
+    "perDate": "20251213",
+    "officialPage": "https://idolmaster-official.jp//live_event/idolworld2025/",
+    "type": "ex"
+  },
+  {
+    "liveId": "MOIW2025",
+    "perId": "DAY2",
+    "livePerId": "MOIW2025_DAY2",
+    "displayLiveName": "MOIW2025",
+    "displayPerName": "DAY2",
+    "liveName": "THE IDOLM@STER M@STERS OF IDOL WORLD 2025",
+    "perName": "DAY2",
+    "perDate": "20251214",
+    "officialPage": "https://idolmaster-official.jp//live_event/idolworld2025/",
+    "type": "ex"
   }
 ]

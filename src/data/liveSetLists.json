@@ -15395,7 +15395,7 @@
     "liveTrackID": "FBF_WGF_O_DAY2_S_24",
     "songId": "GS06_1",
     "coverFlg": "",
-    "name": "いとをかし！～一彩×合彩～",
+    "name": "",
     "displayArtist": "彩"
   },
   {
@@ -15567,6 +15567,510 @@
     "songId": "FBFWGFCUS_2",
     "coverFlg": "",
     "name": "SUPREME STARS !!! (Who goes first Ver.)",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 1,
+    "liveTrackID": "MOIW2025_DAY1_1",
+    "songId": "10A17_1",
+    "coverFlg": "",
+    "name": "SUPREME STARS !!!",
+    "displayArtist": "315 STARS"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 2,
+    "liveTrackID": "MOIW2025_DAY1_2",
+    "songId": "GS06_1",
+    "coverFlg": "",
+    "name": "いとをかし！～一彩×合彩～",
+    "displayArtist": "華村 翔真、清澄 九郎…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 3,
+    "liveTrackID": "MOIW2025_DAY1_3",
+    "songId": "",
+    "coverFlg": "",
+    "name": "モーレツ★世直しギルティ！",
+    "displayArtist": "FRAME…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 4,
+    "liveTrackID": "MOIW2025_DAY1_4",
+    "songId": "",
+    "coverFlg": "",
+    "name": "スペードのQ",
+    "displayArtist": "花園 百々人…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 5,
+    "liveTrackID": "MOIW2025_DAY1_5",
+    "songId": "",
+    "coverFlg": "",
+    "name": "アマテラス",
+    "displayArtist": "華村 翔真、清澄 九郎…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 6,
+    "liveTrackID": "MOIW2025_DAY1_6",
+    "songId": "10A16_2",
+    "coverFlg": "",
+    "name": "Sunny day, Perfect day",
+    "displayArtist": "天峰 秀、花園 百々人…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 7,
+    "liveTrackID": "MOIW2025_DAY1_7",
+    "songId": "COD07_3",
+    "coverFlg": "",
+    "name": "FANTASTIC DISCOTHEQUE",
+    "displayArtist": "F-LAGS…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 8,
+    "liveTrackID": "MOIW2025_DAY1_8",
+    "songId": "SL02_1",
+    "coverFlg": "",
+    "name": "STARLIGHT CELEBRATE!",
+    "displayArtist": "（カバー）"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 9,
+    "liveTrackID": "MOIW2025_DAY1_9",
+    "songId": "",
+    "coverFlg": "",
+    "name": "エージェント夜を往く",
+    "displayArtist": "秋月 涼…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 10,
+    "liveTrackID": "MOIW2025_DAY1_10",
+    "songId": "COD04_3",
+    "coverFlg": "",
+    "name": "もふデビ★うぉんてっど",
+    "displayArtist": "（カバー）"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 11,
+    "liveTrackID": "MOIW2025_DAY1_11",
+    "songId": "",
+    "coverFlg": "",
+    "name": "LOVE is GAME",
+    "displayArtist": "兜 大吾、天峰 秀…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 12,
+    "liveTrackID": "MOIW2025_DAY1_12",
+    "songId": "",
+    "coverFlg": "",
+    "name": "弾丸サバイバー",
+    "displayArtist": "FRAME"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 13,
+    "liveTrackID": "MOIW2025_DAY1_13",
+    "songId": "",
+    "coverFlg": "",
+    "name": "美に入り彩を穿つ",
+    "displayArtist": "華村 翔真、清澄 九郎"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 14,
+    "liveTrackID": "MOIW2025_DAY1_14",
+    "songId": "",
+    "coverFlg": "",
+    "name": "Imitation Ghost",
+    "displayArtist": "九十九 一希…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 15,
+    "liveTrackID": "MOIW2025_DAY1_15",
+    "songId": "",
+    "coverFlg": "",
+    "name": "がむしゃらに行こう！",
+    "displayArtist": "FRAME、天峰 秀、花園 百々人"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 16,
+    "liveTrackID": "MOIW2025_DAY1_16",
+    "songId": "",
+    "coverFlg": "",
+    "name": "そしてぼくらは旅にでる",
+    "displayArtist": "九十九 一希…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 17,
+    "liveTrackID": "MOIW2025_DAY1_17",
+    "songId": "",
+    "coverFlg": "",
+    "name": "アップルパイ・プリンセス",
+    "displayArtist": "秋月 涼…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 18,
+    "liveTrackID": "MOIW2025_DAY1_18",
+    "songId": "PF00_2",
+    "coverFlg": "",
+    "name": "リトルハピネス",
+    "displayArtist": "（カバー）"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 19,
+    "liveTrackID": "MOIW2025_DAY1_19",
+    "songId": "",
+    "coverFlg": "",
+    "name": "Orange Sapphire",
+    "displayArtist": "315 STARS"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 20,
+    "liveTrackID": "MOIW2025_DAY1_20",
+    "songId": "",
+    "coverFlg": "",
+    "name": "Heads or Tails？",
+    "displayArtist": "天峰 秀、花園 百々人…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 21,
+    "liveTrackID": "MOIW2025_DAY1_21",
+    "songId": "10A06_2",
+    "coverFlg": "",
+    "name": "ULTIMATE FLAME",
+    "displayArtist": "FRAME…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 22,
+    "liveTrackID": "MOIW2025_DAY1_22",
+    "songId": "",
+    "coverFlg": "",
+    "name": "Dance in the Light",
+    "displayArtist": "兜 大吾…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 23,
+    "liveTrackID": "MOIW2025_DAY1_23",
+    "songId": "",
+    "coverFlg": "",
+    "name": "ハナサカサイサイ",
+    "displayArtist": "華村 翔真、清澄 九郎…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 24,
+    "liveTrackID": "MOIW2025_DAY1_24",
+    "songId": "COD08_1",
+    "coverFlg": "",
+    "name": "宵闇のイリュージョン",
+    "displayArtist": "（カバー）"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 25,
+    "liveTrackID": "MOIW2025_DAY1_25",
+    "songId": "",
+    "coverFlg": "",
+    "name": "ジャングル☆パーティー",
+    "displayArtist": "F-LAGS…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY1",
+    "trackNo": 26,
+    "liveTrackID": "MOIW2025_DAY1_26",
+    "songId": "INYSM_1",
+    "coverFlg": "",
+    "name": "アイ NEED YOU（FOR WONDERFUL STORY）",
+    "displayArtist": ""
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 1,
+    "liveTrackID": "MOIW2025_DAY2_1",
+    "songId": "5A01_4",
+    "coverFlg": "",
+    "name": "Reason!!",
+    "displayArtist": "315 STARS"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 2,
+    "liveTrackID": "MOIW2025_DAY2_2",
+    "songId": "AP03_1",
+    "coverFlg": "",
+    "name": "From Teacher To Future!",
+    "displayArtist": "S.E.M…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 3,
+    "liveTrackID": "MOIW2025_DAY2_3",
+    "songId": "",
+    "coverFlg": "",
+    "name": "Cyber Parkour",
+    "displayArtist": "円城寺 道流…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 4,
+    "liveTrackID": "MOIW2025_DAY2_4",
+    "songId": "3A03_3",
+    "coverFlg": "",
+    "name": "RAY OF LIGHT",
+    "displayArtist": "THE 虎牙道…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 5,
+    "liveTrackID": "MOIW2025_DAY2_5",
+    "songId": "SL09_1",
+    "coverFlg": "",
+    "name": "バーニン・クールで輝いて",
+    "displayArtist": "神速一魂…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 6,
+    "liveTrackID": "MOIW2025_DAY2_6",
+    "songId": "SL15_1",
+    "coverFlg": "",
+    "name": "Legacy of Spirit",
+    "displayArtist": "Legenders…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 7,
+    "liveTrackID": "MOIW2025_DAY2_7",
+    "songId": "",
+    "coverFlg": "",
+    "name": "Gossip Club",
+    "displayArtist": "S.E.M…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 8,
+    "liveTrackID": "MOIW2025_DAY2_8",
+    "songId": "",
+    "coverFlg": "",
+    "name": "拝啓タイムカプセル",
+    "displayArtist": "315 STARS"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 9,
+    "liveTrackID": "MOIW2025_DAY2_9",
+    "songId": "OP01_1",
+    "coverFlg": "",
+    "name": "THE FIRST STAR",
+    "displayArtist": "天道 輝"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 10,
+    "liveTrackID": "MOIW2025_DAY2_10",
+    "songId": "OP04_1",
+    "coverFlg": "",
+    "name": "ROMANTIC SHAKER",
+    "displayArtist": "伊集院 北斗"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 11,
+    "liveTrackID": "MOIW2025_DAY2_11",
+    "songId": "AP01_2",
+    "coverFlg": "",
+    "name": "流星PARADE",
+    "displayArtist": "天道 輝、伊集院 北斗、S.E.M"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 12,
+    "liveTrackID": "MOIW2025_DAY2_12",
+    "songId": "3A02_4",
+    "coverFlg": "",
+    "name": "Compass Gripper!!!",
+    "displayArtist": "（カバー）"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 13,
+    "liveTrackID": "MOIW2025_DAY2_13",
+    "songId": "",
+    "coverFlg": "",
+    "name": "恋のLesson初級編",
+    "displayArtist": "S.E.M"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 14,
+    "liveTrackID": "MOIW2025_DAY2_14",
+    "songId": "SL03_1",
+    "coverFlg": "",
+    "name": "スマイル・エンゲージ",
+    "displayArtist": "（カバー）"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 15,
+    "liveTrackID": "MOIW2025_DAY2_15",
+    "songId": "",
+    "coverFlg": "",
+    "name": "Radio Happy",
+    "displayArtist": "舞田 類、円城寺 道流…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 16,
+    "liveTrackID": "MOIW2025_DAY2_16",
+    "songId": "",
+    "coverFlg": "",
+    "name": "ギョーてん！しーわーるど！",
+    "displayArtist": "古論 クリス…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 17,
+    "liveTrackID": "MOIW2025_DAY2_17",
+    "songId": "",
+    "coverFlg": "",
+    "name": "CAT CROSSING",
+    "displayArtist": "紅井 朱雀、山下 次郎、大河 タケル、牙崎 漣"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 18,
+    "liveTrackID": "MOIW2025_DAY2_18",
+    "songId": "",
+    "coverFlg": "",
+    "name": "咲いてJewel",
+    "displayArtist": "伊集院 北斗…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 19,
+    "liveTrackID": "MOIW2025_DAY2_19",
+    "songId": "",
+    "coverFlg": "",
+    "name": "99 Nights",
+    "displayArtist": "北村 想楽…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 20,
+    "liveTrackID": "MOIW2025_DAY2_20",
+    "songId": "3A01_2",
+    "coverFlg": "",
+    "name": "Tone's Destiny",
+    "displayArtist": "（カバー）"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 21,
+    "liveTrackID": "MOIW2025_DAY2_21",
+    "songId": "",
+    "coverFlg": "",
+    "name": "BRAVE STAR",
+    "displayArtist": "天道 輝…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 22,
+    "liveTrackID": "MOIW2025_DAY2_22",
+    "songId": "",
+    "coverFlg": "",
+    "name": "Hypernova",
+    "displayArtist": "Legenders…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 23,
+    "liveTrackID": "MOIW2025_DAY2_23",
+    "songId": "",
+    "coverFlg": "",
+    "name": "Drastic Melody",
+    "displayArtist": "黒野 玄武、大河 タケル"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 24,
+    "liveTrackID": "MOIW2025_DAY2_24",
+    "songId": "",
+    "coverFlg": "",
+    "name": "REALIZE！！！",
+    "displayArtist": "伊集院 北斗…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 25,
+    "liveTrackID": "MOIW2025_DAY2_25",
+    "songId": "",
+    "coverFlg": "",
+    "name": "ザ・ライブ革命でSHOW！",
+    "displayArtist": "牙崎 漣…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 26,
+    "liveTrackID": "MOIW2025_DAY2_26",
+    "songId": "",
+    "coverFlg": "",
+    "name": "とある英雄たちの物語",
+    "displayArtist": "葛之葉 雨彦…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 27,
+    "liveTrackID": "MOIW2025_DAY2_27",
+    "songId": "5A03_4",
+    "coverFlg": "",
+    "name": "ミュージアムジカ",
+    "displayArtist": "（カバー）"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 28,
+    "liveTrackID": "MOIW2025_DAY2_28",
+    "songId": "",
+    "coverFlg": "",
+    "name": "リフレインキス",
+    "displayArtist": "315 STARS"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 29,
+    "liveTrackID": "MOIW2025_DAY2_29",
+    "songId": "",
+    "coverFlg": "",
+    "name": "純情Midnight伝説",
+    "displayArtist": "神速一魂…"
+  },
+  {
+    "livePerId": "MOIW2025_DAY2",
+    "trackNo": 30,
+    "liveTrackID": "MOIW2025_DAY2_30",
+    "songId": "INYSM_1",
+    "coverFlg": "",
+    "name": "アイ NEED YOU（FOR WONDERFUL STORY）",
     "displayArtist": ""
   }
 ]
