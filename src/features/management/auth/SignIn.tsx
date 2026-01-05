@@ -15,7 +15,7 @@ const signOutGoogle = async () => {
 export function SignIn() {
   return (
     <button
-      onClick={() => signIn.social({ provider: "google" })}
+      onClick={() => authClient.signIn.social({ provider: "google" })}
       className="grid grid-cols-1 justify-items-center"
     >
     <svg className='h-[40px] w-[40px] lg:h-[40px] lg:w-[40px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#1f1f1f">
