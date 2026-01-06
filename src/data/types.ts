@@ -220,8 +220,12 @@ export type SongCredit = {
 
 export type StoryCntData = {
   all_story_cnt: number;
-  read_all_story_cnt: number;
-  free_story_cnt: number;
+  all_free_story_cnt: number;
+  read_story_cnt: number;
   read_free_story_cnt: number;
+  filterd_story_cnt: number;
+  filterd_free_story_cnt: number;
+  read_filterd_story_cnt: number;
+  read_filterd_free_story_cnt: number;
   res_info_id: string;
 };

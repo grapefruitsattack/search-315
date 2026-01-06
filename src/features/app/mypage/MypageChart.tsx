@@ -44,26 +44,27 @@ export default function MypageChart(
 
   const [displayData, setDisplayData] 
     = useState({
-        storyCnt:storyCntData.all_story_cnt,
-        readStoryCnt:storyCntData.read_all_story_cnt,
+        storyCnt:storyCntData.filterd_story_cnt,
+        readStoryCnt:storyCntData.read_filterd_story_cnt,
         allOrFree:'all'
     });
   useEffect(() => {
     if(displayData.allOrFree==='free'){
       setDisplayData({
-          storyCnt:storyCntData.free_story_cnt,
+          storyCnt:storyCntData.filterd_free_story_cnt,
           readStoryCnt:storyCntData.read_free_story_cnt,
           allOrFree:displayData.allOrFree});
     }else{
       setDisplayData({
-          storyCnt:storyCntData.all_story_cnt,
-          readStoryCnt:storyCntData.read_all_story_cnt,
+          storyCnt:storyCntData.filterd_story_cnt,
+          readStoryCnt:storyCntData.read_filterd_story_cnt,
           allOrFree:displayData.allOrFree});
     }
   }, [storyCntData]);
 
-  const [selectedUnit, setSelectedUnit] = useState('');
-  const [selectedIdol, setSelectedIdol] = useState('');
+  const selectedInfo: SingingMaster|undefined = singingMaster.find(data=>data.singingInfoId===storyCntData.res_info_id);
+  const [selectedUnit, setSelectedUnit] = useState(selectedInfo?.personFlg===0?storyCntData.res_info_id:'');
+  const [selectedIdol, setSelectedIdol] = useState(selectedInfo?.personFlg===1?storyCntData.res_info_id:'');
 
   const {percentageStr,endAngle} = GetPercentageInfo(displayData.readStoryCnt,displayData.storyCnt);
 
@@ -82,9 +83,23 @@ export default function MypageChart(
  
 
     return (<>
-      <section className='flex justify-center'>
+      <section className='flex flex-col justify-center gap-2'>
+        <div className="grid grid-cols-2 gap-2">
+          <Card className="flex flex-col font-normal text-base mobileL:text-lg">
+            <CardContent className="py-2">
+              <p className="">現在配信中のSideMストーリー</p>
+              <p className="text-3xl mobileL:text-4xl">{storyCntData.all_story_cnt}</p>
+            </CardContent>
+          </Card>
+          <Card className="flex flex-col font-normal text-base mobileL:text-lg">
+            <CardContent className="py-2">
+              <p className="">あなたの読破済みSideMストーリー</p>
+              <p className="text-3xl mobileL:text-4xl">{storyCntData.read_story_cnt}</p>
+            </CardContent>
+          </Card>
+        </div>
         <div 
-          className="flex flex-col gap-2 w-fit
+          className="flex flex-col gap-2 w-fit rounded-md border
             "
           >
           {/* 表示条件指定部 */}
@@ -101,13 +116,13 @@ export default function MypageChart(
                   onChange={(id) => {
                     if(id==='free'){
                       setDisplayData({
-                          storyCnt:storyCntData.free_story_cnt,
-                          readStoryCnt:storyCntData.read_free_story_cnt,
+                          storyCnt:storyCntData.filterd_free_story_cnt,
+                          readStoryCnt:storyCntData.read_filterd_free_story_cnt,
                           allOrFree:'free'});
                     }else{
                       setDisplayData({
-                          storyCnt:storyCntData.all_story_cnt,
-                          readStoryCnt:storyCntData.read_all_story_cnt,
+                          storyCnt:storyCntData.filterd_story_cnt,
+                          readStoryCnt:storyCntData.read_free_story_cnt,
                           allOrFree:'all'});
                   }}
                 }
@@ -157,16 +172,14 @@ export default function MypageChart(
             <div className="flex flex-col items-center text-center leading-7">
               <div className="inline font-normal text-base mobileL:text-lg">
                 <p className="inline ">{`あなたは`}</p>
-                <p className="inline ">{`全`}</p>
-                <p className="inline text-xl mobileL:text-2xl font-bold text-red-500 px-[3px]">{`${displayData.storyCnt}`}</p>
-                <p className="inline ">{`個の`}</p>
                 <p className={`inline px-[3px] ${storyCntData.res_info_id===''?'':'text-red-500 font-bold'}`}>{`${getStoryPrefix(storyCntData.res_info_id)}`}</p>
                 <p className="inline ">{`${storyCntData.res_info_id===''?'':'出演'}`}</p>
-                <p className={`inline ${displayData.allOrFree==='free'?' pl-[2px]':''}`}>{`${displayData.allOrFree==='free'?'無料':''}ストーリー中`}</p>
+                <p className={`inline ${displayData.allOrFree==='free'?' pl-[2px]':''}`}>{`${displayData.allOrFree==='free'?'無料':''}ストーリーを`}</p>
               </div>
               <div className="inline font-bold">
                 <p className="inline text-red-500 px-1 text-3xl mobileL:text-4xl">{displayData.readStoryCnt}</p>
-                <p className="inline text-xl mobileL:text-2xl ">{`ストーリーを読破しました！`}</p>
+                <p className="inline text-red-500 px-1 text-3xl mobileL:text-2xl">{`/`}{displayData.storyCnt}</p>
+                <p className="inline text-xl mobileL:text-2xl ">{`読破しました！`}</p>
               </div>
             </div>
             <div>
@@ -280,7 +293,7 @@ function MypageChartRadioButton({
     onChange: (filterId: string) => void;
 }) {
   return (
-    <div className="flex flex-row flex-wrap h-fit gap-0 divide-x-2 divide-gray-300">
+    <div className="flex flex-row flex-wrap h-fit gap-0 divide-x-2 divide-gray-300 bg-white w-fit">
       {data.map((item) => (
         <label
           key={item.filterId}
