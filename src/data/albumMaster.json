@@ -3870,5 +3870,37 @@
     "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24765.html",
     "trialYoutubeId": "k0VIdzKN5ss",
     "description": ""
+  },
+  {
+    "sereisId": "MTS",
+    "albumId": "MTS04",
+    "albumTitleFull": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 04 DRAMATIC STARS",
+    "albumTitle": "MONTHLY THEME SONG 04 DRAMATIC STARS",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260225",
+    "displayArtist": "DRAMATIC STARS",
+    "artist": "[DRS00]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24784.html",
+    "trialYoutubeId": "2hr8kiiuyc4",
+    "description": ""
+  },
+  {
+    "sereisId": "TT",
+    "albumId": "TT06",
+    "albumTitleFull": "THE IDOLM@STER SideM TRANSCENDENT T@LES 06",
+    "albumTitle": "TRANSCENDENT T@LES 06",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260304",
+    "displayArtist": "信玄誠司、東雲荘一郎、九十九一希、花園百々人",
+    "artist": "[FRM03]、[CFP02]、[FLG03]、[CLF02]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24766.html",
+    "trialYoutubeId": "wqaFYJZuYc0",
+    "description": ""
   }
 ]

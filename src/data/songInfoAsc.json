@@ -43278,5 +43278,125 @@
     "singingInfoId": "SEM02",
     "releaseDate": "20260204",
     "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS04",
+    "songId": "MTS04_1",
+    "singingInfoId": "DRS00",
+    "releaseDate": "20260225",
+    "type": "u"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS04",
+    "songId": "MTS04_1",
+    "singingInfoId": "DRS01",
+    "releaseDate": "20260225",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS04",
+    "songId": "MTS04_1",
+    "singingInfoId": "DRS02",
+    "releaseDate": "20260225",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS04",
+    "songId": "MTS04_1",
+    "singingInfoId": "DRS03",
+    "releaseDate": "20260225",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "MTS04",
+    "songId": "MTS04_2",
+    "singingInfoId": "DRS01",
+    "releaseDate": "20260225",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "MTS04",
+    "songId": "MTS04_3",
+    "singingInfoId": "DRS02",
+    "releaseDate": "20260225",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "MTS04",
+    "songId": "MTS04_4",
+    "singingInfoId": "DRS03",
+    "releaseDate": "20260225",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT06",
+    "songId": "TT06_1",
+    "singingInfoId": "FRM03",
+    "releaseDate": "20260304",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT06",
+    "songId": "TT06_1",
+    "singingInfoId": "CFP02",
+    "releaseDate": "20260304",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT06",
+    "songId": "TT06_1",
+    "singingInfoId": "FLG03",
+    "releaseDate": "20260304",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT06",
+    "songId": "TT06_1",
+    "singingInfoId": "CLF02",
+    "releaseDate": "20260304",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "TT06",
+    "songId": "TT06_2",
+    "singingInfoId": "FRM03",
+    "releaseDate": "20260304",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "TT06",
+    "songId": "TT06_3",
+    "singingInfoId": "CFP02",
+    "releaseDate": "20260304",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "TT06",
+    "songId": "TT06_4",
+    "singingInfoId": "FLG03",
+    "releaseDate": "20260304",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "TT06",
+    "songId": "TT06_5",
+    "singingInfoId": "CLF02",
+    "releaseDate": "20260304",
+    "type": "sver"
   }
 ]
