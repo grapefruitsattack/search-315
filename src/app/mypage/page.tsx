@@ -5,7 +5,7 @@ import React from "react"
 import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
 import { headers } from "next/headers";
 import { notFound, redirect } from 'next/navigation'
-import type { StoryCntData } from '@/data/types';
+import type { UserChartData } from '@/data/types';
 import CommonPage from "@/features/common/components/CommonPage";
 import Mypage from "@/features/app/mypage/Mypage";
 import MypageTabs from "@/features/app/mypage/components/MypageTabs";
@@ -24,13 +24,13 @@ export default async function Page() {
   const supabase = await createSupabaseClientWithLogin(session);
   //ストーリー情報取得
   const {data, error} = await supabase.rpc(
-      'get_user_reading_cnt',
+      'get_user_chart_data',
       {
-        user_id:userId,
-        info_id:''
+        user_id:userId
       }
   );
-  const storyCntData: StoryCntData = data[0];
+  const userChartData: UserChartData[] = data;
+
   return (
     <Suspense>
     <CommonPage>
@@ -39,7 +39,7 @@ export default async function Page() {
       <Mypage/>
       <MypageTabs type='chart'/>
       <div>
-      <MypageChart storyCntData={storyCntData} />
+      <MypageChart userChartData={userChartData} />
       </div>
       </article>
     </CommonPage>

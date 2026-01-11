@@ -229,3 +229,13 @@ export type StoryCntData = {
   read_filterd_free_story_cnt: number;
   res_info_id: string;
 };
+
+export type UserChartData = {
+  seq_id: number;
+  info_id: string;
+  info_type: string;
+  all_story_cnt: number;
+  free_story_cnt: number;
+  read_all_story_cnt: number;
+  read_free_story_cnt: number;
+};

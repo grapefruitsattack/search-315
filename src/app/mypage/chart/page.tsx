@@ -5,7 +5,7 @@ import React from "react"
 import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
 import { headers } from "next/headers";
 import { notFound, redirect } from 'next/navigation'
-import type { StoryCntData } from '@/data/types';
+import type { UserChartData } from '@/data/types';
 import CommonPage from "@/features/common/components/CommonPage";
 import Mypage from "@/features/app/mypage/Mypage";
 import MypageTabs from "@/features/app/mypage/components/MypageTabs";
@@ -36,15 +36,13 @@ const Page = async ({
   const supabase = await createSupabaseClientWithLogin(session);
   //ストーリー情報取得
   const {data, error} = await supabase.rpc(
-      'get_user_reading_cnt',
+      'get_user_chart_data',
       {
-        user_id:userId,
-        info_id:infoId
+        user_id:userId
       }
   );
-  const storyCntData: StoryCntData = data[0];
-  {all_story_cnt: 1338;
-    read_all_story_cnt: 1338;free_story_cnt: 1286; read_free_story_cnt: 1286;res_info_id: '';}
+  const userChartData: UserChartData[] = data;
+
   return (
     <Suspense>
     <CommonPage>
@@ -53,7 +51,7 @@ const Page = async ({
       <Mypage/>
       <MypageTabs type='chart'/>
       <div>
-      <MypageChart storyCntData={storyCntData} />
+      <MypageChart userChartData={userChartData} />
       {/* <MypageChart storyCntData={{all_story_cnt: 1338,read_all_story_cnt: 1330,free_story_cnt: 1286,read_free_story_cnt: 1286,res_info_id: ''}} /> */}
       </div>
       </article>

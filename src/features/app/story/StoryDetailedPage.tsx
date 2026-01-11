@@ -262,7 +262,7 @@ export default async function StoryDetailedPage(
             :<></>}
         </div>
         {/* 既読系ボタン */}
-        {storyData.url===null||storyData.url===''
+        {login===false||storyData.url===null||storyData.url===''
           ?<></>
           :<>
             <div 

@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from "react";
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
-import type { StoryCntData, SingingMaster } from '@/data/types';
+import type { UserChartData, SingingMaster } from '@/data/types';
 import singingMaster from '@/data/singingMaster.json';
 import GetUnitIdolName from "@/features/common/utils/GetUnitIdolName";
 import { GetPercentageInfo } from "@/features/common/utils/PercentageUtils";
@@ -12,6 +12,7 @@ import {
   PolarRadiusAxis,
   RadialBar,
   RadialBarChart,
+  BarChart, XAxis, YAxis, Tooltip, Bar, BarRectangleItem, Cell
 } from "recharts"
 import {
   Card,
@@ -34,37 +35,44 @@ import {
 
 
 export default function MypageChart(
-  { storyCntData }
-  : { storyCntData:StoryCntData }
+  { userChartData }
+  : { userChartData:UserChartData[] }
 ): JSX.Element {
   const idols: SingingMaster[] = singingMaster.filter(data=>data.personFlg===1);
   const units: SingingMaster[] = singingMaster.filter(data=>data.personFlg===0);
   const router = useRouter();
   const currentPath: string = usePathname();
 
-  const [displayData, setDisplayData] 
+  const unknownUserChartData: UserChartData = {seq_id:0,info_id:'',info_type:'',all_story_cnt:0,free_story_cnt:0,read_all_story_cnt:0,read_free_story_cnt:0};
+  const allStoryData: UserChartData = userChartData.find(data=>data.info_id==='sidem')||{...unknownUserChartData, info_id:'sidem'};
+  userChartData.map((e)=>{
+    return {id: ''}
+  });
+  const [displayData, setDisplayData]
     = useState({
-        storyCnt:storyCntData.filterd_story_cnt,
-        readStoryCnt:storyCntData.read_filterd_story_cnt,
-        allOrFree:'all'
+        storyCnt:allStoryData.all_story_cnt,
+        readStoryCnt:allStoryData.read_all_story_cnt,
+        allOrFree:'all',
+        selectedUserChartData:allStoryData
     });
   useEffect(() => {
     if(displayData.allOrFree==='free'){
       setDisplayData({
-          storyCnt:storyCntData.filterd_free_story_cnt,
-          readStoryCnt:storyCntData.read_free_story_cnt,
-          allOrFree:displayData.allOrFree});
+          storyCnt:allStoryData.free_story_cnt,
+          readStoryCnt:allStoryData.read_free_story_cnt,
+          allOrFree:displayData.allOrFree,
+          selectedUserChartData:allStoryData});
     }else{
       setDisplayData({
-          storyCnt:storyCntData.filterd_story_cnt,
-          readStoryCnt:storyCntData.read_filterd_story_cnt,
-          allOrFree:displayData.allOrFree});
+          storyCnt:allStoryData.all_story_cnt,
+          readStoryCnt:allStoryData.read_all_story_cnt,
+          allOrFree:displayData.allOrFree,
+          selectedUserChartData:allStoryData});
     }
-  }, [storyCntData]);
+  }, [userChartData]);
 
-  const selectedInfo: SingingMaster|undefined = singingMaster.find(data=>data.singingInfoId===storyCntData.res_info_id);
-  const [selectedUnit, setSelectedUnit] = useState(selectedInfo?.personFlg===0?storyCntData.res_info_id:'');
-  const [selectedIdol, setSelectedIdol] = useState(selectedInfo?.personFlg===1?storyCntData.res_info_id:'');
+  const [selectedUnit, setSelectedUnit] = useState('');
+  const [selectedIdol, setSelectedIdol] = useState('');
 
   const {percentageStr,endAngle} = GetPercentageInfo(displayData.readStoryCnt,displayData.storyCnt);
 
@@ -80,27 +88,48 @@ export default function MypageChart(
       color: "#00f2ffff",
     },
   } satisfies ChartConfig
- 
+
+  const barchartData = [
+    { month: "January", desktop: 186, mobile: 80 },
+    { month: "February", desktop: 305, mobile: 200 },
+    { month: "March", desktop: 237, mobile: 120 },
+    { month: "April", desktop: 73, mobile: 190 },
+    { month: "May", desktop: 209, mobile: 130 },
+    { month: "June", desktop: 214, mobile: 140 },
+  ]
 
     return (<>
       <section className='flex flex-col justify-center gap-2'>
         <div className="grid grid-cols-2 gap-2">
           <Card className="flex flex-col font-normal text-base mobileL:text-lg">
             <CardContent className="py-2">
-              <p className="">現在配信中のSideMストーリー</p>
-              <p className="text-3xl mobileL:text-4xl">{storyCntData.all_story_cnt}</p>
+              <p className="">現在配信中のSideMストーリー数</p>
+              <p className="text-3xl mobileL:text-4xl">{allStoryData.all_story_cnt}</p>
             </CardContent>
           </Card>
           <Card className="flex flex-col font-normal text-base mobileL:text-lg">
             <CardContent className="py-2">
-              <p className="">あなたの読破済みSideMストーリー</p>
-              <p className="text-3xl mobileL:text-4xl">{storyCntData.read_story_cnt}</p>
+              <p className="">あなたの読破済みストーリー数</p>
+              <p className="text-3xl mobileL:text-4xl">{allStoryData.read_all_story_cnt}</p>
             </CardContent>
           </Card>
         </div>
+        {/* 棒グラフ */}
+
+        <div className="">
+        <ChartContainer config={chartConfig} className=" w-full max-h-[100vw]">
+          <BarChart layout="vertical" accessibilityLayer data={barchartData}>
+            <XAxis type="number"/>
+            <YAxis   dataKey="month" type="category" />
+            <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4}  background={{ fill: '#eee' }} />
+            <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+
+          </BarChart>
+        </ChartContainer>
+        </div>
+        {/* 円グラフ */}
         <div 
-          className="flex flex-col gap-2 w-fit rounded-md border
-            "
+          className="flex flex-col gap-2 w-fit rounded-md border"
           >
           {/* 表示条件指定部 */}
           <div className="">
@@ -116,13 +145,15 @@ export default function MypageChart(
                   onChange={(id) => {
                     if(id==='free'){
                       setDisplayData({
-                          storyCnt:storyCntData.filterd_free_story_cnt,
-                          readStoryCnt:storyCntData.read_filterd_free_story_cnt,
+                          ...displayData,
+                          storyCnt:displayData.selectedUserChartData.free_story_cnt,
+                          readStoryCnt:displayData.selectedUserChartData.read_free_story_cnt,
                           allOrFree:'free'});
                     }else{
                       setDisplayData({
-                          storyCnt:storyCntData.filterd_story_cnt,
-                          readStoryCnt:storyCntData.read_free_story_cnt,
+                          ...displayData,
+                          storyCnt:displayData.selectedUserChartData.all_story_cnt,
+                          readStoryCnt:displayData.selectedUserChartData.read_all_story_cnt,
                           allOrFree:'all'});
                   }}
                 }
@@ -134,14 +165,20 @@ export default function MypageChart(
                   onValueChange={(value)=>{
                     setSelectedUnit(value);
                     setSelectedIdol('');
-                    router.push(`/mypage/chart/?q=${value==='all'?'':value}`, { scroll: false });
-                    }}
+                    const selectedStoryData: UserChartData = userChartData.find(data=>data.info_id===value)||{...unknownUserChartData, info_id:value};
+                    setDisplayData({
+                        ...displayData,
+                        storyCnt:displayData.allOrFree==='free'?selectedStoryData.free_story_cnt:selectedStoryData.all_story_cnt,
+                        readStoryCnt:displayData.allOrFree==='free'?selectedStoryData.read_free_story_cnt:selectedStoryData.read_all_story_cnt,
+                        selectedUserChartData:selectedStoryData
+                    });
+                  }}
                   >
                   <SelectTrigger className="w-[145px] mobileM:w-[150px] mobileL:w-[170px] h-[35px]">
                     <SelectValue placeholder={'ユニット'} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem key={0} value={'all'}>{'全ユニット'}</SelectItem>
+                    <SelectItem key={0} value={'sidem'}>{'全ユニット'}</SelectItem>
                     {units.map((data, index) => (
                       <SelectItem key={index+1} value={data.singingInfoId}>{data.singingInfoName}</SelectItem>
                     ))}
@@ -151,14 +188,20 @@ export default function MypageChart(
                   onValueChange={(value)=>{
                     setSelectedIdol(value);
                     setSelectedUnit('');
-                    router.push(`/mypage/chart/?q=${value==='all'?'':value}`, { scroll: false });
+                    const selectedStoryData: UserChartData = userChartData.find(data=>data.info_id===value)||{...unknownUserChartData, info_id:value};
+                    setDisplayData({
+                        ...displayData,
+                        storyCnt:displayData.allOrFree==='free'?selectedStoryData.free_story_cnt:selectedStoryData.all_story_cnt,
+                        readStoryCnt:displayData.allOrFree==='free'?selectedStoryData.read_free_story_cnt:selectedStoryData.read_all_story_cnt,
+                        selectedUserChartData:selectedStoryData
+                    });
                   }}
                   >
                   <SelectTrigger className="w-[145px] mobileM:w-[150px] mobileL:w-[170px] h-[35px]">
                     <SelectValue placeholder={'アイドル'} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem key={0} value={'all'}>{'全アイドル'}</SelectItem>
+                    <SelectItem key={0} value={'sidem'}>{'全アイドル'}</SelectItem>
                     {idols.map((data, index) => (
                       <SelectItem key={index+1} value={data.singingInfoId}>{data.singingInfoName}</SelectItem>
                     ))}
@@ -172,8 +215,8 @@ export default function MypageChart(
             <div className="flex flex-col items-center text-center leading-7">
               <div className="inline font-normal text-base mobileL:text-lg">
                 <p className="inline ">{`あなたは`}</p>
-                <p className={`inline px-[3px] ${storyCntData.res_info_id===''?'':'text-red-500 font-bold'}`}>{`${getStoryPrefix(storyCntData.res_info_id)}`}</p>
-                <p className="inline ">{`${storyCntData.res_info_id===''?'':'出演'}`}</p>
+                <p className={`inline px-[3px] ${displayData.selectedUserChartData.info_id==='sidem'?'':'text-red-500 font-bold'}`}>{`${getStoryPrefix(displayData.selectedUserChartData.info_id)}`}</p>
+                <p className="inline ">{`${displayData.selectedUserChartData.info_id==='sidem'?'':'出演'}`}</p>
                 <p className={`inline ${displayData.allOrFree==='free'?' pl-[2px]':''}`}>{`${displayData.allOrFree==='free'?'無料':''}ストーリーを`}</p>
               </div>
               <div className="inline font-bold">
@@ -218,7 +261,7 @@ export default function MypageChart(
                                 y={(viewBox.cy || 0) - 26}
                                 className="fill-muted-foreground text-sm"
                               >
-                                {`${getStoryPrefix(storyCntData.res_info_id)}ストーリー`}
+                                {`${getStoryPrefix(displayData.selectedUserChartData.info_id)}ストーリー`}
                               </tspan>
                               <tspan
                                 x={viewBox.cx}
@@ -255,7 +298,7 @@ export default function MypageChart(
               >
               <ShareSearch315Modal 
                   buttonText="読破状況をシェア"
-                  shareText={`${storyCntData.res_info_id===''?'':'出演'}ストーリー |  サーチサイコー\n#SideM #search315`} 
+                  shareText={`${displayData.selectedUserChartData.info_id==='sidem'?'':'出演'}ストーリー |  サーチサイコー\n#SideM #search315`} 
                   pass={'unit/'}
                 />
               </div>
@@ -271,7 +314,7 @@ export default function MypageChart(
 
 
 function getStoryPrefix(infoId: string){
-  if(infoId==='') return 'SideM';
+  if(infoId==='sidem') return 'SideM';
   if(infoId==='CFP03') return 'アスラン＝BBⅡ世';
   return GetUnitIdolName(infoId,0,1);
 };
