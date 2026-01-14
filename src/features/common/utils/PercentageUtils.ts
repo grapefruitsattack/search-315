@@ -13,8 +13,6 @@ export function GetPercentageInfo
     }else{
       endAngle = Math.trunc((360*numerator)/(denominator));
       const divres = Math.round((numerator*100*10)/(denominator));
-      console.log(divres)
-      console.log(endAngle)
       if(divres<=0){
         endAngle = 1;
         percentageStr = '0.1%';

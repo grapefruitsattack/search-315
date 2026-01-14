@@ -239,3 +239,18 @@ export type UserChartData = {
   read_all_story_cnt: number;
   read_free_story_cnt: number;
 };
+
+export type DisplayUserChartData = {
+  seq_id: number;
+  info_id: string;
+  info_name: string;
+  info_type: string;
+  all_story_cnt: number;
+  read_all_story_cnt: number;
+  all_percentage: number;
+  all_end_angle: number;
+  free_story_cnt: number;
+  read_free_story_cnt: number;
+  free_percentage: number;
+  free_end_angle: number;
+};

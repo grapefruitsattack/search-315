@@ -10,6 +10,7 @@ import CommonPage from "@/features/common/components/CommonPage";
 import Mypage from "@/features/app/mypage/Mypage";
 import MypageTabs from "@/features/app/mypage/components/MypageTabs";
 import MypageChart from "@/features/app/mypage/MypageChart";
+import { conversionUserChartData } from "@/features/common/utils/mypage/conversionDataUtils";
 
 export default async function Page() {
   const session = await auth.api.getSession({
@@ -39,7 +40,7 @@ export default async function Page() {
       <Mypage/>
       <MypageTabs type='chart'/>
       <div>
-      <MypageChart userChartData={userChartData} />
+      <MypageChart userChartData={conversionUserChartData(userChartData)} />
       </div>
       </article>
     </CommonPage>

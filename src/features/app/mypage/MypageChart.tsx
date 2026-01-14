@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from "react";
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
-import type { UserChartData, SingingMaster } from '@/data/types';
+import type { UserChartData, DisplayUserChartData, SingingMaster } from '@/data/types';
 import singingMaster from '@/data/singingMaster.json';
 import GetUnitIdolName from "@/features/common/utils/GetUnitIdolName";
 import { GetPercentageInfo } from "@/features/common/utils/PercentageUtils";
@@ -12,7 +12,7 @@ import {
   PolarRadiusAxis,
   RadialBar,
   RadialBarChart,
-  BarChart, XAxis, YAxis, Tooltip, Bar, BarRectangleItem, Cell
+  BarChart, XAxis, YAxis, Tooltip, Bar, BarRectangleItem, Cell, LabelList, TooltipContentProps, RenderableText
 } from "recharts"
 import {
   Card,
@@ -33,22 +33,48 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
+const colors = ['#a3f197','#fdd488','#fcfa99','#61dffe','#ffe553','#54db54','#b27aea','#ff7e7e','#ffffff','#CC66CC','#fdc2e5','#FF70E2','#4A4A4A','#818df8','#84a6d3','#56e0d5'];
+
+const percentageFormatter = (val:any)=>{return val===100||val===0?`${val}%`:`${Math.abs(Number(val)).toFixed(1)}%`};
 
 export default function MypageChart(
   { userChartData }
-  : { userChartData:UserChartData[] }
+  : { userChartData:DisplayUserChartData[] }
 ): JSX.Element {
   const idols: SingingMaster[] = singingMaster.filter(data=>data.personFlg===1);
   const units: SingingMaster[] = singingMaster.filter(data=>data.personFlg===0);
-  const router = useRouter();
-  const currentPath: string = usePathname();
 
-  const unknownUserChartData: UserChartData = {seq_id:0,info_id:'',info_type:'',all_story_cnt:0,free_story_cnt:0,read_all_story_cnt:0,read_free_story_cnt:0};
-  const allStoryData: UserChartData = userChartData.find(data=>data.info_id==='sidem')||{...unknownUserChartData, info_id:'sidem'};
-  userChartData.map((e)=>{
-    return {id: ''}
+  const unknownUserChartData: DisplayUserChartData = {seq_id:0,info_id:'',info_type:'',info_name:'',all_story_cnt:0,free_story_cnt:0,read_all_story_cnt:0,read_free_story_cnt:0,all_percentage:0,all_end_angle:0,free_percentage:0,free_end_angle:0};
+  const allStoryData: DisplayUserChartData = userChartData.find(data=>data.info_id==='sidem')||{...unknownUserChartData, info_id:'sidem'};
+  const barChartAllData: {index:number;info_id:string;info_name:string;story_cnt:number;read_cnt:number;percentage:number;}[] = [];
+  const barChartFreeData: {index:number;info_id:string;info_name:string;story_cnt:number;read_cnt:number;percentage:number;}[] = [];
+  userChartData.map((data,index)=>{
+    if(data.info_type==='unit'){
+      barChartAllData.push({
+        index: index,
+        info_id: data.info_id,
+        info_name: data.info_name,
+        story_cnt: data.all_story_cnt,
+        read_cnt: data.read_all_story_cnt,
+        percentage: data.all_percentage,
+      });
+      barChartFreeData.push({
+        index: index,
+        info_id: data.info_id,
+        info_name: data.info_name,
+        story_cnt: data.free_story_cnt,
+        read_cnt: data.read_free_story_cnt,
+        percentage: data.free_percentage,
+      });
+    }
   });
-  const [displayData, setDisplayData]
+  const [barChartDisplayData, barPieChartDisplayData]
+    = useState({
+        allOrFree:'all',
+        selectedData:barChartAllData
+    });
+
+  const [pieChartDisplayData, setPieChartDisplayData]
     = useState({
         storyCnt:allStoryData.all_story_cnt,
         readStoryCnt:allStoryData.read_all_story_cnt,
@@ -56,17 +82,17 @@ export default function MypageChart(
         selectedUserChartData:allStoryData
     });
   useEffect(() => {
-    if(displayData.allOrFree==='free'){
-      setDisplayData({
+    if(pieChartDisplayData.allOrFree==='free'){
+      setPieChartDisplayData({
           storyCnt:allStoryData.free_story_cnt,
           readStoryCnt:allStoryData.read_free_story_cnt,
-          allOrFree:displayData.allOrFree,
+          allOrFree:pieChartDisplayData.allOrFree,
           selectedUserChartData:allStoryData});
     }else{
-      setDisplayData({
+      setPieChartDisplayData({
           storyCnt:allStoryData.all_story_cnt,
           readStoryCnt:allStoryData.read_all_story_cnt,
-          allOrFree:displayData.allOrFree,
+          allOrFree:pieChartDisplayData.allOrFree,
           selectedUserChartData:allStoryData});
     }
   }, [userChartData]);
@@ -74,7 +100,7 @@ export default function MypageChart(
   const [selectedUnit, setSelectedUnit] = useState('');
   const [selectedIdol, setSelectedIdol] = useState('');
 
-  const {percentageStr,endAngle} = GetPercentageInfo(displayData.readStoryCnt,displayData.storyCnt);
+  const {percentageStr,endAngle} = GetPercentageInfo(pieChartDisplayData.readStoryCnt,pieChartDisplayData.storyCnt);
 
   const chartData = [
     { browser: "main", visitors: 110, fill: "var(--color-main)", }, 
@@ -88,15 +114,24 @@ export default function MypageChart(
       color: "#00f2ffff",
     },
   } satisfies ChartConfig
-
-  const barchartData = [
-    { month: "January", desktop: 186, mobile: 80 },
-    { month: "February", desktop: 305, mobile: 200 },
-    { month: "March", desktop: 237, mobile: 120 },
-    { month: "April", desktop: 73, mobile: 190 },
-    { month: "May", desktop: 209, mobile: 130 },
-    { month: "June", desktop: 214, mobile: 140 },
-  ]
+  const CustomTooltip = ({ active, payload, label }: TooltipContentProps<string | number, string>) => {
+    const isVisible = active && payload && payload.length;
+    return (
+      <div className="custom-tooltip bg-white p-1" style={{ visibility: isVisible ? 'visible' : 'hidden' }}>
+        {isVisible && (
+          <>
+            <p className="label">{`${label} ${payload[0].payload.percentage}% 読了済み`}</p>
+            <p className="data">{`${'既読ストーリー'} : ${payload[0].payload.read_cnt}`}</p>
+            <p className="data">{`${'全ストーリー'} : ${payload[0].payload.story_cnt}`}</p>
+          </>
+        )}
+      </div>
+    );
+  };
+  const barClick = (_: BarRectangleItem, index: number, value:any) => {
+    console.log('barClick');
+    console.log(index);
+  };
 
     return (<>
       <section className='flex flex-col justify-center gap-2'>
@@ -117,13 +152,65 @@ export default function MypageChart(
         {/* 棒グラフ */}
 
         <div className="">
-        <ChartContainer config={chartConfig} className=" w-full max-h-[100vw]">
-          <BarChart layout="vertical" accessibilityLayer data={barchartData}>
-            <XAxis type="number"/>
-            <YAxis   dataKey="month" type="category" />
-            <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4}  background={{ fill: '#eee' }} />
-            <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+        <ChartContainer config={chartConfig} className=" w-full min-h-[50vw]">
+          <BarChart 
+            layout="vertical" 
+            accessibilityLayer 
+            data={barChartAllData}
+            barCategoryGap={0}
+          >
+            <XAxis 
+              domain={[0, 100]} type="number"
+              tickFormatter={percentageFormatter}
+            />
+            <YAxis 
+              dataKey="info_name" type="category" hide={true} 
+            />
+            <Tooltip content={CustomTooltip}/>
+            <Bar className=""
+              dataKey="percentage" fill='#00C49F' radius={4}  background={{ fill: '#e1e1e1' }}
+              onClick={barClick} 
+            >
+              <LabelList
+                className="" 
+                dataKey="info_name"
+                cursor="pointer"
+                onClick={(index)=>{
+                  console.log(index)
+                }}
+                content={({ x, y, width, height, index, value }) => {
+                  const color = colors[index||0];
+                  return (
+                  <g >
+                    <text
+                      //style="stroke-width:10;stroke:#000;fill:#fff;paint-order:stroke;"
+                      stroke="#ffffff" 
+                      paintOrder={'stroke'}
+                      strokeWidth={4}
+                      className="text-xl font-bold"
+                      x={Number(x)+10}
+                      y={Number(y)+Number(height)/2}
+                      fill={'black'}
+                      textAnchor="start"
+                      dominantBaseline="middle"
+                      cursor="pointer"
+                      onClick={()=>{
+                        console.log(index)
+                      }}
+                    >
+                      {value}
+                    </text>
+                    </g >
+                  );
+                  }}
+                />
+              {barChartAllData.map((_entry, index, value) => (
 
+                <Cell cursor="pointer" key={`cell-${index}`} fill={colors[index % colors.length]} stroke='#8a8888' />
+
+              ))}
+
+            </Bar>
           </BarChart>
         </ChartContainer>
         </div>
@@ -141,19 +228,19 @@ export default function MypageChart(
                       { filterId: "all", labelStr: "全て" },
                       { filterId: "free", labelStr: "無料ストーリーのみ" },
                   ]}
-                  selectedId={displayData.allOrFree}
+                  selectedId={pieChartDisplayData.allOrFree}
                   onChange={(id) => {
                     if(id==='free'){
-                      setDisplayData({
-                          ...displayData,
-                          storyCnt:displayData.selectedUserChartData.free_story_cnt,
-                          readStoryCnt:displayData.selectedUserChartData.read_free_story_cnt,
+                      setPieChartDisplayData({
+                          ...pieChartDisplayData,
+                          storyCnt:pieChartDisplayData.selectedUserChartData.free_story_cnt,
+                          readStoryCnt:pieChartDisplayData.selectedUserChartData.read_free_story_cnt,
                           allOrFree:'free'});
                     }else{
-                      setDisplayData({
-                          ...displayData,
-                          storyCnt:displayData.selectedUserChartData.all_story_cnt,
-                          readStoryCnt:displayData.selectedUserChartData.read_all_story_cnt,
+                      setPieChartDisplayData({
+                          ...pieChartDisplayData,
+                          storyCnt:pieChartDisplayData.selectedUserChartData.all_story_cnt,
+                          readStoryCnt:pieChartDisplayData.selectedUserChartData.read_all_story_cnt,
                           allOrFree:'all'});
                   }}
                 }
@@ -165,11 +252,11 @@ export default function MypageChart(
                   onValueChange={(value)=>{
                     setSelectedUnit(value);
                     setSelectedIdol('');
-                    const selectedStoryData: UserChartData = userChartData.find(data=>data.info_id===value)||{...unknownUserChartData, info_id:value};
-                    setDisplayData({
-                        ...displayData,
-                        storyCnt:displayData.allOrFree==='free'?selectedStoryData.free_story_cnt:selectedStoryData.all_story_cnt,
-                        readStoryCnt:displayData.allOrFree==='free'?selectedStoryData.read_free_story_cnt:selectedStoryData.read_all_story_cnt,
+                    const selectedStoryData: DisplayUserChartData = userChartData.find(data=>data.info_id===value)||{...unknownUserChartData, info_id:value};
+                    setPieChartDisplayData({
+                        ...pieChartDisplayData,
+                        storyCnt:pieChartDisplayData.allOrFree==='free'?selectedStoryData.free_story_cnt:selectedStoryData.all_story_cnt,
+                        readStoryCnt:pieChartDisplayData.allOrFree==='free'?selectedStoryData.read_free_story_cnt:selectedStoryData.read_all_story_cnt,
                         selectedUserChartData:selectedStoryData
                     });
                   }}
@@ -188,11 +275,11 @@ export default function MypageChart(
                   onValueChange={(value)=>{
                     setSelectedIdol(value);
                     setSelectedUnit('');
-                    const selectedStoryData: UserChartData = userChartData.find(data=>data.info_id===value)||{...unknownUserChartData, info_id:value};
-                    setDisplayData({
-                        ...displayData,
-                        storyCnt:displayData.allOrFree==='free'?selectedStoryData.free_story_cnt:selectedStoryData.all_story_cnt,
-                        readStoryCnt:displayData.allOrFree==='free'?selectedStoryData.read_free_story_cnt:selectedStoryData.read_all_story_cnt,
+                    const selectedStoryData: DisplayUserChartData = userChartData.find(data=>data.info_id===value)||{...unknownUserChartData, info_id:value};
+                    setPieChartDisplayData({
+                        ...pieChartDisplayData,
+                        storyCnt:pieChartDisplayData.allOrFree==='free'?selectedStoryData.free_story_cnt:selectedStoryData.all_story_cnt,
+                        readStoryCnt:pieChartDisplayData.allOrFree==='free'?selectedStoryData.read_free_story_cnt:selectedStoryData.read_all_story_cnt,
                         selectedUserChartData:selectedStoryData
                     });
                   }}
@@ -215,13 +302,13 @@ export default function MypageChart(
             <div className="flex flex-col items-center text-center leading-7">
               <div className="inline font-normal text-base mobileL:text-lg">
                 <p className="inline ">{`あなたは`}</p>
-                <p className={`inline px-[3px] ${displayData.selectedUserChartData.info_id==='sidem'?'':'text-red-500 font-bold'}`}>{`${getStoryPrefix(displayData.selectedUserChartData.info_id)}`}</p>
-                <p className="inline ">{`${displayData.selectedUserChartData.info_id==='sidem'?'':'出演'}`}</p>
-                <p className={`inline ${displayData.allOrFree==='free'?' pl-[2px]':''}`}>{`${displayData.allOrFree==='free'?'無料':''}ストーリーを`}</p>
+                <p className={`inline px-[3px] ${pieChartDisplayData.selectedUserChartData.info_id==='sidem'?'':'text-red-500 font-bold'}`}>{`${getStoryPrefix(pieChartDisplayData.selectedUserChartData.info_id)}`}</p>
+                <p className="inline ">{`${pieChartDisplayData.selectedUserChartData.info_id==='sidem'?'':'出演'}`}</p>
+                <p className={`inline ${pieChartDisplayData.allOrFree==='free'?' pl-[2px]':''}`}>{`${pieChartDisplayData.allOrFree==='free'?'無料':''}ストーリーを`}</p>
               </div>
               <div className="inline font-bold">
-                <p className="inline text-red-500 px-1 text-3xl mobileL:text-4xl">{displayData.readStoryCnt}</p>
-                <p className="inline text-red-500 px-1 text-3xl mobileL:text-2xl">{`/`}{displayData.storyCnt}</p>
+                <p className="inline text-red-500 px-1 text-3xl mobileL:text-4xl">{pieChartDisplayData.readStoryCnt}</p>
+                <p className="inline text-red-500 px-1 text-3xl mobileL:text-2xl">{`/`}{pieChartDisplayData.storyCnt}</p>
                 <p className="inline text-xl mobileL:text-2xl ">{`読破しました！`}</p>
               </div>
             </div>
@@ -261,7 +348,7 @@ export default function MypageChart(
                                 y={(viewBox.cy || 0) - 26}
                                 className="fill-muted-foreground text-sm"
                               >
-                                {`${getStoryPrefix(displayData.selectedUserChartData.info_id)}ストーリー`}
+                                {`${getStoryPrefix(pieChartDisplayData.selectedUserChartData.info_id)}ストーリー`}
                               </tspan>
                               <tspan
                                 x={viewBox.cx}
@@ -298,7 +385,7 @@ export default function MypageChart(
               >
               <ShareSearch315Modal 
                   buttonText="読破状況をシェア"
-                  shareText={`${displayData.selectedUserChartData.info_id==='sidem'?'':'出演'}ストーリー |  サーチサイコー\n#SideM #search315`} 
+                  shareText={`${pieChartDisplayData.selectedUserChartData.info_id==='sidem'?'':'出演'}ストーリー |  サーチサイコー\n#SideM #search315`} 
                   pass={'unit/'}
                 />
               </div>
