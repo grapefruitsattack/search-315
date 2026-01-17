@@ -1,16 +1,18 @@
 'use client'
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import type { Albums } from '../../../../data/types';
 import albumMaster from '../../../../data/albumMaster.json';
 import subscAlbums from '../../../../data/subscAlbums.json';
-import GetArtWorkSrc from '../../../common/utils/GetArtWorkSrc';
-import GetArtistJsx from '../../../common/utils/GetArtistJsx';
+import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
+import GetArtistJsx from '@/features/common/utils/GetArtistJsx';
 import {ShareYoutubeModal} from "../../../app/shareModal/ShareYoutubeModal";
-import CopyButton from "../../../common/components/CopyButton";
-import SubscButton from "../../../common/components/SubscButton";
+import CopyButton from "@/features/common/components/CopyButton";
 import AlbumSongs from './AlbumSongs'
 import AlbumSeries from './AlbumSeries'
 import { motion } from "framer-motion";
+
+const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
 export default function AlbumContent({ album, }: { album: Albums}) {
 
@@ -38,7 +40,8 @@ export default function AlbumContent({ album, }: { album: Albums}) {
     // const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string} 
     //     = jsonStr===null?{snowIsValid:'1',noticeCheckedYear:''}:JSON.parse(jsonStr);
     const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string}  = {snowIsValid:'0',noticeCheckedYear:''};
-    const snowImgSrc: string ='/snow/artworksnow'+String(Math.floor(Math.random() * 3)+1)+'.png';
+    //const snowImgSrc: string ='/snow/artworksnow'+String(Math.floor(Math.random() * 3)+1)+'.png';
+    const snowImgSrc: string ='/snow/artworksnow1.png';
     
     return(
        

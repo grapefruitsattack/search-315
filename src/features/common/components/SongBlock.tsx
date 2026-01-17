@@ -1,6 +1,6 @@
 'use client'
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import SubscButton from "./SubscButton";
 import YoutubeButton from "./YoutubeButton";
 import type { SongMaster } from '../../../data/types';
 import subscSongs from '../../../data/subscSongs.json';
@@ -11,6 +11,8 @@ import { motion } from "framer-motion";
 import {Tooltip} from "@chakra-ui/react";
 import Link from 'next/link';
 import GetArtWorkSrc from '../utils/GetArtWorkSrc';
+
+const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
 export default function SongBlock(
   { albumId,trackNo,song,existsButton }: { albumId: string, trackNo: number, song: SongMaster, existsButton: boolean}

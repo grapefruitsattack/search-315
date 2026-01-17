@@ -1,6 +1,6 @@
-'use client'
+
 import { getSubscUrl, getYoutubeMusicUrl } from '../utils/SubscUtils'
-import { useSubscService } from '../hooks/useSubscService'
+import { useSubscService,getSubscService } from '../hooks/subscServiceHook'
 import subscSongs from '../../../data/subscSongs.json';
 import subscAlbums from '../../../data/subscAlbums.json';
 import type { SubscUrls } from '../../../data/types';
@@ -46,15 +46,17 @@ export default function SubscButton(
       = songId!==''
         ?subscSongs.find(data=>data.id===songId)
         :subscAlbums.find(data=>data.id===albumId);
+        
+    const localStoragesubscItem = getSubscService();
     
     //デフォルト表示用サブスクサービス
-    const href: string = getSubscUrl(songId,albumId,localStorage.getItem(STORAGE_SUBSC_SERVICE) || 'youtube');
+    const href: string = getSubscUrl(songId,albumId,localStoragesubscItem);
     const subscServiceName: string = href===''
       ?subscServiceNames[0].name
-      :subscServiceNames.find((data)=>data.id===localStorage.getItem(STORAGE_SUBSC_SERVICE) || '')?.name||subscServiceNames[0].name;
+      :subscServiceNames.find((data)=>data.id===localStoragesubscItem)?.name||subscServiceNames[0].name;
     const subscServiceNameSub: string = href===''
       ?subscServiceNames[0].nameSub
-      :subscServiceNames.find((data)=>data.id===localStorage.getItem(STORAGE_SUBSC_SERVICE) || '')?.nameSub||subscServiceNames[0].nameSub;
+      :subscServiceNames.find((data)=>data.id===localStoragesubscItem)?.nameSub||subscServiceNames[0].nameSub;
 
 
     return(

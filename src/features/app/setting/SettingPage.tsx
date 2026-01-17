@@ -9,7 +9,8 @@ export default function SettingPage({ }: { }) {
   const [snowParam, setSnowParam] = useSnowParam({snowIsValid:'',noticeCheckedYear:''});
 
   const imgsrc:string = snowParam.snowIsValid==='1'?'/parts/toggle_on.png':'/parts/toggle_off.png';
-  const snowImgSrc: string ='/snow/togglesnow'+String(Math.floor(Math.random() * 2)+1)+'.png';
+  //const snowImgSrc: string ='/snow/togglesnow'+String(Math.floor(Math.random() * 2)+1)+'.png';
+  const snowImgSrc: string ='/snow/artworksnow1.png';
 
     return (
         <CommonPage>

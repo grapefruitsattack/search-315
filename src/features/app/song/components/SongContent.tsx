@@ -1,4 +1,5 @@
 'use client'
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { motion } from "framer-motion";
 import type { SongMaster,Albums,MvInfo,LiveMaster } from '../../../../data/types';
@@ -10,11 +11,12 @@ import GetSongOtherVersion from '../../../common/utils/GetSongOtherVersion';
 import SearchLiveBySongId from '../../../common/utils/SearchLive';
 import GetArtistJsx from '../../../common/utils/GetArtistJsx';
 import CopyButton from "../../../common/components/CopyButton";
-import SubscButton from "../../../common/components/SubscButton";
 import {ShareYoutubeModal} from "../../../app/shareModal/ShareYoutubeModal";
 import OtherVersion from './OtherVersion'
 import Mv from './Mv'
 import Live from './Live'
+
+const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
 export default function SongContent({ result, albumResult }: { result: SongMaster, albumResult: Albums }) {
 
@@ -45,7 +47,8 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
     // const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string} 
     //     = jsonStr===null?{snowIsValid:'1',noticeCheckedYear:''}:JSON.parse(jsonStr);
     const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string}  = {snowIsValid:'0',noticeCheckedYear:''};
-    const snowImgSrc: string ='/snow/artworksnow'+String(Math.floor(Math.random() * 3)+1)+'.png';
+    //const snowImgSrc: string ='/snow/artworksnow'+String(Math.floor(Math.random() * 3)+1)+'.png';
+    const snowImgSrc: string ='/snow/artworksnow1.png';
 
 
     return(

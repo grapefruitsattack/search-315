@@ -2,6 +2,12 @@ import { useCallback, useEffect, useState } from 'react'
 
 const STORAGE_SUBSC_SERVICE = 'subscService';
 
+export function getSubscService(): string {
+  let text: string = 'youtube';
+  if(typeof window !== 'undefined') text = localStorage.getItem(STORAGE_SUBSC_SERVICE)||text;
+  return text;
+};
+
 export function useSubscService(
   defaultValue: string
 ): [subscService: string, setDark: (subscService: string) => void] {
