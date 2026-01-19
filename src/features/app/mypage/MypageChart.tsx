@@ -128,9 +128,18 @@ export default function MypageChart(
       </div>
     );
   };
-  const barClick = (_: BarRectangleItem, index: number, value:any) => {
-    console.log('barClick');
-    console.log(index);
+  const barClick = (_: BarRectangleItem, index: number, value: any) => {
+    const element = document.getElementById('pieChart');
+    if(element!==null){
+      const targetDOMRect = element.getBoundingClientRect();
+      const targetTop = targetDOMRect.top + window.pageYOffset;
+      window.scrollTo({
+        top: targetTop-70,
+        behavior: 'smooth'
+      });
+      console.log('barClick');
+      console.log(index);
+    }
   };
 
     return (<>
@@ -149,8 +158,119 @@ export default function MypageChart(
             </CardContent>
           </Card>
         </div>
-        {/* 棒グラフ */}
 
+        <div className="">
+        </div>
+        <Card className="py-0">
+          <CardHeader className="flex flex-col items-stretch border-b !p-0 sm:flex-row">
+            <div className="flex flex-1 flex-col justify-center gap-1 px-6 pt-4 pb-3 sm:!py-0">
+              <CardTitle>あなたの読了状況</CardTitle>
+              <CardDescription>
+                ※現在公式媒体で閲覧が可能なストーリーをカウント対象としています
+              </CardDescription> 
+            </div>
+          <div className="flex ">
+            <button
+              key={0}
+              data-active={true}
+              className="break-keep data-[active=true]:bg-muted/50 relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l sm:border-t-0 sm:border-l sm:px-8 sm:py-6"
+              onClick={() => {}}
+            >
+              <span className="text-muted-foreground text-base break-keep">
+                {'全ストーリー'}
+              </span>
+              <span className="font-bold">
+                <p className="inline text-red-500 px-1 text-3xl mobileL:text-4xl">{allStoryData.read_all_story_cnt}</p>
+                <p className="inline text-red-500 px-1 text-3xl mobileL:text-2xl">{`/`}{allStoryData.all_story_cnt}</p>
+              </span>
+            </button>
+            <button
+              key={1}
+              data-active={false}
+              className="data-[active=true]:bg-muted/50 relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l sm:border-t-0 sm:border-l sm:px-8 sm:py-6"
+              onClick={() => {}}
+            >
+              <span className="text-muted-foreground text-base break-keep">
+                {'無料ストーリー'}
+              </span>
+              <span className="font-bold">
+                <p className="inline text-red-500 px-1 text-3xl mobileL:text-4xl">{allStoryData.read_free_story_cnt}</p>
+                <p className="inline text-red-500 px-1 text-3xl mobileL:text-2xl">{`/`}{allStoryData.free_story_cnt}</p>
+              </span>
+            </button>
+          </div>
+          </CardHeader>
+          <CardContent className="flex flex-col items-stretch border-b !p-0 lg:flex-row">
+
+
+          {/* 棒グラフ */}
+          <ChartContainer config={chartConfig} className=" flex-1 min-w-0 w-fit min-h-[50vw]">
+            <BarChart 
+              layout="vertical" 
+              accessibilityLayer 
+              data={barChartAllData}
+              barCategoryGap={0}
+            >
+              <XAxis 
+                domain={[0, 100]} type="number"
+                tickFormatter={percentageFormatter}
+              />
+              <YAxis 
+                dataKey="info_name" type="category" hide={true} 
+              />
+              <Tooltip content={CustomTooltip}/>
+              <Bar className=""
+                dataKey="percentage" fill='#00C49F' radius={4} 
+                onClick={barClick} 
+              >
+                <LabelList
+                  className="" 
+                  dataKey="info_name"
+                  cursor="pointer"
+                  onClick={(index)=>{
+                    console.log(index)
+                  }}
+                  content={({ x, y, width, height, index, value }) => {
+                    const color = colors[index||0];
+                    return (
+                    <g >
+                      <text
+                        //style="stroke-width:10;stroke:#000;fill:#fff;paint-order:stroke;"
+                        stroke="#ffffff" 
+                        paintOrder={'stroke'}
+                        strokeWidth={4}
+                        className="text-xl font-bold"
+                        x={Number(x)+10}
+                        y={Number(y)+Number(height)/2}
+                        fill={'black'}
+                        textAnchor="start"
+                        dominantBaseline="middle"
+                        cursor="pointer"
+                        onClick={()=>{
+                          console.log(index)
+                        }}
+                      >
+                        {value}
+                      </text>
+                      </g >
+                    );
+                    }}
+                  />
+                {barChartAllData.map((_entry, index, value) => (
+
+                  <Cell cursor="pointer" key={`cell-${index}`} fill={colors[index % colors.length]} stroke='#8a8888' />
+
+                ))}
+
+              </Bar>
+            </BarChart>
+          </ChartContainer>
+
+          </CardContent>
+          </Card>
+
+
+        {/* 棒グラフ */}
         <div className="">
         <ChartContainer config={chartConfig} className=" w-full min-h-[50vw]">
           <BarChart 
@@ -219,7 +339,7 @@ export default function MypageChart(
           className="flex flex-col gap-2 w-fit rounded-md border"
           >
           {/* 表示条件指定部 */}
-          <div className="">
+          <div className="" id="pieChart">
             <div className="flex flex-col gap-3 w-max">
               <div className=''>
                 <MypageChartRadioButton

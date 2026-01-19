@@ -51,7 +51,7 @@ const Page = async ({
       <Mypage/>
       <MypageTabs type='chart'/>
       <div>
-      <MypageChart userChartData={userChartData} />
+      {/* <MypageChart userChartData={userChartData} /> */}
       {/* <MypageChart storyCntData={{all_story_cnt: 1338,read_all_story_cnt: 1330,free_story_cnt: 1286,read_free_story_cnt: 1286,res_info_id: ''}} /> */}
       </div>
       </article>
