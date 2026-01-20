@@ -1,25 +1,31 @@
 'use client'
+import React, { useState } from "react";
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import YoutubeButton from "./YoutubeButton";
-import type { SongMaster } from '../../../data/types';
-import subscSongs from '../../../data/subscSongs.json';
-import albumMasters from '../../../data/albumMaster.json';
-import {ShareYoutubeModal} from "../../app/shareModal/ShareYoutubeModal";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import {Tooltip} from "@chakra-ui/react";
 import Link from 'next/link';
-import GetArtWorkSrc from '../utils/GetArtWorkSrc';
-
+import { useRouter, usePathname, useSearchParams } from 'next/navigation'
+import {Tooltip} from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import type { SongMaster } from '@/data/types';
+import subscSongs from '@/data/subscSongs.json';
+import albumMasters from '@/data/albumMaster.json';
+import {ShareYoutubeModal} from "@/features/app/shareModal/ShareYoutubeModal";
+import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
+import YoutubeButton from "@/features/common/components/YoutubeButton";
+import {GetArtistBadgeInfo} from '@/features/common/utils/ArtistUtils';
+import IdolBadge from '@/features/common/components/IdolBadge';
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
 export default function SongBlock(
-  { albumId,trackNo,song,existsButton }: { albumId: string, trackNo: number, song: SongMaster, existsButton: boolean}
+  { albumId,trackNo,song,existsButton,diplayAlbum }
+  : { albumId: string, trackNo: number, song: SongMaster, existsButton: boolean, diplayAlbum?: boolean }
 ) {
   
+  const router = useRouter();
   const albam = albumMasters.find(data => data.albumId === song?.albumId);
   const imgSrc: string = GetArtWorkSrc(albam?.sereisId||'',albam?.isSoloColle||0,albam?.isUnitColle||0);
+
+  const artistArray: string[] = GetArtistBadgeInfo(song.artist);
  
   //YoutubeURL取得
   const youtubeId: string
@@ -27,7 +33,7 @@ export default function SongBlock(
       ?subscSongs.find(data=>song.songId===data.id)?.youtubeId || ''
       :'';
 
-  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const [tooltipOn, setTooltipOn] = useState<boolean>(false);
 
@@ -38,19 +44,20 @@ export default function SongBlock(
       window.setTimeout(function(){setTooltipOn(false);}, 1500);
     }, function(err) {
     });
-  }
+  };
     return (
       
     <section 
-    className={`
-      group w-full
-      rounded-md
-      font-sans 
-      ${youtubeId === ''
-      ?'bg-purple-50 border-purple-400/30 border-t border-l'
-      :'bg-white border-cyan-600/30 border-t-4 border-l-4'}
-    `}
-    >
+      className={`
+        group w-full rounded-md cursor-pointer
+        font-sans shadow-lg
+        ${youtubeId === ''
+        ?'bg-purple-50  outline-purple-400/30 outline-none outline-offset-1 hover:outline-purple-300/80 hover:outline-4'
+        :'bg-white outline-cyan-600/30 outline-none outline-offset-1 hover:outline-blue-300 hover:outline-4'}
+      `}
+      onClick={() => router.push(`/song/` + song?.songId)}
+      >
+
       <div 
         className ={`
           grid 
@@ -58,14 +65,8 @@ export default function SongBlock(
           auto-rows-auto
           m-0
          `}
-      >
+        >
           <div className ="row-span-2">
-            
-          <Link
-            className =""
-                href={`/song/` + song?.songId}
-                
-          >
           {imgSrc===''
             ?
             <Image 
@@ -87,47 +88,56 @@ export default function SongBlock(
               height={60}
             />
             }
-          </Link>
           </div>
-          <Link
-            className ="
-              inline-block
+          <div
+            className ={`
+              inline-block p-0.5 rounded-md px-1 pt-1 
               tablet:text-xl text-base
-              p-0.5
-              rounded-md
-              underline
+              underline underline-offset-2 
               leading-tight
               font-sans
               row-span-1 col-span-2 
-              rounded-md px-1 pt-1 
-              from-cyan-100/30 to-violet-200/30
               text-zinc-800
-              hover:bg-gradient-to-tl
-              hover:text-cyan-900 
+              decoration-1 group-hover:decoration-4 
               duration-500 ease-out
-            "
-            href={`/song/` + song?.songId}
-            >
+              ${youtubeId === ''
+              ?'decoration-purple-300'
+              :'decoration-blue-300'}
+              `}
+              >
+              <Link href={`/song/` + song?.songId}>
                 {song?.songTitle}
-          </Link>
-          
-          <div className ="
+              </Link>
+          </div>
+          <div className ='flex flex-wrap relative text-sm gap-0.5 mb-1 mx-1 '>
+              {artistArray.length <= 0
+                ?<p className="text-sm leading-tight text-zinc-700 font-bold">{song?.displayArtist}</p>
+                :artistArray.map(
+                  (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={1} size={'block'}/></div>))
+              }
+          </div>
+          {/* <div className ="
             row-span-1 col-span-2 
             text-sm leading-tight text-zinc-700
             pt-1 pl-1
           ">
           {song?.displayArtist}
-          </div>
-          <div className ="
+          </div> */}
+
+          {/* アルバム */}
+          {diplayAlbum===false
+          ?<></>
+          :<div className ="
             row-span-1 col-span-3 leading-none
             hidden lg:flex 
-            break-all mb-1
-          ">
+             mb-1"
+          >
             <a 
-              className ="text-xs text-gray-500 underline hover:text-gray-400"
+              className ={`truncate text-sm text-gray-500 hover:underline hover:font-bold`}
               href={`/album/` + song.albumId}
-            >{albam?.albumTitleFull}</a>
-          </div>
+            >{albam?.albumTitle}</a>
+          </div>}
+
       </div>
 
       {/* ボタンエリア */}

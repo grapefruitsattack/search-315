@@ -37,7 +37,7 @@ export default function AlbumSeries({ albumId, seriesId }: { albumId: string, se
         </a>
 
         <section className={`
-        grid items-start lg:px-32 gap-4 grid-cols-1 lg:grid-cols-2 
+        grid items-start lg:px-8 gap-4 grid-cols-1 lg:grid-cols-2 
         mt-5
         ${isOpen?'lg:grid grid':'lg:grid hidden'}
         `}

@@ -1,12 +1,13 @@
 'use client'
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import type { Albums } from '../../../../data/types';
-import albumMaster from '../../../../data/albumMaster.json';
-import subscAlbums from '../../../../data/subscAlbums.json';
+import type { Albums } from '@/data/types';
+import albumMaster from '@/data/albumMaster.json';
+import subscAlbums from '@/data/subscAlbums.json';
 import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
-import GetArtistJsx from '@/features/common/utils/GetArtistJsx';
-import {ShareYoutubeModal} from "../../../app/shareModal/ShareYoutubeModal";
+import {GetArtistJsx,GetArtistBadgeInfo} from '@/features/common/utils/ArtistUtils';
+import IdolBadge from '@/features/common/components/IdolBadge';
+import {ShareYoutubeModal} from "@/features/app/shareModal/ShareYoutubeModal";
 import CopyButton from "@/features/common/components/CopyButton";
 import AlbumSongs from './AlbumSongs'
 import AlbumSeries from './AlbumSeries'
@@ -16,6 +17,8 @@ const SubscButton = dynamic(() => import("@/features/common/components/SubscButt
 
 export default function AlbumContent({ album, }: { album: Albums}) {
 
+    // アーティスト
+    const artistArray: string[] = GetArtistBadgeInfo(album.artist);
     //アートワーク
     const imgSrc: string = GetArtWorkSrc(album.sereisId||'',album.isSoloColle,album.isUnitColle);
     //リリース日
@@ -94,9 +97,17 @@ export default function AlbumContent({ album, }: { album: Albums}) {
                     lg:w-auto inline-block row-span-4 mx-2
                 `}
             >
-                <div className="lg:text-xl text-base font-sans text-blue-800/80">
-                    <GetArtistJsx artist={album.artist}></GetArtistJsx>
-                </div>
+
+                {artistArray.length <= 0
+                    ?<div className="lg:text-xl text-base font-sans text-blue-800/80">
+                        <GetArtistJsx artist={album.artist}></GetArtistJsx>
+                    </div>
+                    :<div className ='flex flex-wrap relative text-sm gap-0.5 mb-1 mx-1 font-sans'>
+                    {artistArray.map(
+                        (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={0} size={'normal'}/></div>))}
+                    </div>
+                }
+
                 <div className="lg:text-3xl text-xl font-mono font-bold inline-block">
                     {album.albumTitleFull}
                 </div>

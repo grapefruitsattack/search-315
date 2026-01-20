@@ -2,16 +2,17 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { motion } from "framer-motion";
-import type { SongMaster,Albums,MvInfo,LiveMaster } from '../../../../data/types';
-import subscSongs from '../../../../data/subscSongs.json';
-import GetArtWorkSrc from '../../../common/utils/GetArtWorkSrc';
-import GetMv from '../../../common/utils/GetMv';
-import GetCreditJsx from '../../../common/utils/GetCreditJsx';
-import GetSongOtherVersion from '../../../common/utils/GetSongOtherVersion';
-import SearchLiveBySongId from '../../../common/utils/SearchLive';
-import GetArtistJsx from '../../../common/utils/GetArtistJsx';
-import CopyButton from "../../../common/components/CopyButton";
-import {ShareYoutubeModal} from "../../../app/shareModal/ShareYoutubeModal";
+import type { SongMaster,Albums,MvInfo,LiveMaster } from '@/data/types';
+import subscSongs from '@/data/subscSongs.json';
+import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
+import GetMv from '@/features/common/utils/GetMv';
+import GetCreditJsx from '@/features/common/utils/GetCreditJsx';
+import GetSongOtherVersion from '@/features/common/utils/GetSongOtherVersion';
+import SearchLiveBySongId from '@/features/common/utils/SearchLive';
+import {GetArtistJsx,GetArtistBadgeInfo} from '@/features/common/utils/ArtistUtils';
+import IdolBadge from '@/features/common/components/IdolBadge';
+import CopyButton from "@/features/common/components/CopyButton";
+import {ShareYoutubeModal} from "@/features/app/shareModal/ShareYoutubeModal";
 import OtherVersion from './OtherVersion'
 import Mv from './Mv'
 import Live from './Live'
@@ -20,6 +21,8 @@ const SubscButton = dynamic(() => import("@/features/common/components/SubscButt
 
 export default function SongContent({ result, albumResult }: { result: SongMaster, albumResult: Albums }) {
 
+    // アーティスト
+    const artistArray: string[] = GetArtistBadgeInfo(result.artist);
     //MV情報
     const mv : MvInfo[] = GetMv(result);
     //ライブ情報
@@ -114,9 +117,17 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                     <div className="text-2xl tablet:text-3xl font-mono font-bold inline-block">
                         {result.songTitle}
                     </div>
-                    <div className="tablet:text-xl text-base font-sans text-blue-800/80">
-                        <GetArtistJsx artist={result.artist}></GetArtistJsx>
-                    </div>
+          
+                    {artistArray.length <= 0
+                        ?<div className="tablet:text-xl text-base font-sans text-blue-800/80">
+                            <GetArtistJsx artist={result.artist}></GetArtistJsx>
+                        </div>
+                        :<div className ='flex flex-wrap relative text-sm gap-0.5 mb-1 mx-1 font-sans'>
+                        {artistArray.map(
+                            (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={0} size={'normal'}/></div>))}
+                        </div>
+                    }
+
                     <div className="tablet:text-base text-sm font-sans text-slate-400 pt-px">
                         {releaseDate}
                     </div>

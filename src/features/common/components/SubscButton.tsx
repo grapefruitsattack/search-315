@@ -33,9 +33,7 @@ const STORAGE_SUBSC_SERVICE = 'subscService';
 export default function SubscButton(
     { songId, albumId }: { songId: string, albumId: string}
   ) {
-    //リロード用準備
-    const searchParams = useSearchParams();
-    const pathname = usePathname();
+
     const router = useRouter();
     //ローカルストレージ
     const [subscService, setSubscService] = useSubscService('youtube');
@@ -46,10 +44,9 @@ export default function SubscButton(
       = songId!==''
         ?subscSongs.find(data=>data.id===songId)
         :subscAlbums.find(data=>data.id===albumId);
-        
-    const localStoragesubscItem = getSubscService();
-    
+
     //デフォルト表示用サブスクサービス
+    const localStoragesubscItem = getSubscService();
     const href: string = getSubscUrl(songId,albumId,localStoragesubscItem);
     const subscServiceName: string = href===''
       ?subscServiceNames[0].name
@@ -61,42 +58,42 @@ export default function SubscButton(
 
     return(
     <div className="grid grid-cols-[4fr_2fr] divide-x w-full h-full">
-    <a className="w-full h-full"
-    href={href===''?getYoutubeMusicUrl(songId,albumId,subscUrl?.youtubeId||''):href}
-    target="_blank" rel="noopener noreferrer">
-    <motion.button
-        className='rounded-l-lg border-t-2 border-l-2 border-b-2 border-orange-500 w-full h-full
-        text-orange-500 font-sans leading-tight
-        hover:bg-orange-500 hover:text-orange-100 
-        transition-all duration-500 ease-out
-        fill-orange-500 hover:fill-orange-100 
-        text-xs mobileM:text-base lg:text-lg
-        '
-        type="button"
-        aria-controls="contents"
-        whileTap={{ scale: 0.97 }}
-        transition={{ duration: 0.05 }}
-    >
-        <div className='
-            flex flex-wrap justify-center font-sans font-black 
-            tracking-tighter inline-block leading-none
-        '>
-            <span className="">
-            {subscServiceName}
-            </span>
-            <span className="">
-            {subscServiceNameSub}
-            <svg className="inline-block mobileL:w-[18px] w-[14px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
-            </span>
-        </div>
-    </motion.button>
-    </a>
+      <motion.a
+          className='rounded-l-lg border-t-2 border-l-2 border-b-2 border-orange-500 w-full h-full
+          text-orange-500 font-sans leading-tight
+          hover:bg-orange-500 hover:text-orange-100 
+          transition-all duration-500 ease-out
+          fill-orange-500 hover:fill-orange-100 
+          text-xs mobileM:text-base lg:text-lg
+          inline-flex items-center justify-center
+          '
+          whileTap={{ scale: 0.97 }}
+          transition={{ duration: 0.05 }}
+          href={href===''?getYoutubeMusicUrl(songId,albumId,subscUrl?.youtubeId||''):href}
+          target="_blank" rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className='
+              flex flex-wrap justify-center font-sans font-black 
+              tracking-tighter inline-block leading-none'
+              >
+              <span className="">
+              {subscServiceName}
+              </span>
+              <span className="">
+              {subscServiceNameSub}
+              <svg className="inline-block mobileL:w-[18px] w-[14px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+              </span>
+          </div>
+      </motion.a>
     <motion.button
         className='rounded-r-lg border-2 bg-orange-500 border-orange-500 w-full h-full fill-white flex justify-center items-center'
-        onClick={onOpen}
+        onClick={(e) => {
+          e.stopPropagation();
+          onOpen();
+        }}
     >
         <div className='' >
-
         <svg className='w-[30px] h-[20px] tablet:w-[40px] tablet:h-[30px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"><path d="M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z"></path></svg>
         </div>
     </motion.button>

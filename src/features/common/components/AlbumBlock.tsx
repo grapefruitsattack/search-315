@@ -1,13 +1,18 @@
 'use client'
-import Image from 'next/image';
-import type { Albums } from '../../../data/types';
-import subscAlbums from '../../../data/subscAlbums.json';
-import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
-import GetArtWorkSrc from '../utils/GetArtWorkSrc';
-import {ShareYoutubeModal} from "../../app/shareModal/ShareYoutubeModal";
-import {Tooltip} from "@chakra-ui/react";
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import Image from 'next/image';
+import {Tooltip} from "@chakra-ui/react";
+import { motion, AnimatePresence } from "framer-motion";
+import type { Albums } from '@/data/types';
+import subscAlbums from '@/data/subscAlbums.json';
+import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
+import {ShareYoutubeModal} from "@/features/app/shareModal/ShareYoutubeModal";
+import {GetArtistBadgeInfo} from '@/features/common/utils/ArtistUtils';
+import IdolBadge from '@/features/common/components/IdolBadge';
+const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
+
 
 export default function AlbumBlock(
   { results, existsButton }: { results: Albums, existsButton: boolean}
@@ -18,6 +23,8 @@ export default function AlbumBlock(
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const [tooltipOn, setTooltipOn] = useState<boolean>(false);
+
+  const artistArray: string[] = GetArtistBadgeInfo(results.artist);
 
   //サブスクURL一覧取得
   const youtubeId: string
@@ -85,9 +92,20 @@ export default function AlbumBlock(
           </div>
         <div 
           className ={`flex flex-col w-full
-            m-0 
+            m-0  mb-2 pt-1 
           `}
         >
+          <div
+            className ="px-1"
+            >
+            <div className ='flex flex-wrap relative text-sm gap-0.5 mx-1 font-sans'>
+                {artistArray.length <= 0
+                  ?<p className="text-sm leading-tight text-zinc-700">{results.displayArtist}</p>
+                  :artistArray.map(
+                    (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={1} size={'block'}/></div>))
+                }
+            </div>
+          </div>
           <div
             className ="px-1"
           >
@@ -102,7 +120,7 @@ export default function AlbumBlock(
                 rounded-md
                 underline
                 font-sans
-                rounded-md px-1 pt-1 
+                rounded-md px-1
                 text-zinc-800
                 hover:bg-gradient-to-tl hover:from-cyan-100/30 hover:to-violet-200/30
                 hover:text-cyan-900 
@@ -114,18 +132,6 @@ export default function AlbumBlock(
               </Link>
           </div>
 
-          <div
-            className ="px-1 mb-2"
-            >
-            <a 
-              className ="inline-block font-sans
-              tablet:text-sm text-xs
-              leading-tight text-zinc-700
-              pl-1 h-fit
-            ">
-            {results.displayArtist}
-            </a>
-          </div>
 
 
           {/* ボタンエリア */}

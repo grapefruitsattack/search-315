@@ -20,7 +20,7 @@ export default function IdolBadge({ id, useShortName, size }: { id: string, useS
             bg-sky-600
             text-white
             ${size==='block'
-                ?` rounded-sm p-0.5 text-xs mobileS:text-xs tablet:text-sm`
+                ?` rounded-sm py-0.5 px-1 text-xs mobileS:text-sm tablet:text-base`
                 :` rounded-md p-1 text-xs mobileS:text-sm tablet:text-base`}
             `}
         >
@@ -42,7 +42,7 @@ export default function IdolBadge({ id, useShortName, size }: { id: string, useS
             justify-center 
             font-bold
             ${size==='block'
-                ?` rounded-sm p-0.5 text-xs mobileS:text-xs tablet:text-sm`
+                ?` rounded-sm py-0.5 px-1 text-xs mobileS:text-sm tablet:text-base`
                 :` rounded-md p-1 text-xs mobileS:text-sm tablet:text-base`}
             ` + unitBadgeBg + unitBadgeTx}
         >

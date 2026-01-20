@@ -1,7 +1,27 @@
 import singingMaster from '../../../data/singingMaster.json';
 import Link from 'next/link';
 
-export default function GetArtistJsx({ artist }: { artist: string }): JSX.Element{
+
+export function GetArtistBadgeInfo(artist: string): string[] {
+  // アーティスト情報　バッジで表現可能か判定
+  const artistArray: string[] = [];
+  let useBadge: boolean = true;
+  while(artist.length > 0){
+    if(artist.indexOf('[') < 0){
+      if(artist!=='、') useBadge = false;
+      artist = '';
+    } else if (artist.indexOf('[') === 0) {
+      artistArray.push(artist.substring(1, artist.indexOf(']')));
+      artist = artist.substring(artist.indexOf(']') + 1);;
+    } else if (artist.indexOf('[') > 0) {
+      if(artist.substring(0, artist.indexOf('['))!=='、') useBadge = false;
+      artist = artist.substring(artist.indexOf('['));
+    };
+  };
+  return useBadge?artistArray:[];
+}
+
+export function GetArtistJsx({ artist }: { artist: string }): JSX.Element{
   const units = singingMaster.filter(data=>data.personFlg===0);
   const idols = singingMaster.filter(data=>data.personFlg===1);
   var artistArray: { str: string, isLink: boolean }[] = [];

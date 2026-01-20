@@ -42,6 +42,7 @@ export default function AlbumSongs({ albumId }: { albumId: string }) {
           trackNo={result.trackNo} 
           song={result}
           existsButton={false}
+          diplayAlbum={false}
         />
         ))}
         </section>
