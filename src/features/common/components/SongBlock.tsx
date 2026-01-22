@@ -52,8 +52,8 @@ export default function SongBlock(
         group w-full rounded-md cursor-pointer
         font-sans shadow-lg
         ${youtubeId === ''
-        ?'bg-purple-50  outline-purple-400/30 outline-none outline-offset-1 hover:outline-purple-300/80 hover:outline-4'
-        :'bg-white outline-cyan-600/30 outline-none outline-offset-1 hover:outline-blue-300 hover:outline-4'}
+        ?'bg-purple-50  outline-purple-400/30 outline-none hover:outline-offset-1 hover:outline-purple-300/80 hover:outline-4'
+        :'bg-white outline-cyan-600/30 outline-none hover:outline-offset-1 hover:outline-blue-300 hover:outline-4'}
       `}
       onClick={() => router.push(`/song/` + song?.songId)}
       >
@@ -98,11 +98,10 @@ export default function SongBlock(
               font-sans
               row-span-1 col-span-2 
               text-zinc-800
-              decoration-1 group-hover:decoration-4 
-              duration-500 ease-out
+              decoration-1 group-hover:decoration-4 decoration-zinc-500
               ${youtubeId === ''
-              ?'decoration-purple-300'
-              :'decoration-blue-300'}
+              ?'group-hover:decoration-purple-300'
+              :'group-hover:decoration-blue-300'}
               `}
               >
               <Link href={`/song/` + song?.songId}>

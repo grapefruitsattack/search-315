@@ -158,14 +158,13 @@ export default async function StoryDetailedPage(
         infoStoryPerson.length === 0
             ?<></>
             :<>
-
-              <section className='flex flex-wrap relative text-sm font-mono gap-1 mb-8'>
+              <section className='flex flex-wrap relative text-sm font-mono gap-y-2 gap-x-1 tablet:gap-y-1 tablet:gap-x-2 mb-8'>
                 {infoStoryPerson.length === 49
                   //対象アイドルが49人の場合、「315プロダクション」表記
                   ?<div><IdolBadge id={'315pro'} useShortName={0} size={'normal'}/></div>
                   :infoStoryPerson.map(
                     (result, index) => (<div key={index}><IdolBadge id={result.infoId} useShortName={0} size={'normal'}/></div>))
-                  }
+                }
               </section>
             </>
       }

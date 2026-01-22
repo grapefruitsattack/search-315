@@ -107,6 +107,9 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                         lg:w-auto inline-block row-span-4 px-2
                     `}
                 >
+                    <div className="tablet:text-base text-sm font-sans text-slate-500 ">
+                        {releaseDate}
+                    </div>
                     <div className="tablet:text-xl text-base font-sans leading-tight lg:leading-normal">
                         <a 
                         className ="hover:text-sky-300 underline text-slate-500"
@@ -122,15 +125,15 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
                         ?<div className="tablet:text-xl text-base font-sans text-blue-800/80">
                             <GetArtistJsx artist={result.artist}></GetArtistJsx>
                         </div>
-                        :<div className ='flex flex-wrap relative text-sm gap-0.5 mb-1 mx-1 font-sans'>
-                        {artistArray.map(
-                            (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={0} size={'normal'}/></div>))}
+                        :<div className ='
+                            flex flex-wrap relative text-sm mt-0 mb-1 mx-1 font-sans
+                            gap-y-2 gap-x-1 tablet:gap-y-1 tablet:gap-x-2 
+                            '>
+                            {artistArray.map(
+                                (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={0} size={'normal'}/></div>))}
                         </div>
                     }
 
-                    <div className="tablet:text-base text-sm font-sans text-slate-400 pt-px">
-                        {releaseDate}
-                    </div>
                 </div>
             </div>
 

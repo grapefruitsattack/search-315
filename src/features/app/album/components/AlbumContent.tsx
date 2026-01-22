@@ -94,25 +94,27 @@ export default function AlbumContent({ album, }: { album: Albums}) {
             {/* 情報 */}
             <div 
                 className={`
-                    lg:w-auto inline-block row-span-4 mx-2
+                    lg:w-auto inline-block row-span-4 mx-2 
                 `}
-            >
-
+                >
+                <div className="tablet:text-base text-sm font-sans text-slate-500 mb-1">
+                    {releaseDate}
+                </div>
                 {artistArray.length <= 0
                     ?<div className="lg:text-xl text-base font-sans text-blue-800/80">
                         <GetArtistJsx artist={album.artist}></GetArtistJsx>
                     </div>
-                    :<div className ='flex flex-wrap relative text-sm gap-0.5 mb-1 mx-1 font-sans'>
-                    {artistArray.map(
-                        (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={0} size={'normal'}/></div>))}
+                    :<div className ='
+                            flex flex-wrap relative text-sm gap-0.5 mb-1 font-sans
+                            gap-y-2 gap-x-1 tablet:gap-y-1 tablet:gap-x-2
+                        '>
+                        {artistArray.map(
+                            (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={0} size={'normal'}/></div>))}
                     </div>
                 }
 
                 <div className="lg:text-3xl text-xl font-mono font-bold inline-block">
                     {album.albumTitleFull}
-                </div>
-                <div className="lg:text-base text-sm font-sans text-slate-400 pt-px">
-                    {releaseDate}
                 </div>
             </div>
         </div>
