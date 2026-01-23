@@ -43281,6 +43281,94 @@
   },
   {
     "trackNo": 1,
+    "albumId": "UOSDS",
+    "songId": "UOSDS_1",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "UOSDS",
+    "songId": "UOSDS_2",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "c"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "UOSDS",
+    "songId": "UOSDS_5",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "sver"
+  },
+  {
+    "trackNo": 7,
+    "albumId": "UOSDS",
+    "songId": "UOSDS_7",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "c"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "UOSDS",
+    "songId": "UOSDS_8",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "c"
+  },
+  {
+    "trackNo": 9,
+    "albumId": "UOSDS",
+    "songId": "UOSDS_9",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "c"
+  },
+  {
+    "trackNo": 12,
+    "albumId": "UOSDS",
+    "songId": "UOSDS_12",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "sver"
+  },
+  {
+    "trackNo": 13,
+    "albumId": "UOSDS",
+    "songId": "UOSDS_13",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "s"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "UOSVL",
+    "songId": "UOSVL_1",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": ""
+  },
+  {
+    "trackNo": 7,
+    "albumId": "UOSVL",
+    "songId": "UOSVL_7",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "c"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "UOSVL",
+    "songId": "UOSVL_8",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
     "albumId": "MTS04",
     "songId": "MTS04_1",
     "singingInfoId": "DRS00",

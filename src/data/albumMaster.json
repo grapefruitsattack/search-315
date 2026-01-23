@@ -3872,6 +3872,38 @@
     "description": ""
   },
   {
+    "sereisId": "UOS",
+    "albumId": "UOSDS",
+    "albumTitleFull": "876PRO ALLSTARS Memorial Album「UNDER ONE SKY !!!!!!」【Dearly Stars盤】",
+    "albumTitle": "UNDER ONE SKY !!!!!!【Dearly Stars盤】",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260221",
+    "displayArtist": "Dearly Stars、PROJECT vα-liv",
+    "artist": "Dearly Stars、PROJECT vα-liv",
+    "releasePage": "https://columbia.jp/idolmaster/imasnews/260116.html",
+    "trialYoutubeId": "vzkAykVHrHg",
+    "description": "876プロ名義CD。"
+  },
+  {
+    "sereisId": "UOS",
+    "albumId": "UOSVL",
+    "albumTitleFull": "876PRO ALLSTARS Memorial Album「UNDER ONE SKY !!!!!!」【vα-liv盤】",
+    "albumTitle": "UNDER ONE SKY !!!!!!【vα-liv盤】",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260221",
+    "displayArtist": "Dearly Stars、PROJECT vα-liv",
+    "artist": "Dearly Stars、PROJECT vα-liv",
+    "releasePage": "https://x.com/ASOBINOTES876/status/2013559568467742843",
+    "trialYoutubeId": "skzSzdHJdwk",
+    "description": "876プロ名義CD。"
+  },
+  {
     "sereisId": "MTS",
     "albumId": "MTS04",
     "albumTitleFull": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 04 DRAMATIC STARS",
