@@ -8325,5 +8325,60 @@
     "lineMusicUrl": "https://music.line.me/webapp/track/mt0000000023031ad3",
     "awaUrl": "https://s.awa.fm/track/6f6a07a9207042056d78",
     "towerRecordsMusic": ""
+  },
+  {
+    "id": "TT01_1",
+    "title": "Wonderlander's Party",
+    "youtubeId": "ojpde-ShjAE",
+    "spotifyUrl": "https://open.spotify.com/track/292Tl8Udr7d3EBqH36vwQq",
+    "appleMusicUrl": "https://music.apple.com/jp/song/wonderlanders-party/1836324789",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0FP4PHM5M",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt0000000023693d50",
+    "awaUrl": "https://s.awa.fm/track/31731140886586d26748",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "TT02_1",
+    "title": "竜宮逢幻記",
+    "youtubeId": "7oan-Y2FZa4",
+    "spotifyUrl": "https://open.spotify.com/track/2bCltL4LgxsrgImPcKWcHC",
+    "appleMusicUrl": "https://music.apple.com/jp/song/%E7%AB%9C%E5%AE%AE%E9%80%A2%E5%B9%BB%E8%A8%98/1843564768",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0FTLKTT8P",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt0000000023becf8c",
+    "awaUrl": "https://s.awa.fm/track/51de9727fe0907604c34",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "MTS01_1",
+    "title": "Break All Time!",
+    "youtubeId": "llqOm_LuXjI",
+    "spotifyUrl": "https://open.spotify.com/track/5fiXLtz1qxgTLMQ1yFUbkD",
+    "appleMusicUrl": "https://music.apple.com/jp/song/break-all-time/1848033708",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0FXDP68SZ",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt0000000023e98596",
+    "awaUrl": "https://s.awa.fm/track/cead401af5b2fe9a1f91",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "TT03_1",
+    "title": "CAST A SPELL",
+    "youtubeId": "6J7Pbu-SknU",
+    "spotifyUrl": "https://open.spotify.com/track/2qWiKXmPR9etUfpXDNAYVr",
+    "appleMusicUrl": "https://music.apple.com/jp/song/cast-a-spell/1849595562",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0FYDHN61K",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt0000000023f727e6",
+    "awaUrl": "https://s.awa.fm/track/748799d5e393b4030087",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "MTS02_1",
+    "title": "Earnest",
+    "youtubeId": "77R1tMn_9WA",
+    "spotifyUrl": "https://open.spotify.com/track/24eooIrdYlMH3m4VuRYhUJ",
+    "appleMusicUrl": "https://music.apple.com/jp/song/earnest/1854332818",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0G322K9LG",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt000000002429f420",
+    "awaUrl": "https://s.awa.fm/track/fdc02b8c6e29ceaea928",
+    "towerRecordsMusic": ""
   }
 ]

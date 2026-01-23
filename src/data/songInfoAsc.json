@@ -42342,5 +42342,1149 @@
     "singingInfoId": "LGN02",
     "releaseDate": "20251203",
     "type": "cover"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS02",
+    "songId": "MTS02_1",
+    "singingInfoId": "SSK00",
+    "releaseDate": "20251224",
+    "type": "u"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS02",
+    "songId": "MTS02_1",
+    "singingInfoId": "SSK01",
+    "releaseDate": "20251224",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS02",
+    "songId": "MTS02_1",
+    "singingInfoId": "SSK02",
+    "releaseDate": "20251224",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "MTS02",
+    "songId": "MTS02_2",
+    "singingInfoId": "SSK01",
+    "releaseDate": "20251224",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "MTS02",
+    "songId": "MTS02_3",
+    "singingInfoId": "SSK02",
+    "releaseDate": "20251224",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT04",
+    "songId": "TT04_1",
+    "singingInfoId": "ALT02",
+    "releaseDate": "20260107",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT04",
+    "songId": "TT04_1",
+    "singingInfoId": "BEI03",
+    "releaseDate": "20260107",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT04",
+    "songId": "TT04_1",
+    "singingInfoId": "CFP03",
+    "releaseDate": "20260107",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT04",
+    "songId": "TT04_1",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260107",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "TT04",
+    "songId": "TT04_2",
+    "singingInfoId": "ALT02",
+    "releaseDate": "20260107",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "TT04",
+    "songId": "TT04_3",
+    "singingInfoId": "BEI03",
+    "releaseDate": "20260107",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "TT04",
+    "songId": "TT04_4",
+    "singingInfoId": "CFP03",
+    "releaseDate": "20260107",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "TT04",
+    "songId": "TT04_5",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260107",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS03",
+    "songId": "MTS03_1",
+    "singingInfoId": "DBL00",
+    "releaseDate": "20260128",
+    "type": "u"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS03",
+    "songId": "MTS03_1",
+    "singingInfoId": "DBL01",
+    "releaseDate": "20260128",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS03",
+    "songId": "MTS03_1",
+    "singingInfoId": "DBL02",
+    "releaseDate": "20260128",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "MTS03",
+    "songId": "MTS03_2",
+    "singingInfoId": "DBL01",
+    "releaseDate": "20260128",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "MTS03",
+    "songId": "MTS03_3",
+    "singingInfoId": "DBL02",
+    "releaseDate": "20260128",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "DRS00",
+    "releaseDate": "20260204",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "DRS01",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "DRS02",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "DRS03",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "FRM00",
+    "releaseDate": "20260204",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "FRM01",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "FRM02",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "FRM03",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "SAI00",
+    "releaseDate": "20260204",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "SAI01",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "SAI02",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "SAI03",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "HIJ00",
+    "releaseDate": "20260204",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "HIJ01",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "HIJ02",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "HIJ03",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "HIJ04",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "HIJ05",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "SSK00",
+    "releaseDate": "20260204",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "SSK01",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "SSK02",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "KGD00",
+    "releaseDate": "20260204",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "KGD01",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "KGD02",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "KGD03",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "FLG00",
+    "releaseDate": "20260204",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "FLG02",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "FLG03",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "LGN00",
+    "releaseDate": "20260204",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "LGN01",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "LGN02",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_1",
+    "singingInfoId": "LGN03",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "DRS00",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "DRS01",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "DRS02",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "DRS03",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "FRM00",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "FRM01",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "FRM02",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "FRM03",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "SAI00",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "SAI01",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "SAI02",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "SAI03",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "HIJ00",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "HIJ01",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "HIJ02",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "HIJ03",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "HIJ04",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "HIJ05",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "SSK00",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "SSK01",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "SSK02",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "KGD00",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "KGD01",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "KGD02",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "KGD03",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "FLG00",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "FLG02",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "FLG03",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "LGN00",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "LGN01",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "LGN02",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_2",
+    "singingInfoId": "LGN03",
+    "releaseDate": "20260204",
+    "type": ""
+  },
+  {
+    "trackNo": 3,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_3",
+    "singingInfoId": "DRS01",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_4",
+    "singingInfoId": "DRS02",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_5",
+    "singingInfoId": "DRS03",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 6,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_6",
+    "singingInfoId": "FRM01",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 7,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_7",
+    "singingInfoId": "FRM02",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_8",
+    "singingInfoId": "FRM03",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 9,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_9",
+    "singingInfoId": "SAI01",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 10,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_10",
+    "singingInfoId": "SAI02",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 11,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_11",
+    "singingInfoId": "SAI03",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 12,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_12",
+    "singingInfoId": "HIJ01",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 13,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_13",
+    "singingInfoId": "HIJ02",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 14,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_14",
+    "singingInfoId": "HIJ03",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 15,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_15",
+    "singingInfoId": "HIJ04",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 16,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_16",
+    "singingInfoId": "HIJ05",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 17,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_17",
+    "singingInfoId": "SSK01",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 18,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_18",
+    "singingInfoId": "SSK02",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 19,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_19",
+    "singingInfoId": "KGD01",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 20,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_20",
+    "singingInfoId": "KGD02",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 21,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_21",
+    "singingInfoId": "KGD03",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 22,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_22",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 23,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_23",
+    "singingInfoId": "FLG02",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 24,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_24",
+    "singingInfoId": "FLG03",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 25,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_25",
+    "singingInfoId": "LGN01",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 26,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_26",
+    "singingInfoId": "LGN02",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 27,
+    "albumId": "FBFWGFCUS",
+    "songId": "FBFWGFCUS_27",
+    "singingInfoId": "LGN03",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT05",
+    "songId": "TT05_1",
+    "singingInfoId": "FRM02",
+    "releaseDate": "20260204",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT05",
+    "songId": "TT05_1",
+    "singingInfoId": "SAI03",
+    "releaseDate": "20260204",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT05",
+    "songId": "TT05_1",
+    "singingInfoId": "MFM01",
+    "releaseDate": "20260204",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT05",
+    "songId": "TT05_1",
+    "singingInfoId": "SEM02",
+    "releaseDate": "20260204",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "TT05",
+    "songId": "TT05_2",
+    "singingInfoId": "FRM02",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "TT05",
+    "songId": "TT05_3",
+    "singingInfoId": "SAI03",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "TT05",
+    "songId": "TT05_4",
+    "singingInfoId": "MFM01",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "TT05",
+    "songId": "TT05_5",
+    "singingInfoId": "SEM02",
+    "releaseDate": "20260204",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "UOSDS",
+    "songId": "UOSDS_1",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "UOSDS",
+    "songId": "UOSDS_2",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "c"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "UOSDS",
+    "songId": "UOSDS_5",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "sver"
+  },
+  {
+    "trackNo": 7,
+    "albumId": "UOSDS",
+    "songId": "UOSDS_7",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "c"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "UOSDS",
+    "songId": "UOSDS_8",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "c"
+  },
+  {
+    "trackNo": 9,
+    "albumId": "UOSDS",
+    "songId": "UOSDS_9",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "c"
+  },
+  {
+    "trackNo": 12,
+    "albumId": "UOSDS",
+    "songId": "UOSDS_12",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "sver"
+  },
+  {
+    "trackNo": 13,
+    "albumId": "UOSDS",
+    "songId": "UOSDS_13",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "s"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "UOSVL",
+    "songId": "UOSVL_1",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": ""
+  },
+  {
+    "trackNo": 7,
+    "albumId": "UOSVL",
+    "songId": "UOSVL_7",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "c"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "UOSVL",
+    "songId": "UOSVL_8",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260221",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS04",
+    "songId": "MTS04_1",
+    "singingInfoId": "DRS00",
+    "releaseDate": "20260225",
+    "type": "u"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS04",
+    "songId": "MTS04_1",
+    "singingInfoId": "DRS01",
+    "releaseDate": "20260225",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS04",
+    "songId": "MTS04_1",
+    "singingInfoId": "DRS02",
+    "releaseDate": "20260225",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS04",
+    "songId": "MTS04_1",
+    "singingInfoId": "DRS03",
+    "releaseDate": "20260225",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "MTS04",
+    "songId": "MTS04_2",
+    "singingInfoId": "DRS01",
+    "releaseDate": "20260225",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "MTS04",
+    "songId": "MTS04_3",
+    "singingInfoId": "DRS02",
+    "releaseDate": "20260225",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "MTS04",
+    "songId": "MTS04_4",
+    "singingInfoId": "DRS03",
+    "releaseDate": "20260225",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT06",
+    "songId": "TT06_1",
+    "singingInfoId": "FRM03",
+    "releaseDate": "20260304",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT06",
+    "songId": "TT06_1",
+    "singingInfoId": "CFP02",
+    "releaseDate": "20260304",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT06",
+    "songId": "TT06_1",
+    "singingInfoId": "FLG03",
+    "releaseDate": "20260304",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT06",
+    "songId": "TT06_1",
+    "singingInfoId": "CLF02",
+    "releaseDate": "20260304",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "TT06",
+    "songId": "TT06_2",
+    "singingInfoId": "FRM03",
+    "releaseDate": "20260304",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "TT06",
+    "songId": "TT06_3",
+    "singingInfoId": "CFP02",
+    "releaseDate": "20260304",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "TT06",
+    "songId": "TT06_4",
+    "singingInfoId": "FLG03",
+    "releaseDate": "20260304",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "TT06",
+    "songId": "TT06_5",
+    "singingInfoId": "CLF02",
+    "releaseDate": "20260304",
+    "type": "sver"
   }
 ]

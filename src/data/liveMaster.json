@@ -946,5 +946,77 @@
     "perDate": "20251005",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fbfes_wgf/",
     "type": ""
+  },
+  {
+    "liveId": "FBF",
+    "perId": "WGF_O_DAY1_M",
+    "livePerId": "FBF_WGF_O_DAY1_M",
+    "displayLiveName": "バトルフェスWGF",
+    "displayPerName": "大阪DAY1昼公演",
+    "liveName": "315 Production presents F＠NTASTIC BATTLE FES ～Who goes first～",
+    "perName": "大阪DAY1昼公演",
+    "perDate": "20251115",
+    "officialPage": "https://idolmaster-official.jp/live_event/sidem_fbfes_wgf/",
+    "type": ""
+  },
+  {
+    "liveId": "FBF",
+    "perId": "WGF_O_DAY1_S",
+    "livePerId": "FBF_WGF_O_DAY1_S",
+    "displayLiveName": "バトルフェスWGF",
+    "displayPerName": "大阪DAY1夜公演",
+    "liveName": "315 Production presents F＠NTASTIC BATTLE FES ～Who goes first～",
+    "perName": "大阪DAY1夜公演",
+    "perDate": "20251115",
+    "officialPage": "https://idolmaster-official.jp/live_event/sidem_fbfes_wgf/",
+    "type": ""
+  },
+  {
+    "liveId": "FBF",
+    "perId": "WGF_O_DAY2_M",
+    "livePerId": "FBF_WGF_O_DAY2_M",
+    "displayLiveName": "バトルフェスWGF",
+    "displayPerName": "大阪DAY2昼公演",
+    "liveName": "315 Production presents F＠NTASTIC BATTLE FES ～Who goes first～",
+    "perName": "大阪DAY2昼公演",
+    "perDate": "20251116",
+    "officialPage": "https://idolmaster-official.jp/live_event/sidem_fbfes_wgf/",
+    "type": ""
+  },
+  {
+    "liveId": "FBF",
+    "perId": "WGF_O_DAY2_S",
+    "livePerId": "FBF_WGF_O_DAY2_S",
+    "displayLiveName": "バトルフェスWGF",
+    "displayPerName": "大阪DAY2夜公演",
+    "liveName": "315 Production presents F＠NTASTIC BATTLE FES ～Who goes first～",
+    "perName": "大阪DAY2夜公演",
+    "perDate": "20251116",
+    "officialPage": "https://idolmaster-official.jp/live_event/sidem_fbfes_wgf/",
+    "type": ""
+  },
+  {
+    "liveId": "MOIW2025",
+    "perId": "DAY1",
+    "livePerId": "MOIW2025_DAY1",
+    "displayLiveName": "MOIW2025",
+    "displayPerName": "DAY1",
+    "liveName": "THE IDOLM@STER M@STERS OF IDOL WORLD 2025",
+    "perName": "DAY1",
+    "perDate": "20251213",
+    "officialPage": "https://idolmaster-official.jp//live_event/idolworld2025/",
+    "type": "ex"
+  },
+  {
+    "liveId": "MOIW2025",
+    "perId": "DAY2",
+    "livePerId": "MOIW2025_DAY2",
+    "displayLiveName": "MOIW2025",
+    "displayPerName": "DAY2",
+    "liveName": "THE IDOLM@STER M@STERS OF IDOL WORLD 2025",
+    "perName": "DAY2",
+    "perDate": "20251214",
+    "officialPage": "https://idolmaster-official.jp//live_event/idolworld2025/",
+    "type": "ex"
   }
 ]

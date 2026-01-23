@@ -8,8 +8,10 @@ const dummySeriesId:string[]
         ,'8ST'
         ,'9ST'
         ,'MESP'
+        ,'UOS'
         ,''
         ,'MTS' //TODO 該当アートワーク作成後削除
+        ,'FBF' //TODO 該当アートワーク作成後削除
     ];
 
 export default function GetArtWorkSrc
