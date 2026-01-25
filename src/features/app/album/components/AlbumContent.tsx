@@ -8,7 +8,7 @@ import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
 import {GetArtistJsx,GetArtistBadgeInfo} from '@/features/common/utils/ArtistUtils';
 import IdolBadge from '@/features/common/components/IdolBadge';
 import {ShareYoutubeModal} from "@/features/app/shareModal/ShareYoutubeModal";
-import CopyButton from "@/features/common/components/CopyButton";
+import CopyButton from "@/features/common/components/CopyButtonBk";
 import AlbumSongs from './AlbumSongs'
 import AlbumSeries from './AlbumSeries'
 import { motion } from "framer-motion";

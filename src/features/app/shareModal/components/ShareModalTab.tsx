@@ -2,17 +2,18 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { ShareModalTabInfo } from '@/data/types';
-import { useShareService,getShareService } from '@/features/common/hooks/shareServiceHook';
+import { useShareService } from '@/features/common/hooks/shareServiceHook';
 import ShareModuleContent from "./ShareModuleContent";
 
 export default function ShareModalTab({ initId, tabs }: { initId: string, tabs: ShareModalTabInfo[] }) {
 
   //ローカルストレージ
-  const [subscService, setSubscService] = useShareService(initId);
-  const shareServiceId = getShareService(initId);
-  const initTab: ShareModalTabInfo = tabs.find((data)=>data.id === shareServiceId)||tabs[0];
-  
-  const [activeTab, setActiveTab] = useState(initTab);
+  const [shareService, setShareService] = useShareService(initId);
+  //const shareServiceId = getShareService(initId);
+  //const initTab: ShareModalTabInfo = tabs.find((data)=>data.id === shareService)||tabs[0];
+
+  const activeTab =
+    tabs.find(tab => tab.id === shareService) ?? tabs[0];
 
 	return (
   <>
@@ -22,8 +23,8 @@ export default function ShareModalTab({ initId, tabs }: { initId: string, tabs: 
           key={tab.id}
           disabled={tab.disabled}
           onClick={() => {
-            setSubscService(tab.id);
-            setActiveTab(tab);
+            setShareService(tab.id);
+            //setActiveTab(tab);
           }}
           className={`
             font-sans text-base lg:text-xl 

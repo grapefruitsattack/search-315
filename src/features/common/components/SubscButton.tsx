@@ -46,14 +46,13 @@ export default function SubscButton(
         :subscAlbums.find(data=>data.id===albumId);
 
     //デフォルト表示用サブスクサービス
-    const localStoragesubscItem = getSubscService();
-    const href: string = getSubscUrl(songId,albumId,localStoragesubscItem);
+    const href: string = getSubscUrl(songId,albumId,subscService);
     const subscServiceName: string = href===''
       ?subscServiceNames[0].name
-      :subscServiceNames.find((data)=>data.id===localStoragesubscItem)?.name||subscServiceNames[0].name;
+      :subscServiceNames.find((data)=>data.id===subscService)?.name||subscServiceNames[0].name;
     const subscServiceNameSub: string = href===''
       ?subscServiceNames[0].nameSub
-      :subscServiceNames.find((data)=>data.id===localStoragesubscItem)?.nameSub||subscServiceNames[0].nameSub;
+      :subscServiceNames.find((data)=>data.id===subscService)?.nameSub||subscServiceNames[0].nameSub;
 
 
     return(

@@ -1,6 +1,6 @@
 
 import React from "react"
-import CopyButton from "@/features/common/components/CopyButton";
+import CopyButton from "@/features/common/components/CopyButtonBk";
 import GetUnitIdolName from "@/features/common/utils/GetUnitIdolName";
 import {ShareModal} from "@/features/app/shareModal/ShareModal";
 import {ShareSearch315Modal} from "@/features/app/shareModal/ShareSearch315Modal";

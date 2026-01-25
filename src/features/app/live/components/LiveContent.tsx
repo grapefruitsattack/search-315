@@ -3,7 +3,7 @@ import type { LiveMovie,LiveProduct,LiveMaster } from '../../../../data/types';
 import LiveProducts from '../../../../data/liveProducts.json';
 import LiveMovies from '../../../../data/liveMovies.json';
 import {ShareYoutubeModal} from "../../../app/shareModal/ShareYoutubeModal";
-import CopyButton from "../../../common/components/CopyButton";
+import CopyButton from "../../../common/components/CopyButtonBk";
 import Products from './Products'
 import Movie from './Movie'
 import SetLists from './SetLists'

@@ -13,6 +13,7 @@ import {GetArtistJsx,GetArtistBadgeInfo} from '@/features/common/utils/ArtistUti
 import IdolBadge from '@/features/common/components/IdolBadge';
 import CopyButton from "@/features/common/components/CopyButton";
 import {ShareYoutubeModal} from "@/features/app/shareModal/ShareYoutubeModal";
+import {ShareModalButton} from "@/features/app/shareModal/ShareModalButton";
 import OtherVersion from './OtherVersion'
 import Mv from './Mv'
 import Live from './Live'
@@ -122,82 +123,96 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
           </div>
         </div>
 
+
         {/* ボタン */}
-        <div className='
-            grid grid-cols-2 mt-4 gap-y-[5px] 
-            lg:w-1/2 
-        '>
-            {/* Youtube */}
-            {youtubeId==='' && result.trialYoutubeId===''
+        <div className='flex flex-wrap gap-4 mt-4'>
+          {result.subscFlg===0 && result.trialYoutubeId===''
             ?<></>
             :
-            <div 
-                className={`
-                    lg:w-auto inline-block row-span-1 lg:pr-2 pr-1
-                    
-                `}
-            >
-                <a className=""
-                href={`https://youtu.be/${youtubeId===''?result.trialYoutubeId:youtubeId}`}
-                target="_blank" rel="noopener noreferrer">
-                    <motion.button
-                        className='rounded-lg border-2 border-red-500 w-full h-full
-                        text-red-500 font-sans leading-tight
-                        hover:bg-red-500 hover:text-red-100 
-                        transition-all duration-500 ease-out
-                        fill-red-500 hover:fill-red-100 
-                        text-sm mobileM:text-base lg:text-lg
-                        '
-                        type="button"
-                        aria-controls="contents"
-                        whileTap={{ scale: 0.97 }}
-                        transition={{ duration: 0.05 }}
-                    >
-                        <div className='
-                            flex flex-wrap justify-center items-center font-sans font-black 
-                            mobileM:my-1 my-2
-                        '>
-                            {youtubeId===''?'試聴動画':'YouTube'}
-                            <span className="">
-                            <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
-                            </span>
-                        </div>
-                    </motion.button>
-                </a>
-            </div>    
-            }
-            {/* YouTube Music */}
-            {youtubeId===''
-            ?result.trialYoutubeId===''?<></>:<div></div>
-            :
-            <div 
-                className={`
-                    lg:w-auto inline-block row-span-1 h-[44px]
-                `}
-            >
-                <SubscButton songId={result.songId} albumId=""/>
-            </div>    
-            }
-            <div 
-                className={`
-                    lg:w-auto inline-block row-span-1 lg:pr-2 pr-1
-                `}
-            >
-            <ShareYoutubeModal 
-                    youtubeUrl ={youtubeId===''?'':`https://youtu.be/`+ youtubeId}
-                    title={result.songTitle} 
-                    artistName={result.displayArtist}
-                    pass={'song/'+result.songId}
-                />
-            </div>
-            
+            <div className='
+                grid grid-cols-[2fr_3fr] gap-y-[5px] 
+                lg:w-1/2 w-full'>
+              {/* Youtube */}
+              {youtubeId==='' && result.trialYoutubeId===''
+                ?<></>
+                :
+                <div className={`lg:w-auto inline-block row-span-1 lg:pr-2 pr-1`}>
+                    <a className=""
+                    href={`https://youtu.be/${youtubeId===''?result.trialYoutubeId:youtubeId}`}
+                    target="_blank" rel="noopener noreferrer">
+                        <motion.button
+                            className='rounded-lg border-2 border-red-500 w-full h-full
+                            text-red-500 font-sans leading-tight
+                            hover:bg-red-500 hover:text-red-100 
+                            transition-all duration-500 ease-out
+                            fill-red-500 hover:fill-red-100 
+                            text-sm mobileM:text-base lg:text-lg
+                            '
+                            type="button"
+                            aria-controls="contents"
+                            whileTap={{ scale: 0.97 }}
+                            transition={{ duration: 0.05 }}
+                        >
+                            <div className='
+                                flex flex-wrap justify-center items-center font-sans font-black 
+                                mobileM:my-1 my-2
+                            '>
+                                {youtubeId===''?'試聴動画':'YouTube'}
+                                <span className="">
+                                <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+                                </span>
+                            </div>
+                        </motion.button>
+                    </a>
+                </div> 
+              }
+              {/* サブスク */}
+              {result.subscFlg===0
+                ?result.trialYoutubeId===''?<></>:<div></div>
+                :
+                <div className={`lg:w-auto inline-block row-span-1 h-[44px]`}>
+                    <SubscButton songId={result.songId} albumId=""/>
+                </div>
+              }
+          </div>
+          }
+
+          <div className='flex gap-2 h-fit'>
+            {/* シェアボタン */}
+            <ShareModalButton
+              key={1}
+              buttonText='共有'
+              initTabId=''
+              tabs={[
+                {
+                  title: 'YouTube',
+                  id: 'youtube',
+                  disabled: youtubeId==='',
+                  shareText: `${result.songTitle} ${result.displayArtist.trim() === '' ? '': '- '+result.displayArtist}  |  YouTube\n#SideM #search315`,
+                  shareUrl: youtubeId===''?'':`https://youtu.be/`+ youtubeId
+                },
+                {
+                  title: 'サーチ315',
+                  id: 'search315',
+                  disabled: false,
+                  shareText: `${result.songTitle} ${result.displayArtist.trim() === '' ? '': '- '+result.displayArtist}  |  サーチサイコー\n#SideM #search315`,
+                  shareUrl: `https://search315.com/`+'song/'+result.songId+'/'
+                },
+              ]}
+            />
+            {/* コピーボタン */}
             <CopyButton 
                 copyText={result.songTitle} 
                 buttonText={'曲名コピー'}
                 tootipText={'曲名をコピーしました'}
                 placement='bottom'
             />
+          </div>
         </div>
+
+
+
+
 
         <div className='mt-4 px-2 py-1 w-fit rounded border-2 border-green-500/20'>
           <GetCreditJsx songId={result.commonSong===''?result.songId:result.commonSong} targetCreditId=''/>
