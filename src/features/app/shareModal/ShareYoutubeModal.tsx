@@ -2,7 +2,7 @@
 import { useModal } from "react-hooks-use-modal";
 import { motion, AnimatePresence } from "framer-motion";
 import ShareModuleContent from "./components/ShareModuleContent";
-import ShareModalTab from "./components/ShareModalTab";
+import ShareModalTab from "./components/ShareModalTabBk";
 import {
   Modal,
   ModalBody,
@@ -19,7 +19,8 @@ export const ShareYoutubeModal = (
     //モーダル
 
 
-    const { isOpen, onClose, onOpen } = useDisclosure();
+    //const { isOpen, onClose, onOpen } = useDisclosure();
+    const test = useDisclosure(); 
 
     return (
         <>
@@ -31,7 +32,7 @@ export const ShareYoutubeModal = (
             '
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.05 }}
-          onClick={onOpen}>
+          onClick={(test.onOpen)}>
         <div className='flex flex-wrap justify-center items-center '>
         <svg 
               className="icon icon-tabler icon-tabler-x " 
@@ -42,7 +43,7 @@ export const ShareYoutubeModal = (
         </div>
         </motion.button >
      <Modal 
-        isOpen={isOpen} onClose={onClose}
+        isOpen={test.isOpen} onClose={test.onClose}
      >
        <ModalOverlay />
        <ModalContent minW="50vw" w="calc(100vw - 20px - 2rem)">
@@ -51,12 +52,12 @@ export const ShareYoutubeModal = (
           className="flex justify-between items center border-b border-gray-200 py-2"
         >
           <div className="flex items-center justify-center">
-            <p className="text-xl font-bold text-gray-800">共有</p>
+            <p className="text-xl font-bold text-gray-800">共有test</p>
           </div>
 
           <button
             className="bg-gray-300 hover:bg-gray-500 cursor-pointer hover:text-gray-300 font-sans text-gray-500 w-8 h-8 flex items-center justify-center rounded-full"
-            onClick={onClose}
+            onClick={test.onClose}
           >
             <svg 
               className="icon icon-tabler icon-tabler-x"

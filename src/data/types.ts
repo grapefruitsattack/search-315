@@ -127,6 +127,14 @@ export type Tabs = {
   content: JSX.Element;
 };
 
+export type ShareModalTabInfo = {
+  title: string;
+  id: string;
+  disabled: boolean;
+  shareText: string;
+  shareUrl: string;
+};
+
 export type LivePerformer = {
   livePerId: string;
   singingInfoId: string;

@@ -2,7 +2,7 @@
 import { useModal } from "react-hooks-use-modal";
 import { motion, AnimatePresence } from "framer-motion";
 import ShareModuleContent from "./components/ShareModuleContent";
-import ShareModalTab from "./components/ShareModalTab";
+import ShareModalTab from "./components/ShareModalTabBk";
 import {
   Modal,
   ModalBody,
