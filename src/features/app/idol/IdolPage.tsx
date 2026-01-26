@@ -165,7 +165,6 @@ export default function UnitPage({ singingInfoId }: { singingInfoId: string  }) 
               albumId={result.albumId} 
               trackNo={result.trackNo} 
               song={result}
-              existsButton={false}
             />
             </div>
             ))}
@@ -188,7 +187,6 @@ export default function UnitPage({ singingInfoId }: { singingInfoId: string  }) 
               albumId={result.albumId} 
               trackNo={result.trackNo} 
               song={result}
-              existsButton={false}
             />
             </div>
             ))}
@@ -212,7 +210,6 @@ export default function UnitPage({ singingInfoId }: { singingInfoId: string  }) 
               albumId={result.albumId} 
               trackNo={result.trackNo} 
               song={result}
-              existsButton={false}
             />
             </div>
             ))}

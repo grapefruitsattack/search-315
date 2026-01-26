@@ -1,247 +1,239 @@
 'use client'
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import { motion } from "framer-motion";
 import type { Albums } from '@/data/types';
 import albumMaster from '@/data/albumMaster.json';
 import subscAlbums from '@/data/subscAlbums.json';
 import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
 import {GetArtistJsx,GetArtistBadgeInfo} from '@/features/common/utils/ArtistUtils';
 import IdolBadge from '@/features/common/components/IdolBadge';
-import {ShareYoutubeModal} from "@/features/app/shareModal/ShareYoutubeModal";
-import CopyButton from "@/features/common/components/CopyButtonBk";
+import CopyButton from "@/features/common/components/CopyButton";
+import {ShareModalButton} from "@/features/app/shareModal/ShareModalButton";
 import AlbumSongs from './AlbumSongs'
 import AlbumSeries from './AlbumSeries'
-import { motion } from "framer-motion";
 
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
 export default function AlbumContent({ album, }: { album: Albums}) {
 
-    // アーティスト
-    const artistArray: string[] = GetArtistBadgeInfo(album.artist);
-    //アートワーク
-    const imgSrc: string = GetArtWorkSrc(album.sereisId||'',album.isSoloColle,album.isUnitColle);
-    //リリース日
-    const releaseDate: string 
-        = new Date(
-            Number(album.releaseDate.substring(0,4))
-            ,Number(album.releaseDate.substring(4,6))-1
-            ,Number(album.releaseDate.substring(6,8))).toLocaleDateString();
+  // アーティスト
+  const artistArray: string[] = GetArtistBadgeInfo(album.artist);
+  //アートワーク
+  const imgSrc: string = GetArtWorkSrc(album.sereisId||'',album.isSoloColle,album.isUnitColle);
+  //リリース日
+  const releaseDate: string 
+    = new Date(
+      Number(album.releaseDate.substring(0,4))
+      ,Number(album.releaseDate.substring(4,6))-1
+      ,Number(album.releaseDate.substring(6,8))).toLocaleDateString();
 
-    const series : Albums[] | undefined 
-        = albumMaster.filter(data => data.albumId !== album.albumId && data.sereisId === album.sereisId)||[];
+  const series : Albums[] | undefined 
+    = albumMaster.filter(data => data.albumId !== album.albumId && data.sereisId === album.sereisId)||[];
+  
+  //YoutubeURL取得
+  const youtubeId: string
+    = album.subscFlg===1
+      ?subscAlbums.find(data=>album.albumId===data.id)?.youtubeId || ''
+      :'';
+  
+  //雪を積もらせる
+  //ローカルストレージ
+  //const jsonStr = localStorage.getItem('snowParam');
+  // const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string} 
+  //     = jsonStr===null?{snowIsValid:'1',noticeCheckedYear:''}:JSON.parse(jsonStr);
+  const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string}  = {snowIsValid:'0',noticeCheckedYear:''};
+  //const snowImgSrc: string ='/snow/artworksnow'+String(Math.floor(Math.random() * 3)+1)+'.png';
+  const snowImgSrc: string ='/snow/artworksnow1.png';
     
-    //YoutubeURL取得
-    const youtubeId: string
-      = album.subscFlg===1
-        ?subscAlbums.find(data=>album.albumId===data.id)?.youtubeId || ''
-        :'';
-    
-    //雪を積もらせる
-    //ローカルストレージ
-    //const jsonStr = localStorage.getItem('snowParam');
-    // const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string} 
-    //     = jsonStr===null?{snowIsValid:'1',noticeCheckedYear:''}:JSON.parse(jsonStr);
-    const currentSnowParam: {snowIsValid: string, noticeCheckedYear: string}  = {snowIsValid:'0',noticeCheckedYear:''};
-    //const snowImgSrc: string ='/snow/artworksnow'+String(Math.floor(Math.random() * 3)+1)+'.png';
-    const snowImgSrc: string ='/snow/artworksnow1.png';
-    
-    return(
-       
-        <article className="pt-32 pb-96 px-2 mobileS:px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
-        <section className="mb-2 bg-gradient-to-r from-orange-500 tablet:from-0% mobileM:from-20% from-50% rounded">
-            <div 
-                className="
-                    flex items-center w-full ml-2
-                    text-2xl font-mono
-                    text-white
-                    cursor-pointer lg:cursor-auto 
-                     gap-1
-                ">
-                <svg className="fill-orange-500 bg-white rounded" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 16C14.2133 16 16 14.2133 16 12C16 9.78667 14.2133 8 12 8C9.78667 8 8 9.78667 8 12C8 14.2133 9.78667 16 12 16ZM12 11C12.55 11 13 11.45 13 12C13 12.55 12.55 13 12 13C11.45 13 11 12.55 11 12C11 11.45 11.45 11 12 11Z"></path></svg>
-                <p className="pr-2">
-                {'アルバム'}
-
-               </p>
-
-            </div>
-        </section>
-        <section>
+  return(
+    <article className="pt-32 pb-96 px-2 mobileS:px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
+      <section className="mb-2 bg-gradient-to-r from-orange-500 tablet:from-0% mobileM:from-20% from-50% rounded">
+        <div 
+          className="
+            flex items-center w-full ml-2
+            text-2xl font-mono
+            text-white
+            cursor-pointer lg:cursor-auto 
+            gap-1"
+        >
+          <svg className="fill-orange-500 bg-white rounded" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 16C14.2133 16 16 14.2133 16 12C16 9.78667 14.2133 8 12 8C9.78667 8 8 9.78667 8 12C8 14.2133 9.78667 16 12 16ZM12 11C12.55 11 13 11.45 13 12C13 12.55 12.55 13 12 13C11.45 13 11 12.55 11 12C11 11.45 11.45 11 12 11Z"></path>
+          </svg>
+          <p className="pr-2">{'アルバム'}</p>
+        </div>
+      </section>
+      <section>
         <div className='grid lg:grid-cols-songPageLg grid-cols-1 grid-rows-4 '>
             {/* アートワーク */}
-            <div 
-                className={`
-                row-span-6 w-[135px] inline-block relative
-                `}
-            >
-                <Image
-                    className={`object-cover object-center h-[120px] w-[120px] max-w-[400px] aspect-square rounded-lg`}
-                src={`/artwork/${imgSrc}.png`}
-                alt="アートワーク"
-                width={400}
-                height={400}
-                />
-                <Image
-                className={currentSnowParam.snowIsValid==='0'||album.colleFlg===1
+          <div className={`row-span-6 w-[135px] inline-block relative`}>
+            <Image
+              className={`object-cover object-center h-[120px] w-[120px] max-w-[400px] aspect-square rounded-lg`}
+              src={`/artwork/${imgSrc}.png`}
+              alt="アートワーク"
+              width={400}
+              height={400}
+            />
+            <Image
+              className={
+                currentSnowParam.snowIsValid==='0'||album.colleFlg===1
                 ?'hidden':` absolute left-[-7px] top-[-9px] h-auto w-[130px] `}
-                src={snowImgSrc}
-                alt="snow"
-                width={130}
-                height={130}
-                />
+              src={snowImgSrc}
+              alt="snow"
+              width={130}
+              height={130}
+            />
+          </div>
+          {/* 情報 */}
+          <div className={`lg:w-auto inline-block row-span-4 mx-2`}>
+            <div className="tablet:text-base text-sm font-sans text-slate-500 mb-1">
+                {releaseDate}
             </div>
-            {/* 情報 */}
-            <div 
-                className={`
-                    lg:w-auto inline-block row-span-4 mx-2 
-                `}
+            {artistArray.length <= 0
+              ?<div className="lg:text-xl text-base font-sans text-blue-800/80">
+                  <GetArtistJsx artist={album.artist}></GetArtistJsx>
+              </div>
+              :<div 
+                  className ='
+                    flex flex-wrap relative text-sm gap-0.5 mb-1 font-sans
+                    gap-y-2 gap-x-1 tablet:gap-y-1 tablet:gap-x-2'
                 >
-                <div className="tablet:text-base text-sm font-sans text-slate-500 mb-1">
-                    {releaseDate}
-                </div>
-                {artistArray.length <= 0
-                    ?<div className="lg:text-xl text-base font-sans text-blue-800/80">
-                        <GetArtistJsx artist={album.artist}></GetArtistJsx>
-                    </div>
-                    :<div className ='
-                            flex flex-wrap relative text-sm gap-0.5 mb-1 font-sans
-                            gap-y-2 gap-x-1 tablet:gap-y-1 tablet:gap-x-2
-                        '>
-                        {artistArray.map(
-                            (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={0} size={'normal'}/></div>))}
-                    </div>
-                }
-
-                <div className="lg:text-3xl text-xl font-mono font-bold inline-block">
-                    {album.albumTitleFull}
-                </div>
-            </div>
-        </div>
-            {/* ボタン */}
-            <div className='
-                grid grid-cols-2 pt-4 gap-y-[5px] 
-                lg:w-1/2
-            '>
-                {/* Youtube */}
-                {youtubeId==='' && album.trialYoutubeId===''
-                ?<></>
-                :
-                <div 
-                    className={`
-                        lg:w-auto inline-block row-span-1 lg:pr-2 pr-1
-                    `}
-                >
-                    <a className="w-full"
-                    href={`${youtubeId===''?'https://youtu.be/'+album.trialYoutubeId:'https://youtube.com/playlist?list='+youtubeId}`}
-                    target="_blank" rel="noopener noreferrer">
-                        <motion.button
-                            className='rounded-lg border-2 border-red-500 w-full h-full
-                            text-red-500 font-sans leading-tight
-                            hover:bg-red-500 hover:text-red-100 
-                            transition-all duration-500 ease-out
-                            fill-red-500 hover:fill-red-100 
-                            text-sm mobileM:text-base lg:text-lg
-                            '
-                            type="button"
-                            aria-controls="contents"
-                            whileTap={{ scale: 0.97 }}
-                            transition={{ duration: 0.05 }}
-                        >
-                            <div className='
-                                flex flex-wrap justify-center items-center font-sans font-black 
-                                mobileM:my-1 my-2
-                            '>
-                                {youtubeId===''?'試聴動画':'YouTube'}
-                                <span className="">
-                                <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
-                                </span>
-
-                            </div>
-                        </motion.button>
-                    </a>
-                </div>    
-                }
-                {/* YouTube Music */}
-                {youtubeId===''
-                ?album.trialYoutubeId===''?<></>:<div></div>
-                :
-                <div 
-                    className={`
-                        lg:w-auto inline-block row-span-1
-                    `}
-                >
-                    <SubscButton songId="" albumId={album.albumId} />
-                </div>    
-                }
-                <div 
-                    className={`
-                        lg:w-auto inline-block row-span-1 lg:pr-2 pr-1
-                    `}
-                >
-                <ShareYoutubeModal 
-                        youtubeUrl={youtubeId===''?'':`https://youtube.com/playlist?list=`+ youtubeId}
-                        title={album.albumTitleFull} 
-                        artistName={album.displayArtist}
-                        pass={'album/'+album.albumId}
-                    />
-                </div>    
-
-                <CopyButton 
-                    copyText={album.albumTitleFull} 
-                    buttonText={'アルバム名コピー'}
-                    tootipText={'アルバム名をコピーしました'}
-                    placement='bottom'
-                />
-            </div>
-
-            <div className={album.description===''?'hidden':`
-                w-fit pt-6 lg:text-base text-sm font-sans font-semibold
-            `}>{'※'}{album.description}
-            </div>
-            <div className="
-                w-fit pt-3 lg:text-base text-sm font-sans break-all
-            ">
-                <p>リリースページ：
-                    <a 
-                    className ="
-                    underline
-                    text-slate-400
-                    hover:text-sky-300 
-                    fill-slate-500
-                    hover:fill-sky-500 
-                    "
-                    href={album.releasePage}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >
-                        <span>
-                        {album.releasePage} 
-                        <span className="pl-0.5">
-                        <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
-                        </span>
-                        </span>
-                    </a>
-                </p>
-            </div>
-            </section>
-
-            {/* アルバム収録曲 */}
-            <section className="mt-10">
-            <AlbumSongs albumId={album.albumId}/>
-            </section>
-
-            {/* シリーズ */}
-            <section className="mt-10">
-            {
-            album.sereisId === undefined || album.sereisId === '' || series.length < 1
-            ?<></>
-            :<AlbumSeries albumId={album.albumId} seriesId={album.sereisId}/>
+                  {artistArray.map(
+                      (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={0} size={'normal'}/></div>))}
+              </div>
             }
-            </section>
+            <div className="lg:text-3xl text-xl font-mono font-bold inline-block">
+                {album.albumTitleFull}
+            </div>
+          </div>
+        </div>
 
-        </article>
+        {/* ボタン */}
+        <div className='flex flex-wrap gap-4 my-4'>
+          <div className={`
+            grid gap-y-[5px]
+            ${album.subscFlg!==1 && album.trialYoutubeId===''?' hideen':''}
+            ${album.subscFlg!==1
+              ?' grid-cols-1 w-2/3 tablet:w-1/3 w-full'
+              :' grid-cols-[2fr_3fr] tablet:w-1/2 w-full'}
+            `}>
+            {/* Youtube */}
+            <div className={`lg:w-auto inline-block row-span-1 lg:pr-2 pr-1`}>
+              <a 
+                className="w-full"
+                href={`${youtubeId===''?'https://youtu.be/'+album.trialYoutubeId:'https://youtube.com/playlist?list='+youtubeId}`}
+                target="_blank" rel="noopener noreferrer"
+              >
+                <motion.button
+                  className='
+                    rounded-lg border-2 border-red-500 w-full h-full
+                    text-red-500 font-sans leading-tight
+                    hover:bg-red-500 hover:text-red-100 
+                    transition-all duration-500 ease-out
+                    fill-red-500 hover:fill-red-100 
+                    text-sm mobileM:text-base lg:text-lg
+                    '
+                  type="button"
+                  aria-controls="contents"
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.05 }} >
+                  <div 
+                    className='
+                      flex flex-wrap justify-center items-center font-sans font-black 
+                      mobileM:my-1 my-2'>
+                    {youtubeId===''?'試聴動画':'YouTube'}
+                    <span className="">
+                      <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+                    </span>
+                  </div>
+                </motion.button>
+              </a>
+            </div> 
+            {/* サブスク */}
+            <div className={`
+              lg:w-auto inline-block row-span-1 h-10 
+              ${album.subscFlg!==1?' hidden':''}
+              `}>
+              <SubscButton songId="" albumId={album.albumId} />
+            </div>
+          </div>
+          <div className='flex gap-2 h-fit'>
+            {/* シェアボタン */}
+            <ShareModalButton
+              key={1}
+              buttonText='共有'
+              initTabId=''
+              tabs={[
+                {
+                  title: 'YouTube',
+                  id: 'youtube',
+                  disabled: youtubeId==='',
+                  shareText: `${album.albumTitleFull} ${album.displayArtist.trim() === '' ? '': '- '+album.displayArtist}  |  YouTube\n#SideM #search315`,
+                  shareUrl: youtubeId===''?'':`https://youtube.com/playlist?list=`+ youtubeId
+                },
+                {
+                  title: 'サーチ315',
+                  id: 'search315',
+                  disabled: false,
+                  shareText: `${album.albumTitleFull} ${album.displayArtist.trim() === '' ? '': '- '+album.displayArtist}  |  サーチサイコー\n#SideM #search315`,
+                  shareUrl: `https://search315.com/`+'album/'+album.albumId
+                },
+              ]}
+            />
+            {/* コピーボタン */}
+            <CopyButton 
+              copyText={album.albumTitleFull} 
+              buttonText={'アルバム名コピー'}
+              tootipText={'アルバム名をコピーしました'}
+              placement='bottom'
+            />
+          </div>
+        </div>
 
+        <div 
+          className={
+            album.description===''
+            ?'hidden':`w-fit pt-6 lg:text-base text-sm font-sans font-semibold`}>
+            {'※'}{album.description}
+        </div>
+        <div className="w-fit pt-3 lg:text-base text-sm font-sans break-all">
+          <p>リリースページ：
+            <a 
+              className ="
+              underline
+              text-slate-400
+              hover:text-sky-300 
+              fill-slate-500
+              hover:fill-sky-500 
+              "
+              href={album.releasePage}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>
+                {album.releasePage} 
+                <span className="pl-0.5">
+                  <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+                </span>
+              </span>
+            </a>
+          </p>
+        </div>
+      </section>
 
-    )
+      {/* アルバム収録曲 */}
+      <section className="mt-10">
+        <AlbumSongs albumId={album.albumId}/>
+      </section>
+
+      {/* シリーズ */}
+      <section className="mt-10">
+        {album.sereisId === undefined || album.sereisId === '' || series.length < 1
+          ?<></>
+          :<AlbumSeries albumId={album.albumId} seriesId={album.sereisId}/>
+        }
+      </section>
+
+    </article>
+  )
 }

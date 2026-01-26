@@ -61,7 +61,6 @@ export default function UnitMusic({ unitId }: { unitId: string }) {
               albumId={result.albumId} 
               trackNo={result.trackNo} 
               song={result}
-              existsButton={false}
             />
             </div>
             ))}
@@ -84,7 +83,6 @@ export default function UnitMusic({ unitId }: { unitId: string }) {
               albumId={result.albumId} 
               trackNo={result.trackNo} 
               song={result}
-              existsButton={false}
             />
             </div>
             ))}
@@ -111,7 +109,6 @@ export default function UnitMusic({ unitId }: { unitId: string }) {
                   albumId={result.albumId} 
                   trackNo={result.trackNo} 
                   song={result}
-                  existsButton={false}
                 />
                 </div>
                 ))
@@ -136,7 +133,6 @@ export default function UnitMusic({ unitId }: { unitId: string }) {
               albumId={result.albumId} 
               trackNo={result.trackNo} 
               song={result}
-              existsButton={false}
             />
             </div>
             ))}

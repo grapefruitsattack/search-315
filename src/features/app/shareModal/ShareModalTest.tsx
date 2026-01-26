@@ -12,7 +12,7 @@ import {
 import type { ShareModalTabInfo } from '@/data/types';
 import ShareModalTab from "./components/ShareModalTab";
 
-export const ShareModalTest = (
+export const ShareModal = (
   { initTabId, tabs, disclosure, }
   : { initTabId: string, tabs: ShareModalTabInfo[], disclosure: any, }
 ) => {
@@ -39,7 +39,7 @@ export const ShareModalTest = (
           </div>
         </ModalHeader>
         <ModalBody>
-          <div className="h-auto mx-4 p-4 rounded-xl">
+          <div className="h-auto mx-4 rounded-xl">
             <div className=''>
               <ShareModalTab 
                 initId={initTabId}

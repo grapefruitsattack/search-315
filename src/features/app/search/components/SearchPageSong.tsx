@@ -148,7 +148,6 @@ export default function SearchPageSong({ }: {}) {
             albumId={result.albumId} 
             trackNo={result.trackNo} 
             song={result}
-            existsButton={true}
           />
           ))}
           </section>

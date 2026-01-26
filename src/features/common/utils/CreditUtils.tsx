@@ -1,10 +1,14 @@
 import { JSX } from 'react';
-import creditMaster from '../../../data/creditMaster.json';
-import songCredit from '../../../data/songCredit.json';
-import type { CreditMaster,SongCredit } from '../../../data/types';
 import Link from 'next/link';
+import songCredit from '@/data/songCredit.json';
+import type { CreditMaster,SongCredit } from '@/data/types';
 
-export default function GetCreditJsx({ songId, targetCreditId }: { songId: string, targetCreditId: string }): JSX.Element{
+export function existsCredit(songId: string): boolean {
+  const credit : SongCredit[] = songCredit.filter(data=>data.songId === songId);
+  return credit.length > 0;
+}
+
+export function GetCreditJsx({ songId, targetCreditId }: { songId: string, targetCreditId: string }): JSX.Element{
 
   const lylicsResults : SongCredit[]
     = songCredit.filter(data=>data.songId === songId && data.creditType === 'lylics');

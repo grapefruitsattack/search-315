@@ -42,7 +42,6 @@ export default function OtherVersion({ id ,otherVersionSongs }: { id: string, ot
               albumId={result.albumId} 
               trackNo={result.trackNo} 
               song={result}
-              existsButton={false}
             />
             ))}
             </section>

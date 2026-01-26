@@ -35,7 +35,8 @@ export default function CopyButton (
     <Tooltip className = '' placement={ple} label={tootipText} isOpen = {tooltipOn}>
       <button 
         className='
-          flex py-2 px-5 rounded-full bg-zinc-100 items-center w-fit font-mono
+          flex py-2 px-5 rounded-full bg-zinc-100 items-center w-fit
+          font-mono text-sm tablet:text-base 
           transition-all duration-300
           hover:ring-2 hover:ring-zinc-600 hover:ring-offset-2 hover:bg-zinc-200
           active:scale-90

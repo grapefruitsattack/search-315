@@ -4,7 +4,7 @@ import creditMaster from '../../../data/creditMaster.json';
 import songCredit from '../../../data/songCredit.json';
 import songMaster from '../../../data/songMaster.json';
 import type { CreditMaster,SongCredit } from '../../../data/types';
-import GetCreditJsx from '../../common/utils/GetCreditJsx';
+import {GetCreditJsx} from '../../common/utils/CreditUtils';
 import Link from 'next/link';
 
 export default function CreditPage({ creditId }: { creditId: string }) {

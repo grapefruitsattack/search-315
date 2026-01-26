@@ -2,7 +2,7 @@ import {
   useDisclosure, 
  } from "@chakra-ui/react";
 import type { ShareModalTabInfo } from '@/data/types';  
-import {ShareModalTest} from "./ShareModalTest";
+import {ShareModal} from "./ShareModalTest";
 
 export const ShareModalButton = (
   { tabs, initTabId, buttonText }: { tabs: ShareModalTabInfo[], initTabId: string, buttonText: string }
@@ -14,7 +14,8 @@ export const ShareModalButton = (
     <>
       <button 
         className='
-          flex py-2 px-5 rounded-full bg-zinc-100 items-center w-fit font-mono
+          flex py-2 px-5 rounded-full bg-zinc-100 items-center w-fit
+          font-mono text-sm tablet:text-base 
           transition-all duration-300
           hover:ring-2 hover:ring-zinc-600 hover:ring-offset-2 hover:bg-zinc-200
           active:scale-90
@@ -27,7 +28,7 @@ export const ShareModalButton = (
         </svg>
         {buttonText}
       </button>
-      <ShareModalTest disclosure={disclosure} initTabId={initTabId} tabs={tabs} />
+      <ShareModal disclosure={disclosure} initTabId={initTabId} tabs={tabs} />
     </>
   );
 }

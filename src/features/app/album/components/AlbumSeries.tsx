@@ -46,7 +46,6 @@ export default function AlbumSeries({ albumId, seriesId }: { albumId: string, se
             <AlbumBlock 
                 key={index} 
                 results={result}
-                existsButton={false}
             />
             ))}
         </section>

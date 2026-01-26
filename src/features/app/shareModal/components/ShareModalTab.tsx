@@ -17,7 +17,10 @@ export default function ShareModalTab({ initId, tabs }: { initId: string, tabs: 
 
 	return (
   <>
-    <div className="flex items-center justify-center">
+    <div 
+      className={`
+        flex items-center justify-center 
+        ${tabs.length<=1?' hidden':''}`}>
       {tabs.map((tab,index) => (
         <button
           key={tab.id}
