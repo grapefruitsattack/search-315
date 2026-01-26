@@ -8,6 +8,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function IdolBadge({ id, useShortName, size }: { id: string, useShortName: number, size: string }) {
 
+    const router = useRouter();
+    
     if(id === '315pro'){
         return(
         <div 
@@ -26,7 +28,6 @@ export default function IdolBadge({ id, useShortName, size }: { id: string, useS
         )
     };
 
-    const router = useRouter();
     const data: SingingMaster | undefined = singingMaster.find(data => data.singingInfoId === id);
     const name: string 
         = useShortName===0?data?.singingInfoName||'': data?.singingInfoShortName||'';
