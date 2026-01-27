@@ -1,22 +1,18 @@
 
+import { Suspense } from "react";
 import React from "react"
 import CopyButton from "@/features/common/components/CopyButtonBk";
 import GetUnitIdolName from "@/features/common/utils/GetUnitIdolName";
-import {ShareModal} from "@/features/app/shareModal/ShareModal";
-import {ShareSearch315Modal} from "@/features/app/shareModal/ShareSearch315Modal";
-import type { Story,InfoStory } from '../../../data/types';
+import type { Story,InfoStory,ShareModalTabInfo } from '@/data/types';
 import { GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName,GetVoiceStateName,GetStoryHowtoviewName } from '@/features/common/utils/Story/GetStoryInfomation';
 import { MEDIA,CATEGORY,WEBSITE,HOW_TO_VIEW } from '@/features/common/const/StoryInfoConst'
 import IdolBadge from '@/features/common/components/IdolBadge';
 import CategoryBadge from '@/features/common/components/story/CategoryBadge';
 import MediaBadge from '@/features/common/components/story/MediaBadge';
 import SetLocalDateCookie  from "@/features/common/utils/SetLocalDateCookie";
-import GetLocalDate  from "@/features/common/utils/GetLocalDate";
 import StoryReadingButton from "./components/StoryReadingButton";
-import { Suspense } from "react";
 import StoryBlock from "@/features/common/components/story/StoryBlock";
-import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
+import {ShareModalButton} from "@/features/app/shareModal/ShareModalButton";
 
 export default async function StoryDetailedPage(
   { resultData }: { resultData:{storyData:Story, login:boolean, isRead:boolean, isReadLeater:boolean;}})
@@ -72,6 +68,12 @@ export default async function StoryDetailedPage(
   } else {
     shareText = `【${categoryName} - ${mediaName}アーカイブ】\n${storyData.storyTitle}  |  <サイト名>\n#SideM #search315`
   };
+  const tabs: ShareModalTabInfo[] = storyData.url===null||storyData.url===''
+    ?[{id:'search315', title:'サーチ315', disabled:false, shareText:shareText.replace('<サイト名>','サーチサイコー'), shareUrl:`https://search315.com/`+'story/'+storyData.storyId}]
+    :[
+      {id:storyData.website, title:websiteName, disabled:false,shareText:shareText.replace('<サイト名>',websiteName),shareUrl:storyData.url},
+      {id:'search315', title:'サーチ315', disabled:false, shareText:shareText.replace('<サイト名>','サーチサイコー'), shareUrl:`https://search315.com/`+'story/'+storyData.storyId}
+    ];
 
   // 検索文字列
   let searchText: string = '';
@@ -205,23 +207,12 @@ export default async function StoryDetailedPage(
           }
           <div className='col-span-1'
           >
-            {storyData.url===null||storyData.url===''
-            ?
-            <ShareSearch315Modal 
-              shareText={shareText}
-              buttonText=""
-              pass={'story/'+storyData.storyId}
+            <ShareModalButton
+              buttonText="共有"
+              initTabId=''
+              tabs={tabs}
             />
-            :
-              <ShareModal 
-                shareUrl={storyData.url}
-                shareSiteTitle={websiteName}
-                shareText={shareText}
-                buttonText=""
-                pass={'story/'+storyData.storyId}
-              />
-            }
-            </div>
+          </div>
           <div className='col-span-1'
           >
               <CopyButton 
@@ -311,20 +302,27 @@ export default async function StoryDetailedPage(
           `}>
             {storyData.mSubStory.map((result, index) => {
               // サブストーリー用シェア文章
-              let shareText: string = '';
+              let subShareText: string = '';
                 if(storyData.media===MEDIA.moba.id&&storyData.category===CATEGORY.dailyOneFrame.id){
                   //日常での１コマ
-                  shareText = `【${mediaName} - ${categoryName}】\n${result.subStoryTitle}  |  <サイト名>\n#SideM #search315`;
+                  subShareText = `【${mediaName} - ${categoryName}】\n${result.subStoryTitle}  |  <サイト名>\n#SideM #search315`;
                 } else if(storyData.media===MEDIA.moba.id&&(storyData.category===CATEGORY.comicSpecial.id||storyData.category===CATEGORY.comicNomral.id)){
                   //雑誌
-                  shareText = `【${mediaName} - ${categoryName} - ${storyData.storyTitle}】\n${
+                  subShareText = `【${mediaName} - ${categoryName} - ${storyData.storyTitle}】\n${
                     storyData.media === 1 && ['comicn','comics'].includes(storyData.category) && !(result.infoSubStory===null || result.infoSubStory.length===0)
                     ?GetUnitIdolName(result.infoSubStory[0].infoId,0,1):''
                   }「${result.subStoryTitle}」  |  <サイト名>\n#SideM #search315`;
                 } else {
                   //そのほか
-                  shareText = `【${mediaName} - ${categoryName} - ${storyData.storyTitle}】\n${result.subStoryTitle}  |  <サイト名>\n#SideM #search315`;
-                }
+                  subShareText = `【${mediaName} - ${categoryName} - ${storyData.storyTitle}】\n${result.subStoryTitle}  |  <サイト名>\n#SideM #search315`;
+                };
+                const subTabs: ShareModalTabInfo[] = storyData.url===null||storyData.url===''
+                  ?[{id:'search315', title:'サーチ315', disabled:false, shareText:subShareText.replace('<サイト名>','サーチサイコー'), shareUrl:`https://search315.com/`+'story/'+storyData.storyId}]
+                  :[
+                    {id:storyData.website, title:websiteName, disabled:false,shareText:subShareText.replace('<サイト名>',websiteName),shareUrl:storyData.url},
+                    {id:'search315', title:'サーチ315', disabled:false, shareText:subShareText.replace('<サイト名>','サーチサイコー'), shareUrl:`https://search315.com/`+'story/'+storyData.storyId}
+                  ];
+
               return(
                 <div key={Number(result.subStoryNo)} className="bg-white border-orange-700/30 border-t-4 border-l-4 bg-orange-50/50 text-xl">
                   <div className=" text-xl ">
@@ -368,17 +366,10 @@ export default async function StoryDetailedPage(
                         </a>
                     </div>
                     <div>
-                      <ShareModal 
-                        shareUrl={result.url}
-                        shareSiteTitle={websiteName}
-                        shareText={shareText}
-                        // shareText={`${storyData.media === 1&&storyData.category==='dof'?'':'【'+categoryName+'】'}${storyData.storyTitle}${
-                        //   storyData.media === 1 && ['comicn','comics'].includes(storyData.category) && !(result.infoSubStory===null || result.infoSubStory.length===0)
-                        //   ?'　'+GetUnitIdolName(result.infoSubStory[0].infoId,0,1):''
-                        // }「${result.subStoryTitle}」`}
-                  //shareText={`${storyData.media === 1&&storyData.category==='dof'?'':'【#SideM '+categoryName+'】\n'}${storyData.storyTitle}  |  <サイト名>\n#search315`}
+                     <ShareModalButton
                         buttonText=""
-                        pass={'story/'+storyData.storyId}
+                        initTabId=''
+                        tabs={subTabs}
                       />
                     </div>
                     <CopyButton 

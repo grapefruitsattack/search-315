@@ -5,7 +5,7 @@ import type { UserChartData, DisplayUserChartData, SingingMaster } from '@/data/
 import singingMaster from '@/data/singingMaster.json';
 import GetUnitIdolName from "@/features/common/utils/GetUnitIdolName";
 import { GetPercentageInfo } from "@/features/common/utils/PercentageUtils";
-import {ShareSearch315Modal} from "@/features/app/shareModal/ShareSearch315Modal";
+import {ShareModalButton} from "@/features/app/shareModal/ShareModalButton";
 import {
   Label,
   PolarGrid,
@@ -503,10 +503,18 @@ export default function MypageChart(
                     w-full lg:w-[240px] inline-block row-span-1 lg:pr-2 pr-1 h-8 
                   `}
               >
-              <ShareSearch315Modal 
+                <ShareModalButton
                   buttonText="読破状況をシェア"
-                  shareText={`${pieChartDisplayData.selectedUserChartData.info_id==='sidem'?'':'出演'}ストーリー |  サーチサイコー\n#SideM #search315`} 
-                  pass={'unit/'}
+                  initTabId="search315"
+                  tabs={[
+                    {
+                      id:'search315',
+                      title:'サーチ315',
+                      disabled:false,
+                      shareText:`${pieChartDisplayData.selectedUserChartData.info_id==='sidem'?'':'出演'}ストーリー |  サーチサイコー\n#SideM #search315`,
+                      shareUrl:`https://search315.com/`
+                    }
+                  ]}
                 />
               </div>
               </div>

@@ -5,9 +5,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import singingMaster from '@/data/singingMaster.json';
 import type { StorySearchResult } from '@/data/types';
 import IdolBlock from "@/features/common/components/IdolBlock";
-import {ShareSearch315Modal} from "../shareModal/ShareSearch315Modal";
-import UnitMusic from "./UnitPageMusic";
-import UnitStory from "./UnitPageStory";
+import {ShareModalButton} from "@/features/app/shareModal/ShareModalButton";
 
 interface ItemCSS extends React.CSSProperties{
   '--c':string
@@ -66,11 +64,17 @@ export default function IdolPage({ unitId, type }
             lg:w-auto inline-block row-span-1 lg:pr-2 pr-1 h-8
             `}
         >
-        <ShareSearch315Modal 
+          <ShareModalButton
             buttonText="このページをシェア"
-            shareText={`「${unitName}」の楽曲情報・サブスク配信状況をチェック！ |  サーチサイコー\n#SideM #search315`} 
-            pass={'unit/'+unitId}
-            />
+            initTabId="search315"
+            tabs={[{
+              id:'search315',
+              title:'サーチ315',
+              disabled:false,
+              shareText:`「${unitName}」の楽曲情報・サブスク配信状況をチェック！ |  サーチサイコー\n#SideM #search315`,
+              shareUrl:`https://search315.com/`+'unit/'+unitId
+            }]}
+          />
         </div>
       </div>
       <div  className="w-fit

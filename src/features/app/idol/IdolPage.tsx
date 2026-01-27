@@ -1,15 +1,15 @@
 'use client'
 import { useState } from "react";
-import singingMaster from '../../../data/singingMaster.json';
-import songMaster from '../../../data/songMaster.json';
-import songInfoAsc from '../../../data/songInfoAsc.json'
-import livePerformer from '../../../data/livePerformer.json'
-import liveMaster from '../../../data/liveMaster.json'
-import type { SongMaster, LiveMaster } from '../../../data/types';
-import SongBlock from "../../common/components/SongBlock";
-import UnitBlock from "../../common/components/UnitBlock";
-import {ShareSearch315Modal} from "../shareModal/ShareSearch315Modal";
 import Link from "next/link";
+import singingMaster from '@/data/singingMaster.json';
+import songMaster from '@/data/songMaster.json';
+import songInfoAsc from '@/data/songInfoAsc.json'
+import livePerformer from '@/data/livePerformer.json'
+import liveMaster from '@/data/liveMaster.json'
+import type { SongMaster, LiveMaster } from '@/data/types';
+import SongBlock from "@/features/common/components/SongBlock";
+import UnitBlock from "@/features/common/components/UnitBlock";
+import {ShareModalButton} from "@/features/app/shareModal/ShareModalButton";
 
 interface ItemCSS extends React.CSSProperties{
   '--c':string
@@ -83,10 +83,18 @@ export default function UnitPage({ singingInfoId }: { singingInfoId: string  }) 
                 lg:w-auto inline-block row-span-1 lg:pr-2 pr-1 h-8 
             `}
         >
-        <ShareSearch315Modal 
-            buttonText="このページをシェア"
-            shareText={`「${idolName}」の楽曲情報・サブスク配信状況をチェック！ |  サーチサイコー\n#SideM #search315`} 
-            pass={'idol/'+id}
+        <ShareModalButton
+          buttonText="このページをシェア"
+          initTabId=""
+          tabs={[
+            {
+              id:'search315',
+              title:'サーチ315',
+              disabled:false,
+              shareText:`「${idolName}」の楽曲情報・サブスク配信状況をチェック！ |  サーチサイコー\n#SideM #search315`,
+              shareUrl:`https://search315.com/`+'idol/'+id
+            }
+          ]}
         />
         </div>
       </div>

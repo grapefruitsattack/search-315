@@ -166,7 +166,7 @@ export default function AlbumContent({ album, }: { album: Albums}) {
               tabs={[
                 {
                   title: 'YouTube',
-                  id: 'youtube',
+                  id: 'yt',
                   disabled: youtubeId==='',
                   shareText: `${album.albumTitleFull} ${album.displayArtist.trim() === '' ? '': '- '+album.displayArtist}  |  YouTube\n#SideM #search315`,
                   shareUrl: youtubeId===''?'':`https://youtube.com/playlist?list=`+ youtubeId

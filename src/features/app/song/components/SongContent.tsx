@@ -181,7 +181,7 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
               tabs={[
                 {
                   title: 'YouTube',
-                  id: 'youtube',
+                  id: 'yt',
                   disabled: youtubeId==='',
                   shareText: `${result.songTitle} ${result.displayArtist.trim() === '' ? '': '- '+result.displayArtist}  |  YouTube\n#SideM #search315`,
                   shareUrl: youtubeId===''?'':`https://youtu.be/`+ youtubeId

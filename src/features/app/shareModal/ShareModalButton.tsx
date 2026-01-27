@@ -1,8 +1,9 @@
+'use client'
 import {
   useDisclosure, 
  } from "@chakra-ui/react";
 import type { ShareModalTabInfo } from '@/data/types';  
-import {ShareModal} from "./ShareModalTest";
+import {ShareModal} from "./ShareModal";
 
 export const ShareModalButton = (
   { tabs, initTabId, buttonText }: { tabs: ShareModalTabInfo[], initTabId: string, buttonText: string }
