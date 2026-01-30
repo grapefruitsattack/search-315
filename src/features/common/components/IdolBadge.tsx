@@ -1,10 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation';
-import type { SingingMaster } from '../../../data/types';
-import singingMaster from '../../../data/singingMaster.json';
-import borderHover from '../css/border-hover.module.css';
-import Link from 'next/link';
-import { motion, AnimatePresence } from "framer-motion";
+import type { SingingMaster } from '@/data/types';
+import singingMaster from '@/data/singingMaster.json';
 
 export default function IdolBadge({ id, useShortName, size }: { id: string, useShortName: number, size: string }) {
 
@@ -33,8 +30,6 @@ export default function IdolBadge({ id, useShortName, size }: { id: string, useS
         = useShortName===0?data?.singingInfoName||'': data?.singingInfoShortName||'';
     const personFlg: number = data?.personFlg||0;
     const unitPrefix: string = id.substring(0, 3);
-    const unitBadgeBg: string = 'bg-' + unitPrefix + '_BADGE_BG ';
-    const unitBadgeTx: string = 'text-' + unitPrefix + '_BADGE_TX ';
     const colorInfo = badgeColors.find((data)=>data.id===unitPrefix);
     const bgColorCode = colorInfo?.bgColor||'';
     const textColorCode = colorInfo?.textColor||'';
@@ -56,25 +51,6 @@ export default function IdolBadge({ id, useShortName, size }: { id: string, useS
                 `}
                 >
             <p className={``}>{name}</p>
-            <p className={`
-            bg-JUP_BADGE_BG text-JUP_BADGE_TX
-            bg-DRS_BADGE_BG text-DRS_BADGE_TX
-            bg-ALT_BADGE_BG text-ALT_BADGE_TX
-            bg-BEI_BADGE_BG text-BEI_BADGE_TX
-            bg-DBL_BADGE_BG text-DBL_BADGE_TX
-            bg-FRM_BADGE_BG text-FRM_BADGE_TX
-            bg-SAI_BADGE_BG text-SAI_BADGE_TX
-            bg-HIJ_BADGE_BG text-HIJ_BADGE_TX
-            bg-SSK_BADGE_BG text-SSK_BADGE_TX
-            bg-CFP_BADGE_BG text-CFP_BADGE_TX
-            bg-MFM_BADGE_BG text-MFM_BADGE_TX
-            bg-SEM_BADGE_BG text-SEM_BADGE_TX
-            bg-KGD_BADGE_BG text-KGD_BADGE_TX
-            bg-FLG_BADGE_BG text-FLG_BADGE_TX
-            bg-LGN_BADGE_BG text-LGN_BADGE_TX
-            bg-CLF_BADGE_BG text-CLF_BADGE_TX
-            `}>
-            </p>
             </div>
         );
     } else {
@@ -94,9 +70,10 @@ export default function IdolBadge({ id, useShortName, size }: { id: string, useS
                 ` }
                 onClick={(e) => router.push(personFlg===1?'/idol/'+id:'/unit/'+id)}
                 >
-            <span className={`p-1 rounded-xs border-l-2 border-white/80`}
-                >
-                {name}
+            <span 
+              className={`p-1 rounded-xs ${personFlg===1?' border-l-2 border-white/80':''}`}
+              >
+              {name}
             </span>
             </button>
         );
