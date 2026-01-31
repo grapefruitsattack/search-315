@@ -55,7 +55,7 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
 
 
   return(
-    <article className="pt-32 pb-96 px-2 mobileS:px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
+    <div className=" pb-96 px-2 mobileS:px-4 mobileM:px-8 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
       <section className="mb-2 bg-gradient-to-r from-cyan-500/70 tablet:from-0% from-20% rounded">
         <div 
           className="
@@ -262,6 +262,6 @@ export default function SongContent({ result, albumResult }: { result: SongMaste
         </section>
       }
 
-    </article>
+    </div>
   )
 }

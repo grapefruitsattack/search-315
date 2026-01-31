@@ -23,7 +23,7 @@ export default function CreditPage({ creditId }: { creditId: string }) {
       = songMaster.filter(data=>distinctSongIds.includes(data.songId));
 
     return (
-      <article className="pt-32 pb-96 px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
+      <article className=" pb-96 px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
       {name} 
         {resultSongs.map((result, index) => {
           return(

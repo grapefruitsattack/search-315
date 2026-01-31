@@ -23,7 +23,7 @@ export default async function StoryPage(): Promise<JSX.Element> {
     return (
         <CommonPage>
         <title>{ `サイトについて${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー`}</title>
-        <article className="pt-32 pb-48 px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
+        <article className=" pb-48 px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
         <section className="pb-20">
           <div className="">
           {session?.user
