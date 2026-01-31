@@ -90,7 +90,7 @@ const Post = async ({
   return (
     <Suspense>
     <CommonPage>
-      <article className="pt-32 pb-96 px-2 mobileS:px-4 mobileM:px-8 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
+      <article className="pt-32 pb-96 px-2 mobileS:px-4 mobileM:px-8 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
       {/* @ts-ignore Server Component */}
       <StoryDetailedPage resultData={post}/>
       </article>

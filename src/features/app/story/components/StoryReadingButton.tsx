@@ -27,10 +27,11 @@ export default function StoryReadingButton(
   { storyId, login, isRead, isReadLeater }
   : { storyId: string, login: boolean, isRead: boolean, isReadLeater: boolean }
 ): JSX.Element {
+  const newDate: Date = new Date();
   //既読編集モーダル用
   const { isOpen, onClose, onOpen } = useDisclosure();
   const [popoverOpen, setPopoverOpen] = useState(false);
-  const [selectedDate, setDate] = useState<Date | undefined>(new Date());
+  const [selectedDate, setDate] = useState<Date | undefined>(undefined);
   
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -100,7 +101,7 @@ export default function StoryReadingButton(
           text-gray-900 fill-sky-300 bg-white hover:bg-sky-100 
           transition-all duration-500 ease-out'
           >
-          <span className='px-0 mobileS:px-2 font-sans text-xs mobileS:text-sm tablet:text-base '>{dateTimeFormat.format(selectedDate)}</span>
+          <span className='px-0 mobileS:px-2 font-sans text-xs mobileS:text-sm tablet:text-base '>{selectedDate===undefined?'読了日':dateTimeFormat.format(selectedDate)}</span>
           <span className='px-0 mobileS:px-2 font-sans '>
           <svg className='w-[14px] h-[14px] mobileS:w-[20px] mobileS:h-[20px] tablet:w-[22px] tablet:h-[22px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20"><path d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"></path>
           </svg>
@@ -111,7 +112,7 @@ export default function StoryReadingButton(
                 <Calendar
                   timeZone={timezone}
                   mode="single"
-                  defaultMonth={selectedDate}
+                  defaultMonth={selectedDate===undefined?newDate:selectedDate}
                   selected={selectedDate}
                   onSelect={(date) => {
                     setDate(date)
@@ -132,7 +133,7 @@ export default function StoryReadingButton(
         <form
           className=' w-full h-full'
           action={async () => {
-              await UpdateReadingData(storyId,dateTimeFormat.format(selectedDate),0)
+              await UpdateReadingData(storyId,selectedDate===undefined?'':dateTimeFormat.format(selectedDate),0)
               .then(() => {
                 setLoading(true);
                 return new Promise<void>((resolve) => {

@@ -131,6 +131,7 @@ export default function SongBlock(
             <a 
               className ={`truncate text-sm text-gray-500 hover:underline hover:font-bold`}
               href={`/album/` + song.albumId}
+              onClick={(e) => e.stopPropagation()}
             >{albam?.albumTitle}</a>
           </div>}
 
