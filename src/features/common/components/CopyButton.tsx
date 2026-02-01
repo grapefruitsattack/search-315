@@ -35,8 +35,8 @@ export default function CopyButton (
     <Tooltip className = '' placement={ple} label={tootipText} isOpen = {tooltipOn}>
       <button 
         className='
-          flex py-2 px-5 rounded-full bg-zinc-100 items-center w-fit
-          font-mono text-sm tablet:text-base 
+          flex py-2 px-2 tablet:px-5 rounded-full bg-zinc-100 items-center w-fit h-fit
+          font-mono text-xs mobileL:text-sm tablet:text-base 
           transition-all duration-300
           hover:ring-2 hover:ring-zinc-600 hover:ring-offset-2 hover:bg-zinc-200
           active:scale-90
@@ -44,7 +44,7 @@ export default function CopyButton (
         onClick={() => copyTextToClipboard(copyText)}
       >
         {/* Google Fonts Icons */}
-        <svg className="fill-zinc-600 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width='24' height='24'>
+        <svg className="fill-zinc-600 mr-1 w-[18px] h-[18px] mobileL:w-[24px] mobileL:h-[24px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
           <path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/>
         </svg>
         {buttonText}

@@ -55,10 +55,9 @@ export default function IdolBadge({ id, useShortName, size }: { id: string, useS
         );
     } else {
         return(
-            <button 
+            <a 
                 style={{ '--bg-color': bgColorCode,'--text-color': textColorCode,'--border-color': borderColorCode, } as React.CSSProperties}
-                //style={{ backgroundColor: bgColorCode, color: textColorCode, borderWidth: 2, borderColor: borderColorCode }}
-                className={`
+                className={`block cursor-pointer
                 justify-center 
                 font-bold 
                 bg-[var(--bg-color)] text-[var(--text-color)] 
@@ -68,14 +67,15 @@ export default function IdolBadge({ id, useShortName, size }: { id: string, useS
                 rounded-sm py-0.5 text-xs mobileS:text-sm tablet:text-base
                 ${personFlg===1?' border-l-8 border-[var(--border-color)]':'px-2'}
                 ` }
-                onClick={(e) => router.push(personFlg===1?'/idol/'+id:'/unit/'+id)}
+                href={personFlg===1?'/idol/'+id:'/unit/'+id}
+                //onClick={(e) => router.push(personFlg===1?'/idol/'+id:'/unit/'+id)}
                 >
             <span 
               className={`p-1 rounded-xs ${personFlg===1?' border-l-2 border-white/80':''}`}
               >
               {name}
             </span>
-            </button>
+            </a>
         );
     }
 
