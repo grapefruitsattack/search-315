@@ -90,7 +90,7 @@ export default function TopPage({ }: { }) {
       `}>
     </p>
     
-    <section className="mt-5 mb-32 grid text-center align-middle grid-cols-2 lg:mb-0 lg:grid-cols-4 gap-3">
+    <section className="mt-5 mb-32 grid text-center align-middle grid-cols-2 lg:mb-0 pc:grid-cols-4 gap-3">
             
             <UnitBlock id="JUP00" />
             <IdolBlock id="JUP01" />

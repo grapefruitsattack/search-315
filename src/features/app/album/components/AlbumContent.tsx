@@ -47,7 +47,7 @@ export default function AlbumContent({ album, }: { album: Albums}) {
   const snowImgSrc: string ='/snow/artworksnow1.png';
     
   return(
-    <article className=" pb-96 px-2 mobileS:px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
+    <article className=" pb-96 px-2 mobileS:px-4 mobileM:px-8 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
       <section className="mb-2 bg-gradient-to-r from-orange-500 tablet:from-0% mobileM:from-20% from-50% rounded">
         <div 
           className="

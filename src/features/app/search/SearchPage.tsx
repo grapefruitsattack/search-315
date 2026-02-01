@@ -11,7 +11,7 @@ export default function SearchPage() {
       <>
         <title>{ '検索結果 | サーチサイコー'}</title>
       <SearchModal/>
-      <section className="pt-24 bg-white lg:max-w-[1500px] lg:m-auto">
+      <section className="bg-white lg:max-w-[1500px] lg:m-auto">
 
       <div className='mb-5'>
       </div>
