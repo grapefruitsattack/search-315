@@ -110,8 +110,7 @@ export default async function StoryDetailedPage(
         <p className="pr-2">{'ストーリー'}</p>
       </div>
     </section>
-{/*  w-[16px] h-[16px] tablet:w-[24px] tablet:h-[22px] */}
-{/*  fill-white bg-none tablet:fill-gray-500 tablet:bg-white rounded px-[0.5px] */}
+
     <section className="">
       <div className='flex flex-wrap relative text-sm tablet:text-xl font-mono font-bold text-white gap-1 mb-1'>
         <CategoryBadge id={storyData.category} size={'normal'}/>
@@ -187,8 +186,8 @@ export default async function StoryDetailedPage(
               <button
                 className='rounded-lg border-2 border-gray-600 w-full h-full
                 font-sans leading-tight text-white bg-gray-600 fill-white
-                hover:bg-white hover:text-gray-600 hover:fill-gray-600
-                transition-all duration-500 ease-out
+                transition-all duration-200 ease-out
+                hover:ring-2 hover:ring-gray-600 hover:ring-offset-2 
                 active:scale-90
                 text-sm mobileL:text-base lg:text-lg'>
                   <div className='
