@@ -19,7 +19,7 @@ import StoryReadLaterButton from "./components/StoryReadLaterButton";
 import StoryReadingButton from "./components/StoryReadingButtonBk";
 
 export default async function StoryDetailedPage(
-  { resultData }: { resultData:{storyData:Story, login:boolean, isRead:boolean, isReadLeater:boolean;}})
+  { resultData }: { resultData:{storyData:Story, login:boolean, isRead:boolean, isReadLeater:boolean, readingDate:string}})
   : Promise<JSX.Element> 
 {
   const storyData: Story = resultData.storyData;

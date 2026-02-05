@@ -23,9 +23,9 @@ export async function UpdateReadingData(storyId: string, readingDate: string, re
       'update_user_reading',
       {
         user_id: session?.user?.id,
-          story_id: storyId,
-          reading_date: useReadingDate,
-          read_later: readLater
+        story_id: storyId,
+        reading_date: useReadingDate,
+        read_later: readLater
       }
     );
     if (error !== null) {

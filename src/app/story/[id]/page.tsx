@@ -56,6 +56,7 @@ const getData = cache(async (id: string) => {
 
   let isRead: boolean = false;
   let isReadLeater: boolean = false;
+  let readingDate: string = '';
  
   if(login){
     const userId: string
@@ -74,8 +75,9 @@ const getData = cache(async (id: string) => {
       ||null;
     isRead = userReadingData!==null&&userReadingData?.read_later!==null&&userReadingData.read_later===0;
     isReadLeater = userReadingData!==null&&userReadingData?.read_later!==null&&userReadingData.read_later===1;
+    readingDate =  userReadingData!==null?userReadingData?.reading_date:'';
   }
-  return {storyData,login,isRead,isReadLeater};
+  return {storyData,login,isRead,isReadLeater,readingDate};
 });
 
 // ページコンポーネント

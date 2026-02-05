@@ -8,23 +8,18 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import {
-  useDisclosure, 
- } from "@chakra-ui/react";
 import {UpdateReadingData}  from "@/features/app/actions/UpdateReadingData";
-import LoginModal from '@/features/common/components/login/LoginModal';
+import {DeleteReadingData}  from "@/features/app/actions/DeleteReadingData";
 
 export default function StoryReadButton(
-  { storyId, login, isRead, isReadLeater }
-  : { storyId: string, login: boolean, isRead: boolean, isReadLeater: boolean }
+  { storyId, login, }
+  : { storyId: string, login: boolean, }
 ) {
-
   const [popoverOpen, setPopoverOpen] = useState(false);
-  const [calendarOpen, setCalendarOpen] = useState(false);
   const [selectedDate, setDate] = useState<Date | undefined>(new Date());
   const timezone: string = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const dateTimeFormat = new Intl.DateTimeFormat('ja-JP',{timeZone:timezone});
-  const disclosure = useDisclosure();
+  const [calendarOpen, setCalendarOpen] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
 
   function popoverOpenFunction(){
@@ -40,16 +35,13 @@ export default function StoryReadButton(
     setCalendarOpen(false);
     setPopoverOpen(!popoverOpen);
   }
-
+  
   return(
     <>
     <Toaster position="top-center"/>
-    <LoginModal disclosure={disclosure} description="ログインすると「既読」情報を管理できます！" />
     <Popover 
-      open={login?popoverOpen:false} 
-      onOpenChange={()=>{
-        if(login) popoverOpenFunction()
-      }} >
+      open={popoverOpen} 
+      onOpenChange={()=>popoverOpenFunction()}>
     <PopoverTrigger asChild>
       <button  id="mainbutton"
         className='
@@ -59,13 +51,12 @@ export default function StoryReadButton(
           hover:ring-2 hover:ring-blue-600 hover:ring-offset-2 hover:bg-zinc-200
           active:scale-90
         ' 
-        onClick={()=>{ if(!login) disclosure.onOpen() }}
       >
         {/* Google Fonts Icons */}
         <svg className='fill-blue-700 mr-0 w-[18px] h-[18px] mobileL:w-[24px] mobileL:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
           <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
         </svg>
-        {'既読に追加'}
+        {'既読情報を編集'}
       </button>
     </PopoverTrigger>
     <PopoverContent  className="w-auto overflow-hidden p-2 border border-2 bg-zinc-100" align="start" side="bottom"  avoidCollisions={false}>
@@ -102,7 +93,7 @@ export default function StoryReadButton(
                 .then(() => {
                   toast("ok")
                 }).catch((e) => {
-                  toast("エラー")
+                  toast.error("エラー")
                 })
               }}
           >
@@ -114,12 +105,13 @@ export default function StoryReadButton(
                 hover:ring-2 hover:ring-blue-600 hover:ring-offset-2 
                 active:scale-90
               ' 
+              disabled={false}
             >
               {/* Google Fonts Icons */}
               <svg className='fill-white mr-0 w-[18px] h-[18px] mobileL:w-[24px] mobileL:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                 <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
               </svg>
-              {'この読了日で既読に追加'}
+              {'読了日を変更'}
             </button>
           </form>
         }
