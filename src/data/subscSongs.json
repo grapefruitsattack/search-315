@@ -2839,7 +2839,7 @@
   },
   {
     "id": "PMPT_1",
-    "title": "POP LINKS TUNE!!!!!",
+    "title": "POPLINKS TUNE!!!!!",
     "youtubeId": "auVjwiM3NjU&",
     "spotifyUrl": "https://open.spotify.com/track/5lsbkCyTPaLHBPaTOZbuGf",
     "appleMusicUrl": "https://music.apple.com/album/poplinks-tune/1698435362?i=1698435367",
@@ -8379,6 +8379,17 @@
     "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0G322K9LG",
     "lineMusicUrl": "https://music.line.me/webapp/track/mt000000002429f420",
     "awaUrl": "https://s.awa.fm/track/fdc02b8c6e29ceaea928",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "TT04_1",
+    "title": "LET'S HAVE!",
+    "youtubeId": "3fYAzAt1dNI",
+    "spotifyUrl": "https://open.spotify.com/track/344FM48wELzxoDzprdULwE",
+    "appleMusicUrl": "https://music.apple.com/jp/song/lets-have/1856529879",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0G48GCL1W",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt000000002438769f",
+    "awaUrl": "https://s.awa.fm/track/5acbcd60bed4e3781455",
     "towerRecordsMusic": ""
   }
 ]
