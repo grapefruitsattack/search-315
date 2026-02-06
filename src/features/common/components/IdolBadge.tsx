@@ -92,7 +92,7 @@ export default function IdolBadge({ id, useShortName, size }: { id: string, useS
             ]
         },
         {
-            id:'DRS',bgColor:'#ffc65e', textColor:'#473108',
+            id:'DRS',bgColor:'#FFA90A', textColor:'#342305',
             unitColors:[
                 {id:'DRS01',borderColor:'#CC313B'},
                 {id:'DRS02',borderColor:'#1767D9'},
@@ -107,7 +107,7 @@ export default function IdolBadge({ id, useShortName, size }: { id: string, useS
             ]
         },
         {
-            id:'BEI',bgColor:'#26D4FF', textColor:'#0C414F',
+            id:'BEI',bgColor:'#66ddfa', textColor:'#0b414f',
             unitColors:[
                 {id:'BEI01',borderColor:'#309AC1'},
                 {id:'BEI02',borderColor:'#54BC26'},
@@ -205,7 +205,7 @@ export default function IdolBadge({ id, useShortName, size }: { id: string, useS
             ]
         },
         {
-            id:'CLF',bgColor:'#00CCBB', textColor:'#002a26',
+            id:'CLF',bgColor:'rgb(2, 224, 206)', textColor:'#000000',
             unitColors:[
                 {id:'CLF01',borderColor:'#2A92CF'},
                 {id:'CLF02',borderColor:'#91BE1C'},

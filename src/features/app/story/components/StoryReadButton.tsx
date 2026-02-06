@@ -1,7 +1,6 @@
 'use client'
 import { useState } from "react";
 import { Calendar } from "@/components/ui/calendar";
-import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 import {
   Popover,
@@ -43,7 +42,6 @@ export default function StoryReadButton(
 
   return(
     <>
-    <Toaster position="top-center"/>
     <LoginModal disclosure={disclosure} description="ログインすると「既読」情報を管理できます！" />
     <Popover 
       open={login?popoverOpen:false} 

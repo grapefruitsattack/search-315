@@ -1,7 +1,6 @@
 'use client'
 import { useState } from "react";
 import { Calendar } from "@/components/ui/calendar";
-import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 import {
   Popover,
@@ -12,11 +11,11 @@ import {UpdateReadingData}  from "@/features/app/actions/UpdateReadingData";
 import {DeleteReadingData}  from "@/features/app/actions/DeleteReadingData";
 
 export default function StoryReadButton(
-  { storyId, login, }
-  : { storyId: string, login: boolean, }
+  { storyId, readingDate, }
+  : { storyId: string, readingDate: string, }
 ) {
   const [popoverOpen, setPopoverOpen] = useState(false);
-  const [selectedDate, setDate] = useState<Date | undefined>(new Date());
+  const [selectedDate, setDate] = useState<Date | undefined>(new Date(readingDate));
   const timezone: string = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const dateTimeFormat = new Intl.DateTimeFormat('ja-JP',{timeZone:timezone});
   const [calendarOpen, setCalendarOpen] = useState(false);
@@ -38,30 +37,29 @@ export default function StoryReadButton(
   
   return(
     <>
-    <Toaster position="top-center"/>
     <Popover 
       open={popoverOpen} 
       onOpenChange={()=>popoverOpenFunction()}>
     <PopoverTrigger asChild>
       <button  id="mainbutton"
         className='
-          flex py-2 px-2 tablet:px-5 rounded-full bg-zinc-100 items-center w-fit h-fit
-          font-mono text-xs mobileL:text-sm tablet:text-base text-blue-700
+          flex py-2 px-2 tablet:px-5 rounded-full bg-blue-800 items-center w-fit h-fit
+          font-mono text-xs mobileL:text-sm tablet:text-base text-white fill-white
           transition-all duration-300
-          hover:ring-2 hover:ring-blue-600 hover:ring-offset-2 hover:bg-zinc-200
+          hover:ring-2 hover:ring-blue-800 hover:ring-offset-2 
           active:scale-90
         ' 
       >
         {/* Google Fonts Icons */}
-        <svg className='fill-blue-700 mr-0 w-[18px] h-[18px] mobileL:w-[24px] mobileL:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-          <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
+        <svg className=' mr-1 w-[18px] h-[18px] mobileL:w-[24px] mobileL:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+          <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/>
         </svg>
         {'既読情報を編集'}
       </button>
     </PopoverTrigger>
-    <PopoverContent  className="w-auto overflow-hidden p-2 border border-2 bg-zinc-100" align="start" side="bottom"  avoidCollisions={false}>
-      <div className="text-xl font-bold">{'読了日'}</div>
-      <div className="flex  gap-2">
+    <PopoverContent  className="w-auto overflow-hidden p-2 border border-2 border-zinc-300 bg-zinc-100" align="start" side="bottom"  avoidCollisions={false}>
+      <div className="text-base font-bold">{'読了日変更'}</div>
+      <div className="flex gap-2">
         <button className='flex justify-between w-30 tablet:w-40 p-2 rounded border shadow-md
           text-gray-900 fill-sky-300 bg-white hover:bg-sky-100 
           transition-all duration-500 ease-out'
@@ -75,7 +73,7 @@ export default function StoryReadButton(
           </span>
         </button>
         {loading
-          ?<>'loading...'</>
+          ?<>loading...</>
           :
           <form
             className=' w-full h-full'
@@ -100,30 +98,32 @@ export default function StoryReadButton(
             <button 
               className='
                 flex py-2 px-2 tablet:px-5 rounded-full bg-blue-800 items-center w-fit h-fit
-                font-mono text-xs mobileL:text-sm tablet:text-base text-white
+                font-mono text-xs mobileL:text-sm tablet:text-base text-white fill-white 
                 transition-all duration-300
                 hover:ring-2 hover:ring-blue-600 hover:ring-offset-2 
-                active:scale-90
+                active:scale-90 
+                disabled:bg-zinc-200 disabled:text-zinc-500 disabled:fill-zinc-400
+                disabled:hover:ring-0 disabled:hover:ring-offset-0 disabled:active:scale-100
               ' 
-              disabled={false}
+              disabled={selectedDate?.toDateString()===new Date(readingDate).toDateString()}
             >
               {/* Google Fonts Icons */}
-              <svg className='fill-white mr-0 w-[18px] h-[18px] mobileL:w-[24px] mobileL:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
+              <svg className='mr-0 w-[18px] h-[18px] mobileL:w-[24px] mobileL:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/>
               </svg>
-              {'読了日を変更'}
+              {'読了日変更'}
             </button>
           </form>
         }
       </div>
       <Calendar
-        className={`rounded-lg border shadow-sm mt-2 ${calendarOpen?'':'hidden'}`}
+        className={`h-min ${calendarOpen?'':'hidden'}`}
         timeZone={timezone}
         mode="single"
         defaultMonth={selectedDate}
         selected={selectedDate}
         onSelect={(date) => {
-          setDate(date)
+          setDate(date);
         }}
         captionLayout={'dropdown'}
         startMonth={new Date(2000, 1)}

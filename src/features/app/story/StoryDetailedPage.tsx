@@ -1,6 +1,7 @@
 
 import { Suspense } from "react";
 import React from "react"
+import { Toaster } from "@/components/ui/sonner";
 import CopyButton from "@/features/common/components/CopyButton";
 import GetUnitIdolName from "@/features/common/utils/GetUnitIdolName";
 import type { Story,InfoStory,ShareModalTabInfo } from '@/data/types';
@@ -15,6 +16,7 @@ import SetLocalDateCookie  from "@/features/common/utils/SetLocalDateCookie";
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 import {ShareModalButton} from "@/features/app/shareModal/ShareModalButton";
 import StoryReadButton from "./components/StoryReadButton";
+import StoryReadEditButton from "./components/StoryReadEditButton";
 import StoryReadLaterButton from "./components/StoryReadLaterButton";
 import StoryReadingButton from "./components/StoryReadingButtonBk";
 
@@ -94,6 +96,7 @@ export default async function StoryDetailedPage(
   return (
   <>
     <title>{`${storyData.storyTitle} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー`}</title>
+    <Toaster position="top-center"/>
     <section className="mb-2 bg-gradient-to-r from-gray-500 from-50% rounded">
     <SetLocalDateCookie />
       <div 
@@ -203,9 +206,16 @@ export default async function StoryDetailedPage(
             </a>
           </div>
           <div className='flex flex-wrap gap-2'>
-            <StoryReadButton
-              storyId={storyData.storyId} login={login} isRead={isRead} isReadLeater={isReadLeater}
-            />
+            {isRead
+              ?
+              <StoryReadEditButton
+                storyId={storyData.storyId} readingDate={resultData.readingDate}
+              />
+              :
+              <StoryReadButton
+                storyId={storyData.storyId} login={login} isRead={isRead} isReadLeater={isReadLeater}
+              />
+            }
             <StoryReadLaterButton
               storyId={storyData.storyId} login={login} isRead={isRead} isReadLeater={isReadLeater}
             />
