@@ -1,6 +1,8 @@
 'use client'
 import { useState } from "react";
+import { flushSync } from "react-dom";
 import { Calendar } from "@/components/ui/calendar";
+import { Spinner } from "@/components/ui/spinner";
 import { toast } from "sonner";
 import {
   Popover,
@@ -42,7 +44,7 @@ export default function StoryReadButton(
 
   return(
     <>
-    <LoginModal disclosure={disclosure} description="ログインすると「既読」情報を管理できます！" />
+    <LoginModal disclosure={disclosure} description="ログインすると「既読」に登録できます！" />
     <Popover 
       open={login?popoverOpen:false} 
       onOpenChange={()=>{
@@ -66,8 +68,8 @@ export default function StoryReadButton(
         {'既読に追加'}
       </button>
     </PopoverTrigger>
-    <PopoverContent  className="w-auto overflow-hidden p-2 border border-2 bg-zinc-100" align="start" side="bottom"  avoidCollisions={false}>
-      <div className="text-xl font-bold">{'読了日'}</div>
+    <PopoverContent  className="w-auto overflow-hidden p-2 border border-2 border-zinc-300 bg-zinc-100" align="start" side="bottom"  avoidCollisions={false}>
+      <div className="text-base font-bold">{'読了日'}</div>
       <div className="flex  gap-2">
         <button className='flex justify-between w-30 tablet:w-40 p-2 rounded border shadow-md
           text-gray-900 fill-sky-300 bg-white hover:bg-sky-100 
@@ -82,43 +84,69 @@ export default function StoryReadButton(
           </span>
         </button>
         {loading
-          ?<>'loading...'</>
+          ?
+          <div className="flex text-xs mobileL:text-sm tablet:text-base">
+            <div
+              className='
+                flex justify-center w-[10em] py-2 tablet:px-5 rounded-full bg-blue-800 items-center
+                font-mono  text-white fill-white 
+                bg-zinc-200 text-zinc-500 fill-zinc-400
+              ' >
+                <Spinner />変更中
+            </div>
+          </div>
           :
           <form
-            className=' w-full h-full'
+            className=''
             action={async () => {
-                await UpdateReadingData(storyId,dateTimeFormat.format(selectedDate),0)
-                .then(() => {
-                  setLoading(true);
-                  return new Promise<void>((resolve) => {
-                    window.setTimeout(() => {
+              try {
+                flushSync(() => setLoading(true));
+                await UpdateReadingData(storyId,dateTimeFormat.format(selectedDate),0);
+                await new Promise<void>((resolve) => {
+                    setTimeout(() => {
                       setLoading(false);
                       resolve();
-                    }, 1500);
-                  });
-                })
-                .then(() => {
-                  toast("ok")
-                }).catch((e) => {
-                  toast("エラー")
-                })
-              }}
+                    }, 1000);
+                });
+                setPopoverOpen(false);
+                toast.success(
+                  '既読に追加しました'
+                  ,{position:'bottom-right'})
+              } catch (e) {
+                await new Promise<void>((resolve) => {
+                    setTimeout(() => {
+                      setLoading(false);
+                      resolve();
+                    }, 500);
+                });
+                toast.error(
+                  "追加できませんでした"
+                  ,{description:'何度も失敗する場合、リロード後再度お試しください',duration:8000,position:'bottom-right'})
+              }
+            }}
           >
+            <div className="flex text-xs mobileL:text-sm tablet:text-base">
             <button 
               className='
-                flex py-2 px-2 tablet:px-5 rounded-full bg-blue-800 items-center w-fit h-fit
-                font-mono text-xs mobileL:text-sm tablet:text-base text-white
+                flex w-[10em] h-fit py-2 tablet:px-5 rounded-full bg-blue-800 items-center
+                font-mono text-white fill-white 
                 transition-all duration-300
                 hover:ring-2 hover:ring-blue-600 hover:ring-offset-2 
-                active:scale-90
+                active:scale-90 
+                disabled:bg-zinc-200 disabled:text-zinc-500 disabled:fill-zinc-400
+                disabled:hover:ring-0 disabled:hover:ring-offset-0 disabled:active:scale-100
               ' 
+              disabled={loading}
             >
-              {/* Google Fonts Icons */}
-              <svg className='fill-white mr-0 w-[18px] h-[18px] mobileL:w-[24px] mobileL:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
-              </svg>
-              {'この読了日で既読に追加'}
+              <div className={`flex mx-auto `}>
+                {/* Google Fonts Icons */}
+                <svg className='mr-0 w-[18px] h-[18px] mobileL:w-[24px] mobileL:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                  <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
+                </svg>
+                <span className={`flex my-auto `}>{'既読に追加'}</span>
+              </div>
             </button>
+            </div>
           </form>
         }
       </div>
@@ -132,7 +160,7 @@ export default function StoryReadButton(
           setDate(date)
         }}
         captionLayout={'dropdown'}
-        startMonth={new Date(2000, 1)}
+        startMonth={new Date(2013, 12)}
         disabled={(date) =>
           date > new Date() || date < new Date("1900-01-01")
         }

@@ -1,4 +1,9 @@
 'use client'
+import { useState } from "react";
+import { flushSync } from "react-dom";
+import { Spinner } from "@/components/ui/spinner";
+import { toast } from "sonner";
+import {UpdateReadingData}  from "@/features/app/actions/UpdateReadingData";
 import LoginModal from '@/features/common/components/login/LoginModal';
 
 
@@ -6,6 +11,13 @@ export default function StoryReadLaterButton(
   { storyId, login, isRead, isReadLeater }
   : { storyId: string, login: boolean, isRead: boolean, isReadLeater: boolean }
 ) {
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const [calendarOpen, setCalendarOpen] = useState(false);
+  const [selectedDate, setDate] = useState<Date | undefined>(new Date());
+  const timezone: string = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const dateTimeFormat = new Intl.DateTimeFormat('ja-JP',{timeZone:timezone});
+  const disclosure = useDisclosure();
+  const [loading, setLoading] = useState<boolean>(false);
 
 
   return(

@@ -5,37 +5,30 @@ import { revalidatePath } from 'next/cache';
 import GetLocalDate  from "@/features/common/utils/GetLocalDate";
 
 export async function UpdateReadingData(storyId: string, readingDate: string, readLater: number) {
-
+  new Date(readingDate)
   const localDate: string = await GetLocalDate();
-
-  const useReadingDate 
-    = readingDate===''
-      ?localDate
-      :readingDate;
+  let useReadingDate: Date | null = new Date(readingDate);
+  if(isNaN(useReadingDate.getDate())&&readLater==0) useReadingDate = new Date(localDate);
+  if(isNaN(useReadingDate.getDate())&&readLater==1) useReadingDate = null;
 
   const session = await auth.api.getSession({
       headers: await headers(),
   });
   const supabase = await createSupabaseClientWithLogin(session);
 
-    //データ更新
-    const { error } = await supabase.rpc(
-      'update_user_reading',
-      {
-        user_id: session?.user?.id,
-        story_id: storyId,
-        reading_date: useReadingDate,
-        read_later: readLater
-      }
-    );
-    if (error !== null) {
-      console.log(error);
-      throw ('更新に失敗しました');
+  //データ更新
+  const { error } = await supabase.rpc(
+    'update_user_reading',
+    {
+      user_id: session?.user?.id,
+      story_id: storyId,
+      reading_date: useReadingDate,
+      read_later: readLater
     }
-    // リロード
-    revalidatePath("/");
-    //toast("Event has been created.")
-    // if (!data[0].id) {
-    //   throw new Error('Failed to insert record');
-    // }
+  );
+  if (error !== null) {
+    throw ('更新に失敗しました');
   }
+  // リロード
+  revalidatePath("/");
+}
