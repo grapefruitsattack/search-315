@@ -18,7 +18,7 @@ import {ShareModalButton} from "@/features/app/shareModal/ShareModalButton";
 import StoryReadButton from "./components/StoryReadButton";
 import StoryReadEditButton from "./components/StoryReadEditButton";
 import StoryReadLaterButton from "./components/StoryReadLaterButton";
-import StoryReadingButton from "./components/StoryReadingButtonBk";
+import StoryReadLaterEditButton from "./components/StoryReadLaterEditButton";
 
 export default async function StoryDetailedPage(
   { resultData }: { resultData:{storyData:Story, login:boolean, isRead:boolean, isReadLeater:boolean, readingDate:string}})
@@ -216,9 +216,16 @@ export default async function StoryDetailedPage(
                 storyId={storyData.storyId} login={login} isRead={isRead} isReadLeater={isReadLeater}
               />
             }
-            <StoryReadLaterButton
-              storyId={storyData.storyId} login={login} isRead={isRead} isReadLeater={isReadLeater}
-            />
+            {isReadLeater
+              ?
+              <StoryReadLaterEditButton
+                storyId={storyData.storyId} login={login} isRead={isRead} isReadLeater={isReadLeater}
+              />
+              :
+              <StoryReadLaterButton
+                storyId={storyData.storyId} login={login} isRead={isRead} isReadLeater={isReadLeater}
+              />
+            }
             <ShareModalButton
               buttonText="共有"
               initTabId=''

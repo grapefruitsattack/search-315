@@ -54,29 +54,33 @@ export default function StoryReadButton(
       <button  id="mainbutton"
         className='
           flex py-2 px-2 tablet:px-5 rounded-full bg-zinc-100 items-center w-fit h-fit
-          font-mono text-xs mobileL:text-sm tablet:text-base text-blue-700
+          font-mono text-xs mobileL:text-sm tablet:text-base text-blue-700 fill-blue-700
           transition-all duration-300
           hover:ring-2 hover:ring-blue-600 hover:ring-offset-2 hover:bg-zinc-200
           active:scale-90
+          disabled:bg-zinc-200 disabled:text-zinc-500 disabled:fill-zinc-400
+          disabled:hover:ring-0 disabled:hover:ring-offset-0 disabled:active:scale-100
         ' 
         onClick={()=>{ if(!login) disclosure.onOpen() }}
+        disabled={loading}
       >
         {/* Google Fonts Icons */}
-        <svg className='fill-blue-700 mr-0 w-[18px] h-[18px] mobileL:w-[24px] mobileL:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+        <svg className='mr-0 w-[18px] h-[18px] mobileL:w-[24px] mobileL:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
           <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
         </svg>
         {'既読に追加'}
       </button>
     </PopoverTrigger>
     <PopoverContent  className="w-auto overflow-hidden p-2 border border-2 border-zinc-300 bg-zinc-100" align="start" side="bottom"  avoidCollisions={false}>
-      <div className="text-base font-bold">{'読了日'}</div>
-      <div className="flex  gap-2">
-        <button className='flex justify-between w-30 tablet:w-40 p-2 rounded border shadow-md
+      <div className="text-sm tablet:text-base font-bold">{'読了日'}</div>
+      <div className="flex gap-2 text-xs mobileS:text-sm tablet:text-base">
+        <button className='flex justify-between 
+          w-30 tablet:w-40 p-2 rounded border shadow-md
           text-gray-900 fill-sky-300 bg-white hover:bg-sky-100 
           transition-all duration-500 ease-out'
           onClick={()=>setCalendarOpen(!calendarOpen)}
           >
-          <span className='px-0 mobileS:px-2 font-sans text-xs mobileS:text-sm tablet:text-base '>{dateTimeFormat.format(selectedDate)}</span>
+          <span className='px-0 mobileS:px-2 font-sans  '>{dateTimeFormat.format(selectedDate)}</span>
           <span className='px-0 mobileS:px-2 font-sans'>
           <svg className='w-[14px] h-[14px] mobileS:w-[20px] mobileS:h-[20px] tablet:w-[22px] tablet:h-[22px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20">
             <path d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"></path>
@@ -92,7 +96,7 @@ export default function StoryReadButton(
                 font-mono  text-white fill-white 
                 bg-zinc-200 text-zinc-500 fill-zinc-400
               ' >
-                <Spinner />変更中
+                <Spinner />追加中
             </div>
           </div>
           :
@@ -121,7 +125,8 @@ export default function StoryReadButton(
                 });
                 toast.error(
                   "追加できませんでした"
-                  ,{description:'何度も失敗する場合、リロード後再度お試しください',duration:8000,position:'bottom-right'})
+                  ,{description:'何度も失敗する場合、リロード後再度お試しください',duration:8000,position:'bottom-right'});
+                window.location.reload();
               }
             }}
           >
@@ -165,6 +170,9 @@ export default function StoryReadButton(
           date > new Date() || date < new Date("1900-01-01")
         }
       />
+      <div className={`pt-2 mx-auto w-[220px] mobileL:w-[280px] tablet:w-[300px] text-xs mobileL:text-sm break-all ${isReadLeater===false?' hidden':''}`}>
+        {'既読に追加すると、「後で読む」リストからは削除されます'}
+      </div>
     </PopoverContent>
     </Popover>
     </>

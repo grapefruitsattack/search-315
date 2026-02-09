@@ -50,7 +50,10 @@ export default function StoryReadButton(
             transition-all duration-300
             hover:ring-2 hover:ring-gray-600 hover:ring-offset-2
             active:scale-90
+            disabled:bg-zinc-200 disabled:text-zinc-500 disabled:fill-zinc-400
+            disabled:hover:ring-0 disabled:hover:ring-offset-0 disabled:active:scale-100
           ' 
+          disabled={loading!==''}
         >
           {/* Google Fonts Icons */}
           <svg className=' mr-1 w-[18px] h-[18px] mobileL:w-[24px] mobileL:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">

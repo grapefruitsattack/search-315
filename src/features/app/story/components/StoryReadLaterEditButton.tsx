@@ -2,38 +2,32 @@
 import { useState } from "react";
 import { flushSync } from "react-dom";
 import { useRouter } from 'next/navigation'
-import {
-  useDisclosure, 
- } from "@chakra-ui/react";
 import { Spinner } from "@/components/ui/spinner";
 import { toast } from "sonner";
-import {UpdateReadingData}  from "@/features/app/actions/UpdateReadingData";
-import LoginModal from '@/features/common/components/login/LoginModal';
+import {DeleteReadingData}  from "@/features/app/actions/DeleteReadingData";
 
 
-export default function StoryReadLaterButton(
+export default function StoryReadLaterEditButton(
   { storyId, login, isRead, isReadLeater }
   : { storyId: string, login: boolean, isRead: boolean, isReadLeater: boolean }
 ) {
   const router = useRouter();
-  const disclosure = useDisclosure();
   const [loading, setLoading] = useState<boolean>(false);
 
   if(isRead===true) return(<></>);
 
   return(
   <>
-    <LoginModal disclosure={disclosure} description="ログインすると「後で読む」に登録できます！"/>
     {loading
     ?          
     <div className="flex text-xs mobileL:text-sm tablet:text-base">
       <div
         className={`
-          flex justify-center w-[7em] py-2 tablet:px-5 rounded-full bg-blue-800 items-center
+          flex justify-center w-[13em] py-2 tablet:px-5 rounded-full bg-blue-800 items-center
           font-mono  text-white fill-white 
           bg-zinc-200 text-zinc-500 fill-zinc-400
         `} >
-          <Spinner />追加中
+          <Spinner />削除中
       </div>
     </div>
     :
@@ -43,7 +37,7 @@ export default function StoryReadLaterButton(
         if(login){
           try {
             flushSync(() => setLoading(true));
-            await UpdateReadingData(storyId,'',1);
+            await DeleteReadingData(storyId,1);
             await new Promise<void>((resolve) => {
                 setTimeout(() => {
                   setLoading(false);
@@ -51,7 +45,7 @@ export default function StoryReadLaterButton(
                 }, 1000);
             });
             toast.success(
-              '「後で読む」リストに追加しました'
+              'このストーリーを「後で読む」リストから削除しました'
               ,{position:'bottom-right'})
           } catch (e:any) {
             await new Promise<void>((resolve) => {
@@ -64,7 +58,7 @@ export default function StoryReadLaterButton(
               router.refresh()
             }else{
               toast.error(
-                "後で読む」リストに追加できませんでした"
+                "削除できませんでした"
                 ,{description:'何度も失敗する場合、リロード後再度お試しください',duration:8000,position:'bottom-right'});
             };
           }
@@ -74,21 +68,21 @@ export default function StoryReadLaterButton(
       <div className="flex text-xs mobileL:text-sm tablet:text-base">
         <button 
           className='
-            flex w-[7em] h-fit py-2 rounded-full bg-zinc-100 items-center
-            font-mono text-blue-700
+            flex w-[13em] h-fit py-2 rounded-full bg-gray-500 items-center w-fit h-fit
+            font-mono text-white
             transition-all duration-300
-            hover:ring-2 hover:ring-blue-600 hover:ring-offset-2 hover:bg-zinc-200
+            hover:ring-2 hover:ring-gray-500 hover:ring-offset-2 
             active:scale-90
           ' 
           disabled={loading}
           type={login?'submit':'button'}
-          onClick={()=>{ if(!login) disclosure.onOpen() }}
         >
           <div className={`flex mx-auto `}>
-          {/* Google Fonts Icons */}
-            <svg className='fill-blue-700 mr-0 w-[18px] h-[18px] mobileL:w-[24px] mobileL:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-              <path d="M200-120v-640q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v640L480-240 200-120Zm80-122 200-86 200 86v-518H280v518Zm0-518h400-400Z"/></svg>
-            <span className={`flex my-auto`}>{'後で読む'}</span>
+            {/* Google Fonts Icons */}
+            <svg className='fill-white mr-0 w-[18px] h-[18px] mobileL:w-[24px] mobileL:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+              <path d="M840-680H600v-80h240v80ZM200-120v-640q0-33 23.5-56.5T280-840h240v80H280v518l200-86 200 86v-278h80v400L480-240 200-120Zm80-640h240-240Z"/>
+            </svg>
+              <span className={`flex my-auto`}>{'「後で読む」から削除'}</span>
           </div>
         </button>
       </div>
