@@ -1,14 +1,14 @@
 'use client'
-import type { Story,InfoStory } from '../../../../data/types';
+import type { Story,InfoStory } from '@/data/types';
 import React, { useState } from "react";
 import Link from 'next/link';
-import { GetStoryWebsiteName } from '../../utils/Story/GetStoryInfomation';
-import IdolBadge from '../IdolBadge';
+import { toast } from 'sonner';
+import { GetStoryWebsiteName } from '@/features/common/utils/Story/GetStoryInfomation';
+import IdolBadge from '@/features/common/components/IdolBadge';
 import MediaBadge from './MediaBadge';
 import CategoryBadge from './CategoryBadge';
 import {UpdateReadingData}  from "@/features/app/actions/UpdateReadingData";
 import {DeleteReadingData}  from "@/features/app/actions/DeleteReadingData";
-import { toast } from 'sonner';
 
 export default function StoryBlock(
   { storyId,media,category,website,headTitle,storyTitle,infoStory,url,login,userReadLater,displayLogin }
@@ -81,7 +81,7 @@ export default function StoryBlock(
         rounded-md
         font-sans 
         bg-white hover:outline-green-400 hover:outline-4 shadow-lg
-        outline-none outline-green-400 outline-offset-1
+        outline-none outline-green-400 outline-offset-0
       `}
     >
     <Link
@@ -176,7 +176,7 @@ export default function StoryBlock(
                 <button
                     className={`group 
                     flex justify-center
-                    rounded-lg border-2 border-amber-500 w-full h-full
+                    rounded-lg border-2 border-amber-500 w-fit h-full
                     font-sans leading-tight
                     transition-all duration-500 ease-out
                     text-xs mobileS:text-sm 
@@ -205,17 +205,16 @@ export default function StoryBlock(
               </form>
             </div>
               }
-            <a className="w-full col-span-2"
+            <a className="w-full col-span-2 z-10 relative"
               href={url}
               target="_blank" rel="noopener noreferrer">
               <button
-                  className={`rounded-lg border-2 border-red-500 w-full h-full
-                  text-red-500 font-sans leading-tight
-                  bg-white hover:bg-red-500 hover:text-red-100 
-                  transition-all duration-500 ease-out
-                  fill-red-500 hover:fill-red-100 
-                  text-xs mobileS:text-sm lg:text-lg
-                  `}
+                  className='rounded-lg border-2 border-gray-600 w-full h-full
+                  font-sans leading-tight text-white bg-gray-600 fill-white
+                  transition-all duration-200 ease-out
+                  hover:ring-2 hover:ring-gray-600 hover:ring-offset-2 hover:shadow-[0_0_0_2px_rgba(0,0,0,1)]
+                  active:scale-95
+                  text-xs mobileS:text-sm lg:text-lg'
               >
                   <div className='
                       flex flex-wrap justify-center items-center font-sans font-black 
@@ -232,17 +231,16 @@ export default function StoryBlock(
             </div>
           :
             <div className='grid grid-cols-6 grid-rows-1 gap-1'>
-            <a className="w-full col-span-6"
+            <a className="w-full col-span-6 z-10"
               href={url}
               target="_blank" rel="noopener noreferrer">
               <button
-                  className='rounded-lg border-2 border-red-500 w-full h-full
-                  text-red-500 font-sans leading-tight
-                  bg-white hover:bg-red-500 hover:text-red-100 
-                  transition-all duration-500 ease-out
-                  fill-red-500 hover:fill-red-100 
-                  text-xs mobileS:text-sm lg:text-lg
-                  '
+                  className='rounded-lg border-2 border-gray-600 w-full h-full
+                  font-sans leading-tight text-white bg-gray-600 fill-white
+                  transition-all duration-200 ease-out
+                  hover:ring-2 hover:ring-gray-600 hover:ring-offset-2 hover:shadow-[0_0_0_2px_rgba(0,0,0,1)]
+                  active:scale-90
+                  text-xs mobileS:text-sm lg:text-lg'
               >
                   <div className='
                       flex flex-wrap justify-center items-center font-sans font-black 
