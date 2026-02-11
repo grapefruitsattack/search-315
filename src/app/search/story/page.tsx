@@ -1,14 +1,14 @@
 
-import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
 import { headers } from "next/headers";
+import dynamic from "next/dynamic";
 import React from "react"
 import { Suspense } from "react";
 import { cache } from 'react'
-import type { StorySearchResult } from '../../../data/types';
-import CommonPage from "../../../features/common/components/CommonPage";
-import SearchStoryPage from "../../../features/app/search/SearchStoryPage";
-import {CheckSingingInfoParm,CheckStoryCategoryParm} from "../../../features/common/utils/CheckSearchParm";
-import Loading from '../../loading'
+import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
+import type { StorySearchResult } from '@/data/types';
+import CommonPage from "@/features/common/components/CommonPage";
+import SearchStoryPage from "@/features/app/search/SearchStoryPage";
+import {CheckSingingInfoParm,CheckStoryCategoryParm} from "@/features/common/utils/CheckSearchParm";
 
 export const revalidate = 600; // 10分ごとに再検証する
 
@@ -59,7 +59,6 @@ const getData = cache(async (
         read_later:readLater
       }
   );
-  console.log(error)
   const storySearchResult: StorySearchResult[] = data[0]?.json_data;
   const totalCnt: number = data[0]?.total_cnt;
   return {result:storySearchResult, totalCnt:totalCnt, login:session?.user?true:false};
@@ -91,11 +90,21 @@ const Page = async ({
   // 検索結果取得
   const post = await getData(infoIdArray,categoryArray,v||0,Number(htv)||0,andor||'or',SortedAsc,pageNum,rl||'');
 
+  // ページネーション
+  const pageSize: number = 18;
+  const maxPage: number = Math.ceil(post.totalCnt/pageSize);
+
     return (
-    <Suspense fallback={<Loading />}>
+    <Suspense>
     <CommonPage>
+      <title>{ 'ストーリー検索結果 | サーチサイコー'}</title>
+      <Suspense fallback={<>{'story loading'}</>}>
+      <section className="bg-white lg:max-w-[1500px] lg:m-auto">
+
       {/* @ts-ignore Server Component */}
       <SearchStoryPage data={post}/>
+      </section>
+    </Suspense>
     </CommonPage>
     </Suspense>
   );

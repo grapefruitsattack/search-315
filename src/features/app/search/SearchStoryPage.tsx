@@ -13,14 +13,9 @@ export default async function SearchStoryPage(
 
     return (
       <>
-        <title>{ 'ストーリー検索結果 | サーチサイコー'}</title>
-      <section className="bg-white lg:max-w-[1500px] lg:m-auto">
 
-      <div className='mb-5'>
-      </div>
       <SearchPageStory data={data} />
     
-      </section>
       </>
       );
 }

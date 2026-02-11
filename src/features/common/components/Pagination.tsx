@@ -3,9 +3,13 @@ import { usePathname,useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Url } from 'next/dist/shared/lib/router/router';
 
-export default function Pagination({ currentPage,totalPage }: { currentPage: number, totalPage: number }) {
+export default function Pagination({ totalPage }: { totalPage: number }) {
       const omitFlg: boolean = totalPage >= 8;
       const params = new URLSearchParams(useSearchParams().toString());
+
+      let currentPage: number = Number(params.get('page')) || 1;
+      currentPage = currentPage>totalPage?totalPage:currentPage;
+      
       params.delete('page');
       let urlParams: {[key: string]: string}= {};
       params.forEach(function(value: string, key: string) {

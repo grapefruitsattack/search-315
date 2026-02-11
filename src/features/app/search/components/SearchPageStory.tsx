@@ -48,27 +48,15 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
     <section className="lg:px-24 px-2 mobileS:px-8 pt-2 flex flex-wrap items-center gap-4">
       <SortButton/>
     </section>
+
     <section className="lg:px-24 px-2 mobileS:px-8 pb-2 flex flex-wrap items-center gap-4">
-      <Pagination currentPage={currentPage} totalPage={maxPage}/>
+      <Pagination totalPage={maxPage}/>
     </section>
     {/* ストーリー一覧 */}
     <section className="lg:flex px-2 mobileS:px-10 lg:px-16 w-full">
-    <section className="grid grid-flow-row-dense items-start gap-4 grid-cols-1 lg:grid-cols-3 w-full">
-      {loading
-        ?
-        // ローディング表示（スケルトン）
+      <section className="grid grid-flow-row-dense items-start gap-4 grid-cols-1 lg:grid-cols-3 w-full">
+
         <>
-          <Skeleton className="h-[120px] rounded-sm" />
-          <Skeleton className="h-[150px] rounded-sm" />
-          <Skeleton className="h-[150px] rounded-sm" />
-          <Skeleton className="h-[120px] rounded-sm" />
-          <Skeleton className="h-[120px] rounded-sm" />
-          <Skeleton className="h-[120px] rounded-sm" />
-          <Skeleton className="h-[150px] rounded-sm" />
-          <Skeleton className="h-[150px] rounded-sm" />
-          <Skeleton className="h-[150px] rounded-sm" />
-        </>
-        :<>
           {resultData === null || resultData.length===0 
           ?
           <div className="flex flex-col justify-center items-start ">
@@ -92,11 +80,11 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
             displayLogin={true}
           />
           ))}
-          </>}
-          </section>
+        </>
       </section>
+    </section>
     <section className="lg:px-24 px-2 mobileS:px-8 pt-4 flex flex-wrap items-center gap-4">
-      <Pagination currentPage={currentPage} totalPage={maxPage}/>
+      <Pagination totalPage={maxPage}/>
     </section>
 
     <section className=" pb-48">
