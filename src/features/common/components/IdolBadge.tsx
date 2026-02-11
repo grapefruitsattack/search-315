@@ -50,7 +50,7 @@ export default function IdolBadge({ id, useShortName, size }: { id: string, useS
                 ${personFlg===1?'pl-0.5 pr-1 border-l-[6px] border-[var(--border-color)]':'px-1'}
                 `}
                 >
-            <p className={``}>{name}</p>
+            <p className={`whitespace-nowrap`}>{name}</p>
             </div>
         );
     } else {
@@ -71,7 +71,7 @@ export default function IdolBadge({ id, useShortName, size }: { id: string, useS
                 //onClick={(e) => router.push(personFlg===1?'/idol/'+id:'/unit/'+id)}
                 >
             <span 
-              className={`p-1 rounded-xs ${personFlg===1?' border-l-2 border-white/80':''}`}
+              className={`p-1 rounded-xs whitespace-nowrap ${personFlg===1?' border-l-2 border-white/80':''}`}
               >
               {name}
             </span>
