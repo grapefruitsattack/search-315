@@ -43486,5 +43486,109 @@
     "singingInfoId": "CLF02",
     "releaseDate": "20260304",
     "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS05",
+    "songId": "MTS05_1",
+    "singingInfoId": "ALT00",
+    "releaseDate": "20260325",
+    "type": "u"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS05",
+    "songId": "MTS05_1",
+    "singingInfoId": "ALT01",
+    "releaseDate": "20260325",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS05",
+    "songId": "MTS05_1",
+    "singingInfoId": "ALT02",
+    "releaseDate": "20260325",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "MTS05",
+    "songId": "MTS05_2",
+    "singingInfoId": "ALT01",
+    "releaseDate": "20260325",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "MTS05",
+    "songId": "MTS05_3",
+    "singingInfoId": "ALT02",
+    "releaseDate": "20260325",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT07",
+    "songId": "TT07_1",
+    "singingInfoId": "BEI02",
+    "releaseDate": "20260401",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT07",
+    "songId": "TT07_1",
+    "singingInfoId": "HIJ05",
+    "releaseDate": "20260401",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT07",
+    "songId": "TT07_1",
+    "singingInfoId": "SSK01",
+    "releaseDate": "20260401",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT07",
+    "songId": "TT07_1",
+    "singingInfoId": "LGN02",
+    "releaseDate": "20260401",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "TT07",
+    "songId": "TT07_2",
+    "singingInfoId": "BEI02",
+    "releaseDate": "20260401",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "TT07",
+    "songId": "TT07_3",
+    "singingInfoId": "HIJ05",
+    "releaseDate": "20260401",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "TT07",
+    "songId": "TT07_4",
+    "singingInfoId": "SSK01",
+    "releaseDate": "20260401",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "TT07",
+    "songId": "TT07_5",
+    "singingInfoId": "LGN02",
+    "releaseDate": "20260401",
+    "type": "sver"
   }
 ]

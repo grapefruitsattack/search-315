@@ -3934,5 +3934,37 @@
     "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24766.html",
     "trialYoutubeId": "wqaFYJZuYc0",
     "description": ""
+  },
+  {
+    "sereisId": "MTS",
+    "albumId": "MTS05",
+    "albumTitleFull": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 05 Altessimo",
+    "albumTitle": "MONTHLY THEME SONG 05 Altessimo",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260325",
+    "displayArtist": "Altessimo",
+    "artist": "[ALT00]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24785.html",
+    "trialYoutubeId": "U-NdvrzfQ-g",
+    "description": ""
+  },
+  {
+    "sereisId": "TT",
+    "albumId": "TT07",
+    "albumTitleFull": "THE IDOLM@STER SideM TRANSCENDENT T@LES 07",
+    "albumTitle": "TRANSCENDENT T@LES 07",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260401",
+    "displayArtist": "ピエール、伊瀬谷四季、紅井朱雀、北村想楽",
+    "artist": "[BEI02]、[HIJ05]、[SSK01]、[LGN02]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24767.html",
+    "trialYoutubeId": "G_KJF5nacNI",
+    "description": ""
   }
 ]
