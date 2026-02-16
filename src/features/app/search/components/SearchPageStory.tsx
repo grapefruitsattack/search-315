@@ -1,6 +1,6 @@
 'use client'
 import type { StorySearchResult } from '../../../../data/types';
-import SearchStoryController from "../components/SearchStoryController";
+import SearchStoryController from "./SearchStoryController";
 import SortButton from "../components/SortButton";
 import StoryBlock from "../../../common/components/story/StoryBlock";
 import Pagination from "../../../common/components/Pagination";

@@ -67,19 +67,19 @@ export function getMediaArrayByCategory(categoryIds:string[]):number[]{
 
   return result;
 };
-export function getAllMediaWithCategoryArray():{mediaId:number,categoryIds:string[]}[]{
+export function getAllMediaWithCategoryArray():{mediaId:number,mediaName:string,categoryInfos:{id:string,name:string}[]}[]{
   type MediaKey = keyof typeof MEDIA;
   type CategoryKey = keyof typeof CATEGORY;
   const mediaKeys: MediaKey[] = Object.keys(MEDIA) as MediaKey[];
   const categoryKeys: CategoryKey[] = Object.keys(CATEGORY) as CategoryKey[];
-  const result: {mediaId:number,categoryIds:string[]}[] = [];
+  const result: {mediaId:number,mediaName:string,categoryInfos:{id:string,name:string}[]}[] = [];
   mediaKeys.forEach((mediaKey) => {
     const media = MEDIA[mediaKey];
-    const targetCategoryIds: string[] = [];
+    const targetCategoryIds: {id:string,name:string}[] = [];
     categoryKeys.forEach((categoryKey) => {
-      if(MEDIA[mediaKey].id===CATEGORY[categoryKey].mediaId) targetCategoryIds.push(CATEGORY[categoryKey].id);
+      if(MEDIA[mediaKey].id===CATEGORY[categoryKey].mediaId) targetCategoryIds.push({id:CATEGORY[categoryKey].id,name:CATEGORY[categoryKey].name});
     });
-    result.push({mediaId:MEDIA[mediaKey].id,categoryIds:targetCategoryIds});
+    result.push({mediaId:MEDIA[mediaKey].id,mediaName:MEDIA[mediaKey].name,categoryInfos:targetCategoryIds});
   });
 
   return result;
