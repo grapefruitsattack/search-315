@@ -8391,5 +8391,27 @@
     "lineMusicUrl": "https://music.line.me/webapp/track/mt000000002438769f",
     "awaUrl": "https://s.awa.fm/track/5acbcd60bed4e3781455",
     "towerRecordsMusic": ""
+  },
+  {
+    "id": "UOSDS_1",
+    "title": "ソライロ！",
+    "youtubeId": "9clXtITViac",
+    "spotifyUrl": "https://open.spotify.com/track/3sXXS31Qx9SHIOWDZwG2lX",
+    "appleMusicUrl": "https://music.apple.com/jp/song/%E3%82%BD%E3%83%A9%E3%82%A4%E3%83%AD/1878069226",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0GNZ3K88V",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt0000000024e7e859",
+    "awaUrl": "https://s.awa.fm/track/5cea9cf51d3bf8bc7361",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "UOSVL_1",
+    "title": "ソライロ！",
+    "youtubeId": "9clXtITViac",
+    "spotifyUrl": "https://open.spotify.com/track/3sXXS31Qx9SHIOWDZwG2lX",
+    "appleMusicUrl": "https://music.apple.com/jp/song/%E3%82%BD%E3%83%A9%E3%82%A4%E3%83%AD/1878069226",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0GNZ3K88V",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt0000000024e7e859",
+    "awaUrl": "https://s.awa.fm/track/5cea9cf51d3bf8bc7361",
+    "towerRecordsMusic": ""
   }
 ]

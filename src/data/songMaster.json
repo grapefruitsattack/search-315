@@ -15418,7 +15418,7 @@
     "releaseDate": "20230311",
     "AlbumSereisId": "",
     "albumTitleFull": "アイドルマスター SideM 超常事変～対立スル正義～ 主題歌「幻想のUtopia」/「安寧のDystopia」",
-    "albumTitle": "「幻想のUtopia」/「安寧のDystopia」",
+    "albumTitle": "超常事変「幻想のUtopia」/「安寧のDystopia」",
     "description": ""
   },
   {
@@ -15440,7 +15440,7 @@
     "releaseDate": "20230311",
     "AlbumSereisId": "",
     "albumTitleFull": "アイドルマスター SideM 超常事変～対立スル正義～ 主題歌「幻想のUtopia」/「安寧のDystopia」",
-    "albumTitle": "「幻想のUtopia」/「安寧のDystopia」",
+    "albumTitle": "超常事変「幻想のUtopia」/「安寧のDystopia」",
     "description": ""
   },
   {
@@ -17332,7 +17332,7 @@
     "releaseDate": "20240210",
     "AlbumSereisId": "",
     "albumTitleFull": "アイドルマスター SideM 天地四心伝 主題歌「四心争乱 -天地一指-」",
-    "albumTitle": "「四心争乱 -天地一指-」",
+    "albumTitle": "天地四心伝「四心争乱 -天地一指-」",
     "description": ""
   },
   {
@@ -17354,7 +17354,7 @@
     "releaseDate": "20240210",
     "AlbumSereisId": "",
     "albumTitleFull": "アイドルマスター SideM 天地四心伝 主題歌「四心争乱 -天地一指-」",
-    "albumTitle": "「四心争乱 -天地一指-」",
+    "albumTitle": "天地四心伝「四心争乱 -天地一指-」",
     "description": ""
   },
   {
@@ -17376,7 +17376,7 @@
     "releaseDate": "20240210",
     "AlbumSereisId": "",
     "albumTitleFull": "アイドルマスター SideM 天地四心伝 主題歌「四心争乱 -天地一指-」",
-    "albumTitle": "「四心争乱 -天地一指-」",
+    "albumTitle": "天地四心伝「四心争乱 -天地一指-」",
     "description": ""
   },
   {
@@ -17398,7 +17398,7 @@
     "releaseDate": "20240210",
     "AlbumSereisId": "",
     "albumTitleFull": "アイドルマスター SideM 天地四心伝 主題歌「四心争乱 -天地一指-」",
-    "albumTitle": "「四心争乱 -天地一指-」",
+    "albumTitle": "天地四心伝「四心争乱 -天地一指-」",
     "description": ""
   },
   {
@@ -28367,7 +28367,7 @@
     "commonSong": "UOSDS_1",
     "trialYoutubeId": "",
     "type": "",
-    "subscFlg": 0,
+    "subscFlg": 1,
     "execFlg": 0,
     "originalFlg": 1,
     "colleFlg": 0,
@@ -28543,7 +28543,7 @@
     "commonSong": "UOSDS_1",
     "trialYoutubeId": "",
     "type": "",
-    "subscFlg": 0,
+    "subscFlg": 1,
     "execFlg": 0,
     "originalFlg": 0,
     "colleFlg": 0,
@@ -28773,6 +28773,72 @@
     "AlbumSereisId": "TT",
     "albumTitleFull": "THE IDOLM@STER SideM TRANSCENDENT T@LES 07",
     "albumTitle": "TRANSCENDENT T@LES 07",
+    "description": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_1",
+    "songTitle": "アニマ・フォルトゥナ",
+    "displayArtist": "蒼井享介、秋月涼、信玄誠司、清澄九郎、蒼井悠介、天道輝、若里春名、水嶋咲、紅井朱雀",
+    "artist": "[DBL02]、[FLG01]、[FRM03]、[SAI03]、[DBL01]、[DRS01]、[HIJ04]、[CFP05]、[SSK01]",
+    "commonSong": "PRS26K_1",
+    "trialYoutubeId": "",
+    "type": "prs",
+    "subscFlg": 0,
+    "execFlg": 0,
+    "originalFlg": 1,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260314",
+    "AlbumSereisId": "",
+    "albumTitleFull": "アイドルマスター SideM 魂環の人形 主題歌「アニマ・フォルトゥナ」 & サウンドトラック",
+    "albumTitle": "魂環の人形「アニマ・フォルトゥナ」",
+    "description": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_2",
+    "songTitle": "アニマ・フォルトゥナ（デカルトの影光 Ver.）",
+    "displayArtist": "蒼井享介、秋月涼、信玄誠司、清澄九郎",
+    "artist": "[DBL02]、[FLG01]、[FRM03]、[SAI03]",
+    "commonSong": "PRS26K_1",
+    "trialYoutubeId": "",
+    "type": "prs",
+    "subscFlg": 0,
+    "execFlg": 0,
+    "originalFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260314",
+    "AlbumSereisId": "",
+    "albumTitleFull": "アイドルマスター SideM 魂環の人形 主題歌「アニマ・フォルトゥナ」 & サウンドトラック",
+    "albumTitle": "魂環の人形「アニマ・フォルトゥナ」",
+    "description": ""
+  },
+  {
+    "trackNo": 3,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_3",
+    "songTitle": "アニマ・フォルトゥナ（テセウスの少年 Ver.）",
+    "displayArtist": "蒼井悠介、天道輝、若里春名、水嶋咲、紅井朱雀",
+    "artist": "[DBL01]、[DRS01]、[HIJ04]、[CFP05]、[SSK01]",
+    "commonSong": "PRS26K_1",
+    "trialYoutubeId": "",
+    "type": "prs",
+    "subscFlg": 0,
+    "execFlg": 0,
+    "originalFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260314",
+    "AlbumSereisId": "",
+    "albumTitleFull": "アイドルマスター SideM 魂環の人形 主題歌「アニマ・フォルトゥナ」 & サウンドトラック",
+    "albumTitle": "魂環の人形「アニマ・フォルトゥナ」",
     "description": ""
   }
 ]

@@ -43489,6 +43489,150 @@
   },
   {
     "trackNo": 1,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_1",
+    "singingInfoId": "DBL02",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_1",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_1",
+    "singingInfoId": "FRM03",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_1",
+    "singingInfoId": "SAI03",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_1",
+    "singingInfoId": "DBL01",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_1",
+    "singingInfoId": "DRS01",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_1",
+    "singingInfoId": "HIJ04",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_1",
+    "singingInfoId": "CFP05",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_1",
+    "singingInfoId": "SSK01",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_2",
+    "singingInfoId": "DBL02",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_2",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_2",
+    "singingInfoId": "FRM03",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_2",
+    "singingInfoId": "SAI03",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_3",
+    "singingInfoId": "DBL01",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_3",
+    "singingInfoId": "DRS01",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_3",
+    "singingInfoId": "HIJ04",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_3",
+    "singingInfoId": "CFP05",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "PRS26K",
+    "songId": "PRS26K_3",
+    "singingInfoId": "SSK01",
+    "releaseDate": "20260314",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
     "albumId": "MTS05",
     "songId": "MTS05_1",
     "singingInfoId": "ALT00",
