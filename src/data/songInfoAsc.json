@@ -43633,6 +43633,214 @@
   },
   {
     "trackNo": 1,
+    "albumId": "10AS2",
+    "songId": "10AS2_1",
+    "singingInfoId": "DBL01",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "10AS2",
+    "songId": "10AS2_2",
+    "singingInfoId": "DBL02",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "10AS2",
+    "songId": "10AS2_3",
+    "singingInfoId": "FRM01",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "10AS2",
+    "songId": "10AS2_4",
+    "singingInfoId": "FRM02",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "10AS2",
+    "songId": "10AS2_5",
+    "singingInfoId": "FRM03",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 6,
+    "albumId": "10AS2",
+    "songId": "10AS2_6",
+    "singingInfoId": "SAI01",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 7,
+    "albumId": "10AS2",
+    "songId": "10AS2_7",
+    "singingInfoId": "SAI02",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "10AS2",
+    "songId": "10AS2_8",
+    "singingInfoId": "SAI03",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 9,
+    "albumId": "10AS2",
+    "songId": "10AS2_9",
+    "singingInfoId": "HIJ01",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 10,
+    "albumId": "10AS2",
+    "songId": "10AS2_10",
+    "singingInfoId": "HIJ02",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 11,
+    "albumId": "10AS2",
+    "songId": "10AS2_11",
+    "singingInfoId": "HIJ03",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 12,
+    "albumId": "10AS2",
+    "songId": "10AS2_12",
+    "singingInfoId": "HIJ04",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 13,
+    "albumId": "10AS2",
+    "songId": "10AS2_13",
+    "singingInfoId": "HIJ05",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "10AS3",
+    "songId": "10AS3_1",
+    "singingInfoId": "SSK01",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "10AS3",
+    "songId": "10AS3_2",
+    "singingInfoId": "SSK02",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "10AS3",
+    "songId": "10AS3_3",
+    "singingInfoId": "CFP01",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "10AS3",
+    "songId": "10AS3_4",
+    "singingInfoId": "CFP02",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "10AS3",
+    "songId": "10AS3_5",
+    "singingInfoId": "CFP03",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 6,
+    "albumId": "10AS3",
+    "songId": "10AS3_6",
+    "singingInfoId": "CFP04",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 7,
+    "albumId": "10AS3",
+    "songId": "10AS3_7",
+    "singingInfoId": "CFP05",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "10AS3",
+    "songId": "10AS3_8",
+    "singingInfoId": "MFM01",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 9,
+    "albumId": "10AS3",
+    "songId": "10AS3_9",
+    "singingInfoId": "MFM02",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 10,
+    "albumId": "10AS3",
+    "songId": "10AS3_10",
+    "singingInfoId": "MFM03",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 11,
+    "albumId": "10AS3",
+    "songId": "10AS3_11",
+    "singingInfoId": "SEM01",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 12,
+    "albumId": "10AS3",
+    "songId": "10AS3_12",
+    "singingInfoId": "SEM02",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 13,
+    "albumId": "10AS3",
+    "songId": "10AS3_13",
+    "singingInfoId": "SEM03",
+    "releaseDate": "20260314",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
     "albumId": "MTS05",
     "songId": "MTS05_1",
     "singingInfoId": "ALT00",

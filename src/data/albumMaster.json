@@ -3952,6 +3952,38 @@
     "description": ""
   },
   {
+    "sereisId": "10A",
+    "albumId": "10AS2",
+    "albumTitleFull": "THE IDOLM@STER SideM 10th ANNIVERSARY P@SSION SOLO COLLECTION 02",
+    "albumTitle": "10th ANNIVERSARY P@SSION SOLO COLLECTION 02",
+    "subscFlg": 0,
+    "colleFlg": 1,
+    "isSoloColle": 1,
+    "isUnitColle": 0,
+    "releaseDate": "20260314",
+    "displayArtist": "",
+    "artist": "[DBL00]、[FRM00]、[SAI00]、[HIJ00]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACZ-10338.html",
+    "trialYoutubeId": "",
+    "description": ""
+  },
+  {
+    "sereisId": "10A",
+    "albumId": "10AS3",
+    "albumTitleFull": "THE IDOLM@STER SideM 10th ANNIVERSARY P@SSION SOLO COLLECTION 03",
+    "albumTitle": "10th ANNIVERSARY P@SSION SOLO COLLECTION 03",
+    "subscFlg": 0,
+    "colleFlg": 1,
+    "isSoloColle": 1,
+    "isUnitColle": 0,
+    "releaseDate": "20260314",
+    "displayArtist": "",
+    "artist": "[SSK00]、[CFP00]、[MFM00]、[SEM00]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACZ-10339.html",
+    "trialYoutubeId": "",
+    "description": ""
+  },
+  {
     "sereisId": "MTS",
     "albumId": "MTS05",
     "albumTitleFull": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 05 Altessimo",
