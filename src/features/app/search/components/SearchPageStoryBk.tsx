@@ -1,6 +1,6 @@
 'use client'
 import type { StorySearchResult } from '../../../../data/types';
-import SearchStoryController from "./SearchStoryControllerBk";
+import SearchStoryController from "./SearchStoryController";
 import SortButton from "../components/SortButton";
 import StoryBlock from "../../../common/components/story/StoryBlock";
 import Pagination from "../../../common/components/Pagination";
@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 import { Skeleton } from "@/components/ui/skeleton"
 import { Toaster } from 'sonner';
 
-export default function SearchPageStory({ data }: { data: {result:StorySearchResult[],totalCnt:number,login:boolean};}) {
+export default function SearchPageStoryBk({ data }: { data: {result:StorySearchResult[],totalCnt:number,login:boolean};}) {
   const resultData: StorySearchResult[] = data.result;
   const login: boolean = data.login;
 
@@ -39,7 +39,6 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
 
   return (
     <>
-    <Toaster position="top-center"/>
     <section className="mb-2 bg-gradient-to-r from-gray-500 from-50% rounded">
       <div 
         className="
@@ -55,48 +54,53 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
         <p className="pr-2">{'ストーリーを検索'}</p>
       </div>
     </section>
-    <div className='flex flex-row'>
-      <div className='max-w-[700px]'>
-        <div className="lg:px-24 px-2 mobileS:px-8 pb-2 flex flex-wrap items-center gap-4">
-          <Pagination totalPage={maxPage}/>
-        </div>
-        {/* ストーリー一覧 */}
-        <div className="lg:flex px-2 mobileM:px-8 tablet:px-4 w-full">
-          <div className="grid grid-flow-row-dense items-start gap-4 grid-cols-1 w-full">
+    <section className="lg:flex px-2 mobileM:px-8 tablet:px-4 flex flex-wrap">
+      <Toaster position="top-center"/>
+      {/* 検索結果がゼロ件の場合、検索エリアを自動で開く */}
+      <SearchStoryController 
+            key={searchParams.toString()} firstIsOpen={resultData === null || resultData.length===0}/>
+    </section>
+    <section className="lg:px-24 px-2 mobileS:px-8 pt-2 flex flex-wrap items-center gap-4">
+      <SortButton/>
+    </section>
 
-            <>
-              {resultData === null || resultData.length===0 
-              ?
-              <div className="flex flex-col justify-center items-start ">
-                {/* // TODO アラート化 */}
-                <div>検索条件に該当するストーリーがありません</div>
-                <div>検索条件を変更してください</div>
-              </div>
-              :resultData.map((data, index) => (
-              <StoryBlock 
-                key={index} 
-                storyId={data.story_id}
-                category={data.category}
-                website={data.website}
-                headTitle={data.head_title}
-                infoStory={data.info_id}
-                media={data.media}
-                storyTitle={data.story_title}
-                url={data.url}
-                login={login}
-                userReadLater={data.user_read_later}
-                displayLogin={true}
-              />
-              ))}
-            </>
+    <section className="lg:px-24 px-2 mobileS:px-8 pb-2 flex flex-wrap items-center gap-4">
+      <Pagination totalPage={maxPage}/>
+    </section>
+    {/* ストーリー一覧 */}
+    <section className="lg:flex px-2 mobileM:px-8 tablet:px-4 w-full">
+      <section className="grid grid-flow-row-dense items-start gap-4 grid-cols-1 lg:grid-cols-3 w-full">
+
+        <>
+          {resultData === null || resultData.length===0 
+          ?
+          <div className="flex flex-col justify-center items-start ">
+            {/* // TODO アラート化 */}
+            <div>検索条件に該当するストーリーがありません</div>
+            <div>検索条件を変更してください</div>
           </div>
-        </div>
-        <div className="lg:px-24 px-2 mobileS:px-8 pt-4 flex flex-wrap items-center gap-4">
-          <Pagination totalPage={maxPage}/>
-        </div>
-      </div>
-      <div className='min-w-[300px] bg-black tablet:grid hidden'></div>
-    </div>
+          :resultData.map((data, index) => (
+          <StoryBlock 
+            key={index} 
+            storyId={data.story_id}
+            category={data.category}
+            website={data.website}
+            headTitle={data.head_title}
+            infoStory={data.info_id}
+            media={data.media}
+            storyTitle={data.story_title}
+            url={data.url}
+            login={login}
+            userReadLater={data.user_read_later}
+            displayLogin={true}
+          />
+          ))}
+        </>
+      </section>
+    </section>
+    <section className="lg:px-24 px-2 mobileS:px-8 pt-4 flex flex-wrap items-center gap-4">
+      <Pagination totalPage={maxPage}/>
+    </section>
 
     <section className=" pb-48">
     </section>

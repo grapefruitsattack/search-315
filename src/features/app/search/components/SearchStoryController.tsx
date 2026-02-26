@@ -176,7 +176,43 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
       </button>
     </div>
     {/* 上部ボタン */}
-    {values.categoryStr}
+    <div className="flex flex-col pc:flex-row pb-2 gap-2">
+      <div className="flex flex-col ">
+        <div className="text-sm">閲覧方法</div>
+        <div className='flex flex-wrap w-full p-1 gap-3 items-center'>
+          <SearchModalRadioButton
+            radioName="radio-howtoview"
+            data={[
+              { filterId: "0", labelStr: "すべて" },
+              { filterId: "1", labelStr: "無料" },
+              { filterId: "2", labelStr: "プレ会員読み放題" },
+              { filterId: "3", labelStr: "有償購入" },
+            ]}
+            selectedId={values.howToView.toString()}
+            onChange={(id) => {
+              setValues({ ...values, howToView: Number(id)||0 })
+            }}
+            changeSearchParams={(id) =>switchHowToView(Number(id)||0)}
+          />
+        </div>
+      </div>
+      <div className="flex flex-col ">
+        <div className="text-sm">ボイス</div>
+        <div className='flex flex-wrap w-full p-1 gap-3 items-center'>
+            <SearchModalRadioButton
+            radioName="radio-voice"
+            data={[
+                { filterId: "0", labelStr: "すべて" },
+                { filterId: "1", labelStr: "ボイスあり" },
+                { filterId: "2", labelStr: "過去ボイス実装あり" },
+            ]}
+            selectedId={values.voice.toString()}
+            onChange={(id) => setValues({ ...values, voice: Number(id)||0 })}
+            changeSearchParams={(id) =>switchVoice(Number(id)||0)}
+            />
+        </div>
+      </div>
+    </div>
     <div className="flex justify-center m-auto">  
       <a 
         className='justify-center
@@ -234,34 +270,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
             <div className=" lg:px-8 px-1 pb-2 rounded-md text-center">
               <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
               </div>
-              <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
-                <SearchModalRadioButton
-                  radioName="radio-howtoview"
-                  data={[
-                    { filterId: "0", labelStr: "すべて" },
-                    { filterId: "1", labelStr: "無料" },
-                    { filterId: "2", labelStr: "プレ会員読み放題" },
-                    { filterId: "3", labelStr: "有償購入" },
-                  ]}
-                  selectedId={values.howToView.toString()}
-                  onChange={(id) => setValues({ ...values, howToView: Number(id)||0 })}
-                  changeSearchParams={(id) =>switchHowToView(Number(id)||0)}
-                />
-              </div>
-              <Separator />
-              <div className='flex flex-wrap p-1 gap-3 justify-center items-center'>
-                  <SearchModalRadioButton
-                  radioName="radio-voice"
-                  data={[
-                      { filterId: "0", labelStr: "すべて" },
-                      { filterId: "1", labelStr: "ボイスあり" },
-                      { filterId: "2", labelStr: "過去にボイス実装あり" },
-                  ]}
-                  selectedId={values.voice.toString()}
-                  onChange={(id) => setValues({ ...values, voice: Number(id)||0 })}
-                  changeSearchParams={(id) =>switchVoice(Number(id)||0)}
-                  />
-              </div>
+
               <div className="grid grid-cols-1 justify-items-center text-lg lg:text-xl font-bold mt-4">
                 <div className="flex text-lg lg:text-xl font-bold mt-4">
                     {'ストーリー種別'}
