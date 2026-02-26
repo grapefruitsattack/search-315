@@ -8,7 +8,7 @@ export default function CommonSidebar() {
   return (
 <div>
   <div 
-    className=" collapse tablet:visible
+    className=" collapse pc:visible
       overflow-y-auto  overflow-x-hidden
       transition-transform duration-300 ease-linear transform 
       box-border fixed 

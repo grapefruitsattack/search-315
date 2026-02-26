@@ -50,7 +50,7 @@ export default function CommonHeader() {
     
     return (
         <>
-        <div className={`w-[100vw] max-w-5xl items-center justify-between font-mono text-sm lg:flex visible tablet:collapse`}>
+        <div className={`w-[100vw] max-w-5xl items-center justify-between font-mono text-sm lg:flex visible pc:collapse`}>
             <div className="z-50 py-1 tablet:py-2 fixed left-0 top-0 flex flex-row w-[100vw] items-center  justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl ">  
             <HeaderDrawerButton/>
 

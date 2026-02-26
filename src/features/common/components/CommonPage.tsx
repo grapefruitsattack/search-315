@@ -31,7 +31,7 @@ const CommonPage = ({ children }: Props )=> {
   <main className=" min-h-screen">
     <CommonSidebar />
     <CommonHeader />
-    <div className="tablet:pt-12 pt-24 tablet:pl-64 pr-0 ">
+    <div className="pc:pt-12 pt-24 pc:pl-64 pr-0 ">
       {children}
     </div>
         {/* <ParticlesComponent/> */}
