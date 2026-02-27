@@ -8413,5 +8413,16 @@
     "lineMusicUrl": "https://music.line.me/webapp/track/mt0000000024e7e859",
     "awaUrl": "https://s.awa.fm/track/5cea9cf51d3bf8bc7361",
     "towerRecordsMusic": ""
+  },
+  {
+    "id": "MTS03_1",
+    "title": "Date.today",
+    "youtubeId": "56-yXcTIIgQ",
+    "spotifyUrl": "https://open.spotify.com/track/0iC2gT7Q9cZAWW1ftsPJAR",
+    "appleMusicUrl": "https://music.apple.com/jp/song/date-today/1862690962",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0G8XN1N13",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt000000002460850f",
+    "awaUrl": "https://s.awa.fm/track/96f54e22ea16ee38ed09",
+    "towerRecordsMusic": ""
   }
 ]
