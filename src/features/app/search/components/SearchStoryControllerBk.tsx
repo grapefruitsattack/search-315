@@ -40,7 +40,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
         workParam.set('q','');
         workParam.set('f','');
         setParams(workParam);
-        setValues({andor:values['andor'],order:'desc',voice:0,howToView:0,media:{},category:{},info:{}});
+        setValues({andor:values['andor'],order:'desc',voice:0,howToView:0,media:{},category:{},info:{},categoryStr:''});
     };
     function createUrlSearchParm(searchStoryParams:SearchStoryParams):URLSearchParams{
         const workParam: URLSearchParams = new URLSearchParams();

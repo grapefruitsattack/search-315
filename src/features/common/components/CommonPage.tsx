@@ -28,10 +28,10 @@ const CommonPage = ({ children }: Props )=> {
   // }, [shouldReload])
 
   return (
-  <main className=" min-h-screen">
+  <main className=" min-h-screen grid grid-rows-[auto_auto_1fr_auto] grid-cols-[100%]">
     <CommonSidebar />
     <CommonHeader />
-    <div className="pc:pt-12 pt-24 pc:pl-64 pr-0 ">
+    <div className="pc:pt-6 pt-24 pc:pl-64 pr-0 ">
       {children}
     </div>
         {/* <ParticlesComponent/> */}
@@ -45,15 +45,18 @@ const CommonPage = ({ children }: Props )=> {
           rel="noopener noreferrer"
         >雪の降る演出のON・OFFはこちら</Link>
         </div> */}
-      <div className="
-        flex pb-2 justify-center underline text-gray-600 mobileL:text-base mobileM:text-sm text-xs
-      ">
-        <Link 
-          className=""
-          href={`/about`}
-          rel="noopener noreferrer"
-        >このサイトについて・プライバシーポリシー・免責事項</Link>
+      <footer className=" ">
+        <div className="
+           text-center  pb-1 underline text-gray-600 mobileL:text-sm mobileM:text-sm text-xs
+        ">
+          <Link 
+            className=""
+            href={`/about`}
+            rel="noopener noreferrer"
+          >このサイトについて・プライバシーポリシー・免責事項</Link>
       </div>
+      </footer>
+      
       <p className={`
         border-JUP00 hover:bg-JUP00/50 text-JUP00
         border-DRS00 hover:bg-DRS00/50 text-DRS00
