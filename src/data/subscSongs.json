@@ -8424,5 +8424,38 @@
     "lineMusicUrl": "https://music.line.me/webapp/track/mt000000002460850f",
     "awaUrl": "https://s.awa.fm/track/96f54e22ea16ee38ed09",
     "towerRecordsMusic": ""
+  },
+  {
+    "id": "FBFWGFCUS_1",
+    "title": "CROWN US KING!",
+    "youtubeId": "V1HTpQQv9ww",
+    "spotifyUrl": "https://open.spotify.com/track/4Z1F9wZiKH1bJ6qBuUOEaX",
+    "appleMusicUrl": "https://music.apple.com/jp/song/crown-us-king/1866490798",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0GDZZGSGL",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt000000002473b228",
+    "awaUrl": "https://s.awa.fm/track/7e51a88a9a105890c641",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "FBFWGFCUS_2",
+    "title": "SUPREME STARS !!! (Who goes first Ver.)",
+    "youtubeId": "DVD-wF2qQy4",
+    "spotifyUrl": "https://open.spotify.com/track/4Zpyy6mP88MzBSBgdmwhtv",
+    "appleMusicUrl": "https://music.apple.com/jp/song/supreme-stars-who-goes-first-ver/1866490802",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0GDZFWXJX",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt000000002473b229",
+    "awaUrl": "https://s.awa.fm/track/d8907d973e3ac973f542",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "TT05_1",
+    "title": "YELLOW!",
+    "youtubeId": "v5FXUebLgKo",
+    "spotifyUrl": "https://open.spotify.com/track/14uXCI4Ft45FDxdRapaxvE",
+    "appleMusicUrl": "https://music.apple.com/jp/song/yellow/1866490493",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0GDZPQY4Z",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt000000002473b217",
+    "awaUrl": "https://s.awa.fm/track/88d5ae6408823cd4dc23",
+    "towerRecordsMusic": ""
   }
 ]

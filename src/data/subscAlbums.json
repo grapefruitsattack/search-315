@@ -2198,5 +2198,27 @@
     "lineMusicUrl": "https://music.line.me/webapp/album/mb0000000004e4d5db",
     "awaUrl": "https://s.awa.fm/album/9f9ca8d204338d6d0927",
     "towerRecordsMusic": ""
+  },
+  {
+    "id": "FBFWGFCUS",
+    "title": "THE IDOLM@STER SideM F＠NTASTIC BATTLE FES ～Who goes first～ 「CROWN US KING!」",
+    "youtubeId": "OLAK5uy_mNggOA4B6ra-YkphNPri_4qVm2PlhQWoM",
+    "spotifyUrl": "https://open.spotify.com/album/4Ot2rHfh9vQtyFMBgKoDhr",
+    "appleMusicUrl": "https://music.apple.com/jp/album/crown-us-king-single/1866490796",
+    "amazonMusicUrl": "https://music.amazon.co.jp/albums/B0GDZNHY45",
+    "lineMusicUrl": "https://music.line.me/webapp/album/mb0000000004ebd5b1",
+    "awaUrl": "https://s.awa.fm/album/f9c4e6ef0fb1b3b17556",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "TT05",
+    "title": "THE IDOLM@STER SideM TRANSCENDENT T@LES 05",
+    "youtubeId": "OLAK5uy_lq7Hogbpcboh06rL_8tI21W8y-wioSLDI",
+    "spotifyUrl": "https://open.spotify.com/album/4HlBcafvToNub7f0fZRsnS",
+    "appleMusicUrl": "https://music.apple.com/jp/album/the-idolm-ster-sidem-transcendent-t-les-05-single/1866490492",
+    "amazonMusicUrl": "https://music.amazon.co.jp/albums/B0GDZWSJWL",
+    "lineMusicUrl": "https://music.line.me/webapp/album/mb0000000004ebd5ad",
+    "awaUrl": "https://s.awa.fm/album/fec425866f2cc9aea928",
+    "towerRecordsMusic": ""
   }
 ]
