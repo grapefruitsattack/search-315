@@ -7,27 +7,14 @@ import type { StorySearchResult } from '@/data/types';
 import IdolBlock from "@/features/common/components/IdolBlock";
 import {ShareModalButton} from "@/features/app/shareModal/ShareModalButton";
 
-interface ItemCSS extends React.CSSProperties{
-  '--c':string
-}
 
-export default function IdolPage({ unitId, type }
+export default function UnitPageMain({ unitId, type }
   : { unitId: string; type: string; }) 
 {
   const unitName:string = singingMaster.find(data => data.singingInfoId === unitId)?.singingInfoName||'';
   const url = singingMaster.find(data => data.singingInfoId === unitId)?.url;
   const color = singingMaster.find(data => data.singingInfoId === unitId)?.color;
   const colorStr:string = color ===undefined ?'' : color;
-
-  
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    if(type==='story') setLoading(true);
-    const timeout = setTimeout(() => {
-      setLoading(false);
-    }, 500); // ある程度の時間をローディング表示
-    return () => clearTimeout(timeout);
-  }, [type]);
 
   //ユニットメンバー取得
   const unitmember: string[] 

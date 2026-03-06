@@ -35,5 +35,15 @@ module.exports = withPWA({
     return nextBuildId({ dir: __dirname });
   },
   reactStrictMode: true,
-  cacheMaxMemorySize: 50 * 1024 * 1024
+  cacheMaxMemorySize: 50 * 1024 * 1024,
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: '/idol/JUP01', // リダイレクト元のURL
+  //       destination: '/unit/JUP00', // リダイレクト先のURL
+  //       permanent: true, // 永続的なリダイレクトかのフラグ
+  //       has: [],
+  //     },
+  //   ]
+  // },
 })
