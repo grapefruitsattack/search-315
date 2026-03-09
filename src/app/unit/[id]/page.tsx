@@ -16,6 +16,7 @@ export function generateStaticParams() {
   });
 }
 
+const UnitPageRecommend = dynamic(() => import("@/features/app/unit/UnitPageRecommend"), { ssr: true });
 const UnitPageMain = dynamic(() => import("@/features/app/unit/UnitPageMain"), { ssr: true });
 const UnitPageMusic = dynamic(() => import("@/features/app/unit/UnitPageMusic"), { ssr: true });
 
@@ -46,7 +47,7 @@ const Units = async ({
       </p>
     <article className=" pb-96 font-sans">
       <UnitPageMain unitId={id} type={type}/>
-      <section  className="w-full mt-5 px-2 mobileS:px-10 lg:px-16 bg-white lg:max-w-[1500px] lg:m-auto">
+      <section  className="w-full mt-5 px-2 mobileS:px-8 lg:px-16 bg-white lg:max-w-[1500px] lg:m-auto">
       <UnitPageTabs type={type}/>
       {type==='story'
         ?
@@ -54,7 +55,9 @@ const Units = async ({
         {/* @ts-ignore Server Component */}
         <UnitPageStory unitId={id}/>
         </Suspense>
-        :<UnitPageMusic unitId={id}/>
+        :type==='music'
+        ?<UnitPageMusic unitId={id}/>
+        :<UnitPageRecommend unitId={id}/>
       }
       </section>
     </article>

@@ -25,7 +25,7 @@ export const YoutubeModal = ({ title, embedUrl, thumbnailUrl }: { title: string,
         onClick={onOpen}>
     <div className='flex flex-wrap justify-center items-center relative fill-blue-900/50 hover:fill-blue-900/80 duration-200'>
         <img
-        className={`object-cover object-center  rounded-lg`}
+        className={`object-cover object-center  rounded-lg w-fit`}
         src={thumbnailUrl}
         alt="アートワーク"
         />
