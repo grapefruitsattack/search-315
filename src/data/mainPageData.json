@@ -22,6 +22,16 @@
   {
     "infoId": "all",
     "type": "youtube",
+    "title": "10th ANNIVERSARY ST@GE ～P@SSION-ING!!!～ LIVE Blu-ray ダイジェスト",
+    "data": {
+      "url": "https://youtu.be/APaEndEZTx8",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/APaEndEZTx8?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/APaEndEZTx8/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "all",
+    "type": "youtube",
     "title": "【冒頭無料配信】F＠NTASTIC COMBINATION LIVE ～CHOCOFFICERANGER!!～ 昼公演",
     "data": {
       "url": "https://youtu.be/-keyTsehZ70",
@@ -339,6 +349,16 @@
       "url": "https://youtu.be/rR4PTHsX3v0",
       "embedUrl": "https://www.youtube-nocookie.com/embed/rR4PTHsX3v0?mute=1&modestbranding=1",
       "thumbnailUrl": "http://img.youtube.com/vi/rR4PTHsX3v0/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "DRS",
+    "type": "youtubeshort",
+    "title": "「MOON NIGHTのせいにして」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/044AHeefv5o",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/044AHeefv5o?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/044AHeefv5o/mqdefault.jpg"
     }
   },
   {
@@ -837,6 +857,16 @@
   },
   {
     "infoId": "BEI",
+    "type": "youtubeshort",
+    "title": "「TOMORROW DIAMOND」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/Wrv-Kmo1Ea4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Wrv-Kmo1Ea4?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/Wrv-Kmo1Ea4/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "BEI",
     "type": "youtube",
     "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
     "data": {
@@ -1327,6 +1357,16 @@
       "url": "https://youtu.be/r7xwc6J8orw",
       "embedUrl": "https://www.youtube-nocookie.com/embed/r7xwc6J8orw?mute=1&modestbranding=1",
       "thumbnailUrl": "http://img.youtube.com/vi/r7xwc6J8orw/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "FRM",
+    "type": "youtubeshort",
+    "title": "「Swing Your Leaves」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/Q3_GOXfUOZg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Q3_GOXfUOZg?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/Q3_GOXfUOZg/mqdefault.jpg"
     }
   },
   {
@@ -1871,6 +1911,16 @@
       "url": "https://youtu.be/IFx-TVtr_UI",
       "embedUrl": "https://www.youtube-nocookie.com/embed/IFx-TVtr_UI?mute=1&modestbranding=1",
       "thumbnailUrl": "http://img.youtube.com/vi/IFx-TVtr_UI/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "HIJ",
+    "type": "youtubeshort",
+    "title": "「JOKER➚オールマイティ」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/oRDAzs32k-M",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/oRDAzs32k-M?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/oRDAzs32k-M/mqdefault.jpg"
     }
   },
   {
