@@ -4,7 +4,7 @@ import { GetStoryMediaName } from '@/features/common/utils/Story/GetStoryInfomat
 
 export default function MediaBadge({ id, size }: { id: number, size: string }) {
 
-  if(id===MEDIA.proe.id) return(<></>);
+  if(size === 'block' && id===MEDIA.proe.id) return(<></>);
 
   const mediaName: string = GetStoryMediaName(id);
   let bgColor: string = 'bg-teal-400';
@@ -36,7 +36,7 @@ export default function MediaBadge({ id, size }: { id: number, size: string }) {
           border-2
           ${bgColor} ${borderColor} 
           ${size==='block'
-              ?` rounded-md text-xs mobileS:text-sm px-1 py-0.5 gap-1`
+              ?` rounded-md text-xs mobileS:text-sm px-0.5 pt-0.5 gap-1`
               :` rounded-lg p-1 text-sm tablet:text-xl gap-1 tablet:gap-2 `}
       `}
   >

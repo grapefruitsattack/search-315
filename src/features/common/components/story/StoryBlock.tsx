@@ -136,7 +136,7 @@ export default function StoryBlock(
         ?<></>
         :
           displayLogin?
-            <div className='grid grid-cols-4 grid-rows-1 gap-1'>
+            <div className='grid grid-cols-4 grid-rows-1 gap-2'>
               {userReadLater===0
               ?
                 <div className="

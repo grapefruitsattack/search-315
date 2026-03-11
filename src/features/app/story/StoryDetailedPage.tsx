@@ -115,38 +115,41 @@ export default async function StoryDetailedPage(
     </section>
 
     <section className="">
-      <div className='flex flex-wrap relative text-sm tablet:text-xl font-mono font-bold text-white gap-1 mb-1'>
-        <CategoryBadge id={storyData.category} size={'normal'}/>
-        <MediaBadge id={storyData.media} size={'normal'}/>
-        <div className='flex flex-wrap relative text-xs tablet:text-sm font-mono text-white gap-1 pl-1 my-auto '>
-          {voiceStateName===''
-            ?<></>
-            :<div className="justify-center text-red-500 border border-red-500 rounded-sm p-1">{voiceStateName}</div>
-          }
-          {storyData.still===0
-            ?<></>
-            :<div className="justify-center text-red-500 border border-red-500 rounded-sm p-1">{'スチル'+storyData.still+'枚'}</div>
-          }
-        </div>
-      </div>
-      <div>
-        {storyData.website!=='asb' || storyData.howtoviewStory===null || storyData.howtoviewStory.length===0
-          ?<></>
-          :
-          <div className='flex w-fit rounded-sm text-xs tablet:text-sm font-mono text-black mb-1'>
-            <a className=" text-black p-1">{'閲覧方法：'}</a>
-            {storyData.howtoviewStory.map((result, index) => (
-            <a key={index} className="justify-center text-orange-900 bg-orange-200 rounded-sm p-1 mr-1">{GetStoryHowtoviewName(result)}</a>
-            ))}
-            {/* {storyData.howtoviewStory.length===0
-            ?<a className=" text-orange-800 p-1">{'ログイン不要'}</a>
-            :<>
-            {storyData.howtoviewStory.map((result, index) => (
-            <a key={index} className="text-orange-800 p-1">{GetStoryHowtoviewName(result)}</a>
-            ))}</>
-            } */}
+        <div className='flex flex-wrap relative text-xs tablet:text-sm font-mono text-white gap-1 pl-1 my-auto mb-2'>
+          <MediaBadge id={storyData.media} size={'normal'}/>
+          <div className='flex flex-wrap relative text-xs tablet:text-sm font-mono text-white gap-1 pl-1 my-auto '>
+            {voiceStateName===''
+              ?<></>
+              :<div className="justify-center text-red-500 border border-red-500 rounded-sm p-1">{voiceStateName}</div>
+            }
+            {storyData.still===0
+              ?<></>
+              :<div className="justify-center text-red-500 border border-red-500 rounded-sm p-1">{'スチル'+storyData.still+'枚'}</div>
+            }
           </div>
-        }
+          <div className=" my-auto">
+            {storyData.website!=='asb' || storyData.howtoviewStory===null || storyData.howtoviewStory.length===0
+              ?<></>
+              :
+              <div className='flex w-fit rounded-sm text-xs tablet:text-sm font-mono text-black'>
+                <a className=" text-black p-1">{'閲覧方法：'}</a>
+                {storyData.howtoviewStory.map((result, index) => (
+                <a key={index} className="justify-center text-orange-900 bg-orange-200 rounded-sm p-1 mr-1">{GetStoryHowtoviewName(result)}</a>
+                ))}
+                {/* {storyData.howtoviewStory.length===0
+                ?<a className=" text-orange-800 p-1">{'ログイン不要'}</a>
+                :<>
+                {storyData.howtoviewStory.map((result, index) => (
+                <a key={index} className="text-orange-800 p-1">{GetStoryHowtoviewName(result)}</a>
+                ))}</>
+                } */}
+              </div>
+            }
+          </div>
+        </div>
+        <div className='flex flex-wrap relative text-sm tablet:text-xl font-mono font-bold text-white gap-1'>
+          <CategoryBadge id={storyData.category} size={'normal'}/>
+        </div>
         <div className='mb-1 flex flex-col'>
           <div className="text-base mobileM:text-xl tablet:text-2xl font-mono font-bold inline-block">
               {storyData.headTitle}
@@ -280,6 +283,7 @@ export default async function StoryDetailedPage(
               items-start gap-2 grid-cols-1 mt-2 ml-8
               grid max-w-[700px]`}>
               {storyData.mSubStory.map((result, index) => {
+                const subVoiceStateName = GetVoiceStateName(0,result.voiceAtRelease);
                 // サブストーリー用シェア文章
                 let subShareText: string = '';
                 if(storyData.media===MEDIA.moba.id&&storyData.category===CATEGORY.dailyOneFrame.id){
@@ -306,20 +310,26 @@ export default async function StoryDetailedPage(
                   <div key={Number(result.subStoryNo)} 
                     className="flex flex-col pc:flex-row  bg-white border-orange-700/30 border-t-4 border-l-4 bg-orange-50/50 text-xl"
                   >
-                    <div className="flex gap-1 text-xl">
-                      {/* モバエム雑誌のときのみアイドル名を表示 */}
-                      {storyData.media === 1 && ['comicn','comics'].includes(storyData.category) && !(result.infoSubStory===null || result.infoSubStory.length===0)
-                      &&
-                        <div className={`w-fit`}>
-                          <IdolBadge id={result.infoSubStory[0].infoId} useShortName={1} size={'block'}/>
-                        </div>
+                    <div className="flex gap-1 flex-col">
+                      {subVoiceStateName===''
+                        ?<></>
+                        :<div className="justify-center w-fit text-sm text-red-500 border border-red-500 rounded-sm p-1">{subVoiceStateName}</div>
                       }
-                      <div className={`w-fit`}>
-                      {result.subStoryTitle}</div>
+                      <div className="flex gap-1 text-xl">
+                        {/* モバエム雑誌のときのみアイドル名を表示 */}
+                        {storyData.media === 1 && ['comicn','comics'].includes(storyData.category) && !(result.infoSubStory===null || result.infoSubStory.length===0)
+                        &&
+                          <div className={`w-fit`}>
+                            <IdolBadge id={result.infoSubStory[0].infoId} useShortName={1} size={'block'}/>
+                          </div>
+                        }
+                        <div className={`w-fit`}>
+                        {result.subStoryTitle}</div>
+                      </div>
                     </div>
                     {/* サブストーリーボタン部  */}
                     <div className='
-                       flex mt-1 gap-2 ml-auto w-fit
+                       flex mt-1 gap-2 ml-auto mt-auto w-fit
                     '>
                       <div className='col-span-3 my-auto'>
                         <a className=""
@@ -364,7 +374,6 @@ export default async function StoryDetailedPage(
             </div>
           </>
         }
-      </div>
       <div>
         {/* 関連ストーリー */}
         {storyData.relationStory===null || storyData.relationStory.length===0

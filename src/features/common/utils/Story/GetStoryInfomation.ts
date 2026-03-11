@@ -96,5 +96,8 @@ export function GetVoiceStateName(voice: number, voiceAtRelease: number)
     if(voiceAtRelease === 1){
         return '過去にボイス実装あり'
     }
+    if(voiceAtRelease === 2){
+        return '一部に過去ボイス実装あり'
+    }
     return '';
 }
