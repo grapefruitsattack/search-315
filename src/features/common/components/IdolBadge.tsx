@@ -53,6 +53,26 @@ export default function IdolBadge({ id, useShortName, size }: { id: string, useS
             <p className={`whitespace-nowrap`}>{name}</p>
             </div>
         );
+    }else if(size==='mainpage'){
+      return(
+        <div
+            style={{ '--bg-color': bgColorCode,'--text-color': textColorCode,'--border-color': borderColorCode, } as React.CSSProperties}
+            className={`block
+            text-left
+            font-bold 
+            bg-[var(--bg-color)] text-[var(--text-color)] 
+            rounded-sm py-0.5 text-xs mobileS:text-base tablet:text-lg
+            ${personFlg===1?' border-l-8 border-[var(--border-color)]':'px-2'}
+            ` }
+            //onClick={(e) => router.push(personFlg===1?'/idol/'+id:'/unit/'+id)}
+            >
+        <span 
+          className={` p-1 rounded-xs whitespace-nowrap ${personFlg===1?' border-l-2 border-white/80':''}`}
+          >
+          {name}
+        </span>
+        </div>
+      );
     } else {
         return(
             <a 

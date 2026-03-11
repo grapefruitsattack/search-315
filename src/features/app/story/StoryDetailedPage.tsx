@@ -405,6 +405,7 @@ export default async function StoryDetailedPage(
                   headTitle={result.headTitle} 
                   storyTitle={result.storyTitle} 
                   infoStory={result.infoStory} 
+                  howtoviewStory={[]}
                   url={result.url} 
                   login={false}
                   userReadLater={0}

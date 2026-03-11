@@ -141,6 +141,7 @@ export default async function UnitPageStory(
                 website={data.website}
                 headTitle={data.head_title}
                 infoStory={data.info_id}
+                howtoviewStory={[]}
                 media={data.media}
                 storyTitle={data.story_title}
                 url={data.url}
@@ -194,6 +195,7 @@ export default async function UnitPageStory(
           head_title: '10thプロミ連動ストーリー',story_title: '愛媛、最高！',
           url:'https://asobistory.asobistore.jp/connectwithstage/detail/6n72px6lmkpw98v/',
           info_id: [{personFlg:1,infoId:'JUP01'}],
+          howtoview_story: [],
           user_read_later: null,
           media: 0,category: '',release_date: new Date(),voice_at_release: 0,voice: 0,still: 0,is_valid: 1
         }}
@@ -230,6 +232,7 @@ export default async function UnitPageStory(
           head_title: '10thプロミ連動ストーリー',story_title: '愛媛、最高！',
           url:'https://asobistory.asobistore.jp/connectwithstage/detail/6n72px6lmkpw98v/',
           info_id: [{personFlg:1,infoId:'JUP01'}],
+          howtoview_story: [],
           user_read_later: null,
           media: 0,category: '',release_date: new Date(),voice_at_release: 0,voice: 0,still: 0,is_valid: 1
         }}
@@ -268,6 +271,7 @@ export default async function UnitPageStory(
           head_title: '10thプロミ連動ストーリー',story_title: '愛媛、最高！',
           url:'https://asobistory.asobistore.jp/connectwithstage/detail/6n72px6lmkpw98v/',
           info_id: [{personFlg:1,infoId:'JUP01'}],
+          howtoview_story: [],
           user_read_later: null,
           media: 0,category: '',release_date: new Date(),voice_at_release: 0,voice: 0,still: 0,is_valid: 1
         }}
@@ -303,6 +307,7 @@ export default async function UnitPageStory(
           head_title: '10thプロミ連動ストーリー',story_title: '愛媛、最高！',
           url:'https://asobistory.asobistore.jp/connectwithstage/detail/6n72px6lmkpw98v/',
           info_id: [{personFlg:1,infoId:'JUP01'}],
+          howtoview_story: [],
           user_read_later: null,
           media: 0,category: '',release_date: new Date(),voice_at_release: 0,voice: 0,still: 0,is_valid: 1
         }}
@@ -408,6 +413,7 @@ function StoryInfoBlock(
             headTitle={storyData.head_title}
             storyTitle={storyData.story_title}
             infoStory={[{personFlg:1,infoId:'JUP01'}]} 
+            howtoviewStory={[]}
             url={storyData.url}
             login={login}
             userReadLater={storyData.user_read_later}

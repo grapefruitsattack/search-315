@@ -1,11 +1,12 @@
 
 import mainPageData from '@/data/mainPageData.json';
 import {YoutubeModal} from "@/features/common/components/YoutubeModal";
+import {YoutubeShortModal} from "@/features/common/components/YoutubeShortModal";
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 
 export default function UnitPageRecommend({ unitId }: { unitId: string }) {
   const unitPrefix: string = unitId.substring(0, 3);
-  const youtubeMv = mainPageData.filter((data)=>data?.infoId===unitPrefix&&data.type==='youtube');
+  const youtubeMv = mainPageData.filter((data)=>data?.infoId===unitPrefix&&['youtube','youtubeshort'].includes(data.type));
   const story = mainPageData.filter((data)=>data?.infoId===unitPrefix&&data.type==='story');
 
   return (
@@ -21,12 +22,15 @@ export default function UnitPageRecommend({ unitId }: { unitId: string }) {
       {'オススメ動画'}
     </div>
     <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap gap-10" >
+      <div className="flex flex-wrap gap-4" >
         {/* Youtube動画 */}
         {youtubeMv.map((info, index) => (
             <div className='max-w-[310px]' key={index} >
             <div className=''>
-                <YoutubeModal title={info.title} embedUrl={info.data.embedUrl||''} thumbnailUrl={info.data.thumbnailUrl||''}></YoutubeModal>
+              {info.type==='youtubeshort'
+                ?<YoutubeShortModal title={info.title} embedUrl={info.data.embedUrl||''} thumbnailUrl={info.data.thumbnailUrl||''}/>
+                :<YoutubeModal title={info.title} embedUrl={info.data.embedUrl||''} thumbnailUrl={info.data.thumbnailUrl||''}/>
+              }
             </div>
             <p className='flex flex-wrap justify-start items-center font-sans font-black lg:text-base text-sm w-[250px]'>
                 {info.title}
@@ -57,6 +61,7 @@ export default function UnitPageRecommend({ unitId }: { unitId: string }) {
                   website={result.data.website||''}
                   headTitle={result.data.headTitle||''}
                   infoStory={result.data.infoStory||[]}
+                  howtoviewStory={result.data.howtoviewStory||[]}
                   media={result.data.media||0}
                   storyTitle={result.data.storyTitle||''}
                   url={result.data.url||''}

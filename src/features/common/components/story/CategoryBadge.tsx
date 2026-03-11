@@ -136,11 +136,11 @@ export default function CategoryBadge({ id, size }: { id: string, size: string }
             ${borderColor}
             ${textColor}
             ${size==='block'
-                ?` rounded-md text-xs mobileS:text-sm px-1 py-0.5 gap-[1px]`
+                ?` rounded-md text-sm tablet:text-basegap-[1px]`
                 :` rounded-lg p-1 text-sm tablet:text-xl gap-[1px] tablet:gap-[2px] `}
         `}
     >
-        <div className={`flex items-center rounded rounded-sm ${bgColor} px-[2px] `}>
+        <div className={`flex items-center rounded rounded-sm ${bgColor} px-[2px] my-0.5 mr-0.5`}>
             <svg
             className={`
              fill-white

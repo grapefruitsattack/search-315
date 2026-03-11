@@ -202,6 +202,7 @@ export type StorySearchResult = {
   still: number;
   url: string;
   info_id: InfoStory[];
+  howtoview_story: string[];
   is_valid: number;
   user_read_later: number|null;
 };

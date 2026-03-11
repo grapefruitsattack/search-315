@@ -3,6 +3,7 @@ import type { Story,InfoStory } from '@/data/types';
 import React, { useState } from "react";
 import Link from 'next/link';
 import { toast } from 'sonner';
+import { MEDIA,CATEGORY,WEBSITE,HOW_TO_VIEW } from '@/features/common/const/StoryInfoConst';
 import { GetStoryWebsiteName } from '@/features/common/utils/Story/GetStoryInfomation';
 import IdolBadge from '@/features/common/components/IdolBadge';
 import MediaBadge from './MediaBadge';
@@ -11,10 +12,10 @@ import {UpdateReadingData}  from "@/features/app/actions/UpdateReadingData";
 import {DeleteReadingData}  from "@/features/app/actions/DeleteReadingData";
 
 export default function StoryBlock(
-  { storyId,media,category,website,headTitle,storyTitle,infoStory,url,login,userReadLater,displayLogin }
+  { storyId,media,category,website,headTitle,storyTitle,infoStory,howtoviewStory,url,login,userReadLater,displayLogin }
   :{ 
     storyId: string,media: number|null, category: string|null, website: string,
-    headTitle: string, storyTitle: string, infoStory: InfoStory[],
+    headTitle: string, storyTitle: string, infoStory: InfoStory[],howtoviewStory: string[]
     url: string, login:boolean, userReadLater: number|null,
     displayLogin: boolean
   }
@@ -22,6 +23,11 @@ export default function StoryBlock(
   
   const infoStoryPerson: InfoStory[] = infoStory.filter(data=>data.personFlg===1);
   const websiteName: string = GetStoryWebsiteName(website);
+  const howtoviewStr: string = 
+    howtoviewStory.length<=0
+      ?'ログイン不要'
+      :(howtoviewStory.length===1&&howtoviewStory[0]===HOW_TO_VIEW.asbLogin.id)
+        ?'無料':'';
 
   // 後で読むボタン用
   const [loading, setLoading] = useState<boolean>(false);
@@ -96,9 +102,11 @@ export default function StoryBlock(
       "
       href={`/story/` + storyId}
       >
-      <section className='flex flex-wrap relative text-xs mobileS:text-sm font-mono font-bold text-white gap-1'>
+      <section className='flex flex-wrap relative font-mono gap-x-2 px-1 pt-0.5'>
         {category===''||category===null?<></>:<CategoryBadge id={category} size='block'/>}
         {media===null?<></>:<MediaBadge id={media} size='block'/>}
+        {howtoviewStr===''?<></>
+          :<div className='justify-center border border-red-500 text-red-600 font-bold bg-white rounded-sm px-1 text-xs tablet:text-sm my-auto'>{howtoviewStr}</div>}
       </section>
       <section className='px-1 mb-1'>
       <div className ="
