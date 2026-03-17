@@ -4014,5 +4014,37 @@
     "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24767.html",
     "trialYoutubeId": "G_KJF5nacNI",
     "description": ""
+  },
+  {
+    "sereisId": "MTS",
+    "albumId": "MTS06",
+    "albumTitleFull": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 06 THE 虎牙道",
+    "albumTitle": "MONTHLY THEME SONG 06 THE 虎牙道",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260429",
+    "displayArtist": "THE 虎牙道",
+    "artist": "[KGD00]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24786.html",
+    "trialYoutubeId": "GvzrZZ_pL0U",
+    "description": ""
+  },
+  {
+    "sereisId": "TT",
+    "albumId": "TT08",
+    "albumTitleFull": "THE IDOLM@STER SideM TRANSCENDENT T@LES 08",
+    "albumTitle": "TRANSCENDENT T@LES 08",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260506",
+    "displayArtist": "柏木翼、都築圭、神谷幸広、兜大吾",
+    "artist": "[DRS03]、[ALT01]、[CFP01]、[FLG02]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24768.html",
+    "trialYoutubeId": "3lTaf7H_-Gs",
+    "description": ""
   }
 ]
