@@ -57,6 +57,9 @@ export function GetStoryCategoryName(category: string)
     if(category === CATEGORY.idolOneFrame.id){
         return CATEGORY.idolOneFrame.name
     }
+    if(category === CATEGORY.dramaOnStage.id){
+        return CATEGORY.dramaOnStage.name
+    }
     return '';
 }
 export function GetStoryWebsiteName(website: string)
