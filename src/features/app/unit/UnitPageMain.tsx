@@ -1,4 +1,5 @@
 'use client'
+import React from "react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
@@ -101,27 +102,24 @@ export default function UnitPageMain({ unitId, type }
           <path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z" fill="rgba(55,94,126,1)"></path></svg>
           {'ユニットメンバー'}
       </div>
-      <div className='mt-2 pb-8 grid text-center align-middle grid-cols-1 lg:mb-0 gap-3 w-fit'>
+      <div className='grid grid-cols-1 tablet:grid-cols-[auto_auto] mt-2 pb-8 grid text-center align-middle lg:mb-0 gap-0 tablet:gap-3 w-fit'>
         {unitmember.length===0 
           ? <div>結果なし</div>
           :unitmember.map((result, index) => (
-            <div  
-              key={index}
-              className="flex flex-col w-fit
-                pt-2 lg:text-base text-sm font-sans break-all
-                "
-            >
-            <div className="w-fit h-fit">
-              <IdolBadge 
-              id={result.id} 
-              size="block"
-              useShortName={0}
-              />
-            </div>
-              <p>公式サイト紹介：
+            <React.Fragment key={result.id}>
+              <div className="w-fit tablet:w-auto h-fit" key={result.id+'_badge'}>
+                <IdolBadge 
+                id={result.id} 
+                size="mainpage"
+                useShortName={0}
+                />
+              </div>
+              <div 
+                key={result.id+'_link'}
+                className="w-fit h-fit mb-2 tablet:mb-0 pl-4 tablet:pl-0">
                 <a 
                 className ="
-                underline 
+                underline text-sm tablet:text-base
                 text-slate-400
                 hover:text-sky-300 
                 fill-slate-500
@@ -132,14 +130,14 @@ export default function UnitPageMain({ unitId, type }
                 rel="noopener noreferrer"
                 >
                   <span>
-                  {result.url} 
+                  {'公式サイトアイドル紹介'} 
                   <span className="pl-0.5">
-                  <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+                  <svg className="inline-block w-[15px] h-[15px] tablet:w-[20px] tablet:h-[20px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
                   </span>
                   </span>
                 </a>
-              </p>
-            </div>
+              </div>
+            </React.Fragment>
           ))
         }
       </div>
