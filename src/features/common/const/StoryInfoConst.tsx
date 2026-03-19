@@ -25,8 +25,8 @@ export const WEBSITE = {
 };
 export const HOW_TO_VIEW = {
   asbLogin: {id:'asb_login',name:'アソビストアログイン'},
-  asbPremium: {id:'asb_prem',name:'アソストプレ会員特典'},
-  asbPurchase: {id:'asb_pur',name:'バナコイン購入'},
+  asbPremium: {id:'asb_prem',name:'アソプレ会員特典'},
+  asbPurchase: {id:'asb_pur',name:'有償購入'},
   asbSerialcodeCD: {id:'asb_scode_cd',name:'CD封入シリアルコード'},
   asbSerialcode: {id:'asb_scode',name:'シリアルコード'},
 };

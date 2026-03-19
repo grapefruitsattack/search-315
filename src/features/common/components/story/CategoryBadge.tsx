@@ -4,7 +4,7 @@ import { GetStoryCategoryName } from '@/features/common/utils/Story/GetStoryInfo
 
 export default function CategoryBadge({ id, size }: { id: string, size: string }) {
     
-    const categoryName: string = GetStoryCategoryName(id);
+    const categoryName: string = GetStoryCategoryName(id).concat(['cwm','cws','cwo'].includes(id)?'ストーリー':'');
     let bgColor: string = 'bg-teal-500';
     let symbolFillColor: string = 'fill-white';
     let borderColor: string = 'border-teal-500';

@@ -58,7 +58,7 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
       </div>
       
       <div className='grid grid-cols-[3fr_2fr] h-[95%]'>
-        <div className='flex flex-col max-w-[700px] min-w-[400px] h-[100%] overflow-y-scroll overflow-x-hidden'>
+        <div id='storyScrollArea' className='flex flex-col max-w-[700px] min-w-[400px] h-[100%] overflow-y-scroll overflow-x-hidden'>
           <div className="lg:px-24 px-2 mobileS:px-8 pb-2 flex flex-wrap items-center gap-4">
             <Pagination totalPage={maxPage}/>
           </div>
@@ -86,6 +86,7 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
                   media={data.media}
                   storyTitle={data.story_title}
                   url={data.url}
+                  pp={data.pp}
                   login={login}
                   userReadLater={data.user_read_later}
                   displayLogin={true}
@@ -95,7 +96,7 @@ export default function SearchPageStory({ data }: { data: {result:StorySearchRes
             </div>
           </div>
           <div className="lg:px-24 px-2 mobileS:px-8 pt-4 flex flex-wrap items-center gap-4">
-            <Pagination totalPage={maxPage}/>
+            <Pagination totalPage={maxPage} scrollAreaElementId='storyScrollArea'/>
           </div>
         </div>
         <div className='tablet:flex hidden flex-col ml-2 max-w-[480px] '>

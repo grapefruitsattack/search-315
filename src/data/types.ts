@@ -169,7 +169,9 @@ export type Story = {
     voice: number;
     url: string;
     infoStory: InfoStory[];
+    pp?: number;
   }[];
+  pp: number;
 };
 
 export type InfoStory = {
@@ -205,6 +207,7 @@ export type StorySearchResult = {
   howtoview_story: string[];
   is_valid: number;
   user_read_later: number|null;
+  pp: number;
 };
 
 export type UserReading = {

@@ -145,6 +145,7 @@ export default async function UnitPageStory(
                 media={data.media}
                 storyTitle={data.story_title}
                 url={data.url}
+                pp={data.pp}
                 login={login}
                 userReadLater={data.user_read_later}
                 displayLogin={true}
@@ -197,7 +198,7 @@ export default async function UnitPageStory(
           info_id: [{personFlg:1,infoId:'JUP01'}],
           howtoview_story: [],
           user_read_later: null,
-          media: 0,category: '',release_date: new Date(),voice_at_release: 0,voice: 0,still: 0,is_valid: 1
+          media: 0,category: '',release_date: new Date(),voice_at_release: 0,voice: 0,still: 0,is_valid: 1, pp:0
         }}
         titleJsx={
           <div 
@@ -234,7 +235,7 @@ export default async function UnitPageStory(
           info_id: [{personFlg:1,infoId:'JUP01'}],
           howtoview_story: [],
           user_read_later: null,
-          media: 0,category: '',release_date: new Date(),voice_at_release: 0,voice: 0,still: 0,is_valid: 1
+          media: 0,category: '',release_date: new Date(),voice_at_release: 0,voice: 0,still: 0,is_valid: 1, pp:0
         }}
         titleJsx={
           <div 
@@ -273,7 +274,7 @@ export default async function UnitPageStory(
           info_id: [{personFlg:1,infoId:'JUP01'}],
           howtoview_story: [],
           user_read_later: null,
-          media: 0,category: '',release_date: new Date(),voice_at_release: 0,voice: 0,still: 0,is_valid: 1
+          media: 0,category: '',release_date: new Date(),voice_at_release: 0,voice: 0,still: 0,is_valid: 1, pp:0
         }}
         titleJsx={
           <div 
@@ -309,7 +310,7 @@ export default async function UnitPageStory(
           info_id: [{personFlg:1,infoId:'JUP01'}],
           howtoview_story: [],
           user_read_later: null,
-          media: 0,category: '',release_date: new Date(),voice_at_release: 0,voice: 0,still: 0,is_valid: 1
+          media: 0,category: '',release_date: new Date(),voice_at_release: 0,voice: 0,still: 0,is_valid: 1, pp:0
         }}
         titleJsx={
           <div 
@@ -415,6 +416,7 @@ function StoryInfoBlock(
             infoStory={[{personFlg:1,infoId:'JUP01'}]} 
             howtoviewStory={[]}
             url={storyData.url}
+            pp={storyData.pp}
             login={login}
             userReadLater={storyData.user_read_later}
             displayLogin={true}

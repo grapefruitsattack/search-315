@@ -115,26 +115,31 @@ export default async function StoryDetailedPage(
     </section>
 
     <section className="">
-        <div className='flex flex-wrap relative text-xs tablet:text-sm font-mono text-white gap-1 pl-1 my-auto mb-2'>
-          <MediaBadge id={storyData.media} size={'normal'}/>
+        <div className='flex flex-wrap relative text-xs tablet:text-sm font-mono text-white gap-2 pl-1 my-auto mb-2'>
+          
           <div className='flex flex-wrap relative text-xs tablet:text-sm font-mono text-white gap-1 pl-1 my-auto '>
             {voiceStateName===''
               ?<></>
-              :<div className="justify-center text-red-500 border border-red-500 rounded-sm p-1">{voiceStateName}</div>
+              :<div className="justify-center font-bold text-red-500 border border-red-500 rounded-sm p-1">{voiceStateName}</div>
             }
             {storyData.still===0
               ?<></>
-              :<div className="justify-center text-red-500 border border-red-500 rounded-sm p-1">{'スチル'+storyData.still+'枚'}</div>
+              :<div className="justify-center font-bold text-red-500 border border-red-500 rounded-sm p-1">{'スチル'+storyData.still+'枚'}</div>
+            }
+            {storyData.pp<=0
+              ?<></>
+              :<div className="justify-center font-bold text-white bg-orange-600 rounded-sm p-1">{'PP獲得対象'}</div>
             }
           </div>
-          <div className=" my-auto">
+          <div className="bg-zinc-200 py-1 my-auto rounded-sm">
             {storyData.website!=='asb' || storyData.howtoviewStory===null || storyData.howtoviewStory.length===0
               ?<></>
               :
-              <div className='flex w-fit rounded-sm text-xs tablet:text-sm font-mono text-black'>
-                <a className=" text-black p-1">{'閲覧方法：'}</a>
+              <div className='flex flex-wrap w-fit rounded-sm text-[10px] mobileS:text-xs tablet:text-sm font-mono text-black'>
+                <div className=" text-black ml-1 my-auto">{'閲覧方法：'}</div>
+                <div className="my-1">
                 {storyData.howtoviewStory.map((result, index) => (
-                <a key={index} className="justify-center text-orange-900 bg-orange-200 rounded-sm p-1 mr-1">{GetStoryHowtoviewName(result)}</a>
+                <a key={index} className="justify-center border border-orange-700 text-orange-900 bg-orange-200 rounded-sm p-1 mr-1">{GetStoryHowtoviewName(result)}</a>
                 ))}
                 {/* {storyData.howtoviewStory.length===0
                 ?<a className=" text-orange-800 p-1">{'ログイン不要'}</a>
@@ -143,12 +148,15 @@ export default async function StoryDetailedPage(
                 <a key={index} className="text-orange-800 p-1">{GetStoryHowtoviewName(result)}</a>
                 ))}</>
                 } */}
+                
+              </div>
               </div>
             }
           </div>
         </div>
-        <div className='flex flex-wrap relative text-sm tablet:text-xl font-mono font-bold text-white gap-1'>
+        <div className='flex flex-wrap relative text-sm tablet:text-xl font-mono font-bold text-white gap-2'>
           <CategoryBadge id={storyData.category} size={'normal'}/>
+          <div className="h-fit my-auto"><MediaBadge id={storyData.media} size={'normal'}/></div>
         </div>
         <div className='mb-1 flex flex-col'>
           <div className="text-base mobileM:text-xl tablet:text-2xl font-mono font-bold inline-block">
@@ -392,7 +400,7 @@ export default async function StoryDetailedPage(
               {'関連ストーリー'}
             </div>
             <div className={`
-                items-start gap-4 grid-cols-1 mt-2
+                items-start gap-4 grid-cols-1 tablet:grid-cols-2 mt-2
                 grid
             `}>
               {storyData.relationStory.map((result, index) => (
@@ -407,6 +415,7 @@ export default async function StoryDetailedPage(
                   infoStory={result.infoStory} 
                   howtoviewStory={[]}
                   url={result.url} 
+                  pp={result.pp||0}
                   login={false}
                   userReadLater={0}
                   displayLogin={false}

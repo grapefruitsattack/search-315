@@ -91,6 +91,7 @@ export default function SearchPageStoryBk({ data }: { data: {result:StorySearchR
             media={data.media}
             storyTitle={data.story_title}
             url={data.url}
+            pp={data.pp}
             login={login}
             userReadLater={data.user_read_later}
             displayLogin={true}

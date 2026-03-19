@@ -12,16 +12,24 @@ import {UpdateReadingData}  from "@/features/app/actions/UpdateReadingData";
 import {DeleteReadingData}  from "@/features/app/actions/DeleteReadingData";
 
 export default function StoryBlock(
-  { storyId,media,category,website,headTitle,storyTitle,infoStory,howtoviewStory,url,login,userReadLater,displayLogin }
+  { storyId,media,category,website,headTitle,storyTitle,infoStory,howtoviewStory,url,pp,login,userReadLater,displayLogin }
   :{ 
     storyId: string,media: number|null, category: string|null, website: string,
     headTitle: string, storyTitle: string, infoStory: InfoStory[],howtoviewStory: string[]
-    url: string, login:boolean, userReadLater: number|null,
+    url: string, pp:number, login:boolean, userReadLater: number|null,
     displayLogin: boolean
   }
 ) {
   
   const infoStoryPerson: InfoStory[] = infoStory.filter(data=>data.personFlg===1);
+  const useInfoStory: InfoStory[] = infoStory.reduce((accumulator: InfoStory[], currentValue: InfoStory)=>{
+    if(currentValue.personFlg===0){
+      accumulator.push(currentValue);
+    }else{
+      if(infoStory.find((info)=>info.infoId===(currentValue.infoId.substring(0, 3)+'00'))===undefined) accumulator.push(currentValue);
+    }
+    return accumulator
+  },[]);
   const websiteName: string = GetStoryWebsiteName(website);
   const howtoviewStr: string = 
     howtoviewStory.length<=0
@@ -106,7 +114,11 @@ export default function StoryBlock(
         {category===''||category===null?<></>:<CategoryBadge id={category} size='block'/>}
         {media===null?<></>:<MediaBadge id={media} size='block'/>}
         {howtoviewStr===''?<></>
-          :<div className='justify-center border border-red-500 text-red-600 font-bold bg-white rounded-sm px-1 text-xs tablet:text-sm my-auto'>{howtoviewStr}</div>}
+          :<div className='justify-center border border-red-500 text-red-600 font-bold bg-white rounded-sm px-1 text-xs tablet:text-sm my-auto'>{howtoviewStr}</div>
+        }
+        {pp<=0?<></>
+          :<div className='justify-center border border-red-500 text-white font-bold bg-orange-600 rounded-sm px-1 text-xs tablet:text-sm my-auto'>{'PP獲得'}</div>
+        }
       </section>
       <section className='px-1 mb-1'>
       <div className ="
@@ -128,18 +140,18 @@ export default function StoryBlock(
       </div>
       </section>
       <section className ='flex flex-wrap relative text-sm font-mono gap-0.5 mb-1 mx-1'>
-          {infoStoryPerson.length === 0
+          {useInfoStory.length === 0
             ?<></>
             :infoStoryPerson.length === 49
               //参加アイドルが49人の場合、「315プロダクション」表記
               ?<div><IdolBadge id={'315pro'} useShortName={1} size={'block'}/></div>
-              :infoStoryPerson.map(
+              :useInfoStory.map(
                 (result, index) => (<div key={index}><IdolBadge id={result.infoId} useShortName={1} size={'block'}/></div>))
           }
       </section>
     </Link>
     
-    <section className ='bg-green-300/30'>
+    <section className =''>
     {url===null || url===''
         ?<></>
         :
@@ -239,7 +251,7 @@ export default function StoryBlock(
             </div>
           :
             <div className='grid grid-cols-6 grid-rows-1 gap-1'>
-            <a className="w-full col-span-6 z-10"
+            <a className="w-full col-span-6 z-10 w-full"
               href={url}
               target="_blank" rel="noopener noreferrer">
               <button

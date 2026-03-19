@@ -59,8 +59,8 @@ const getData = cache(async (
         read_later:readLater
       }
   );
-  const storySearchResult: StorySearchResult[] = data[0]?.json_data;
-  const totalCnt: number = data[0]?.total_cnt;
+  const storySearchResult: StorySearchResult[] = data!==null?data[0]?.json_data:[];
+  const totalCnt: number = data!==null?data[0]?.total_cnt:0;
   return {result:storySearchResult, totalCnt:totalCnt, login:session?.user?true:false};
 })
 

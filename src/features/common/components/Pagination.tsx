@@ -3,7 +3,7 @@ import { usePathname,useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Url } from 'next/dist/shared/lib/router/router';
 
-export default function Pagination({ totalPage }: { totalPage: number }) {
+export default function Pagination({ totalPage,scrollAreaElementId }: { totalPage: number,scrollAreaElementId?:string }) {
       const omitFlg: boolean = totalPage >= 8;
       const params = new URLSearchParams(useSearchParams().toString());
 
@@ -48,6 +48,7 @@ export default function Pagination({ totalPage }: { totalPage: number }) {
                             <Link className=
                                 {`mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300`}
                               href={{ pathname: currentPath, query: {...urlParams, page: String(currentPage-1)} }}
+                              onClick={()=>scroll(scrollAreaElementId)}
                               aria-label="Previous">
                                 <span className={`text-sm`}>
                                 <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" fillRule="evenodd"></path></svg>                              </span>
@@ -66,7 +67,7 @@ export default function Pagination({ totalPage }: { totalPage: number }) {
                                 );
                               } else {
                                 list.push(
-                                  pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} })
+                                  pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} },scrollAreaElementId)
                                 );
                               };
                             };
@@ -75,41 +76,41 @@ export default function Pagination({ totalPage }: { totalPage: number }) {
                                   ･･･</div></li>
                             );
                             list.push(
-                              pagenationNumber(totalPage - 1,{ pathname: currentPath, query: {...urlParams, page: String(totalPage - 1)} })
+                              pagenationNumber(totalPage - 1,{ pathname: currentPath, query: {...urlParams, page: String(totalPage - 1)} },scrollAreaElementId)
                             );
                             list.push(
-                              pagenationNumber(totalPage,{ pathname: currentPath, query: {...urlParams, page: String(totalPage)} })
+                              pagenationNumber(totalPage,{ pathname: currentPath, query: {...urlParams, page: String(totalPage)} },scrollAreaElementId)
                             );
                           } else if(currentPage > 3 && currentPage < totalPage - 2) {
                             list.push(
-                              pagenationNumber(1,{ pathname: currentPath, query: {...urlParams, page: '1'} })
+                              pagenationNumber(1,{ pathname: currentPath, query: {...urlParams, page: '1'} },scrollAreaElementId)
                             );
                             list.push(
                               <li key={2}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
                                   ･･･</div></li>
                             );
                             list.push(
-                              pagenationNumber(currentPage - 1,{ pathname: currentPath, query: {...urlParams, page: String(currentPage - 1)} })
+                              pagenationNumber(currentPage - 1,{ pathname: currentPath, query: {...urlParams, page: String(currentPage - 1)} },scrollAreaElementId)
                             );
                             list.push(
                               pagenationNumberCurrent(currentPage,{ pathname: currentPath, query: {...urlParams, page: String(currentPage)} })
                             );
                             list.push(
-                              pagenationNumber(currentPage + 1,{ pathname: currentPath, query: {...urlParams, page: String(currentPage + 1)} })
+                              pagenationNumber(currentPage + 1,{ pathname: currentPath, query: {...urlParams, page: String(currentPage + 1)} },scrollAreaElementId)
                             );
                             list.push(
                               <li key={currentPage + 2}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
                                   ･･･</div></li>
                             );
                             list.push(
-                              pagenationNumber(totalPage,{ pathname: currentPath, query: {...urlParams, page: String(totalPage)} })
+                              pagenationNumber(totalPage,{ pathname: currentPath, query: {...urlParams, page: String(totalPage)} },scrollAreaElementId)
                             );
                           } else if(currentPage >= totalPage - 2) {
                             list.push(
-                              pagenationNumber(1,{ pathname: currentPath, query: {...urlParams, page: String(1)} })
+                              pagenationNumber(1,{ pathname: currentPath, query: {...urlParams, page: String(1)} },scrollAreaElementId)
                             );
                             list.push(
-                              pagenationNumber(2,{ pathname: currentPath, query: {...urlParams, page: String(2)} })
+                              pagenationNumber(2,{ pathname: currentPath, query: {...urlParams, page: String(2)} },scrollAreaElementId)
                             );
                             list.push(
                               <li key={3}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
@@ -122,7 +123,7 @@ export default function Pagination({ totalPage }: { totalPage: number }) {
                                 );
                               } else {
                                 list.push(
-                                  pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} })
+                                  pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} },scrollAreaElementId)
                                 );
                               };
                             };
@@ -136,7 +137,7 @@ export default function Pagination({ totalPage }: { totalPage: number }) {
                               );
                             } else {
                               list.push(
-                                pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} })
+                                pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} },scrollAreaElementId)
 
                               );
                             };
@@ -163,6 +164,7 @@ export default function Pagination({ totalPage }: { totalPage: number }) {
                             <Link className=
                                 {`mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300`}
                               href={{ pathname: currentPath, query: {...urlParams, page: String(currentPage+1)} }}
+                              onClick={()=>scroll(scrollAreaElementId)}
                               aria-label="Next">
                               <span className="text-sm">
                               <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" fillRule="evenodd"></path></svg>
@@ -196,13 +198,21 @@ function pagenationNumberCurrent(pageNum: number, href: Url) {
   )
 };
 
-function pagenationNumber(pageNum: number, href: Url) {
+function pagenationNumber(pageNum: number, href: Url, scrollAreaElementId:string | undefined) {
   return(
     <li key={pageNum}>
-   <Link className="mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" 
-    href={href}>
+   <Link 
+    className="mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" 
+    href={href}
+    onClick={()=>scroll(scrollAreaElementId)}
+  >
       {pageNum}
     </Link>
     </li>
   )
+};
+
+function scroll(scrollAreaElementId:string | undefined){
+  const element = document.getElementById(scrollAreaElementId||'');
+  if(element!==null)element.scrollTo(0, 0);
 };
