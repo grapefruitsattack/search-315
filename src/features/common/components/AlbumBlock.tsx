@@ -10,8 +10,8 @@ import subscAlbums from '@/data/subscAlbums.json';
 import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
 import {GetArtistBadgeInfo} from '@/features/common/utils/ArtistUtils';
 import IdolBadge from '@/features/common/components/IdolBadge';
+import YoutubeButton from "@/features/common/components/YoutubeButton";
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
-
 
 export default function AlbumBlock(
   { results }: { results: Albums}
@@ -132,9 +132,24 @@ export default function AlbumBlock(
           </div>
           </div>
         </div>
-        <div>
-          
-
+        
+        {/* ボタンエリア */}
+        <div className="">
+        {results?.subscFlg!==1
+              ?results?.trialYoutubeId===''
+                ?<div className = 'hidden'></div>
+                :
+                <div className="grid grid-cols-5 h-[36px]">
+                <div className = 'flex col-span-5 h-[36px] max-w-[280px]'>
+                <YoutubeButton youtubeId={''} trialYoutubeId={results?.trialYoutubeId}/>
+                </div></div>
+              :
+              <div className="grid grid-cols-5 h-[36px]">
+              <div className = 'flex col-span-5 h-[36px] max-w-[280px]'>
+              <SubscButton songId={''} albumId={results?.albumId} />
+              </div>
+              </div>
+        }
         </div>
      </section>
   )
