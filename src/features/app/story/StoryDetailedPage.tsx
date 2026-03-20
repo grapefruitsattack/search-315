@@ -413,7 +413,7 @@ export default async function StoryDetailedPage(
                   headTitle={result.headTitle} 
                   storyTitle={result.storyTitle} 
                   infoStory={result.infoStory} 
-                  howtoviewStory={[]}
+                  howtoviewStory={result.howtoviewStory}
                   url={result.url} 
                   pp={result.pp||0}
                   login={false}
