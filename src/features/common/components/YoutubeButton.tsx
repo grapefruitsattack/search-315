@@ -9,6 +9,7 @@ export default function YoutubeButton(
       
             <a className="w-full h-full"
                     href={`https://youtu.be/${youtubeId===''?trialYoutubeId:youtubeId}`}
+                    onClick={(e) => e.stopPropagation()}
                     target="_blank" rel="noopener noreferrer">
                 <motion.button
                     className='rounded-lg border-2 border-red-500 w-full h-full
