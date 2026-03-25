@@ -223,7 +223,7 @@ export default function AlbumContent({ album, }: { album: Albums}) {
 
       {/* アルバム収録曲 */}
       <section className="mt-10">
-        <AlbumSongs albumId={album.albumId}/>
+        <AlbumSongs album={album}/>
       </section>
 
       {/* シリーズ */}

@@ -59,6 +59,7 @@ export default function SubscButton(
     <div className="grid grid-cols-[4fr_2fr] divide-x w-full h-full">
       <motion.a
           className='rounded-l-lg border-t-2 border-l-2 border-b-2 border-orange-500 w-full h-full
+          bg-white
           text-orange-500 font-sans leading-tight
           hover:bg-orange-500 hover:text-orange-100 
           transition-all duration-500 ease-out
