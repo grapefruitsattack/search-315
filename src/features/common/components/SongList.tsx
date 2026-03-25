@@ -78,8 +78,11 @@ export default function SongList(
       }
     </div> */}
     <div className="flex flex-col my-auto mx-2 text-xs mobileS:text-sm tablet:text-base truncate">
-
-      <div className="group-hover:underline truncate">{song.songTitle}</div>
+      <div className="group-hover:underline truncate">
+        <Link href={`/song/` + song.songId}>
+          {song.songTitle}
+        </Link>
+      </div>
       {/* アーティスト */}
       <div className={`${displayArtist?' mobileM:text-base text-sm':'hidden'}`}>
         <div className ='flex flex-wrap relative text-sm gap-0.5 mb-1 mx-1 '>
