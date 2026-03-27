@@ -91,12 +91,842 @@
   },
   {
     "infoId": "JUP",
+    "type": "youtubeshort",
+    "title": "「STAY TUNED ORBIT」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/saLVUVNdiHg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/saLVUVNdiHg?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/saLVUVNdiHg/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "JUP",
     "type": "youtube",
     "title": "TVアニメOP「Reason!!（315 STARS）」",
     "data": {
       "url": "https://youtu.be/TjAiae3mwkA",
       "embedUrl": "https://www.youtube-nocookie.com/embed/TjAiae3mwkA?mute=1&modestbranding=1",
       "thumbnailUrl": "http://img.youtube.com/vi/TjAiae3mwkA/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "DRS",
+    "type": "youtube",
+    "title": "F＠NTASTIC BATTLE FES「CROWN US KING!」ライブパフォーマンス映像",
+    "data": {
+      "url": "https://youtu.be/xegjMTnHB9M",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "DRS",
+    "type": "youtube",
+    "title": "【冒頭無料配信】バトルフェスWGF 幕張DAY1昼公演",
+    "data": {
+      "url": "https://youtu.be/xnIj2yQJwpM",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/xnIj2yQJwpM?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/xnIj2yQJwpM/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "DRS",
+    "type": "youtube",
+    "title": "サイスタ3Dライブ「Change to Chance」",
+    "data": {
+      "url": "https://youtu.be/rR4PTHsX3v0",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/rR4PTHsX3v0?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/rR4PTHsX3v0/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "DRS",
+    "type": "youtubeshort",
+    "title": "「MOON NIGHTのせいにして」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/044AHeefv5o",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/044AHeefv5o?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/044AHeefv5o/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "DRS",
+    "type": "youtube",
+    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
+    "data": {
+      "url": "https://youtu.be/6uxXCJR-viU",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/6uxXCJR-viU?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/6uxXCJR-viU/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "DRS",
+    "type": "youtube",
+    "title": "F＠NTASTIC COMBINATION LIVE ～BRAINPOWER!!～「MOON NIGHTのせいにして」",
+    "data": {
+      "url": "https://youtu.be/2cxrGQ1q7ZU",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/2cxrGQ1q7ZU?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/2cxrGQ1q7ZU/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "DRS",
+    "type": "youtube",
+    "title": "TVアニメ第1話『理由あって、アイドル！』",
+    "data": {
+      "url": "https://youtu.be/RGHKUxRqBbo",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/RGHKUxRqBbo?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/RGHKUxRqBbo/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "DRS",
+    "type": "youtube",
+    "title": "TVアニメOP「Reason!!（315 STARS）」",
+    "data": {
+      "url": "https://youtu.be/TjAiae3mwkA",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/TjAiae3mwkA?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/TjAiae3mwkA/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "ALT",
+    "type": "youtube",
+    "title": "F＠NCOMLIVE ～CONNECTIME!!!!～「Beyond The Dream」",
+    "data": {
+      "url": "https://youtu.be/Cr1EH2zca6U",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Cr1EH2zca6U?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/Cr1EH2zca6U/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "ALT",
+    "type": "youtube",
+    "title": "サイスタ3Dライブ「Infinite Octave!」",
+    "data": {
+      "url": "https://youtu.be/p673N6vTWk4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/p673N6vTWk4?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/p673N6vTWk4/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "ALT",
+    "type": "youtubeshort",
+    "title": "「mermaid fermata」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/8rP1tpJK4vE",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/8rP1tpJK4vE?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/8rP1tpJK4vE/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "ALT",
+    "type": "youtube",
+    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
+    "data": {
+      "url": "https://youtu.be/dK-Unz_N8QI&t=93",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/dK-Unz_N8QI?mute=1&modestbranding=1&start=93",
+      "thumbnailUrl": "http://img.youtube.com/vi/dK-Unz_N8QI/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "BEI",
+    "type": "youtube",
+    "title": "F@NTASTIC COMBINATION LIVE ～HEARTMAKER!!!!～ LIVE Blu-ray ダイジェスト",
+    "data": {
+      "url": "https://youtu.be/jA7ogpCPluU",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/jA7ogpCPluU?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/jA7ogpCPluU/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "BEI",
+    "type": "youtube",
+    "title": "サイスタ3Dライブ「Platinum MASK」",
+    "data": {
+      "url": "https://youtu.be/lKmVH1vDbfg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/lKmVH1vDbfg?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/lKmVH1vDbfg/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "BEI",
+    "type": "youtubeshort",
+    "title": "「TOMORROW DIAMOND」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/Wrv-Kmo1Ea4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Wrv-Kmo1Ea4?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/Wrv-Kmo1Ea4/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "BEI",
+    "type": "youtube",
+    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
+    "data": {
+      "url": "https://youtu.be/HyIUSqhOBpA&t=153",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/HyIUSqhOBpA?mute=1&modestbranding=1&start=153",
+      "thumbnailUrl": "http://img.youtube.com/vi/HyIUSqhOBpA/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "BEI",
+    "type": "youtube",
+    "title": "TVアニメOP「Reason!!（315 STARS）」",
+    "data": {
+      "url": "https://youtu.be/TjAiae3mwkA",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/TjAiae3mwkA?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/TjAiae3mwkA/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "DBL",
+    "type": "youtube",
+    "title": "F@NTASTIC COMBINATION LIVE ～HEARTMAKER!!!!～ LIVE Blu-ray ダイジェスト",
+    "data": {
+      "url": "https://youtu.be/jA7ogpCPluU",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/jA7ogpCPluU?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/jA7ogpCPluU/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "DBL",
+    "type": "youtube",
+    "title": "サイスタ3Dライブ「VIVA!!ファミリーリズム」",
+    "data": {
+      "url": "https://youtu.be/KT7ysLwYRZo",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/KT7ysLwYRZo?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/KT7ysLwYRZo/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "DBL",
+    "type": "youtube",
+    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
+    "data": {
+      "url": "https://youtu.be/heNjjt1JjsU",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/heNjjt1JjsU?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/heNjjt1JjsU/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "DBL",
+    "type": "youtubeshort",
+    "title": "「LEADING YOUR DREAM」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/2E2YKoPlMGE",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/2E2YKoPlMGE?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/2E2YKoPlMGE/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "DBL",
+    "type": "youtube",
+    "title": "TVアニメOP「Reason!!（315 STARS）」",
+    "data": {
+      "url": "https://youtu.be/TjAiae3mwkA",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/TjAiae3mwkA?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/TjAiae3mwkA/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "FRM",
+    "type": "youtube",
+    "title": "F＠NTASTIC BATTLE FES「CROWN US KING!」ライブパフォーマンス映像",
+    "data": {
+      "url": "https://youtu.be/xegjMTnHB9M",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "FRM",
+    "type": "youtube",
+    "title": "【冒頭無料配信】バトルフェスWGF 幕張DAY1昼公演",
+    "data": {
+      "url": "https://youtu.be/xnIj2yQJwpM",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/xnIj2yQJwpM?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/xnIj2yQJwpM/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "FRM",
+    "type": "youtube",
+    "title": "サイスタ3Dライブ「Plus 1 Good Day!」",
+    "data": {
+      "url": "https://youtu.be/r7xwc6J8orw",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/r7xwc6J8orw?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/r7xwc6J8orw/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "FRM",
+    "type": "youtubeshort",
+    "title": "「Swing Your Leaves」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/Q3_GOXfUOZg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Q3_GOXfUOZg?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/Q3_GOXfUOZg/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "FRM",
+    "type": "youtube",
+    "title": "【冒頭無料配信】F＠NTASTIC COMBINATION LIVE ～CHOCOFFICERANGER!!～ 昼公演",
+    "data": {
+      "url": "https://youtu.be/-keyTsehZ70",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/-keyTsehZ70?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/-keyTsehZ70/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "FRM",
+    "type": "youtube",
+    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
+    "data": {
+      "url": "https://youtu.be/NDf6AZwt42s&t=93",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/NDf6AZwt42s?mute=1&modestbranding=1&start=93",
+      "thumbnailUrl": "http://img.youtube.com/vi/NDf6AZwt42s/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SAI",
+    "type": "youtube",
+    "title": "F＠NTASTIC BATTLE FES「CROWN US KING!」ライブパフォーマンス映像",
+    "data": {
+      "url": "https://youtu.be/xegjMTnHB9M",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SAI",
+    "type": "youtube",
+    "title": "【冒頭無料配信】バトルフェスWGF 大阪DAY1昼公演",
+    "data": {
+      "url": "https://youtu.be/fvSkLKmcWyI",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/fvSkLKmcWyI?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/fvSkLKmcWyI/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SAI",
+    "type": "youtube",
+    "title": "サイスタ3Dライブ「いとをかし！～一彩×合彩～」",
+    "data": {
+      "url": "https://youtu.be/AbtZPARKiVc",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/AbtZPARKiVc?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/AbtZPARKiVc/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SAI",
+    "type": "youtubeshort",
+    "title": "「愛笑華！」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/dWZ2RZw2wAM",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/dWZ2RZw2wAM?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/dWZ2RZw2wAM/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SAI",
+    "type": "youtube",
+    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
+    "data": {
+      "url": "https://youtu.be/r3XihD8pkGg&t=183",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/r3XihD8pkGg?mute=1&modestbranding=1&start=183",
+      "thumbnailUrl": "http://img.youtube.com/vi/r3XihD8pkGg/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SAI",
+    "type": "youtube",
+    "title": "F＠NCOMLIVE ～CONNECTIME!!!!～「Beyond The Dream」",
+    "data": {
+      "url": "https://youtu.be/Cr1EH2zca6U",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Cr1EH2zca6U?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/Cr1EH2zca6U/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "HIJ",
+    "type": "youtube",
+    "title": "F＠NTASTIC BATTLE FES「CROWN US KING!」ライブパフォーマンス映像",
+    "data": {
+      "url": "https://youtu.be/xegjMTnHB9M",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "HIJ",
+    "type": "youtube",
+    "title": "【冒頭無料配信】バトルフェスWGF 幕張DAY1昼公演",
+    "data": {
+      "url": "https://youtu.be/xnIj2yQJwpM",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/xnIj2yQJwpM?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/xnIj2yQJwpM/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "HIJ",
+    "type": "youtube",
+    "title": "サイスタ3Dライブ「JOYFUL HEART MAKER」",
+    "data": {
+      "url": "https://youtu.be/IFx-TVtr_UI",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/IFx-TVtr_UI?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/IFx-TVtr_UI/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "HIJ",
+    "type": "youtubeshort",
+    "title": "「JOKER➚オールマイティ」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/oRDAzs32k-M",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/oRDAzs32k-M?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/oRDAzs32k-M/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "HIJ",
+    "type": "youtube",
+    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
+    "data": {
+      "url": "https://youtu.be/CCc_ScWfah4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/CCc_ScWfah4?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/CCc_ScWfah4/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "HIJ",
+    "type": "youtube",
+    "title": "F@NTASTIC COMBINATION LIVE ～PINATATIME!!～ LIVE Blu-ray ダイジェスト",
+    "data": {
+      "url": "https://youtu.be/A-JOU7OPw9c",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/A-JOU7OPw9c?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/A-JOU7OPw9c/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "HIJ",
+    "type": "youtube",
+    "title": "TVアニメOP「Reason!!（315 STARS）」",
+    "data": {
+      "url": "https://youtu.be/TjAiae3mwkA",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/TjAiae3mwkA?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/TjAiae3mwkA/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SSK",
+    "type": "youtube",
+    "title": "F＠NTASTIC BATTLE FES「CROWN US KING!」ライブパフォーマンス映像",
+    "data": {
+      "url": "https://youtu.be/xegjMTnHB9M",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SSK",
+    "type": "youtube",
+    "title": "【冒頭無料配信】バトルフェスWGF 大阪DAY1昼公演",
+    "data": {
+      "url": "https://youtu.be/fvSkLKmcWyI",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/fvSkLKmcWyI?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/fvSkLKmcWyI/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SSK",
+    "type": "youtube",
+    "title": "サイスタ3Dライブ「ROUTE77」",
+    "data": {
+      "url": "https://youtu.be/nOJqsYVBJcI",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/nOJqsYVBJcI?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/nOJqsYVBJcI/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SSK",
+    "type": "youtubeshort",
+    "title": "「喜怒哀楽万国共通-Burn it up!-」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/rCLvgNHSUeU",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/rCLvgNHSUeU?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/rCLvgNHSUeU/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SSK",
+    "type": "youtube",
+    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
+    "data": {
+      "url": "https://youtu.be/YFBmcEZrYNg&t=153s",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/YFBmcEZrYNgs?mute=1&modestbranding=1&start=153",
+      "thumbnailUrl": "http://img.youtube.com/vi/YFBmcEZrYNgs/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SSK",
+    "type": "youtube",
+    "title": "F@NTASTIC COMBINATION LIVE ～HEARTMAKER!!!!～ LIVE Blu-ray ダイジェスト",
+    "data": {
+      "url": "https://youtu.be/jA7ogpCPluU",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/jA7ogpCPluU?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/jA7ogpCPluU/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "CFP",
+    "type": "youtube",
+    "title": "F@NTASTIC COMBINATION LIVE ～PINATATIME!!～ LIVE Blu-ray ダイジェスト",
+    "data": {
+      "url": "https://youtu.be/A-JOU7OPw9c",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/A-JOU7OPw9c?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/A-JOU7OPw9c/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "CFP",
+    "type": "youtube",
+    "title": "サイスタ3Dライブ「Pavé Étoiles」",
+    "data": {
+      "url": "https://youtu.be/1sPQcSPQhoE",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/1sPQcSPQhoE?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/1sPQcSPQhoE/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "CFP",
+    "type": "youtubeshort",
+    "title": "「Reversed Masquerade」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/6otouGEhwX0",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/6otouGEhwX0?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/6otouGEhwX0/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "CFP",
+    "type": "youtube",
+    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
+    "data": {
+      "url": "https://youtu.be/T99vmYaWhN4&t=243",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/T99vmYaWhN4?mute=1&modestbranding=1&start=243",
+      "thumbnailUrl": "http://img.youtube.com/vi/T99vmYaWhN4/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "MFM",
+    "type": "youtube",
+    "title": "【冒頭無料配信】F＠NTASTIC COMBINATION LIVE ～CHOCOFFICERANGER!!～ 昼公演",
+    "data": {
+      "url": "https://youtu.be/-keyTsehZ70",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/-keyTsehZ70?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/-keyTsehZ70/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "MFM",
+    "type": "youtube",
+    "title": "サイスタ3Dライブ「はるかぜバトン」",
+    "data": {
+      "url": "https://youtu.be/4U8BLtgTNoY",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/4U8BLtgTNoY?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/4U8BLtgTNoY/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "MFM",
+    "type": "youtubeshort",
+    "title": "「はんどめいど・きみはーと！」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/ZJoyNYbf5V0",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/ZJoyNYbf5V0?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/ZJoyNYbf5V0/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "MFM",
+    "type": "youtube",
+    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
+    "data": {
+      "url": "https://youtu.be/uVr52CiTyYM&t=213",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/uVr52CiTyYM?mute=1&modestbranding=1&start=213",
+      "thumbnailUrl": "http://img.youtube.com/vi/uVr52CiTyYM/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SEM",
+    "type": "youtube",
+    "title": "F＠NCOMLIVE ～BRAINPOWER!!～「DRIVE A LIVE」",
+    "data": {
+      "url": "https://youtu.be/jU0dTRLU0I0",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/jU0dTRLU0I0?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/jU0dTRLU0I0/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SEM",
+    "type": "youtube",
+    "title": "サイスタ3Dライブ「Multiple Entertainment Show!」",
+    "data": {
+      "url": "https://youtu.be/3c0FaeAgcc4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/3c0FaeAgcc4?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/3c0FaeAgcc4/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SEM",
+    "type": "youtubeshort",
+    "title": "「Study Equal Magic!」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/at11yKEWu9s",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/at11yKEWu9s?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/at11yKEWu9s/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SEM",
+    "type": "youtube",
+    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
+    "data": {
+      "url": "https://youtu.be/bEzvhKqV_xY&t=273",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/bEzvhKqV_xY?mute=1&modestbranding=1&start=273",
+      "thumbnailUrl": "http://img.youtube.com/vi/bEzvhKqV_xY/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "SEM",
+    "type": "youtube",
+    "title": "TVアニメOP「Reason!!（315 STARS）」",
+    "data": {
+      "url": "https://youtu.be/TjAiae3mwkA",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/TjAiae3mwkA?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/TjAiae3mwkA/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "KGD",
+    "type": "youtube",
+    "title": "F＠NTASTIC BATTLE FES「CROWN US KING!」ライブパフォーマンス映像",
+    "data": {
+      "url": "https://youtu.be/xegjMTnHB9M",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "KGD",
+    "type": "youtube",
+    "title": "【冒頭無料配信】バトルフェスWGF 大阪DAY1昼公演",
+    "data": {
+      "url": "https://youtu.be/fvSkLKmcWyI",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/fvSkLKmcWyI?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/fvSkLKmcWyI/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "KGD",
+    "type": "youtube",
+    "title": "サイスタ3Dライブ「K.now O.nly」",
+    "data": {
+      "url": "https://youtu.be/MygaVHMHW-o",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/MygaVHMHW-o?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/MygaVHMHW-o/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "KGD",
+    "type": "youtubeshort",
+    "title": "「PROOF OF ONESELF」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/B3rJip-WoPY",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/B3rJip-WoPY?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/B3rJip-WoPY/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "KGD",
+    "type": "youtube",
+    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
+    "data": {
+      "url": "https://youtu.be/WCgyZSWh2_Y&t=63",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/WCgyZSWh2_Y?mute=1&modestbranding=1&start=63",
+      "thumbnailUrl": "http://img.youtube.com/vi/WCgyZSWh2_Y/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "KGD",
+    "type": "youtube",
+    "title": "F@NTASTIC COMBINATION LIVE ～HEARTMAKER!!!!～ LIVE Blu-ray ダイジェスト",
+    "data": {
+      "url": "https://youtu.be/jA7ogpCPluU",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/jA7ogpCPluU?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/jA7ogpCPluU/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "FLG",
+    "type": "youtube",
+    "title": "F＠NTASTIC BATTLE FES「CROWN US KING!」ライブパフォーマンス映像",
+    "data": {
+      "url": "https://youtu.be/xegjMTnHB9M",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "FLG",
+    "type": "youtube",
+    "title": "【冒頭無料配信】バトルフェスWGF 大阪DAY1昼公演",
+    "data": {
+      "url": "https://youtu.be/fvSkLKmcWyI",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/fvSkLKmcWyI?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/fvSkLKmcWyI/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "FLG",
+    "type": "youtube",
+    "title": "サイスタ3Dライブ「Made in「 ♪ 」」",
+    "data": {
+      "url": "https://youtu.be/HShpJv9RSAs",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/HShpJv9RSAs?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/HShpJv9RSAs/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "FLG",
+    "type": "youtube",
+    "title": "【冒頭無料配信】F＠NTASTIC COMBINATION LIVE ～AtoZto!!～ 昼公演",
+    "data": {
+      "url": "https://youtu.be/LiY9wb43dlQ",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/LiY9wb43dlQ?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/LiY9wb43dlQ/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "FLG",
+    "type": "youtubeshort",
+    "title": "「♡Cupids!」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/TVgyditHk2Y",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/TVgyditHk2Y?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/TVgyditHk2Y/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "FLG",
+    "type": "youtube",
+    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
+    "data": {
+      "url": "https://youtu.be/jMsGIcm_90Y&t=303",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/jMsGIcm_90Y?mute=1&modestbranding=1&start=303",
+      "thumbnailUrl": "http://img.youtube.com/vi/jMsGIcm_90Y/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "LGN",
+    "type": "youtube",
+    "title": "F＠NTASTIC BATTLE FES「CROWN US KING!」ライブパフォーマンス映像",
+    "data": {
+      "url": "https://youtu.be/xegjMTnHB9M",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "LGN",
+    "type": "youtube",
+    "title": "【冒頭無料配信】バトルフェスWGF 大阪DAY1昼公演",
+    "data": {
+      "url": "https://youtu.be/fvSkLKmcWyI",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/fvSkLKmcWyI?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/fvSkLKmcWyI/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "LGN",
+    "type": "youtube",
+    "title": "サイスタ3Dライブ「Time Before Time」",
+    "data": {
+      "url": "https://youtu.be/EbkXU4FJiv4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/EbkXU4FJiv4?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/EbkXU4FJiv4/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "LGN",
+    "type": "youtubeshort",
+    "title": "「FOCUS ON YOUR LIFE」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/qsyewmZU7a0",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/qsyewmZU7a0?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/qsyewmZU7a0/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "LGN",
+    "type": "youtube",
+    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
+    "data": {
+      "url": "https://youtu.be/awGdKWuNZd0&t=154",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/awGdKWuNZd0?mute=1&modestbranding=1&start=154",
+      "thumbnailUrl": "http://img.youtube.com/vi/awGdKWuNZd0/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "LGN",
+    "type": "youtube",
+    "title": "F＠NCOMLIVE ～CONNECTIME!!!!～「Beyond The Dream」",
+    "data": {
+      "url": "https://youtu.be/Cr1EH2zca6U",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Cr1EH2zca6U?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/Cr1EH2zca6U/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "CLF",
+    "type": "youtube",
+    "title": "F＠NCOMLIVE ～CONNECTIME!!!!～「Beyond The Dream」",
+    "data": {
+      "url": "https://youtu.be/Cr1EH2zca6U",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Cr1EH2zca6U?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/Cr1EH2zca6U/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "CLF",
+    "type": "youtube",
+    "title": "サイスタ3Dライブ「We're the one」",
+    "data": {
+      "url": "https://youtu.be/HeiptD9Hb-k",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/HeiptD9Hb-k?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/HeiptD9Hb-k/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "CLF",
+    "type": "youtubeshort",
+    "title": "「Sunny day, Perfect day」10th ANNIVERSARY ST@GE",
+    "data": {
+      "url": "https://youtu.be/N0RBy_a-tO8",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/N0RBy_a-tO8?mute=1&modestbranding=1",
+      "thumbnailUrl": "http://img.youtube.com/vi/N0RBy_a-tO8/mqdefault.jpg"
+    }
+  },
+  {
+    "infoId": "CLF",
+    "type": "youtube",
+    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
+    "data": {
+      "url": "https://youtu.be/wIhZ_QkrlQo&t=244",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/wIhZ_QkrlQo?mute=1&modestbranding=1&start=244",
+      "thumbnailUrl": "http://img.youtube.com/vi/wIhZ_QkrlQo/mqdefault.jpg"
     }
   },
   {
@@ -115,7 +945,7 @@
       "voiceAtRelease": 0,
       "voice": 0,
       "still": 0,
-      "url": "https://asobistory.asobistore.jp/comic/detail/l57z8jo8mk1ym9n/",
+      "url": "https://asobistory.asobistore.jp/comic/detail/l57z8jo8mk1ym9n",
       "infoStory": [
         {
           "infoId": "JUP00",
@@ -233,7 +1063,8 @@
           ]
         }
       ],
-      "relationStory": null
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -318,87 +1149,8 @@
           "infoSubStory": []
         }
       ],
-      "relationStory": null
-    }
-  },
-  {
-    "infoId": "DRS",
-    "type": "youtube",
-    "title": "F＠NTASTIC BATTLE FES「CROWN US KING!」ライブパフォーマンス映像",
-    "data": {
-      "url": "https://youtu.be/xegjMTnHB9M",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "DRS",
-    "type": "youtube",
-    "title": "【冒頭無料配信】バトルフェスWGF 幕張DAY1昼公演",
-    "data": {
-      "url": "https://youtu.be/xnIj2yQJwpM",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/xnIj2yQJwpM?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/xnIj2yQJwpM/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "DRS",
-    "type": "youtube",
-    "title": "サイスタ3Dライブ「Change to Chance」",
-    "data": {
-      "url": "https://youtu.be/rR4PTHsX3v0",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/rR4PTHsX3v0?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/rR4PTHsX3v0/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "DRS",
-    "type": "youtubeshort",
-    "title": "「MOON NIGHTのせいにして」10th ANNIVERSARY ST@GE",
-    "data": {
-      "url": "https://youtu.be/044AHeefv5o",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/044AHeefv5o?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/044AHeefv5o/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "DRS",
-    "type": "youtube",
-    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
-    "data": {
-      "url": "https://youtu.be/6uxXCJR-viU",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/6uxXCJR-viU?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/6uxXCJR-viU/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "DRS",
-    "type": "youtube",
-    "title": "F＠NTASTIC COMBINATION LIVE ～BRAINPOWER!!～「MOON NIGHTのせいにして」",
-    "data": {
-      "url": "https://youtu.be/2cxrGQ1q7ZU",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/2cxrGQ1q7ZU?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/2cxrGQ1q7ZU/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "DRS",
-    "type": "youtube",
-    "title": "TVアニメ第1話『理由あって、アイドル！』",
-    "data": {
-      "url": "https://youtu.be/RGHKUxRqBbo",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/RGHKUxRqBbo?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/RGHKUxRqBbo/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "DRS",
-    "type": "youtube",
-    "title": "TVアニメOP「Reason!!（315 STARS）」",
-    "data": {
-      "url": "https://youtu.be/TjAiae3mwkA",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/TjAiae3mwkA?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/TjAiae3mwkA/mqdefault.jpg"
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -417,7 +1169,7 @@
       "voiceAtRelease": 0,
       "voice": 0,
       "still": 0,
-      "url": "https://asobistory.asobistore.jp/comic/detail/02g95ykxzq438xm/",
+      "url": "https://asobistory.asobistore.jp/comic/detail/02g95ykxzq438xm",
       "infoStory": [
         {
           "infoId": "DRS00",
@@ -535,7 +1287,8 @@
           ]
         }
       ],
-      "relationStory": null
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -620,37 +1373,8 @@
           "infoSubStory": []
         }
       ],
-      "relationStory": null
-    }
-  },
-  {
-    "infoId": "ALT",
-    "type": "youtube",
-    "title": "F＠NCOMLIVE ～CONNECTIME!!!!～「Beyond The Dream」",
-    "data": {
-      "url": "https://youtu.be/Cr1EH2zca6U",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/Cr1EH2zca6U?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/Cr1EH2zca6U/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "ALT",
-    "type": "youtube",
-    "title": "サイスタ3Dライブ「Infinite Octave!」",
-    "data": {
-      "url": "https://youtu.be/p673N6vTWk4",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/p673N6vTWk4?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/p673N6vTWk4/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "ALT",
-    "type": "youtube",
-    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
-    "data": {
-      "url": "https://youtu.be/dK-Unz_N8QI&t=93",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/dK-Unz_N8QI?mute=1&modestbranding=1&start=93",
-      "thumbnailUrl": "http://img.youtube.com/vi/dK-Unz_N8QI/mqdefault.jpg"
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -669,7 +1393,7 @@
       "voiceAtRelease": 0,
       "voice": 0,
       "still": 0,
-      "url": "https://asobistory.asobistore.jp/comic/detail/nm0wzlk2vqrexdp/",
+      "url": "https://asobistory.asobistore.jp/comic/detail/nm0wzlk2vqrexdp",
       "infoStory": [
         {
           "infoId": "ALT00",
@@ -751,7 +1475,8 @@
           ]
         }
       ],
-      "relationStory": null
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -832,57 +1557,8 @@
           "infoSubStory": []
         }
       ],
-      "relationStory": null
-    }
-  },
-  {
-    "infoId": "BEI",
-    "type": "youtube",
-    "title": "F@NTASTIC COMBINATION LIVE ～HEARTMAKER!!!!～ LIVE Blu-ray ダイジェスト",
-    "data": {
-      "url": "https://youtu.be/jA7ogpCPluU",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/jA7ogpCPluU?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/jA7ogpCPluU/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "BEI",
-    "type": "youtube",
-    "title": "サイスタ3Dライブ「Platinum MASK」",
-    "data": {
-      "url": "https://youtu.be/lKmVH1vDbfg",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/lKmVH1vDbfg?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/lKmVH1vDbfg/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "BEI",
-    "type": "youtubeshort",
-    "title": "「TOMORROW DIAMOND」10th ANNIVERSARY ST@GE",
-    "data": {
-      "url": "https://youtu.be/Wrv-Kmo1Ea4",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/Wrv-Kmo1Ea4?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/Wrv-Kmo1Ea4/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "BEI",
-    "type": "youtube",
-    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
-    "data": {
-      "url": "https://youtu.be/HyIUSqhOBpA&t=153",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/HyIUSqhOBpA?mute=1&modestbranding=1&start=153",
-      "thumbnailUrl": "http://img.youtube.com/vi/HyIUSqhOBpA/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "BEI",
-    "type": "youtube",
-    "title": "TVアニメOP「Reason!!（315 STARS）」",
-    "data": {
-      "url": "https://youtu.be/TjAiae3mwkA",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/TjAiae3mwkA?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/TjAiae3mwkA/mqdefault.jpg"
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -901,7 +1577,7 @@
       "voiceAtRelease": 0,
       "voice": 0,
       "still": 0,
-      "url": "https://asobistory.asobistore.jp/comic/detail/618x34kg2o5yjgm/",
+      "url": "https://asobistory.asobistore.jp/comic/detail/618x34kg2o5yjgm",
       "infoStory": [
         {
           "infoId": "BEI00",
@@ -1019,7 +1695,8 @@
           ]
         }
       ],
-      "relationStory": null
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -1104,47 +1781,8 @@
           "infoSubStory": []
         }
       ],
-      "relationStory": null
-    }
-  },
-  {
-    "infoId": "DBL",
-    "type": "youtube",
-    "title": "F@NTASTIC COMBINATION LIVE ～HEARTMAKER!!!!～ LIVE Blu-ray ダイジェスト",
-    "data": {
-      "url": "https://youtu.be/jA7ogpCPluU",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/jA7ogpCPluU?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/jA7ogpCPluU/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "DBL",
-    "type": "youtube",
-    "title": "サイスタ3Dライブ「VIVA!!ファミリーリズム」",
-    "data": {
-      "url": "https://youtu.be/KT7ysLwYRZo",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/KT7ysLwYRZo?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/KT7ysLwYRZo/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "DBL",
-    "type": "youtube",
-    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
-    "data": {
-      "url": "https://youtu.be/heNjjt1JjsU",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/heNjjt1JjsU?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/heNjjt1JjsU/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "DBL",
-    "type": "youtube",
-    "title": "TVアニメOP「Reason!!（315 STARS）」",
-    "data": {
-      "url": "https://youtu.be/TjAiae3mwkA",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/TjAiae3mwkA?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/TjAiae3mwkA/mqdefault.jpg"
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -1245,7 +1883,8 @@
           ]
         }
       ],
-      "relationStory": null
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -1326,67 +1965,8 @@
           "infoSubStory": []
         }
       ],
-      "relationStory": null
-    }
-  },
-  {
-    "infoId": "FRM",
-    "type": "youtube",
-    "title": "F＠NTASTIC BATTLE FES「CROWN US KING!」ライブパフォーマンス映像",
-    "data": {
-      "url": "https://youtu.be/xegjMTnHB9M",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "FRM",
-    "type": "youtube",
-    "title": "【冒頭無料配信】バトルフェスWGF 幕張DAY1昼公演",
-    "data": {
-      "url": "https://youtu.be/xnIj2yQJwpM",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/xnIj2yQJwpM?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/xnIj2yQJwpM/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "FRM",
-    "type": "youtube",
-    "title": "サイスタ3Dライブ「Plus 1 Good Day!」",
-    "data": {
-      "url": "https://youtu.be/r7xwc6J8orw",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/r7xwc6J8orw?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/r7xwc6J8orw/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "FRM",
-    "type": "youtubeshort",
-    "title": "「Swing Your Leaves」10th ANNIVERSARY ST@GE",
-    "data": {
-      "url": "https://youtu.be/Q3_GOXfUOZg",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/Q3_GOXfUOZg?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/Q3_GOXfUOZg/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "FRM",
-    "type": "youtube",
-    "title": "【冒頭無料配信】F＠NTASTIC COMBINATION LIVE ～CHOCOFFICERANGER!!～ 昼公演",
-    "data": {
-      "url": "https://youtu.be/-keyTsehZ70",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/-keyTsehZ70?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/-keyTsehZ70/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "FRM",
-    "type": "youtube",
-    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
-    "data": {
-      "url": "https://youtu.be/NDf6AZwt42s&t=93",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/NDf6AZwt42s?mute=1&modestbranding=1&start=93",
-      "thumbnailUrl": "http://img.youtube.com/vi/NDf6AZwt42s/mqdefault.jpg"
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -1523,7 +2103,8 @@
           ]
         }
       ],
-      "relationStory": null
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -1608,57 +2189,8 @@
           "infoSubStory": []
         }
       ],
-      "relationStory": null
-    }
-  },
-  {
-    "infoId": "SAI",
-    "type": "youtube",
-    "title": "F＠NTASTIC BATTLE FES「CROWN US KING!」ライブパフォーマンス映像",
-    "data": {
-      "url": "https://youtu.be/xegjMTnHB9M",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "SAI",
-    "type": "youtube",
-    "title": "【冒頭無料配信】バトルフェスWGF 大阪DAY1昼公演",
-    "data": {
-      "url": "https://youtu.be/fvSkLKmcWyI",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/fvSkLKmcWyI?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/fvSkLKmcWyI/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "SAI",
-    "type": "youtube",
-    "title": "サイスタ3Dライブ「いとをかし！～一彩×合彩～」",
-    "data": {
-      "url": "https://youtu.be/AbtZPARKiVc",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/AbtZPARKiVc?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/AbtZPARKiVc/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "SAI",
-    "type": "youtube",
-    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
-    "data": {
-      "url": "https://youtu.be/r3XihD8pkGg&t=183",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/r3XihD8pkGg?mute=1&modestbranding=1&start=183",
-      "thumbnailUrl": "http://img.youtube.com/vi/r3XihD8pkGg/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "SAI",
-    "type": "youtube",
-    "title": "F＠NCOMLIVE ～CONNECTIME!!!!～「Beyond The Dream」",
-    "data": {
-      "url": "https://youtu.be/Cr1EH2zca6U",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/Cr1EH2zca6U?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/Cr1EH2zca6U/mqdefault.jpg"
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -1677,7 +2209,7 @@
       "voiceAtRelease": 0,
       "voice": 0,
       "still": 0,
-      "url": "https://asobistory.asobistore.jp/comic/detail/jyrxm8kvlq9gpl0/",
+      "url": "https://asobistory.asobistore.jp/comic/detail/jyrxm8kvlq9gpl0",
       "infoStory": [
         {
           "infoId": "SAI00",
@@ -1795,7 +2327,8 @@
           ]
         }
       ],
-      "relationStory": null
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -1880,77 +2413,8 @@
           "infoSubStory": []
         }
       ],
-      "relationStory": null
-    }
-  },
-  {
-    "infoId": "HIJ",
-    "type": "youtube",
-    "title": "F＠NTASTIC BATTLE FES「CROWN US KING!」ライブパフォーマンス映像",
-    "data": {
-      "url": "https://youtu.be/xegjMTnHB9M",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "HIJ",
-    "type": "youtube",
-    "title": "【冒頭無料配信】バトルフェスWGF 幕張DAY1昼公演",
-    "data": {
-      "url": "https://youtu.be/xnIj2yQJwpM",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/xnIj2yQJwpM?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/xnIj2yQJwpM/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "HIJ",
-    "type": "youtube",
-    "title": "サイスタ3Dライブ「JOYFUL HEART MAKER」",
-    "data": {
-      "url": "https://youtu.be/IFx-TVtr_UI",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/IFx-TVtr_UI?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/IFx-TVtr_UI/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "HIJ",
-    "type": "youtubeshort",
-    "title": "「JOKER➚オールマイティ」10th ANNIVERSARY ST@GE",
-    "data": {
-      "url": "https://youtu.be/oRDAzs32k-M",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/oRDAzs32k-M?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/oRDAzs32k-M/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "HIJ",
-    "type": "youtube",
-    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
-    "data": {
-      "url": "https://youtu.be/CCc_ScWfah4",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/CCc_ScWfah4?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/CCc_ScWfah4/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "HIJ",
-    "type": "youtube",
-    "title": "F@NTASTIC COMBINATION LIVE ～PINATATIME!!～ LIVE Blu-ray ダイジェスト",
-    "data": {
-      "url": "https://youtu.be/A-JOU7OPw9c",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/A-JOU7OPw9c?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/A-JOU7OPw9c/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "HIJ",
-    "type": "youtube",
-    "title": "TVアニメOP「Reason!!（315 STARS）」",
-    "data": {
-      "url": "https://youtu.be/TjAiae3mwkA",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/TjAiae3mwkA?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/TjAiae3mwkA/mqdefault.jpg"
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -1969,7 +2433,7 @@
       "voiceAtRelease": 0,
       "voice": 0,
       "still": 0,
-      "url": "https://asobistory.asobistore.jp/comic/detail/28n57qzypoxdl9y/",
+      "url": "https://asobistory.asobistore.jp/comic/detail/28n57qzypoxdl9y",
       "infoStory": [
         {
           "infoId": "HIJ00",
@@ -2159,7 +2623,8 @@
           ]
         }
       ],
-      "relationStory": null
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -2252,57 +2717,8 @@
           "infoSubStory": []
         }
       ],
-      "relationStory": null
-    }
-  },
-  {
-    "infoId": "SSK",
-    "type": "youtube",
-    "title": "F＠NTASTIC BATTLE FES「CROWN US KING!」ライブパフォーマンス映像",
-    "data": {
-      "url": "https://youtu.be/xegjMTnHB9M",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "SSK",
-    "type": "youtube",
-    "title": "【冒頭無料配信】バトルフェスWGF 大阪DAY1昼公演",
-    "data": {
-      "url": "https://youtu.be/fvSkLKmcWyI",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/fvSkLKmcWyI?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/fvSkLKmcWyI/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "SSK",
-    "type": "youtube",
-    "title": "サイスタ3Dライブ「ROUTE77」",
-    "data": {
-      "url": "https://youtu.be/nOJqsYVBJcI",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/nOJqsYVBJcI?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/nOJqsYVBJcI/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "SSK",
-    "type": "youtube",
-    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
-    "data": {
-      "url": "https://youtu.be/YFBmcEZrYNg&t=153s",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/YFBmcEZrYNgs?mute=1&modestbranding=1&start=153",
-      "thumbnailUrl": "http://img.youtube.com/vi/YFBmcEZrYNgs/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "SSK",
-    "type": "youtube",
-    "title": "F@NTASTIC COMBINATION LIVE ～HEARTMAKER!!!!～ LIVE Blu-ray ダイジェスト",
-    "data": {
-      "url": "https://youtu.be/jA7ogpCPluU",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/jA7ogpCPluU?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/jA7ogpCPluU/mqdefault.jpg"
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -2321,7 +2737,7 @@
       "voiceAtRelease": 0,
       "voice": 0,
       "still": 0,
-      "url": "https://asobistory.asobistore.jp/comic/detail/3289pqpxxo4vd67/",
+      "url": "https://asobistory.asobistore.jp/comic/detail/3289pqpxxo4vd67",
       "infoStory": [
         {
           "infoId": "SSK00",
@@ -2403,7 +2819,8 @@
           ]
         }
       ],
-      "relationStory": null
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -2484,37 +2901,8 @@
           "infoSubStory": []
         }
       ],
-      "relationStory": null
-    }
-  },
-  {
-    "infoId": "CFP",
-    "type": "youtube",
-    "title": "F@NTASTIC COMBINATION LIVE ～PINATATIME!!～ LIVE Blu-ray ダイジェスト",
-    "data": {
-      "url": "https://youtu.be/A-JOU7OPw9c",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/A-JOU7OPw9c?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/A-JOU7OPw9c/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "CFP",
-    "type": "youtube",
-    "title": "サイスタ3Dライブ「Pavé Étoiles」",
-    "data": {
-      "url": "https://youtu.be/1sPQcSPQhoE",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/1sPQcSPQhoE?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/1sPQcSPQhoE/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "CFP",
-    "type": "youtube",
-    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
-    "data": {
-      "url": "https://youtu.be/T99vmYaWhN4&t=243",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/T99vmYaWhN4?mute=1&modestbranding=1&start=243",
-      "thumbnailUrl": "http://img.youtube.com/vi/T99vmYaWhN4/mqdefault.jpg"
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -2533,7 +2921,7 @@
       "voiceAtRelease": 0,
       "voice": 0,
       "still": 0,
-      "url": "https://asobistory.asobistore.jp/comic/detail/28n57qzdroxdl9y/",
+      "url": "https://asobistory.asobistore.jp/comic/detail/28n57qzdroxdl9y",
       "infoStory": [
         {
           "infoId": "CFP00",
@@ -2723,7 +3111,8 @@
           ]
         }
       ],
-      "relationStory": null
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -2816,37 +3205,8 @@
           "infoSubStory": []
         }
       ],
-      "relationStory": null
-    }
-  },
-  {
-    "infoId": "MFM",
-    "type": "youtube",
-    "title": "【冒頭無料配信】F＠NTASTIC COMBINATION LIVE ～CHOCOFFICERANGER!!～ 昼公演",
-    "data": {
-      "url": "https://youtu.be/-keyTsehZ70",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/-keyTsehZ70?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/-keyTsehZ70/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "MFM",
-    "type": "youtube",
-    "title": "サイスタ3Dライブ「はるかぜバトン」",
-    "data": {
-      "url": "https://youtu.be/4U8BLtgTNoY",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/4U8BLtgTNoY?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/4U8BLtgTNoY/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "MFM",
-    "type": "youtube",
-    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
-    "data": {
-      "url": "https://youtu.be/uVr52CiTyYM&t=213",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/uVr52CiTyYM?mute=1&modestbranding=1&start=213",
-      "thumbnailUrl": "http://img.youtube.com/vi/uVr52CiTyYM/mqdefault.jpg"
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -2865,7 +3225,7 @@
       "voiceAtRelease": 0,
       "voice": 0,
       "still": 0,
-      "url": "https://asobistory.asobistore.jp/comic/detail/3289pqpwyk4vd67/",
+      "url": "https://asobistory.asobistore.jp/comic/detail/3289pqpwyk4vd67",
       "infoStory": [
         {
           "infoId": "MFM00",
@@ -2983,7 +3343,8 @@
           ]
         }
       ],
-      "relationStory": null
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -3068,47 +3429,8 @@
           "infoSubStory": []
         }
       ],
-      "relationStory": null
-    }
-  },
-  {
-    "infoId": "SEM",
-    "type": "youtube",
-    "title": "F＠NCOMLIVE ～BRAINPOWER!!～「DRIVE A LIVE」",
-    "data": {
-      "url": "https://youtu.be/jU0dTRLU0I0",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/jU0dTRLU0I0?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/jU0dTRLU0I0/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "SEM",
-    "type": "youtube",
-    "title": "サイスタ3Dライブ「Multiple Entertainment Show!」",
-    "data": {
-      "url": "https://youtu.be/3c0FaeAgcc4",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/3c0FaeAgcc4?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/3c0FaeAgcc4/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "SEM",
-    "type": "youtube",
-    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
-    "data": {
-      "url": "https://youtu.be/bEzvhKqV_xY&t=273",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/bEzvhKqV_xY?mute=1&modestbranding=1&start=273",
-      "thumbnailUrl": "http://img.youtube.com/vi/bEzvhKqV_xY/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "SEM",
-    "type": "youtube",
-    "title": "TVアニメOP「Reason!!（315 STARS）」",
-    "data": {
-      "url": "https://youtu.be/TjAiae3mwkA",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/TjAiae3mwkA?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/TjAiae3mwkA/mqdefault.jpg"
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -3127,7 +3449,7 @@
       "voiceAtRelease": 0,
       "voice": 0,
       "still": 0,
-      "url": "https://asobistory.asobistore.jp/comic/detail/d0ng3q6x1q9ym25/",
+      "url": "https://asobistory.asobistore.jp/comic/detail/d0ng3q6x1q9ym25",
       "infoStory": [
         {
           "infoId": "SEM00",
@@ -3245,7 +3567,8 @@
           ]
         }
       ],
-      "relationStory": null
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -3330,57 +3653,8 @@
           "infoSubStory": []
         }
       ],
-      "relationStory": null
-    }
-  },
-  {
-    "infoId": "KGD",
-    "type": "youtube",
-    "title": "F＠NTASTIC BATTLE FES「CROWN US KING!」ライブパフォーマンス映像",
-    "data": {
-      "url": "https://youtu.be/xegjMTnHB9M",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "KGD",
-    "type": "youtube",
-    "title": "【冒頭無料配信】バトルフェスWGF 大阪DAY1昼公演",
-    "data": {
-      "url": "https://youtu.be/fvSkLKmcWyI",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/fvSkLKmcWyI?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/fvSkLKmcWyI/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "KGD",
-    "type": "youtube",
-    "title": "サイスタ3Dライブ「K.now O.nly」",
-    "data": {
-      "url": "https://youtu.be/MygaVHMHW-o",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/MygaVHMHW-o?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/MygaVHMHW-o/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "KGD",
-    "type": "youtube",
-    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
-    "data": {
-      "url": "https://youtu.be/WCgyZSWh2_Y&t=63",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/WCgyZSWh2_Y?mute=1&modestbranding=1&start=63",
-      "thumbnailUrl": "http://img.youtube.com/vi/WCgyZSWh2_Y/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "KGD",
-    "type": "youtube",
-    "title": "F@NTASTIC COMBINATION LIVE ～HEARTMAKER!!!!～ LIVE Blu-ray ダイジェスト",
-    "data": {
-      "url": "https://youtu.be/jA7ogpCPluU",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/jA7ogpCPluU?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/jA7ogpCPluU/mqdefault.jpg"
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -3399,7 +3673,7 @@
       "voiceAtRelease": 0,
       "voice": 0,
       "still": 0,
-      "url": "https://asobistory.asobistore.jp/comic/detail/g9lnxoymmozyd76/",
+      "url": "https://asobistory.asobistore.jp/comic/detail/g9lnxoymmozyd76",
       "infoStory": [
         {
           "infoId": "KGD00",
@@ -3517,7 +3791,8 @@
           ]
         }
       ],
-      "relationStory": null
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -3602,57 +3877,8 @@
           "infoSubStory": []
         }
       ],
-      "relationStory": null
-    }
-  },
-  {
-    "infoId": "FLG",
-    "type": "youtube",
-    "title": "F＠NTASTIC BATTLE FES「CROWN US KING!」ライブパフォーマンス映像",
-    "data": {
-      "url": "https://youtu.be/xegjMTnHB9M",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "FLG",
-    "type": "youtube",
-    "title": "【冒頭無料配信】バトルフェスWGF 大阪DAY1昼公演",
-    "data": {
-      "url": "https://youtu.be/fvSkLKmcWyI",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/fvSkLKmcWyI?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/fvSkLKmcWyI/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "FLG",
-    "type": "youtube",
-    "title": "サイスタ3Dライブ「Made in「 ♪ 」」",
-    "data": {
-      "url": "https://youtu.be/HShpJv9RSAs",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/HShpJv9RSAs?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/HShpJv9RSAs/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "FLG",
-    "type": "youtube",
-    "title": "【冒頭無料配信】F＠NTASTIC COMBINATION LIVE ～AtoZto!!～ 昼公演",
-    "data": {
-      "url": "https://youtu.be/LiY9wb43dlQ",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/LiY9wb43dlQ?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/LiY9wb43dlQ/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "FLG",
-    "type": "youtube",
-    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
-    "data": {
-      "url": "https://youtu.be/jMsGIcm_90Y&t=303",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/jMsGIcm_90Y?mute=1&modestbranding=1&start=303",
-      "thumbnailUrl": "http://img.youtube.com/vi/jMsGIcm_90Y/mqdefault.jpg"
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -3789,7 +4015,8 @@
           ]
         }
       ],
-      "relationStory": null
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -3874,57 +4101,8 @@
           "infoSubStory": []
         }
       ],
-      "relationStory": null
-    }
-  },
-  {
-    "infoId": "LGN",
-    "type": "youtube",
-    "title": "F＠NTASTIC BATTLE FES「CROWN US KING!」ライブパフォーマンス映像",
-    "data": {
-      "url": "https://youtu.be/xegjMTnHB9M",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "LGN",
-    "type": "youtube",
-    "title": "【冒頭無料配信】バトルフェスWGF 大阪DAY1昼公演",
-    "data": {
-      "url": "https://youtu.be/fvSkLKmcWyI",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/fvSkLKmcWyI?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/fvSkLKmcWyI/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "LGN",
-    "type": "youtube",
-    "title": "サイスタ3Dライブ「Time Before Time」",
-    "data": {
-      "url": "https://youtu.be/EbkXU4FJiv4",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/EbkXU4FJiv4?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/EbkXU4FJiv4/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "LGN",
-    "type": "youtube",
-    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
-    "data": {
-      "url": "https://youtu.be/awGdKWuNZd0&t=154",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/awGdKWuNZd0?mute=1&modestbranding=1&start=154",
-      "thumbnailUrl": "http://img.youtube.com/vi/awGdKWuNZd0/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "LGN",
-    "type": "youtube",
-    "title": "F＠NCOMLIVE ～CONNECTIME!!!!～「Beyond The Dream」",
-    "data": {
-      "url": "https://youtu.be/Cr1EH2zca6U",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/Cr1EH2zca6U?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/Cr1EH2zca6U/mqdefault.jpg"
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -3943,7 +4121,7 @@
       "voiceAtRelease": 0,
       "voice": 0,
       "still": 0,
-      "url": "https://asobistory.asobistore.jp/comic/detail/x36nyk7vwkw41m7/",
+      "url": "https://asobistory.asobistore.jp/comic/detail/x36nyk7vwkw41m7",
       "infoStory": [
         {
           "infoId": "LGN00",
@@ -4061,7 +4239,8 @@
           ]
         }
       ],
-      "relationStory": null
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -4146,37 +4325,8 @@
           "infoSubStory": []
         }
       ],
-      "relationStory": null
-    }
-  },
-  {
-    "infoId": "CLF",
-    "type": "youtube",
-    "title": "F＠NCOMLIVE ～CONNECTIME!!!!～「Beyond The Dream」",
-    "data": {
-      "url": "https://youtu.be/Cr1EH2zca6U",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/Cr1EH2zca6U?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/Cr1EH2zca6U/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "CLF",
-    "type": "youtube",
-    "title": "サイスタ3Dライブ「We're the one」",
-    "data": {
-      "url": "https://youtu.be/HeiptD9Hb-k",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/HeiptD9Hb-k?mute=1&modestbranding=1",
-      "thumbnailUrl": "http://img.youtube.com/vi/HeiptD9Hb-k/mqdefault.jpg"
-    }
-  },
-  {
-    "infoId": "CLF",
-    "type": "youtube",
-    "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』PV",
-    "data": {
-      "url": "https://youtu.be/wIhZ_QkrlQo&t=244",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/wIhZ_QkrlQo?mute=1&modestbranding=1&start=244",
-      "thumbnailUrl": "http://img.youtube.com/vi/wIhZ_QkrlQo/mqdefault.jpg"
+      "relationStory": null,
+      "pp": 0
     }
   },
   {
@@ -4261,7 +4411,8 @@
           "infoSubStory": []
         }
       ],
-      "relationStory": null
+      "relationStory": null,
+      "pp": 0
     }
   }
 ]

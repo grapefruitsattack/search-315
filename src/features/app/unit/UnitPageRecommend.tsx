@@ -65,7 +65,7 @@ export default function UnitPageRecommend({ unitId }: { unitId: string }) {
                   media={result.data.media||0}
                   storyTitle={result.data.storyTitle||''}
                   url={result.data.url||''}
-                  pp={0}
+                  pp={result.data.pp||0}
                   login={false}
                   userReadLater={null}
                   displayLogin={false}
