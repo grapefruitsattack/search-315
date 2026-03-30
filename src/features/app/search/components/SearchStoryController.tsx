@@ -52,7 +52,7 @@ export default function SearchStoryController({ isModal,firstIsOpen }: { isModal
     workParam.set('q','');
     workParam.set('f','');
     setParams(workParam);
-    setValues({andor:values['andor'],order:'desc',voice:0,howToView:0,media:{},category:{},info:{},categoryStr:''});
+    setValues({andor:values['andor'],order:'desc',voice:0,howToView:0,pp:0,media:{},category:{},info:{},categoryStr:''});
   };
   function createUrlSearchParm(searchStoryParams:SearchStoryParams):URLSearchParams{
     const workParam: URLSearchParams = new URLSearchParams();
@@ -64,10 +64,14 @@ export default function SearchStoryController({ isModal,firstIsOpen }: { isModal
     if(searchStoryParams.andor!=='') workParam.set('andor',searchStoryParams.andor);
     if(searchStoryParams.voice!==0) workParam.set('v',searchStoryParams.voice.toString());
     if(searchStoryParams.howToView!==0) workParam.set('htv',searchStoryParams.howToView.toString());
+    if(searchStoryParams.pp!==0) workParam.set('pp',searchStoryParams.pp.toString());
     return workParam;
   }
   function switchHowToView(howToView: number): void{
     setValues({...values, howToView:howToView});
+  };
+  function switchPP(pp: number): void{
+    setValues({...values, pp:pp});
   };
   function switchVoice(voice: number): void{
     setValues({...values, voice:voice});
@@ -179,6 +183,25 @@ export default function SearchStoryController({ isModal,firstIsOpen }: { isModal
             }}
             changeSearchParams={(id) =>switchHowToView(Number(id)||0)}
           />
+        </div>
+      </div>
+      <div className="flex flex-col ">
+        <div className="text-sm">プロデュースポイント（PP）</div>
+        <div className='flex flex-wrap w-full p-1 gap-3 items-center'>
+            <SearchModalRadioButton
+            radioName="radio-pp"
+            data={[
+                { filterId: "0", labelStr: "すべて" },
+                { filterId: "1", labelStr: "PP獲得対象" },
+            ]}
+            selectedId={values.pp.toString()}
+            onChange={(id) => {
+              const newValue: SearchStoryParams = { ...values, pp: Number(id)||0 };
+              setValues(newValue);
+              if(!isModal) search(newValue);
+            }}
+            changeSearchParams={(id) =>switchPP(Number(id)||0)}
+            />
         </div>
       </div>
       <div className="flex flex-col ">

@@ -26,6 +26,7 @@ const getData = cache(async (
   categoryArray: string[],
   voiceType: number,
   howtoviewType: number,
+  ppType: number,
   andor: string,
   SortedAsc: number,
   page: number,
@@ -52,6 +53,7 @@ const getData = cache(async (
         voice_type:voiceType,
         howtoview_type:howtoviewType,
         andor:andor,
+        pp_type:ppType,
         sorted_asc:SortedAsc,
         page:page,
         page_size:displayPageSize,
@@ -70,13 +72,14 @@ const Page = async ({
   searchParams,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ q?:string; c?:string; v?:number; htv?:string; andor?:string; rl?:string; order?:string; page?:string; }>;
+  searchParams: Promise<{ q?:string; c?:string; v?:number; htv?:string; pp?:number; andor?:string; rl?:string; order?:string; page?:string; }>;
 }) => {
   // パラメータ取得
   const {q} = await searchParams || '';
   const {c} = await searchParams || '';
   const {v} = await searchParams || '';
   const {htv} = await searchParams || '';
+  const {pp} = await searchParams || '';
   const {andor} = await searchParams || '';
   const {order} = await searchParams || '';
   const {rl} = await searchParams || '';
@@ -88,7 +91,7 @@ const Page = async ({
   const pageNum: number = Number(page)||1;
 
   // 検索結果取得
-  const post = await getData(infoIdArray,categoryArray,v||0,Number(htv)||0,andor||'or',SortedAsc,pageNum,rl||'');
+  const post = await getData(infoIdArray,categoryArray,v||0,Number(htv)||0,Number(pp)||0,andor||'or',SortedAsc,pageNum,rl||'');
 
   // ページネーション
   const pageSize: number = 18;

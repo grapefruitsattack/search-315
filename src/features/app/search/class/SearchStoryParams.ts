@@ -8,6 +8,7 @@ export class SearchStoryParams {
   category: { [key: string]: boolean; };
   voice: number;
   howToView: number;
+  pp: number;
   info: { [key: string]: boolean; };
   categoryStr: string;
 
@@ -16,6 +17,7 @@ export class SearchStoryParams {
     this.andor = urlSearchParams.get('andor') || 'or';
     this.voice = Number(urlSearchParams.get('v')) || 0;
     this.howToView = Number(urlSearchParams.get('htv')) || 0;
+    this.pp = Number(urlSearchParams.get('pp')) || 0;
 
     this.category ={};
     const category: string[] = urlSearchParams.get('c')?.split(' ') || [];
