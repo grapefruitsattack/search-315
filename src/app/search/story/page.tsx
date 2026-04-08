@@ -12,60 +12,6 @@ import {CheckSingingInfoParm,CheckStoryCategoryParm} from "@/features/common/uti
 
 export const revalidate = 600; // 10分ごとに再検証する
 
-type Props = {
-  params: Promise<{
-    slug: string;
-  }>;
-  searchParams: Promise<{
-    dk?: string;
-  }>;
-};
-
-const getData = cache(async (
-  infoIdArray: string[],
-  categoryArray: string[],
-  voiceType: number,
-  howtoviewType: number,
-  ppType: number,
-  andor: string,
-  SortedAsc: number,
-  page: number,
-  readLater: string
-  ) => {
-  const session = await auth.api.getSession({
-      headers: await headers(),
-  });
-  const supabase = session?.user
-    ?await createSupabaseClientWithLogin(session)
-    :await createSupabaseClient()
-  ;
-  const userId: string | null
-    = session?.user
-      ?session.user.id||null
-      :null;
-  //ストーリー情報取得
-  const displayPageSize: number = 18;
-  const {data, error} = await supabase.rpc(
-      'search_story_login',
-      {
-        info_id_array: infoIdArray,
-        category_array:categoryArray,
-        voice_type:voiceType,
-        howtoview_type:howtoviewType,
-        andor:andor,
-        pp_type:ppType,
-        sorted_asc:SortedAsc,
-        page:page,
-        page_size:displayPageSize,
-        user_id:userId,
-        read_later:readLater
-      }
-  );
-  const storySearchResult: StorySearchResult[] = data!==null?data[0]?.json_data:[];
-  const totalCnt: number = data!==null?data[0]?.total_cnt:0;
-  return {result:storySearchResult, totalCnt:totalCnt, login:session?.user?true:false};
-})
-
 
 const Page = async ({
   params,
@@ -90,12 +36,7 @@ const Page = async ({
   const SortedAsc: number = order==='asc'?1:0;
   const pageNum: number = Number(page)||1;
 
-  // 検索結果取得
-  const post = await getData(infoIdArray,categoryArray,v||0,Number(htv)||0,Number(pp)||0,andor||'or',SortedAsc,pageNum,rl||'');
 
-  // ページネーション
-  const pageSize: number = 18;
-  const maxPage: number = Math.ceil(post.totalCnt/pageSize);
 
     return (
     <Suspense>
@@ -105,7 +46,7 @@ const Page = async ({
       <section className="justify-start px-4 pc:pl-2 pc:pr-12 bg-white lg:m-auto font-mono">
 
       {/* @ts-ignore Server Component */}
-      <SearchStoryPage data={post}/>
+      <SearchStoryPage searchParam={{infoIdArray:infoIdArray,categoryArray:categoryArray,voiceType:v||0,howtoviewType:Number(htv)||0,ppType:Number(pp)||0,andor:andor||'or',SortedAsc:SortedAsc,page:pageNum,readLater:rl||''}}/>
       </section>
     </Suspense>
     </CommonPage>
