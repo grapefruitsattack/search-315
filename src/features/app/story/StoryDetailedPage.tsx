@@ -115,9 +115,17 @@ export default async function StoryDetailedPage(
     </section>
 
     <section className="">
-        <div className='flex flex-wrap relative text-xs tablet:text-sm font-mono text-white gap-2 pl-1 my-auto mb-2'>
+        <div className='flex flex-wrap relative text-xs tablet:text-sm font-mono text-white gap-2 ml-1 my-auto mb-2'>
           
           <div className='flex flex-wrap relative text-xs tablet:text-sm font-mono text-white gap-1 pl-1 my-auto '>
+            {storyData.howtoviewStory.length<=0&&(storyData.url!==null&&storyData.url!=='')
+              ?<div className="justify-center font-bold text-red-500 border border-red-500 rounded-sm p-1">{'ログイン不要'}</div>
+              :<></>
+            }
+            {storyData.url===null||storyData.url===''
+              ?<div className="justify-center font-bold text-red-500 border border-red-500 rounded-sm p-1">{'公式上で閲覧手段なし'}</div>
+              :<></>
+            }
             {voiceStateName===''
               ?<></>
               :<div className="justify-center font-bold text-red-500 border border-red-500 rounded-sm p-1">{voiceStateName}</div>
@@ -217,7 +225,10 @@ export default async function StoryDetailedPage(
             </a>
           </div>
           <div className='flex flex-wrap gap-2'>
-            {isRead
+            {storyData.url===null||storyData.url===''
+            ?<></>
+            :
+            isRead
               ?
               <StoryReadEditButton
                 storyId={storyData.storyId} readingDate={resultData.readingDate}
@@ -227,7 +238,9 @@ export default async function StoryDetailedPage(
                 storyId={storyData.storyId} login={login} isRead={isRead} isReadLeater={isReadLeater}
               />
             }
-            {isReadLeater
+            {storyData.url===null||storyData.url===''
+            ?<></>
+            :isReadLeater
               ?
               <StoryReadLaterEditButton
                 storyId={storyData.storyId} login={login} isRead={isRead} isReadLeater={isReadLeater}
