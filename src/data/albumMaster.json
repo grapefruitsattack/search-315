@@ -4046,5 +4046,21 @@
     "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24768.html",
     "trialYoutubeId": "3lTaf7H_-Gs",
     "description": ""
+  },
+  {
+    "sereisId": "MTS",
+    "albumId": "MTS07",
+    "albumTitleFull": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 07 FRAME",
+    "albumTitle": "MONTHLY THEME SONG 07 FRAME",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260527",
+    "displayArtist": "FRAME",
+    "artist": "[FRM00]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24787.html",
+    "trialYoutubeId": "X-MKeZc2bD0",
+    "description": ""
   }
 ]

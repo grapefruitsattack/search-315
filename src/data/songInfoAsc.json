@@ -44062,5 +44062,61 @@
     "singingInfoId": "FLG02",
     "releaseDate": "20260506",
     "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS07",
+    "songId": "MTS07_1",
+    "singingInfoId": "FRM00",
+    "releaseDate": "20260527",
+    "type": "u"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS07",
+    "songId": "MTS07_1",
+    "singingInfoId": "FRM01",
+    "releaseDate": "20260527",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS07",
+    "songId": "MTS07_1",
+    "singingInfoId": "FRM02",
+    "releaseDate": "20260527",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS07",
+    "songId": "MTS07_1",
+    "singingInfoId": "FRM03",
+    "releaseDate": "20260527",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "MTS07",
+    "songId": "MTS07_2",
+    "singingInfoId": "FRM01",
+    "releaseDate": "20260527",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "MTS07",
+    "songId": "MTS07_3",
+    "singingInfoId": "FRM02",
+    "releaseDate": "20260527",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "MTS07",
+    "songId": "MTS07_4",
+    "singingInfoId": "FRM03",
+    "releaseDate": "20260527",
+    "type": "sver"
   }
 ]
