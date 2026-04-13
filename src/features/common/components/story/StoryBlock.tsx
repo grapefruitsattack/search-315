@@ -10,6 +10,8 @@ import MediaBadge from './MediaBadge';
 import CategoryBadge from './CategoryBadge';
 import {UpdateReadingData}  from "@/features/app/actions/UpdateReadingData";
 import {DeleteReadingData}  from "@/features/app/actions/DeleteReadingData";
+import LoginModal from '@/features/common/components/login/LoginModal';
+import {useDisclosure, } from "@chakra-ui/react";
 
 export default function StoryBlock(
   { storyId,media,category,website,headTitle,storyTitle,infoStory,howtoviewStory,url,pp,login,userReadLater,displayLogin }
@@ -21,6 +23,7 @@ export default function StoryBlock(
   }
 ) {
   
+  const disclosure = useDisclosure();
   const infoStoryPerson: InfoStory[] = infoStory.filter(data=>data.personFlg===1);
   const useInfoStory: InfoStory[] = infoStory.reduce((accumulator: InfoStory[], currentValue: InfoStory)=>{
     if(currentValue.personFlg===0){
@@ -40,7 +43,7 @@ export default function StoryBlock(
   // 後で読むボタン用
   const [loading, setLoading] = useState<boolean>(false);
 
-  async function addIsReading (storyId: string) {
+  async function addIsReading (storyId: string, storyTItle: string) {
     await UpdateReadingData(storyId,'',1)
     .then(() => {
       setLoading(true);
@@ -52,7 +55,7 @@ export default function StoryBlock(
       });
     })
     .then(() => {
-      toast("「後で読む」リストに新規追加しました", {
+      toast(`「${storyTitle}」を後で読むリストに新規追加しました`, {
         action: {
           label: "OK",
           onClick: () => console.log("Undo"),
@@ -63,7 +66,7 @@ export default function StoryBlock(
     }).finally(() => {
     })
   };
-  async function deleteIsReading (storyId: string) {
+  async function deleteIsReading(storyId: string, storyTItle: string) {
     await DeleteReadingData(storyId,1)
     .then(() => {
       setLoading(true);
@@ -75,7 +78,7 @@ export default function StoryBlock(
       });
     })
     .then(() => {
-      toast("「後で読む」リストから削除しました", {
+      toast(`「${storyTitle}」を後で読むリストから削除しました`, {
         action: {
           label: "OK",
           onClick: () => console.log("Undo"),
@@ -98,6 +101,7 @@ export default function StoryBlock(
         outline-none outline-green-400 outline-offset-0
       `}
     >
+    <LoginModal disclosure={disclosure} description="ログインすると「後で読む」に登録できます！"/>
     <Link
       className ="
         group 
@@ -113,10 +117,10 @@ export default function StoryBlock(
       <section className='flex flex-wrap relative font-mono gap-x-2 px-1 pt-0.5'>
         {category===''||category===null?<></>:<CategoryBadge id={category} size='block'/>}
         {media===null?<></>:<MediaBadge id={media} size='block'/>}
-        {howtoviewStr===''?<></>
+        {howtoviewStr===''||url===null||url===''?<></>
           :<div className='justify-center border border-red-500 text-red-600 font-bold bg-white rounded-sm px-1 text-xs tablet:text-sm my-auto'>{howtoviewStr}</div>
         }
-        {pp<=0?<></>
+        {pp<=0||url===null||url===''?<></>
           :<div className='justify-center border border-red-500 text-white font-bold bg-orange-600 rounded-sm px-1 text-xs tablet:text-sm my-auto'>{'PP獲得'}</div>
         }
       </section>
@@ -152,105 +156,107 @@ export default function StoryBlock(
     </Link>
     
     <section className =''>
-    {url===null || url===''
+      {url===null || url===''
         ?<></>
-        :
-          displayLogin?
-            <div className='grid grid-cols-4 grid-rows-1 gap-2'>
+        :displayLogin
+            ?
+            <div className='grid grid-cols-4 grid-rows-1 w-full gap-2'>
               {userReadLater===0
-              ?
-                <div className="
-                  w-full h-full col-span-2 
-                  flex justify-center
-                  rounded-lg w-full h-full
-                  bg-cyan-500 text-white fill-white
-                  font-sans font-black leading-tight
-                  transition-all duration-500 ease-out
-                  text-xs mobileS:text-sm lg:text-lg
-                ">
-                  <span className={`flex items-center `}>
-                  <svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px" viewBox="0 -0.5 24 24">
-                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM17.4571 9.45711L11 15.9142L6.79289 11.7071L8.20711 10.2929L11 13.0858L16.0429 8.04289L17.4571 9.45711Z"></path></svg>
-                  </span>
-                  <span className='flex items-center'>{'既読'}</span>
-                </div>
-              :
-              loading
-              ?<div className="w-full h-full col-span-2 flex justify-center p-2">
-                <div className="animate-spin h-5 w-5 border-4 border-blue-500 rounded-full border-t-transparent"></div>
-              </div>
-              :
-            <div className="w-full h-full col-span-2 ">
-              <form
-                className='w-full h-full'
-                action={async () => {
-                  if(login){
-                    if(userReadLater===1){
-                      deleteIsReading(storyId);
-                    }else if(userReadLater!==1&&userReadLater!==0){
-                      addIsReading(storyId);
-                    }
-                  }
-                }}
-                >
-                <button
-                    className={`group 
+                ?
+                <div 
+                  className="
+                    w-full h-full col-span-2 
                     flex justify-center
-                    rounded-lg border-2 border-amber-500 w-fit h-full
-                    font-sans leading-tight
+                    rounded-lg
+                    bg-cyan-500 text-white fill-white
+                    font-sans font-black leading-tight
                     transition-all duration-500 ease-out
-                    text-xs mobileS:text-sm 
-                    ${userReadLater===1
-                      ?` lg:text-base
-                        text-amber-700 hover:text-amber-500 
-                        bg-amber-200 hover:bg-white
-                        fill-amber-700 hover:fill-amber-500 
-                      `
-                      :` lg:text-lg
-                        text-amber-500 hover:text-amber-100 
-                        bg-white hover:bg-amber-500
-                        fill-amber-500 hover:fill-amber-100 
-                        `
-                    }
-                    font-sans font-black 
-                    `}
-                >
-                <span className={`flex items-center ${userReadLater===1?'hidden':''}`}>
-                <svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px" viewBox="0 -960 960 960">
-                  <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-                </span>
-                <span className='flex items-center group-hover:hidden'>{userReadLater===1?'「後で読む」追加済み':'後で読む'}</span>
-                <span className='hidden items-center group-hover:flex'>{userReadLater===1?'「後で読む」から削除':'後で読む'}</span>
-                </button>
-              </form>
-            </div>
-              }
-            <a className="w-full col-span-2 z-10 relative"
-              href={url}
-              target="_blank" rel="noopener noreferrer">
-              <button
-                  className='rounded-lg border-2 border-gray-600 w-full h-full
-                  font-sans leading-tight text-white bg-gray-600 fill-white
-                  transition-all duration-200 ease-out
-                  hover:ring-2 hover:ring-gray-600 hover:ring-offset-2 hover:shadow-[0_0_0_2px_rgba(0,0,0,1)]
-                  active:scale-95
-                  text-xs mobileS:text-sm lg:text-lg'
-              >
-                  <div className='
-                      flex flex-wrap justify-center items-center font-sans font-black 
-                      mobileM:my-0.5 my-1
-                  '>
-                      {websiteName}
-                      <span className="">
-                      <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
-                      </span>
-
+                    text-xs mobileS:text-sm lg:text-lg">
+                    <span className={`flex items-center `}>
+                      <svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px" viewBox="0 -0.5 24 24">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM17.4571 9.45711L11 15.9142L6.79289 11.7071L8.20711 10.2929L11 13.0858L16.0429 8.04289L17.4571 9.45711Z"></path>
+                      </svg>
+                    </span>
+                    <span className='flex items-center'>{'既読'}</span>
+                </div>
+                :loading
+                  ?
+                  <div className="w-full h-full col-span-2 flex justify-center p-2">
+                    <div className="animate-spin h-5 w-5 border-4 border-blue-500 rounded-full border-t-transparent"></div>
                   </div>
-              </button>
-            </a>
+                  :
+                  <div className="w-full h-full col-span-2 ">
+                    <form
+                      className='w-full h-full'
+                      action={async () => {
+                        if(login){
+                          if(userReadLater===1){
+                            deleteIsReading(storyId,storyTitle);
+                          }else if(userReadLater!==1&&userReadLater!==0){
+                            addIsReading(storyId,storyTitle);
+                          }
+                        }else{
+                          disclosure.onOpen();
+                        }
+                      }}
+                    >
+                      <button
+                          className={`group 
+                          flex justify-center
+                          rounded-lg border-2 border-amber-500 w-full h-full
+                          font-sans leading-tight
+                          transition-all duration-500 ease-out
+                          text-xs mobileS:text-sm 
+                          ${userReadLater===1
+                            ?` lg:text-base
+                              text-amber-700 hover:text-amber-500 
+                              bg-amber-200 hover:bg-white
+                              fill-amber-700 hover:fill-amber-500 
+                            `
+                            :` lg:text-lg
+                              text-amber-500 hover:text-amber-100 
+                              bg-white hover:bg-amber-500
+                              fill-amber-500 hover:fill-amber-100 
+                              `
+                          }
+                          font-sans font-black 
+                          `}
+                      >
+                      <span className={`flex items-center ${userReadLater===1?'hidden':''}`}>
+                      <svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px" viewBox="0 -960 960 960">
+                        <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                      </span>
+                      <span className='flex items-center group-hover:hidden'>{userReadLater===1?'「後で読む」追加済み':'後で読む'}</span>
+                      <span className='hidden items-center group-hover:flex'>{userReadLater===1?'「後で読む」から削除':'後で読む'}</span>
+                      </button>
+                    </form>
+                  </div>
+              }
+              <a className="w-full col-span-2 z-10 relative"
+                href={url}
+                target="_blank" rel="noopener noreferrer">
+                  <button
+                      className='rounded-lg border-2 border-gray-600 w-full h-full
+                      font-sans leading-tight text-white bg-gray-600 fill-white
+                      transition-all duration-200 ease-out
+                      hover:ring-2 hover:ring-gray-600 hover:ring-offset-2 hover:shadow-[0_0_0_2px_rgba(0,0,0,1)]
+                      active:scale-95
+                      text-xs mobileS:text-sm lg:text-lg'
+                    >
+                      <div className='
+                          flex flex-wrap justify-center items-center font-sans font-black 
+                          mobileM:my-0.5 my-1
+                      '>
+                        {websiteName}
+                        <span className="">
+                        <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+                        </span>
+                      </div>
+                    </button>
+                </a>
             </div>
           :
-            <div className='grid grid-cols-6 grid-rows-1 gap-1'>
+          <div className='grid grid-cols-6 grid-rows-1 gap-1'>
             <a className="w-full col-span-6 z-10 w-full"
               href={url}
               target="_blank" rel="noopener noreferrer">
@@ -262,20 +268,19 @@ export default function StoryBlock(
                   active:scale-90
                   text-xs mobileS:text-sm lg:text-lg'
               >
-                  <div className='
-                      flex flex-wrap justify-center items-center font-sans font-black 
-                      mobileM:my-0.5 my-1
-                  '>
-                      {websiteName}
-                      <span className="">
-                      <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
-                      </span>
-
-                  </div>
+                <div className='
+                    flex flex-wrap justify-center items-center font-sans font-black 
+                    mobileM:my-0.5 my-1
+                '>
+                  {websiteName}
+                  <span className="">
+                  <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+                  </span>
+                </div>
               </button>
             </a>
-            </div>
-    }
+          </div>
+        }
     </section>
     </section>
     )}
