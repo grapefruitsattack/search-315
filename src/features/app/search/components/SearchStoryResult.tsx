@@ -64,12 +64,12 @@ async function getData(
   });
 }
 
-export default async function SearchStoryResult({ login,searchParam }: { login:boolean,searchParam:{infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; ppType: number; andor: string; SortedAsc: number; page: number; readLater: string;} }) {
+export default async function SearchStoryResult({ searchParam }: { searchParam:{infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; ppType: number; andor: string; SortedAsc: number; page: number; readLater: string;} }) {
 
   const post = await getData(searchParam);
   const resultData:StorySearchResult[] = post.result;
   const totalCnt:number = post.totalCnt;
-
+  const login:boolean = post.login;
 
   // ページネーション
   const pageSize: number = 18;
@@ -77,8 +77,8 @@ export default async function SearchStoryResult({ login,searchParam }: { login:b
 
   return (
   <>
-    <div className="lg:px-24 px-2 mobileS:px-8 pb-2 flex flex-wrap items-center gap-4">
-      <Pagination totalPage={maxPage}/>
+    <div className="mx-auto  gap-4">
+      <div className="mx-auto"><Pagination totalPage={maxPage}/></div>
     </div>
     {/* ストーリー一覧 */}
     <div className="lg:flex px-2 mobileM:px-8 tablet:px-4 w-full">

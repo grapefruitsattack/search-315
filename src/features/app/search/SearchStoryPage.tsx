@@ -28,7 +28,7 @@ export default function SearchStoryPage(
   return (
     <>
     <Toaster position="top-center"/>
-    <div className='h-[calc(97vh-48px)] pb-2'>
+    <div className='tablet:h-[calc(97vh-48px)] pb-2'>
       <div className="h-fit mb-2 bg-gradient-to-r from-gray-500 from-50% rounded">
         <div 
           className="
@@ -45,8 +45,8 @@ export default function SearchStoryPage(
         </div>
       </div>
       
-      <div className='grid grid-cols-[3fr_2fr] h-[95%]'>
-        <div id='storyScrollArea' className='flex flex-col max-w-[700px] min-w-[400px] h-[100%] overflow-y-scroll overflow-x-hidden'>
+      <div className='grid grid-cols-1 tablet:grid-cols-[3fr_2fr] tablet:h-[95%]'>
+        <div id='storyScrollArea' className='flex flex-col max-w-[700px] min-w-[400px] h-[100%] tablet:overflow-y-scroll tablet:overflow-x-hidden'>
           <Suspense 
             key={JSON.stringify({...searchParam,page:undefined})} 
             fallback={<div className="my-6 mx-auto"><LoaderIcon size={32} color="#a8a8a8" className="animate-pulse animate-spin" /></div>}
@@ -58,12 +58,7 @@ export default function SearchStoryPage(
  
         </div>
         <div className='tablet:flex hidden flex-col ml-2 max-w-[480px] '>
-          <div className='h-fit p-2 rounded-t-xl border-2 border-zinc-400 text-xl'>
-            検索フィルター
-          </div>
-          <div className=' max-h-[70vh] overflow-y-scroll overflow-x-hidden p-2 rounded-b-xl border-b-2 border-x-2 border-zinc-400'>
-            <SearchStoryController isModal={false} firstIsOpen={false} />
-          </div>
+          <SearchStoryController isMobile={false} firstIsOpen={false} />
         </div>
       </div>
     </div>

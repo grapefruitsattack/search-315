@@ -10,6 +10,7 @@ export class SearchStoryParams {
   howToView: number;
   pp: number;
   info: { [key: string]: boolean; };
+  selectorInfo: string|undefined;
   categoryStr: string;
 
   constructor(urlSearchParams : ReadonlyURLSearchParams) {
@@ -43,6 +44,7 @@ export class SearchStoryParams {
     info.forEach(data=>{
       this.info[data] = true;
     });
+    this.selectorInfo=info.length<=0?'':info.length<=1?info[0]:undefined;
     
     this.categoryStr = getCategoryStr(this.media,this.category);
 

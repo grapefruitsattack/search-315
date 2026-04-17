@@ -19,8 +19,8 @@ export default function SearchModalRadioButton({
     onChange: (filterId: string) => void;
 }) {
   return (
-    <div className="flex flex-row flex-wrap gap-0 divide-x-2 divide-gray-300 w-fit">
-      {data.map((item) => (
+    <div className="flex flex-row flex-wrap gap-0  w-fit">
+      {data.map((item,index) => (
         <label
           key={item.filterId}
           className="flex flex-row relative cursor-pointer"
@@ -37,7 +37,8 @@ export default function SearchModalRadioButton({
             }}
           />
           <div
-            className={`text-left justify-center px-2 py-0 lg:py-1 w-fit break-keep
+            className={`${index===0?'rounded-l-xl':(index+1)===data.length?'rounded-r-xl':''}
+              text-left justify-center px-2 py-0 lg:py-1 w-fit break-keep
               text-stone-500
               peer-checked:text-green-400
               font-sans text-sm lg:text-base 
@@ -45,7 +46,6 @@ export default function SearchModalRadioButton({
               hover:bg-green-200/20 hover:text-green-400
               border-2
               peer-checked:border-green-300 peer-checked:border-2
-              peer-checked:rounded-none
               drop-shadow-md peer-checked:drop-shadow-none
               transition-all duration-500 ease-out
               select-none`}
