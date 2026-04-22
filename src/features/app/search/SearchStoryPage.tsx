@@ -45,8 +45,13 @@ export default function SearchStoryPage(
         </div>
       </div>
       
+      <div className='tablet:hidden flex flex-col ml-2 w-[90vw]'>
+        <SearchStoryController isMobile={true} firstIsOpen={false} />
+      </div>
+
       <div className='grid grid-cols-1 tablet:grid-cols-[3fr_2fr] tablet:h-[95%]'>
-        <div id='storyScrollArea' className='flex flex-col max-w-[700px] min-w-[400px] h-[100%] tablet:overflow-y-scroll tablet:overflow-x-hidden'>
+        <div id='storyScrollArea' className='flex flex-col max-w-[700px] tablet:min-w-[400px] tablet:h-[100%] tablet:overflow-y-scroll tablet:overflow-x-hidden'>
+
           <Suspense 
             key={JSON.stringify({...searchParam,page:undefined})} 
             fallback={<div className="my-6 mx-auto"><LoaderIcon size={32} color="#a8a8a8" className="animate-pulse animate-spin" /></div>}

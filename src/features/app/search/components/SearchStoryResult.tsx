@@ -78,7 +78,8 @@ export default async function SearchStoryResult({ searchParam }: { searchParam:{
   return (
   <>
     <div className="mx-auto  gap-4">
-      <div className="mx-auto"><Pagination totalPage={maxPage}/></div>
+      <div id="topPagination"  className="mobileL:hidden flex mx-auto"><Pagination totalPage={maxPage} maxDisplayNum={5} scrollAreaElementId={undefined} scrollTargetElementId="topPagination"/></div>
+      <div className="mobileL:flex hidden mx-auto"><Pagination totalPage={maxPage} maxDisplayNum={7} scrollAreaElementId='storyScrollArea'/></div>
     </div>
     {/* ストーリー一覧 */}
     <div className="lg:flex px-2 mobileM:px-8 tablet:px-4 w-full">
@@ -112,8 +113,9 @@ export default async function SearchStoryResult({ searchParam }: { searchParam:{
         </>
       </div>
     </div>
-    <div className="lg:px-24 px-2 mobileS:px-8 pt-4 flex flex-wrap items-center gap-4">
-      <Pagination totalPage={maxPage} scrollAreaElementId='storyScrollArea'/>
+    <div className="mx-auto  gap-4">
+      <div className="mobileL:hidden flex mx-auto"><Pagination totalPage={maxPage} maxDisplayNum={5} scrollAreaElementId={undefined} scrollTargetElementId="topPagination"/></div>
+      <div className="mobileL:flex hidden mx-auto"><Pagination totalPage={maxPage} maxDisplayNum={7} scrollAreaElementId='storyScrollArea'/></div>
     </div>
   </>
   );

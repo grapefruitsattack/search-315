@@ -728,6 +728,124 @@ export default function SearchStoryController({ isMobile,firstIsOpen }: { isMobi
   return isMobile
   ?(
     <>
+      <div className='flex flex-row h-fit p-2 gap-4 rounded-t-xl border-2 border-zinc-400 bg-zinc-500 text-base text-white'>
+        検索フィルター
+      </div>
+      <div id='' className='p-2 rounded-b-xl border-b-2 border-x-2 border-zinc-400'>
+      <div className="flex flex-col pc:flex-col pb-2 gap-4">
+        <div id='infoSelector' className={`flex flex-col`}>
+          <div className="flex gap-3 pb-1">
+            <div className="text-sm">ユニット・アイドル</div>
+          </div>
+          <div className="flex flex-row flex-wrap gap-y-1 gap-x-2">
+            <Select 
+              name="mobile-select-unit" value={selectedUnit}
+              onValueChange={(value)=>{
+                setSelectedUnit(value);
+                setSelectedIdol('');
+                const newValue: SearchStoryParams = {...values,info:{[value==='sidem'?'':value]:true},selectorInfo:value==='sidem'?'':value};
+                setValues(newValue);
+                search(newValue);
+              }}
+              >
+              <SelectTrigger className="w-[145px] mobileM:w-[150px] mobileL:w-[170px] h-[35px]">
+                <SelectValue placeholder={'ユニット'} />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem key={0} value={'sidem'}>{'全ユニット'}</SelectItem>
+                {units.map((data, index) => (
+                  <SelectItem key={index+1} value={data.singingInfoId}>{data.singingInfoName}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select name="mobile-select-idol"  value={selectedIdol}
+              onValueChange={(value)=>{
+                setSelectedIdol(value);
+                setSelectedUnit('');
+                const newValue: SearchStoryParams = {...values,info:{[value==='sidem'?'':value]:true},selectorInfo:value==='sidem'?'':value};
+                setValues(newValue);
+                search(newValue);
+              }}
+              >
+              <SelectTrigger className="w-[145px] mobileM:w-[150px] mobileL:w-[170px] h-[35px]">
+                <SelectValue placeholder={'アイドル'} />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem key={0} value={'sidem'}>{'全アイドル'}</SelectItem>
+                {idols.map((data, index) => (
+                  <SelectItem key={index+1} value={data.singingInfoId}>{data.singingInfoName}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <div className={`${values.selectorInfo===undefined?'flex gap-3 py-1 text-sm text-red-700':'hidden'}`}>
+            {'※カスタム検索適用中'}
+          </div>
+          
+
+        </div>
+        <div className="flex flex-col ">
+          <div className="text-sm">閲覧方法</div>
+          <div className='flex flex-wrap w-full p-1 gap-3 items-center'>
+            <SearchModalRadioButton
+              radioName="mobile-radio-howtoview"
+              data={[
+                { filterId: "0", labelStr: "すべて" },
+                { filterId: "1", labelStr: "無料" },
+                { filterId: "2", labelStr: "プレ会員読み放題" },
+                { filterId: "3", labelStr: "有償購入" },
+              ]}
+              selectedId={values.howToView.toString()}
+              onChange={(id) => {
+                const newValue: SearchStoryParams = { ...values, howToView: Number(id)||0 };
+                setValues(newValue);
+                search(newValue);
+              }}
+              changeSearchParams={(id) =>switchHowToView(Number(id)||0)}
+            />
+          </div>
+        </div>
+        <div className="flex flex-col ">
+          <div className="text-sm">プロデュースポイント（PP）</div>
+          <div className='flex flex-wrap w-full p-1 gap-3 items-center'>
+              <SearchModalRadioButton
+              radioName="mobile-radio-pp"
+              data={[
+                  { filterId: "0", labelStr: "すべて" },
+                  { filterId: "1", labelStr: "PP獲得対象" },
+              ]}
+              selectedId={values.pp.toString()}
+              onChange={(id) => {
+                const newValue: SearchStoryParams = { ...values, pp: Number(id)||0 };
+                setValues(newValue);
+                search(newValue);
+              }}
+              changeSearchParams={(id) =>switchPP(Number(id)||0)}
+              />
+          </div>
+        </div>
+        <div className="flex flex-col ">
+          <div className="text-sm">ボイス</div>
+          <div className='flex flex-wrap w-full p-1 gap-3 items-center'>
+              <SearchModalRadioButton
+              radioName="mobile-radio-voice"
+              data={[
+                  { filterId: "0", labelStr: "すべて" },
+                  { filterId: "1", labelStr: "ボイスあり" },
+                  { filterId: "2", labelStr: "過去ボイス実装あり" },
+              ]}
+              selectedId={values.voice.toString()}
+              onChange={(id) => {
+                const newValue: SearchStoryParams = { ...values, voice: Number(id)||0 };
+                setValues(newValue);
+                search(newValue);
+              }}
+              changeSearchParams={(id) =>switchVoice(Number(id)||0)}
+              />
+          </div>
+        </div>
+      </div>
+      </div>
     </>
   )
   :(
@@ -740,7 +858,7 @@ export default function SearchStoryController({ isMobile,firstIsOpen }: { isMobi
             clearParam();
           }}
           >
-          条件リセット
+          条件クリア
         </button>
       </div>
       <div id='controllerScrollArea' className=' max-h-[70vh] overflow-y-scroll overflow-x-hidden p-2 rounded-b-xl border-b-2 border-x-2 border-zinc-400'>

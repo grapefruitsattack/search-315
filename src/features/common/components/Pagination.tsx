@@ -3,8 +3,10 @@ import { usePathname,useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Url } from 'next/dist/shared/lib/router/router';
 
-export default function Pagination({ totalPage,scrollAreaElementId }: { totalPage: number,scrollAreaElementId?:string }) {
-      const omitFlg: boolean = totalPage >= 8;
+export default function Pagination({ totalPage,maxDisplayNum,scrollAreaElementId,scrollTargetElementId }
+  : { totalPage: number,maxDisplayNum:number,scrollAreaElementId?:string,scrollTargetElementId?:string }) 
+{
+      const omitFlg: boolean = totalPage >= maxDisplayNum+1;
       const params = new URLSearchParams(useSearchParams().toString());
 
       let currentPage: number = Number(params.get('page')) || 1;
@@ -32,7 +34,7 @@ export default function Pagination({ totalPage,scrollAreaElementId }: { totalPag
                         //左移動
                         if(currentPage === 1){
                           list.push(
-                            <li key={0}>
+                            <li key={'left'}>
                             <div className=
                                 {`mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300`}
                               aria-label="Previous">
@@ -44,11 +46,12 @@ export default function Pagination({ totalPage,scrollAreaElementId }: { totalPag
                           );
                         }else{
                           list.push(
-                            <li key={0}>
+                            <li key={'left'}>
                             <Link className=
                                 {`mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300`}
                               href={{ pathname: currentPath, query: {...urlParams, page: String(currentPage-1)} }}
-                              onClick={()=>scroll(scrollAreaElementId)}
+                              onClick={()=>scroll(scrollAreaElementId,scrollTargetElementId)}
+                              scroll={false}
                               aria-label="Previous">
                                 <span className={`text-sm`}>
                                 <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" fillRule="evenodd"></path></svg>                              </span>
@@ -60,70 +63,81 @@ export default function Pagination({ totalPage,scrollAreaElementId }: { totalPag
                         if(omitFlg){
                           //省略あり
                           if(currentPage <= 3){
-                            for (let i: number = 1; i <= 4; i++) {
+                            // 右のみ省略
+                            for (let i: number = 1; i <= (maxDisplayNum<7?3:4); i++) {
                               if(i === currentPage){
                                 list.push(
                                   pagenationNumberCurrent(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} })
                                 );
                               } else {
                                 list.push(
-                                  pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} },scrollAreaElementId)
+                                  pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} },scrollAreaElementId,scrollTargetElementId)
                                 );
                               };
                             };
                             list.push(
-                              <li key={5}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
+                              <li key={'rightOmit'}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
                                   ･･･</div></li>
                             );
+                            if(maxDisplayNum>=7){
+                              list.push(
+                                pagenationNumber(totalPage - 1,{ pathname: currentPath, query: {...urlParams, page: String(totalPage - 1)} },scrollAreaElementId,scrollTargetElementId)
+                              );
+                            };
                             list.push(
-                              pagenationNumber(totalPage - 1,{ pathname: currentPath, query: {...urlParams, page: String(totalPage - 1)} },scrollAreaElementId)
-                            );
-                            list.push(
-                              pagenationNumber(totalPage,{ pathname: currentPath, query: {...urlParams, page: String(totalPage)} },scrollAreaElementId)
+                              pagenationNumber(totalPage,{ pathname: currentPath, query: {...urlParams, page: String(totalPage)} },scrollAreaElementId,scrollTargetElementId)
                             );
                           } else if(currentPage > 3 && currentPage < totalPage - 2) {
+                            // 左右省略
                             list.push(
-                              pagenationNumber(1,{ pathname: currentPath, query: {...urlParams, page: '1'} },scrollAreaElementId)
+                              pagenationNumber(1,{ pathname: currentPath, query: {...urlParams, page: '1'} },scrollAreaElementId,scrollTargetElementId)
                             );
                             list.push(
-                              <li key={2}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
+                              <li key={'leftOmit'}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
                                   ･･･</div></li>
                             );
-                            list.push(
-                              pagenationNumber(currentPage - 1,{ pathname: currentPath, query: {...urlParams, page: String(currentPage - 1)} },scrollAreaElementId)
-                            );
+                            if(maxDisplayNum>=7){
+                              list.push(
+                                pagenationNumber(currentPage - 1,{ pathname: currentPath, query: {...urlParams, page: String(currentPage - 1)} },scrollAreaElementId,scrollTargetElementId)
+                              );
+                            };
                             list.push(
                               pagenationNumberCurrent(currentPage,{ pathname: currentPath, query: {...urlParams, page: String(currentPage)} })
                             );
+                            if(maxDisplayNum>=7){
+                              list.push(
+                                pagenationNumber(currentPage + 1,{ pathname: currentPath, query: {...urlParams, page: String(currentPage + 1)} },scrollAreaElementId,scrollTargetElementId)
+                              );
+                            };
                             list.push(
-                              pagenationNumber(currentPage + 1,{ pathname: currentPath, query: {...urlParams, page: String(currentPage + 1)} },scrollAreaElementId)
-                            );
-                            list.push(
-                              <li key={currentPage + 2}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
+                              <li key={'rightOmit'}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
                                   ･･･</div></li>
                             );
                             list.push(
-                              pagenationNumber(totalPage,{ pathname: currentPath, query: {...urlParams, page: String(totalPage)} },scrollAreaElementId)
+                              pagenationNumber(totalPage,{ pathname: currentPath, query: {...urlParams, page: String(totalPage)} },scrollAreaElementId,scrollTargetElementId)
                             );
                           } else if(currentPage >= totalPage - 2) {
+                            // 左省略
                             list.push(
-                              pagenationNumber(1,{ pathname: currentPath, query: {...urlParams, page: String(1)} },scrollAreaElementId)
+                              pagenationNumber(1,{ pathname: currentPath, query: {...urlParams, page: String(1)} },scrollAreaElementId,scrollTargetElementId)
                             );
+                            if(maxDisplayNum>=7){
+                              list.push(
+                                pagenationNumber(2,{ pathname: currentPath, query: {...urlParams, page: String(2)} },scrollAreaElementId,scrollTargetElementId)
+                              );
+                            };
                             list.push(
-                              pagenationNumber(2,{ pathname: currentPath, query: {...urlParams, page: String(2)} },scrollAreaElementId)
-                            );
-                            list.push(
-                              <li key={3}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
+                              <li key={'leftOmit'}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
                                   ･･･</div></li>
                             );
-                            for (let i: number = totalPage - 3; i <= totalPage; i++) {
+                            for (let i: number = totalPage - (maxDisplayNum<7?2:3); i <= totalPage; i++) {
                               if(i === currentPage){
                                 list.push(
                                   pagenationNumberCurrent(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} })
                                 );
                               } else {
                                 list.push(
-                                  pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} },scrollAreaElementId)
+                                  pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} },scrollAreaElementId,scrollTargetElementId)
                                 );
                               };
                             };
@@ -137,7 +151,7 @@ export default function Pagination({ totalPage,scrollAreaElementId }: { totalPag
                               );
                             } else {
                               list.push(
-                                pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} },scrollAreaElementId)
+                                pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} },scrollAreaElementId,scrollTargetElementId)
 
                               );
                             };
@@ -148,7 +162,7 @@ export default function Pagination({ totalPage,scrollAreaElementId }: { totalPag
                         // 右移動
                         if(currentPage === totalPage){
                           list.push(
-                            <li key={totalPage + 1}>
+                            <li key={'right'}>
                             <div className=
                                 {`mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300`}
                               aria-label="Next">
@@ -160,11 +174,11 @@ export default function Pagination({ totalPage,scrollAreaElementId }: { totalPag
                           );
                         }else{
                           list.push(
-                            <li key={totalPage + 1}>
+                            <li key={'right'}>
                             <Link className=
                                 {`mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300`}
                               href={{ pathname: currentPath, query: {...urlParams, page: String(currentPage+1)} }}
-                              onClick={()=>scroll(scrollAreaElementId)}
+                              onClick={()=>scroll(scrollAreaElementId,scrollTargetElementId)}
                               aria-label="Next">
                               <span className="text-sm">
                               <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" fillRule="evenodd"></path></svg>
@@ -198,13 +212,13 @@ function pagenationNumberCurrent(pageNum: number, href: Url) {
   )
 };
 
-function pagenationNumber(pageNum: number, href: Url, scrollAreaElementId:string | undefined) {
+function pagenationNumber(pageNum: number, href: Url, scrollAreaElementId:string | undefined, scrollTargetElementId:string | undefined) {
   return(
     <li key={pageNum}>
    <Link 
     className="mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" 
     href={href}
-    onClick={()=>scroll(scrollAreaElementId)}
+    onClick={()=>scroll(scrollAreaElementId,scrollTargetElementId)}
   >
       {pageNum}
     </Link>
@@ -212,7 +226,20 @@ function pagenationNumber(pageNum: number, href: Url, scrollAreaElementId:string
   )
 };
 
-function scroll(scrollAreaElementId:string | undefined){
-  const element = document.getElementById(scrollAreaElementId||'');
-  if(element!==null)element.scrollTo(0, 0);
+function scroll(scrollAreaElementId:string | undefined,scrollTargetElementId:string | undefined){
+    console.log(scrollTargetElementId)
+  if(scrollAreaElementId===undefined){
+    const element = document.getElementById(scrollTargetElementId||'');
+    console.log(element)
+    if(element!==null){
+      const targetDOMRect = element.getBoundingClientRect();
+      const targetTop = targetDOMRect.top + window.pageYOffset;
+      window.scrollTo({
+        top: targetTop-70,
+      });
+    }
+  }else{
+    const element = document.getElementById(scrollAreaElementId);
+    if(element!==null)element.scrollTo(0, 0);
+  }
 };
