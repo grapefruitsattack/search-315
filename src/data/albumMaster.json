@@ -4062,5 +4062,21 @@
     "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24787.html",
     "trialYoutubeId": "X-MKeZc2bD0",
     "description": ""
+  },
+  {
+    "sereisId": "TT",
+    "albumId": "TT09",
+    "albumTitleFull": "THE IDOLM@STER SideM TRANSCENDENT T@LES 09",
+    "albumTitle": "TRANSCENDENT T@LES 09",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260603",
+    "displayArtist": "蒼井悠介、冬美旬、姫野かのん、山下次郎",
+    "artist": "[DBL01]、[HIJ02]、[MFM03]、[SEM03]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24769.html",
+    "trialYoutubeId": "KrtvC3gD-Ec",
+    "description": ""
   }
 ]

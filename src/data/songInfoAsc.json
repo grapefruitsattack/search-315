@@ -44118,5 +44118,69 @@
     "singingInfoId": "FRM03",
     "releaseDate": "20260527",
     "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT09",
+    "songId": "TT09_1",
+    "singingInfoId": "DBL01",
+    "releaseDate": "20260603",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT09",
+    "songId": "TT09_1",
+    "singingInfoId": "HIJ02",
+    "releaseDate": "20260603",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT09",
+    "songId": "TT09_1",
+    "singingInfoId": "MFM03",
+    "releaseDate": "20260603",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT09",
+    "songId": "TT09_1",
+    "singingInfoId": "SEM03",
+    "releaseDate": "20260603",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "TT09",
+    "songId": "TT09_2",
+    "singingInfoId": "DBL01",
+    "releaseDate": "20260603",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "TT09",
+    "songId": "TT09_3",
+    "singingInfoId": "HIJ02",
+    "releaseDate": "20260603",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "TT09",
+    "songId": "TT09_4",
+    "singingInfoId": "MFM03",
+    "releaseDate": "20260603",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "TT09",
+    "songId": "TT09_5",
+    "singingInfoId": "SEM03",
+    "releaseDate": "20260603",
+    "type": "sver"
   }
 ]
