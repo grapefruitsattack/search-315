@@ -44182,5 +44182,125 @@
     "singingInfoId": "SEM03",
     "releaseDate": "20260603",
     "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS08",
+    "songId": "MTS08_1",
+    "singingInfoId": "CLF00",
+    "releaseDate": "20260624",
+    "type": "u"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS08",
+    "songId": "MTS08_1",
+    "singingInfoId": "CLF01",
+    "releaseDate": "20260624",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS08",
+    "songId": "MTS08_1",
+    "singingInfoId": "CLF02",
+    "releaseDate": "20260624",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS08",
+    "songId": "MTS08_1",
+    "singingInfoId": "CLF03",
+    "releaseDate": "20260624",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "MTS08",
+    "songId": "MTS08_2",
+    "singingInfoId": "CLF01",
+    "releaseDate": "20260624",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "MTS08",
+    "songId": "MTS08_3",
+    "singingInfoId": "CLF02",
+    "releaseDate": "20260624",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "MTS08",
+    "songId": "MTS08_4",
+    "singingInfoId": "CLF03",
+    "releaseDate": "20260624",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT10",
+    "songId": "TT10_1",
+    "singingInfoId": "JUP02",
+    "releaseDate": "20260701",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT10",
+    "songId": "TT10_1",
+    "singingInfoId": "SSK02",
+    "releaseDate": "20260701",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT10",
+    "songId": "TT10_1",
+    "singingInfoId": "MFM02",
+    "releaseDate": "20260701",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT10",
+    "songId": "TT10_1",
+    "singingInfoId": "KGD02",
+    "releaseDate": "20260701",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "TT10",
+    "songId": "TT10_2",
+    "singingInfoId": "JUP02",
+    "releaseDate": "20260701",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "TT10",
+    "songId": "TT10_3",
+    "singingInfoId": "SSK02",
+    "releaseDate": "20260701",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "TT10",
+    "songId": "TT10_4",
+    "singingInfoId": "MFM02",
+    "releaseDate": "20260701",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "TT10",
+    "songId": "TT10_5",
+    "singingInfoId": "KGD02",
+    "releaseDate": "20260701",
+    "type": "sver"
   }
 ]

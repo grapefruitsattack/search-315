@@ -4078,5 +4078,37 @@
     "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24769.html",
     "trialYoutubeId": "KrtvC3gD-Ec",
     "description": ""
+  },
+  {
+    "sereisId": "MTS",
+    "albumId": "MTS08",
+    "albumTitleFull": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 08 C.FIRST",
+    "albumTitle": "MONTHLY THEME SONG 08 C.FIRST",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260624",
+    "displayArtist": "C.FIRST",
+    "artist": "[CLF00]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24788.html",
+    "trialYoutubeId": "ZFPRbMZEerA",
+    "description": ""
+  },
+  {
+    "sereisId": "TT",
+    "albumId": "TT10",
+    "albumTitleFull": "THE IDOLM@STER SideM TRANSCENDENT T@LES 10",
+    "albumTitle": "TRANSCENDENT T@LES 10",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260701",
+    "displayArtist": "御手洗翔太、黒野玄武、橘志狼、円城寺道流",
+    "artist": "[JUP02]、[SSK02]、[MFM02]、[KGD02]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24770.html",
+    "trialYoutubeId": "EoV_GyRESOA",
+    "description": ""
   }
 ]
