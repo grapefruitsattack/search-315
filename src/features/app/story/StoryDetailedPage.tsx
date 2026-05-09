@@ -4,7 +4,10 @@ import React from "react"
 import { Toaster } from "@/components/ui/sonner";
 import CopyButton from "@/features/common/components/CopyButton";
 import GetUnitIdolName from "@/features/common/utils/GetUnitIdolName";
-import type { Story,InfoStory,ShareModalTabInfo } from '@/data/types';
+import type { Story,InfoStory,ShareModalTabInfo,StoryTemp,SubStory } from '@/data/types';
+import m_story from '@/data/m_story.json';
+import m_sub_story from '@/data/m_sub_story.json';
+import relation_story from '@/data/relation_story.json';
 import {
    GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName,GetVoiceStateName,GetStoryHowtoviewName 
 } from '@/features/common/utils/Story/GetStoryInfomation';
@@ -34,7 +37,10 @@ export default async function StoryDetailedPage(
   const mediaName: string = GetStoryMediaName(storyData.media);
   const categoryName: string = GetStoryCategoryName(storyData.category);
   const infoStoryPerson: InfoStory[] = storyData.infoStory.filter(storyData=>storyData.personFlg===1);
-  
+  const relationStoryIds: string[] = relation_story.filter((data)=>data.storyId===storyData.storyId).map((data)=>data.relationStoryId);
+  const relationStorys: StoryTemp[] = m_story.filter((data)=>relationStoryIds.includes(data.storyId)).reverse();
+  const subStorys: SubStory[] = m_sub_story.filter((data)=>data.storyId===storyData.storyId).reverse();
+
   const releaseDate: string 
     = new Date(
         Number(storyData.releaseDate.substring(0,4))
@@ -285,7 +291,7 @@ export default async function StoryDetailedPage(
         </div>
 
         {/* サブストーリー */}
-        {storyData.mSubStory===null || storyData.mSubStory.length===0
+        {subStorys===null || subStorys.length===0
           ?<></>
           :<>
             <div 
@@ -303,7 +309,7 @@ export default async function StoryDetailedPage(
             <div className={`
               items-start gap-2 grid-cols-1 mt-2 ml-8
               grid max-w-[700px]`}>
-              {storyData.mSubStory.map((result, index) => {
+              {subStorys.map((result, index) => {
                 const subVoiceStateName = GetVoiceStateName(0,result.voiceAtRelease);
                 // サブストーリー用シェア文章
                 let subShareText: string = '';
@@ -397,7 +403,7 @@ export default async function StoryDetailedPage(
         }
       <div>
         {/* 関連ストーリー */}
-        {storyData.relationStory===null || storyData.relationStory.length===0
+        {relationStorys===null || relationStorys.length===0
           ?<></>
           :<>
             <div 
@@ -416,7 +422,7 @@ export default async function StoryDetailedPage(
                 items-start gap-4 grid-cols-1 tablet:grid-cols-2 mt-2
                 grid
             `}>
-              {storyData.relationStory.map((result, index) => (
+              {relationStorys.map((result, index) => (
                 <StoryBlock 
                   key={index} 
                   storyId={result.storyId} 

@@ -141,6 +141,31 @@ export type LivePerformer = {
   singingInfoName: string;
 };
 
+export type StoryTemp = {
+  seq: number;
+  storyId: string;
+  media: number;
+  category: string;
+  website: string;
+  headTitle: string;
+  storyTitle: string;
+  releaseDate: string;
+  subCnt: number;
+  voiceAtRelease: number;
+  voice: number;
+  still: number;
+  url: string;
+  pp: number;
+  infoStory: InfoStory[];
+  howtoviewStory: string[];
+};
+
+export type relationStory = {
+  seq: number;
+  storyId: string;
+  relationStoryId: string;
+};
+
 export type Story = {
   storyId: string;
   media: number;
