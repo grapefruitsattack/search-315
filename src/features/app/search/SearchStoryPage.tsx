@@ -1,29 +1,14 @@
 
-import { useSearchParams } from 'next/navigation'
-import { Suspense, cache } from "react";
-import CommonPage from "../../common/components/CommonPage";
+import { Suspense } from "react";
 import SearchStoryResult from "./components/SearchStoryResult";
-import SearchStoryModal from "./components/SearchStoryModal";
-import type { StorySearchResult } from '@/data/types';
 import SearchStoryController from "./components/SearchStoryController";
-import SortButton from "./components/SortButton";
-import StoryBlock from "@/features/common/components/story/StoryBlock";
-import Pagination from "@/features/common/components/Pagination";
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { Skeleton } from "@/components/ui/skeleton"
-import { Spinner } from "@/components/ui/spinner"
 import { Toaster } from 'sonner';
-import { Spin } from 'tsparticles-engine';
 import { LoaderIcon } from "lucide-react"
 
 export default function SearchStoryPage(
-  { searchParam }: { searchParam:{infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; ppType: number; andor: string; SortedAsc: number; page: number; readLater: string;} }
+  { login,searchParam }: { login:boolean,searchParam:{infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; ppType: number; andor: string; SortedAsc: number; page: number; readLater: string;} }
   )
  {
-
-
-
 
   return (
     <>
@@ -57,7 +42,7 @@ export default function SearchStoryPage(
             fallback={<div className="my-6 mx-auto"><LoaderIcon size={32} color="#a8a8a8" className="animate-pulse animate-spin" /></div>}
           >
           {/* @ts-ignore Server Component */}
-          <SearchStoryResult searchParam={searchParam}/>
+          <SearchStoryResult login={login} searchParam={searchParam}/>
           </Suspense>
           
  

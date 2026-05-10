@@ -1,11 +1,8 @@
 
-import { headers } from "next/headers";
-import dynamic from "next/dynamic";
 import React from "react"
 import { Suspense } from "react";
-import { cache } from 'react'
+import { headers } from "next/headers";
 import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
-import type { StorySearchResult } from '@/data/types';
 import CommonPage from "@/features/common/components/CommonPage";
 import SearchStoryPage from "@/features/app/search/SearchStoryPage";
 import {CheckSingingInfoParm,CheckStoryCategoryParm} from "@/features/common/utils/CheckSearchParm";
@@ -20,6 +17,12 @@ const Page = async ({
   params: Promise<{ id: string }>;
   searchParams: Promise<{ q?:string; c?:string; v?:number; htv?:string; pp?:number; andor?:string; rl?:string; order?:string; page?:string; }>;
 }) => {
+  // ログイン情報
+  const session = await auth.api.getSession({
+      headers: await headers(),
+  });
+  const login: boolean = session?.user?true:false;
+
   // パラメータ取得
   const {q} = await searchParams || '';
   const {c} = await searchParams || '';
@@ -36,8 +39,6 @@ const Page = async ({
   const SortedAsc: number = order==='asc'?1:0;
   const pageNum: number = Number(page)||1;
 
-
-
     return (
     <Suspense>
     <CommonPage>
@@ -46,7 +47,7 @@ const Page = async ({
       <section className="justify-start px-4 pc:pl-2 pc:pr-12 bg-white lg:m-auto font-mono">
 
       {/* @ts-ignore Server Component */}
-      <SearchStoryPage searchParam={{infoIdArray:infoIdArray,categoryArray:categoryArray,voiceType:v||0,howtoviewType:Number(htv)||0,ppType:Number(pp)||0,andor:andor||'or',SortedAsc:SortedAsc,page:pageNum,readLater:rl||''}}/>
+      <SearchStoryPage login={login} searchParam={{infoIdArray:infoIdArray,categoryArray:categoryArray,voiceType:Number(v)||0,howtoviewType:Number(htv)||0,ppType:Number(pp)||0,andor:andor||'or',SortedAsc:SortedAsc,page:pageNum,readLaterType:login?rl||'':''}}/>
       </section>
     </Suspense>
     </CommonPage>
