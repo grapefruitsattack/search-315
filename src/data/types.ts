@@ -160,10 +160,16 @@ export type StoryTemp = {
   howtoviewStory: string[];
 };
 
-export type relationStory = {
+export type RelationStory = {
   seq: number;
   storyId: string;
   relationStoryId: string;
+};
+
+export type UserReadingData = {
+  story_id: string;
+  reading_date: string;
+  read_later: number;
 };
 
 export type Story = {

@@ -4,14 +4,12 @@ import React from "react"
 import { Toaster } from "@/components/ui/sonner";
 import CopyButton from "@/features/common/components/CopyButton";
 import GetUnitIdolName from "@/features/common/utils/GetUnitIdolName";
-import type { Story,InfoStory,ShareModalTabInfo,StoryTemp,SubStory } from '@/data/types';
-import m_story from '@/data/m_story.json';
+import type { InfoStory,ShareModalTabInfo,StoryTemp,SubStory,UserReadingData } from '@/data/types';
 import m_sub_story from '@/data/m_sub_story.json';
-import relation_story from '@/data/relation_story.json';
 import {
    GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName,GetVoiceStateName,GetStoryHowtoviewName 
 } from '@/features/common/utils/Story/GetStoryInfomation';
-import { MEDIA,CATEGORY,WEBSITE,HOW_TO_VIEW } from '@/features/common/const/StoryInfoConst'
+import { MEDIA,CATEGORY } from '@/features/common/const/StoryInfoConst'
 import IdolBadge from '@/features/common/components/IdolBadge';
 import CategoryBadge from '@/features/common/components/story/CategoryBadge';
 import MediaBadge from '@/features/common/components/story/MediaBadge';
@@ -24,21 +22,18 @@ import StoryReadLaterButton from "./components/StoryReadLaterButton";
 import StoryReadLaterEditButton from "./components/StoryReadLaterEditButton";
 
 export default async function StoryDetailedPage(
-  { resultData }: { resultData:{storyData:Story, login:boolean, isRead:boolean, isReadLeater:boolean, readingDate:string}})
+  { mainStoryData,relationStorysData,login }: {mainStoryData:{story:StoryTemp,userReadingData:UserReadingData|null}, relationStorysData:{story:StoryTemp,userReadingData:UserReadingData|null}[], login:boolean})
   : Promise<JSX.Element> 
 {
-  const storyData: Story = resultData.storyData;
-  const login: boolean = resultData.login;
-  const isRead: boolean = resultData.isRead;
-  const isReadLeater: boolean = resultData.isReadLeater;
+  const storyData: StoryTemp = mainStoryData.story;
+  const isRead: boolean = mainStoryData.userReadingData===null?false:mainStoryData.userReadingData.read_later===0;
+  const isReadLeater: boolean = mainStoryData.userReadingData===null?false:mainStoryData.userReadingData.read_later===1;
 
   const websiteName: string = GetStoryWebsiteName(storyData.website);
   const voiceStateName: string = GetVoiceStateName(storyData.voice,storyData.voiceAtRelease);
   const mediaName: string = GetStoryMediaName(storyData.media);
   const categoryName: string = GetStoryCategoryName(storyData.category);
   const infoStoryPerson: InfoStory[] = storyData.infoStory.filter(storyData=>storyData.personFlg===1);
-  const relationStoryIds: string[] = relation_story.filter((data)=>data.storyId===storyData.storyId).map((data)=>data.relationStoryId);
-  const relationStorys: StoryTemp[] = m_story.filter((data)=>relationStoryIds.includes(data.storyId)).reverse();
   const subStorys: SubStory[] = m_sub_story.filter((data)=>data.storyId===storyData.storyId).reverse();
 
   const releaseDate: string 
@@ -237,7 +232,7 @@ export default async function StoryDetailedPage(
             isRead
               ?
               <StoryReadEditButton
-                storyId={storyData.storyId} readingDate={resultData.readingDate}
+                storyId={storyData.storyId} readingDate={mainStoryData.userReadingData?.reading_date||''}
               />
               :
               <StoryReadButton
@@ -403,7 +398,7 @@ export default async function StoryDetailedPage(
         }
       <div>
         {/* 関連ストーリー */}
-        {relationStorys===null || relationStorys.length===0
+        {relationStorysData===null || relationStorysData.length===0
           ?<></>
           :<>
             <div 
@@ -422,22 +417,22 @@ export default async function StoryDetailedPage(
                 items-start gap-4 grid-cols-1 tablet:grid-cols-2 mt-2
                 grid
             `}>
-              {relationStorys.map((result, index) => (
+              {relationStorysData.map((result, index) => (
                 <StoryBlock 
                   key={index} 
-                  storyId={result.storyId} 
-                  media={result.media} 
-                  category={result.category} 
-                  website={result.website}
-                  headTitle={result.headTitle} 
-                  storyTitle={result.storyTitle} 
-                  infoStory={result.infoStory} 
-                  howtoviewStory={result.howtoviewStory}
-                  url={result.url} 
-                  pp={result.pp||0}
-                  login={false}
-                  userReadLater={0}
-                  displayLogin={false}
+                  storyId={result.story.storyId} 
+                  media={result.story.media} 
+                  category={result.story.category} 
+                  website={result.story.website}
+                  headTitle={result.story.headTitle} 
+                  storyTitle={result.story.storyTitle} 
+                  infoStory={result.story.infoStory} 
+                  howtoviewStory={result.story.howtoviewStory}
+                  url={result.story.url} 
+                  pp={result.story.pp||0}
+                  login={login}
+                  userReadLater={result.userReadingData===null?null:result.userReadingData.read_later}
+                  displayLogin={true}
                 />
               ))}
             </div>

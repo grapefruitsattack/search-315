@@ -68,7 +68,7 @@ export default function StoryReadLaterEditButton(
       <div className="flex text-xs mobileL:text-sm tablet:text-base">
         <button 
           className='
-            flex w-[14em] h-fit py-2 rounded-full bg-gray-500 items-center w-fit h-fit
+            flex w-[15em] h-fit py-2 rounded-full bg-gray-500 items-center w-fit h-fit
             font-mono text-white
             transition-all duration-300
             hover:ring-2 hover:ring-gray-500 hover:ring-offset-2 

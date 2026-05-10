@@ -6,9 +6,11 @@ import { headers } from "next/headers";
 //import Redis from 'ioredis';
 import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
 import { notFound } from 'next/navigation'
-import type { Story } from '../../../data/types';
-import CommonPage from "../../../features/common/components/CommonPage";
-import StoryDetailedPage from "../../../features/app/story/StoryDetailedPage";
+import m_story from '@/data/m_story.json';
+import relation_story from '@/data/relation_story.json';
+import type { StoryTemp,UserReadingData } from '@/data/types';
+import CommonPage from "@/features/common/components/CommonPage";
+import StoryDetailedPage from "@/features/app/story/StoryDetailedPage";
 
 export const revalidate = 600; // 10分ごとに再検証する
 
@@ -16,11 +18,7 @@ type Post = {
 	storyId: string 
 };
 
-type Props = {
-  params: { id: string }
-};
-
-const getData = cache(async (id: string) => {
+const getData = cache(async (ids: string[]) => {
   const session = await auth.api.getSession({
       headers: await headers(),
   });
@@ -29,55 +27,23 @@ const getData = cache(async (id: string) => {
     ?await createSupabaseClientWithLogin(session)
     :await createSupabaseClient()
   ;
-  //ストーリー情報取得
-  //const client = new Redis(process.env.REDIS_URL||'');
-  let cached: string | null;
-  let storyData: Story;
-  // try {
-  //   cached = await client.get('story_'+id);
-  // } catch (error) {
-  //   cached = null;
-  // };
-  // if (cached) {
-  //   storyData = JSON.parse(cached);
-  // }else{
-    const {data, error} = (await supabase.from('m_story_json_data').select(`
-    story_id,
-    json_data,
-    created_at
-    `).eq('story_id',id).single());
-    if (!data) notFound()
-    storyData = data?.json_data;
-    
-    //if (storyData) await client.setex('story_'+id, 600, JSON.stringify(storyData));
-  //}
 
-  if (!storyData) notFound()
-
-  let isRead: boolean = false;
-  let isReadLeater: boolean = false;
-  let readingDate: string = '';
+  let userReadingData: UserReadingData[] = [];
  
   if(login){
     const userId: string
       = session?.user
         ?session.user.id||''
         :'';
-    const userReadingData: {
-        id: any;
-        story_id: any;
-        reading_date: any;
-        read_later: any;
-    } | null
-    = (await supabase.from("user_reading")
-      .select("id,story_id,reading_date,read_later")
-      .eq('story_id',storyData.storyId).eq('id',userId).single()).data
-      ||null;
-    isRead = userReadingData!==null&&userReadingData?.read_later!==null&&userReadingData.read_later===0;
-    isReadLeater = userReadingData!==null&&userReadingData?.read_later!==null&&userReadingData.read_later===1;
-    readingDate =  userReadingData!==null?userReadingData?.reading_date:'';
+    userReadingData = (await supabase.rpc(
+      'get_user_reading_from_storyid',
+      {
+        user_id:userId,story_id_array:ids
+      }
+    )).data||[];
   }
-  return {storyData,login,isRead,isReadLeater,readingDate};
+
+  return {userReadingData,login};
 });
 
 // ページコンポーネント
@@ -87,14 +53,32 @@ const Post = async ({
   params: Promise<{ id: string }>;
 }) => {
   const { id } = await params;
-  const post = await getData(id);
+  const mainStory:StoryTemp = function(id){
+    const mainStory = m_story.find((data)=>data.storyId===id);
+    if (!mainStory) notFound()
+    return mainStory;
+  }(id);
+  const relationStoryIds: string[] = relation_story.filter((data)=>data.storyId===mainStory.storyId).map((data)=>data.relationStoryId);
+  const post = await getData(relationStoryIds.concat([id]));
+
+  const relationStorysData: { story: StoryTemp; userReadingData: UserReadingData | null; }[] 
+    = m_story.filter((data:StoryTemp)=>relationStoryIds.includes(data.storyId))
+      .reverse()
+      .map((story:StoryTemp)=>{
+        return {story:story,userReadingData:post?.userReadingData.find((data)=>data.story_id===story.storyId)||null}
+      })
+      ;
 
   return (
     <Suspense>
     <CommonPage>
       <div className="justify-start pc:pt-6 pb-96 px-2 mobileS:px-4 mobileM:px-8 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
         {/* @ts-ignore Server Component */}
-        <StoryDetailedPage resultData={post}/>
+        <StoryDetailedPage 
+          mainStoryData={{story:mainStory,userReadingData:post?.userReadingData.find((data)=>data.story_id===id)||null}} 
+          relationStorysData={relationStorysData} 
+          login={post?.login||false}
+        />
       </div>
     </CommonPage>
     </Suspense>
