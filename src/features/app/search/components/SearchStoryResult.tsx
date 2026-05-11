@@ -1,50 +1,27 @@
-
-import { headers } from "next/headers";
+'use client'
 import React from "react"
-import { useRouter } from 'next/navigation'
-import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
 import type { StorySearchResult,StoryTemp } from '@/data/types';
 import m_story from '@/data/m_story.json';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 import Pagination from "@/features/common/components/Pagination";
+import { useUserReading } from "@/features/app/search/provider/UserReadingProvider";
 
-async function getUserData():Promise<{
-    login:boolean, userReadingData: {story_id: string; read_later: number;}[] | null
-  }>
-{
-  const session = await auth.api.getSession({
-      headers: await headers(),
-  });
-  const supabase = session?.user
-    ?await createSupabaseClientWithLogin(session)
-    :await createSupabaseClient()
-  ;
-  const userId: string | null
-    = session?.user
-      ?session.user.id||null
-      :null;
 
-    const {data, error} = (
-      await supabase.from('user_reading').select(`
-        story_id,
-        read_later
-      `).eq('id',userId)
-    );
 
-  return {login:session?.user?true:false,userReadingData:data};
-}
-
-async function getSearchResult(
+function getSearchResult(
   searchParam:{
     infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; 
     ppType: number; andor: string; SortedAsc: number; page: number; readLaterType: string;
   }
-  ):Promise<{
+  ):{
     result: {story:StoryTemp;readLater:number|null;}[],totalCnt: number,login:boolean
-  }>
+  }
 {
-  // ここのgetUserData()を初回のみ実施したい
-  const userData = await getUserData();
+  const {
+    login,
+    userReadingData,
+    isLoading,
+  } = useUserReading();
 
   // ストーリー絞り込み
   let story: StoryTemp[] = m_story;
@@ -92,12 +69,12 @@ async function getSearchResult(
 
   // 既読系情報
   let storyResult:{story:StoryTemp;readLater:number|null;}[];
-  if(userData.login&&userData.userReadingData!==null){
+  if(login&&userReadingData!==null){
     storyResult = story.map((data)=>{
-      const readLater = userData.userReadingData?.find((readingData)=>readingData.story_id===data.storyId)?.read_later;
+      const readLater = userReadingData?.find((readingData)=>readingData.story_id===data.storyId)?.read_later;
       return {
         story:data,
-        readLater:userData.userReadingData===null||readLater===undefined
+        readLater:userReadingData===null||readLater===undefined
           ?null
           :readLater
       }
@@ -111,18 +88,12 @@ async function getSearchResult(
     storyResult = story.map((data)=>{return {story:data,readLater:null}})
   }
   
-  return new Promise((resolve) => {
-    setTimeout(async () => {
-      resolve(
-        {result:storyResult, totalCnt:story.length, login:userData.login}
-      );
-    }, 500); // ある程度の時間をローディング表示
-  });
+  return {result:storyResult, totalCnt:story.length, login:login};
 }
 
-export default async function SearchStoryResult({ login,searchParam }: { login:boolean,searchParam:{infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; ppType: number; andor: string; SortedAsc: number; page: number; readLaterType: string;} }) {
+export default function SearchStoryResult({ searchParam }: { searchParam:{infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; ppType: number; andor: string; SortedAsc: number; page: number; readLaterType: string;} }) {
 
-  const post = await getSearchResult(searchParam);
+  const post = getSearchResult(searchParam);
   const resultData:{story:StoryTemp;readLater:number|null;}[] = post.result;
   const totalCnt:number = post.totalCnt;
 
@@ -160,8 +131,8 @@ export default async function SearchStoryResult({ login,searchParam }: { login:b
             storyTitle={data.story.storyTitle}
             url={data.story.url}
             pp={data.story.pp}
-            login={login}
-            userReadLater={login?data.readLater:0}
+            login={post.login}
+            userReadLater={post.login?data.readLater:null}
             displayLogin={true}
           />
           ))}

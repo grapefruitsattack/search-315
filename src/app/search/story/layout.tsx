@@ -4,8 +4,10 @@ import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import Script from 'next/script'
 import { Providers } from "@/app/providers";
+import type { ReactNode } from 'react';
 import ScriptGoogleAnalytics from "@/features/management/ScriptGoogleAnalytics";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
+import UserReadingProvider from "@/features/app/search/provider/UserReadingProvider";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -43,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ja">
+    <html lang="ja" suppressHydrationWarning>
     <Head>
           <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
@@ -55,9 +57,11 @@ export default function RootLayout({
           <meta name="msapplication-config" content="/favicons/browserconfig.xml" /> 
           <meta name="theme-color" content="#ffffff" />
     </Head>
-    <body className={inter.className}>
+    <body className={inter.className} suppressHydrationWarning>
       <Providers>
+      <UserReadingProvider>
       {children}
+      </UserReadingProvider>
       <CookieConsentBanner />
       </Providers>
       <Script id="holder-js" src="//cdnjs.cloudflare.com/ajax/libs/holder/2.9.6/holder.js" strategy="lazyOnload">

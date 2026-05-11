@@ -7,7 +7,6 @@ import CommonPage from "@/features/common/components/CommonPage";
 import SearchStoryPage from "@/features/app/search/SearchStoryPage";
 import {CheckSingingInfoParm,CheckStoryCategoryParm} from "@/features/common/utils/CheckSearchParm";
 
-export const revalidate = 600; // 10分ごとに再検証する
 
 
 const Page = async ({
@@ -17,12 +16,6 @@ const Page = async ({
   params: Promise<{ id: string }>;
   searchParams: Promise<{ q?:string; c?:string; v?:number; htv?:string; pp?:number; andor?:string; rl?:string; order?:string; page?:string; }>;
 }) => {
-  // ログイン情報
-  const session = await auth.api.getSession({
-      headers: await headers(),
-  });
-  const login: boolean = session?.user?true:false;
-
   // パラメータ取得
   const {q} = await searchParams || '';
   const {c} = await searchParams || '';
@@ -47,7 +40,9 @@ const Page = async ({
       <section className="justify-start px-4 pc:pl-2 pc:pr-12 bg-white lg:m-auto font-mono">
 
       {/* @ts-ignore Server Component */}
-      <SearchStoryPage login={login} searchParam={{infoIdArray:infoIdArray,categoryArray:categoryArray,voiceType:Number(v)||0,howtoviewType:Number(htv)||0,ppType:Number(pp)||0,andor:andor||'or',SortedAsc:SortedAsc,page:pageNum,readLaterType:login?rl||'':''}}/>
+      <SearchStoryPage 
+        searchParam={{infoIdArray:infoIdArray,categoryArray:categoryArray,voiceType:Number(v)||0,howtoviewType:Number(htv)||0,ppType:Number(pp)||0,andor:andor||'or',SortedAsc:SortedAsc,page:pageNum,readLaterType:rl||''}
+      }/>
       </section>
     </Suspense>
     </CommonPage>

@@ -6,7 +6,8 @@ import { Toaster } from 'sonner';
 import { LoaderIcon } from "lucide-react"
 
 export default function SearchStoryPage(
-  { login,searchParam }: { login:boolean,searchParam:{infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; ppType: number; andor: string; SortedAsc: number; page: number; readLater: string;} }
+  { searchParam }: {
+     searchParam:{infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; ppType: number; andor: string; SortedAsc: number; page: number; readLaterType: string;} }
   )
  {
 
@@ -38,11 +39,10 @@ export default function SearchStoryPage(
         <div id='storyScrollArea' className='flex flex-col max-w-[700px] tablet:min-w-[400px] tablet:h-[100%] tablet:overflow-y-scroll tablet:overflow-x-hidden'>
 
           <Suspense 
-            key={JSON.stringify({...searchParam,page:undefined})} 
+            // key={JSON.stringify({...searchParam,page:undefined})} 
             fallback={<div className="my-6 mx-auto"><LoaderIcon size={32} color="#a8a8a8" className="animate-pulse animate-spin" /></div>}
           >
-          {/* @ts-ignore Server Component */}
-          <SearchStoryResult login={login} searchParam={searchParam}/>
+          <SearchStoryResult searchParam={searchParam}/>
           </Suspense>
           
  
