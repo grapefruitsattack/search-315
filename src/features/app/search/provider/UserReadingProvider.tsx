@@ -59,6 +59,6 @@ export default function UserReadingProvider({
   );
 }
 
-export function useUserReading() {
+export function UseUserReading() {
   return useContext(UserReadingContext);
 }

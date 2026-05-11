@@ -4,7 +4,7 @@ import type { StorySearchResult,StoryTemp } from '@/data/types';
 import m_story from '@/data/m_story.json';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 import Pagination from "@/features/common/components/Pagination";
-import { useUserReading } from "@/features/app/search/provider/UserReadingProvider";
+import { UseUserReading } from "@/features/app/search/provider/UserReadingProvider";
 
 
 
@@ -21,7 +21,7 @@ function getSearchResult(
     login,
     userReadingData,
     isLoading,
-  } = useUserReading();
+  } = UseUserReading();
 
   // ストーリー絞り込み
   let story: StoryTemp[] = m_story;
