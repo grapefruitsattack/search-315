@@ -8,6 +8,7 @@ import type { ReactNode } from 'react';
 import ScriptGoogleAnalytics from "@/features/management/ScriptGoogleAnalytics";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import UserReadingProvider from "@/features/app/search/provider/UserReadingProvider";
+import SearchLoadingProvider from "@/features/app/search/provider/SearchLoadingProvider";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -60,7 +61,9 @@ export default function RootLayout({
     <body className={inter.className} suppressHydrationWarning>
       <Providers>
       <UserReadingProvider>
+      <SearchLoadingProvider>
       {children}
+      </SearchLoadingProvider>
       </UserReadingProvider>
       <CookieConsentBanner />
       </Providers>

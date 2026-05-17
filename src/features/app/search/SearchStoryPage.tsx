@@ -1,7 +1,9 @@
-
-import { Suspense } from "react";
+'use client'
+import { useEffect } from "react";
+import { useSearchParams } from 'next/navigation'
 import SearchStoryResult from "./components/SearchStoryResult";
 import SearchStoryController from "./components/SearchStoryController";
+import { UseSearchLoading } from "@/features/app/search/provider/SearchLoadingProvider";
 import { Toaster } from 'sonner';
 import { LoaderIcon } from "lucide-react"
 
@@ -11,6 +13,19 @@ export default function SearchStoryPage(
   )
  {
 
+  const { loading, setLoading }= UseSearchLoading();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 200);
+
+    return () => clearTimeout(timer);
+
+  }, [searchParams]);
+  
   return (
     <>
     <Toaster position="top-center"/>
@@ -37,15 +52,10 @@ export default function SearchStoryPage(
 
       <div className='grid grid-cols-1 tablet:grid-cols-[3fr_2fr] tablet:h-[95%]'>
         <div id='storyScrollArea' className='flex flex-col max-w-[700px] tablet:min-w-[400px] tablet:h-[100%] tablet:overflow-y-scroll tablet:overflow-x-hidden'>
-
-          <Suspense 
-            // key={JSON.stringify({...searchParam,page:undefined})} 
-            fallback={<div className="my-6 mx-auto"><LoaderIcon size={32} color="#a8a8a8" className="animate-pulse animate-spin" /></div>}
-          >
-          <SearchStoryResult searchParam={searchParam}/>
-          </Suspense>
-          
- 
+          {loading
+            ?<div className="my-6 mx-auto"><LoaderIcon size={32} color="#a8a8a8" className="animate-pulse animate-spin" /></div>
+            :<SearchStoryResult searchParam={searchParam}/>
+          }
         </div>
         <div className='tablet:flex hidden flex-col ml-2 max-w-[480px] '>
           <SearchStoryController isMobile={false} firstIsOpen={false} />

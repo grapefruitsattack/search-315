@@ -21,6 +21,7 @@ import { SearchStoryParams,getCategoryStr } from '@/features/app/search/class/Se
 import SearchInfoCheckbox from "./SearchInfoCheckbox";
 import SearchStoryFilterCheckbox from "./SearchStoryFilterCheckbox";
 import SearchModalRadioButton from "./SearchModalRadioButton";
+import { UseSearchLoading } from "@/features/app/search/provider/SearchLoadingProvider";
 import {CATEGORY,MEDIA,getCategoryByMedia,getMediaByCategory} from '@/features/common/const/StoryInfoConst';
 import singingMaster from '@/data/singingMaster.json';
 import songInfoAsc from '@/data/songInfoAsc.json';
@@ -38,7 +39,8 @@ import { ArrowDown } from "lucide-react"
 
 
 export default function SearchStoryController({ isMobile,firstIsOpen }: { isMobile:boolean,firstIsOpen: boolean;}) {
-
+  
+  const { setLoading }= UseSearchLoading();
   const router = useRouter();
   const currentPath: string = usePathname();
   const urlSearchParams = useSearchParams();
@@ -61,6 +63,7 @@ export default function SearchStoryController({ isMobile,firstIsOpen }: { isMobi
     const workParam: URLSearchParams = createUrlSearchParm(value);
     workParam.delete('page');
     workParam.set('page','1');
+    setLoading(true);
     router.push(currentPath + '?'  + decodeURIComponent(workParam.toString()));
   };
   //パラメータクリア関数
