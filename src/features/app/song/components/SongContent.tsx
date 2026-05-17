@@ -19,7 +19,7 @@ import Live from './Live'
 
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
-export default function SongContent({ result, albumResult }: { result: SongMaster, albumResult: Albums }) {
+export default function SongContent({ result, albumResult, lyric }: { result: SongMaster, albumResult: Albums, lyric: string }) {
 
   // アーティスト
   const artistArray: string[] = GetArtistBadgeInfo(result.artist);
