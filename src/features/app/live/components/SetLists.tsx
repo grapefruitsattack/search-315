@@ -24,6 +24,7 @@ export default function SetLists({ livePerId, type }: { livePerId: string, type:
                         trialYoutubeId: '',
                         type: '',
                         subscFlg: 0,
+                        lyricFlg: 0,
                         execFlg: 0,
                         originalFlg: 0,
                         colleFlg: 0,

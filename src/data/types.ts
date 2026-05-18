@@ -45,6 +45,7 @@ export type SongMaster = {
   trialYoutubeId: string;
   type: string;
   subscFlg: number;
+  lyricFlg: number;
   execFlg: number;
   originalFlg: number;
   colleFlg: number;
