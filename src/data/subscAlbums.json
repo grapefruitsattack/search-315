@@ -2231,5 +2231,38 @@
     "lineMusicUrl": "https://music.line.me/webapp/album/mb0000000004f7376e",
     "awaUrl": "https://s.awa.fm/album/2fc9ddf51825374bda46",
     "towerRecordsMusic": ""
+  },
+  {
+    "id": "TT06",
+    "title": "THE IDOLM@STER SideM TRANSCENDENT T@LES 06",
+    "youtubeId": "OLAK5uy_lQ5sBJ8Gau3xXUDi01TJ_IFpaCWAaRZm4",
+    "spotifyUrl": "https://open.spotify.com/album/05TcCz4GpRL4VYsAdcTiPN",
+    "appleMusicUrl": "https://music.apple.com/jp/album/the-idolm-ster-sidem-transcendent-t-les-06-single/1872896302",
+    "amazonMusicUrl": "https://music.amazon.co.jp/albums/B0GKF2LSGR",
+    "lineMusicUrl": "https://music.line.me/webapp/album/mb0000000004fbd839",
+    "awaUrl": "https://s.awa.fm/album/bc17987f1ff2474ce886",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "MTS05",
+    "title": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 05 Altessimo",
+    "youtubeId": "OLAK5uy_ktJgKZ4NCDU6pVzgluC1eIPTwbXABHkHU",
+    "spotifyUrl": "https://open.spotify.com/album/5bgVLrqS5gy5KUUUT8hdZu",
+    "appleMusicUrl": "https://music.apple.com/jp/album/the-idolm-ster-sidem-p-ssion-challenge-we-are-315/1878313345",
+    "amazonMusicUrl": "https://music.amazon.co.jp/albums/B0GP6R4GPV",
+    "lineMusicUrl": "https://music.line.me/webapp/album/mb00000000050c7018",
+    "awaUrl": "https://s.awa.fm/album/9d1087a0ec8bbd6d3499",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "TT07",
+    "title": "THE IDOLM@STER SideM TRANSCENDENT T@LES 07",
+    "youtubeId": "OLAK5uy_mU7O8gNRrLSQisaAl56IiGhKv2m3ndxQU",
+    "spotifyUrl": "https://open.spotify.com/album/2BO8n8SYYwkeoqvFtV1sWn",
+    "appleMusicUrl": "https://music.apple.com/jp/album/the-idolm-ster-sidem-transcendent-t-les-07-single/1881490056",
+    "amazonMusicUrl": "https://music.amazon.co.jp/albums/B0GQR422Y2",
+    "lineMusicUrl": "https://music.line.me/webapp/album/mb0000000005136402",
+    "awaUrl": "https://s.awa.fm/album/621429aa1c0a327e8c89",
+    "towerRecordsMusic": ""
   }
 ]
