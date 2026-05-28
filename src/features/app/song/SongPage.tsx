@@ -1,9 +1,9 @@
 'use client'
 import useSWR from 'swr';
-import CommonPage from "../../common/components/CommonPage";
-import songMaster from '../../../data/songMaster.json';
-import albumMaster from '../../../data/albumMaster.json';
-import type { SongMaster,Albums } from '../../../data/types';
+import CommonPage from "@/features/common/components/CommonPage";
+import songMaster from '@/data/songMaster.json';
+import albumMaster from '@/data/albumMaster.json';
+import type { SongMaster,Albums,Lyric } from '@/data/types';
 import SongContent from "./components/SongContent";
 
 const fetcher = async (url: string) => {
@@ -17,8 +17,16 @@ const fetcher = async (url: string) => {
 };
 
 export default function SearchPage({ songId }: { songId: string }) {
+
+  const result : SongMaster | undefined 
+    = songMaster.find(data => data.songId === songId);
+  const album : Albums | undefined 
+    = albumMaster.find(data => data.albumId === result?.albumId);
+
+  const shouldFetch = result?.lyricFlg === 1;
+
   const { data, error, isLoading } = useSWR(
-    '/api/lyric/2A01_1',
+    shouldFetch ? '/api/lyric/COJU_1' : null,
     fetcher,
     {
       revalidateOnFocus: false,
@@ -27,17 +35,19 @@ export default function SearchPage({ songId }: { songId: string }) {
     }
   );
 
-  const result : SongMaster | undefined 
-    = songMaster.find(data => data.songId === songId);
-  const album : Albums | undefined 
-    = albumMaster.find(data => data.albumId === result?.albumId);
+  const lyricVer0: Lyric = { version: 0, data: [] };
+  let lyric: Lyric = lyricVer0;
 
+  if (data?.lyric && data.lyric !== 'not found') {
+    lyric = JSON.parse(data.lyric);
+  }
+  
   return (
     <>
       <title>{  `${result?.songTitle} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー`}</title>
         {result === undefined || album === undefined
         ?<div>結果なし</div>
-        :<SongContent result={result} albumResult={album} lyric={data?.lyric || ''}/>
+        :<SongContent result={result} albumResult={album} lyric={lyric===undefined ? lyricVer0 : lyric} lyricIsLoading={isLoading}/>
         }
     </>
   );

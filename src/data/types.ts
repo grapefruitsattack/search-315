@@ -119,6 +119,18 @@ export type LiveMovie = {
   livePerId: string;
 };
 
+export type Lyric = {
+  version: number;
+  data: LyricData[];
+};
+
+export type LyricData = {
+  seq: number;
+  row_seq: number; 
+  lyric: string;
+  ruby?: string;
+};
+
 export type Tabs = {
   title: string;
   id: string;

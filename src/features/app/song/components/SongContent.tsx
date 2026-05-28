@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { motion } from "framer-motion";
-import type { SongMaster,Albums,MvInfo,LiveMaster } from '@/data/types';
+import type { SongMaster,Albums,MvInfo,LiveMaster,Lyric } from '@/data/types';
 import subscSongs from '@/data/subscSongs.json';
 import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
 import GetMv from '@/features/common/utils/GetMv';
@@ -16,10 +16,11 @@ import {ShareModalButton} from "@/features/app/shareModal/ShareModalButton";
 import OtherVersion from './OtherVersion'
 import Mv from './Mv'
 import Live from './Live'
+import LyricPage from './Lyric'
 
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
-export default function SongContent({ result, albumResult, lyric }: { result: SongMaster, albumResult: Albums, lyric: string }) {
+export default function SongContent({ result, albumResult, lyric, lyricIsLoading }: { result: SongMaster, albumResult: Albums, lyric: Lyric, lyricIsLoading: boolean }) {
 
   // アーティスト
   const artistArray: string[] = GetArtistBadgeInfo(result.artist);
@@ -34,7 +35,7 @@ export default function SongContent({ result, albumResult, lyric }: { result: So
       = new Date(
           Number(result.releaseDate.substring(0,4))
           ,Number(result.releaseDate.substring(4,6))-1
-          ,Number(result.releaseDate.substring(6,8))).toLocaleDateString();
+          ,Number(result.releaseDate.substring(6,8))).toLocaleDateString("ja-JP");
 
   //YoutubeURL取得
   const youtubeId: string
@@ -238,6 +239,14 @@ export default function SongContent({ result, albumResult, lyric }: { result: So
         </div>
       </section>
 
+      {/* MV */}
+      {result.lyricFlg !== 1
+        ?<></>
+        :
+        <section className="mt-10">
+          <LyricPage lyric={lyric} lyricIsLoading={lyricIsLoading}/>
+        </section>
+      }
       {/* MV */}
       {mv === undefined || mv.length === 0
         ?<></>

@@ -26,7 +26,7 @@ export default function AlbumContent({ album, }: { album: Albums}) {
     = new Date(
       Number(album.releaseDate.substring(0,4))
       ,Number(album.releaseDate.substring(4,6))-1
-      ,Number(album.releaseDate.substring(6,8))).toLocaleDateString();
+      ,Number(album.releaseDate.substring(6,8))).toLocaleDateString("ja-JP");
 
   const series : Albums[] | undefined 
     = albumMaster.filter(data => data.albumId !== album.albumId && data.sereisId === album.sereisId)||[];
