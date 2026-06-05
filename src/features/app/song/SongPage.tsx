@@ -23,10 +23,10 @@ export default function SearchPage({ songId }: { songId: string }) {
   const album : Albums | undefined 
     = albumMaster.find(data => data.albumId === result?.albumId);
 
-  const shouldFetch = result?.lyricFlg === 1;
+  const shouldFetch = result?.lyric !== '';
 
   const { data, error, isLoading } = useSWR(
-    shouldFetch ? '/api/lyric/COJU_1' : null,
+    shouldFetch ? `/api/lyric/${result?.lyric}` : null,
     fetcher,
     {
       revalidateOnFocus: false,

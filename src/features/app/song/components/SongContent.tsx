@@ -240,7 +240,7 @@ export default function SongContent({ result, albumResult, lyric, lyricIsLoading
       </section>
 
       {/* MV */}
-      {result.lyricFlg !== 1
+      {result.lyric === ''
         ?<></>
         :
         <section className="mt-10">
