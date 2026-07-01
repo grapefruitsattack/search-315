@@ -13,10 +13,14 @@ import {GetArtistJsx,GetArtistBadgeInfo} from '@/features/common/utils/ArtistUti
 import IdolBadge from '@/features/common/components/IdolBadge';
 import CopyButton from "@/features/common/components/CopyButton";
 import {ShareModalButton} from "@/features/app/shareModal/ShareModalButton";
+import {LyricShareModal} from "@/features/app/song/components/LyricShareModal";
 import OtherVersion from './OtherVersion'
 import Mv from './Mv'
 import Live from './Live'
 import LyricPage from './Lyric'
+import {
+  useDisclosure, 
+ } from "@chakra-ui/react";
 
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
@@ -54,6 +58,7 @@ export default function SongContent({ result, albumResult, lyric, lyricIsLoading
   //const snowImgSrc: string ='/snow/artworksnow'+String(Math.floor(Math.random() * 3)+1)+'.png';
   const snowImgSrc: string ='/snow/artworksnow1.png';
 
+  const lyricShareModalDisclosure = useDisclosure();
 
   return(
     <div className=" pb-96 px-2 mobileS:px-4 mobileM:px-8 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
@@ -196,6 +201,27 @@ export default function SongContent({ result, albumResult, lyric, lyricIsLoading
                 },
               ]}
             />
+            {result.lyric === ''
+              ?<></>
+              :
+              <button 
+                className='
+                  flex py-2 px-2 gap-1 tablet:px-5 rounded-full bg-zinc-100 items-center w-fit h-fit
+                  font-mono text-xs mobileL:text-sm tablet:text-base 
+                  transition-all duration-300
+                  hover:ring-2 hover:ring-zinc-600 hover:ring-offset-2 hover:bg-zinc-200
+                  active:scale-90
+                ' 
+                onClick={(lyricShareModalDisclosure.onOpen)}
+              >
+                <LyricShareModal song={result} disclosure={lyricShareModalDisclosure} targetRows={{ startRow: 0, endRow: 0 }} lyric={lyric} />
+                {/* Google Fonts Icons */}
+                <svg className="fill-zinc-600 w-[18px] h-[18px] mobileL:w-[24px] mobileL:h-[24px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                  <path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h120v80H240v400h480v-400H600v-80h120q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm200-240v-447l-64 64-56-57 160-160 160 160-56 57-64-64v447h-80Z"/>
+                </svg>
+                {'歌詞を共有'}
+              </button>
+            }
             {/* コピーボタン */}
             <CopyButton 
                 copyText={result.songTitle} 
@@ -239,12 +265,12 @@ export default function SongContent({ result, albumResult, lyric, lyricIsLoading
         </div>
       </section>
 
-      {/* MV */}
+      {/* 歌詞 */}
       {result.lyric === ''
         ?<></>
         :
         <section className="mt-10">
-          <LyricPage lyric={lyric} lyricIsLoading={lyricIsLoading}/>
+          <LyricPage song={result} lyric={lyric} lyricIsLoading={lyricIsLoading} />
         </section>
       }
       {/* MV */}
