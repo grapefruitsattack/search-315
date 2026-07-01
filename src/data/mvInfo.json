@@ -1330,5 +1330,77 @@
     "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg",
     "songName": "CROWN US KING!"
+  },
+  {
+    "songId": "COD07_3",
+    "title": "Dance Practice「FANTASTIC DISCOTHEQUE」",
+    "siteType": "youtube",
+    "url": "https://youtu.be/6jJQTzN-bt0",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/6jJQTzN-bt0?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/6jJQTzN-bt0/mqdefault.jpg",
+    "songName": "FANTASTIC DISCOTHEQUE"
+  },
+  {
+    "songId": "10A07_1",
+    "title": "Dance Practice「縁会！～ENTERTAINMENTS！～」",
+    "siteType": "youtube",
+    "url": "https://youtu.be/Ax1xOdVYq7Q",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/Ax1xOdVYq7Q?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/Ax1xOdVYq7Q/mqdefault.jpg",
+    "songName": "縁会！～ENTERTAINMENTS！～"
+  },
+  {
+    "songId": "5A04_3",
+    "title": "Dance Practice「Make New Legend」",
+    "siteType": "youtube",
+    "url": "https://youtu.be/S6K3rVIyidM",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/S6K3rVIyidM?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/S6K3rVIyidM/mqdefault.jpg",
+    "songName": "Make New Legend"
+  },
+  {
+    "songId": "2A01_2",
+    "title": "Dance Practice「MOON NIGHTのせいにして」",
+    "siteType": "youtube",
+    "url": "https://youtu.be/gxgmW--FDE4",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/gxgmW--FDE4?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/gxgmW--FDE4/mqdefault.jpg",
+    "songName": "MOON NIGHTのせいにして"
+  },
+  {
+    "songId": "COD10_1",
+    "title": "2DMV「AZUR」",
+    "siteType": "youtube",
+    "url": "https://youtu.be/Ls7BFgBpDWI",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/Ls7BFgBpDWI?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/Ls7BFgBpDWI/mqdefault.jpg",
+    "songName": "AZUR"
+  },
+  {
+    "songId": "NS11_4",
+    "title": "Dance Practice「リビングアイズヒーロー」",
+    "siteType": "youtube",
+    "url": "https://youtu.be/HJYe0_sad_Q",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/HJYe0_sad_Q?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/HJYe0_sad_Q/mqdefault.jpg",
+    "songName": "リビングアイズヒーロー"
+  },
+  {
+    "songId": "10A09_2",
+    "title": "Dance Practice「Stillness≒Movement」",
+    "siteType": "youtube",
+    "url": "https://youtu.be/pbjbUBIrOFo",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/pbjbUBIrOFo?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/pbjbUBIrOFo/mqdefault.jpg",
+    "songName": "Stillness≒Movement"
+  },
+  {
+    "songId": "10A09_2",
+    "title": "2DMV「Stillness≒Movement」",
+    "siteType": "youtube",
+    "url": "https://youtu.be/y58MiYyGyqU",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/y58MiYyGyqU?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/y58MiYyGyqU/mqdefault.jpg",
+    "songName": "Stillness≒Movement"
   }
 ]
