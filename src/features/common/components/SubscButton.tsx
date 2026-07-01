@@ -72,6 +72,7 @@ export default function SubscButton(
           hover:fill-orange-500 fill-white
           text-xs mobileM:text-base lg:text-lg
           inline-flex items-center justify-center
+          cursor-pointer
           '
           whileTap={{ scale: 0.97 }}
           transition={{ duration: 0.05 }}
