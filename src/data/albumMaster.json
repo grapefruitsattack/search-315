@@ -4110,5 +4110,37 @@
     "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24770.html",
     "trialYoutubeId": "EoV_GyRESOA",
     "description": ""
+  },
+  {
+    "sereisId": "MTS",
+    "albumId": "MTS09",
+    "albumTitleFull": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 09 Legenders",
+    "albumTitle": "MONTHLY THEME SONG 09 Legenders",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260729",
+    "displayArtist": "Legenders",
+    "artist": "[LGN00]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24789.html",
+    "trialYoutubeId": "YpTdrf7wVp8",
+    "description": ""
+  },
+  {
+    "sereisId": "TT",
+    "albumId": "TT11",
+    "albumTitleFull": "THE IDOLM@STER SideM TRANSCENDENT T@LES 11",
+    "albumTitle": "TRANSCENDENT T@LES 11",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260805",
+    "displayArtist": "蒼井享介、猫柳キリオ、秋山隼人、大河タケル",
+    "artist": "[DBL02]、[SAI01]、[HIJ01]、[KGD01]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24771.html",
+    "trialYoutubeId": "bMtItPIUFow",
+    "description": ""
   }
 ]

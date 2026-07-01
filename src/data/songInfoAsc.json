@@ -44302,5 +44302,125 @@
     "singingInfoId": "KGD02",
     "releaseDate": "20260701",
     "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS09",
+    "songId": "MTS09_1",
+    "singingInfoId": "LGN00",
+    "releaseDate": "20260729",
+    "type": "u"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS09",
+    "songId": "MTS09_1",
+    "singingInfoId": "LGN01",
+    "releaseDate": "20260729",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS09",
+    "songId": "MTS09_1",
+    "singingInfoId": "LGN02",
+    "releaseDate": "20260729",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS09",
+    "songId": "MTS09_1",
+    "singingInfoId": "LGN03",
+    "releaseDate": "20260729",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "MTS09",
+    "songId": "MTS09_2",
+    "singingInfoId": "LGN01",
+    "releaseDate": "20260729",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "MTS09",
+    "songId": "MTS09_3",
+    "singingInfoId": "LGN02",
+    "releaseDate": "20260729",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "MTS09",
+    "songId": "MTS09_4",
+    "singingInfoId": "LGN03",
+    "releaseDate": "20260729",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT11",
+    "songId": "TT11_1",
+    "singingInfoId": "DBL02",
+    "releaseDate": "20260805",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT11",
+    "songId": "TT11_1",
+    "singingInfoId": "SAI01",
+    "releaseDate": "20260805",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT11",
+    "songId": "TT11_1",
+    "singingInfoId": "HIJ01",
+    "releaseDate": "20260805",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT11",
+    "songId": "TT11_1",
+    "singingInfoId": "KGD01",
+    "releaseDate": "20260805",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "TT11",
+    "songId": "TT11_2",
+    "singingInfoId": "DBL02",
+    "releaseDate": "20260805",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "TT11",
+    "songId": "TT11_3",
+    "singingInfoId": "SAI01",
+    "releaseDate": "20260805",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "TT11",
+    "songId": "TT11_4",
+    "singingInfoId": "HIJ01",
+    "releaseDate": "20260805",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "TT11",
+    "songId": "TT11_5",
+    "singingInfoId": "KGD01",
+    "releaseDate": "20260805",
+    "type": "sver"
   }
 ]
