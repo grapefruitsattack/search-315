@@ -8534,5 +8534,27 @@
     "lineMusicUrl": "https://music.line.me/webapp/track/mt000000002586867e",
     "awaUrl": "https://s.awa.fm/track/29456280a940609b2922",
     "towerRecordsMusic": ""
+  },
+  {
+    "id": "UOSDS_2",
+    "title": "ソライロ！ Dearly Stars バージョン",
+    "youtubeId": "5q6RLaGTwg4",
+    "spotifyUrl": "https://open.spotify.com/track/0ZPIYHZJqErD1Z5L2adwDj",
+    "appleMusicUrl": "https://music.apple.com/jp/song/%E3%82%BD%E3%83%A9%E3%82%A4%E3%83%AD-dearly-stars-%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3/6778229163",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0H4JJ4QJS",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt000000002601f918",
+    "awaUrl": "https://s.awa.fm/track/01f36af4a67ff8116666",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "TT09_1",
+    "title": "お菓子なアドベンチャー",
+    "youtubeId": "O5m8a5L4Ugw",
+    "spotifyUrl": "https://open.spotify.com/track/1HDYXcmgAFYaufET2wogJ8",
+    "appleMusicUrl": "https://music.apple.com/jp/song/%E3%81%8A%E8%8F%93%E5%AD%90%E3%81%AA%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC/6764757604",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0GZ2Y6BDC",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt00000000259ee81c",
+    "awaUrl": "https://s.awa.fm/track/c265c787dc6dd3d4f888",
+    "towerRecordsMusic": ""
   }
 ]
