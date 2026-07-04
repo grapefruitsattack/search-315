@@ -2275,5 +2275,38 @@
     "lineMusicUrl": "https://music.line.me/webapp/album/mb000000000528b68c",
     "awaUrl": "https://s.awa.fm/album/a7bb52bffd440be0f681",
     "towerRecordsMusic": ""
+  },
+  {
+    "id": "TT08",
+    "title": "THE IDOLM@STER SideM TRANSCENDENT T@LES 08",
+    "youtubeId": "OLAK5uy_k_nhTKh-m5v1yHOxWRPzR6X1E_FLcwVdA",
+    "spotifyUrl": "https://open.spotify.com/album/2byAuXp6kRPEldrT4LtmYZ",
+    "appleMusicUrl": "https://music.apple.com/jp/album/the-idolm-ster-sidem-transcendent-t-les-08-single/1890083394",
+    "amazonMusicUrl": "https://music.amazon.co.jp/albums/B0GVQMVM5J",
+    "lineMusicUrl": "https://music.line.me/webapp/album/mb00000000052b9109",
+    "awaUrl": "https://s.awa.fm/album/704b23d646dc063c4450",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "MTS07",
+    "title": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 07 FRAME",
+    "youtubeId": "OLAK5uy_kJDqTnbtcxycSboa5shjyeSj4BXWn7CZI",
+    "spotifyUrl": "https://open.spotify.com/album/2mHYPBIOKk1NHrgq4rAdK5",
+    "appleMusicUrl": "https://music.apple.com/jp/album/the-idolm-ster-sidem-p-ssion-challenge-we-are-315/1895005764",
+    "amazonMusicUrl": "https://music.amazon.co.jp/albums/B0GXZK4KSG",
+    "lineMusicUrl": "https://music.line.me/webapp/album/mb00000000053997f8",
+    "awaUrl": "https://s.awa.fm/album/32701349806988d26748",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "TT09",
+    "title": "THE IDOLM@STER SideM TRANSCENDENT T@LES 09",
+    "youtubeId": "OLAK5uy_mOI8XyXFkVY8aRD_E9JC91W3VNLjelPQY",
+    "spotifyUrl": "https://open.spotify.com/album/7AhrzHZVMrfJtF5L8wRC7n",
+    "appleMusicUrl": "https://music.apple.com/jp/album/the-idolm-ster-sidem-transcendent-t-les-09-single/1895905433",
+    "amazonMusicUrl": "https://music.amazon.co.jp/albums/B0GZ332L61",
+    "lineMusicUrl": "https://music.line.me/webapp/album/mb000000000540c823",
+    "awaUrl": "https://s.awa.fm/album/99ff03d08f6e2d099e06",
+    "towerRecordsMusic": ""
   }
 ]
