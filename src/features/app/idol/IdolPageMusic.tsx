@@ -11,66 +11,39 @@ import SongBlock from "@/features/common/components/SongBlock";
 import SongList from "@/features/common/components/SongList";
 import SongCarousel from "@/features/common/components/SongCarousel";
 
-export default function UnitMusic({ unitId }: { unitId: string }) {
+export default function IdolPageMusic({ idolId }: { idolId: string }) {
 
-  const musicDisplayCnt: number = 5;
+  const idolName:string = singingMaster.find(data => data.singingInfoId === idolId)?.singingInfoName||'';
+  //ソロ曲取得
+  const soloSongInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === idolId && data.type === 's').map(data=>data.songId);
+  const soloSongs: SongMaster[] 
+    = soloSongInfos.map(songid=>songMaster.find(data=>songid===data.songId && data.isSoloColle === 0 && data.isUnitColle === 0))
+    .filter((item): item is SongMaster => typeof item == 'object').slice().reverse();
+  const soloColleSongInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === idolId && data.type === 'sver').map(data=>data.songId);
+    const soloColleSongs: SongMaster[] 
+  = soloColleSongInfos.map(songid=>songMaster.find(data=>songid===data.songId && data.isUnitColle === 0))
+  .filter((item): item is SongMaster => typeof item == 'object').slice().reverse();
+  //越境系曲取得
+  const collaboSongInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === idolId && ['c', 'cover', 't'].includes(data.type)).map(data=>data.songId);
+  const collaboSongs: SongMaster[] 
+    = collaboSongInfos.map(songid=>songMaster.find(data=>songid===data.songId))
+    .filter((item): item is SongMaster => typeof item == 'object').slice().reverse();
 
-    const unitName:string = singingMaster.find(data => data.singingInfoId === unitId)?.singingInfoName||'';
-    //ユニット曲取得
-    const unitSongInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === unitId && data.type === 'u').map(data=>data.songId);
-    const unitSongs: SongMaster[] 
-        = unitSongInfos.map(songid=>songMaster.find(data=>songid===data.songId && data.isSoloColle === 0 && data.isUnitColle === 0))
-        .filter((item): item is SongMaster => typeof item == 'object').slice().reverse();
-    //合同系曲取得
-    const collaboUnitInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === unitId && data.type === 'c').map(data=>data.songId);
-    const collaboSongs: SongMaster[] 
-        = collaboUnitInfos.map(songid=>songMaster.find(data=>songid===data.songId))
-        .filter((item): item is SongMaster => typeof item == 'object').slice().reverse();
-    //カバー曲
-    const coverSongInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === unitId && data.type === 'cover').map(data=>data.songId);
-    const coverSongs: SongMaster[] 
-        = coverSongInfos.map(songid=>songMaster.find(data=>songid===data.songId))
-        .filter((item): item is SongMaster => typeof item == 'object').slice().reverse();
-    //ユニコレ・ユニットバージョン曲取得
-    const unitVerSongInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === unitId && data.type === 'uver').map(data=>data.songId);
-    const unitVerSongs: SongMaster[] 
-        = unitVerSongInfos.map(songid=>songMaster.find(data=>songid===data.songId && data.isSoloColle === 0))
-        .filter((item): item is SongMaster => typeof item == 'object').slice().reverse();
-
-    //ライブ情報
-    const livePerIds: string[] = livePerformer.filter(data => data.singingInfoId === unitId).map(data=>data.livePerId);
-    const liveInfos: LiveMaster[] 
-        = livePerIds.map(livePerId=>liveMaster.find(data=>livePerId===data.livePerId))
-        .filter((item): item is LiveMaster => typeof item == 'object').slice().reverse();
+  //ライブ情報
+  const livePerIds: string[] = livePerformer.filter(data => data.singingInfoId === idolId).map(data=>data.livePerId);
+  const liveInfos: LiveMaster[] 
+  = livePerIds.map(livePerId=>liveMaster.find(data=>livePerId===data.livePerId))
+  .filter((item): item is LiveMaster => typeof item == 'object').slice().reverse();
 
     return (<>
-   <div 
-          className="
-          px-0 mobileM:px-2 
-              text-2xl font-mono flex items-center w-full
-              after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-          "
-      >
-          <svg className="fill-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 13.5351V3H20V5H14V17C14 19.2091 12.2091 21 10 21C7.79086 21 6 19.2091 6 17C6 14.7909 7.79086 13 10 13C10.7286 13 11.4117 13.1948 12 13.5351ZM10 19C11.1046 19 12 18.1046 12 17C12 15.8954 11.1046 15 10 15C8.89543 15 8 15.8954 8 17C8 18.1046 8.89543 19 10 19Z"></path></svg>
-          {'ユニット曲'}
-      </div>
-      <div className="flex">
-        <div className={`
-          max-w-[700px] w-full
-          px-0 mobileM:px-2
-          
-        `}>
-          <SongCarousel songArray={unitSongs} displaySongCnt={5} displayArtist={false}/>
-        </div>
-      </div>
       <div 
           className="
-              text-2xl font-mono flex items-center w-full
+              text-2xl font-mono flex items-center w-full 
               after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
           "
       >
-          <svg className="fill-teal-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 13.5351V3H20V5H14V17C14 19.2091 12.2091 21 10 21C7.79086 21 6 19.2091 6 17C6 14.7909 7.79086 13 10 13C10.7286 13 11.4117 13.1948 12 13.5351ZM10 19C11.1046 19 12 18.1046 12 17C12 15.8954 11.1046 15 10 15C8.89543 15 8 15.8954 8 17C8 18.1046 8.89543 19 10 19Z"></path></svg>
-          {'ユニット合同曲'}
+        <svg className="fill-teal-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 13.5351V3H20V5H14V17C14 19.2091 12.2091 21 10 21C7.79086 21 6 19.2091 6 17C6 14.7909 7.79086 13 10 13C10.7286 13 11.4117 13.1948 12 13.5351ZM10 19C11.1046 19 12 18.1046 12 17C12 15.8954 11.1046 15 10 15C8.89543 15 8 15.8954 8 17C8 18.1046 8.89543 19 10 19Z"></path></svg>
+          {'ソロ曲'}
       </div>
       <div className="flex">
         <div className={`
@@ -78,48 +51,56 @@ export default function UnitMusic({ unitId }: { unitId: string }) {
           px-0 mobileM:px-2
           
         `}>
-          <SongCarousel songArray={collaboSongs} displaySongCnt={4} displayArtist={true}/>
+          <SongCarousel songArray={soloSongs} displaySongCnt={5} displayArtist={false}/>
         </div>
       </div>
-      {coverSongs.length===0 
-            ? <></>
-            :<div 
-          className="
-              text-2xl font-mono flex items-center w-full
-              after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-          "
-      >
-          <svg className="fill-lime-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 13.5351V3H20V5H14V17C14 19.2091 12.2091 21 10 21C7.79086 21 6 19.2091 6 17C6 14.7909 7.79086 13 10 13C10.7286 13 11.4117 13.1948 12 13.5351ZM10 19C11.1046 19 12 18.1046 12 17C12 15.8954 11.1046 15 10 15C8.89543 15 8 15.8954 8 17C8 18.1046 8.89543 19 10 19Z"></path></svg>
-          {'カバー曲'}
-      </div>
-            }
-      <div className="flex">
-        <div className={`
-          max-w-[700px] w-full
-          px-0 mobileM:px-2
-          
-        `}>
-          <SongCarousel songArray={coverSongs} displaySongCnt={5} displayArtist={false}/>
+      
+      {collaboSongs.length===0 
+        ?<></>
+        :<>
+          <div 
+              className="
+                  text-2xl font-mono flex items-center w-full
+                  after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
+              "
+          >
+            <svg className="fill-lime-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 13.5351V3H20V5H14V17C14 19.2091 12.2091 21 10 21C7.79086 21 6 19.2091 6 17C6 14.7909 7.79086 13 10 13C10.7286 13 11.4117 13.1948 12 13.5351ZM10 19C11.1046 19 12 18.1046 12 17C12 15.8954 11.1046 15 10 15C8.89543 15 8 15.8954 8 17C8 18.1046 8.89543 19 10 19Z"></path></svg>
+              {'個人参加曲'}
+          </div>
+          <div className="flex">
+            <div className={`
+              max-w-[700px] w-full
+              px-0 mobileM:px-2
+              
+            `}>
+              <SongCarousel songArray={collaboSongs} displaySongCnt={4} displayArtist={true}/>
+            </div>
+          </div>
+        </>
+      }
+      {soloColleSongs.length===0 
+        ?<></>
+        :<>
+        <div 
+            className="
+                text-2xl font-mono flex items-center w-full
+                after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
+            "
+        >
+          <svg className="fill-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 13.5351V3H20V5H14V17C14 19.2091 12.2091 21 10 21C7.79086 21 6 19.2091 6 17C6 14.7909 7.79086 13 10 13C10.7286 13 11.4117 13.1948 12 13.5351ZM10 19C11.1046 19 12 18.1046 12 17C12 15.8954 11.1046 15 10 15C8.89543 15 8 15.8954 8 17C8 18.1046 8.89543 19 10 19Z"></path></svg>
+            {'ソロVer'}
         </div>
-      </div>
-      <div 
-          className="
-              text-2xl font-mono flex items-center w-full
-              after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-          "
-      >
-      <svg className="fill-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 13.5351V3H20V5H14V17C14 19.2091 12.2091 21 10 21C7.79086 21 6 19.2091 6 17C6 14.7909 7.79086 13 10 13C10.7286 13 11.4117 13.1948 12 13.5351ZM10 19C11.1046 19 12 18.1046 12 17C12 15.8954 11.1046 15 10 15C8.89543 15 8 15.8954 8 17C8 18.1046 8.89543 19 10 19Z"></path></svg>
-          {'ユニットVer'}
-      </div>
-      <div className="flex">
-        <div className={`
-          max-w-[700px] w-full
-          px-0 mobileM:px-2
-          
-        `}>
-          <SongCarousel songArray={unitVerSongs} displaySongCnt={5} displayArtist={false}/>
-        </div>
-      </div>
+          <div className="flex">
+            <div className={`
+              max-w-[700px] w-full
+              px-0 mobileM:px-2
+              
+            `}>
+              <SongCarousel songArray={soloColleSongs} displaySongCnt={5} displayArtist={false}/>
+            </div>
+          </div>
+        </>
+      }
 
 {/* ライブ情報 */}
 <div className="flex items-start">
@@ -207,7 +188,7 @@ export default function UnitMusic({ unitId }: { unitId: string }) {
   <section>
         <div className="flex justify-center m-auto">
             <Link 
-          href={{ pathname: '/search', query: {q: unitId}}}
+          href={{ pathname: '/search', query: {q: idolId}}}
           className='
                 flex p-0.5 bg-gradient-to-r from-indigo-300 to-emerald-300 items-center 
                 hover:drop-shadow-xl cursor-pointer select-none
@@ -224,7 +205,7 @@ export default function UnitMusic({ unitId }: { unitId: string }) {
                 >
                     <div className='pr-2'>
                       <span className="font-bold">
-                      {unitName}
+                      {idolName}
                       </span>
                       <span className="">
                       {'の他の楽曲を見つける'}

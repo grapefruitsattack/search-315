@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { cookies } from 'next/headers';
 import dynamic from "next/dynamic";
 import { Suspense, cache } from "react";
-import type { StorySearchResult } from '@/data/types';
+import type { SingingMaster } from '@/data/types';
 import singingMaster from '@/data/singingMaster.json';
 import CommonPage from "@/features/common/components/CommonPage";
 import UnitPageStory from "@/features/app/unit/UnitPageStory";
@@ -19,13 +19,14 @@ export function generateStaticParams() {
 const UnitPageRecommend = dynamic(() => import("@/features/app/unit/UnitPageRecommend"), { ssr: true });
 const UnitPageMain = dynamic(() => import("@/features/app/unit/UnitPageMain"), { ssr: true });
 const UnitPageMusic = dynamic(() => import("@/features/app/unit/UnitPageMusic"), { ssr: true });
+const IdolPageMusic = dynamic(() => import("@/features/app/idol/IdolPageMusic"), { ssr: true });
 
 const Units = async ({
   params,
   searchParams,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ t?:string; }>;
+  searchParams: Promise<{ t?:string; m?:string; }>;
 }) => {
   //cookie
   const cookieStore = cookies();
@@ -34,9 +35,20 @@ const Units = async ({
   //クエリパラメータ
   const { id } = await params;
   const {t} = await searchParams;
+  const {m} = await searchParams;
 
   const type: string = ['story','music','recommend'].includes(t||pageCategory)?t||pageCategory:pageCategory;
   const unitName: string = singingMaster.find(data => data.singingInfoId === id)?.singingInfoName||'';
+  //ユニットメンバー取得
+  const unitMember: SingingMaster[] 
+    = singingMaster.filter(data=>data.personFlg===1 && data.singingInfoId.substring(0, 3)===id.substring(0, 3))
+    .map(data=>{ return data });
+
+  const selectedMember: string 
+    = m === 'unit' || m === id ? 'unit'
+      : unitMember.findIndex(data=>data.singingInfoId===m)>=0 
+        ? m||'unit'
+        : 'unit';
 
   return (
   <Suspense>
@@ -47,19 +59,26 @@ const Units = async ({
       </p>
     <article className=" pb-96 font-sans">
       <UnitPageMain unitId={id} type={type}/>
-      <section  className="w-full mt-5 px-2 mobileS:px-8 lg:px-16 bg-white lg:max-w-[1500px] lg:m-auto">
-      <UnitPageTabs type={type}/>
-      {type==='story'
-        ?
-        <Suspense fallback={<>{'story loading'}</>}>
-        {/* @ts-ignore Server Component */}
-        <UnitPageStory unitId={id}/>
-        </Suspense>
-        :type==='music'
-        ?<UnitPageMusic unitId={id}/>
-        :<UnitPageRecommend unitId={id}/>
-      }
-      </section>
+      <div  className="w-full mt-5 px-0 mobileS:px-0 lg:px-16 bg-white lg:max-w-[1500px] lg:m-auto">
+        <div className='px-0 mobileM:px-2 '>
+        <UnitPageTabs type={type} member={selectedMember} unitMember={unitMember}/>
+        </div>
+        {type==='story１'
+          ?
+          <Suspense fallback={<>{'story loading'}</>}>
+          {/* @ts-ignore Server Component */}
+          <UnitPageStory unitId={id}/>
+          </Suspense>
+          :type==='music'
+          ?
+          <>
+            {selectedMember==='unit'
+            ?<UnitPageMusic unitId={id}/>
+            :<IdolPageMusic idolId={selectedMember}/>}
+          </>
+          :<UnitPageRecommend unitId={id}/>
+        }
+      </div>
     </article>
     </CommonPage>
   </Suspense>

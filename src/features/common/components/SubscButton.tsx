@@ -57,7 +57,7 @@ export default function SubscButton(
 
     return(
     <div className={`
-      grid divide-x w-full h-full
+      grid divide-x w-full h-full text-xs mobileM:text-sm lg:text-lg
       ${subscService===''?'grid-cols-1':'grid-cols-[4fr_2fr]'}
       `}
     >
@@ -70,7 +70,6 @@ export default function SubscButton(
           bg-orange-500 text-white
           transition-all duration-500 ease-out
           hover:fill-orange-500 fill-white
-          text-xs mobileM:text-base lg:text-lg
           inline-flex items-center justify-center
           cursor-pointer
           '
@@ -87,7 +86,7 @@ export default function SubscButton(
               >
               <span className="">
               {'サブスクで聴く'}
-              <svg className="ml-1 inline-block mobileL:w-[18px] w-[14px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+              <svg className="tablet:ml-1 ml-auto inline-block mobileL:w-[18px] w-[14px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
               </span>
           </div>
       </motion.a>
@@ -99,7 +98,6 @@ export default function SubscButton(
           hover:bg-orange-500 hover:text-orange-100 
           transition-all duration-500 ease-out
           fill-orange-500 hover:fill-orange-100 
-          text-xs mobileM:text-base lg:text-lg
           inline-flex items-center justify-center
           '
           whileTap={{ scale: 0.97 }}
@@ -117,7 +115,7 @@ export default function SubscButton(
               </span>
               <span className="">
               {subscServiceNameSub}
-              <svg className="inline-block mobileL:w-[18px] w-[14px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+              <svg className="inline-block tablet:w-[18px] w-[14px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
               </span>
           </div>
       </motion.a>

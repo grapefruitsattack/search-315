@@ -32,6 +32,7 @@ export default function AlbumSongs({ album }: { album: Albums }) {
           song={result}
           displayArtist={result.artist!==album.artist}
           displayArtwork={false}
+          displayReleaseDate={false}
         />
       ))}
       </section>

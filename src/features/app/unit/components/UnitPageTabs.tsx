@@ -3,13 +3,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { hasAnalyticsConsent } from "@/lib/analytics";
 import {usePageCategory} from "@/features/common/hooks/pageCategoryHook";
+import type { SingingMaster } from '@/data/types';
 
-export default function UnitPageTabs({ type }: { type: string }) {
+export default function UnitPageTabs({ type,member,unitMember }: { type: string,member:string,unitMember:SingingMaster[] }) {
     const currentPath: string = usePathname();
     const [pageCategory,setPageCategory] = usePageCategory('');
 
     return(
-    <div className="flex mb-5 gap-0 flex-wrap " role="tablist" aria-label="tab options">
+    <div>
+      <div className="flex mb-5 gap-0 flex-wrap " role="tablist" aria-label="tab options">
         <Link 
           className={`flex items-center px-2 tablet:px-4 py-2 text-xs mobileS:text-base tablet:text-xl rounded-t-2xl
               ${type==='recommend'||(type!=='music'&&type!=='story')
@@ -18,7 +20,7 @@ export default function UnitPageTabs({ type }: { type: string }) {
               :`bg-zinc-100 text-neutral-500 font-medium fill-neutral-400 border-black border-b-2 
                   hover:border-b-neutral-800 hover:text-neutral-900 hover:fill-red-400  `}
               `}
-          href={{ pathname: currentPath, query: {t: 'recommend'}}}
+          href={{ pathname: currentPath, query: {t: 'recommend', m:member}}}
           scroll={false}
           aria-disabled={type==='recommend'||(type!=='music'&&type!=='story')}
           onClick={()=>{
@@ -42,7 +44,7 @@ export default function UnitPageTabs({ type }: { type: string }) {
               :`bg-zinc-100 text-neutral-500 font-medium fill-neutral-400 border-black border-b-2 
                   hover:border-b-neutral-800 hover:text-neutral-900 hover:fill-cyan-400  `}
               `}
-          href={{ pathname: currentPath, query: {t: 'music'}}}
+          href={{ pathname: currentPath, query: {t: 'music', m:member}}}
           scroll={false}
           aria-disabled={type==='music'}
           onClick={()=>{
@@ -62,9 +64,9 @@ export default function UnitPageTabs({ type }: { type: string }) {
               ?`font-bold text-black border-black pointer-events-none 
                 border-2 border-b-white bg-white fill-green-500 `
               :`bg-zinc-100 text-neutral-500 font-medium fill-neutral-400 border-black border-b-2 
-                 hover:border-b-neutral-800 hover:text-neutral-900 hover:fill-green-400 `}
+                hover:border-b-neutral-800 hover:text-neutral-900 hover:fill-green-400 `}
               `}
-          href={{ pathname: currentPath, query: {t: 'story'}}}
+          href={{ pathname: currentPath, query: {t: 'story', m:member}}}
           scroll={false}
           aria-disabled={type==='story'}
           onClick={()=>{
@@ -80,6 +82,42 @@ export default function UnitPageTabs({ type }: { type: string }) {
         </p>
         </Link>
         <div className="flex-grow border-black border-b-2 "></div>
+      </div>
+      <div 
+        className={`
+          ${['music'].includes(type)?'flex flex-wrap':'hidden'}
+          mb-5 gap-1 font-bold
+        `}
+      >
+        <Link
+          className={`border border-2 rounded-xl px-2 py-[2px]
+            ${member==='unit'
+              ?'bg-green-400 border-green-400 text-stone-50 pointer-events-none'
+              :'bg-stone-200/20 border-stone-200 text-stone-500 '}
+          `}
+          key={'unit'}
+          href={{ pathname: currentPath, query: {t: type, m: 'unit'}}}
+          scroll={false}
+          aria-disabled={member==='unit'}
+        >
+          ユニット
+        </Link>
+        {unitMember.map((data,index)=>
+        <Link
+          className={`border border-2 rounded-xl px-2 py-[2px]
+            ${member===data.singingInfoId
+              ?'bg-green-400 border-green-400 text-stone-50 pointer-events-none'
+              :'bg-stone-200/20 border-stone-200 text-stone-500 '}
+          `}
+          key={data.singingInfoId}
+          href={{ pathname: currentPath, query: {t: type, m: data.singingInfoId}}}
+          scroll={false}
+          aria-disabled={member===data.singingInfoId}
+        >
+          {data.singingInfoId==='CFP03'?'アスラン＝BBⅡ世':data.singingInfoName}
+        </Link>
+        )}
+      </div>
     </div>
     )
 }
