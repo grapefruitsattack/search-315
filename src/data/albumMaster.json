@@ -4112,6 +4112,22 @@
     "description": ""
   },
   {
+    "sereisId": "",
+    "albumId": "876FESATC",
+    "albumTitleFull": "876 PRODUCTION FES. Alternative Tracks Collection 【Dearly Stars盤】",
+    "albumTitle": "876 PRO Alternative Tracks Collection【Dearly Stars盤】",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260724",
+    "displayArtist": "Dearly Stars",
+    "artist": "Dearly Stars",
+    "releasePage": "https://columbia.jp/idolmaster/imasnews/260626.html",
+    "trialYoutubeId": "",
+    "description": ""
+  },
+  {
     "sereisId": "MTS",
     "albumId": "MTS09",
     "albumTitleFull": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 09 Legenders",
@@ -4141,6 +4157,22 @@
     "artist": "[DBL02]、[SAI01]、[HIJ01]、[KGD01]",
     "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24771.html",
     "trialYoutubeId": "bMtItPIUFow",
+    "description": ""
+  },
+  {
+    "sereisId": "TT",
+    "albumId": "TT12",
+    "albumTitleFull": "THE IDOLM@STER SideM TRANSCENDENT T@LES 12",
+    "albumTitle": "TRANSCENDENT T@LES 12",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260902",
+    "displayArtist": "天道輝、若里春名、水嶋咲、 硲道夫、眉見鋭心",
+    "artist": "[DRS01]、[HIJ04]、[CFP05]、[SEM01]、[CLF03]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24772.html",
+    "trialYoutubeId": "NmOzehSWdVQ",
     "description": ""
   }
 ]
