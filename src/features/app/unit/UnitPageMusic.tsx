@@ -7,8 +7,6 @@ import songInfoAsc from '@/data/songInfoAsc.json'
 import livePerformer from '@/data/livePerformer.json'
 import liveMaster from '@/data/liveMaster.json'
 import type { SongMaster, LiveMaster } from '@/data/types';
-import SongBlock from "@/features/common/components/SongBlock";
-import SongList from "@/features/common/components/SongList";
 import SongCarousel from "@/features/common/components/SongCarousel";
 
 export default function UnitMusic({ unitId }: { unitId: string }) {
@@ -60,7 +58,7 @@ export default function UnitMusic({ unitId }: { unitId: string }) {
           px-0 mobileM:px-2
           
         `}>
-          <SongCarousel songArray={unitSongs} displaySongCnt={5} displayArtist={false}/>
+          <SongCarousel songArray={unitSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false}/>
         </div>
       </div>
       <div 
@@ -78,7 +76,7 @@ export default function UnitMusic({ unitId }: { unitId: string }) {
           px-0 mobileM:px-2
           
         `}>
-          <SongCarousel songArray={collaboSongs} displaySongCnt={4} displayArtist={true}/>
+          <SongCarousel songArray={collaboSongs} displaySongCnt={4} displayArtist={true} useArtistBadge={true}/>
         </div>
       </div>
       {coverSongs.length===0 
@@ -99,7 +97,7 @@ export default function UnitMusic({ unitId }: { unitId: string }) {
           px-0 mobileM:px-2
           
         `}>
-          <SongCarousel songArray={coverSongs} displaySongCnt={5} displayArtist={false}/>
+          <SongCarousel songArray={coverSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false}/>
         </div>
       </div>
       <div 
@@ -117,7 +115,7 @@ export default function UnitMusic({ unitId }: { unitId: string }) {
           px-0 mobileM:px-2
           
         `}>
-          <SongCarousel songArray={unitVerSongs} displaySongCnt={5} displayArtist={false}/>
+          <SongCarousel songArray={unitVerSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false}/>
         </div>
       </div>
 

@@ -14,8 +14,8 @@ import type { SongMaster } from '@/data/types';
 import SongList from "@/features/common/components/SongList";
 
 export default function SongCarousel(
-  { songArray,displaySongCnt,displayArtist}
-  : { songArray: SongMaster[], displaySongCnt: number, displayArtist:boolean }
+  { songArray,displaySongCnt,displayArtist,useArtistBadge}
+  : { songArray: SongMaster[], displaySongCnt: number, displayArtist:boolean, useArtistBadge: boolean }
 ) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
@@ -56,7 +56,7 @@ export default function SongCarousel(
               <div className={`
                 items-start gap-y-0 gap-x-2 
                 lg:grid grid 
-                grid-cols-1
+                grid-cols-1 pt-1 pl-1
               `}>
                 {data.map((result, index) => (
                 <div className={``} key={result.songId}>
@@ -65,6 +65,7 @@ export default function SongCarousel(
                     index={index} 
                     song={result}
                     displayArtist={displayArtist}
+                    useArtistBadge={useArtistBadge}
                     displayArtwork={true}
                     displayReleaseDate={true}
                   />

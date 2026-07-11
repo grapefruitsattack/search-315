@@ -14,8 +14,8 @@ import IdolBadge from '@/features/common/components/IdolBadge';
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
 export default function SongList(
-  { song,index,displayArtist,displayArtwork,displayReleaseDate }
-  : { song: SongMaster, index: number, displayArtist: boolean, displayArtwork: boolean, displayReleaseDate:boolean }
+  { song,index,displayArtist,useArtistBadge,displayArtwork,displayReleaseDate }
+  : { song: SongMaster, index: number, displayArtist: boolean, useArtistBadge: boolean, displayArtwork: boolean, displayReleaseDate:boolean }
 ) {
   
   const router = useRouter();
@@ -51,13 +51,13 @@ export default function SongList(
 
   return (
   <div 
-    className="flex w-full min-h-[50px] cursor-pointer group"
-    onClick={() => router.push(`/song/` + song?.songId)}
+    className="flex w-full min-h-[50px] cursor-pointer group hover:bg-green-100"
   >
     {/* アートワーク */}
     <Link 
-      className ={`${displayArtwork?' group-hover:opacity-[.67]':'hidden'}`}
-      href={`/song/` + song.songId}
+      className ={`
+        ${displayArtwork?'h-fit rounded outline outline-2 outline-green-200/0 hover:opacity-[.67] hover:outline-green-400 ':'hidden'}`}
+      href={`/album/` + song.albumId}
     >
     {imgSrc===''
       ?
@@ -82,12 +82,13 @@ export default function SongList(
       }
     </Link>
     <div 
-      className={`
+      className={`  rounded
         grid grid-cols-[2fr_1fr] w-full
         font-sans 
         ${index%2===1?'bg-white':'bg-zinc-50'} 
-        group-hover:bg-zinc-200 
+        group-hover:bg-green-100
         `}
+      onClick={() => router.push(`/song/` + song?.songId)}
     >
       <Link 
         className="flex flex-col my-auto mx-2 text-xs mobileS:text-sm tablet:text-base truncate"
@@ -97,15 +98,15 @@ export default function SongList(
           <div className={`${displayReleaseDate?'text-xs text-gray-500':'hidden'}`}>
             {releaseDate}
           </div>
-          <div className="group-hover:underline truncate " >
+          <div className="group-hover:underline truncate font-semibold" >
             {song.songTitle}
           </div>
         </div>
         {/* アーティスト */}
         <div className={`${displayArtist?' mobileM:text-base text-sm':'hidden'}`}>
           <div className ='flex flex-wrap relative text-sm gap-0.5 mb-1 mx-1 '>
-            {artistArray.length <= 0
-              ?<p className="text-sm leading-tight text-zinc-700 ">{song?.displayArtist}</p>
+            {artistArray.length <= 0 || useArtistBadge===false
+              ?<p className="text-sm leading-tight text-zinc-700 truncate">{song?.displayArtist}</p>
               :artistArray.map(
                 (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={0} size={'block'}/></div>))
             }
