@@ -44550,5 +44550,61 @@
     "singingInfoId": "CLF03",
     "releaseDate": "20260902",
     "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS10",
+    "songId": "MTS10_1",
+    "singingInfoId": "MFM00",
+    "releaseDate": "20260826",
+    "type": "u"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS10",
+    "songId": "MTS10_1",
+    "singingInfoId": "MFM01",
+    "releaseDate": "20260826",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS10",
+    "songId": "MTS10_1",
+    "singingInfoId": "MFM02",
+    "releaseDate": "20260826",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS10",
+    "songId": "MTS10_1",
+    "singingInfoId": "MFM03",
+    "releaseDate": "20260826",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "MTS10",
+    "songId": "MTS10_2",
+    "singingInfoId": "MFM01",
+    "releaseDate": "20260826",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "MTS10",
+    "songId": "MTS10_3",
+    "singingInfoId": "MFM02",
+    "releaseDate": "20260826",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "MTS10",
+    "songId": "MTS10_4",
+    "singingInfoId": "MFM03",
+    "releaseDate": "20260826",
+    "type": "sver"
   }
 ]
