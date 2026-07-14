@@ -40,8 +40,10 @@ function getSearchResult(
   // PP
   if(searchParam.ppType===1) story = story.filter((data)=>data.pp>0);
   // ボイス
-  if(searchParam.voiceType===1||searchParam.voiceType===2){
-    story = story.filter((data)=>data.voice===searchParam.voiceType);
+  if(searchParam.voiceType===1){
+    story = story.filter((data)=>data.voice===1);
+  }else if(searchParam.voiceType===2){
+    story = story.filter((data)=>data.voiceAtRelease===1&&data.voice===0);
   }
   // カテゴリ
   if(searchParam.categoryArray.length>0){
