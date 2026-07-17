@@ -63,7 +63,7 @@ const Units = async ({
         <div className='px-0 mobileM:px-2 '>
         <UnitPageTabs type={type} member={selectedMember} unitMember={unitMember}/>
         </div>
-        {type==='story１'
+        {type==='story'
           ?
           <Suspense fallback={<>{'story loading'}</>}>
           {/* @ts-ignore Server Component */}

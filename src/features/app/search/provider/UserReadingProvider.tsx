@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext } from 'react';
-import useSWR from 'swr';
+import useSWR, { mutate } from 'swr';
 
 type UserReadingData = {
   story_id: string;

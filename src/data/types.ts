@@ -155,7 +155,7 @@ export type LivePerformer = {
   singingInfoName: string;
 };
 
-export type StoryTemp = {
+export type Story = {
   seq: number;
   storyId: string;
   media: number;
@@ -172,6 +172,7 @@ export type StoryTemp = {
   pp: number;
   infoStory: InfoStory[];
   howtoviewStory: string[];
+  relation: string[];
 };
 
 export type RelationStory = {
@@ -184,40 +185,6 @@ export type UserReadingData = {
   story_id: string;
   reading_date: string;
   read_later: number;
-};
-
-export type Story = {
-  storyId: string;
-  media: number;
-  category: string;
-  website: string;
-  headTitle: string;
-  storyTitle: string;
-  releaseDate: string;
-  subCnt: number;
-  voiceAtRelease: number;
-  voice: number;
-  still: number;
-  url: string;
-  infoStory: InfoStory[];
-  howtoviewStory: string[];
-  mSubStory: SubStory[];
-  relationStory: {
-    storyId: string;
-    media: number;
-    category: string;
-    website: string;
-    headTitle: string;
-    storyTitle: string;
-    releaseDate: Date;
-    voiceAtRelease: number;
-    voice: number;
-    url: string;
-    infoStory: InfoStory[];
-    howtoviewStory: string[];
-    pp: number;
-  }[];
-  pp: number;
 };
 
 export type InfoStory = {
@@ -235,25 +202,6 @@ export type SubStory = {
   voiceAtRelease: number;
   url: string;
   infoSubStory: InfoStory[];
-};
-
-export type StorySearchResult = {
-  story_id: string;
-  media: number;
-  category: string;
-  website: string;
-  head_title: string;
-  story_title: string;
-  release_date: Date;
-  voice_at_release: number;
-  voice: number;
-  still: number;
-  url: string;
-  info_id: InfoStory[];
-  howtoview_story: string[];
-  is_valid: number;
-  user_read_later: number|null;
-  pp: number;
 };
 
 export type UserReading = {

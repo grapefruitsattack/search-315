@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import singingMaster from '@/data/singingMaster.json';
-import type { StorySearchResult } from '@/data/types';
 import IdolBlock from "@/features/common/components/IdolBlock";
 import IdolBadge from "@/features/common/components/IdolBadge";
 import {ShareModalButton} from "@/features/app/shareModal/ShareModalButton";

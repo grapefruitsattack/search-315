@@ -1,6 +1,6 @@
 'use client'
 import React from "react"
-import type { StorySearchResult,StoryTemp } from '@/data/types';
+import type { Story } from '@/data/types';
 import m_story from '@/data/m_story.json';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 import Pagination from "@/features/common/components/Pagination";
@@ -14,7 +14,7 @@ function getSearchResult(
     ppType: number; andor: string; SortedAsc: number; page: number; readLaterType: string;
   }
   ):{
-    result: {story:StoryTemp;readLater:number|null;}[],totalCnt: number,login:boolean
+    result: {story:Story;readLater:number|null;}[],totalCnt: number,login:boolean
   }
 {
   const {
@@ -24,7 +24,7 @@ function getSearchResult(
   } = UseUserReading();
 
   // ストーリー絞り込み
-  let story: StoryTemp[] = m_story;
+  let story: Story[] = m_story;
   // 閲覧方法
   if(searchParam.howtoviewType===1){
     // 無料
@@ -70,7 +70,7 @@ function getSearchResult(
   }
 
   // 既読系情報
-  let storyResult:{story:StoryTemp;readLater:number|null;}[];
+  let storyResult:{story:Story;readLater:number|null;}[];
   if(login&&userReadingData!==null){
     storyResult = story.map((data)=>{
       const readLater = userReadingData?.find((readingData)=>readingData.story_id===data.storyId)?.read_later;
@@ -96,7 +96,7 @@ function getSearchResult(
 export default function SearchStoryResult({ searchParam }: { searchParam:{infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; ppType: number; andor: string; SortedAsc: number; page: number; readLaterType: string;} }) {
 
   const post = getSearchResult(searchParam);
-  const resultData:{story:StoryTemp;readLater:number|null;}[] = post.result;
+  const resultData:{story:Story;readLater:number|null;}[] = post.result;
   const totalCnt:number = post.totalCnt;
 
   // ページネーション
@@ -128,6 +128,7 @@ export default function SearchStoryResult({ searchParam }: { searchParam:{infoId
             website={data.story.website}
             headTitle={data.story.headTitle}
             infoStory={data.story.infoStory}
+            releaseDate={data.story.releaseDate}
             howtoviewStory={data.story.howtoviewStory}
             media={data.story.media}
             storyTitle={data.story.storyTitle}

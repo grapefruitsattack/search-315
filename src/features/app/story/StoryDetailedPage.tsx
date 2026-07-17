@@ -4,7 +4,7 @@ import React from "react"
 import { Toaster } from "@/components/ui/sonner";
 import CopyButton from "@/features/common/components/CopyButton";
 import GetUnitIdolName from "@/features/common/utils/GetUnitIdolName";
-import type { InfoStory,ShareModalTabInfo,StoryTemp,SubStory,UserReadingData } from '@/data/types';
+import type { InfoStory,ShareModalTabInfo,Story,SubStory,UserReadingData } from '@/data/types';
 import m_sub_story from '@/data/m_sub_story.json';
 import {
    GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName,GetVoiceStateName,GetStoryHowtoviewName 
@@ -22,10 +22,10 @@ import StoryReadLaterButton from "./components/StoryReadLaterButton";
 import StoryReadLaterEditButton from "./components/StoryReadLaterEditButton";
 
 export default async function StoryDetailedPage(
-  { mainStoryData,relationStorysData,login }: {mainStoryData:{story:StoryTemp,userReadingData:UserReadingData|null}, relationStorysData:{story:StoryTemp,userReadingData:UserReadingData|null}[], login:boolean})
+  { mainStoryData,relationStorysData,login }: {mainStoryData:{story:Story,userReadingData:UserReadingData|null}, relationStorysData:{story:Story,userReadingData:UserReadingData|null}[], login:boolean})
   : Promise<JSX.Element> 
 {
-  const storyData: StoryTemp = mainStoryData.story;
+  const storyData: Story = mainStoryData.story;
   const isRead: boolean = mainStoryData.userReadingData===null?false:mainStoryData.userReadingData.read_later===0;
   const isReadLeater: boolean = mainStoryData.userReadingData===null?false:mainStoryData.userReadingData.read_later===1;
 
@@ -39,8 +39,8 @@ export default async function StoryDetailedPage(
   const releaseDate: string 
     = new Date(
         Number(storyData.releaseDate.substring(0,4))
-        ,Number(storyData.releaseDate.substring(5,7))-1
-        ,Number(storyData.releaseDate.substring(9,11))).toLocaleDateString();
+        ,Number(storyData.releaseDate.substring(4,6))-1
+        ,Number(storyData.releaseDate.substring(6,9))).toLocaleDateString();
 
   // シェア文章
   let shareText: string = '';
@@ -426,6 +426,7 @@ export default async function StoryDetailedPage(
                   website={result.story.website}
                   headTitle={result.story.headTitle} 
                   storyTitle={result.story.storyTitle} 
+                  releaseDate={result.story.releaseDate}
                   infoStory={result.story.infoStory} 
                   howtoviewStory={result.story.howtoviewStory}
                   url={result.story.url} 

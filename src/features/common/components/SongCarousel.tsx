@@ -78,16 +78,8 @@ export default function SongCarousel(
         <CarouselPrevious className={`top-[calc(100%+0.5rem)] left-0 translate-y-0 ml-4 tablet:ml-0`} />
         <CarouselNext className="top-[calc(100%+0.5rem)] left-2 translate-x-full translate-y-0 ml-4 tablet:ml-0" />
       </Carousel>
-      <div className="mt-4 flex items-center justify-end gap-2">
-        {Array.from({ length: count }).map((_, index) => (
-          <button
-            className={cn("h-3.5 w-3.5 rounded-full border-2", {
-              "border-primary": current === index + 1,
-            })}
-            key={index}
-            onClick={() => api?.scrollTo(index)}
-          />
-        ))}
+      <div className={`${count===1?'collapse':'flex'} my-2  mr-4 text-sm mobileM:text-base items-center justify-end gap-2`}>
+        {`${current}/${count}`}
       </div>
     </div>
   );

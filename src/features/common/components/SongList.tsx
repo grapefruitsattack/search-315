@@ -51,7 +51,7 @@ export default function SongList(
 
   return (
   <div 
-    className="flex w-full min-h-[50px] cursor-pointer group hover:bg-green-100"
+    className="flex w-full min-h-[50px] cursor-pointer group "
   >
     {/* アートワーク */}
     <Link 
@@ -82,11 +82,12 @@ export default function SongList(
       }
     </Link>
     <div 
-      className={`  rounded
+      className={`rounded
         grid grid-cols-[2fr_1fr] w-full
         font-sans 
         ${index%2===1?'bg-white':'bg-zinc-50'} 
         group-hover:bg-green-100
+        group/songtitle
         `}
       onClick={() => router.push(`/song/` + song?.songId)}
     >
@@ -98,7 +99,7 @@ export default function SongList(
           <div className={`${displayReleaseDate?'text-xs text-gray-500':'hidden'}`}>
             {releaseDate}
           </div>
-          <div className="group-hover:underline truncate font-semibold" >
+          <div className="group-hover/songtitle:underline truncate font-semibold" >
             {song.songTitle}
           </div>
         </div>

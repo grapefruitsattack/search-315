@@ -1,6 +1,9 @@
 'use client'
 import type { Story,InfoStory } from '@/data/types';
+import { useRouter } from 'next/navigation';
 import React, { useState } from "react";
+import { flushSync } from "react-dom";
+import { mutate } from 'swr';
 import Link from 'next/link';
 import { toast } from 'sonner';
 import { MEDIA,CATEGORY,WEBSITE,HOW_TO_VIEW } from '@/features/common/const/StoryInfoConst';
@@ -14,14 +17,22 @@ import LoginModal from '@/features/common/components/login/LoginModal';
 import {useDisclosure, } from "@chakra-ui/react";
 
 export default function StoryBlock(
-  { storyId,media,category,website,headTitle,storyTitle,infoStory,howtoviewStory,url,pp,login,userReadLater,displayLogin }
+  { storyId,media,category,website,headTitle,storyTitle,releaseDate,infoStory,howtoviewStory,url,pp,login,userReadLater,displayLogin }
   :{ 
     storyId: string,media: number|null, category: string|null, website: string,
-    headTitle: string, storyTitle: string, infoStory: InfoStory[],howtoviewStory: string[]
+    headTitle: string, storyTitle: string, releaseDate: string, infoStory: InfoStory[],howtoviewStory: string[]
     url: string, pp:number, login:boolean, userReadLater: number|null,
     displayLogin: boolean
   }
 ) {
+  
+  const router = useRouter();
+
+  const releaseDateStr: string 
+    = new Date(
+        Number(releaseDate.substring(0,4))
+        ,Number(releaseDate.substring(4,6))-1
+        ,Number(releaseDate.substring(6,9))).toLocaleDateString();
   
   const disclosure = useDisclosure();
   const infoStoryPerson: InfoStory[] = infoStory.filter(data=>data.personFlg===1);
@@ -44,27 +55,40 @@ export default function StoryBlock(
   const [loading, setLoading] = useState<boolean>(false);
 
   async function addIsReading (storyId: string, storyTItle: string) {
-    await UpdateReadingData(storyId,'',1)
-    .then(() => {
-      setLoading(true);
-      return new Promise<void>((resolve) => {
-        window.setTimeout(() => {
-          setLoading(false);
-          resolve();
-        }, 1000);
-      });
-    })
-    .then(() => {
-      toast(`「${storyTitle}」を後で読むリストに新規追加しました`, {
-        action: {
-          label: "OK",
-          onClick: () => console.log("Undo"),
-        },
-      });
-    }).catch((e) => {
-      console.log(e);
-    }).finally(() => {
-    })
+          try {
+            flushSync(() => setLoading(true));
+            await UpdateReadingData(storyId,'',1);
+            await mutate('/api/user-reading');
+            await new Promise<void>((resolve) => {
+                setTimeout(() => {
+                  setLoading(false);
+                  resolve();
+                }, 1000);
+            });
+            toast.success(
+              `「${storyTitle}」を後で読むリストに新規追加しました`, {
+                action: {
+                  label: "OK",
+                  onClick: () => console.log("Undo"),
+                }
+            })
+          } catch (e:any) {
+            await new Promise<void>((resolve) => {
+                setTimeout(() => {
+                  setLoading(false);
+                  resolve();
+                }, 500);
+            });
+            if(e.message==='No user session found'){
+              router.refresh()
+            }else{
+              toast.error(
+                "後で読む」リストに追加できませんでした"
+                ,{description:'何度も失敗する場合、リロード後再度お試しください',duration:8000,position:'bottom-right'});
+            };
+          }
+        
+
   };
   async function deleteIsReading(storyId: string, storyTItle: string) {
     await DeleteReadingData(storyId,1)
@@ -125,6 +149,7 @@ export default function StoryBlock(
         }
       </section>
       <section className='px-1 mb-1'>
+      <div className='text-xs text-zinc-600'>{releaseDateStr}</div>
       <div className ="
         row-span-1 col-span-2 
         leading-tight

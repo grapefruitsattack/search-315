@@ -60,6 +60,7 @@ export default function UnitPageRecommend({ unitId }: { unitId: string }) {
                   category={result.data.category||''}
                   website={result.data.website||''}
                   headTitle={result.data.headTitle||''}
+                  releaseDate={result.data.releaseDate||''}
                   infoStory={result.data.infoStory||[]}
                   howtoviewStory={result.data.howtoviewStory||[]}
                   media={result.data.media||0}
