@@ -76,7 +76,7 @@ export default function UnitMusic({ unitId }: { unitId: string }) {
           px-0 mobileM:px-2
           
         `}>
-          <SongCarousel songArray={collaboSongs} displaySongCnt={4} displayArtist={true} useArtistBadge={true}/>
+          <SongCarousel songArray={collaboSongs} displaySongCnt={4} displayArtist={true} useArtistBadge={false}/>
         </div>
       </div>
       {coverSongs.length===0 

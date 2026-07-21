@@ -34,8 +34,7 @@ function getSearchResult(
     story = story.filter((data)=>data.howtoviewStory.includes('asb_prem'));
   }else if(searchParam.howtoviewType===3){
     // 有償購入のみ
-    story = story.filter((data)=>data.howtoviewStory.includes('asb_prem')===false);
-    story = story.filter((data)=>data.howtoviewStory.some((htvData)=>['asb_pur','asb_scode_cd','asb_scode'].includes(htvData)));
+    story = story.filter((data)=>data.howtoviewStory.some((htvData)=>['asb_prem','asb_pur','asb_scode_cd','asb_scode'].includes(htvData)));
   }
   // PP
   if(searchParam.ppType===1) story = story.filter((data)=>data.pp>0);

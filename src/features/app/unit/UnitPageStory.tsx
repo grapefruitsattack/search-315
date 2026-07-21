@@ -3,12 +3,13 @@ import { cache } from 'react';
 import Link from 'next/link';
 import { headers } from "next/headers";
 import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
-import type { Story,UserReadingData } from '@/data/types';
+import type { SingingMaster,Story,UserReadingData } from '@/data/types';
 import m_story from '@/data/m_story.json';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
-import { MEDIA, CATEGORY, getCategoryByMedia } from '@/features/common/const/StoryInfoConst';
+import { MEDIA, HOW_TO_VIEW, getCategoryByMedia } from '@/features/common/const/StoryInfoConst';
 import CategoryBadge from '@/features/common/components/story/CategoryBadge';
 import FisherYatesShuffl from '@/features/common/utils/FisherYatesShuffl';
+import StoryCarousel from "@/features/common/components/StoryCarousel";
 
 async function getData(
   unitId: string
@@ -40,9 +41,8 @@ async function getData(
     = m_story.filter((data)=>
       data.infoStory.some(infoData=>infoData.infoId.substring(0,3)===unitPrefix)
     );
-console.log(unitStoryData)
-  const freeStoryData: Story[] = unitStoryData.filter((data)=>data.howtoviewStory.some((htvData)=>['asb_prem','asb_pur','asb_scode_cd','asb_scode'].includes(htvData)===false));
-  const paidStoryData: Story[] = unitStoryData.filter((data)=>data.howtoviewStory.some((htvData)=>['asb_prem','asb_pur','asb_scode_cd','asb_scode'].includes(htvData)===true));
+  const freeStoryData: Story[] = unitStoryData.filter((data)=>data.howtoviewStory.some((htvData)=>[HOW_TO_VIEW.asbPremium.id,HOW_TO_VIEW.asbPurchase.id,HOW_TO_VIEW.asbSerialcodeCD.id,HOW_TO_VIEW.asbSerialcode.id].includes(htvData)===false));
+  const paidStoryData: Story[] = unitStoryData.filter((data)=>data.howtoviewStory.some((htvData)=>[HOW_TO_VIEW.asbPremium.id,HOW_TO_VIEW.asbPurchase.id,HOW_TO_VIEW.asbSerialcodeCD.id,HOW_TO_VIEW.asbSerialcode.id].includes(htvData)===true));
   const archiveStoryData: Story[] = unitStoryData.filter((data)=>[1,2].includes(data.media));
   const randArray = FisherYatesShuffl(archiveStoryData.length)
   const randArchiveStoryData: Story[] = [];
@@ -69,149 +69,216 @@ console.log(unitStoryData)
 
 
 export default async function UnitPageStory(
-  { unitId }: { unitId: string;}): Promise<JSX.Element> 
+  { unitId,unitMember }: { unitId: string; unitMember: SingingMaster[]}): Promise<JSX.Element> 
 {
   const post = await getData(unitId);
   const login = post.login;
+  const searchQueryId = unitMember.map(data=>data.singingInfoId).concat(unitId).join(' ');
   
   return (
     <>
-    <section className="flex items-center ">
+    <div className="flex items-center ">
       <div 
         className="flex flex-col tablet:flex-row justify-start w-fit
-        text-2xl font-mono pb-1
+        tezt-xl mobileM:text-2xl font-mono pb-1
         "
       >
         <div className='flex items-center justify-start'>
           {/* MingCute Icon */}
-          <svg className="" xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
+          <svg className="w-[20px] h-[20px] mobileM:w-[24px] mobileM:h-[24px]" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
           <g id="document_3_line" fill='none'>
             <path d='M24 0v24H0V0zM12.593 23.258l-.011.002-.071.035-.02.004-.014-.004-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113-.013.002-.185.093-.01.01-.003.011.018.43.005.012.008.007.201.093c.012.004.023 0 .029-.008l.004-.014-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014-.034.614c0 .012.007.02.017.024l.015-.002.201-.093.01-.008.004-.011.017-.43-.003-.012-.01-.01z'/>
             <path className="fill-green-700" d='M18 2a2 2 0 0 1 2 2v11.586A2 2 0 0 1 19.414 17L15 21.414a2 2 0 0 1-1.414.586H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2H6v16h6v-4.5a1.5 1.5 0 0 1 1.5-1.5H18zm-.414 12H14v3.586zM10 11a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2zm5-4a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2Z'/></g>
           </svg>
-          {'新着ストーリー'}
-        </div>
-        <div className=' ml-4 tablet:ml-2 ml-4'>
-            <Link
-              className='flex z-10 items-center w-fit gap-1
-              border-2 border-green-700 text-green-800 bg-white
-              text-sm tablet:text-base font-bold
-              '
-              href={{ pathname: '/search/story', query: {q: unitId, order:'desc'}}}
-            >
-              <span className='ml-1'>{'全'}</span>
-              <span className=''>{post.freeStoryCnt}</span>
-              <span className='mr-1'>{'ストーリーを見る'}</span>
-              <span className='bg-green-700 fill-white'>
-                <svg className='w-[22px] h-[22px] tablet:w-[24px] tablet:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -950 900 950">
-                <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/>
-                </svg>
-            </span>
-            </Link>
+          {'無料新着ストーリー'}
         </div>
       </div>
       <div className='h-[0.5px] grow bg-slate-900/50 ml-[1rem] '>
       {''}
       </div>
-    </section>
-      <div className={`
-          items-start gap-4 grid-cols-1 tablet:grid-cols-3 mt-2
-          grid
-      `}>
-        {post.freeStoryData.map((result, index) => (
-          <StoryBlock 
-            key={index} 
-            storyId={result.story.storyId} 
-            media={result.story.media} 
-            category={result.story.category} 
-            website={result.story.website}
-            headTitle={result.story.headTitle} 
-            storyTitle={result.story.storyTitle} 
-            releaseDate={result.story.releaseDate} 
-            infoStory={result.story.infoStory} 
-            howtoviewStory={result.story.howtoviewStory}
-            url={result.story.url} 
-            pp={result.story.pp||0}
-            login={login}
-            userReadLater={result.userReadingData===null?null:result.userReadingData.read_later}
-            displayLogin={true}
-          />
-        ))}
-      </div>
-    <section className="grid grid-flow-row-dense items-start pb-8 gap-4 grid-cols-1 lg:grid-cols-3 w-full">
-      {/* {recentStoryData.length===0 
-            ? <div>結果なし</div>
-            :recentStoryData.map((data, index) => (
-            <div className="flex flex-col justify-center items-start " key={index}>
-              <StoryBlock 
-                key={index} 
-                storyId={data.story_id}
-                category={data.category}
-                website={data.website}
-                headTitle={data.head_title}
-                infoStory={data.info_id}
-                howtoviewStory={[]}
-                media={data.media}
-                storyTitle={data.story_title}
-                url={data.url}
-                pp={data.pp}
-                login={login}
-                userReadLater={data.user_read_later}
-                displayLogin={true}
-              />
-            </div>))} */}
-    </section>
+    </div>
+    <div className='tablet:hidden'>
+      <StoryCarousel StoryArray={post.freeStoryData} displayCnt={1} login={login} />
+    </div>
+    <div className={`
+        items-start gap-4 hidden tablet:grid tablet:grid-cols-3 mt-2
+    `}>
+      {post.freeStoryData.map((result, index) => (
+        <StoryBlock 
+          key={index} 
+          storyId={result.story.storyId} 
+          media={result.story.media} 
+          category={result.story.category} 
+          website={result.story.website}
+          headTitle={result.story.headTitle} 
+          storyTitle={result.story.storyTitle} 
+          releaseDate={result.story.releaseDate} 
+          infoStory={result.story.infoStory} 
+          howtoviewStory={result.story.howtoviewStory}
+          url={result.story.url} 
+          pp={result.story.pp||0}
+          login={login}
+          userReadLater={result.userReadingData===null?null:result.userReadingData.read_later}
+          displayLogin={true}
+        />
+      ))}
+    </div>
 
-    <section 
-      className="
-      text-2xl font-mono flex items-center w-full pb-1
-      after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-      "
-    >
-      {/* Remix Icon */}
-      <svg className="fill-pink-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M5.76282 17H20V5H4V18.3851L5.76282 17ZM6.45455 19L2 22.5V4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4V18C22 18.5523 21.5523 19 21 19H6.45455ZM11 14H13V16H11V14ZM8.56731 8.81346C8.88637 7.20919 10.302 6 12 6C13.933 6 15.5 7.567 15.5 9.5C15.5 11.433 13.933 13 12 13H11V11H12C12.8284 11 13.5 10.3284 13.5 9.5C13.5 8.67157 12.8284 8 12 8C11.2723 8 10.6656 8.51823 10.5288 9.20577L8.56731 8.81346Z"></path>
-      </svg>
+    <div className='flex tablet:mt-4 pr-2 tablet:pr-0 pt-[42px] tablet:pt-0'>
+        <Link
+          className='flex z-10 items-center w-fit gap-1
+          border-2 border-green-700 text-green-800 bg-white
+          text-sm tablet:text-base font-bold ml-auto
+          '
+          href={{ pathname: '/search/story', query: {q: searchQueryId, order:'desc', htv: 1}}}
+        >
+          <span className='ml-1'>{'全'}</span>
+          <span className=''>{post.freeStoryCnt}</span>
+          <span className='mr-1'>{'無料ストーリーを見る'}</span>
+          <span className='bg-green-700 fill-white'>
+            <svg className='w-[22px] h-[22px] tablet:w-[24px] tablet:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -950 900 950">
+            <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/>
+            </svg>
+        </span>
+        </Link>
+    </div>
+
+    <div className="flex items-center pt-8">
+      <div 
+        className="flex flex-col tablet:flex-row justify-start w-fit
+        tezt-xl mobileM:text-2xl font-mono pb-1
+        "
+      >
+        <div className='flex items-center justify-start'>
+          {/* MingCute Icon */}
+          <svg className="w-[20px] h-[20px] mobileM:w-[24px] mobileM:h-[24px]" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+          <g id="document_3_line" fill='none'>
+            <path d='M24 0v24H0V0zM12.593 23.258l-.011.002-.071.035-.02.004-.014-.004-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113-.013.002-.185.093-.01.01-.003.011.018.43.005.012.008.007.201.093c.012.004.023 0 .029-.008l.004-.014-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014-.034.614c0 .012.007.02.017.024l.015-.002.201-.093.01-.008.004-.011.017-.43-.003-.012-.01-.01z'/>
+            <path className="fill-green-700" d='M18 2a2 2 0 0 1 2 2v11.586A2 2 0 0 1 19.414 17L15 21.414a2 2 0 0 1-1.414.586H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2H6v16h6v-4.5a1.5 1.5 0 0 1 1.5-1.5H18zm-.414 12H14v3.586zM10 11a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2zm5-4a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2Z'/></g>
+          </svg>
+          {'有償新着ストーリー'}
+        </div>
+      </div>
+      <div className='h-[0.5px] grow bg-slate-900/50 ml-[1rem] '>
       {''}
-    </section>
-
-    {/* アイマスポータル */}
-    <section 
-      className="
-      text-2xl font-mono flex items-center w-full pb-4
-      after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-      "
-    >
-      <div 
-        className='rounded-lg p-1 text-sm tablet:text-xl
-        border-2 border-teal-500 text-teal-700 font-bold 
-        '
-      >
-        {MEDIA.proe.name}
       </div>
-    </section>
+    </div>
+    <div className='tablet:hidden'>
+      <StoryCarousel StoryArray={post.paidStoryData} displayCnt={1} login={login} />
+    </div>
+    <div className={`
+        items-start gap-4 hidden tablet:grid tablet:grid-cols-3 mt-2
+    `}>
+      {post.paidStoryData.map((result, index) => (
+        <StoryBlock 
+          key={index} 
+          storyId={result.story.storyId} 
+          media={result.story.media} 
+          category={result.story.category} 
+          website={result.story.website}
+          headTitle={result.story.headTitle} 
+          storyTitle={result.story.storyTitle} 
+          releaseDate={result.story.releaseDate} 
+          infoStory={result.story.infoStory} 
+          howtoviewStory={result.story.howtoviewStory}
+          url={result.story.url} 
+          pp={result.story.pp||0}
+          login={login}
+          userReadLater={result.userReadingData===null?null:result.userReadingData.read_later}
+          displayLogin={true}
+        />
+      ))}
+    </div>
 
+    <div className='flex tablet:mt-4 pr-2 tablet:pr-0 pt-[42px] tablet:pt-0'>
+        <Link
+          className='flex z-10 items-center w-fit gap-1
+          border-2 border-green-700 text-green-800 bg-white
+          text-sm tablet:text-base font-bold ml-auto
+          '
+          href={{ pathname: '/search/story', query: {q: searchQueryId, order:'desc', htv: 2}}}
+        >
+          <span className='ml-1'>{'全'}</span>
+          <span className=''>{post.paidStoryCnt}</span>
+          <span className='mr-1'>{'有償ストーリーを見る'}</span>
+          <span className='bg-green-700 fill-white'>
+            <svg className='w-[22px] h-[22px] tablet:w-[24px] tablet:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -950 900 950">
+            <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/>
+            </svg>
+        </span>
+        </Link>
+    </div>
 
-    {/* モバエム */}
-    <section 
-      className="
-      text-2xl font-mono flex items-center w-full pb-4
-      after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-      "
-    >
+    <div className="flex items-center pt-8">
       <div 
-        className='rounded-lg p-1 text-sm tablet:text-xl
-        border-2 border-teal-500 text-teal-700 font-bold 
-        '
+        className="flex flex-col tablet:flex-row justify-start w-fit
+        tezt-xl mobileM:text-2xl font-mono pb-1
+        "
       >
-        {MEDIA.moba.name}
+        <div className='flex items-center justify-start'>
+          {/* MingCute Icon */}
+          <svg className="w-[20px] h-[20px] mobileM:w-[24px] mobileM:h-[24px]" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+          <g id="document_3_line" fill='none'>
+            <path d='M24 0v24H0V0zM12.593 23.258l-.011.002-.071.035-.02.004-.014-.004-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113-.013.002-.185.093-.01.01-.003.011.018.43.005.012.008.007.201.093c.012.004.023 0 .029-.008l.004-.014-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014-.034.614c0 .012.007.02.017.024l.015-.002.201-.093.01-.008.004-.011.017-.43-.003-.012-.01-.01z'/>
+            <path className="fill-green-700" d='M18 2a2 2 0 0 1 2 2v11.586A2 2 0 0 1 19.414 17L15 21.414a2 2 0 0 1-1.414.586H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2H6v16h6v-4.5a1.5 1.5 0 0 1 1.5-1.5H18zm-.414 12H14v3.586zM10 11a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2zm5-4a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2Z'/></g>
+          </svg>
+          <div>
+            {'アーカイブストーリー'}
+          </div>
+        </div>
+        <div className='pl-[20px] mobileM:pl-[24px]'>
+          {'(ランダム表示)'}
+        </div>
       </div>
-    </section>
-    <section 
-      className="
-      grid grid-cols-1 tablet:grid-cols-2
-      gap-x-4 gap-y-4
-      "
-    ></section>
+      <div className='h-[0.5px] grow bg-slate-900/50 ml-[1rem] '>
+      {''}
+      </div>
+    </div>
+    <div className='tablet:hidden'>
+      <StoryCarousel StoryArray={post.archiveStoryData} displayCnt={1} login={login} />
+    </div>
+    <div className={`
+        items-start gap-4 hidden tablet:grid tablet:grid-cols-3 mt-2
+    `}>
+      {post.archiveStoryData.map((result, index) => (
+        <StoryBlock 
+          key={index} 
+          storyId={result.story.storyId} 
+          media={result.story.media} 
+          category={result.story.category} 
+          website={result.story.website}
+          headTitle={result.story.headTitle} 
+          storyTitle={result.story.storyTitle} 
+          releaseDate={result.story.releaseDate} 
+          infoStory={result.story.infoStory} 
+          howtoviewStory={result.story.howtoviewStory}
+          url={result.story.url} 
+          pp={result.story.pp||0}
+          login={login}
+          userReadLater={result.userReadingData===null?null:result.userReadingData.read_later}
+          displayLogin={true}
+        />
+      ))}
+    </div>
+
+    <div className='flex tablet:mt-4 pr-2 tablet:pr-0 pt-[42px] tablet:pt-0'>
+        <Link
+          className='flex z-10 items-center w-fit gap-1
+          border-2 border-green-700 text-green-800 bg-white
+          text-sm tablet:text-base font-bold ml-auto
+          '
+          href={{ pathname: '/search/story', query: {q: searchQueryId, order:'desc', htv: 2}}}
+        >
+          <span className='ml-1'>{'全'}</span>
+          <span className=''>{post.archiveStoryCnt}</span>
+          <span className='mr-1'>{'アーカイブストーリーを見る'}</span>
+          <span className='bg-green-700 fill-white'>
+            <svg className='w-[22px] h-[22px] tablet:w-[24px] tablet:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -950 900 950">
+            <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/>
+            </svg>
+        </span>
+        </Link>
+    </div>
 
 </>)
 };
