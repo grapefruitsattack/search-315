@@ -7,8 +7,6 @@ import songInfoAsc from '@/data/songInfoAsc.json'
 import livePerformer from '@/data/livePerformer.json'
 import liveMaster from '@/data/liveMaster.json'
 import type { SongMaster, LiveMaster } from '@/data/types';
-import SongBlock from "@/features/common/components/SongBlock";
-import SongList from "@/features/common/components/SongList";
 import SongCarousel from "@/features/common/components/SongCarousel";
 
 export default function IdolPageMusic({ idolId }: { idolId: string }) {

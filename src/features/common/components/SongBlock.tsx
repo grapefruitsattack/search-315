@@ -3,10 +3,11 @@ import React, { useState } from "react";
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter, usePathname, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import type { SongMaster } from '@/data/types';
 import subscSongs from '@/data/subscSongs.json';
 import albumMasters from '@/data/albumMaster.json';
+import songMaster from '@/data/songMaster.json';
 import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
 import YoutubeButton from "@/features/common/components/YoutubeButton";
 import {GetArtistBadgeInfo} from '@/features/common/utils/ArtistUtils';
@@ -14,12 +15,13 @@ import IdolBadge from '@/features/common/components/IdolBadge';
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
 export default function SongBlock(
-  { albumId,trackNo,song,diplayAlbum }
-  : { albumId: string, trackNo: number, song: SongMaster, diplayAlbum?: boolean }
+  { songId,diplayAlbum }
+  : { songId: string, diplayAlbum?: boolean }
 ) {
+  const song: SongMaster = songMaster.find((data=>data.songId===songId)) as SongMaster;
   
   const router = useRouter();
-  const albam = albumMasters.find(data => data.albumId === song?.albumId);
+  const albam = albumMasters.find(data => data.albumId === song.albumId);
   const imgSrc: string = GetArtWorkSrc(albam?.sereisId||'',albam?.isSoloColle||0,albam?.isUnitColle||0);
 
   const artistArray: string[] = GetArtistBadgeInfo(song.artist);
@@ -30,18 +32,7 @@ export default function SongBlock(
       ?subscSongs.find(data=>song.songId===data.id)?.youtubeId || ''
       :'';
 
-  const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const [tooltipOn, setTooltipOn] = useState<boolean>(false);
-
-  function copyTextToClipboard(text: string) {
-    navigator.clipboard.writeText(text)
-    .then(function() {
-      setTooltipOn(true);
-      window.setTimeout(function(){setTooltipOn(false);}, 1500);
-    }, function(err) {
-    });
-  };
     return (
       
     <section 

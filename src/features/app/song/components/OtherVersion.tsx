@@ -39,9 +39,7 @@ export default function OtherVersion({ id ,otherVersionSongs }: { id: string, ot
             {resultSort.map((result, index) => (
             <SongBlock 
               key={index} 
-              albumId={result.albumId} 
-              trackNo={result.trackNo} 
-              song={result}
+              songId={result.songId}
             />
             ))}
             </section>

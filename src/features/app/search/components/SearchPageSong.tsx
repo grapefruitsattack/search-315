@@ -145,9 +145,7 @@ export default function SearchPageSong({ }: {}) {
           :displayResults.map((result, index) => (
           <SongBlock 
             key={index} 
-            albumId={result.albumId} 
-            trackNo={result.trackNo} 
-            song={result}
+            songId={result.songId}
           />
           ))}
           </section>

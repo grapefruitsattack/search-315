@@ -32,18 +32,11 @@ export default function UnitPage({ singingInfoId }: { singingInfoId: string  }) 
 
   //ソロ曲取得
   const soloSongInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === id && data.type === 's').map(data=>data.songId);
-  const soloSongs: SongMaster[] 
-    = soloSongInfos.map(songid=>songMaster.find(data=>songid===data.songId && data.isSoloColle === 0 && data.isUnitColle === 0))
-    .filter((item): item is SongMaster => typeof item == 'object').slice().reverse();
   const soloColleSongInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === id && data.type === 'sver').map(data=>data.songId);
-    const soloColleSongs: SongMaster[] 
-  = soloColleSongInfos.map(songid=>songMaster.find(data=>songid===data.songId && data.isUnitColle === 0))
-  .filter((item): item is SongMaster => typeof item == 'object').slice().reverse();
+
   //越境系曲取得
   const collaboSongInfos: string[] = songInfoAsc.filter(data => data.singingInfoId === id && ['c', 'cover', 't'].includes(data.type)).map(data=>data.songId);
-  const collaboSongs: SongMaster[] 
-    = collaboSongInfos.map(songid=>songMaster.find(data=>songid===data.songId))
-    .filter((item): item is SongMaster => typeof item == 'object').slice().reverse();
+
 
   //ライブ情報
   const livePerIds: string[] = livePerformer.filter(data => data.singingInfoId === id).map(data=>data.livePerId);
@@ -165,14 +158,12 @@ export default function UnitPage({ singingInfoId }: { singingInfoId: string  }) 
           {'ソロ曲'}
       </div>
       <section className='mb-8 lg:min-h-[180px] min-h-[170px] rounded-lg bg-gradient-to-r from-indigo-50 to-emerald-50 overflow-x-scroll overflow-y-hidden flex flex-row flex-nowrap gap-x-2 pt-4 pb-4 items-start'>
-      {soloSongs.length===0 
+      {soloSongInfos.length===0 
             ? <div>結果なし</div>
-            :soloSongs.map((result, index) => (
+            :soloSongInfos.map((result, index) => (
             <div className='flex-none lg:w-[300px] w-[200px]' key={index} >
             <SongBlock 
-              albumId={result.albumId} 
-              trackNo={result.trackNo} 
-              song={result}
+              songId={result}
             />
             </div>
             ))}
@@ -187,14 +178,12 @@ export default function UnitPage({ singingInfoId }: { singingInfoId: string  }) 
           {'個人参加曲'}
       </div>
       <section className='mb-8 lg:min-h-[180px] min-h-[170px] rounded-lg bg-gradient-to-r from-indigo-50 to-emerald-50 overflow-x-scroll overflow-y-hidden flex flex-row flex-nowrap gap-x-2 pt-4 pb-4 items-start'>
-      {collaboSongs.length===0 
+      {collaboSongInfos.length===0 
             ? <div>結果なし</div>
-            :collaboSongs.map((result, index) => (
+            :collaboSongInfos.map((result, index) => (
             <div className='flex-none lg:w-[300px] w-[200px]' key={index} >
             <SongBlock 
-              albumId={result.albumId} 
-              trackNo={result.trackNo} 
-              song={result}
+              songId={result}
             />
             </div>
             ))}
@@ -210,14 +199,12 @@ export default function UnitPage({ singingInfoId }: { singingInfoId: string  }) 
           {'ソロVer'}
       </div>
       <section className='mb-8 lg:min-h-[180px] min-h-[170px] rounded-lg bg-gradient-to-r from-indigo-50 to-emerald-50 overflow-x-scroll overflow-y-hidden flex flex-row flex-nowrap gap-x-2 pt-4 pb-4 items-start'>
-      {soloColleSongs.length===0 
+      {soloColleSongInfos.length===0 
             ? <div>結果なし</div>
-            :soloColleSongs.map((result, index) => (
+            :soloColleSongInfos.map((result, index) => (
             <div className='flex-none lg:w-[300px] w-[200px]' key={index} >
             <SongBlock 
-              albumId={result.albumId} 
-              trackNo={result.trackNo} 
-              song={result}
+              songId={result}
             />
             </div>
             ))}
