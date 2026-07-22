@@ -1,5 +1,157 @@
 [
   {
+    "seq": 1569,
+    "storyId": "db89zxmheynb2j7i",
+    "media": 3,
+    "category": "iof",
+    "website": "asb",
+    "headTitle": "",
+    "storyTitle": "ただの準備運動",
+    "releaseDate": "20260719",
+    "subCnt": 0,
+    "voiceAtRelease": 0,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/episode/entrance/gw70pewlnn0pqod",
+    "pp": 5,
+    "infoStory": [
+      {
+        "infoId": "KGD00",
+        "personFlg": 0
+      },
+      {
+        "infoId": "KGD01",
+        "personFlg": 1
+      },
+      {
+        "infoId": "KGD02",
+        "personFlg": 1
+      },
+      {
+        "infoId": "KGD03",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [
+      "asb_login"
+    ],
+    "relation": []
+  },
+  {
+    "seq": 1568,
+    "storyId": "amnrdnrxcfsn6ip7",
+    "media": 3,
+    "category": "iof",
+    "website": "asb",
+    "headTitle": "",
+    "storyTitle": "キャラの問題",
+    "releaseDate": "20260718",
+    "subCnt": 0,
+    "voiceAtRelease": 0,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/episode/entrance/gn54ynqr775ye0d",
+    "pp": 5,
+    "infoStory": [
+      {
+        "infoId": "SEM00",
+        "personFlg": 0
+      },
+      {
+        "infoId": "SEM01",
+        "personFlg": 1
+      },
+      {
+        "infoId": "SEM02",
+        "personFlg": 1
+      },
+      {
+        "infoId": "SEM03",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [
+      "asb_login"
+    ],
+    "relation": []
+  },
+  {
+    "seq": 1567,
+    "storyId": "b7qvd1fbpw2viws9",
+    "media": 3,
+    "category": "iof",
+    "website": "asb",
+    "headTitle": "Our cozy dozen YearZ!!!!!!!!!!!! 生配信連動ストーリー",
+    "storyTitle": "TRANSCENDENT BINGE!!!!!!!!!!!!",
+    "releaseDate": "20260717",
+    "subCnt": 0,
+    "voiceAtRelease": 0,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/episode/entrance/02jgpdx3ddmym6v",
+    "pp": 5,
+    "infoStory": [
+      {
+        "infoId": "BEI03",
+        "personFlg": 1
+      },
+      {
+        "infoId": "FLG03",
+        "personFlg": 1
+      },
+      {
+        "infoId": "LGN01",
+        "personFlg": 1
+      },
+      {
+        "infoId": "LGN02",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [
+      "asb_login"
+    ],
+    "relation": []
+  },
+  {
+    "seq": 1566,
+    "storyId": "qtetyggubyv3no2g",
+    "media": 3,
+    "category": "iof",
+    "website": "asb",
+    "headTitle": "",
+    "storyTitle": "流行りのアレ",
+    "releaseDate": "20260712",
+    "subCnt": 0,
+    "voiceAtRelease": 0,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/episode/entrance/mkrjym6rqqwze31",
+    "pp": 5,
+    "infoStory": [
+      {
+        "infoId": "MFM00",
+        "personFlg": 0
+      },
+      {
+        "infoId": "MFM01",
+        "personFlg": 1
+      },
+      {
+        "infoId": "MFM02",
+        "personFlg": 1
+      },
+      {
+        "infoId": "MFM03",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [
+      "asb_login"
+    ],
+    "relation": []
+  },
+  {
     "seq": 1565,
     "storyId": "u4hcva24v4u8d58p",
     "media": 3,
@@ -44298,7 +44450,12 @@
       }
     ],
     "howtoviewStory": [],
-    "relation": []
+    "relation": [
+      "me25azlszmr24lxs",
+      "5gve61p9lg09qgow",
+      "h8okwd626as9tenh",
+      "upsruonta4rk8b4v"
+    ]
   },
   {
     "seq": 597,

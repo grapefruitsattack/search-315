@@ -175,10 +175,12 @@ export type Story = {
   relation: string[];
 };
 
-export type RelationStory = {
-  seq: number;
+export type RelationStoryOther = {
   storyId: string;
-  relationStoryId: string;
+  songId: string;
+  albumId: string;
+  livePerId: string;
+  storyPageDisplay: number;
 };
 
 export type UserReadingData = {

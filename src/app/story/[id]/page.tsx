@@ -7,8 +7,8 @@ import { headers } from "next/headers";
 import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
 import { notFound } from 'next/navigation'
 import m_story from '@/data/m_story.json';
-import relation_story from '@/data/relation_story.json';
-import type { Story,UserReadingData } from '@/data/types';
+import relation_story_other from '@/data/relation_story_other.json';
+import type { Story,UserReadingData,RelationStoryOther } from '@/data/types';
 import CommonPage from "@/features/common/components/CommonPage";
 import StoryDetailedPage from "@/features/app/story/StoryDetailedPage";
 
@@ -58,16 +58,15 @@ const Post = async ({
     if (!mainStory) notFound()
     return mainStory;
   }(id);
-  const relationStoryIds: string[] = relation_story.filter((data)=>data.storyId===mainStory.storyId).map((data)=>data.relationStoryId);
+  const relationStoryIds: string[] = mainStory.relation;
   const post = await getData(relationStoryIds.concat([id]));
-
+  const d = relationStoryIds.map(relationStoryId=>m_story.find(data=>data.storyId===relationStoryId)) as Story[] 
   const relationStorysData: { story: Story; userReadingData: UserReadingData | null; }[] 
-    = m_story.filter((data:Story)=>relationStoryIds.includes(data.storyId))
-      .reverse()
-      .map((story:Story)=>{
-        return {story:story,userReadingData:post?.userReadingData.find((data)=>data.story_id===story.storyId)||null}
-      })
-      ;
+    = relationStoryIds.map(relationStoryId=>m_story.find(data=>data.storyId===relationStoryId))
+    .map((story)=>{
+      return {story:story,userReadingData:post?.userReadingData.find((data)=>data.story_id===story?.storyId)||null}
+    }) as { story: Story; userReadingData: UserReadingData | null; }[] 
+  ;
 
   return (
     <Suspense>
