@@ -18,7 +18,7 @@ export default function UnitPageTabs({ type,member,unitMember }: { type: string,
               ?`font-bold text-black border-black pointer-events-none fill-red-500
                   border-2 border-b-white bg-white`
               :`bg-zinc-100 text-neutral-500 font-medium fill-neutral-400 border-black border-b-2 
-                  hover:border-b-neutral-800 hover:text-neutral-900 hover:fill-red-400  `}
+                  hover:border-b-neutral-800 hover:text-neutral-900 hover:fill-red-400 `}
               `}
           href={{ pathname: currentPath, query: {t: 'recommend', m:member}}}
           scroll={false}

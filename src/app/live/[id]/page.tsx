@@ -1,11 +1,10 @@
 
-import { Metadata } from 'next'
-import liveMaster from '../../../data/liveMaster.json';
-import CommonPage from "../../../features/common/components/CommonPage";
+import liveMaster from '@/data/liveMaster.json';
+import CommonPage from "@/features/common/components/CommonPage";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 
-const LivePage = dynamic(() => import("../../../features/app/live/LivePage"), { ssr: true });
+const LivePage = dynamic(() => import("@/features/app/live/LivePage"), { ssr: true });
 
 export function generateStaticParams() {
   // return [
@@ -14,6 +13,7 @@ export function generateStaticParams() {
   //   { id: "SL01_5" },
   //   { id: "SL02_1" },
   // ];
+  //const liveIdArray: string[] = Array.from(new Set(liveMaster.map(data=>data.liveId)));
   return liveMaster.map((e)=>{
     return {id: e.livePerId}
   });
@@ -23,6 +23,7 @@ const Lives = async ({
   params,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ per?:string; }>;
 }) => {
   const { id } = await params;
   return (
