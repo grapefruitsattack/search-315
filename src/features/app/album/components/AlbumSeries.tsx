@@ -34,7 +34,7 @@ export default function AlbumSeries({ albumId, seriesId }: { albumId: string, se
           {resultsSort.map((result, index) => (
           <AlbumBlock 
               key={index} 
-              results={result}
+              albumId={result.albumId}
           />
           ))}
       </section>

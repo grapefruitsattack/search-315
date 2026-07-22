@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import type { Albums } from '@/data/types';
+import albumMaster from '@/data/albumMaster.json';
 import subscAlbums from '@/data/subscAlbums.json';
 import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
 import {GetArtistBadgeInfo} from '@/features/common/utils/ArtistUtils';
@@ -13,8 +14,9 @@ import YoutubeButton from "@/features/common/components/YoutubeButton";
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
 export default function AlbumBlock(
-  { results }: { results: Albums}
+  { albumId }: { albumId: String}
 ) {
+  const results: Albums = albumMaster.find((data=>data.albumId===albumId)) as Albums;
 
   const router = useRouter();
   const imgSrc: string = GetArtWorkSrc(results.sereisId||'',results.isSoloColle,results.isUnitColle);
