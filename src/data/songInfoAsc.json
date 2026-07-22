@@ -44305,6 +44305,54 @@
   },
   {
     "trackNo": 1,
+    "albumId": "876FESATC",
+    "songId": "876FESATC_1",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260724",
+    "type": "c"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "876FESATC",
+    "songId": "876FESATC_4",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260724",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "876FESATC",
+    "songId": "876FESATC_5",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260724",
+    "type": "c"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "876FESATC",
+    "songId": "876FESATC_8",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260724",
+    "type": "sver"
+  },
+  {
+    "trackNo": 9,
+    "albumId": "876FESATC",
+    "songId": "876FESATC_9",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260724",
+    "type": "c"
+  },
+  {
+    "trackNo": 12,
+    "albumId": "876FESATC",
+    "songId": "876FESATC_12",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260724",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
     "albumId": "MTS09",
     "songId": "MTS09_1",
     "singingInfoId": "LGN00",
@@ -44421,6 +44469,142 @@
     "songId": "TT11_5",
     "singingInfoId": "KGD01",
     "releaseDate": "20260805",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT12",
+    "songId": "TT12_1",
+    "singingInfoId": "DRS01",
+    "releaseDate": "20260902",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT12",
+    "songId": "TT12_1",
+    "singingInfoId": "HIJ04",
+    "releaseDate": "20260902",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT12",
+    "songId": "TT12_1",
+    "singingInfoId": "CFP05",
+    "releaseDate": "20260902",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT12",
+    "songId": "TT12_1",
+    "singingInfoId": "SEM01",
+    "releaseDate": "20260902",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TT12",
+    "songId": "TT12_1",
+    "singingInfoId": "CLF03",
+    "releaseDate": "20260902",
+    "type": "c"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "TT12",
+    "songId": "TT12_2",
+    "singingInfoId": "DRS01",
+    "releaseDate": "20260902",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "TT12",
+    "songId": "TT12_3",
+    "singingInfoId": "HIJ04",
+    "releaseDate": "20260902",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "TT12",
+    "songId": "TT12_4",
+    "singingInfoId": "CFP05",
+    "releaseDate": "20260902",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "TT12",
+    "songId": "TT12_5",
+    "singingInfoId": "SEM01",
+    "releaseDate": "20260902",
+    "type": "sver"
+  },
+  {
+    "trackNo": 6,
+    "albumId": "TT12",
+    "songId": "TT12_6",
+    "singingInfoId": "CLF03",
+    "releaseDate": "20260902",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS10",
+    "songId": "MTS10_1",
+    "singingInfoId": "MFM00",
+    "releaseDate": "20260826",
+    "type": "u"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS10",
+    "songId": "MTS10_1",
+    "singingInfoId": "MFM01",
+    "releaseDate": "20260826",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS10",
+    "songId": "MTS10_1",
+    "singingInfoId": "MFM02",
+    "releaseDate": "20260826",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS10",
+    "songId": "MTS10_1",
+    "singingInfoId": "MFM03",
+    "releaseDate": "20260826",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "MTS10",
+    "songId": "MTS10_2",
+    "singingInfoId": "MFM01",
+    "releaseDate": "20260826",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "MTS10",
+    "songId": "MTS10_3",
+    "singingInfoId": "MFM02",
+    "releaseDate": "20260826",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "MTS10",
+    "songId": "MTS10_4",
+    "singingInfoId": "MFM03",
+    "releaseDate": "20260826",
     "type": "sver"
   }
 ]
