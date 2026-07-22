@@ -1578,5 +1578,35 @@
     "embedUrl": "https://www.youtube-nocookie.com/embed/adG918evle4?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/adG918evle4/mqdefault.jpg",
     "songName": "からふる・とれじゃ～わ～るど！"
+  },
+  {
+    "videoId": "vcFTXMONGpo",
+    "songId": "5A05_3",
+    "title": "Dance Practice「SEASON IN THE FIVE」",
+    "siteType": "youtube",
+    "url": "https://youtu.be/vcFTXMONGpo",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/vcFTXMONGpo?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/vcFTXMONGpo/mqdefault.jpg",
+    "songName": "SEASON IN THE FIVE"
+  },
+  {
+    "videoId": "AXXq-PWglAc?t=2855",
+    "songId": "FC09_1",
+    "title": "「#アイマックスTV」～今 聴きたい！アイドル曲SP～",
+    "siteType": "youtube",
+    "url": "https://youtu.be/AXXq-PWglAc?t=2855",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/AXXq-PWglAc?mute=1&modestbranding=1&start=2855",
+    "thumbnailUrl": "http://img.youtube.com/vi/AXXq-PWglAc/mqdefault.jpg",
+    "songName": "vs.BELIEVERS"
+  },
+  {
+    "videoId": "LdczlWGxqVg",
+    "songId": "COD01_1",
+    "title": "C.FIRST「来来美食」2DMV",
+    "siteType": "youtube",
+    "url": "https://youtu.be/LdczlWGxqVg",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/LdczlWGxqVg?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/LdczlWGxqVg/mqdefault.jpg",
+    "songName": "来来美食"
   }
 ]
