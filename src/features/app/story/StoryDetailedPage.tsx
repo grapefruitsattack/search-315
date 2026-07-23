@@ -4,13 +4,16 @@ import React from "react"
 import { Toaster } from "@/components/ui/sonner";
 import CopyButton from "@/features/common/components/CopyButton";
 import GetUnitIdolName from "@/features/common/utils/GetUnitIdolName";
-import type { InfoStory,ShareModalTabInfo,Story,SubStory,UserReadingData } from '@/data/types';
+import type { InfoStory,ShareModalTabInfo,Story,SubStory,UserReadingData,RelationStoryOther } from '@/data/types';
 import m_sub_story from '@/data/m_sub_story.json';
 import {
    GetStoryMediaName,GetStoryCategoryName,GetStoryWebsiteName,GetVoiceStateName,GetStoryHowtoviewName 
 } from '@/features/common/utils/Story/GetStoryInfomation';
 import { MEDIA,CATEGORY } from '@/features/common/const/StoryInfoConst'
 import IdolBadge from '@/features/common/components/IdolBadge';
+import SongBlock from '@/features/common/components/SongBlock';
+import SongList from '@/features/common/components/SongList';
+import AlbumBlock from '@/features/common/components/AlbumBlock';
 import CategoryBadge from '@/features/common/components/story/CategoryBadge';
 import MediaBadge from '@/features/common/components/story/MediaBadge';
 import SetLocalDateCookie  from "@/features/common/utils/SetLocalDateCookie";
@@ -22,7 +25,13 @@ import StoryReadLaterButton from "./components/StoryReadLaterButton";
 import StoryReadLaterEditButton from "./components/StoryReadLaterEditButton";
 
 export default async function StoryDetailedPage(
-  { mainStoryData,relationStorysData,login }: {mainStoryData:{story:Story,userReadingData:UserReadingData|null}, relationStorysData:{story:Story,userReadingData:UserReadingData|null}[], login:boolean})
+  { mainStoryData,relationStorysData,relationOtherData,login }
+  : {
+    mainStoryData:{story:Story,userReadingData:UserReadingData|null}, 
+    relationStorysData:{story:Story,userReadingData:UserReadingData|null}[], 
+    relationOtherData: RelationStoryOther[],
+    login:boolean
+  })
   : Promise<JSX.Element> 
 {
   const storyData: Story = mainStoryData.story;
@@ -35,6 +44,8 @@ export default async function StoryDetailedPage(
   const categoryName: string = GetStoryCategoryName(storyData.category);
   const infoStoryPerson: InfoStory[] = storyData.infoStory.filter(storyData=>storyData.personFlg===1);
   const subStorys: SubStory[] = m_sub_story.filter((data)=>data.storyId===storyData.storyId).reverse();
+  const relationMusic = relationOtherData.filter(data=>data.songId!==''||data.albumId!=='');
+  const relationLive = relationOtherData.filter(data=>data.liveId!==''||data.livePerId!=='');
 
   const releaseDate: string 
     = new Date(
@@ -397,49 +408,107 @@ export default async function StoryDetailedPage(
           </>
         }
       <div>
-        {/* 関連ストーリー */}
-        {relationStorysData===null || relationStorysData.length===0
-          ?<></>
-          :<>
-            <div 
-              className="
-                  mobileL:text-2xl text-xl font-mono flex items-center w-full
-                  after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-                  mt-8
-              "
-            >
-              <svg className="fill-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
-                <path d="M13 21V23H11V21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H9C10.1947 3 11.2671 3.52375 12 4.35418C12.7329 3.52375 13.8053 3 15 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H13ZM20 19V5H15C13.8954 5 13 5.89543 13 7V19H20ZM11 19V7C11 5.89543 10.1046 5 9 5H4V19H11Z"></path>
-              </svg>
-              {'関連ストーリー'}
-            </div>
-            <div className={`
-                items-start gap-4 grid-cols-1 tablet:grid-cols-2 mt-2
-                grid
-            `}>
-              {relationStorysData.map((result, index) => (
-                <StoryBlock 
-                  key={index} 
-                  storyId={result.story.storyId} 
-                  media={result.story.media} 
-                  category={result.story.category} 
-                  website={result.story.website}
-                  headTitle={result.story.headTitle} 
-                  storyTitle={result.story.storyTitle} 
-                  releaseDate={result.story.releaseDate}
-                  infoStory={result.story.infoStory} 
-                  howtoviewStory={result.story.howtoviewStory}
-                  url={result.story.url} 
-                  pp={result.story.pp||0}
-                  login={login}
-                  userReadLater={result.userReadingData===null?null:result.userReadingData.read_later}
-                  displayLogin={true}
-                />
-              ))}
-            </div>
-          </>
-        }
+      {/* 関連ストーリー */}
+      {relationStorysData===null || relationStorysData.length===0
+        ?<></>
+        :<>
+          <div 
+            className="
+                mobileL:text-2xl text-xl font-mono flex items-center w-full
+                after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
+                mt-8
+            "
+          >
+            <svg className="fill-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+              <path d="M13 21V23H11V21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H9C10.1947 3 11.2671 3.52375 12 4.35418C12.7329 3.52375 13.8053 3 15 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H13ZM20 19V5H15C13.8954 5 13 5.89543 13 7V19H20ZM11 19V7C11 5.89543 10.1046 5 9 5H4V19H11Z"></path>
+            </svg>
+            {'関連ストーリー'}
+          </div>
+          <div className={`
+              items-start gap-4 grid-cols-1 tablet:grid-cols-2 mt-2
+              grid
+          `}>
+            {relationStorysData.map((result, index) => (
+              <StoryBlock 
+                key={index} 
+                storyId={result.story.storyId} 
+                media={result.story.media} 
+                category={result.story.category} 
+                website={result.story.website}
+                headTitle={result.story.headTitle} 
+                storyTitle={result.story.storyTitle} 
+                releaseDate={result.story.releaseDate}
+                infoStory={result.story.infoStory} 
+                howtoviewStory={result.story.howtoviewStory}
+                url={result.story.url} 
+                pp={result.story.pp||0}
+                login={login}
+                userReadLater={result.userReadingData===null?null:result.userReadingData.read_later}
+                displayLogin={true}
+              />
+            ))}
+          </div>
+        </>
+      }
+      {/* そのほか関連 */}
       </div>
+      {relationMusic.length===0 
+        ?<></>
+        :<>
+          <div 
+            className="
+                mobileL:text-2xl text-xl font-mono flex items-center w-full
+                after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
+                mt-8
+            "
+          >
+            <svg className="fill-cyan-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M20 3V17C20 19.2091 18.2091 21 16 21C13.7909 21 12 19.2091 12 17C12 14.7909 13.7909 13 16 13C16.7286 13 17.4117 13.1948 18 13.5351V5H9V17C9 19.2091 7.20914 21 5 21C2.79086 21 1 19.2091 1 17C1 14.7909 2.79086 13 5 13C5.72857 13 6.41165 13.1948 7 13.5351V3H20ZM5 19C6.10457 19 7 18.1046 7 17C7 15.8954 6.10457 15 5 15C3.89543 15 3 15.8954 3 17C3 18.1046 3.89543 19 5 19ZM16 19C17.1046 19 18 18.1046 18 17C18 15.8954 17.1046 15 16 15C14.8954 15 14 15.8954 14 17C14 18.1046 14.8954 19 16 19Z"></path>
+            </svg>
+            {'関連楽曲'}
+          </div>
+          <div className={`
+                items-start gap-4 grid-cols-1 tablet:grid-cols-2 lg:grid-cols-3 mt-2
+                lg:grid hidden
+            `}>
+            {relationMusic.filter(data=>data.songId!=='').map((result, index) => (
+            <SongBlock 
+              key={index} 
+              songId={result.songId}
+              diplayAlbum={true}
+            />
+            ))}
+          </div>
+          <div className={`
+            max-w-[700px]
+            items-start gap-0 grid-cols-1 mt-2
+            lg:hidden grid 
+          `}>
+            {relationMusic.filter(data=>data.songId!=='').map((result, index) => (
+            <SongList
+              index={index}
+              key={result.songId} 
+              songId={result.songId}
+              displayArtist={true}
+              useArtistBadge={true}
+              displayArtwork={true}
+              displayReleaseDate={false}
+            />
+            ))}
+          </div>
+          <div className={`
+                items-start gap-4 grid-cols-1 tablet:grid-cols-2 lg:grid-cols-2 mt-2
+                lg:grid grid
+            `}>
+            {relationMusic.filter(data=>data.albumId!==''&&data.songId==='').map((result, index) => (
+            <AlbumBlock 
+              key={index} 
+              albumId={result.albumId}
+            />
+            ))}
+          </div>
+      </>
+      }
     </section>
   </>
     );

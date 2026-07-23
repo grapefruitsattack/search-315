@@ -179,6 +179,7 @@ export type RelationStoryOther = {
   storyId: string;
   songId: string;
   albumId: string;
+  liveId: string;
   livePerId: string;
   storyPageDisplay: number;
 };

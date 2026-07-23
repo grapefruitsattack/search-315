@@ -60,22 +60,23 @@ const Post = async ({
   }(id);
   const relationStoryIds: string[] = mainStory.relation;
   const post = await getData(relationStoryIds.concat([id]));
-  const d = relationStoryIds.map(relationStoryId=>m_story.find(data=>data.storyId===relationStoryId)) as Story[] 
   const relationStorysData: { story: Story; userReadingData: UserReadingData | null; }[] 
     = relationStoryIds.map(relationStoryId=>m_story.find(data=>data.storyId===relationStoryId))
     .map((story)=>{
       return {story:story,userReadingData:post?.userReadingData.find((data)=>data.story_id===story?.storyId)||null}
     }) as { story: Story; userReadingData: UserReadingData | null; }[] 
   ;
+  const relationOther: RelationStoryOther[] = relation_story_other.filter(data=>data.storyId===mainStory.storyId&&data.storyPageDisplay===1);
 
   return (
     <Suspense>
     <CommonPage>
-      <div className="justify-start pc:pt-6 pb-96 px-2 mobileS:px-4 mobileM:px-8 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
+      <div className="justify-start pc:pt-6 pb-64 mb-64 px-0 mobileS:px-2 mobileM:px-4 tablet:px-8 lg:px-8 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
         {/* @ts-ignore Server Component */}
         <StoryDetailedPage 
           mainStoryData={{story:mainStory,userReadingData:post?.userReadingData.find((data)=>data.story_id===id)||null}} 
           relationStorysData={relationStorysData} 
+          relationOtherData={relationOther}
           login={post?.login||false}
         />
       </div>

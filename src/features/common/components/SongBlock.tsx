@@ -58,7 +58,7 @@ export default function SongBlock(
           {imgSrc===''
             ?
             <Image 
-              className={` object-cover object-center rounded 
+              className={`object-cover object-center rounded 
                 h-[60px] w-[59px] 
               `}
               src={`/artwork/dummy.png`}
