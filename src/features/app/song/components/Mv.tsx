@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react";
-import type { MvInfo } from '../../../../data/types';
-import {YoutubeModal} from "../../../common/components/YoutubeModal";
+import type { MvInfo } from '@/data/types';
+import {VideoBlock} from "@/features/common/components/VideoBlock";
 
 export default function Mv({ mvInfos }: { mvInfos: MvInfo[] }) {
 
@@ -38,7 +38,7 @@ export default function Mv({ mvInfos }: { mvInfos: MvInfo[] }) {
             {youtubeMv.map((info, index) => (
                 <div className='max-w-[310px]' key={index} >
                 <div className=''>
-                    <YoutubeModal title={info.title} embedUrl={info.embedUrl} thumbnailUrl={info.thumbnailUrl}></YoutubeModal>
+                    <VideoBlock title={info.title} embedUrl={info.embedUrl} thumbnailUrl={info.thumbnailUrl}/>
                 </div>
                 <p className='flex flex-wrap justify-start items-center font-sans font-black lg:text-base text-sm w-fit'>
                     {info.title}

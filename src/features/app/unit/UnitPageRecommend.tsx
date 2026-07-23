@@ -1,6 +1,6 @@
 
 import mainPageData from '@/data/mainPageData.json';
-import {YoutubeModal} from "@/features/common/components/YoutubeModal";
+import {VideoBlock} from "@/features/common/components/VideoBlock";
 import {YoutubeShortModal} from "@/features/common/components/YoutubeShortModal";
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 
@@ -29,7 +29,7 @@ export default function UnitPageRecommend({ unitId }: { unitId: string }) {
             <div className=''>
               {info.type==='youtubeshort'
                 ?<YoutubeShortModal title={info.title} embedUrl={info.data.embedUrl||''} thumbnailUrl={info.data.thumbnailUrl||''}/>
-                :<YoutubeModal title={info.title} embedUrl={info.data.embedUrl||''} thumbnailUrl={info.data.thumbnailUrl||''}/>
+                :<VideoBlock title={info.title} embedUrl={info.data.embedUrl||''} thumbnailUrl={info.data.thumbnailUrl||''}/>
               }
             </div>
             <p className='flex flex-wrap justify-start items-center font-sans font-black lg:text-base text-sm w-[250px]'>

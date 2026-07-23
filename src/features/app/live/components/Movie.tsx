@@ -1,6 +1,6 @@
 'use client'
-import type { LiveMovie } from '../../../../data/types';
-import {YoutubeModal} from "../../../common/components/YoutubeModal";
+import type { LiveMovie } from '@/data/types';
+import {VideoBlock} from "@/features/common/components/VideoBlock";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -37,11 +37,11 @@ export default function Movie({ results }: { results: LiveMovie[] }) {
         {results.map((result, index) => (
             <div className='max-w-[310px]' key={index} >
             <div className=''>
-                <YoutubeModal 
-                    title={result.title} 
-                    embedUrl={"https://www.youtube-nocookie.com/embed/"+result.youtubeId+"?mute=1&modestbranding=1"} 
-                    thumbnailUrl={"http://img.youtube.com/vi/"+result.youtubeId+"/mqdefault.jpg"} 
-                ></YoutubeModal>
+                <VideoBlock 
+                  title={result.title} 
+                  embedUrl={"https://www.youtube-nocookie.com/embed/"+result.youtubeId+"?mute=1&modestbranding=1"} 
+                  thumbnailUrl={"http://img.youtube.com/vi/"+result.youtubeId+"/mqdefault.jpg"} 
+                />
             </div>
             <p className='flex flex-wrap justify-start items-center font-sans font-black lg:text-base text-sm w-fit'>
                 {result.title}

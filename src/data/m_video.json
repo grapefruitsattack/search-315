@@ -1,5 +1,38 @@
 [
   {
+    "videoId": "LdczlWGxqVg",
+    "videoType": "mv",
+    "title": "C.FIRST「来来美食」2DMV",
+    "siteType": "youtube",
+    "releaseDate": "20260715",
+    "url": "https://youtu.be/LdczlWGxqVg",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/LdczlWGxqVg?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/LdczlWGxqVg/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "CLF00",
+        "personFlg": 0,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "CLF01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "CLF02",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "CLF03",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
     "videoId": "vcFTXMONGpo",
     "videoType": "3dlive",
     "title": "Dance Practice「SEASON IN THE FIVE」",
@@ -8,6 +41,7 @@
     "url": "https://youtu.be/vcFTXMONGpo",
     "embedUrl": "https://www.youtube-nocookie.com/embed/vcFTXMONGpo?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/vcFTXMONGpo/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "HIJ00",
@@ -43,13 +77,14 @@
   },
   {
     "videoId": "adG918evle4",
-    "videoType": "3dlive",
-    "title": "2DMV「からふる・とれじゃ～わ～るど！」",
+    "videoType": "mv",
+    "title": "もふもふえん「からふる・とれじゃ～わ～るど！」2DMV",
     "siteType": "youtube",
     "releaseDate": "20260703",
     "url": "https://youtu.be/adG918evle4",
     "embedUrl": "https://www.youtube-nocookie.com/embed/adG918evle4?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/adG918evle4/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "MFM00",
@@ -82,6 +117,7 @@
     "url": "https://youtu.be/uamsO9S5RXk",
     "embedUrl": "https://www.youtube-nocookie.com/embed/uamsO9S5RXk?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/uamsO9S5RXk/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "KGD00",
@@ -108,12 +144,13 @@
   {
     "videoId": "y58MiYyGyqU",
     "videoType": "mv",
-    "title": "2DMV「Stillness≒Movement」",
+    "title": "神速一魂「Stillness≒Movement」2DMV",
     "siteType": "youtube",
     "releaseDate": "20260625",
     "url": "https://youtu.be/y58MiYyGyqU",
     "embedUrl": "https://www.youtube-nocookie.com/embed/y58MiYyGyqU?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/y58MiYyGyqU/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SSK00",
@@ -141,6 +178,7 @@
     "url": "https://youtu.be/pbjbUBIrOFo",
     "embedUrl": "https://www.youtube-nocookie.com/embed/pbjbUBIrOFo?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/pbjbUBIrOFo/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SSK00",
@@ -168,6 +206,7 @@
     "url": "https://youtu.be/HJYe0_sad_Q",
     "embedUrl": "https://www.youtube-nocookie.com/embed/HJYe0_sad_Q?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/HJYe0_sad_Q/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FRM00",
@@ -194,12 +233,13 @@
   {
     "videoId": "Ls7BFgBpDWI",
     "videoType": "mv",
-    "title": "2DMV「AZUR」",
+    "title": "W「AZUR」2DMV",
     "siteType": "youtube",
     "releaseDate": "20260612",
     "url": "https://youtu.be/Ls7BFgBpDWI",
     "embedUrl": "https://www.youtube-nocookie.com/embed/Ls7BFgBpDWI?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/Ls7BFgBpDWI/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DBL00",
@@ -227,6 +267,7 @@
     "url": "https://youtu.be/gxgmW--FDE4",
     "embedUrl": "https://www.youtube-nocookie.com/embed/gxgmW--FDE4?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/gxgmW--FDE4/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -259,6 +300,7 @@
     "url": "https://youtu.be/S6K3rVIyidM",
     "embedUrl": "https://www.youtube-nocookie.com/embed/S6K3rVIyidM?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/S6K3rVIyidM/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "LGN00",
@@ -291,6 +333,7 @@
     "url": "https://youtu.be/Ax1xOdVYq7Q",
     "embedUrl": "https://www.youtube-nocookie.com/embed/Ax1xOdVYq7Q?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/Ax1xOdVYq7Q/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SAI00",
@@ -323,6 +366,7 @@
     "url": "https://youtu.be/6jJQTzN-bt0",
     "embedUrl": "https://www.youtube-nocookie.com/embed/6jJQTzN-bt0?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/6jJQTzN-bt0/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FLG00",
@@ -355,6 +399,7 @@
     "url": "https://youtu.be/S-inxhP-vts",
     "embedUrl": "https://www.youtube-nocookie.com/embed/S-inxhP-vts?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/S-inxhP-vts/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -532,6 +577,7 @@
     "url": "https://youtu.be/ZnXhJ1uUHWs",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ZnXhJ1uUHWs?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/ZnXhJ1uUHWs/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "all",
@@ -592,8 +638,9 @@
     "siteType": "youtube",
     "releaseDate": "20260329",
     "url": "https://youtu.be/AXXq-PWglAc?t=2855",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/AXXq-PWglAc?t=2855?mute=1&modestbranding=1",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/AXXq-PWglAc?mute=1&modestbranding=1&start=2855",
     "thumbnailUrl": "http://img.youtube.com/vi/AXXq-PWglAc/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DBL00",
@@ -633,38 +680,6 @@
     ]
   },
   {
-    "videoId": "qsyewmZU7a0",
-    "videoType": "live_sp",
-    "title": "「FOCUS ON YOUR LIFE」10th ANNIVERSARY ST@GE",
-    "siteType": "youtubeshort",
-    "releaseDate": "20260316",
-    "url": "https://youtu.be/qsyewmZU7a0",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/qsyewmZU7a0?mute=1&modestbranding=1",
-    "thumbnailUrl": "http://img.youtube.com/vi/qsyewmZU7a0/mqdefault.jpg",
-    "infoVideo": [
-      {
-        "infoId": "LGN00",
-        "personFlg": 0,
-        "excludeFlg": 0
-      },
-      {
-        "infoId": "LGN01",
-        "personFlg": 1,
-        "excludeFlg": 0
-      },
-      {
-        "infoId": "LGN02",
-        "personFlg": 1,
-        "excludeFlg": 0
-      },
-      {
-        "infoId": "LGN03",
-        "personFlg": 1,
-        "excludeFlg": 0
-      }
-    ]
-  },
-  {
     "videoId": "B3rJip-WoPY",
     "videoType": "live_sp",
     "title": "「PROOF OF ONESELF」10th ANNIVERSARY ST@GE",
@@ -673,6 +688,7 @@
     "url": "https://youtu.be/B3rJip-WoPY",
     "embedUrl": "https://www.youtube-nocookie.com/embed/B3rJip-WoPY?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/B3rJip-WoPY/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@sidem_315production/video/7616395114113404181",
     "infoVideo": [
       {
         "infoId": "KGD00",
@@ -697,6 +713,67 @@
     ]
   },
   {
+    "videoId": "qsyewmZU7a0",
+    "videoType": "live_sp",
+    "title": "「FOCUS ON YOUR LIFE」10th ANNIVERSARY ST@GE",
+    "siteType": "youtubeshort",
+    "releaseDate": "20260316",
+    "url": "https://youtu.be/qsyewmZU7a0",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/qsyewmZU7a0?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/qsyewmZU7a0/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@sidem_315production/video/7616390955482041621",
+    "infoVideo": [
+      {
+        "infoId": "LGN00",
+        "personFlg": 0,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "LGN01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "LGN02",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "LGN03",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
+    "videoId": "8rP1tpJK4vE",
+    "videoType": "live_sp",
+    "title": "「mermaid fermata」10th ANNIVERSARY ST@GE",
+    "siteType": "youtubeshort",
+    "releaseDate": "20260315",
+    "url": "https://youtu.be/8rP1tpJK4vE",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/8rP1tpJK4vE?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/8rP1tpJK4vE/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@sidem_315production/video/7616389945917328661",
+    "infoVideo": [
+      {
+        "infoId": "ALT00",
+        "personFlg": 0,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "ALT01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "ALT02",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
     "videoId": "6otouGEhwX0",
     "videoType": "live_sp",
     "title": "「Reversed Masquerade」10th ANNIVERSARY ST@GE",
@@ -705,6 +782,7 @@
     "url": "https://youtu.be/6otouGEhwX0",
     "embedUrl": "https://www.youtube-nocookie.com/embed/6otouGEhwX0?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/6otouGEhwX0/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@sidem_315production/video/7616647499037560084",
     "infoVideo": [
       {
         "infoId": "CFP00",
@@ -739,27 +817,28 @@
     ]
   },
   {
-    "videoId": "8rP1tpJK4vE",
+    "videoId": "saLVUVNdiHg",
     "videoType": "live_sp",
-    "title": "「mermaid fermata」10th ANNIVERSARY ST@GE",
+    "title": "「STAY TUNED ORBIT」10th ANNIVERSARY ST@GE",
     "siteType": "youtubeshort",
-    "releaseDate": "20260315",
-    "url": "https://youtu.be/8rP1tpJK4vE",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/8rP1tpJK4vE?mute=1&modestbranding=1",
-    "thumbnailUrl": "http://img.youtube.com/vi/8rP1tpJK4vE/mqdefault.jpg",
+    "releaseDate": "20260314",
+    "url": "https://youtu.be/saLVUVNdiHg",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/saLVUVNdiHg?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/saLVUVNdiHg/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@sidem_315production/video/7616399468987960596",
     "infoVideo": [
       {
-        "infoId": "ALT00",
+        "infoId": "JUP00",
         "personFlg": 0,
         "excludeFlg": 0
       },
       {
-        "infoId": "ALT01",
+        "infoId": "JUP01",
         "personFlg": 1,
         "excludeFlg": 0
       },
       {
-        "infoId": "ALT02",
+        "infoId": "JUP03",
         "personFlg": 1,
         "excludeFlg": 0
       }
@@ -774,6 +853,7 @@
     "url": "https://youtu.be/at11yKEWu9s",
     "embedUrl": "https://www.youtube-nocookie.com/embed/at11yKEWu9s?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/at11yKEWu9s/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@sidem_315production/video/7616378058991439125",
     "infoVideo": [
       {
         "infoId": "SEM00",
@@ -798,33 +878,6 @@
     ]
   },
   {
-    "videoId": "saLVUVNdiHg",
-    "videoType": "live_sp",
-    "title": "「STAY TUNED ORBIT」10th ANNIVERSARY ST@GE",
-    "siteType": "youtubeshort",
-    "releaseDate": "20260314",
-    "url": "https://youtu.be/saLVUVNdiHg",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/saLVUVNdiHg?mute=1&modestbranding=1",
-    "thumbnailUrl": "http://img.youtube.com/vi/saLVUVNdiHg/mqdefault.jpg",
-    "infoVideo": [
-      {
-        "infoId": "JUP00",
-        "personFlg": 0,
-        "excludeFlg": 0
-      },
-      {
-        "infoId": "JUP01",
-        "personFlg": 1,
-        "excludeFlg": 0
-      },
-      {
-        "infoId": "JUP03",
-        "personFlg": 1,
-        "excludeFlg": 0
-      }
-    ]
-  },
-  {
     "videoId": "ZJoyNYbf5V0",
     "videoType": "live_sp",
     "title": "「はんどめいど・きみはーと！」10th ANNIVERSARY ST@GE",
@@ -833,6 +886,7 @@
     "url": "https://youtu.be/ZJoyNYbf5V0",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ZJoyNYbf5V0?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/ZJoyNYbf5V0/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@sidem_315production/video/7616371933948464405",
     "infoVideo": [
       {
         "infoId": "MFM00",
@@ -860,6 +914,7 @@
     "url": "https://youtu.be/rCLvgNHSUeU",
     "embedUrl": "https://www.youtube-nocookie.com/embed/rCLvgNHSUeU?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/rCLvgNHSUeU/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@sidem_315production/video/7616370466814528788",
     "infoVideo": [
       {
         "infoId": "SSK00",
@@ -887,6 +942,7 @@
     "url": "https://youtu.be/dWZ2RZw2wAM",
     "embedUrl": "https://www.youtube-nocookie.com/embed/dWZ2RZw2wAM?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/dWZ2RZw2wAM/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@sidem_315production/video/7616353104379874580",
     "infoVideo": [
       {
         "infoId": "SAI00",
@@ -919,6 +975,7 @@
     "url": "https://youtu.be/2E2YKoPlMGE",
     "embedUrl": "https://www.youtube-nocookie.com/embed/2E2YKoPlMGE?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/2E2YKoPlMGE/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@sidem_315production/video/7616235955829099797",
     "infoVideo": [
       {
         "infoId": "DBL00",
@@ -946,6 +1003,7 @@
     "url": "https://youtu.be/N0RBy_a-tO8",
     "embedUrl": "https://www.youtube-nocookie.com/embed/N0RBy_a-tO8?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/N0RBy_a-tO8/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@sidem_315production/video/7615900542824631573",
     "infoVideo": [
       {
         "infoId": "FLG00",
@@ -978,6 +1036,7 @@
     "url": "https://youtu.be/TVgyditHk2Y",
     "embedUrl": "https://www.youtube-nocookie.com/embed/TVgyditHk2Y?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/TVgyditHk2Y/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@sidem_315production/video/7615898037537262868",
     "infoVideo": [
       {
         "infoId": "FLG00",
@@ -1010,6 +1069,7 @@
     "url": "https://youtu.be/dGBkKnqNmjc",
     "embedUrl": "https://www.youtube-nocookie.com/embed/dGBkKnqNmjc?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/dGBkKnqNmjc/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP01",
@@ -1102,6 +1162,7 @@
     "url": "https://youtu.be/Q3_GOXfUOZg",
     "embedUrl": "https://www.youtube-nocookie.com/embed/Q3_GOXfUOZg?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/Q3_GOXfUOZg/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@sidem_315production/video/7615519237620108565",
     "infoVideo": [
       {
         "infoId": "FRM00",
@@ -1134,6 +1195,7 @@
     "url": "https://youtu.be/Wrv-Kmo1Ea4",
     "embedUrl": "https://www.youtube-nocookie.com/embed/Wrv-Kmo1Ea4?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/Wrv-Kmo1Ea4/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@sidem_315production/video/7615510685300083988",
     "infoVideo": [
       {
         "infoId": "BEI00",
@@ -1158,6 +1220,39 @@
     ]
   },
   {
+    "videoId": "044AHeefv5o",
+    "videoType": "live_sp",
+    "title": "「MOON NIGHTのせいにして」10th ANNIVERSARY ST@GE",
+    "siteType": "youtubeshort",
+    "releaseDate": "20260309",
+    "url": "https://youtu.be/044AHeefv5o",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/044AHeefv5o?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/044AHeefv5o/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@sidem_315production/video/7615240055854058773",
+    "infoVideo": [
+      {
+        "infoId": "DRS00",
+        "personFlg": 0,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "DRS01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "DRS02",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "DRS03",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
     "videoId": "oRDAzs32k-M",
     "videoType": "live_sp",
     "title": "「JOKER➚オールマイティ」10th ANNIVERSARY ST@GE",
@@ -1166,6 +1261,7 @@
     "url": "https://youtu.be/oRDAzs32k-M",
     "embedUrl": "https://www.youtube-nocookie.com/embed/oRDAzs32k-M?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/oRDAzs32k-M/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@sidem_315production/video/7615231492146564373",
     "infoVideo": [
       {
         "infoId": "HIJ00",
@@ -1200,38 +1296,6 @@
     ]
   },
   {
-    "videoId": "044AHeefv5o",
-    "videoType": "live_sp",
-    "title": "「MOON NIGHTのせいにして」10th ANNIVERSARY ST@GE",
-    "siteType": "youtubeshort",
-    "releaseDate": "20260309",
-    "url": "https://youtu.be/044AHeefv5o",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/044AHeefv5o?mute=1&modestbranding=1",
-    "thumbnailUrl": "http://img.youtube.com/vi/044AHeefv5o/mqdefault.jpg",
-    "infoVideo": [
-      {
-        "infoId": "DRS00",
-        "personFlg": 0,
-        "excludeFlg": 0
-      },
-      {
-        "infoId": "DRS01",
-        "personFlg": 1,
-        "excludeFlg": 0
-      },
-      {
-        "infoId": "DRS02",
-        "personFlg": 1,
-        "excludeFlg": 0
-      },
-      {
-        "infoId": "DRS03",
-        "personFlg": 1,
-        "excludeFlg": 0
-      }
-    ]
-  },
-  {
     "videoId": "APaEndEZTx8",
     "videoType": "live_digest",
     "title": "THE IDOLM@STER SideM 10th ANNIVERSARY ST@GE ～P@SSION-ING!!!～ LIVE Blu-ray ダイジェスト",
@@ -1240,6 +1304,7 @@
     "url": "https://youtu.be/APaEndEZTx8",
     "embedUrl": "https://www.youtube-nocookie.com/embed/APaEndEZTx8?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/APaEndEZTx8/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP01",
@@ -1557,6 +1622,7 @@
     "url": "https://youtu.be/jNpzDFo6C4E",
     "embedUrl": "https://www.youtube-nocookie.com/embed/jNpzDFo6C4E?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/jNpzDFo6C4E/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@bandainamcomusiclive/video/7595938454135983378",
     "infoVideo": [
       {
         "infoId": "SSK00",
@@ -1584,6 +1650,7 @@
     "url": "https://youtu.be/k-rCARRS3lo",
     "embedUrl": "https://www.youtube-nocookie.com/embed/k-rCARRS3lo?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/k-rCARRS3lo/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@bandainamcomusiclive/video/7588125467115392264",
     "infoVideo": [
       {
         "infoId": "FLG00",
@@ -1608,6 +1675,24 @@
     ]
   },
   {
+    "videoId": "NXT1u4p4yDo",
+    "videoType": "other",
+    "title": "アイドルマスター SideM PV🦅✨ストーリー・楽曲・ライブイベント、様々展開中！✨",
+    "siteType": "youtube",
+    "releaseDate": "20251224",
+    "url": "https://youtu.be/NXT1u4p4yDo",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/NXT1u4p4yDo?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/NXT1u4p4yDo/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "all",
+        "personFlg": 0,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
     "videoId": "6bKHQ4pPcIk",
     "videoType": "other",
     "title": "Study Equal Magic! / S.E.M【踊ってみた】②",
@@ -1616,6 +1701,7 @@
     "url": "https://youtu.be/6bKHQ4pPcIk",
     "embedUrl": "https://www.youtube-nocookie.com/embed/6bKHQ4pPcIk?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/6bKHQ4pPcIk/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@bandainamcomusiclive/video/7585462079491017992",
     "infoVideo": [
       {
         "infoId": "SEM00",
@@ -1648,6 +1734,7 @@
     "url": "https://youtu.be/i6IcLiPDcgI",
     "embedUrl": "https://www.youtube-nocookie.com/embed/i6IcLiPDcgI?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/i6IcLiPDcgI/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@bandainamcomusiclive/video/7585461254274206984",
     "infoVideo": [
       {
         "infoId": "SEM00",
@@ -1680,6 +1767,7 @@
     "url": "https://youtu.be/cXbvQzLjIWI",
     "embedUrl": "https://www.youtube-nocookie.com/embed/cXbvQzLjIWI?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/cXbvQzLjIWI/mqdefault.jpg",
+    "tiktokUrl": "https://www.tiktok.com/@bandainamcomusiclive/video/7584803217817586951",
     "infoVideo": [
       {
         "infoId": "CLF00",
@@ -1712,6 +1800,7 @@
     "url": "https://youtu.be/fvSkLKmcWyI",
     "embedUrl": "https://www.youtube-nocookie.com/embed/fvSkLKmcWyI?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/fvSkLKmcWyI/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -1889,6 +1978,7 @@
     "url": "https://youtu.be/-OE_e1XWOFw",
     "embedUrl": "https://www.youtube-nocookie.com/embed/-OE_e1XWOFw?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/-OE_e1XWOFw/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP03",
@@ -2081,6 +2171,7 @@
     "url": "https://youtu.be/Ks5dIb58guU",
     "embedUrl": "https://www.youtube-nocookie.com/embed/Ks5dIb58guU?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/Ks5dIb58guU/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP01",
@@ -2313,6 +2404,7 @@
     "url": "https://youtu.be/xnIj2yQJwpM",
     "embedUrl": "https://www.youtube-nocookie.com/embed/xnIj2yQJwpM?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/xnIj2yQJwpM/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -2490,6 +2582,7 @@
     "url": "https://youtu.be/xegjMTnHB9M",
     "embedUrl": "https://www.youtube-nocookie.com/embed/xegjMTnHB9M?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/xegjMTnHB9M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -2667,6 +2760,7 @@
     "url": "https://youtu.be/54AZ9wO2i_k",
     "embedUrl": "https://www.youtube-nocookie.com/embed/54AZ9wO2i_k?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/54AZ9wO2i_k/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -2844,6 +2938,7 @@
     "url": "https://youtu.be/-kr_Y2vzeC0",
     "embedUrl": "https://www.youtube-nocookie.com/embed/-kr_Y2vzeC0?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/-kr_Y2vzeC0/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -2896,6 +2991,7 @@
     "url": "https://youtu.be/ZjYBlCSGgUI",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ZjYBlCSGgUI?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/ZjYBlCSGgUI/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FRM00",
@@ -2948,6 +3044,7 @@
     "url": "https://youtu.be/sy6OWWmNZ1o",
     "embedUrl": "https://www.youtube-nocookie.com/embed/sy6OWWmNZ1o?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/sy6OWWmNZ1o/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -3000,6 +3097,7 @@
     "url": "https://youtu.be/ifwBfkUUlSM",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ifwBfkUUlSM?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/ifwBfkUUlSM/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FRM00",
@@ -3044,6 +3142,57 @@
     ]
   },
   {
+    "videoId": "lKoJqXTcfnY",
+    "videoType": "other",
+    "title": "「KING OF PRISM」×「アイドルマスター SideM」スペシャルコラボボイスドラマ",
+    "siteType": "youtube",
+    "releaseDate": "20250807",
+    "url": "https://youtu.be/lKoJqXTcfnY",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/lKoJqXTcfnY?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/lKoJqXTcfnY/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "SEM00",
+        "personFlg": 0,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "SEM01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "SEM02",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "SEM03",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
+    "videoId": "_56meT7HtQ0",
+    "videoType": "other",
+    "title": "キャストが衣装倉庫に潜入してみたら汗と涙と思いやりだった",
+    "siteType": "youtube",
+    "releaseDate": "20250717",
+    "url": "https://youtu.be/_56meT7HtQ0",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/_56meT7HtQ0?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/_56meT7HtQ0/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "other",
+        "personFlg": 0,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
     "videoId": "UA73rZWUWUQ",
     "videoType": "mv",
     "title": "SUPREME STARS !!! MV",
@@ -3052,6 +3201,7 @@
     "url": "https://youtu.be/UA73rZWUWUQ",
     "embedUrl": "https://www.youtube-nocookie.com/embed/UA73rZWUWUQ?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/UA73rZWUWUQ/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "all",
@@ -3069,6 +3219,7 @@
     "url": "https://youtu.be/LiY9wb43dlQ",
     "embedUrl": "https://www.youtube-nocookie.com/embed/LiY9wb43dlQ?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/LiY9wb43dlQ/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -3121,6 +3272,7 @@
     "url": "https://youtu.be/-keyTsehZ70",
     "embedUrl": "https://www.youtube-nocookie.com/embed/-keyTsehZ70?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/-keyTsehZ70/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FRM00",
@@ -3173,6 +3325,7 @@
     "url": "https://youtu.be/98yP9T3cmyA",
     "embedUrl": "https://www.youtube-nocookie.com/embed/98yP9T3cmyA?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/98yP9T3cmyA/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -3225,6 +3378,7 @@
     "url": "https://youtu.be/Qm-wKqXRkbc",
     "embedUrl": "https://www.youtube-nocookie.com/embed/Qm-wKqXRkbc?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/Qm-wKqXRkbc/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FRM00",
@@ -3277,6 +3431,7 @@
     "url": "https://youtu.be/TRGjDunF484",
     "embedUrl": "https://www.youtube-nocookie.com/embed/TRGjDunF484?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/TRGjDunF484/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "all",
@@ -3294,6 +3449,7 @@
     "url": "https://youtu.be/BZ6292Bl6lQ",
     "embedUrl": "https://www.youtube-nocookie.com/embed/BZ6292Bl6lQ?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/BZ6292Bl6lQ/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "HIJ00",
@@ -3366,6 +3522,7 @@
     "url": "https://youtu.be/A-JOU7OPw9c",
     "embedUrl": "https://www.youtube-nocookie.com/embed/A-JOU7OPw9c?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/A-JOU7OPw9c/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "HIJ00",
@@ -3438,6 +3595,7 @@
     "url": "https://youtu.be/c_aszFfbTSI",
     "embedUrl": "https://www.youtube-nocookie.com/embed/c_aszFfbTSI?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/c_aszFfbTSI/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS01",
@@ -3702,14 +3860,33 @@
     ]
   },
   {
-    "videoId": "bEzvhKqV_xY_273",
+    "videoId": "bfqh91XS5Ps",
+    "videoType": "other",
+    "title": "【アイマス20周年イヤー】20周年ティザービジュアル第4弾初出PV",
+    "siteType": "youtube",
+    "releaseDate": "20241222",
+    "url": "https://youtu.be/bfqh91XS5Ps",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/bfqh91XS5Ps?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/bfqh91XS5Ps/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "DRS01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
+    "videoId": "bEzvhKqV_xY?t=273",
     "videoType": "other",
     "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』VOL.4 PV第4弾",
     "siteType": "youtube",
     "releaseDate": "20241221",
     "url": "https://youtu.be/bEzvhKqV_xY&t=273",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/bEzvhKqV_xY?mute=1&modestbranding=1&start=",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/bEzvhKqV_xY?mute=1&modestbranding=1&start=273",
     "thumbnailUrl": "http://img.youtube.com/vi/bEzvhKqV_xY/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SEM00",
@@ -3734,14 +3911,15 @@
     ]
   },
   {
-    "videoId": "r3XihD8pkGg_183",
+    "videoId": "r3XihD8pkGg?t=183",
     "videoType": "other",
     "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』VOL.4 PV第3弾",
     "siteType": "youtube",
     "releaseDate": "20241221",
     "url": "https://youtu.be/r3XihD8pkGg&t=183",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/r3XihD8pkGg?mute=1&modestbranding=1&start=",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/r3XihD8pkGg?mute=1&modestbranding=1&start=183",
     "thumbnailUrl": "http://img.youtube.com/vi/r3XihD8pkGg/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SAI00",
@@ -3766,14 +3944,15 @@
     ]
   },
   {
-    "videoId": "NDf6AZwt42s_93",
+    "videoId": "NDf6AZwt42s?t=93",
     "videoType": "other",
     "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』VOL.4 PV第2弾",
     "siteType": "youtube",
     "releaseDate": "20241221",
     "url": "https://youtu.be/NDf6AZwt42s&t=93",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/NDf6AZwt42s?mute=1&modestbranding=1&start=",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/NDf6AZwt42s?mute=1&modestbranding=1&start=93",
     "thumbnailUrl": "http://img.youtube.com/vi/NDf6AZwt42s/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FRM00",
@@ -3806,6 +3985,7 @@
     "url": "https://youtu.be/dUVEwlhtOk4",
     "embedUrl": "https://www.youtube-nocookie.com/embed/dUVEwlhtOk4?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/dUVEwlhtOk4/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -3838,6 +4018,7 @@
     "url": "https://youtu.be/Vcl9wG1601E",
     "embedUrl": "https://www.youtube-nocookie.com/embed/Vcl9wG1601E?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/Vcl9wG1601E/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "HIJ00",
@@ -3902,14 +4083,15 @@
     ]
   },
   {
-    "videoId": "jMsGIcm_90Y_303",
+    "videoId": "jMsGIcm_90Y?t=303",
     "videoType": "other",
     "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』VOL.3 PV第4弾",
     "siteType": "youtube",
     "releaseDate": "20241027",
     "url": "https://youtu.be/jMsGIcm_90Y&t=303",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/jMsGIcm_90Y?mute=1&modestbranding=1&start=",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/jMsGIcm_90Y?mute=1&modestbranding=1&start=303",
     "thumbnailUrl": "http://img.youtube.com/vi/jMsGIcm_90Y/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FLG00",
@@ -3934,14 +4116,15 @@
     ]
   },
   {
-    "videoId": "uVr52CiTyYM_213",
+    "videoId": "uVr52CiTyYM?t=213",
     "videoType": "other",
     "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』VOL.3 PV第3弾",
     "siteType": "youtube",
     "releaseDate": "20241027",
     "url": "https://youtu.be/uVr52CiTyYM&t=213",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/uVr52CiTyYM?mute=1&modestbranding=1&start=",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/uVr52CiTyYM?mute=1&modestbranding=1&start=213",
     "thumbnailUrl": "http://img.youtube.com/vi/uVr52CiTyYM/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "MFM00",
@@ -3966,14 +4149,15 @@
     ]
   },
   {
-    "videoId": "YFBmcEZrYNg_153s",
+    "videoId": "YFBmcEZrYNg?t=153",
     "videoType": "other",
     "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』VOL.3 PV第2弾",
     "siteType": "youtube",
     "releaseDate": "20241027",
     "url": "https://youtu.be/YFBmcEZrYNg&t=153s",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/YFBmcEZrYNgs?mute=1&modestbranding=1&start=",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/YFBmcEZrYNgs?mute=1&modestbranding=1&start=153",
     "thumbnailUrl": "http://img.youtube.com/vi/YFBmcEZrYNgs/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SSK00",
@@ -4001,6 +4185,7 @@
     "url": "https://youtu.be/CCc_ScWfah4",
     "embedUrl": "https://www.youtube-nocookie.com/embed/CCc_ScWfah4?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/CCc_ScWfah4/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "HIJ00",
@@ -4043,6 +4228,7 @@
     "url": "https://youtu.be/h6SUmer9V0o",
     "embedUrl": "https://www.youtube-nocookie.com/embed/h6SUmer9V0o?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/h6SUmer9V0o/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "BEI00",
@@ -4125,6 +4311,7 @@
     "url": "https://youtu.be/jA7ogpCPluU",
     "embedUrl": "https://www.youtube-nocookie.com/embed/jA7ogpCPluU?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/jA7ogpCPluU/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "BEI00",
@@ -4207,6 +4394,7 @@
     "url": "https://youtu.be/psadMkMXi7E",
     "embedUrl": "https://www.youtube-nocookie.com/embed/psadMkMXi7E?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/psadMkMXi7E/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP01",
@@ -4436,14 +4624,15 @@
     ]
   },
   {
-    "videoId": "T99vmYaWhN4_243",
+    "videoId": "T99vmYaWhN4?t=243",
     "videoType": "other",
     "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』VOL.2 PV第4弾",
     "siteType": "youtube",
     "releaseDate": "20240825",
     "url": "https://youtu.be/T99vmYaWhN4&t=243",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/T99vmYaWhN4?mute=1&modestbranding=1&start=",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/T99vmYaWhN4?mute=1&modestbranding=1&start=243",
     "thumbnailUrl": "http://img.youtube.com/vi/T99vmYaWhN4/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "CFP00",
@@ -4478,14 +4667,15 @@
     ]
   },
   {
-    "videoId": "HyIUSqhOBpA_153",
+    "videoId": "HyIUSqhOBpA?t=153",
     "videoType": "other",
     "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』VOL.2 PV第3弾",
     "siteType": "youtube",
     "releaseDate": "20240825",
     "url": "https://youtu.be/HyIUSqhOBpA&t=153",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/HyIUSqhOBpA?mute=1&modestbranding=1&start=",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/HyIUSqhOBpA?mute=1&modestbranding=1&start=153",
     "thumbnailUrl": "http://img.youtube.com/vi/HyIUSqhOBpA/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "BEI00",
@@ -4510,14 +4700,15 @@
     ]
   },
   {
-    "videoId": "dK-Unz_N8QI_93",
+    "videoId": "dK-Unz_N8QI?t=93",
     "videoType": "other",
     "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』VOL.2 PV第2弾",
     "siteType": "youtube",
     "releaseDate": "20240825",
     "url": "https://youtu.be/dK-Unz_N8QI&t=93",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/dK-Unz_N8QI?mute=1&modestbranding=1&start=",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/dK-Unz_N8QI?mute=1&modestbranding=1&start=93",
     "thumbnailUrl": "http://img.youtube.com/vi/dK-Unz_N8QI/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "ALT00",
@@ -4545,6 +4736,73 @@
     "url": "https://youtu.be/6uxXCJR-viU",
     "embedUrl": "https://www.youtube-nocookie.com/embed/6uxXCJR-viU?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/6uxXCJR-viU/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "DRS00",
+        "personFlg": 0,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "DRS01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "DRS02",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "DRS03",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
+    "videoId": "JIwEISRdcOM",
+    "videoType": "other",
+    "title": "【アイマス20周年イヤー】『アイドルマスター』シリーズ20周年イヤー ティザーＰＶ",
+    "siteType": "youtube",
+    "releaseDate": "20240726",
+    "url": "https://youtu.be/JIwEISRdcOM",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/JIwEISRdcOM?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/JIwEISRdcOM/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "DRS00",
+        "personFlg": 0,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "DRS01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "DRS02",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "DRS03",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
+    "videoId": "EhDpFPwawWY",
+    "videoType": "3dlive",
+    "title": "【冒頭無料】VΔLZ×DRAMATIC STARS COLLABORATION LIVE ～劇的演舞～",
+    "siteType": "youtube",
+    "releaseDate": "20240721",
+    "url": "https://youtu.be/EhDpFPwawWY",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/EhDpFPwawWY?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/EhDpFPwawWY/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -4577,6 +4835,7 @@
     "url": "https://youtu.be/2cxrGQ1q7ZU",
     "embedUrl": "https://www.youtube-nocookie.com/embed/2cxrGQ1q7ZU?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/2cxrGQ1q7ZU/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -4609,6 +4868,7 @@
     "url": "https://youtu.be/IsUsPZXHRfk",
     "embedUrl": "https://www.youtube-nocookie.com/embed/IsUsPZXHRfk?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/IsUsPZXHRfk/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -4641,6 +4901,7 @@
     "url": "https://youtu.be/dqqPzYL6j0w",
     "embedUrl": "https://www.youtube-nocookie.com/embed/dqqPzYL6j0w?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/dqqPzYL6j0w/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -4665,14 +4926,15 @@
     ]
   },
   {
-    "videoId": "wIhZ_QkrlQo_244",
+    "videoId": "wIhZ_QkrlQo?t=244",
     "videoType": "other",
     "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』VOL.1 PV第4弾",
     "siteType": "youtube",
     "releaseDate": "20240614",
     "url": "https://youtu.be/wIhZ_QkrlQo&t=244",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/wIhZ_QkrlQo?mute=1&modestbranding=1&start=",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/wIhZ_QkrlQo?mute=1&modestbranding=1&start=244",
     "thumbnailUrl": "http://img.youtube.com/vi/wIhZ_QkrlQo/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "CLF00",
@@ -4697,14 +4959,15 @@
     ]
   },
   {
-    "videoId": "awGdKWuNZd0_154",
+    "videoId": "awGdKWuNZd0?t=154",
     "videoType": "other",
     "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』VOL.1 PV第3弾",
     "siteType": "youtube",
     "releaseDate": "20240614",
     "url": "https://youtu.be/awGdKWuNZd0&t=154",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/awGdKWuNZd0?mute=1&modestbranding=1&start=",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/awGdKWuNZd0?mute=1&modestbranding=1&start=154",
     "thumbnailUrl": "http://img.youtube.com/vi/awGdKWuNZd0/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "LGN00",
@@ -4729,14 +4992,15 @@
     ]
   },
   {
-    "videoId": "WCgyZSWh2_Y_63",
+    "videoId": "WCgyZSWh2_Y?t=63",
     "videoType": "other",
     "title": "FiFSイラスト展 『スリー・ワン・ファイヴ』VOL.1 PV第2弾",
     "siteType": "youtube",
     "releaseDate": "20240614",
     "url": "https://youtu.be/WCgyZSWh2_Y&t=63",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/WCgyZSWh2_Y?mute=1&modestbranding=1&start=",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/WCgyZSWh2_Y?mute=1&modestbranding=1&start=63",
     "thumbnailUrl": "http://img.youtube.com/vi/WCgyZSWh2_Y/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "KGD00",
@@ -4769,6 +5033,7 @@
     "url": "https://youtu.be/heNjjt1JjsU",
     "embedUrl": "https://www.youtube-nocookie.com/embed/heNjjt1JjsU?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/heNjjt1JjsU/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DBL00",
@@ -4796,6 +5061,7 @@
     "url": "https://youtu.be/BFvo247wp8s",
     "embedUrl": "https://www.youtube-nocookie.com/embed/BFvo247wp8s?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/BFvo247wp8s/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP03",
@@ -5078,6 +5344,7 @@
     "url": "https://youtu.be/Cr1EH2zca6U",
     "embedUrl": "https://www.youtube-nocookie.com/embed/Cr1EH2zca6U?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/Cr1EH2zca6U/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "ALT00",
@@ -5165,6 +5432,7 @@
     "url": "https://youtu.be/jU0dTRLU0I0",
     "embedUrl": "https://www.youtube-nocookie.com/embed/jU0dTRLU0I0?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/jU0dTRLU0I0/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -5217,6 +5485,7 @@
     "url": "https://youtu.be/bcsWBQGvPk8",
     "embedUrl": "https://www.youtube-nocookie.com/embed/bcsWBQGvPk8?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/bcsWBQGvPk8/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DBL00",
@@ -5264,6 +5533,7 @@
     "url": "https://youtu.be/MxfZmUxwqcI",
     "embedUrl": "https://www.youtube-nocookie.com/embed/MxfZmUxwqcI?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/MxfZmUxwqcI/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "BEI00",
@@ -5303,6 +5573,24 @@
     ]
   },
   {
+    "videoId": "2nq0wGWcZ3w",
+    "videoType": "other",
+    "title": "8th STAGE「315プロダクション エピソード」連動企画『49人49色！アイドルに一問一答!!!』",
+    "siteType": "youtube",
+    "releaseDate": "20240315",
+    "url": "https://youtu.be/2nq0wGWcZ3w",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/2nq0wGWcZ3w?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/2nq0wGWcZ3w/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "all",
+        "personFlg": 0,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
     "videoId": "hJeXoQ78wg0",
     "videoType": "3dlive_digest",
     "title": "F＠NTASTIC COMBINATION LIVE ～CONNECTIME!!!!～ LIVE Blu-ray ダイジェスト",
@@ -5311,6 +5599,7 @@
     "url": "https://youtu.be/hJeXoQ78wg0",
     "embedUrl": "https://www.youtube-nocookie.com/embed/hJeXoQ78wg0?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/hJeXoQ78wg0/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "ALT00",
@@ -5398,6 +5687,7 @@
     "url": "https://youtu.be/-cBKlvc7wLg",
     "embedUrl": "https://www.youtube-nocookie.com/embed/-cBKlvc7wLg?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/-cBKlvc7wLg/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -5442,6 +5732,39 @@
     ]
   },
   {
+    "videoId": "BnOD_ajCaAE",
+    "videoType": "mv",
+    "title": "銚子電鉄開業100周年記念テーマソング『かざぐるま 〜Windy Road〜』公開！",
+    "siteType": "youtube",
+    "releaseDate": "20240211",
+    "url": "https://youtu.be/BnOD_ajCaAE",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/BnOD_ajCaAE?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/BnOD_ajCaAE/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "JUP00",
+        "personFlg": 0,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "JUP01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "JUP02",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "JUP03",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
     "videoId": "5j_zn8Fdpaw",
     "videoType": "live_digest",
     "title": "THE IDOLM@STER M@STERS OF IDOL WORLD!!!!! 2023 Blu-ray☆DAY2☆全曲ダイジェスト",
@@ -5450,6 +5773,7 @@
     "url": "https://youtu.be/5j_zn8Fdpaw",
     "embedUrl": "https://www.youtube-nocookie.com/embed/5j_zn8Fdpaw?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/5j_zn8Fdpaw/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FRM00",
@@ -5517,6 +5841,7 @@
     "url": "https://youtu.be/9nlNE7lCBXk",
     "embedUrl": "https://www.youtube-nocookie.com/embed/9nlNE7lCBXk?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/9nlNE7lCBXk/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS01",
@@ -5584,6 +5909,7 @@
     "url": "https://youtu.be/OAwQSAUa6TE",
     "embedUrl": "https://www.youtube-nocookie.com/embed/OAwQSAUa6TE?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/OAwQSAUa6TE/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP01",
@@ -5831,6 +6157,7 @@
     "url": "https://youtu.be/gwjm6kqrE0k",
     "embedUrl": "https://www.youtube-nocookie.com/embed/gwjm6kqrE0k?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/gwjm6kqrE0k/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "LGN00",
@@ -5883,6 +6210,7 @@
     "url": "https://youtu.be/zG8iCG0BPF4",
     "embedUrl": "https://www.youtube-nocookie.com/embed/zG8iCG0BPF4?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/zG8iCG0BPF4/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "ALT00",
@@ -5930,6 +6258,7 @@
     "url": "https://youtu.be/2-A0kyeAmro",
     "embedUrl": "https://www.youtube-nocookie.com/embed/2-A0kyeAmro?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/2-A0kyeAmro/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "other",
@@ -5947,6 +6276,7 @@
     "url": "https://youtu.be/zlskohnb8o4",
     "embedUrl": "https://www.youtube-nocookie.com/embed/zlskohnb8o4?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/zlskohnb8o4/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP03",
@@ -6199,6 +6529,7 @@
     "url": "https://asobichannel.asobistore.jp/watch/fo8rieglxac",
     "embedUrl": "",
     "thumbnailUrl": "",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "all",
@@ -6216,6 +6547,7 @@
     "url": "https://youtu.be/IFx-TVtr_UI",
     "embedUrl": "https://www.youtube-nocookie.com/embed/IFx-TVtr_UI?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/IFx-TVtr_UI/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "HIJ00",
@@ -6258,6 +6590,7 @@
     "url": "https://youtu.be/lKmVH1vDbfg",
     "embedUrl": "https://www.youtube-nocookie.com/embed/lKmVH1vDbfg?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/lKmVH1vDbfg/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "BEI00",
@@ -6290,6 +6623,7 @@
     "url": "https://youtu.be/k1Jb7dsgHcA",
     "embedUrl": "https://www.youtube-nocookie.com/embed/k1Jb7dsgHcA?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/k1Jb7dsgHcA/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "all",
@@ -6307,6 +6641,7 @@
     "url": "https://youtu.be/KT7ysLwYRZo",
     "embedUrl": "https://www.youtube-nocookie.com/embed/KT7ysLwYRZo?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/KT7ysLwYRZo/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DBL00",
@@ -6334,6 +6669,7 @@
     "url": "https://youtu.be/rR4PTHsX3v0",
     "embedUrl": "https://www.youtube-nocookie.com/embed/rR4PTHsX3v0?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/rR4PTHsX3v0/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -6366,6 +6702,7 @@
     "url": "https://youtu.be/3c0FaeAgcc4",
     "embedUrl": "https://www.youtube-nocookie.com/embed/3c0FaeAgcc4?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/3c0FaeAgcc4/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SEM00",
@@ -6398,6 +6735,7 @@
     "url": "https://youtu.be/mgcuEBU_9FI",
     "embedUrl": "https://www.youtube-nocookie.com/embed/mgcuEBU_9FI?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/mgcuEBU_9FI/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "BEI03",
@@ -6535,6 +6873,7 @@
     "url": "https://youtu.be/TsChAgAV2ro",
     "embedUrl": "https://www.youtube-nocookie.com/embed/TsChAgAV2ro?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/TsChAgAV2ro/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -6587,6 +6926,7 @@
     "url": "https://youtu.be/w26cDB7eQNc",
     "embedUrl": "https://www.youtube-nocookie.com/embed/w26cDB7eQNc?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/w26cDB7eQNc/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -6619,6 +6959,7 @@
     "url": "https://youtu.be/nOJqsYVBJcI",
     "embedUrl": "https://www.youtube-nocookie.com/embed/nOJqsYVBJcI?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/nOJqsYVBJcI/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SSK00",
@@ -6646,6 +6987,7 @@
     "url": "https://youtu.be/hf252lKS_Yw",
     "embedUrl": "https://www.youtube-nocookie.com/embed/hf252lKS_Yw?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/hf252lKS_Yw/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FRM01",
@@ -6673,6 +7015,7 @@
     "url": "https://youtu.be/bcHGOcjYqwE",
     "embedUrl": "https://www.youtube-nocookie.com/embed/bcHGOcjYqwE?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/bcHGOcjYqwE/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "KGD00",
@@ -6705,6 +7048,7 @@
     "url": "https://asobistage.asobistore.jp/event/315passionhour_2023winter/archive/the_kogado",
     "embedUrl": "",
     "thumbnailUrl": "",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "KGD00",
@@ -6737,6 +7081,7 @@
     "url": "https://youtu.be/HShpJv9RSAs",
     "embedUrl": "https://www.youtube-nocookie.com/embed/HShpJv9RSAs?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/HShpJv9RSAs/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FLG00",
@@ -6769,6 +7114,7 @@
     "url": "https://youtu.be/adoeumIO0Us",
     "embedUrl": "https://www.youtube-nocookie.com/embed/adoeumIO0Us?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/adoeumIO0Us/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP03",
@@ -6881,6 +7227,7 @@
     "url": "https://youtu.be/MygaVHMHW-o",
     "embedUrl": "https://www.youtube-nocookie.com/embed/MygaVHMHW-o?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/MygaVHMHW-o/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "KGD00",
@@ -6913,6 +7260,7 @@
     "url": "https://youtu.be/mm982sprl7A",
     "embedUrl": "https://www.youtube-nocookie.com/embed/mm982sprl7A?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/mm982sprl7A/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "all",
@@ -6930,6 +7278,7 @@
     "url": "https://youtu.be/p673N6vTWk4",
     "embedUrl": "https://www.youtube-nocookie.com/embed/p673N6vTWk4?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/p673N6vTWk4/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "ALT00",
@@ -6957,6 +7306,7 @@
     "url": "https://youtu.be/INW6t73OgHo",
     "embedUrl": "https://www.youtube-nocookie.com/embed/INW6t73OgHo?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/INW6t73OgHo/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP03",
@@ -7134,6 +7484,7 @@
     "url": "https://youtu.be/Yo-WYB8-8Io",
     "embedUrl": "https://www.youtube-nocookie.com/embed/Yo-WYB8-8Io?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/Yo-WYB8-8Io/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "LGN00",
@@ -7166,6 +7517,7 @@
     "url": "https://youtu.be/kQcycnooPz8",
     "embedUrl": "https://www.youtube-nocookie.com/embed/kQcycnooPz8?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/kQcycnooPz8/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FRM00",
@@ -7198,6 +7550,7 @@
     "url": "https://youtu.be/4U8BLtgTNoY",
     "embedUrl": "https://www.youtube-nocookie.com/embed/4U8BLtgTNoY?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/4U8BLtgTNoY/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "MFM00",
@@ -7230,6 +7583,7 @@
     "url": "https://asobistage.asobistore.jp/event/315passionhour_2022summer/archive/legenders",
     "embedUrl": "",
     "thumbnailUrl": "",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "LGN00",
@@ -7262,6 +7616,7 @@
     "url": "https://asobistage.asobistore.jp/event/315passionhour_2022summer/archive/frame",
     "embedUrl": "",
     "thumbnailUrl": "",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FRM00",
@@ -7294,6 +7649,7 @@
     "url": "https://youtu.be/10hE7OQVd8I",
     "embedUrl": "https://www.youtube-nocookie.com/embed/10hE7OQVd8I?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/10hE7OQVd8I/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP03",
@@ -7386,6 +7742,7 @@
     "url": "https://youtu.be/0OXdx2G63k8",
     "embedUrl": "https://www.youtube-nocookie.com/embed/0OXdx2G63k8?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/0OXdx2G63k8/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -7683,6 +8040,7 @@
     "url": "https://youtu.be/WL2Nn-7WtPk",
     "embedUrl": "https://www.youtube-nocookie.com/embed/WL2Nn-7WtPk?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/WL2Nn-7WtPk/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "ALT00",
@@ -7810,6 +8168,7 @@
     "url": "https://youtu.be/AbtZPARKiVc",
     "embedUrl": "https://www.youtube-nocookie.com/embed/AbtZPARKiVc?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/AbtZPARKiVc/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SAI00",
@@ -7842,6 +8201,7 @@
     "url": "https://youtu.be/EbkXU4FJiv4",
     "embedUrl": "https://www.youtube-nocookie.com/embed/EbkXU4FJiv4?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/EbkXU4FJiv4/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "LGN00",
@@ -7874,6 +8234,7 @@
     "url": "https://youtu.be/1sPQcSPQhoE",
     "embedUrl": "https://www.youtube-nocookie.com/embed/1sPQcSPQhoE?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/1sPQcSPQhoE/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "CFP00",
@@ -7916,6 +8277,7 @@
     "url": "https://youtu.be/r7xwc6J8orw",
     "embedUrl": "https://www.youtube-nocookie.com/embed/r7xwc6J8orw?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/r7xwc6J8orw/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FRM00",
@@ -7948,6 +8310,7 @@
     "url": "https://youtu.be/l4vIPuElPZU",
     "embedUrl": "https://www.youtube-nocookie.com/embed/l4vIPuElPZU?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/l4vIPuElPZU/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "other",
@@ -7965,6 +8328,7 @@
     "url": "https://youtu.be/9ogiP0NDzW8",
     "embedUrl": "https://www.youtube-nocookie.com/embed/9ogiP0NDzW8?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/9ogiP0NDzW8/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "other",
@@ -7982,6 +8346,7 @@
     "url": "https://youtu.be/HeiptD9Hb-k",
     "embedUrl": "https://www.youtube-nocookie.com/embed/HeiptD9Hb-k?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/HeiptD9Hb-k/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "CLF00",
@@ -8006,7 +8371,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_8731",
+    "videoId": "ItkOInR4m7M?t=8731",
     "videoType": "mv",
     "title": "エムステMV「DRIVE A LIVE　DRAMATIC STARSバージョン」",
     "siteType": "youtube",
@@ -8014,6 +8379,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=8731",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -8053,7 +8419,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_8600",
+    "videoId": "ItkOInR4m7M?t=8600",
     "videoType": "mv",
     "title": "エムステMV「Eternal Fantasia」",
     "siteType": "youtube",
@@ -8061,6 +8427,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=8600",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "ALT00",
@@ -8130,7 +8497,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_8475",
+    "videoId": "ItkOInR4m7M?t=8475",
     "videoType": "mv",
     "title": "エムステMV「カレイド TOURHYTHM」",
     "siteType": "youtube",
@@ -8138,6 +8505,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=8475",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -8177,7 +8545,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_8355",
+    "videoId": "ItkOInR4m7M?t=8355",
     "videoType": "mv",
     "title": "エムステMV「エウレカダイアリー」",
     "siteType": "youtube",
@@ -8185,6 +8553,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=8355",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "BEI00",
@@ -8229,7 +8598,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_8219",
+    "videoId": "ItkOInR4m7M?t=8219",
     "videoType": "mv",
     "title": "エムステMV「夜空を煌めく星のように」",
     "siteType": "youtube",
@@ -8237,6 +8606,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=8219",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -8291,7 +8661,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_8120",
+    "videoId": "ItkOInR4m7M?t=8120",
     "videoType": "mv",
     "title": "エムステMV「Flowing Freedom」",
     "siteType": "youtube",
@@ -8299,6 +8669,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=8120",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "LGN02",
@@ -8308,7 +8679,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_7995",
+    "videoId": "ItkOInR4m7M?t=7995",
     "videoType": "mv",
     "title": "エムステMV「HANAMARU LIFE」",
     "siteType": "youtube",
@@ -8316,6 +8687,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=7995",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FLG02",
@@ -8325,7 +8697,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_7900",
+    "videoId": "ItkOInR4m7M?t=7900",
     "videoType": "mv",
     "title": "エムステMV「ふわもこシフォンなゆめのなか♪」",
     "siteType": "youtube",
@@ -8333,6 +8705,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=7900",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "MFM03",
@@ -8352,7 +8725,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_7764",
+    "videoId": "ItkOInR4m7M?t=7764",
     "videoType": "mv",
     "title": "エムステMV「ROAD TO THE FUTURE」",
     "siteType": "youtube",
@@ -8360,6 +8733,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=7764",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "KGD02",
@@ -8369,7 +8743,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_7633",
+    "videoId": "ItkOInR4m7M?t=7633",
     "videoType": "mv",
     "title": "エムステMV「Echoes My Note」",
     "siteType": "youtube",
@@ -8377,6 +8751,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=7633",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "ALT02",
@@ -8386,7 +8761,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_7503",
+    "videoId": "ItkOInR4m7M?t=7503",
     "videoType": "mv",
     "title": "エムステMV「A CUP OF HAPPINESS」",
     "siteType": "youtube",
@@ -8394,6 +8769,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=7503",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "CFP01",
@@ -8403,7 +8779,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_7387",
+    "videoId": "ItkOInR4m7M?t=7387",
     "videoType": "mv",
     "title": "エムステMV「漢一貫ロックン・ロール」",
     "siteType": "youtube",
@@ -8411,6 +8787,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=7387",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SSK01",
@@ -8420,7 +8797,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_7285",
+    "videoId": "ItkOInR4m7M?t=7285",
     "videoType": "mv",
     "title": "エムステMV「ハートフル・パトローラー」",
     "siteType": "youtube",
@@ -8428,6 +8805,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=7285",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FRM01",
@@ -8437,7 +8815,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_7152",
+    "videoId": "ItkOInR4m7M?t=7152",
     "videoType": "mv",
     "title": "エムステMV「流るゝ風の如く ～和敬清寂～」",
     "siteType": "youtube",
@@ -8445,6 +8823,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=7152",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SAI03",
@@ -8454,7 +8833,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_7018",
+    "videoId": "ItkOInR4m7M?t=7018",
     "videoType": "mv",
     "title": "エムステMV「Learning Message」",
     "siteType": "youtube",
@@ -8462,6 +8841,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=7018",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SEM01",
@@ -8471,7 +8851,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_6901",
+    "videoId": "ItkOInR4m7M?t=6901",
     "videoType": "mv",
     "title": "エムステMV「“W”orldwide Ambitions!」",
     "siteType": "youtube",
@@ -8479,6 +8859,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=6901",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DBL01",
@@ -8498,7 +8879,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_6777",
+    "videoId": "ItkOInR4m7M?t=6777",
     "videoType": "mv",
     "title": "エムステMV「青春！サティスファクション」",
     "siteType": "youtube",
@@ -8506,6 +8887,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=6777",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "HIJ04",
@@ -8515,7 +8897,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_6671",
+    "videoId": "ItkOInR4m7M?t=6671",
     "videoType": "mv",
     "title": "エムステMV「サイコーCOUNT UP!」",
     "siteType": "youtube",
@@ -8523,6 +8905,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=6671",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "HIJ05",
@@ -8547,7 +8930,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_6561",
+    "videoId": "ItkOInR4m7M?t=6561",
     "videoType": "mv",
     "title": "エムステMV「魔法のステアー」",
     "siteType": "youtube",
@@ -8555,6 +8938,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=6561",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "BEI02",
@@ -8564,7 +8948,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_6461",
+    "videoId": "ItkOInR4m7M?t=6461",
     "videoType": "mv",
     "title": "エムステMV「THE FIRST STAR」",
     "siteType": "youtube",
@@ -8572,6 +8956,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=6461",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS01",
@@ -8581,7 +8966,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_6326",
+    "videoId": "ItkOInR4m7M?t=6326",
     "videoType": "mv",
     "title": "エムステMV「HAPPY×HAPPYミーティング」",
     "siteType": "youtube",
@@ -8589,6 +8974,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=6326",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP01",
@@ -8608,7 +8994,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_6185",
+    "videoId": "ItkOInR4m7M?t=6185",
     "videoType": "mv",
     "title": "エムステMV「なんどでも笑おう」",
     "siteType": "youtube",
@@ -8616,6 +9002,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=6185",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -8640,7 +9027,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_6053",
+    "videoId": "ItkOInR4m7M?t=6053",
     "videoType": "mv",
     "title": "エムステMV「Alice or Guilty」",
     "siteType": "youtube",
@@ -8648,6 +9035,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=6053",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -8672,7 +9060,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_5923",
+    "videoId": "ItkOInR4m7M?t=5923",
     "videoType": "mv",
     "title": "エムステMV「Welcome to Japan！」",
     "siteType": "youtube",
@@ -8680,6 +9068,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=5923",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "BEI01",
@@ -8704,7 +9093,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_5790",
+    "videoId": "ItkOInR4m7M?t=5790",
     "videoType": "mv",
     "title": "エムステMV「Your Nobility」",
     "siteType": "youtube",
@@ -8712,6 +9101,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=5790",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS02",
@@ -8731,7 +9121,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_5667",
+    "videoId": "ItkOInR4m7M?t=5667",
     "videoType": "mv",
     "title": "エムステMV「もくろみインディアNight」",
     "siteType": "youtube",
@@ -8739,6 +9129,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=5667",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP01",
@@ -8758,7 +9149,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_5547",
+    "videoId": "ItkOInR4m7M?t=5547",
     "videoType": "mv",
     "title": "エムステMV「My pen light, SMILE」",
     "siteType": "youtube",
@@ -8766,6 +9157,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=5547",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS03",
@@ -8790,7 +9182,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_5423",
+    "videoId": "ItkOInR4m7M?t=5423",
     "videoType": "mv",
     "title": "エムステMV「眠らぬ夜にスパシーバ！」",
     "siteType": "youtube",
@@ -8798,6 +9190,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=5423",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "CFP01",
@@ -8817,7 +9210,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_5281",
+    "videoId": "ItkOInR4m7M?t=5281",
     "videoType": "mv",
     "title": "エムステMV「Sugaring Off Party!」",
     "siteType": "youtube",
@@ -8825,6 +9218,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=5281",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "ALT02",
@@ -8849,7 +9243,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_5162",
+    "videoId": "ItkOInR4m7M?t=5162",
     "videoType": "mv",
     "title": "エムステMV「Purely&Kindly」",
     "siteType": "youtube",
@@ -8857,6 +9251,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=5162",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "BEI02",
@@ -8881,7 +9276,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_5059",
+    "videoId": "ItkOInR4m7M?t=5059",
     "videoType": "mv",
     "title": "エムステMV「Hallo, Freunde!」",
     "siteType": "youtube",
@@ -8889,6 +9284,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=5059",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP03",
@@ -8913,7 +9309,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_4942",
+    "videoId": "ItkOInR4m7M?t=4942",
     "videoType": "mv",
     "title": "エムステMV「ALOHA! HAPPY CREATOR!」",
     "siteType": "youtube",
@@ -8921,6 +9317,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=4942",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "CFP05",
@@ -8940,7 +9337,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_4802",
+    "videoId": "ItkOInR4m7M?t=4802",
     "videoType": "mv",
     "title": "エムステMV「千客万来ニーハオサァカス！」",
     "siteType": "youtube",
@@ -8948,6 +9345,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=4802",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP02",
@@ -8972,7 +9370,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_4683",
+    "videoId": "ItkOInR4m7M?t=4683",
     "videoType": "mv",
     "title": "エムステMV「Baile Apasionado」",
     "siteType": "youtube",
@@ -8980,6 +9378,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=4683",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "MFM02",
@@ -8999,7 +9398,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_4557",
+    "videoId": "ItkOInR4m7M?t=4557",
     "videoType": "mv",
     "title": "エムステMV「トレジャー・パーティー！」",
     "siteType": "youtube",
@@ -9007,6 +9406,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=4557",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DBL01",
@@ -9026,7 +9426,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_4447",
+    "videoId": "ItkOInR4m7M?t=4447",
     "videoType": "mv",
     "title": "エムステMV「永遠なる四銃士」",
     "siteType": "youtube",
@@ -9034,6 +9434,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=4447",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS01",
@@ -9058,7 +9459,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_4325",
+    "videoId": "ItkOInR4m7M?t=4325",
     "videoType": "mv",
     "title": "エムステMV「String of Fate」",
     "siteType": "youtube",
@@ -9066,6 +9467,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=4325",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "LGN00",
@@ -9100,7 +9502,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_4203",
+    "videoId": "ItkOInR4m7M?t=4203",
     "videoType": "mv",
     "title": "エムステMV「With…STORY」",
     "siteType": "youtube",
@@ -9108,6 +9510,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=4203",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FLG00",
@@ -9142,7 +9545,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_4068",
+    "videoId": "ItkOInR4m7M?t=4068",
     "videoType": "mv",
     "title": "エムステMV「もっふ・いんざぼっくす♪」",
     "siteType": "youtube",
@@ -9150,6 +9553,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=4068",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "MFM00",
@@ -9184,7 +9588,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_3938",
+    "videoId": "ItkOInR4m7M?t=3938",
     "videoType": "mv",
     "title": "エムステMV「情熱...FIGHTER」",
     "siteType": "youtube",
@@ -9192,6 +9596,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=3938",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "KGD00",
@@ -9226,7 +9631,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_3805",
+    "videoId": "ItkOInR4m7M?t=3805",
     "videoType": "mv",
     "title": "エムステMV「Never end「Opus」」",
     "siteType": "youtube",
@@ -9234,6 +9639,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=3805",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "ALT00",
@@ -9268,7 +9674,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_3686",
+    "videoId": "ItkOInR4m7M?t=3686",
     "videoType": "mv",
     "title": "エムステMV「À La Carte FREEDOM♪」",
     "siteType": "youtube",
@@ -9276,6 +9682,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=3686",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "CFP00",
@@ -9310,7 +9717,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_3564",
+    "videoId": "ItkOInR4m7M?t=3564",
     "videoType": "mv",
     "title": "エムステMV「オレたちの最強伝説〜一世一代、破羅駄威棲！〜」",
     "siteType": "youtube",
@@ -9318,6 +9725,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=3564",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SSK00",
@@ -9352,7 +9760,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_3461",
+    "videoId": "ItkOInR4m7M?t=3461",
     "videoType": "mv",
     "title": "エムステMV「MISSION is ピースフル！」",
     "siteType": "youtube",
@@ -9360,6 +9768,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=3461",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FRM00",
@@ -9394,7 +9803,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_3341",
+    "videoId": "ItkOInR4m7M?t=3341",
     "videoType": "mv",
     "title": "エムステMV「和風堂々！～WAnderful NIPPON！～」",
     "siteType": "youtube",
@@ -9402,6 +9811,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=3341",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SAI00",
@@ -9436,7 +9846,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_3226",
+    "videoId": "ItkOInR4m7M?t=3226",
     "videoType": "mv",
     "title": "エムステMV「Study Equal Magic!」",
     "siteType": "youtube",
@@ -9444,6 +9854,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=3226",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SEM00",
@@ -9478,7 +9889,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_3109",
+    "videoId": "ItkOInR4m7M?t=3109",
     "videoType": "mv",
     "title": "エムステMV「Pleasure Forever...」",
     "siteType": "youtube",
@@ -9486,6 +9897,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=3109",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DBL00",
@@ -9520,7 +9932,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_2979",
+    "videoId": "ItkOInR4m7M?t=2979",
     "videoType": "mv",
     "title": "エムステMV「JOKER➚オールマイティ」",
     "siteType": "youtube",
@@ -9528,6 +9940,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=2979",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "HIJ00",
@@ -9562,7 +9975,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_2847",
+    "videoId": "ItkOInR4m7M?t=2847",
     "videoType": "mv",
     "title": "エムステMV「想いはETERNITY」",
     "siteType": "youtube",
@@ -9570,6 +9983,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=2847",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "BEI00",
@@ -9604,7 +10018,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_2735",
+    "videoId": "ItkOInR4m7M?t=2735",
     "videoType": "mv",
     "title": "エムステMV「DRAMATIC NONFICTION」",
     "siteType": "youtube",
@@ -9612,6 +10026,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=2735",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -9646,7 +10061,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_2603",
+    "videoId": "ItkOInR4m7M?t=2603",
     "videoType": "mv",
     "title": "エムステMV「Planet scape」",
     "siteType": "youtube",
@@ -9654,6 +10069,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=2603",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -9688,7 +10104,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_2487",
+    "videoId": "ItkOInR4m7M?t=2487",
     "videoType": "mv",
     "title": "エムステMV「Legacy of Spirit」",
     "siteType": "youtube",
@@ -9696,6 +10112,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=2487",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "LGN00",
@@ -9730,7 +10147,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_2357",
+    "videoId": "ItkOInR4m7M?t=2357",
     "videoType": "mv",
     "title": "エムステMV「夢色VOYAGER」",
     "siteType": "youtube",
@@ -9738,6 +10155,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=2357",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FLG00",
@@ -9772,7 +10190,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_2247",
+    "videoId": "ItkOInR4m7M?t=2247",
     "videoType": "mv",
     "title": "エムステMV「うぇるかむ・はぴきらパーク！」",
     "siteType": "youtube",
@@ -9780,6 +10198,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=2247",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "MFM00",
@@ -9814,7 +10233,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_2140",
+    "videoId": "ItkOInR4m7M?t=2140",
     "videoType": "mv",
     "title": "エムステMV「強く尊き獣たち」",
     "siteType": "youtube",
@@ -9822,6 +10241,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=2140",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "KGD00",
@@ -9856,7 +10276,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_2020",
+    "videoId": "ItkOInR4m7M?t=2020",
     "videoType": "mv",
     "title": "エムステMV「The 1st Movement ～未来のための二重奏～」",
     "siteType": "youtube",
@@ -9864,6 +10284,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=2020",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "ALT00",
@@ -9898,7 +10319,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_1885",
+    "videoId": "ItkOInR4m7M?t=1885",
     "videoType": "mv",
     "title": "エムステMV「Café Parade!」",
     "siteType": "youtube",
@@ -9906,6 +10327,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=1885",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "CFP00",
@@ -9940,7 +10362,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_1757",
+    "videoId": "ItkOInR4m7M?t=1757",
     "videoType": "mv",
     "title": "エムステMV「バーニン・クールで輝いて」",
     "siteType": "youtube",
@@ -9948,6 +10370,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=1757",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SSK00",
@@ -9982,7 +10405,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_1644",
+    "videoId": "ItkOInR4m7M?t=1644",
     "videoType": "mv",
     "title": "エムステMV「勇敢なるキミへ」",
     "siteType": "youtube",
@@ -9990,6 +10413,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=1644",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FRM00",
@@ -10024,7 +10448,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_1523",
+    "videoId": "ItkOInR4m7M?t=1523",
     "videoType": "mv",
     "title": "エムステMV「喝彩！～花鳥風月～」",
     "siteType": "youtube",
@@ -10032,6 +10456,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=1523",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SAI00",
@@ -10066,7 +10491,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_1397",
+    "videoId": "ItkOInR4m7M?t=1397",
     "videoType": "mv",
     "title": "エムステMV「∞ Possibilities」",
     "siteType": "youtube",
@@ -10074,6 +10499,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=1397",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SEM00",
@@ -10108,7 +10534,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_1273",
+    "videoId": "ItkOInR4m7M?t=1273",
     "videoType": "mv",
     "title": "エムステMV「VICTORY BELIEVER」",
     "siteType": "youtube",
@@ -10116,6 +10542,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=1273",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DBL00",
@@ -10150,7 +10577,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_1152",
+    "videoId": "ItkOInR4m7M?t=1152",
     "videoType": "mv",
     "title": "エムステMV「HIGH JUMP NO LIMIT」",
     "siteType": "youtube",
@@ -10158,6 +10585,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=1152",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "HIJ00",
@@ -10192,7 +10620,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_1022",
+    "videoId": "ItkOInR4m7M?t=1022",
     "videoType": "mv",
     "title": "エムステMV「スマイル・エンゲージ」",
     "siteType": "youtube",
@@ -10200,6 +10628,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=1022",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "BEI00",
@@ -10234,7 +10663,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_897",
+    "videoId": "ItkOInR4m7M?t=897",
     "videoType": "mv",
     "title": "エムステMV「STARLIGHT CELEBRATE!」",
     "siteType": "youtube",
@@ -10242,6 +10671,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=897",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -10276,7 +10706,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_774",
+    "videoId": "ItkOInR4m7M?t=774",
     "videoType": "mv",
     "title": "エムステMV「BRAND NEW FIELD」",
     "siteType": "youtube",
@@ -10284,6 +10714,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=774",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -10318,7 +10749,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_641",
+    "videoId": "ItkOInR4m7M?t=641",
     "videoType": "mv",
     "title": "エムステMV「MEET THE WORLD!」",
     "siteType": "youtube",
@@ -10326,6 +10757,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=641",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "all",
@@ -10385,7 +10817,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_513",
+    "videoId": "ItkOInR4m7M?t=513",
     "videoType": "mv",
     "title": "エムステMV「PRIDE STAR」",
     "siteType": "youtube",
@@ -10393,6 +10825,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=513",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "all",
@@ -10442,7 +10875,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_387",
+    "videoId": "ItkOInR4m7M?t=387",
     "videoType": "mv",
     "title": "エムステMV「POKER FAITH -ポーカーフェイス-」",
     "siteType": "youtube",
@@ -10450,6 +10883,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=387",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS02",
@@ -10479,7 +10913,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_254",
+    "videoId": "ItkOInR4m7M?t=254",
     "videoType": "mv",
     "title": "エムステMV「Friendly Smile」",
     "siteType": "youtube",
@@ -10487,6 +10921,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=254",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP02",
@@ -10516,7 +10951,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_127",
+    "videoId": "ItkOInR4m7M?t=127",
     "videoType": "mv",
     "title": "エムステMV「LET’S GO!!」",
     "siteType": "youtube",
@@ -10524,6 +10959,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=127",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP01",
@@ -10553,7 +10989,7 @@
     ]
   },
   {
-    "videoId": "ItkOInR4m7M_9",
+    "videoId": "ItkOInR4m7M?t=9",
     "videoType": "mv",
     "title": "エムステMV「Beyond The Dream」",
     "siteType": "youtube",
@@ -10561,6 +10997,7 @@
     "url": "https://youtu.be/ItkOInR4m7M?t=9",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ItkOInR4m7M?mute=1&modestbranding=1&start=",
     "thumbnailUrl": "http://img.youtube.com/vi/ItkOInR4m7M/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "all",
@@ -10603,6 +11040,7 @@
     "url": "https://youtu.be/v8Up9L3omZs",
     "embedUrl": "https://www.youtube-nocookie.com/embed/v8Up9L3omZs?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/v8Up9L3omZs/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP01",
@@ -10827,6 +11265,34 @@
     ]
   },
   {
+    "videoId": "HJKqSYK_z0w",
+    "videoType": "mv",
+    "title": "アイドルマスターシリーズ コンセプトムービー2021『VOY@GER』",
+    "siteType": "youtube",
+    "releaseDate": "20210825",
+    "url": "https://youtu.be/HJKqSYK_z0w",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/HJKqSYK_z0w?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/HJKqSYK_z0w/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "BEI01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "SSK02",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "LGN03",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
     "videoId": "ugu3wGnDCzg",
     "videoType": "other",
     "title": "サイスタ紹介プレイリスト「Growing Smiles！」",
@@ -10835,6 +11301,7 @@
     "url": "https://youtu.be/ugu3wGnDCzg",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ugu3wGnDCzg?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/ugu3wGnDCzg/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "other",
@@ -10852,6 +11319,7 @@
     "url": "https://youtu.be/dk1sDChaaN0",
     "embedUrl": "https://www.youtube-nocookie.com/embed/dk1sDChaaN0?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/dk1sDChaaN0/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "other",
@@ -10869,6 +11337,7 @@
     "url": "https://youtu.be/mEf_rhX2LLA",
     "embedUrl": "https://www.youtube-nocookie.com/embed/mEf_rhX2LLA?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/mEf_rhX2LLA/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "other",
@@ -10886,6 +11355,7 @@
     "url": "https://youtu.be/JeHl-Q-7Sa8",
     "embedUrl": "https://www.youtube-nocookie.com/embed/JeHl-Q-7Sa8?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/JeHl-Q-7Sa8/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "CLF00",
@@ -10918,6 +11388,7 @@
     "url": "https://youtu.be/hKZgtekOyPo",
     "embedUrl": "https://www.youtube-nocookie.com/embed/hKZgtekOyPo?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/hKZgtekOyPo/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "CLF00",
@@ -10950,6 +11421,7 @@
     "url": "https://youtu.be/f4zY1yhdH3U",
     "embedUrl": "https://www.youtube-nocookie.com/embed/f4zY1yhdH3U?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/f4zY1yhdH3U/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "LGN00",
@@ -10982,6 +11454,7 @@
     "url": "https://youtu.be/oPUC42GgcTI",
     "embedUrl": "https://www.youtube-nocookie.com/embed/oPUC42GgcTI?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/oPUC42GgcTI/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FLG00",
@@ -11014,6 +11487,7 @@
     "url": "https://youtu.be/xzQdb8VcjNc",
     "embedUrl": "https://www.youtube-nocookie.com/embed/xzQdb8VcjNc?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/xzQdb8VcjNc/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "KGD00",
@@ -11046,6 +11520,7 @@
     "url": "https://youtu.be/_p78PrMG7bw",
     "embedUrl": "https://www.youtube-nocookie.com/embed/_p78PrMG7bw?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/_p78PrMG7bw/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SEM00",
@@ -11078,6 +11553,7 @@
     "url": "https://youtu.be/Xg1hY2SB9aM",
     "embedUrl": "https://www.youtube-nocookie.com/embed/Xg1hY2SB9aM?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/Xg1hY2SB9aM/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "MFM00",
@@ -11110,6 +11586,7 @@
     "url": "https://youtu.be/dprj7Kj8q8k",
     "embedUrl": "https://www.youtube-nocookie.com/embed/dprj7Kj8q8k?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/dprj7Kj8q8k/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "CFP00",
@@ -11152,6 +11629,7 @@
     "url": "https://youtu.be/y_YIz1YQGgw",
     "embedUrl": "https://www.youtube-nocookie.com/embed/y_YIz1YQGgw?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/y_YIz1YQGgw/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SSK00",
@@ -11179,6 +11657,7 @@
     "url": "https://youtu.be/R7nwqxQ53F8",
     "embedUrl": "https://www.youtube-nocookie.com/embed/R7nwqxQ53F8?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/R7nwqxQ53F8/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "HIJ00",
@@ -11221,6 +11700,7 @@
     "url": "https://youtu.be/KbqoTHNrgVg",
     "embedUrl": "https://www.youtube-nocookie.com/embed/KbqoTHNrgVg?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/KbqoTHNrgVg/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "SAI00",
@@ -11253,6 +11733,7 @@
     "url": "https://youtu.be/2oF946KULMg",
     "embedUrl": "https://www.youtube-nocookie.com/embed/2oF946KULMg?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/2oF946KULMg/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "FRM00",
@@ -11285,6 +11766,7 @@
     "url": "https://youtu.be/1Nzt51hxc9w",
     "embedUrl": "https://www.youtube-nocookie.com/embed/1Nzt51hxc9w?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/1Nzt51hxc9w/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DBL00",
@@ -11312,6 +11794,7 @@
     "url": "https://youtu.be/u5ZgrK1sf4E",
     "embedUrl": "https://www.youtube-nocookie.com/embed/u5ZgrK1sf4E?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/u5ZgrK1sf4E/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "BEI00",
@@ -11344,6 +11827,7 @@
     "url": "https://youtu.be/0QpR8YELVlc",
     "embedUrl": "https://www.youtube-nocookie.com/embed/0QpR8YELVlc?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/0QpR8YELVlc/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "ALT00",
@@ -11371,6 +11855,7 @@
     "url": "https://youtu.be/MmFXKqgjBgk",
     "embedUrl": "https://www.youtube-nocookie.com/embed/MmFXKqgjBgk?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/MmFXKqgjBgk/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -11403,6 +11888,7 @@
     "url": "https://youtu.be/5J364VmlFxQ",
     "embedUrl": "https://www.youtube-nocookie.com/embed/5J364VmlFxQ?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/5J364VmlFxQ/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -11435,6 +11921,7 @@
     "url": "https://youtu.be/RGHKUxRqBbo",
     "embedUrl": "https://www.youtube-nocookie.com/embed/RGHKUxRqBbo?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/RGHKUxRqBbo/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -11572,6 +12059,7 @@
     "url": "https://youtu.be/opn9-mGmROw",
     "embedUrl": "https://www.youtube-nocookie.com/embed/opn9-mGmROw?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/opn9-mGmROw/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP03",
@@ -11674,6 +12162,7 @@
     "url": "https://youtu.be/FTc0RCcYfpA",
     "embedUrl": "https://www.youtube-nocookie.com/embed/FTc0RCcYfpA?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/FTc0RCcYfpA/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -11981,6 +12470,7 @@
     "url": "https://youtu.be/79pHiO4iXww",
     "embedUrl": "https://www.youtube-nocookie.com/embed/79pHiO4iXww?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/79pHiO4iXww/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP01",
@@ -12223,6 +12713,7 @@
     "url": "https://youtu.be/zrmEYHpmybg",
     "embedUrl": "https://www.youtube-nocookie.com/embed/zrmEYHpmybg?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/zrmEYHpmybg/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DRS00",
@@ -12430,6 +12921,7 @@
     "url": "https://youtu.be/jcdAKCskJRc",
     "embedUrl": "https://www.youtube-nocookie.com/embed/jcdAKCskJRc?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/jcdAKCskJRc/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "BEI02",
@@ -12562,6 +13054,7 @@
     "url": "https://youtu.be/jczkOVFMz3s",
     "embedUrl": "https://www.youtube-nocookie.com/embed/jczkOVFMz3s?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/jczkOVFMz3s/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "DBL00",
@@ -12714,6 +13207,7 @@
     "url": "https://youtu.be/CAyalehx_Ho",
     "embedUrl": "https://www.youtube-nocookie.com/embed/CAyalehx_Ho?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/CAyalehx_Ho/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP03",
@@ -12801,6 +13295,7 @@
     "url": "https://youtu.be/0R_U04ji2mY",
     "embedUrl": "https://www.youtube-nocookie.com/embed/0R_U04ji2mY?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/0R_U04ji2mY/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -12928,6 +13423,7 @@
     "url": "https://youtu.be/0jxUZFQBl_o",
     "embedUrl": "https://www.youtube-nocookie.com/embed/0jxUZFQBl_o?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/0jxUZFQBl_o/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -13245,6 +13741,7 @@
     "url": "https://youtu.be/BDnDtbiDZyg",
     "embedUrl": "https://www.youtube-nocookie.com/embed/BDnDtbiDZyg?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/BDnDtbiDZyg/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -13562,6 +14059,7 @@
     "url": "https://www.youtube.com/watch?v=TjAiae3mwkA",
     "embedUrl": "https://www.youtube-nocookie.com/embed/TjAiae3mwkA?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/TjAiae3mwkA/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -13699,6 +14197,7 @@
     "url": "https://youtu.be/IXBugDZA7Bk",
     "embedUrl": "https://www.youtube-nocookie.com/embed/IXBugDZA7Bk?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/IXBugDZA7Bk/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP02",
@@ -14001,6 +14500,7 @@
     "url": "https://youtu.be/qARaS1MWfhE",
     "embedUrl": "https://www.youtube-nocookie.com/embed/qARaS1MWfhE?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/qARaS1MWfhE/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP02",
@@ -14303,6 +14803,7 @@
     "url": "https://youtu.be/uCXqC8wW3Bw",
     "embedUrl": "https://www.youtube-nocookie.com/embed/uCXqC8wW3Bw?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/uCXqC8wW3Bw/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -14440,6 +14941,7 @@
     "url": "https://youtu.be/86hha0bdd-8",
     "embedUrl": "https://www.youtube-nocookie.com/embed/86hha0bdd-8?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/86hha0bdd-8/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",
@@ -14577,6 +15079,7 @@
     "url": "https://youtu.be/cllEYfDCrdU",
     "embedUrl": "https://www.youtube-nocookie.com/embed/cllEYfDCrdU?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/cllEYfDCrdU/mqdefault.jpg",
+    "tiktokUrl": "",
     "infoVideo": [
       {
         "infoId": "JUP00",

@@ -82,6 +82,18 @@ export type MvInfo = {
   songName: string;
 };
 
+export type Video = {
+  videoId: string;
+  videoType: string;
+  title: string;
+  siteType: string;
+  url: string;
+  embedUrl: string;
+  thumbnailUrl: string;
+  tiktokUrl: string;
+  infoVideo: {infoId: string; personFlg: number; excludeFlg: number;}
+};
+
 export type LiveMaster = {
   liveId: string;
   perId: string;
