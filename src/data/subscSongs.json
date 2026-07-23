@@ -2840,7 +2840,7 @@
   {
     "id": "PMPT_1",
     "title": "POPLINKS TUNE!!!!!",
-    "youtubeId": "auVjwiM3NjU&",
+    "youtubeId": "auVjwiM3NjU",
     "spotifyUrl": "https://open.spotify.com/track/5lsbkCyTPaLHBPaTOZbuGf",
     "appleMusicUrl": "https://music.apple.com/album/poplinks-tune/1698435362?i=1698435367",
     "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0CCCLN49B",
@@ -8555,6 +8555,17 @@
     "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0GZ2Y6BDC",
     "lineMusicUrl": "https://music.line.me/webapp/track/mt00000000259ee81c",
     "awaUrl": "https://s.awa.fm/track/c265c787dc6dd3d4f888",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "MTS08_1",
+    "title": "Awakened",
+    "youtubeId": "0rk3gYlGdcI",
+    "spotifyUrl": "https://open.spotify.com/track/40C9roqtfJTPaMsmHKXKpr",
+    "appleMusicUrl": "https://music.apple.com/jp/song/awakened/6773805377",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0H334FQ5Q",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt0000000025e1a910",
+    "awaUrl": "https://s.awa.fm/track/c265c187db64dcd4f888",
     "towerRecordsMusic": ""
   }
 ]
