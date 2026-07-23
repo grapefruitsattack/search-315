@@ -63,7 +63,7 @@ export default function SongCarousel(
                   <SongList
                     key={result.songId}
                     index={index} 
-                    song={result}
+                    songId={result.songId}
                     displayArtist={displayArtist}
                     useArtistBadge={useArtistBadge}
                     displayArtwork={true}

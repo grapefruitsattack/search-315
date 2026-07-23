@@ -29,7 +29,7 @@ export default function AlbumSongs({ album }: { album: Albums }) {
         <SongList
           key={index} 
           index={index} 
-          song={result}
+          songId={result.songId}
           displayArtist={result.artist!==album.artist}
           useArtistBadge={true}
           displayArtwork={false}

@@ -11,7 +11,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import type { UserReadingData,Story } from '@/data/types';
-import SongList from "@/features/common/components/SongList";
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 
 export default function StoryCarousel(

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 import type { SongMaster } from '@/data/types';
 import subscSongs from '@/data/subscSongs.json';
+import songMaster from '@/data/songMaster.json';
 import albumMasters from '@/data/albumMaster.json';
 import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
 import YoutubeButton from "@/features/common/components/YoutubeButton";
@@ -14,10 +15,11 @@ import IdolBadge from '@/features/common/components/IdolBadge';
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
 export default function SongList(
-  { song,index,displayArtist,useArtistBadge,displayArtwork,displayReleaseDate }
-  : { song: SongMaster, index: number, displayArtist: boolean, useArtistBadge: boolean, displayArtwork: boolean, displayReleaseDate:boolean }
+  { songId,index,displayArtist,useArtistBadge,displayArtwork,displayReleaseDate }
+  : { songId: string, index: number, displayArtist: boolean, useArtistBadge: boolean, displayArtwork: boolean, displayReleaseDate:boolean }
 ) {
-  
+  const song: SongMaster = songMaster.find((data=>data.songId===songId)) as SongMaster;
+
   const router = useRouter();
   const albam = albumMasters.find(data => data.albumId === song?.albumId);
   const imgSrc: string = GetArtWorkSrc(albam?.sereisId||'',albam?.isSoloColle||0,albam?.isUnitColle||0);
