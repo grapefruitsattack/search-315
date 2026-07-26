@@ -1,11 +1,11 @@
 'use client'
 
-import {YoutubeModal} from "@/features/common/components/YoutubeModal";
+import {YoutubeModal} from "@/features/common/components/video/YoutubeModal";
 import {
   useDisclosure, 
  } from "@chakra-ui/react";
 
-export const VideoBlock = ({ title, embedUrl, thumbnailUrl }: { title: string, embedUrl: string, thumbnailUrl: string }) => {
+export const VideoBlockBk = ({ title, embedUrl, thumbnailUrl }: { title: string, embedUrl: string, thumbnailUrl: string }) => {
 
   const youtubeModalDisclosure = useDisclosure();
 
@@ -31,7 +31,7 @@ export const VideoBlock = ({ title, embedUrl, thumbnailUrl }: { title: string, e
   </div>
   </button>
   {/* モーダル部 */}
-  <YoutubeModal title={title} embedUrl={embedUrl} thumbnailUrl={thumbnailUrl} disclosure={youtubeModalDisclosure}/>
+  <YoutubeModal title={title} embedUrl={embedUrl} disclosure={youtubeModalDisclosure}/>
     
 
   </>

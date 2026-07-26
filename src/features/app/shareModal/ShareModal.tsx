@@ -19,7 +19,7 @@ export const ShareModal = (
 
   return (
   <>
-    <Modal isOpen={disclosure.isOpen} onClose={disclosure.onClose}>
+    <Modal isOpen={disclosure.isOpen} onClose={disclosure.onClose} trapFocus={false}>
       <ModalOverlay/>
       <ModalContent minW="50vw" w="calc(100vw - 20px - 2rem)">
         <ModalHeader>

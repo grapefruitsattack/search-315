@@ -1,12 +1,13 @@
 
 import mainPageData from '@/data/mainPageData.json';
-import {VideoBlock} from "@/features/common/components/VideoBlock";
-import {YoutubeShortModal} from "@/features/common/components/YoutubeShortModal";
+import mainpage_video from '@/data/mainpage/mainpage_video.json';
+import {VideoBlock} from "@/features/common/components/video/VideoBlock";
+import {VideoCarousel} from "@/features/common/components/video/VideoCarousel";
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 
 export default function UnitPageRecommend({ unitId }: { unitId: string }) {
   const unitPrefix: string = unitId.substring(0, 3);
-  const youtubeMv = mainPageData.filter((data)=>data?.infoId===unitPrefix&&['youtube','youtubeshort'].includes(data.type));
+  const videoIdArray = mainpage_video.filter((data)=>data?.infoId===unitPrefix).map(data=>data.videoId);
   const story = mainPageData.filter((data)=>data?.infoId===unitPrefix&&data.type==='story');
 
   return (
@@ -21,23 +22,8 @@ export default function UnitPageRecommend({ unitId }: { unitId: string }) {
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -960 960 960"><path d="m160-800 80 160h120l-80-160h80l80 160h120l-80-160h80l80 160h120l-80-160h120q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800Zm0 240v320h640v-320H160Zm0 0v320-320Z"/></svg>
       {'オススメ動画'}
     </div>
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap gap-4" >
-        {/* Youtube動画 */}
-        {youtubeMv.map((info, index) => (
-            <div className='max-w-[310px]' key={index} >
-            <div className=''>
-              {info.type==='youtubeshort'
-                ?<YoutubeShortModal title={info.title} embedUrl={info.data.embedUrl||''} thumbnailUrl={info.data.thumbnailUrl||''}/>
-                :<VideoBlock title={info.title} embedUrl={info.data.embedUrl||''} thumbnailUrl={info.data.thumbnailUrl||''}/>
-              }
-            </div>
-            <p className='flex flex-wrap justify-start items-center font-sans font-black lg:text-base text-sm w-[250px]'>
-                {info.title}
-            </p>
-            </div>
-        ))}
-      </div>
+    <div className=''>
+      <VideoCarousel videoIdArray={videoIdArray} />
     </div>
     <div 
         className="pt-4

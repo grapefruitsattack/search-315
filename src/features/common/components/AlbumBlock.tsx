@@ -10,7 +10,7 @@ import subscAlbums from '@/data/subscAlbums.json';
 import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
 import {GetArtistBadgeInfo} from '@/features/common/utils/ArtistUtils';
 import IdolBadge from '@/features/common/components/IdolBadge';
-import YoutubeButton from "@/features/common/components/YoutubeButton";
+import YoutubeButton from "@/features/common/components/video/YoutubeButton";
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
 export default function AlbumBlock(

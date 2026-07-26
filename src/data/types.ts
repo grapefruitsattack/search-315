@@ -86,12 +86,13 @@ export type Video = {
   videoId: string;
   videoType: string;
   title: string;
+  displayTitle: string;
   siteType: string;
   url: string;
   embedUrl: string;
   thumbnailUrl: string;
   tiktokUrl: string;
-  infoVideo: {infoId: string; personFlg: number; excludeFlg: number;}
+  infoVideo: {infoId: string; personFlg: number; excludeFlg: number;}[]
 };
 
 export type LiveMaster = {

@@ -9,7 +9,7 @@ import subscSongs from '@/data/subscSongs.json';
 import songMaster from '@/data/songMaster.json';
 import albumMasters from '@/data/albumMaster.json';
 import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
-import YoutubeButton from "@/features/common/components/YoutubeButton";
+import YoutubeButton from "@/features/common/components/video/YoutubeButton";
 import {GetArtistBadgeInfo} from '@/features/common/utils/ArtistUtils';
 import IdolBadge from '@/features/common/components/IdolBadge';
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
