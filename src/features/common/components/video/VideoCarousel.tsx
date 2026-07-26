@@ -81,19 +81,23 @@ export function VideoCarousel({ videoIdArray }: { videoIdArray: string[] }) {
             >
               <div
                 className={cn(
-                  "relative overflow-hidden rounded-lg border-2 transition-all",
+                  "w-full aspect-video relative overflow-hidden rounded-lg border-2 transition-all",
                   index === selectedIndex
                     ? "border-primary opacity-100"
                     : "border-transparent opacity-40 hover:opacity-70"
                 )}
               >
+                {['asobichannel','asobistage'].includes(data.siteType)
+                ?<div className="absolute inset-0 bg-gray-200" />
+                :
                 <img
-                  src={data.thumbnailUrl}
+                  src={['asobichannel','asobistage'].includes(data.siteType)?'http://img.youtube.com/vi/cllEYfDCrdU/mqdefault.jpg':data.thumbnailUrl}
                   alt={`Thumb ${index + 1}`}
                   width={400}
                   height={400}
                   className="h-full w-full "
                 />
+                }
               </div>
             </CarouselItem>
           ))}

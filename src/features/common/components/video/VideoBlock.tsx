@@ -25,7 +25,10 @@ export const VideoBlock = ({ videoId }: { videoId: string }) => {
   const video: Video = m_video.find(data=>data.videoId===videoId) as Video;
   if(video===undefined) return(<></>);
 
-  const siteTitle = video.siteType==='asobistage'?'アソビステージ':'YouTube';
+  const siteTitle = 
+    video.siteType==='asobichannel'
+      ?'アソビチャンネル'
+      :video.siteType==='asobistage'?'アソビステージ':'YouTube';
   const shareModalTabInfo: ShareModalTabInfo[] =[
     {
     title:siteTitle,disabled:false,id:video.siteType,shareUrl:video.url,
@@ -41,32 +44,35 @@ export const VideoBlock = ({ videoId }: { videoId: string }) => {
   const maxThumbnailUrl: string = video.thumbnailUrl.replace('mqdefault','maxresdefault');
   
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [imageError, setImageError] = useState(false);
   const youtubeModalDisclosure = useDisclosure();
   const shareModalDisclosure = useDisclosure();
 
   return (
   <>
-  <div className='max-w-[500px]' >
+  <div className='max-w-[500px] w-full' >
     {/* ボタン部 */}
     <button className='rounded-lg border border-teal-500 
          text-sm font-sans leading-tight
-        
-        w-fit h-fit
+        w-full
         transition-all duration-500 ease-out
         '
         onClick={youtubeModalDisclosure.onOpen}>
-    <div className='flex flex-wrap justify-center items-center relative fill-blue-900/50 hover:fill-blue-900/80 duration-200'>
-        <Image
-          className={`object-cover object-center  rounded-lg w-fit`}
-          src={maxThumbnailUrl}
-          alt="アートワーク"
-          onError={e=>{
-            e.currentTarget.onerror = null;
-            e.currentTarget.src=video.thumbnailUrl;
-          }}
-          width={1280}
-          height={720}
-        />
+        <div className="relative flex justify-center items-center aspect-video w-full rounded-lg overflow-hidden fill-blue-900/50 hover:fill-blue-900/80 duration-200">
+          {['asobichannel','asobistage'].includes(video.siteType) ? (
+            <div className="absolute inset-0 bg-gray-200" />
+          ) : (
+            <Image
+              className="object-cover object-center rounded-lg w-full h-full"
+              src={imageError?video.thumbnailUrl:maxThumbnailUrl}
+              alt="サムネイル"
+              width={1280}
+              height={720}
+              onError={() => {
+                setImageError(true);
+              }}
+            />
+          )}
         <div className="w-full h-full bg-slate-500 mix-blend-screen absolute"></div>
         <svg className='h-[35%] absolute' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"></path><path d="M6 20.1957V3.80421C6 3.01878 6.86395 2.53993 7.53 2.95621L20.6432 11.152C21.2699 11.5436 21.2699 12.4563 20.6432 12.848L7.53 21.0437C6.86395 21.46 6 20.9812 6 20.1957Z"></path></svg>
         <svg className='h-[50%] absolute' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z"></path></svg>
@@ -94,7 +100,7 @@ export const VideoBlock = ({ videoId }: { videoId: string }) => {
                 href={video.url}
                 onClick={(e) => e.stopPropagation()}
                 target="_blank" rel="noopener noreferrer">
-                YouTubeで見る
+                {`${siteTitle}で見る`}
                 <ExternalLink className='mt-auto' width="16" height="16"/>
               </a>
             </DropdownMenuItem>

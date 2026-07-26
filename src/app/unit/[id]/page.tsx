@@ -1,5 +1,4 @@
 
-import { Metadata } from 'next'
 import { cookies } from 'next/headers';
 import dynamic from "next/dynamic";
 import { Suspense, cache } from "react";
@@ -20,6 +19,7 @@ const UnitPageRecommend = dynamic(() => import("@/features/app/unit/UnitPageReco
 const UnitPageMain = dynamic(() => import("@/features/app/unit/UnitPageMain"), { ssr: true });
 const UnitPageMusic = dynamic(() => import("@/features/app/unit/UnitPageMusic"), { ssr: true });
 const IdolPageMusic = dynamic(() => import("@/features/app/idol/IdolPageMusic"), { ssr: true });
+const UnitPageOther = dynamic(() => import("@/features/app/unit/UnitPageOther"), { ssr: true });
 
 const Units = async ({
   params,
@@ -34,7 +34,7 @@ const Units = async ({
 
   //クエリパラメータ
   const { id } = await params;
-  const {t} = await searchParams;
+  const {t} = await searchParams||pageCategory;
   const {m} = await searchParams;
 
   const type: string = ['story','music','recommend'].includes(t||pageCategory)?t||pageCategory:pageCategory;
@@ -63,7 +63,7 @@ const Units = async ({
       </div>
       <div  className="w-full mt-5 px-0 mobileS:px-0 tablet:px-4 lg:px-4 bg-white lg:max-w-[950px] lg:m-auto">
         <div className='px-0 mobileM:px-2 '>
-        <UnitPageTabs type={type} member={selectedMember} unitMember={unitMember}/>
+          <UnitPageTabs type={type===''?'recommend':type} member={selectedMember} unitMember={unitMember}/>
         </div>
         {type==='story'
           ?
@@ -78,6 +78,8 @@ const Units = async ({
             ?<UnitPageMusic unitId={id}/>
             :<IdolPageMusic idolId={selectedMember}/>}
           </>
+          :type=='other'
+          ?<UnitPageOther unitId={id} unitMember={unitMember}/>
           :<UnitPageRecommend unitId={id}/>
         }
       </div>

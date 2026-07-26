@@ -1,3 +1,4 @@
+
 import { useCallback, useEffect, useState } from 'react';
 import { hasAnalyticsConsent } from "@/lib/analytics";
 
@@ -17,7 +18,7 @@ export function usePageCategory(
     const pageCategory: string = localStorage.getItem(STORAGE_PAGE_CATEGORY) || '';
     if (pageCategory !== defaultValue) {
         setPageCategoryInternal(pageCategory);
-        if(hasAnalyticsConsent()) document.cookie = `pageCategory=${pageCategory}; path=/;`;
+        document.cookie = `pageCategory=${pageCategory}; path=/;`;
     }
   }, [setPageCategoryInternal]);
 
@@ -26,7 +27,7 @@ export function usePageCategory(
     (pageCategory: string) => {
       localStorage.setItem(STORAGE_PAGE_CATEGORY, pageCategory);
       setPageCategoryInternal(pageCategory);
-      if(hasAnalyticsConsent()) document.cookie = `pageCategory=${pageCategory}; path=/;`;
+      document.cookie = `pageCategory=${pageCategory}; path=/;`;
     },
     [setPageCategoryInternal]
   );
