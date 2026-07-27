@@ -1,17 +1,20 @@
 'use client'
 import { useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import singingMaster from '@/data/singingMaster.json';
 import livePerformer from '@/data/livePerformer.json'
-import liveMaster from '@/data/liveMaster.json'
-import m_video from '@/data/m_video.json'
+import liveMaster from '@/data/liveMaster.json';
 import type { SingingMaster, Video, LiveMaster } from '@/data/types';
 import {SearchVideo} from "@/features/common/utils/SearchVideo";
-import SongCarousel from "@/features/common/components/SongCarousel";
 import {VideoCarousel} from "@/features/common/components/video/VideoCarousel";
+import LiveBlock from "@/features/common/components/LiveBlock";
 
 export default function UnitPageOther({ unitId,unitMember }: { unitId: string; unitMember: SingingMaster[] }) {
 
+  const searchParams = useSearchParams();
+  const memberParam :string = searchParams.get('m')||unitId;
+  const currentPath: string = usePathname();
 
   const unitName:string = singingMaster.find(data => data.singingInfoId === unitId)?.singingInfoName||'';
 
@@ -22,11 +25,6 @@ export default function UnitPageOther({ unitId,unitMember }: { unitId: string; u
   const threeDLiveArray: string[] = SearchVideo(infoIds,['3dlive'],'or',0).map(data=>data.videoId);
   const otherArray: string[] = SearchVideo(infoIds,['anime','live_sp','other','sp'],'or',0).map(data=>data.videoId);
 
-  //ライブ情報
-  const livePerIds: string[] = livePerformer.filter(data => data.singingInfoId === unitId).map(data=>data.livePerId);
-  const liveInfos: LiveMaster[] 
-      = livePerIds.map(livePerId=>liveMaster.find(data=>livePerId===data.livePerId))
-      .filter((item): item is LiveMaster => typeof item == 'object').slice().reverse();
 
   const [selectedVideo, setSelectedVideo] = useState({videoArray:mvArray,videoType:'mv',videoTypeName:'MV'});
   const videoTypeArray = [
@@ -34,7 +32,28 @@ export default function UnitPageOther({ unitId,unitMember }: { unitId: string; u
     {videoArray:liveArray,videoType:'live',videoTypeName:'ライブ'},
     {videoArray:threeDLiveArray,videoType:'3dlive',videoTypeName:'3Dライブ'},
     {videoArray:otherArray,videoType:'other',videoTypeName:'その他'},
-  ]
+  ];
+
+  //ライブ情報
+  const livePerIds: string[] = livePerformer.filter(data => data.singingInfoId === unitId).map(data=>data.livePerId);
+  const liveInfos: LiveMaster[] 
+      = livePerformer.filter(data => data.singingInfoId === unitId)
+        .map(data=>liveMaster.find(masterData=>data.livePerId===masterData.livePerId))
+        .filter((item): item is LiveMaster => typeof item == 'object').slice().reverse();
+  const liveInfoArray: {liveArray:LiveMaster[],infoId:string,infoName:string}[] 
+    = [{liveArray:liveInfos,infoId:unitId,infoName:'ユニット'}];
+  unitMember.forEach(memberData=>{
+    const memberLiveInfos: LiveMaster[] 
+        = livePerformer.filter(data => data.singingInfoId === memberData.singingInfoId)
+          .map(data=>liveMaster.find(masterData=>data.livePerId===masterData.livePerId))
+          .filter((item): item is LiveMaster => typeof item == 'object').slice().reverse();
+    liveInfoArray.push({
+      liveArray:memberLiveInfos,
+      infoId:memberData.singingInfoId,
+      infoName:memberData.singingInfoId==='CFP03'?'アスラン＝BBⅡ世':memberData.singingInfoName
+    })
+  });
+  const live = liveInfoArray.find(data=>memberParam===data.infoId)||{liveArray:liveInfos,infoId:unitId,infoName:'ユニット'};
 
   return (<>
    <div 
@@ -123,42 +142,37 @@ export default function UnitPageOther({ unitId,unitMember }: { unitId: string; u
         {'映像商品化されたライブイベントのみ掲載'}
       </p>
   </div>
+  <div 
+    className={`
+      flex flex-wrap
+      mt-2 gap-1 font-bold
+      mb-1 px-2
+    `}
+  >
+      {liveInfoArray.map((data,index)=>
+      <Link
+        className={`border border-2 rounded-xl px-2 py-[2px]
+          ${live.infoId===data.infoId
+            ?'bg-green-400 border-green-400 text-stone-50 pointer-events-none'
+            :'bg-stone-200/20 border-stone-200 text-stone-500 '}
+        `}
+        key={data.infoId}
+        href={{ pathname: currentPath, query: {t: 'other', m: data.infoId}}}
+        scroll={false}
+        aria-disabled={live.infoId===data.infoId}
+      >
+        {data.infoName}
+      </Link>
+      )}
+  </div>
   <div className={`grid
-      grid-cols-2 lg:grid-cols-4 lg:gap-4 gap-2 pt-4
+      grid-cols-2 tablet:grid-cols-4 lg:gap-4 gap-4 pt-4 
+      px-4
   `}>
-  {liveInfos.map((result, index) => (
-      <div key={index} className = "flex ">
-          <a
-          className ={`
-          rounded-md
-          bg-white 
-          ${result.type===''
-              ?'border-cyan-600/40 border-2 hover:bg-gradient-to-tl from-cyan-100/30 to-violet-200/30'
-              :result.type==='ex'
-                ?'border-violet-600/40 border-2 hover:bg-violet-100/40'
-                :'border-pink-600/40 border-2 hover:bg-pink-100/40'
-          }
-          py-1 w-full
-          grid
-          place-items-center
-          lg:text-base text-sm p-0.5
-          underline
-          leading-tight
-          font-sans
-          rounded-md px-1 pt-1 
-          text-cyan-900
-          hover:text-cyan-700 
-          duration-500 ease-out
-          w-fit h-fit
-          `}
-          href={`/live/` + result.livePerId}
-          >
-              <div className="flex flex-wrap place-content-center">
-              <p className ='after:content-["\00A0"] text-center'>{result.displayLiveName+''}</p>
-              <p className ="text-center">{result.displayPerName}</p>
-              </div>
-          </a>
-      </div>
+  {live.liveArray.map((result) => (
+    <div className="" key={result.livePerId+result.liveId}>
+      <LiveBlock livePerId={result.livePerId} liveId={result.liveId} />
+    </div>
   ))}
   </div>
   </section>

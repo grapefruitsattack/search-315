@@ -23,7 +23,6 @@ const Lives = async ({
   params,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ per?:string; }>;
 }) => {
   const { id } = await params;
   return (
