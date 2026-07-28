@@ -585,7 +585,7 @@
     "perName": "KANAGAWA",
     "perDate": "20230709",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fclive_bp/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "8TH",
@@ -621,7 +621,7 @@
     "perName": "MAKUHARI",
     "perDate": "20231117",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fclive_bp/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "FCL_CT",
@@ -633,7 +633,7 @@
     "perName": "",
     "perDate": "20231118,20231119",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fclive_ct/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "FCL_CT",
@@ -645,7 +645,7 @@
     "perName": "",
     "perDate": "20231118,20231119",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fclive_ct/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "PRS24",
@@ -681,7 +681,7 @@
     "perName": "",
     "perDate": "20240413,20240414",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fclive_hm/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "FCL_HM",
@@ -693,7 +693,7 @@
     "perName": "",
     "perDate": "20240413,20240414",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fclive_hm/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "9TH",
@@ -741,7 +741,7 @@
     "perName": "昼公演",
     "perDate": "20241201",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fclive_pt/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "FCL_PT",
@@ -753,7 +753,7 @@
     "perName": "夜公演",
     "perDate": "20241201",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fclive_pt/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "10TH_PM",
@@ -813,7 +813,7 @@
     "perName": "昼公演",
     "perDate": "20250517",
     "officialPage": "https://idolmaster-official.jp/live_event/cofr/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "FCL_COR",
@@ -825,7 +825,7 @@
     "perName": "夜公演",
     "perDate": "20250517",
     "officialPage": "https://idolmaster-official.jp/live_event/cofr/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "FCL_AZ",
@@ -837,7 +837,7 @@
     "perName": "昼公演",
     "perDate": "20250518",
     "officialPage": "https://idolmaster-official.jp/live_event/azto/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "FCL_AZ",
@@ -849,7 +849,7 @@
     "perName": "夜公演",
     "perDate": "20250518",
     "officialPage": "https://idolmaster-official.jp/live_event/azto/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "10TH_PM",
@@ -909,7 +909,7 @@
     "perName": "幕張DAY1昼公演",
     "perDate": "20251004",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fbfes_wgf/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "FBF_WGF",
@@ -921,7 +921,7 @@
     "perName": "幕張DAY1夜公演",
     "perDate": "20251004",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fbfes_wgf/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "FBF_WGF",
@@ -933,7 +933,7 @@
     "perName": "幕張DAY2昼公演",
     "perDate": "20251005",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fbfes_wgf/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "FBF_WGF",
@@ -945,7 +945,7 @@
     "perName": "幕張DAY2夜公演",
     "perDate": "20251005",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fbfes_wgf/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "FBF_WGF",
@@ -957,7 +957,7 @@
     "perName": "大阪DAY1昼公演",
     "perDate": "20251115",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fbfes_wgf/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "FBF_WGF",
@@ -969,7 +969,7 @@
     "perName": "大阪DAY1夜公演",
     "perDate": "20251115",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fbfes_wgf/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "FBF_WGF",
@@ -981,7 +981,7 @@
     "perName": "大阪DAY2昼公演",
     "perDate": "20251116",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fbfes_wgf/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "FBF_WGF",
@@ -993,7 +993,7 @@
     "perName": "大阪DAY2夜公演",
     "perDate": "20251116",
     "officialPage": "https://idolmaster-official.jp/live_event/sidem_fbfes_wgf/",
-    "type": ""
+    "type": "3dlive"
   },
   {
     "liveId": "MOIW2025",

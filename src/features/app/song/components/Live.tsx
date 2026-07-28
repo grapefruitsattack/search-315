@@ -66,7 +66,7 @@ export default function Live({ results }: { results: LiveMaster[] }) {
                 className ={`
                 rounded-md
                 bg-white 
-                ${result.type===''
+                ${result.type===''||result.type==='3dlive'
                     ?'border-cyan-600/40 border-2 hover:bg-gradient-to-tl from-cyan-100/30 to-violet-200/30'
                     :result.type==='ex'
                         ?'border-violet-600/40 border-2 hover:bg-violet-100/40'
