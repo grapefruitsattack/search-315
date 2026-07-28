@@ -44353,6 +44353,14 @@
   },
   {
     "trackNo": 1,
+    "albumId": "TOURRSP",
+    "songId": "TOURRSP_1",
+    "singingInfoId": "DRS01",
+    "releaseDate": "20260728",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
     "albumId": "MTS09",
     "songId": "MTS09_1",
     "singingInfoId": "LGN00",

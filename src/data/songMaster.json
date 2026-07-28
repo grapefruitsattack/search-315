@@ -33334,5 +33334,29 @@
     "albumTitleFull": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 10 もふもふえん",
     "albumTitle": "MONTHLY THEME SONG 10 もふもふえん",
     "description": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "TOURRSP",
+    "songId": "TOURRSP_1",
+    "songTitle": "→→→SP",
+    "displayArtist": "天海春香、島村卯月、春日未来、天道輝、櫻木真乃、花海咲季",
+    "artist": "天海春香、島村卯月、春日未来、[DRS01]、櫻木真乃、花海咲季",
+    "commonSong": "",
+    "lyric": "",
+    "trialYoutubeId": "",
+    "type": "",
+    "subscFlg": 1,
+    "lyricFlg": 0,
+    "execFlg": 0,
+    "originalFlg": 1,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260728",
+    "AlbumSereisId": "",
+    "albumTitleFull": "→→→SP",
+    "albumTitle": "→→→SP",
+    "description": ""
   }
 ]
