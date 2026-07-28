@@ -99,7 +99,7 @@ return(<>
           }
           `}>
         <p className ='after:content-["\00A0"] text-center'>{liveInfo.displayLiveName+''}</p>
-        <p className ={`${livePerId===''&&'hidden'}text-center`}>{liveInfo.displayPerName}</p>
+        <p className ={`${livePerId===''&&'hidden'} text-center`}>{liveInfo.displayPerName}</p>
         </div>
       </Link>
   </div>
