@@ -122,7 +122,7 @@ export default function SongContent({ result, albumResult, lyric, lyricIsLoading
                     gap-y-2 gap-x-1 tablet:gap-y-1 tablet:gap-x-2'
                 >
                   {artistArray.map(
-                      (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={0} size={'normal'}/></div>))}
+                      (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={0} size={'normal'} linkType='music'/></div>))}
               </div>
             }
           </div>

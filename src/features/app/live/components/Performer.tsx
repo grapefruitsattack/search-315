@@ -55,7 +55,7 @@ export default function Performer({ livePerId }: { livePerId: string }) {
                       </div>
                       )
                     }
-                    return (<IdolBadge id={result.singingInfoId} useShortName={0} size={'normal'} key={index}/>);
+                    return (<IdolBadge id={result.singingInfoId} useShortName={0} size={'normal'} key={index} linkType=''/>);
                   })}
 
             </div>

@@ -195,7 +195,7 @@ export default async function StoryDetailedPage(
                 //対象アイドルが49人の場合、「315プロダクション」表記
                 ?<div><IdolBadge id={'315pro'} useShortName={0} size={'normal'}/></div>
                 :infoStoryPerson.map(
-                  (result, index) => (<IdolBadge id={result.infoId} useShortName={0} size={'normal'} key={index}/>))
+                  (result, index) => (<IdolBadge id={result.infoId} useShortName={0} size={'normal'} key={index} linkType='story'/>))
               }
             </div>
           </>

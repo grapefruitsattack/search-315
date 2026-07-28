@@ -1,105 +1,111 @@
 'use client'
+import Link from "next/link";
 import { useRouter } from 'next/navigation';
 import type { SingingMaster } from '@/data/types';
 import singingMaster from '@/data/singingMaster.json';
 
-export default function IdolBadge({ id, useShortName, size }: { id: string, useShortName: number, size: string }) {
+export default function IdolBadge({ id, useShortName, size, linkType }: { id: string, useShortName: number, size: string, linkType?: string }) {
 
-    const router = useRouter();
-    
-    if(id === '315pro'){
-        return(
-        <div 
-            className={`
-            justify-center 
-            font-bold
-            bg-sky-600
-            text-white
-            ${size==='block'
-                ?` rounded-sm py-0.5 px-1 text-xs mobileS:text-sm tablet:text-base`
-                :` rounded-md p-1 text-xs mobileS:text-sm tablet:text-base`}
-            `}
-            >
-        <p className={``}>{'315プロダクション'}</p>
-        </div>
-        )
-    };
-
-    const data: SingingMaster | undefined = singingMaster.find(data => data.singingInfoId === id);
-    const name: string 
-        = useShortName===0?data?.singingInfoName||'': data?.singingInfoShortName||'';
-    const personFlg: number = data?.personFlg||0;
-    const unitPrefix: string = id.substring(0, 3);
-    const colorInfo = badgeColors.find((data)=>data.id===unitPrefix);
-    const bgColorCode = colorInfo?.bgColor||'';
-    const textColorCode = colorInfo?.textColor||'';
-    const borderColorCode = 
-        personFlg===1
-        ?colorInfo?.unitColors.find((data)=>data.id===id)?.borderColor||''
-        :colorInfo?.bgColor||'';
-
-    if(size==='block'){
-        return(
-            <div 
-                style={{ '--bg-color': bgColorCode,'--text-color': textColorCode,'--border-color': borderColorCode, } as React.CSSProperties}
-                className={`
-                justify-center 
-                font-bold
-                rounded-sm py-0.5  text-xs mobileS:text-sm tablet:text-base
-                bg-[var(--bg-color)] text-[var(--text-color)] 
-                ${personFlg===1?'pl-0.5 pr-1 border-l-[6px] border-[var(--border-color)]':'px-1'}
-                `}
-                >
-            <p className={`whitespace-nowrap`}>{name}</p>
-            </div>
-        );
-    }else if(size==='mainpage'){
+  const router = useRouter();
+  
+  if(id === '315pro'){
       return(
-        <div
-            style={{ '--bg-color': bgColorCode,'--text-color': textColorCode,'--border-color': borderColorCode, } as React.CSSProperties}
-            className={`block
-            text-left
-            font-bold 
-            bg-[var(--bg-color)] text-[var(--text-color)] 
-            rounded-sm py-0.5 text-xs mobileS:text-base tablet:text-lg
-            ${personFlg===1?' border-l-8 border-[var(--border-color)]':'px-2'}
-            ` }
-            //onClick={(e) => router.push(personFlg===1?'/idol/'+id:'/unit/'+id)}
-            >
-        <span 
-          className={` p-1 rounded-xs whitespace-nowrap ${personFlg===1?' border-l-2 border-white/80':''}`}
+      <div 
+          className={`
+          justify-center 
+          font-bold
+          bg-sky-600
+          text-white
+          ${size==='block'
+              ?` rounded-sm py-0.5 px-1 text-xs mobileS:text-sm tablet:text-base`
+              :` rounded-md p-1 text-xs mobileS:text-sm tablet:text-base`}
+          `}
           >
-          {name}
-        </span>
-        </div>
-      );
-    } else {
-        return(
-            <a 
-                style={{ '--bg-color': bgColorCode,'--text-color': textColorCode,'--border-color': borderColorCode, } as React.CSSProperties}
-                className={`block cursor-pointer
-                justify-center 
-                font-bold 
-                bg-[var(--bg-color)] text-[var(--text-color)] 
-                duration-100
-                [box-shadow:2.5px_2.5px_rgb(100_100_100)]
-                hover:translate-x-[3px] hover:translate-y-[3px] hover:[box-shadow:0px_0px_rgb(82_82_82)]
-                rounded-sm py-0.5 text-xs mobileS:text-sm tablet:text-base
-                ${personFlg===1?' border-l-8 border-[var(--border-color)]':'px-2'}
-                ` }
-                href={personFlg===1?'/idol/'+id:'/unit/'+id}
-                //onClick={(e) => router.push(personFlg===1?'/idol/'+id:'/unit/'+id)}
-                >
-            <span 
-              className={`p-1 rounded-xs whitespace-nowrap ${personFlg===1?' border-l-2 border-white/80':''}`}
-              >
-              {name}
-            </span>
-            </a>
-        );
-    }
+      <p className={``}>{'315プロダクション'}</p>
+      </div>
+      )
+  };
 
+  const data: SingingMaster | undefined = singingMaster.find(data => data.singingInfoId === id);
+  const name: string 
+      = useShortName===0?data?.singingInfoName||'': data?.singingInfoShortName||'';
+  const personFlg: number = data?.personFlg||0;
+  const unitPrefix: string = id.substring(0, 3);
+  const colorInfo = badgeColors.find((data)=>data.id===unitPrefix);
+  const bgColorCode = colorInfo?.bgColor||'';
+  const textColorCode = colorInfo?.textColor||'';
+  const borderColorCode = 
+      personFlg===1
+      ?colorInfo?.unitColors.find((data)=>data.id===id)?.borderColor||''
+      :colorInfo?.bgColor||'';
+
+  const href 
+    = linkType===undefined||linkType===''
+      ?{ pathname: `/unit/${unitPrefix}00/`, query: {m:personFlg===1?id:'unit'}}
+      :{ pathname: `/unit/${unitPrefix}00/`, query: {t:linkType, m:personFlg===1?id:'unit'}};
+
+  if(size==='block'){
+      return(
+          <div 
+              style={{ '--bg-color': bgColorCode,'--text-color': textColorCode,'--border-color': borderColorCode, } as React.CSSProperties}
+              className={`
+              justify-center 
+              font-bold
+              rounded-sm py-0.5  text-xs mobileS:text-sm tablet:text-base
+              bg-[var(--bg-color)] text-[var(--text-color)] 
+              ${personFlg===1?'pl-0.5 pr-1 border-l-[6px] border-[var(--border-color)]':'px-1'}
+              `}
+              >
+          <p className={`whitespace-nowrap`}>{name}</p>
+          </div>
+      );
+  }else if(size==='mainpage'){
+    return(
+      <div
+          style={{ '--bg-color': bgColorCode,'--text-color': textColorCode,'--border-color': borderColorCode, } as React.CSSProperties}
+          className={`block
+          text-left
+          font-bold 
+          bg-[var(--bg-color)] text-[var(--text-color)] 
+          rounded-sm py-0.5 text-xs mobileS:text-base tablet:text-lg
+          ${personFlg===1?' border-l-8 border-[var(--border-color)]':'px-2'}
+          ` }
+          //onClick={(e) => router.push(personFlg===1?'/idol/'+id:'/unit/'+id)}
+          >
+      <span 
+        className={` p-1 rounded-xs whitespace-nowrap ${personFlg===1?' border-l-2 border-white/80':''}`}
+        >
+        {name}
+      </span>
+      </div>
+    );
+  } else {
+      return(
+          <Link
+              style={{ '--bg-color': bgColorCode,'--text-color': textColorCode,'--border-color': borderColorCode, } as React.CSSProperties}
+              className={`block cursor-pointer
+              justify-center 
+              font-bold 
+              bg-[var(--bg-color)] text-[var(--text-color)] 
+              duration-100
+              [box-shadow:2.5px_2.5px_rgb(100_100_100)]
+              hover:translate-x-[3px] hover:translate-y-[3px] hover:[box-shadow:0px_0px_rgb(82_82_82)]
+              rounded-sm py-0.5 text-xs mobileS:text-sm tablet:text-base
+              ${personFlg===1?' border-l-8 border-[var(--border-color)]':'px-2'}
+              ` }
+              href={href}
+              //onClick={(e) => router.push(personFlg===1?'/idol/'+id:'/unit/'+id)}
+              >
+          <span 
+            className={`p-1 rounded-xs whitespace-nowrap ${personFlg===1?' border-l-2 border-white/80':''}`}
+            >
+            {name}
+          </span>
+          </Link>
+      );
   }
+
+}
 
     const badgeColors =
     [
