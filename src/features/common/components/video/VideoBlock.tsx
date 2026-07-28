@@ -23,7 +23,6 @@ import {
 export const VideoBlock = ({ videoId }: { videoId: string }) => {
 
   const video: Video = m_video.find(data=>data.videoId===videoId) as Video;
-  if(video===undefined) return(<></>);
 
   const siteTitle = 
     video.siteType==='asobichannel'
@@ -43,10 +42,11 @@ export const VideoBlock = ({ videoId }: { videoId: string }) => {
   
   const maxThumbnailUrl: string = video.thumbnailUrl.replace('mqdefault','maxresdefault');
   
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [imageError, setImageError] = useState(false);
   const youtubeModalDisclosure = useDisclosure();
   const shareModalDisclosure = useDisclosure();
+  
+  if(video===undefined) return(<></>);
 
   return (
   <>
