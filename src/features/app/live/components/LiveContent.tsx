@@ -21,7 +21,7 @@ export default function LiveContent({ selectedLivePerId,LiveData }: { selectedLi
       return new Date(
         Number(str.substring(0,4))
         ,Number(str.substring(4,6))-1
-        ,Number(str.substring(6,8))).toLocaleDateString()
+        ,Number(str.substring(6,8))).toLocaleDateString("ja-JP")
     });
   const perDateStr: string = perDateArray.join('、');
 

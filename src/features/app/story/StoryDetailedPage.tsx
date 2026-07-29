@@ -45,7 +45,7 @@ export default async function StoryDetailedPage(
     = new Date(
         Number(storyData.releaseDate.substring(0,4))
         ,Number(storyData.releaseDate.substring(4,6))-1
-        ,Number(storyData.releaseDate.substring(6,9))).toLocaleDateString();
+        ,Number(storyData.releaseDate.substring(6,9))).toLocaleDateString("ja-JP");
 
   // シェア文章
   let shareText: string = '';

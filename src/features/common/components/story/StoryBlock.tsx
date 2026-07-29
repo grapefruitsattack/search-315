@@ -32,7 +32,7 @@ export default function StoryBlock(
     = new Date(
         Number(releaseDate.substring(0,4))
         ,Number(releaseDate.substring(4,6))-1
-        ,Number(releaseDate.substring(6,9))).toLocaleDateString();
+        ,Number(releaseDate.substring(6,9))).toLocaleDateString("ja-JP");
   
   const disclosure = useDisclosure();
   const infoStoryPerson: InfoStory[] = infoStory.filter(data=>data.personFlg===1);
