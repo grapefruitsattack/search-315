@@ -12,6 +12,8 @@ import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
 import YoutubeButton from "@/features/common/components/video/YoutubeButton";
 import {GetArtistBadgeInfo} from '@/features/common/utils/ArtistUtils';
 import IdolBadge from '@/features/common/components/IdolBadge';
+import { ExternalLink } from 'lucide-react';
+
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
 export default function SongList(
@@ -119,9 +121,44 @@ export default function SongList(
       {/* サブスク */}
       <div className={`
         lg:w-auto inline-block row-span-1 h-10 my-auto 
-        ${song.subscFlg!==1?' hidden':''}
         `}>
-        <SubscButton songId={song.songId} albumId={''} />
+        {song.subscFlg!==1
+        ?song.trialYoutubeId!==''
+        ?<a className="w-full h-full"
+            href={`https://youtu.be/${song.trialYoutubeId}`}
+            onClick={(e) => e.stopPropagation()}
+            target="_blank" rel="noopener noreferrer"
+          >
+            <button
+                className='rounded-lg border-2 border-red-500 w-full h-full
+                text-red-500 font-sans leading-tight
+                hover:bg-red-500 hover:text-red-100 
+                transition-all duration-500 ease-out
+                fill-red-500 hover:fill-red-100 
+                text-xs mobileM:text-sm lg:text-base
+                '
+                type="button"
+                aria-controls="contents"
+            >
+                <div className={`
+                    mobileL:flex hidden flex-wrap justify-center items-center font-sans font-black 
+                    mobileM:my-1 my-2 mx-4
+                `}>
+                {'試聴動画'}
+                    <ExternalLink className="tablet:w-[18px] tablet:h-[18px] w-[14px] h-[14px]" />
+                </div>
+                <div className={`
+                    flex mobileL:hidden flex-wrap justify-center items-center font-sans font-black 
+                    mobileM:my-1 my-2 mx-4
+                `}>
+                {'試聴'}
+                    <ExternalLink className="tablet:w-[18px] tablet:h-[18px] mobileM:w-[14px] mobileM:h-[14px] w-[10px] h-[10px]" />
+                </div>
+            </button>
+        </a>
+        :<></>
+        :<SubscButton songId={song.songId} albumId={''} />
+        }
       </div>
     </div>
   </div>
