@@ -61,7 +61,7 @@ const Units = async ({
       <div className='lg:max-w-[1050px] lg:m-auto'>
         <UnitPageMain unitId={id} type={type}/>
       </div>
-      <div  className="w-full mt-5 px-0 mobileS:px-0 tablet:px-4 lg:px-4 bg-white lg:max-w-[950px] lg:m-auto">
+      <div  className="w-full mt-5 px-0 mobileS:px-0 tablet:px-4 lg:px-4 bg-white lg:max-w-[950px] lg:m-auto min-h-[5000px]">
         <div className='px-0 mobileM:px-2 '>
           <UnitPageTabs type={type===''?'recommend':type} member={selectedMember} unitMember={unitMember}/>
         </div>
