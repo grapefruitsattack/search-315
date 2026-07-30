@@ -132,7 +132,7 @@ function getLyricJsx(
       lyricList.push(
         <div 
           key={currentRowSeq} 
-          className={`flex mt-auto w-fit pointer-events-none 
+          className={`flex flex-wrap mt-auto w-fit pointer-events-none 
           ${currentRowSeq>=startRow&&currentRowSeq<=endRow
               ?'text-gray-800 font-bold bg-green-200'
               :'text-gray-400'
@@ -282,7 +282,7 @@ export default function LyricShareResult(
         :<div
         className={`
           relative overflow-hidden 
-          
+          whitespace-pre-wrap
         `}
       >
         <div

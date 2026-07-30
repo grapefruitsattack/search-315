@@ -48,7 +48,7 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
         lyricList.push(
           <div 
             key={currentRowSeq} 
-            className={`flex text-gray-500 mt-auto w-fit ${isExpanded ? 'cursor-pointer hover:bg-green-100/50 rounded' : 'pointer-events-none'} `}
+            className={`flex flex-wrap text-gray-500 mt-auto w-fit ${isExpanded ? 'cursor-pointer hover:bg-green-100/50 rounded' : 'pointer-events-none'} `}
               onClick={() => {
                 setSelectedRowSeq(currentRowSeq);
                 disclosure.onOpen();
@@ -117,7 +117,7 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
     </div>
     :
     <section 
-      className={`select-none print:hidden`}
+      className={`select-none print:hidden whitespace-pre-wrap`}
     >
       <div
         className={`
