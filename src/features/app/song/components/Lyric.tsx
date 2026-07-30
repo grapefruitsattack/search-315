@@ -8,7 +8,7 @@ import {
 import {LyricShareModal} from "@/features/app/song/components/LyricShareModal";
 
 export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongMaster, lyric: Lyric, lyricIsLoading: boolean }) {
-  const lyricOpen = sessionStorage.getItem("lyricOpen");
+  const lyricOpen = typeof window !== 'undefined'?sessionStorage.getItem("lyricOpen"):'';
   const [isExpanded, setIsExpanded] = useState(lyricOpen==='1');
   const [selectedRowSeq, setSelectedRowSeq] = useState<number | null>(null);
   useEffect(() => {

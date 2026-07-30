@@ -338,10 +338,12 @@ export default function LyricShareResult(
             '
             href={{pathname:`/song/${result.songId}`}}
             onClick={()=>{
-              sessionStorage.setItem(
-                "lyricOpen",
-                String('1')
-              );
+              if(typeof window !== 'undefined'){
+                sessionStorage.setItem(
+                  "lyricOpen",
+                  String('1')
+                );
+              }
             }}
           >
             <div className='px-1  my-auto'>
