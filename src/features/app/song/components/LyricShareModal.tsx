@@ -284,13 +284,13 @@ export const LyricShareModal = (
           </div>
         </ModalHeader>
         <ModalCloseButton />
-        <ModalBody
+        <ModalBody id='modalbody'
           className=''
         >
         {['rowStart','rowEnd','rowSelected'].includes(selectionStep)
         &&
           <div 
-            className="flex flex-col gap-0 select-none print:hidden font-sans"
+            className="flex flex-col gap-0 select-none print:hidden font-sans "
           >
             {lyricList}
           </div>
@@ -462,6 +462,8 @@ export const LyricShareModal = (
                   onClick={() => {
                     setShareText(`「${song.songTitle}」歌詞のココがスキ！  |  サーチサイコー\n#SideM #search315\n${createDefaultShareUrl(selectedRows,selectedChars)}`);
                     setSelectionStep('share');
+                    const element = document.getElementById('modalbody');
+                    if(element!==null)element.scrollTo(0, 0);
                   }}
                   disabled={['rowStart'].includes(selectionStep)}
                 >

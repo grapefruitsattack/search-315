@@ -1,7 +1,7 @@
 'use client'
+import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { motion } from "framer-motion";
 import type { SongMaster,Albums,MvInfo,LiveMaster,Lyric,LyricData } from '@/data/types';
 import subscSongs from '@/data/subscSongs.json';
 import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
@@ -18,6 +18,7 @@ import Mv from './Mv'
 import Live from './Live'
 import LyricPage from './Lyric'
 import { Skeleton } from '@/components/ui/skeleton';
+import { ArrowRight } from 'lucide-react';
 
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
@@ -204,7 +205,7 @@ export default function LyricShareResult(
   const lyricList: JSX.Element[] = getLyricJsx(targetLyricData, startRow, endRow, startChar, endChar);
 
   return(
-    <div className=" pb-96 px-2 mobileS:px-4 mobileM:px-8 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
+    <div className=" pb-96 px-2 mobileS:px-2 mobileM:px-4 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
 
       <div className="mb-2 bg-gradient-to-r from-cyan-500/70 tablet:from-0% from-20% rounded">
         <div 
@@ -246,7 +247,7 @@ export default function LyricShareResult(
             <div className="tablet:text-base text-sm text-base font-sans leading-tight lg:leading-normal">
 
             </div>
-            <div className="text-4xl tablet:text-5xl font-mono font-bold inline-block">
+            <div className="text-3xl mobileL:text-4xl tablet:text-5xl font-mono font-bold inline-block">
               {result.songTitle}
             </div>
 
@@ -267,7 +268,7 @@ export default function LyricShareResult(
         </div>
       </div>
 
-      <div className={`select-none print:hidden`}>
+      
       {lyricIsLoading
         ?<div className="flex flex-col gap-[4px]">
           <Skeleton className={`flex h-[20px] w-[60%] rounded`}>
@@ -279,59 +280,84 @@ export default function LyricShareResult(
           <Skeleton className={`flex h-[20px] w-[95%] rounded`}>
           </Skeleton>
         </div>
-        :<div
-        className={`
-          relative overflow-hidden 
-          whitespace-pre-wrap
-        `}
-      >
-        <div
+        :
+      <>
+        <div className={`select-none print:hidden`}>
+          <div
           className={`
-            absolute inset-x-0 top-0 h-12
-            bg-gradient-to-b
-            from-white
-            to-transparent
-            pointer-events-none
-            ${startRow<=displayRowCnt+1&&'hidden'}
+            relative overflow-hidden 
+            whitespace-pre-wrap
           `}
-        />
-        <div className="flex flex-col gap-0 lg:text-3xl text-xl">
-          {lyricList}
-        </div>
-        <div
-          className={`
-            absolute inset-x-0 bottom-0 h-12
-            bg-gradient-to-t
-            from-white
-            to-transparent
-            pointer-events-none
-            ${endRow>=maxRowSeq-displayRowCnt&&'hidden'}
-          `}
-        />
-        </div>
-
-      }
-      </div>
-
-      {/* ボタン */}
-      <div className='flex flex-wrap gap-4 my-6'>
-        <div className={`
-          grid gap-y-[5px]
-          ${result.subscFlg!==1 && result.trialYoutubeId===''?' hideen':''}
-          ${result.subscFlg!==1
-            ?' grid-cols-1 w-2/3 tablet:w-1/3 w-full'
-            :' grid-cols-[3fr_2fr] tablet:w-1/2 w-full'}
-          `}>
-          {/* サブスク */}
-          <div className={`
-            lg:w-auto inline-block row-span-1 h-10 
-            ${result.subscFlg!==1?' hidden':''}
-            `}>
-            <SubscButton songId={result.songId} albumId=""/>
+        >
+          <div
+            className={`
+              absolute inset-x-0 top-0 h-12
+              bg-gradient-to-b
+              from-white
+              to-transparent
+              pointer-events-none
+              ${startRow<=displayRowCnt+1&&'hidden'}
+            `}
+          />
+          <div className="flex flex-col gap-0 text-xl mobileL:text-2xl tablet:text-3xl">
+            {lyricList}
+          </div>
+          <div
+            className={`
+              absolute inset-x-0 bottom-0 h-12
+              bg-gradient-to-t
+              from-white
+              to-transparent
+              pointer-events-none
+              ${endRow>=maxRowSeq-displayRowCnt&&'hidden'}
+            `}
+          />
           </div>
         </div>
-      </div>
-
+        {/* ボタン */}
+        <div className='flex  flex-col gap-4 my-6'>
+          <div className={`
+            grid gap-y-[5px]
+            ${result.subscFlg!==1 && result.trialYoutubeId===''?' hideen':''}
+            ${result.subscFlg!==1
+              ?' grid-cols-1 w-2/3 tablet:w-1/3 w-full'
+              :' grid-cols-[3fr_2fr] tablet:w-1/2 w-full'}
+            `}>
+            {/* サブスク */}
+            <div className={`
+              lg:w-auto inline-block row-span-1 h-10 
+              ${result.subscFlg!==1?' hidden':''}
+              `}>
+              <SubscButton songId={result.songId} albumId=""/>
+            </div>
+          </div>
+          <Link
+            className='flex z-10  w-fit h-fit gap-1 items-stretch
+            border-2 border-green-700 text-green-800 bg-white
+            text-sm tablet:text-lg font-bold 
+            '
+            href={{pathname:`/song/${result.songId}`}}
+            onClick={()=>{
+              sessionStorage.setItem(
+                "lyricOpen",
+                String('1')
+              );
+            }}
+          >
+            <div className='px-1  my-auto'>
+              <div>{'歌詞をすべて見る'}</div>
+            </div>
+            <div className=' bg-green-700 flex items-center px-1 '>
+              <ArrowRight 
+                className='text-white my-auto mx-auto bg-green-700 w-[16px] tablet:w-[20px]'
+              />
+            </div>
+            
+          </Link>
+        </div>
+      </>
+      }
+      
 
     </div>
   )

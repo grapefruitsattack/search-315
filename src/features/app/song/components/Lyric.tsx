@@ -1,22 +1,34 @@
 'use client'
 import { useEffect, useState } from "react";
 import type { Lyric,LyricData,SongMaster } from '@/data/types';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
   useDisclosure, 
  } from "@chakra-ui/react";
 import {LyricShareModal} from "@/features/app/song/components/LyricShareModal";
-import { LoaderIcon } from "lucide-react"
 
-export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongMaster, lyric: Lyric, lyricIsLoading: boolean, }) {
-
-  const [isExpanded, setIsExpanded] = useState(false);
+export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongMaster, lyric: Lyric, lyricIsLoading: boolean }) {
+  const lyricOpen = sessionStorage.getItem("lyricOpen");
+  const [isExpanded, setIsExpanded] = useState(lyricOpen==='1');
   const [selectedRowSeq, setSelectedRowSeq] = useState<number | null>(null);
+  useEffect(() => {
+    if (lyricOpen!=='1') return;
+
+    const timer = setInterval(() => {
+      // ページの高さが十分になったらスクロール
+      const element = document.getElementById("lyricHeading");
+      if(lyricOpen==='1'){
+        element?.scrollIntoView({
+          behavior: 'smooth',
+          block: "center",
+        });
+      }
+      clearInterval(timer);
+    }, 100);
+
+    return () => clearInterval(timer);
+  }, []);
+
   useEffect(() => {
     if (selectedRowSeq) {
       disclosure.onOpen();
@@ -81,7 +93,7 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
     if(isExpanded===false){
       element?.scrollIntoView({
         behavior: 'smooth',
-        block: 'start',
+        block: "center",
       });
     }
     setIsExpanded(isExpanded)

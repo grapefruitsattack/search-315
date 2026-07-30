@@ -1,11 +1,9 @@
 'use client'
 import { useRouter,useSearchParams } from 'next/navigation'
 import useSWR from 'swr';
-import CommonPage from "@/features/common/components/CommonPage";
 import songMaster from '@/data/songMaster.json';
 import albumMaster from '@/data/albumMaster.json';
 import type { SongMaster,Albums,Lyric } from '@/data/types';
-import SongContent from "./components/SongContent";
 import LyricShareResult from "./components/LyricShareResult";
 import { useEffect } from 'react';
 
