@@ -29,10 +29,7 @@ async function getData(
       ?await createSupabaseClientWithLogin(session)
       :await createSupabaseClient()
   ;
-  const userId: string | null
-    = session?.user
-      ?session.user.id||null
-      :null;
+  const login: boolean = session?.user?true:false;
 
   //ストーリー情報取得
   const displayPageSize: number = 3;
@@ -41,25 +38,60 @@ async function getData(
     = m_story.filter((data)=>
       data.infoStory.some(infoData=>infoData.infoId.substring(0,3)===unitPrefix)
     );
-  const freeStoryData: Story[] = unitStoryData.filter((data)=>data.howtoviewStory.some((htvData)=>[HOW_TO_VIEW.asbPremium.id,HOW_TO_VIEW.asbPurchase.id,HOW_TO_VIEW.asbSerialcodeCD.id,HOW_TO_VIEW.asbSerialcode.id].includes(htvData)===false));
-  const paidStoryData: Story[] = unitStoryData.filter((data)=>data.howtoviewStory.some((htvData)=>[HOW_TO_VIEW.asbPremium.id,HOW_TO_VIEW.asbPurchase.id,HOW_TO_VIEW.asbSerialcodeCD.id,HOW_TO_VIEW.asbSerialcode.id].includes(htvData)===true));
-  const archiveStoryData: Story[] = unitStoryData.filter((data)=>[1,2].includes(data.media));
-  const randArray = FisherYatesShuffl(archiveStoryData.length)
-  const randArchiveStoryData: Story[] = [];
-  randArchiveStoryData.push(archiveStoryData[randArray[0]-1]);
-  randArchiveStoryData.push(archiveStoryData[randArray[1]-1]);
-  randArchiveStoryData.push(archiveStoryData[randArray[2]-1]);
+  const freeStoryAllData: Story[]
+    = unitStoryData
+    .filter((data)=>data.howtoviewStory.some((htvData)=>[HOW_TO_VIEW.asbPremium.id,HOW_TO_VIEW.asbPurchase.id,HOW_TO_VIEW.asbSerialcodeCD.id,HOW_TO_VIEW.asbSerialcode.id].includes(htvData)===false));
+  let freeStoryData: {story:Story; userReadingData: UserReadingData | null;}[]
+    = freeStoryAllData.slice(0,displayPageSize)
+      .map(data=>{return {story:data,userReadingData:null}})
+      ;
+  const paidStoryAllData: Story[] 
+    = unitStoryData
+      .filter((data)=>data.howtoviewStory.some((htvData)=>[HOW_TO_VIEW.asbPremium.id,HOW_TO_VIEW.asbPurchase.id,HOW_TO_VIEW.asbSerialcodeCD.id,HOW_TO_VIEW.asbSerialcode.id].includes(htvData)===true));
+  let paidStoryData: {story:Story; userReadingData: UserReadingData | null;}[]
+    = paidStoryAllData.slice(0,displayPageSize)
+      .map(data=>{return {story:data,userReadingData:null}})
+      ;
+  const archiveStoryAllData: Story[] = unitStoryData.filter((data)=>[1,2].includes(data.media));
+  const randArray = FisherYatesShuffl(archiveStoryAllData.length)
+  let randArchiveStoryData: {story:Story;userReadingData: UserReadingData | null;}[] = [];
+  randArchiveStoryData.push({story:archiveStoryAllData[randArray[0]-1], userReadingData:null});
+  randArchiveStoryData.push({story:archiveStoryAllData[randArray[1]-1], userReadingData:null});
+  randArchiveStoryData.push({story:archiveStoryAllData[randArray[2]-1], userReadingData:null});
+
+  if(login){
+    const targetStoryId: string[] = freeStoryData.map(data=>data.story.storyId).concat(paidStoryData.map(data=>data.story.storyId)).concat(randArchiveStoryData.map(data=>data.story.storyId));
+    const userId: string
+      = session?.user
+        ?session.user.id||''
+        :'';
+    const userReadingData: UserReadingData[] = (await supabase.rpc(
+      'get_user_reading_from_storyid',
+      {
+        user_id:userId,story_id_array:targetStoryId
+      }
+    )).data||[];
+    freeStoryData = freeStoryData.map(storyData=>{
+      return {story:storyData.story,userReadingData:userReadingData.find(userReading=>userReading.story_id===storyData.story.storyId)||null}
+    });
+    paidStoryData = paidStoryData.map(storyData=>{
+      return {story:storyData.story,userReadingData:userReadingData.find(userReading=>userReading.story_id===storyData.story.storyId)||null}
+    });
+    randArchiveStoryData = randArchiveStoryData.map(storyData=>{
+      return {story:storyData.story,userReadingData:userReadingData.find(userReading=>userReading.story_id===storyData.story.storyId)||null}
+    });
+  }
 
   return new Promise((resolve) => {
     setTimeout(async () => {
       resolve(
         {
-          freeStoryData:freeStoryData.slice(0,displayPageSize).map(data=>{return {story:data,userReadingData:null}})
-          ,paidStoryData:paidStoryData.slice(0,displayPageSize).map(data=>{return {story:data,userReadingData:null}})
-          ,archiveStoryData:randArchiveStoryData.map(data=>{return {story:data,userReadingData:null}})
-          ,freeStoryCnt:freeStoryData.length
-          ,paidStoryCnt:paidStoryData.length
-          ,archiveStoryCnt:archiveStoryData.length
+          freeStoryData:freeStoryData
+          ,paidStoryData:paidStoryData
+          ,archiveStoryData:randArchiveStoryData
+          ,freeStoryCnt:freeStoryAllData.length
+          ,paidStoryCnt:paidStoryAllData.length
+          ,archiveStoryCnt:archiveStoryAllData.length
           ,login:session?.user?true:false
         }
       );
