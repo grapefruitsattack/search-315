@@ -40,19 +40,6 @@ export default function SongList(
       ?subscSongs.find(data=>song.songId===data.id)?.youtubeId || ''
       :'';
 
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  const [tooltipOn, setTooltipOn] = useState<boolean>(false);
-
-  function copyTextToClipboard(text: string) {
-    navigator.clipboard.writeText(text)
-    .then(function() {
-      setTooltipOn(true);
-      window.setTimeout(function(){setTooltipOn(false);}, 1500);
-    }, function(err) {
-    });
-  };
-
   return (
   <div 
     className="flex w-full min-h-[50px] cursor-pointer group "
@@ -87,8 +74,8 @@ export default function SongList(
     </Link>
     <div 
       className={`rounded
-        grid grid-cols-[2fr_1fr] w-full
-        font-sans 
+        grid  ${song.subscFlg!==1&&song.trialYoutubeId===''?'grid-cols-1':'grid-cols-[2fr_1fr]'}
+        w-full font-sans 
         ${index%2===1?'bg-white':'bg-zinc-50'} 
         group-hover:bg-green-100
         group/songtitle
