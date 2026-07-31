@@ -6,7 +6,6 @@ import StoryBlock from "@/features/common/components/story/StoryBlock";
 import StoryCarousel from "@/features/common/components/StoryCarousel";
 import { Bell, House } from "lucide-react";
 
-
 export default function UnitPageStoryServer(
   { unitId,unitMember,post }
   : {
@@ -27,9 +26,13 @@ export default function UnitPageStoryServer(
 
   const allStoryData = post.freeStoryData.concat(post.paidStoryData).sort((a,b)=>a.story.seq < b.story.seq ? 1 : -1).slice(0,6);
   const StoryDataArray = [
-    {story:allStoryData,type:'all',typeName:'すべて',cnt:post.freeStoryCnt+post.paidStoryCnt},
-    {story:post.freeStoryData,type:'free',typeName:'無料',cnt:post.freeStoryCnt},
-    {story:post.paidStoryData,type:'paid',typeName:'有償',cnt:post.paidStoryCnt},
+    {story:allStoryData,type:'all',typeName:'すべて',cnt:post.freeStoryCnt+post.paidStoryCnt
+      ,query: {q: searchQueryId, order:'desc', htv: 0}
+    },
+    {story:post.freeStoryData,type:'free',typeName:'無料',cnt:post.freeStoryCnt
+      ,query: {q: searchQueryId, order:'desc', htv: 1}},
+    {story:post.paidStoryData,type:'paid',typeName:'有償',cnt:post.paidStoryCnt
+      ,query: {q: searchQueryId, order:'desc', htv: 3}},
   ];
 
   const [selectedStory, setSelectedStory] = useState(StoryDataArray[0]);
@@ -105,7 +108,7 @@ export default function UnitPageStoryServer(
           border-2 border-green-700 text-green-800 bg-white
           text-sm tablet:text-base font-bold ml-auto
           '
-          href={{ pathname: '/search/story', query: {q: searchQueryId, order:'desc', htv: 1}}}
+          href={{ pathname: '/search/story', query: selectedStory.query}}
         >
           <span className='ml-1'>{'全'}</span>
           <span className=''>{selectedStory.cnt}</span>
