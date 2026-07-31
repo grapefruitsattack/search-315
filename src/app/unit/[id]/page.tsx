@@ -5,7 +5,7 @@ import { Suspense, cache } from "react";
 import type { SingingMaster } from '@/data/types';
 import singingMaster from '@/data/singingMaster.json';
 import CommonPage from "@/features/common/components/CommonPage";
-import UnitPageStory from "@/features/app/unit/UnitPageStory";
+import UnitPageStoryServer from "@/features/app/unit/UnitPageStoryServer";
 import UnitPageTabs from "@/features/app/unit/components/UnitPageTabs";
 
 export function generateStaticParams() {
@@ -34,10 +34,16 @@ const Units = async ({
 
   //クエリパラメータ
   const { id } = await params;
-  const {t} = await searchParams||pageCategory;
+  const {t} = await searchParams;
   const {m} = await searchParams;
 
-  const type: string = ['story','music','recommend'].includes(t||pageCategory)?t||pageCategory:pageCategory;
+  const queryType: string = t||pageCategory;
+
+  const type: string 
+    = ['story','music','recommend','other'].includes(queryType)
+      ?queryType
+      :['story','music','recommend','other'].includes(pageCategory)
+        ?pageCategory:'recommend';
   const unitName: string = singingMaster.find(data => data.singingInfoId === id)?.singingInfoName||'';
   //ユニットメンバー取得
   const unitMember: SingingMaster[] 
@@ -65,23 +71,24 @@ const Units = async ({
         <div className='px-0 mobileM:px-2 '>
           <UnitPageTabs type={type===''?'recommend':type} member={selectedMember} unitMember={unitMember}/>
         </div>
-        {type==='story'
-          ?
-          <Suspense fallback={<>{'story loading'}</>}>
-          {/* @ts-ignore Server Component */}
-          <UnitPageStory unitId={id} unitMember={unitMember}/>
-          </Suspense>
-          :type==='music'
-          ?
-          <>
+
+          <div className={`${type!=='story'&&'hidden'}`}>
+            <Suspense fallback={<>{'story loading'}</>}>
+              <UnitPageStoryServer unitId={id} unitMember={unitMember}/>
+            </Suspense>
+          </div>
+          <div className={`${type!=='music'&&'hidden'}`}>
             {selectedMember==='unit'
             ?<UnitPageMusic unitId={id}/>
             :<IdolPageMusic idolId={selectedMember}/>}
-          </>
-          :type=='other'
-          ?<UnitPageOther unitId={id} unitMember={unitMember}/>
-          :<UnitPageRecommend unitId={id}/>
-        }
+          </div>
+
+          <div className={`${type!=='other'&&'hidden'}`}>
+            <UnitPageOther unitId={id} unitMember={unitMember}/>
+          </div>
+          <div className={`${type!=='recommend'&&'hidden'}`}>
+            <UnitPageRecommend unitId={id}/>
+          </div>
       </div>
     </article>
     </CommonPage>

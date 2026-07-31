@@ -36,14 +36,15 @@ export default function UnitPageTabs({ type,member,unitMember }: { type: string,
     <div>
       <div 
         className="flex mb-5 gap-0 flex-wrap " role="tablist" 
-        aria-label="tab options"
+        aria-label="tab options 
+        "
         id={TAB_ELEMENT_ID}
       >
         <Tabs defaultValue={type}>
-          <TabsList className="h-fit ">
+          <TabsList className="h-fit">
             <TabsTrigger asChild key={'recommend'} value={'recommend'} className="flex-1">
               <Link 
-                className={`flex-col gap-1 px-2.5 sm:px-3 w-[67px]
+                className={`flex-col px-2.5 sm:px-3 w-[64px] tablet:w-[68px] text-sm tablet:text-base
                     `}
                 href={{ pathname: currentPath, query: {t:'recommend', m:member}}}
                 scroll={false}
@@ -52,7 +53,7 @@ export default function UnitPageTabs({ type,member,unitMember }: { type: string,
                   setPageCategory('recommend');
                 }}
               >
-              <MessageCircleWarning className="mx-auto" />
+              <MessageCircleWarning className="mx-auto  w-[20px] tablet:w-[24px]" />
               <div className=" ">
                 {'オススメ'}
               </div>
@@ -60,7 +61,7 @@ export default function UnitPageTabs({ type,member,unitMember }: { type: string,
             </TabsTrigger>
             <TabsTrigger asChild key={'music'} value={'music'} className='flex-1'>
               <Link 
-                className={`flex-col gap-1 px-2.5 sm:px-3 w-[67px]
+                className={`flex-col px-2.5 sm:px-3 w-[64px] tablet:w-[68px] text-sm tablet:text-base
                     `}
                 href={{ pathname: currentPath, query: {t: 'music', m:member}}}
                 scroll={false}
@@ -69,7 +70,7 @@ export default function UnitPageTabs({ type,member,unitMember }: { type: string,
                   setPageCategory('music');
                 }}
               >
-              <Music className="mx-auto" />
+              <Music className="mx-auto  w-[20px] tablet:w-[24px]" />
               <div className=" ">
               {'楽曲'}
               </div>
@@ -77,7 +78,7 @@ export default function UnitPageTabs({ type,member,unitMember }: { type: string,
             </TabsTrigger>
             <TabsTrigger asChild key={'story'} value={'story'} className='flex-1'>
               <Link 
-                className={`flex-col gap-1 px-2.5 sm:px-3 w-[67px]
+                className={`flex-col px-2.5 sm:px-3 w-[64px] tablet:w-[68px] text-sm tablet:text-base
                     `}
                 href={{ pathname: currentPath, query: {t: 'story', m:member}}}
                 scroll={false}
@@ -86,13 +87,13 @@ export default function UnitPageTabs({ type,member,unitMember }: { type: string,
                   setPageCategory('story');
                 }}
               >
-              <BookOpen className="mx-auto" />
+              <BookOpen className="mx-auto  w-[20px] tablet:w-[24px]" />
               {`ストーリー`}
               </Link>
             </TabsTrigger>
             <TabsTrigger asChild key={'other'} value={'other'} className='flex-1'>
               <Link 
-                className={`flex-col gap-1 px-2.5 sm:px-3 w-[67px]
+                className={`flex-col px-2.5 sm:px-3 w-[64px] tablet:w-[68px] text-sm tablet:text-base
                     `}
                 href={{ pathname: currentPath, query: {t: 'other', m:member}}}
                 scroll={false}
@@ -101,7 +102,7 @@ export default function UnitPageTabs({ type,member,unitMember }: { type: string,
                   setPageCategory('other');
                 }}
               >
-              <Sparkles className="mx-auto" />
+              <Sparkles className="mx-auto w-[20px] tablet:w-[24px]" />
               {`その他`}
               </Link>
             </TabsTrigger>

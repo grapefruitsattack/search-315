@@ -27,6 +27,10 @@ export default function StoryCarousel(
   //   );
 
   React.useEffect(() => {
+    setCurrent(1);
+  }, [StoryArray]);
+
+  React.useEffect(() => {
     if (!api) {
       return;
     }
@@ -37,7 +41,9 @@ export default function StoryCarousel(
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
-  }, [api]);
+    //setCurrent(1);
+    api.scrollTo(1);
+  }, [api,StoryArray]);
 
   if(displayCnt!==3){
     return (
