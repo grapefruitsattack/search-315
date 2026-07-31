@@ -1,10 +1,12 @@
 
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
+import { notFound } from 'next/navigation';
+import type { LiveMaster } from '@/data/types';
 import liveMaster from '@/data/liveMaster.json';
 import CommonPage from "@/features/common/components/CommonPage";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
-
-const LivePage = dynamic(() => import("@/features/app/live/LivePage"), { ssr: true });
+import LiveContent from "@/features/app/live/components/LiveContent";
+import StoryWithLive from "@/features/app/live/components/StoryWithLive";
 
 export function generateStaticParams() {
   // return [
@@ -25,10 +27,27 @@ const Lives = async ({
   params: Promise<{ id: string }>;
 }) => {
   const { id } = await params;
+  const result : LiveMaster | undefined 
+    = liveMaster.find(data => data.livePerId === id) as LiveMaster;
+
+  if(result===undefined) notFound();
+
+  const liveId = result.liveId;
+
+  const LiveData : LiveMaster[]
+    = liveMaster.filter(data => data.liveId === liveId) as LiveMaster[];
+    
   return (
     <Suspense>
     <CommonPage>
-    <LivePage livePerId={id} />
+      <title>{ `${result === undefined?'':result.displayLiveName+'\u00a0'+result.displayPerName
+          +'\u00a0\u00a0|\u00a0\u00a0'}サーチサイコー`}</title>
+      <article className=" pb-96 px-2 mobileS:px-12 lg:px-24 bg-white lg:max-w-[1500px] lg:m-auto font-mono">
+        <LiveContent selectedLivePerId={id} LiveData={LiveData} />
+        <Suspense fallback={<></>}>
+          <StoryWithLive livePerId={id} liveId={liveId}/>
+        </Suspense>
+      </article>
     </CommonPage>
     </Suspense>
   );

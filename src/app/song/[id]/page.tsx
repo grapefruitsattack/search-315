@@ -1,11 +1,14 @@
 
-import { Metadata } from 'next'
-import songMaster from '../../../data/songMaster.json';
-import CommonPage from "../../../features/common/components/CommonPage";
-import dynamic from "next/dynamic";
 import { Suspense } from "react";
+import { Metadata } from 'next';
+import dynamic from "next/dynamic";
+import type { SongMaster,Albums,Lyric } from '@/data/types';
+import songMaster from '@/data/songMaster.json';
+import CommonPage from "@/features/common/components/CommonPage";
+import SongContent from "@/features/app/song/components/SongContent";
+import StoryWithSong from "@/features/app/song/components/StoryWithSong";
 
-const SongPage = dynamic(() => import("../../../features/app/song/SongPage"), { ssr: true });
+
 
 export function generateStaticParams() {
   // return [
@@ -25,10 +28,18 @@ const Songs = async ({
   params: Promise<{ id: string }>;
 }) => {
   const { id } = await params;
+  const song : SongMaster
+    = songMaster.find(data => data.songId === id) as SongMaster;
   return (
     <Suspense>
     <CommonPage>
-    <SongPage songId={id} />
+      <title>{`${song.songTitle} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー`}</title>
+      <div className=" pb-96 px-2 mobileS:px-4 mobileM:px-8 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
+        <SongContent result={song}/>
+        <Suspense fallback={<></>}>
+          <StoryWithSong songId={id}/>
+        </Suspense>
+      </div>
     </CommonPage>
     </Suspense>
   );

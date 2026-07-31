@@ -1,11 +1,12 @@
 
 import { Metadata } from 'next'
-import albumMaster from '../../../data/albumMaster.json';
-import CommonPage from "../../../features/common/components/CommonPage";
+import type { Albums } from '@/data/types';
+import albumMaster from '@/data/albumMaster.json';
+import CommonPage from "@/features/common/components/CommonPage";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
-
-const AlbumPage = dynamic(() => import("../../../features/app/album/AlbumPage"), { ssr: true });
+import AlbumContent from "@/features/app/album/components/AlbumContent";
+import StoryWithAlbum from "@/features/app/album/components/StoryWithAlbum";
 
 export function generateStaticParams() {
   // return [
@@ -25,10 +26,18 @@ const Albums = async ({
   params: Promise<{ id: string }>;
 }) => {
   const { id } = await params;
+  const album : Albums
+    = albumMaster.find(data => data.albumId === id) as Albums;
   return (
     <Suspense>
     <CommonPage>
-    <AlbumPage albumId={id} />
+    <title>{ `${album.albumTitleFull} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー`}</title>
+      <article className=" pb-96 px-2 mobileS:px-4 mobileM:px-8 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
+        <AlbumContent album={album} />
+        <Suspense fallback={<></>}>
+          <StoryWithAlbum albumId={album.albumId}/>
+        </Suspense>
+      </article>
     </CommonPage>
     </Suspense>
   );

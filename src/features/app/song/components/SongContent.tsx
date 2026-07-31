@@ -1,8 +1,11 @@
 'use client'
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import useSWR from 'swr';
 import { motion } from "framer-motion";
 import type { SongMaster,Albums,MvInfo,LiveMaster,Lyric } from '@/data/types';
+import songMaster from '@/data/songMaster.json';
+import albumMaster from '@/data/albumMaster.json';
 import subscSongs from '@/data/subscSongs.json';
 import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
 import GetMv from '@/features/common/utils/GetMv';
@@ -24,7 +27,42 @@ import {
 
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
-export default function SongContent({ result, albumResult, lyric, lyricIsLoading }: { result: SongMaster, albumResult: Albums, lyric: Lyric, lyricIsLoading: boolean }) {
+const fetcher = async (url: string) => {
+  const response = await fetch(url,{cache:'force-cache'});
+
+  if (!response.ok) {
+    throw new Error('failed fetch');
+  }
+
+  return response.json();
+};
+
+export default function SongContent({ result }: { result: SongMaster }) {
+
+  const albumResult : Albums 
+    = albumMaster.find(data => data.albumId === result?.albumId) as Albums;
+
+  const shouldFetch = result?.lyric !== '';
+
+  const { data, error, isLoading } = useSWR(
+    shouldFetch ? `/api/lyric/${result?.lyric}` : null,
+    fetcher,
+    {
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+      dedupingInterval: Infinity,
+    }
+  );
+
+  const lyricVer0: Lyric = { version: 0, data: [] };
+  let lyric: Lyric = lyricVer0;
+
+  if (data?.lyric && data.lyric !== 'not found') {
+    lyric = JSON.parse(data.lyric);
+  }
+  lyric = lyric===undefined ? lyricVer0 : lyric;
+  const lyricIsLoading = isLoading
+  
 
   // アーティスト
   const artistArray: string[] = GetArtistBadgeInfo(result.artist);
@@ -61,7 +99,7 @@ export default function SongContent({ result, albumResult, lyric, lyricIsLoading
   const lyricShareModalDisclosure = useDisclosure();
 
   return(
-    <div className=" pb-96 px-2 mobileS:px-4 mobileM:px-8 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
+    <>
       <section className="mb-2 bg-gradient-to-r from-cyan-500/70 tablet:from-0% from-20% rounded">
         <div 
           className="
@@ -297,6 +335,7 @@ export default function SongContent({ result, albumResult, lyric, lyricIsLoading
         </section>
       }
 
-    </div>
+    
+    </>
   )
 }
