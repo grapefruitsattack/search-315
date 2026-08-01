@@ -105,9 +105,10 @@ export default function SongList(
           </div>
         </div>
       </Link>
-      {/* サブスク */}
+      {/* サブスク・視聴動画 */}
       <div className={`
         lg:w-auto inline-block row-span-1 h-10 my-auto 
+        ${song.subscFlg!==1&&song.trialYoutubeId===''&&' hidden '}
         `}>
         {song.subscFlg!==1
         ?song.trialYoutubeId!==''
