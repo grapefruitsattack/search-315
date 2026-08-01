@@ -7,6 +7,7 @@ import Link from 'next/link';
 const liveType = [
   {typeId:'',typeName:'ライブ'},
   {typeId:'pm',typeName:'プロミ'},
+  {typeId:'prs',typeName:'朗読'},
   {typeId:'3dlive',typeName:'3Dライブ'},
   {typeId:'ex',typeName:'外部・合同'},
   {typeId:'anime',typeName:'アニメイベント'},

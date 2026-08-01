@@ -4,9 +4,7 @@ import Link from "next/link";
 import singingMaster from '@/data/singingMaster.json';
 import songMaster from '@/data/songMaster.json';
 import songInfoAsc from '@/data/songInfoAsc.json'
-import livePerformer from '@/data/livePerformer.json'
-import liveMaster from '@/data/liveMaster.json'
-import type { SongMaster, LiveMaster } from '@/data/types';
+import type { SongMaster } from '@/data/types';
 import SongCarousel from "@/features/common/components/SongCarousel";
 
 export default function IdolPageMusic({ idolId }: { idolId: string }) {
@@ -27,11 +25,6 @@ export default function IdolPageMusic({ idolId }: { idolId: string }) {
     = collaboSongInfos.map(songid=>songMaster.find(data=>songid===data.songId))
     .filter((item): item is SongMaster => typeof item == 'object').slice().reverse();
 
-  //ライブ情報
-  const livePerIds: string[] = livePerformer.filter(data => data.singingInfoId === idolId).map(data=>data.livePerId);
-  const liveInfos: LiveMaster[] 
-  = livePerIds.map(livePerId=>liveMaster.find(data=>livePerId===data.livePerId))
-  .filter((item): item is LiveMaster => typeof item == 'object').slice().reverse();
 
     return (<>
       <div 
