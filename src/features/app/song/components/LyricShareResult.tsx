@@ -1,22 +1,14 @@
 'use client'
+import React from "react";
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import type { SongMaster,Albums,MvInfo,LiveMaster,Lyric,LyricData } from '@/data/types';
+import type { SongMaster,Albums,Lyric,LyricData } from '@/data/types';
 import subscSongs from '@/data/subscSongs.json';
 import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
-import GetMv from '@/features/common/utils/GetMv';
-import {GetCreditJsx,existsCredit} from '@/features/common/utils/CreditUtils';
 import GetSongOtherVersion from '@/features/common/utils/GetSongOtherVersion';
-import SearchLiveBySongId from '@/features/common/utils/SearchLive';
 import {GetArtistJsx,GetArtistBadgeInfo} from '@/features/common/utils/ArtistUtils';
 import IdolBadge from '@/features/common/components/IdolBadge';
-import CopyButton from "@/features/common/components/CopyButton";
-import {ShareModalButton} from "@/features/app/shareModal/ShareModalButton";
-import OtherVersion from './OtherVersion'
-import Mv from './Mv'
-import Live from './Live'
-import LyricPage from './Lyric'
 import { Skeleton } from '@/components/ui/skeleton';
 import { ArrowRight } from 'lucide-react';
 
@@ -133,7 +125,7 @@ function getLyricJsx(
       lyricList.push(
         <div 
           key={currentRowSeq} 
-          className={`flex flex-wrap mt-auto w-fit pointer-events-none 
+          className={`align-baseline w-fit pointer-events-none 
           ${currentRowSeq>=startRow&&currentRowSeq<=endRow
               ?'text-gray-800 font-bold bg-green-200'
               :'text-gray-400'
@@ -143,15 +135,17 @@ function getLyricJsx(
           {rowList.map((rowListData, rowListIndex) => {
           if(rowListData.ruby===undefined){
             return(
-              <p className="mt-auto" key={rowListIndex}>{rowListData.lyric}</p>
+              <React.Fragment key={rowListIndex}>{rowListData.lyric}</React.Fragment>
             )
           }else{
             return(
-              <ruby key={rowListIndex} className="mt-auto">{rowListData.lyric}
-                <rp>(</rp>
-                <rt>{rowListData.ruby}</rt>
-                <rp>)</rp>
-              </ruby>
+              <span key={rowListIndex} className="inline-flex items-end">
+                <ruby key={rowListIndex} className="mt-auto">{rowListData.lyric}
+                  <rp>(</rp>
+                  <rt>{rowListData.ruby}</rt>
+                  <rp>)</rp>
+                </ruby>
+              </span>
             )
           }
           })}
@@ -207,7 +201,7 @@ export default function LyricShareResult(
   return(
     <div className=" pb-96 px-2 mobileS:px-2 mobileM:px-4 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
 
-      <div className="mb-2 bg-gradient-to-r from-cyan-500/70 tablet:from-0% from-20% rounded">
+      <div className="mb-2 bg-gradient-to-r from-zinc-500 tablet:from-60% from-90% rounded">
         <div 
           className="
             flex items-center w-full ml-2
@@ -215,9 +209,10 @@ export default function LyricShareResult(
             text-white
             cursor-pointer lg:cursor-auto 
               gap-2">
-          <svg className="fill-cyan-500 bg-white rounded" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 0 24 24" width="24" height="24">
-              <path d="M20 3V17C20 19.2091 18.2091 21 16 21C13.7909 21 12 19.2091 12 17C12 14.7909 13.7909 13 16 13C16.7286 13 17.4117 13.1948 18 13.5351V5H9V17C9 19.2091 7.20914 21 5 21C2.79086 21 1 19.2091 1 17C1 14.7909 2.79086 13 5 13C5.72857 13 6.41165 13.1948 7 13.5351V3H20ZM5 19C6.10457 19 7 18.1046 7 17C7 15.8954 6.10457 15 5 15C3.89543 15 3 15.8954 3 17C3 18.1046 3.89543 19 5 19ZM16 19C17.1046 19 18 18.1046 18 17C18 15.8954 17.1046 15 16 15C14.8954 15 14 15.8954 14 17C14 18.1046 14.8954 19 16 19Z"></path></svg>
-          <p className="pr-2">{'この歌詞がスキ！'}</p>
+            <svg className="fill-white mr-1 " xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+            <path d="M80-80v-720q0-33 23.5-56.5T160-880h440q33 0 56.5 23.5T680-800v17q-24 11-44 27t-36 36v-80H160v527l47-47h393v-160q16 20 36 36t44 27v97q0 33-23.5 56.5T600-240H240L80-80Zm160-320h160v-80H240v80Zm520-80q-50 0-85-35t-35-85q0-50 35-85t85-35q11 0 21 2t19 5v-207h160v80h-80v240q0 50-35 85t-85 35Zm-520-40h280v-80H240v80Zm0-120h280v-80H240v80Zm-80 320v-480 480Z"/>
+            </svg>
+          <p className="pr-6">{'この歌詞がスキ！'}</p>
         </div>
       </div>
 
@@ -333,7 +328,7 @@ export default function LyricShareResult(
           </div>
           <Link
             className='flex z-10  w-fit h-fit gap-1 items-stretch
-            border-2 border-green-700 text-green-800 bg-white
+            border-2 border-zinc-700 text-zinc-800 bg-white
             text-sm tablet:text-lg font-bold 
             '
             href={{pathname:`/song/${result.songId}`}}
@@ -349,9 +344,9 @@ export default function LyricShareResult(
             <div className='px-1  my-auto'>
               <div>{'歌詞をすべて見る'}</div>
             </div>
-            <div className=' bg-green-700 flex items-center px-1 '>
+            <div className=' bg-zinc-700 flex items-center px-1 '>
               <ArrowRight 
-                className='text-white my-auto mx-auto bg-green-700 w-[16px] tablet:w-[20px]'
+                className='text-white my-auto mx-auto bg-zinc-700 w-[16px] tablet:w-[20px]'
               />
             </div>
             

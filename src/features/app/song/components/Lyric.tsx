@@ -1,4 +1,5 @@
 'use client'
+import React from "react";
 import { useEffect, useState } from "react";
 import type { Lyric,LyricData,SongMaster } from '@/data/types';
 import { Skeleton } from "@/components/ui/skeleton";
@@ -58,9 +59,10 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
       }else{
         const currentRowSeq = rowList[0]?.row_seq;
         lyricList.push(
-          <div 
+          <p 
             key={currentRowSeq} 
-            className={`flex flex-wrap text-gray-500 mt-auto w-fit ${isExpanded ? 'cursor-pointer hover:bg-green-100/50 rounded' : 'pointer-events-none'} `}
+            className={` text-gray-500  w-fit  align-baseline
+               ${isExpanded ? 'cursor-pointer hover:bg-green-100/50 rounded' : 'pointer-events-none'} `}
               onClick={() => {
                 setSelectedRowSeq(currentRowSeq);
                 disclosure.onOpen();
@@ -69,19 +71,22 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
             {rowList.map((rowListData, rowListIndex) => {
             if(rowListData.ruby===undefined){
               return(
-                <p className="mt-auto" key={rowListIndex}>{rowListData.lyric}</p>
+                <React.Fragment key={rowListIndex}>{rowListData.lyric}</React.Fragment>
               )
             }else{
               return(
-                <ruby key={rowListIndex} className="mt-auto">{rowListData.lyric}
+              <span key={rowListIndex} className="inline-flex items-end">
+                <ruby>
+                  {rowListData.lyric}
                   <rp>(</rp>
                   <rt>{rowListData.ruby}</rt>
                   <rp>)</rp>
                 </ruby>
+              </span>
               )
             }
             })}
-          </div>
+          </p>
         );
     }
       rowList=[];
@@ -141,7 +146,9 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
         }}
       >
         <div id="lyricDisplayArea" className="flex flex-col gap-0 mb-4 font-sans">
+        <div className="mt-auto">
           {lyricList}
+        </div>
         </div>
 
         {/* 下部フェード */}
