@@ -2,6 +2,7 @@
 import React from "react"
 import type { Story } from '@/data/types';
 import m_story from '@/data/m_story.json';
+import { HOW_TO_VIEW } from '@/features/common/const/StoryInfoConst';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 import Pagination from "@/features/common/components/Pagination";
 import { UseUserReading } from "@/features/app/search/provider/UserReadingProvider";
@@ -28,7 +29,7 @@ function getSearchResult(
   // 閲覧方法
   if(searchParam.howtoviewType===1){
     // 無料
-    story = story.filter((data)=>data.howtoviewStory.some((htvData)=>['asb_prem','asb_pur','asb_scode_cd','asb_scode'].includes(htvData)===false));
+    story = story.filter((data)=>data.howtoviewStory.length<=0||data.howtoviewStory.some((htvData)=>['asb_prem','asb_pur','asb_scode_cd','asb_scode'].includes(htvData)===false));
   }else if(searchParam.howtoviewType===2){
     // アソビストアプレミアム読み放題対象
     story = story.filter((data)=>data.howtoviewStory.includes('asb_prem'));
