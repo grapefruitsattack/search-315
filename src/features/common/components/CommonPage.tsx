@@ -2,6 +2,7 @@
 import React from "react";
 import { Props } from "next/script";
 import Link from 'next/link';
+import Image from 'next/image';
 import { AppProps } from "next/app";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import CommonHeader from "./CommonHeader";
@@ -47,13 +48,24 @@ const CommonPage = ({ children }: Props )=> {
         </div> */}
       <footer className=" ">
         <div className="
-           text-center  pb-1 underline text-gray-600 mobileL:text-sm mobileM:text-sm text-xs
+           flex flex-col text-center  pb-1  text-gray-600 mobileL:text-sm mobileM:text-sm text-xs
         ">
           <Link 
-            className=""
+            className="underline"
             href={`/about`}
             rel="noopener noreferrer"
           >このサイトについて・プライバシーポリシー・免責事項</Link>
+          <div className="flex mx-auto mt-2 mb-2 text-sm">
+            <Image
+              className={`h-auto w-[50px] tablet:h-auto tablet:w-[64px]`}
+              src={`/jasrac.JPG`}
+              alt="JASRAC許諾マーク"
+              width={0}
+              height={0}
+              sizes="100%"
+            />
+            <div className="my-auto text-[0.60rem]">{'JASRAC許諾第J260643396号'}</div>
+          </div>
       </div>
       </footer>
       
