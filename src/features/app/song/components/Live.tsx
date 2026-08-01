@@ -52,7 +52,9 @@ export default function Live({ results }: { results: LiveMaster[] }) {
             grid-cols-2 lg:grid-cols-4 lg:gap-4 gap-2 pt-4
         `}>
         {results.map((result, index) => (
-          <LiveBlock key={index} liveId={result.liveId} livePerId={result.livePerId} />
+          <div key={index} className='mb-auto'>
+            <LiveBlock liveId={result.liveId} livePerId={result.livePerId} />
+          </div>
         ))}
         </div>
         </section>
