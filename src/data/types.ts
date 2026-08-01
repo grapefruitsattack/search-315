@@ -182,6 +182,7 @@ export type Story = {
   voice: number;
   still: number;
   url: string;
+  releaseDateSourceUrl: string;
   pp: number;
   infoStory: InfoStory[];
   howtoviewStory: string[];

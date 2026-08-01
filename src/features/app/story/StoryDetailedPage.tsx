@@ -180,11 +180,24 @@ export default async function StoryDetailedPage(
               {storyData.storyTitle}
           </div>
         </div>
-
-        <div className='flex w-fit lg:text-base text-sm font-sans text-slate-600 mb-2'>
-          <a className="">{releaseDate}</a>
-          <a className="">{'更新'}</a>
+        {mainStoryData.story.releaseDateSourceUrl!==''
+        ?
+        <a 
+          className={`flex w-fit lg:text-base text-sm font-sans text-slate-600 mb-4 underline`}
+          href={mainStoryData.story.releaseDateSourceUrl}
+          target="_blank" rel="noopener noreferrer"
+        >
+          <p className="">{releaseDate}</p>
+          <p className="">{'更新'}</p>
+        </a>
+        :
+        <div 
+          className={`flex w-fit lg:text-base text-sm font-sans text-slate-600 mb-2`}
+        >
+          <p className="">{releaseDate}</p>
+          <p className="">{'更新'}</p>
         </div>
+        }
 
 
         {infoStoryPerson.length === 0
