@@ -60,8 +60,8 @@ export function VideoCarousel({ videoIdArray }: { videoIdArray: string[] }) {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className={`top-[calc(125%+0.5rem)] left-0 translate-y-0 ml-4 tablet:ml-0`} />
-        <CarouselNext className="top-[calc(125%+0.5rem)] left-2 translate-x-full translate-y-0 ml-4 tablet:ml-0" />
+        <CarouselPrevious className={`top-[calc(133%+0.5rem)] sm:top-[calc(125%+0.5rem)] left-0 translate-y-0 ml-2 tablet:ml-0`} />
+        <CarouselNext className="top-[calc(133%+0.5rem)] sm:top-[calc(125%+0.5rem)] left-2 translate-x-full translate-y-0 ml-2 tablet:ml-0" />
       </Carousel>
 
       <Carousel
@@ -88,7 +88,15 @@ export function VideoCarousel({ videoIdArray }: { videoIdArray: string[] }) {
                 )}
               >
                 {['asobichannel','asobistage'].includes(data.siteType)
-                ?<div className="absolute inset-0 bg-gray-200" />
+                ?
+                <div className="absolute inset-0 bg-gray-200 text-sm flex">
+                  <p className='py-1 px-1 m-auto
+                    font-sans font-black sm:text-[0.65rem] mobileM:text-xs text-[0.65rem]   text-gray-700
+                    mobileM:line-clamp-3 mobileS:line-clamp-2 line-clamp-1
+                  '>
+                      {data.displayTitle}
+                  </p>
+                </div>
                 :
                 <img
                   src={['asobichannel','asobistage'].includes(data.siteType)?'http://img.youtube.com/vi/cllEYfDCrdU/mqdefault.jpg':data.thumbnailUrl}
