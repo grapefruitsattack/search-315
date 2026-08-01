@@ -29,7 +29,9 @@ export default function StoryBlock(
   const router = useRouter();
 
   const releaseDateStr: string 
-    = new Date(
+    = releaseDate===''
+      ?''
+      :new Date(
         Number(releaseDate.substring(0,4))
         ,Number(releaseDate.substring(4,6))-1
         ,Number(releaseDate.substring(6,9))).toLocaleDateString("ja-JP");
@@ -149,7 +151,7 @@ export default function StoryBlock(
         }
       </section>
       <section className='px-1 mb-1'>
-      <div className='text-xs text-zinc-600'>{releaseDateStr}</div>
+      <div className={`${releaseDateStr===''&&'hidden'} text-xs text-zinc-600`}>{releaseDateStr}</div>
       <div className ="
         row-span-1 col-span-2 
         leading-tight

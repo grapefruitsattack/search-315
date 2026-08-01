@@ -42,7 +42,9 @@ export default async function StoryDetailedPage(
   const subStorys: SubStory[] = m_sub_story.filter((data)=>data.storyId===storyData.storyId).reverse();
 
   const releaseDate: string 
-    = new Date(
+    = storyData.releaseDate===''
+      ?''
+      :new Date(
         Number(storyData.releaseDate.substring(0,4))
         ,Number(storyData.releaseDate.substring(4,6))-1
         ,Number(storyData.releaseDate.substring(6,9))).toLocaleDateString("ja-JP");
@@ -180,23 +182,25 @@ export default async function StoryDetailedPage(
               {storyData.storyTitle}
           </div>
         </div>
-        {mainStoryData.story.releaseDateSourceUrl!==''
-        ?
-        <a 
-          className={`flex w-fit lg:text-base text-sm font-sans text-slate-600 mb-4 underline`}
-          href={mainStoryData.story.releaseDateSourceUrl}
-          target="_blank" rel="noopener noreferrer"
-        >
-          <p className="">{releaseDate}</p>
-          <p className="">{'更新'}</p>
-        </a>
+        {releaseDate===''?<></>
         :
-        <div 
-          className={`flex w-fit lg:text-base text-sm font-sans text-slate-600 mb-2`}
-        >
-          <p className="">{releaseDate}</p>
-          <p className="">{'更新'}</p>
-        </div>
+          mainStoryData.story.releaseDateSourceUrl!==''
+          ?
+          <a 
+            className={`flex w-fit lg:text-base text-sm font-sans text-slate-600 mb-4 underline`}
+            href={mainStoryData.story.releaseDateSourceUrl}
+            target="_blank" rel="noopener noreferrer"
+          >
+            <p className="">{releaseDate}</p>
+            <p className="">{'更新'}</p>
+          </a>
+          :
+          <div 
+            className={`flex w-fit lg:text-base text-sm font-sans text-slate-600 mb-2`}
+          >
+            <p className="">{releaseDate}</p>
+            <p className="">{'更新'}</p>
+          </div>
         }
 
 
