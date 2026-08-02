@@ -3,8 +3,10 @@ import Cloudflare from 'cloudflare';
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
+export const runtime = "nodejs";
 
 export async function GET(
+  req: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
   const { id } = await params;
