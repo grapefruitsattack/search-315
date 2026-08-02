@@ -18,14 +18,19 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
     const timer = setInterval(() => {
       // ページの高さが十分になったらスクロール
       const element = document.getElementById("lyricHeading");
-      if(lyricOpen==='1'){
-        element?.scrollIntoView({
-          behavior: 'smooth',
-          block: "center",
+      if(element!==null&&lyricOpen==='1'){
+        const targetDOMRect = element.getBoundingClientRect();
+        const targetTop = targetDOMRect.top + window.pageYOffset;
+        const headerHight = window.innerWidth >= 1000 ? 5: 70;
+        window.scrollTo({
+          top: targetTop-headerHight,
+          behavior: 'smooth'
         });
       }
       clearInterval(timer);
     }, 100);
+
+    sessionStorage.removeItem("lyricOpen");
 
     return () => clearInterval(timer);
   }, []);
