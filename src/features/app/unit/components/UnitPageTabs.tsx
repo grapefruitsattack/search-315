@@ -1,6 +1,7 @@
 'use client'
+import { useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname,useSearchParams } from "next/navigation";
 import { hasAnalyticsConsent } from "@/lib/analytics";
 import {usePageCategory} from "@/features/common/hooks/pageCategoryHook";
 import type { SingingMaster } from '@/data/types';
@@ -17,7 +18,9 @@ const SONG_TAB_ELEMENT_ID = 'songtab';
 
 export default function UnitPageTabs({ type,member,unitMember }: { type: string,member:string,unitMember:SingingMaster[] }) {
     const currentPath: string = usePathname();
+    const searchParams = useSearchParams();
     const [pageCategory,setPageCategory] = usePageCategory('');
+    const sessionStorageItemId: string = 'navigatewithtab';
 
     const scrollFunction =(targetElementId:string)=>{
       const element = document.getElementById(targetElementId);
@@ -32,25 +35,39 @@ export default function UnitPageTabs({ type,member,unitMember }: { type: string,
       }
     }
 
+  useEffect(() => {
+    if(sessionStorage.getItem(sessionStorageItemId)!=="1"){
+        return;
+    }
+    requestAnimationFrame(()=>{
+      scrollFunction(TAB_ELEMENT_ID);
+      sessionStorage.removeItem(sessionStorageItemId);
+    });
+  },[searchParams]);
+
     return(
     <div>
       <div 
-        className="flex mb-5 gap-0 flex-wrap " role="tablist" 
-        aria-label="tab options 
-        "
+        className="flex mb-5 gap-0 flex-wrap px-0 mobileS:px-2" role="tablist" 
+        aria-label="tab options"
         id={TAB_ELEMENT_ID}
       >
         <Tabs defaultValue={type}>
           <TabsList className="h-fit">
             <TabsTrigger asChild key={'recommend'} value={'recommend'} className="flex-1">
               <Link 
-                className={`flex-col px-2.5 sm:px-3 w-[64px] tablet:w-[68px] text-sm tablet:text-base
+                className={`flex-col px-2.5 sm:px-3 w-[64px] tablet:w-[68px] text-xs mobileL:text-sm tablet:text-base
                     `}
                 href={{ pathname: currentPath, query: {t:'recommend', m:member}}}
                 scroll={false}
                 onClick={()=>{
-                  scrollFunction(TAB_ELEMENT_ID);
                   setPageCategory('recommend');
+                  if(typeof window !== 'undefined'){
+                    sessionStorage.setItem(
+                      sessionStorageItemId,
+                      String('1')
+                    );
+                  }
                 }}
               >
               <MessageCircleWarning className="mx-auto  w-[20px] tablet:w-[24px]" />
@@ -61,13 +78,18 @@ export default function UnitPageTabs({ type,member,unitMember }: { type: string,
             </TabsTrigger>
             <TabsTrigger asChild key={'music'} value={'music'} className='flex-1'>
               <Link 
-                className={`flex-col px-2.5 sm:px-3 w-[64px] tablet:w-[68px] text-sm tablet:text-base
+                className={`flex-col px-2.5 sm:px-3 w-[64px] tablet:w-[68px] text-xs mobileL:text-xs mobileL:text-sm tablet:text-base
                     `}
                 href={{ pathname: currentPath, query: {t: 'music', m:member}}}
                 scroll={false}
                 onClick={()=>{
-                  scrollFunction(TAB_ELEMENT_ID);
                   setPageCategory('music');
+                  if(typeof window !== 'undefined'){
+                    sessionStorage.setItem(
+                      sessionStorageItemId,
+                      String('1')
+                    );
+                  };
                 }}
               >
               <Music className="mx-auto  w-[20px] tablet:w-[24px]" />
@@ -78,13 +100,18 @@ export default function UnitPageTabs({ type,member,unitMember }: { type: string,
             </TabsTrigger>
             <TabsTrigger asChild key={'story'} value={'story'} className='flex-1'>
               <Link 
-                className={`flex-col px-2.5 sm:px-3 w-[64px] tablet:w-[68px] text-sm tablet:text-base
+                className={`flex-col px-2.5 sm:px-3 w-[64px] tablet:w-[68px] text-xs mobileL:text-sm tablet:text-base
                     `}
                 href={{ pathname: currentPath, query: {t: 'story', m:member}}}
                 scroll={false}
                 onClick={()=>{
-                  scrollFunction(TAB_ELEMENT_ID);
                   setPageCategory('story');
+                  if(typeof window !== 'undefined'){
+                    sessionStorage.setItem(
+                      sessionStorageItemId,
+                      String('1')
+                    );
+                  };
                 }}
               >
               <BookOpen className="mx-auto  w-[20px] tablet:w-[24px]" />
@@ -93,13 +120,18 @@ export default function UnitPageTabs({ type,member,unitMember }: { type: string,
             </TabsTrigger>
             <TabsTrigger asChild key={'other'} value={'other'} className='flex-1'>
               <Link 
-                className={`flex-col px-2.5 sm:px-3 w-[64px] tablet:w-[68px] text-sm tablet:text-base
+                className={`flex-col px-2.5 sm:px-3 w-[64px] tablet:w-[68px] text-xs mobileL:text-sm tablet:text-base
                     `}
                 href={{ pathname: currentPath, query: {t: 'other', m:member}}}
                 scroll={false}
                 onClick={()=>{
-                  scrollFunction(TAB_ELEMENT_ID);
                   setPageCategory('other');
+                  if(typeof window !== 'undefined'){
+                    sessionStorage.setItem(
+                      sessionStorageItemId,
+                      String('1')
+                    );
+                  };
                 }}
               >
               <Sparkles className="mx-auto w-[20px] tablet:w-[24px]" />
@@ -113,7 +145,7 @@ export default function UnitPageTabs({ type,member,unitMember }: { type: string,
         id={SONG_TAB_ELEMENT_ID}
         className={`
           ${['music'].includes(type)?'flex flex-wrap':'hidden'}
-          mb-5 gap-1 font-bold
+          mb-5 gap-1 font-bold px-2
         `}
       >
         <Link
@@ -126,7 +158,6 @@ export default function UnitPageTabs({ type,member,unitMember }: { type: string,
           href={{ pathname: currentPath, query: {t: type, m: 'unit'}}}
           scroll={false}
           aria-disabled={member==='unit'}
-          onClick={()=>scrollFunction(SONG_TAB_ELEMENT_ID)}
         >
           ユニット
         </Link>
@@ -141,7 +172,6 @@ export default function UnitPageTabs({ type,member,unitMember }: { type: string,
           href={{ pathname: currentPath, query: {t: type, m: data.singingInfoId}}}
           scroll={false}
           aria-disabled={member===data.singingInfoId}
-          onClick={()=>scrollFunction(TAB_ELEMENT_ID)}
         >
           {data.singingInfoId==='CFP03'?'アスラン＝BBⅡ世':data.singingInfoName}
         </Link>

@@ -6,7 +6,7 @@ import StoryBlock from "@/features/common/components/story/StoryBlock";
 import StoryCarousel from "@/features/common/components/StoryCarousel";
 import { Bell, House } from "lucide-react";
 
-export default function UnitPageStoryServer(
+export default function UnitPageStory(
   { unitId,unitMember,post }
   : {
     unitId: string; unitMember: SingingMaster[];
@@ -56,7 +56,7 @@ export default function UnitPageStoryServer(
     </div>
     <div 
       className={`
-        flex flex-wrap
+        flex flex-wrap px-2
         mt-2 mb-4 gap-1 font-bold 
       `}
     >

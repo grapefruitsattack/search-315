@@ -67,7 +67,7 @@ export default function UnitPageOther({ unitId,unitMember }: { unitId: string; u
     </div>
     <div 
       className={`
-        flex flex-wrap
+        flex flex-wrap px-2
         mt-2 gap-1 font-bold
       `}
     >

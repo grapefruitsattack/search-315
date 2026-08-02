@@ -21,13 +21,8 @@ export default function StoryCarousel(
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
 
-  // const displayStory: Story[][] = StoryArray.reduce(
-  //       (newarr, _, i) => (i % displayCnt ? newarr : [...newarr, StoryArray.slice(i, i + displayCnt)]),
-  //       [] as Story[][]
-  //   );
-
   React.useEffect(() => {
-    setCurrent(1);
+    setCurrent(0);
   }, [StoryArray]);
 
   React.useEffect(() => {
@@ -41,8 +36,7 @@ export default function StoryCarousel(
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
-    //setCurrent(1);
-    api.scrollTo(1);
+    api.scrollTo(0);
   }, [api,StoryArray]);
 
   if(displayCnt!==3){
