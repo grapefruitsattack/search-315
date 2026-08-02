@@ -1,4 +1,5 @@
 'use client'
+import React from "react";
 import Image from 'next/image';
 import { useEffect, useState } from "react";
 import type { Lyric,LyricData,SongMaster } from '@/data/types';
@@ -81,7 +82,7 @@ export const LyricShareModal = (
             data-row-seq={currentRowSeq}
             key={currentRowSeq} 
             className={`
-              flex text-gray-700 mt-auto w-full cursor-pointer hover:bg-green-300 
+              align-baseline text-gray-700 mt-auto w-full cursor-pointer hover:bg-green-300 
               ${selectionStep==='rowEnd' && selectedRows.startRow === rowList[0].row_seq 
                 && 'bg-green-200 rounded'
               }
@@ -122,15 +123,17 @@ export const LyricShareModal = (
             {rowList.map((rowListData, rowListIndex) => {
             if(rowListData.ruby===undefined){
               return(
-                <p className="mt-auto" key={rowListIndex}>{rowListData.lyric}</p>
+                <React.Fragment key={rowListIndex}>{rowListData.lyric}</React.Fragment>
               )
             }else{
               return(
-                <ruby key={rowListIndex} className="mt-auto">{rowListData.lyric}
+              <span key={rowListIndex} className="inline-flex items-end">
+                <ruby className="">{rowListData.lyric}
                   <rp>(</rp>
                   <rt>{rowListData.ruby}</rt>
                   <rp>)</rp>
                 </ruby>
+              </span>
               )
             }
             })}
