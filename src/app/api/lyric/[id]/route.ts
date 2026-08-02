@@ -3,10 +3,8 @@ import Cloudflare from 'cloudflare';
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
-export const fetchCache = "force-cache";
 
 export async function GET(
-  req: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
   const { id } = await params;
