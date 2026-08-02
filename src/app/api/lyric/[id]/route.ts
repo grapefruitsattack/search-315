@@ -1,4 +1,3 @@
-import { headers } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
 import Cloudflare from 'cloudflare';
 import {
@@ -8,6 +7,7 @@ import {
 } from '@/auth';
 
 export const dynamic = "force-static";
+export const revalidate = 86400;
 
 export async function GET(
   req: NextRequest,
