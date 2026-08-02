@@ -42,15 +42,18 @@ export default function SongContent({ result }: { result: SongMaster }) {
   const albumResult : Albums 
     = albumMaster.find(data => data.albumId === result?.albumId) as Albums;
 
-  const shouldFetch = result?.lyric !== '';
+  const shouldFetch = result.lyric !== '';
 
   const { data, error, isLoading } = useSWR(
-    shouldFetch ? `/api/lyric/${result?.lyric}` : null,
+    shouldFetch ? `/api/lyric/${result.lyric}` : null,
     fetcher,
     {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
       dedupingInterval: Infinity,
+      next: {
+        tags: [`lyric-${result.lyric}`],
+      },
     }
   );
 

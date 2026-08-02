@@ -7,6 +7,8 @@ import {
   createSupabaseClientWithLogin,
 } from '@/auth';
 
+export const dynamic = "force-static";
+
 export async function GET(
   req: NextRequest,
   { params }: { params: Promise<{ id: string }> },
@@ -29,5 +31,10 @@ export async function GET(
 
   return NextResponse.json({
     lyric: content,
+  },
+  {
+    headers: {
+      "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800",
+    },
   });
 }
