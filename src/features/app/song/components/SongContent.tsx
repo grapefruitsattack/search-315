@@ -45,7 +45,7 @@ export default function SongContent({ result }: { result: SongMaster }) {
   const shouldFetch = result.lyric !== '';
 
   const { data, error, isLoading } = useSWR(
-    shouldFetch ? `/api/lyric/${result.lyric}` : null,
+    shouldFetch ? `/api/lyric/${result.lyric}/` : null,
     fetcher,
     {
       revalidateOnFocus: false,

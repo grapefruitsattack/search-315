@@ -1,13 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Cloudflare from 'cloudflare';
-import {
-  auth,
-  createSupabaseClient,
-  createSupabaseClientWithLogin,
-} from '@/auth';
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
+export const fetchCache = "force-cache";
 
 export async function GET(
   req: NextRequest,
