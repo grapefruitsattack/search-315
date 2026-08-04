@@ -46,21 +46,28 @@ export default function SearchStoryPage(
         </div>
       </div>
       
-      <div className='tablet:hidden flex flex-col ml-2 w-[90vw]'>
-        <SearchStoryController isMobile={true} firstIsOpen={false} />
-      </div>
+<div className="grid grid-cols-1 tablet:grid-cols-[3fr_2fr] tablet:h-[95%]">
 
-      <div className='grid grid-cols-1 tablet:grid-cols-[3fr_2fr] tablet:h-[95%]'>
-        <div id='storyScrollArea' className='flex flex-col max-w-[700px] tablet:min-w-[400px] tablet:h-[100%] tablet:overflow-y-scroll tablet:overflow-x-hidden'>
-          {loading
-            ?<div className="my-6 mx-auto"><LoaderIcon size={32} color="#a8a8a8" className="animate-pulse animate-spin" /></div>
-            :<SearchStoryResult searchParam={searchParam}/>
-          }
+  <div className="tablet:order-1 order-2 flex flex-col max-w-[700px] tablet:min-w-[400px] tablet:h-[100%] tablet:overflow-y-scroll tablet:overflow-x-hidden">
+    {loading
+      ? (
+        <div className="my-6 mx-auto">
+          <LoaderIcon
+            size={32}
+            color="#a8a8a8"
+            className="animate-pulse animate-spin"
+          />
         </div>
-        <div className='tablet:flex hidden flex-col ml-2 max-w-[480px] '>
-          <SearchStoryController isMobile={false} firstIsOpen={false} />
-        </div>
-      </div>
+      )
+      : <SearchStoryResult searchParam={searchParam} />
+    }
+  </div>
+
+  <div className="tablet:order-2 order-1 flex flex-col w-full tablet:max-w-[480px] tablet:ml-2 mx-auto">
+    <SearchStoryController firstIsOpen={false} />
+  </div>
+
+</div>
     </div>
     </>
   );
