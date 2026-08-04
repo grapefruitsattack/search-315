@@ -1,8 +1,9 @@
-"use server"
+"use client"
 import React from "react";
 import { Props } from "next/script";
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation'
 import { AppProps } from "next/app";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import CommonHeader from "./CommonHeader";
@@ -16,6 +17,7 @@ interface SidebarProviderCSS extends React.CSSProperties{
 }
 
 const CommonPage = ({ children }: Props )=> {
+  const currentPath: string = usePathname();
   //const { shouldReload } = useBuildId();
   //const nextrouter = useRouter();
   
@@ -55,7 +57,7 @@ const CommonPage = ({ children }: Props )=> {
             href={`/about`}
             rel="noopener noreferrer"
           >このサイトについて・プライバシーポリシー・免責事項</Link>
-          <div className="flex mx-auto mt-2 mb-2 text-sm">
+          <div className={`flex mx-auto mt-2 mb-2 text-sm ${currentPath.includes('/search/story/')&&'hidden'}`}>
             <Image
               className={`h-auto w-[50px] tablet:h-auto tablet:w-[64px]`}
               src={`/jasrac.JPG`}

@@ -8,6 +8,7 @@ import Pagination from "@/features/common/components/Pagination";
 import { UseUserReading } from "@/features/app/search/provider/UserReadingProvider";
 
 
+const DISPLAY_CNT: number = 15;
 
 function getSearchResult(
   searchParam:{
@@ -89,8 +90,16 @@ function getSearchResult(
   }else{
     storyResult = story.map((data)=>{return {story:data,readLater:null}})
   }
+
+  const page: number 
+    = searchParam.page<1
+      ?1
+      :searchParam.page>story.length
+        ?story.length
+        :searchParam.page
+  ;
   
-  return {result:storyResult, totalCnt:story.length, login:login};
+  return {result:storyResult.slice(DISPLAY_CNT*(page-1),(DISPLAY_CNT*page)), totalCnt:story.length, login:login};
 }
 
 export default function SearchStoryResult({ searchParam }: { searchParam:{infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; ppType: number; andor: string; SortedAsc: number; page: number; readLaterType: string;} }) {
@@ -100,14 +109,13 @@ export default function SearchStoryResult({ searchParam }: { searchParam:{infoId
   const totalCnt:number = post.totalCnt;
 
   // ページネーション
-  const pageSize: number = 18;
-  const maxPage: number = Math.ceil(totalCnt/pageSize);
+  const maxPage: number = Math.ceil(totalCnt/DISPLAY_CNT);
 
   return (
   <>
     <div className="mx-auto  gap-4">
-      <div id="topPagination"  className="mobileL:hidden flex mx-auto"><Pagination totalPage={maxPage} maxDisplayNum={5} scrollAreaElementId={undefined} scrollTargetElementId="topPagination"/></div>
-      <div className="mobileL:flex hidden mx-auto"><Pagination totalPage={maxPage} maxDisplayNum={7} scrollAreaElementId='storyScrollArea'/></div>
+      <div id="topPagination_5" key="topPagination_5" className="tablet:hidden flex mx-auto"><Pagination totalPage={maxPage} maxDisplayNum={5} scrollAreaElementId={undefined} scrollTargetElementId="topPagination_5"/></div>
+      <div id="topPagination_7" key="topPagination_7" className="tablet:flex hidden mx-auto"><Pagination totalPage={maxPage} maxDisplayNum={7} scrollAreaElementId='storyScrollArea' scrollTargetElementId="topPagination_7"/></div>
     </div>
     {/* ストーリー一覧 */}
     <div className="lg:flex px-2 mobileM:px-8 tablet:px-4 w-full">
@@ -143,8 +151,12 @@ export default function SearchStoryResult({ searchParam }: { searchParam:{infoId
       </div>
     </div>
     <div className="mx-auto  gap-4">
-      <div className="mobileL:hidden flex mx-auto"><Pagination totalPage={maxPage} maxDisplayNum={5} scrollAreaElementId={undefined} scrollTargetElementId="topPagination"/></div>
-      <div className="mobileL:flex hidden mx-auto"><Pagination totalPage={maxPage} maxDisplayNum={7} scrollAreaElementId='storyScrollArea'/></div>
+      <div key='buttomPagination_5'id='buttomPagination_5' className="tablet:hidden flex mx-auto">
+        <Pagination totalPage={maxPage} maxDisplayNum={5} scrollAreaElementId={undefined} scrollTargetElementId="topPagination_5"/>
+      </div>
+      <div key='buttomPagination_7' id='buttomPagination_7' className="tablet:flex hidden mx-auto">
+        <Pagination totalPage={maxPage} maxDisplayNum={7} scrollAreaElementId='storyScrollArea' scrollTargetElementId="topPagination_7"/>
+      </div>
     </div>
   </>
   );

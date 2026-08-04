@@ -1,4 +1,5 @@
 'use client'
+import { useEffect } from 'react';
 import { usePathname,useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Url } from 'next/dist/shared/lib/router/router';
@@ -6,197 +7,234 @@ import { Url } from 'next/dist/shared/lib/router/router';
 export default function Pagination({ totalPage,maxDisplayNum,scrollAreaElementId,scrollTargetElementId }
   : { totalPage: number,maxDisplayNum:number,scrollAreaElementId?:string,scrollTargetElementId?:string }) 
 {
-      const omitFlg: boolean = totalPage >= maxDisplayNum+1;
-      const params = new URLSearchParams(useSearchParams().toString());
+  const searchParams = useSearchParams();
+  const params = new URLSearchParams(searchParams.toString());
+  const omitFlg: boolean = totalPage >= maxDisplayNum+1;
 
-      let currentPage: number = Number(params.get('page')) || 1;
-      currentPage = currentPage>totalPage?totalPage:currentPage;
-      
-      params.delete('page');
-      let urlParams: {[key: string]: string}= {};
-      params.forEach(function(value: string, key: string) {
-        urlParams[key] = value;
-      });
-      const otherParams: String =params.size === 0?'':'&' + params.toString();
-      
-      const params2 = useSearchParams().getAll;
-      const currentPath: string = usePathname();
+  const sessionStorageItemId: string = 'navigatewithpagination_' + scrollTargetElementId;
 
-      return (
-        // https://tailwindcomponents.com/component/tailwind-css-pagination-gradient
-        <div className="grid min-h-[83px] w-full place-items-center rounded-lg lg:overflow-visible">
-            <nav>
-                <ul className="flex">
+  let currentPage: number = Number(params.get('page')) || 1;
+  currentPage = currentPage>totalPage?totalPage:currentPage;
+  
+  params.delete('page');
+  let urlParams: {[key: string]: string}= {};
+  params.forEach(function(value: string, key: string) {
+    urlParams[key] = value;
+  });
+  const otherParams: String =params.size === 0?'':'&' + params.toString();
+  
+  const params2 = useSearchParams().getAll;
+  const currentPath: string = usePathname();
 
-                    {
-                      (function () {
-                        const list: JSX.Element[] = [];
-                        //左移動
-                        if(currentPage === 1){
-                          list.push(
-                            <li key={'left'}>
-                            <div className=
-                                {`mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300`}
-                              aria-label="Previous">
-                                <span className={`text-sm text-slate-300`}>
-                                <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" fillRule="evenodd"></path></svg>
-                                </span>
-                            </div>
-                            </li>
-                          );
-                        }else{
-                          list.push(
-                            <li key={'left'}>
-                            <Link className=
-                                {`mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300`}
-                              href={{ pathname: currentPath, query: {...urlParams, page: String(currentPage-1)} }}
-                              onClick={()=>scroll(scrollAreaElementId,scrollTargetElementId)}
-                              scroll={false}
-                              aria-label="Previous">
-                                <span className={`text-sm`}>
-                                <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" fillRule="evenodd"></path></svg>                              </span>
-                            </Link>
-                            </li>
-                          );
-                        };
+useEffect(() => {
+  if(sessionStorage.getItem(sessionStorageItemId)!=="1"){
+    return;
+  }
 
-                        if(omitFlg){
-                          //省略あり
-                          if(currentPage <= 3){
-                            // 右のみ省略
-                            for (let i: number = 1; i <= (maxDisplayNum<7?3:4); i++) {
-                              if(i === currentPage){
-                                list.push(
-                                  pagenationNumberCurrent(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} })
-                                );
-                              } else {
-                                list.push(
-                                  pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} },scrollAreaElementId,scrollTargetElementId)
-                                );
-                              };
-                            };
+  const timer = setTimeout(() => {
+
+      // ページの高さが十分になったらスクロール
+      if(scrollAreaElementId!==undefined){
+        const element = document.getElementById(scrollAreaElementId);
+        if(element!==null)element.scrollTo({top:0});
+      }else{
+        const element = document.getElementById(scrollTargetElementId||'');
+        if(element!==null){
+          const targetDOMRect = element.getBoundingClientRect();
+          const targetTop = targetDOMRect.top + window.pageYOffset;
+          const headerHight = window.innerWidth >= 1000 ? 5: 70;
+          window.scrollTo({
+            top: targetTop-headerHight,
+            //behavior: 'smooth'
+          });
+        }
+      }
+
+  },100);
+
+  sessionStorage.removeItem(sessionStorageItemId);
+
+  return () => clearTimeout(timer);
+
+},[searchParams]);
+
+  return (
+    // https://tailwindcomponents.com/component/tailwind-css-pagination-gradient
+    <div className="grid min-h-[83px] w-full place-items-center rounded-lg lg:overflow-visible">
+        <nav>
+            <ul className="flex">
+
+                {
+                  (function () {
+                    const list: JSX.Element[] = [];
+                    //左移動
+                    if(currentPage === 1){
+                      list.push(
+                        <li key={'left'}>
+                        <div className=
+                            {`mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300`}
+                          aria-label="Previous">
+                            <span className={`text-sm text-slate-300`}>
+                            <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" fillRule="evenodd"></path></svg>
+                            </span>
+                        </div>
+                        </li>
+                      );
+                    }else{
+                      list.push(
+                        <li key={'left'}>
+                        <Link className=
+                            {`mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300`}
+                          href={{ pathname: currentPath, query: {...urlParams, page: String(currentPage-1)} }}
+                          onClick={()=>{if(typeof window !== 'undefined')sessionStorage.setItem(sessionStorageItemId,String('1'))}}
+                          scroll={false}
+                          aria-label="Previous">
+                            <span className={`text-sm`}>
+                            <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" fillRule="evenodd"></path></svg>                              </span>
+                        </Link>
+                        </li>
+                      );
+                    };
+
+                    if(omitFlg){
+                      //省略あり
+                      if(currentPage <= 3){
+                        // 右のみ省略
+                        for (let i: number = 1; i <= (maxDisplayNum<7?3:4); i++) {
+                          if(i === currentPage){
                             list.push(
-                              <li key={'rightOmit'}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
-                                  ･･･</div></li>
+                              pagenationNumberCurrent(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} })
                             );
-                            if(maxDisplayNum>=7){
-                              list.push(
-                                pagenationNumber(totalPage - 1,{ pathname: currentPath, query: {...urlParams, page: String(totalPage - 1)} },scrollAreaElementId,scrollTargetElementId)
-                              );
-                            };
+                          } else {
                             list.push(
-                              pagenationNumber(totalPage,{ pathname: currentPath, query: {...urlParams, page: String(totalPage)} },scrollAreaElementId,scrollTargetElementId)
+                              pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} },sessionStorageItemId)
                             );
-                          } else if(currentPage > 3 && currentPage < totalPage - 2) {
-                            // 左右省略
-                            list.push(
-                              pagenationNumber(1,{ pathname: currentPath, query: {...urlParams, page: '1'} },scrollAreaElementId,scrollTargetElementId)
-                            );
-                            list.push(
-                              <li key={'leftOmit'}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
-                                  ･･･</div></li>
-                            );
-                            if(maxDisplayNum>=7){
-                              list.push(
-                                pagenationNumber(currentPage - 1,{ pathname: currentPath, query: {...urlParams, page: String(currentPage - 1)} },scrollAreaElementId,scrollTargetElementId)
-                              );
-                            };
-                            list.push(
-                              pagenationNumberCurrent(currentPage,{ pathname: currentPath, query: {...urlParams, page: String(currentPage)} })
-                            );
-                            if(maxDisplayNum>=7){
-                              list.push(
-                                pagenationNumber(currentPage + 1,{ pathname: currentPath, query: {...urlParams, page: String(currentPage + 1)} },scrollAreaElementId,scrollTargetElementId)
-                              );
-                            };
-                            list.push(
-                              <li key={'rightOmit'}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
-                                  ･･･</div></li>
-                            );
-                            list.push(
-                              pagenationNumber(totalPage,{ pathname: currentPath, query: {...urlParams, page: String(totalPage)} },scrollAreaElementId,scrollTargetElementId)
-                            );
-                          } else if(currentPage >= totalPage - 2) {
-                            // 左省略
-                            list.push(
-                              pagenationNumber(1,{ pathname: currentPath, query: {...urlParams, page: String(1)} },scrollAreaElementId,scrollTargetElementId)
-                            );
-                            if(maxDisplayNum>=7){
-                              list.push(
-                                pagenationNumber(2,{ pathname: currentPath, query: {...urlParams, page: String(2)} },scrollAreaElementId,scrollTargetElementId)
-                              );
-                            };
-                            list.push(
-                              <li key={'leftOmit'}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
-                                  ･･･</div></li>
-                            );
-                            for (let i: number = totalPage - (maxDisplayNum<7?2:3); i <= totalPage; i++) {
-                              if(i === currentPage){
-                                list.push(
-                                  pagenationNumberCurrent(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} })
-                                );
-                              } else {
-                                list.push(
-                                  pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} },scrollAreaElementId,scrollTargetElementId)
-                                );
-                              };
-                            };
                           };
-                        } else {
-                          //省略なし
-                          for (let i: number = 1; i <= totalPage; i++) {
-                            if(i === currentPage){
-                              list.push(
-                                pagenationNumberCurrent(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} })
-                              );
-                            } else {
-                              list.push(
-                                pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} },scrollAreaElementId,scrollTargetElementId)
-
-                              );
-                            };
-                          }
-
-                        }
-
-                        // 右移動
-                        if(currentPage === totalPage){
+                        };
+                        list.push(
+                          <li key={'rightOmit'}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
+                              ･･･</div></li>
+                        );
+                        if(maxDisplayNum>=7){
                           list.push(
-                            <li key={'right'}>
-                            <div className=
-                                {`mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300`}
-                              aria-label="Next">
-                              <span className="text-sm text-slate-300">
-                              <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" fillRule="evenodd"></path></svg>
-                              </span>
-                            </div>
-                            </li>
-                          );
-                        }else{
-                          list.push(
-                            <li key={'right'}>
-                            <Link className=
-                                {`mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300`}
-                              href={{ pathname: currentPath, query: {...urlParams, page: String(currentPage+1)} }}
-                              onClick={()=>scroll(scrollAreaElementId,scrollTargetElementId)}
-                              aria-label="Next">
-                              <span className="text-sm">
-                              <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" fillRule="evenodd"></path></svg>
-                              </span>
-                            </Link>
-                            </li>
+                            pagenationNumber(totalPage - 1,{ pathname: currentPath, query: {...urlParams, page: String(totalPage - 1)} },sessionStorageItemId)
                           );
                         };
+                        list.push(
+                          pagenationNumber(totalPage,{ pathname: currentPath, query: {...urlParams, page: String(totalPage)} },sessionStorageItemId)
+                        );
+                      } else if(currentPage > 3 && currentPage < totalPage - 2) {
+                        // 左右省略
+                        list.push(
+                          pagenationNumber(1,{ pathname: currentPath, query: {...urlParams, page: '1'} },sessionStorageItemId)
+                        );
+                        list.push(
+                          <li key={'leftOmit'}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
+                              ･･･</div></li>
+                        );
+                        if(maxDisplayNum>=7){
+                          list.push(
+                            pagenationNumber(currentPage - 1,{ pathname: currentPath, query: {...urlParams, page: String(currentPage - 1)} },sessionStorageItemId)
+                          );
+                        };
+                        list.push(
+                          pagenationNumberCurrent(currentPage,{ pathname: currentPath, query: {...urlParams, page: String(currentPage)} })
+                        );
+                        if(maxDisplayNum>=7){
+                          list.push(
+                            pagenationNumber(currentPage + 1,{ pathname: currentPath, query: {...urlParams, page: String(currentPage + 1)} },sessionStorageItemId)
+                          );
+                        };
+                        list.push(
+                          <li key={'rightOmit'}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
+                              ･･･</div></li>
+                        );
+                        list.push(
+                          pagenationNumber(totalPage,{ pathname: currentPath, query: {...urlParams, page: String(totalPage)} },sessionStorageItemId)
+                        );
+                      } else if(currentPage >= totalPage - 2) {
+                        // 左省略
+                        list.push(
+                          pagenationNumber(1,{ pathname: currentPath, query: {...urlParams, page: String(1)} },sessionStorageItemId)
+                        );
+                        if(maxDisplayNum>=7){
+                          list.push(
+                            pagenationNumber(2,{ pathname: currentPath, query: {...urlParams, page: String(2)} },sessionStorageItemId)
+                          );
+                        };
+                        list.push(
+                          <li key={'leftOmit'}><div className="cursor-default mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" >
+                              ･･･</div></li>
+                        );
+                        for (let i: number = totalPage - (maxDisplayNum<7?2:3); i <= totalPage; i++) {
+                          if(i === currentPage){
+                            list.push(
+                              pagenationNumberCurrent(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} })
+                            );
+                          } else {
+                            list.push(
+                              pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} },sessionStorageItemId)
+                            );
+                          };
+                        };
+                      };
+                    } else {
+                      //省略なし
+                      for (let i: number = 1; i <= totalPage; i++) {
+                        if(i === currentPage){
+                          list.push(
+                            pagenationNumberCurrent(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} })
+                          );
+                        } else {
+                          list.push(
+                            pagenationNumber(i,{ pathname: currentPath, query: {...urlParams, page: String(i)} },sessionStorageItemId)
 
-                        return <ul className="flex">{list}</ul>;
-                      }())
+                          );
+                        };
+                      }
+
                     }
 
-                </ul>
-            </nav>
+                    // 右移動
+                    if(currentPage === totalPage){
+                      list.push(
+                        <li key={'right'}>
+                        <div className=
+                            {`mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300`}
+                          aria-label="Next">
+                          <span className="text-sm text-slate-300">
+                          <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" fillRule="evenodd"></path></svg>
+                          </span>
+                        </div>
+                        </li>
+                      );
+                    }else{
+                      list.push(
+                        <li key={'right'}>
+                        <Link className=
+                            {`mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300`}
+                          href={{ pathname: currentPath, query: {...urlParams, page: String(currentPage+1)} }}
+                          onClick={()=>{if(typeof window !== 'undefined')sessionStorage.setItem(sessionStorageItemId,String('1'))}}
+                          aria-label="Next"
+                          scroll={false}
+                        >
+                          <span className="text-sm">
+                          <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" fillRule="evenodd"></path></svg>
+                          </span>
+                        </Link>
+                        </li>
+                      );
+                    };
 
-      </div>
-      )}
+                    return <ul className="flex">{list}</ul>;
+                  }())
+                }
+
+            </ul>
+        </nav>
+
+  </div>
+  )}
   
 
 function pagenationNumberCurrent(pageNum: number, href: Url) {
@@ -212,13 +250,14 @@ function pagenationNumberCurrent(pageNum: number, href: Url) {
   )
 };
 
-function pagenationNumber(pageNum: number, href: Url, scrollAreaElementId:string | undefined, scrollTargetElementId:string | undefined) {
+function pagenationNumber(pageNum: number, href: Url, sessionStorageItemId:string ) {
   return(
     <li key={pageNum}>
    <Link 
     className="mx-1 flex h-9 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-lg  border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300" 
     href={href}
-    onClick={()=>scroll(scrollAreaElementId,scrollTargetElementId)}
+    onClick={()=>{if(typeof window !== 'undefined')sessionStorage.setItem(sessionStorageItemId,String('1'))}}
+    scroll={false}
   >
       {pageNum}
     </Link>
@@ -227,7 +266,6 @@ function pagenationNumber(pageNum: number, href: Url, scrollAreaElementId:string
 };
 
 function scroll(scrollAreaElementId:string | undefined,scrollTargetElementId:string | undefined){
-    console.log(scrollTargetElementId)
   if(scrollAreaElementId===undefined){
     const element = document.getElementById(scrollTargetElementId||'');
     console.log(element)
