@@ -50,7 +50,7 @@ export default function SongContent({ result }: { result: SongMaster }) {
     {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
-      dedupingInterval: Infinity,
+      dedupingInterval: 600,
     }
   );
 
