@@ -32,7 +32,7 @@ export default function SearchPage({ songId }: { songId: string }) {
     {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
-      dedupingInterval: Infinity,
+      dedupingInterval: 600,
     }
   );
 

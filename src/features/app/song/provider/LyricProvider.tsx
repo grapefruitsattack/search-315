@@ -40,7 +40,7 @@ export default function LyricProvider({
     {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
-      dedupingInterval: Infinity,
+      dedupingInterval: 600,
     }
   );
 
