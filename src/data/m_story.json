@@ -3659,7 +3659,7 @@
     "media": 3,
     "category": "iof",
     "website": "asb",
-    "headTitle": "アイマスMOIW2025連動ストーリー",
+    "headTitle": "MOIW2025連動ストーリー",
     "storyTitle": "夢のようなひとときの、その先へ",
     "releaseDate": "20251214",
     "subCnt": 0,
@@ -3671,11 +3671,11 @@
     "pp": 5,
     "infoStory": [
       {
-        "infoId": "DRS01",
+        "infoId": "JUP03",
         "personFlg": 1
       },
       {
-        "infoId": "JUP03",
+        "infoId": "DRS01",
         "personFlg": 1
       },
       {
@@ -3791,7 +3791,7 @@
     "media": 3,
     "category": "iof",
     "website": "asb",
-    "headTitle": "アイマスMOIW2025連動ストーリー",
+    "headTitle": "MOIW2025連動ストーリー",
     "storyTitle": "夢のようなひととき",
     "releaseDate": "20251213",
     "subCnt": 0,
@@ -8389,7 +8389,7 @@
     "voice": 0,
     "still": 0,
     "url": "https://asobistory.asobistore.jp/episode/entrance/gm6lz78g571ynd2",
-    "releaseDateSourceUrl": "https://asobistory.asobistore.jp/info/list/20",
+    "releaseDateSourceUrl": "https://asobistory.asobistore.jp/info/detail/rg2x0k19xwldwjn/",
     "pp": 5,
     "infoStory": [
       {
@@ -9847,11 +9847,11 @@
     "pp": 5,
     "infoStory": [
       {
-        "infoId": "JUP01",
+        "infoId": "JUP02",
         "personFlg": 1
       },
       {
-        "infoId": "JUP02",
+        "infoId": "JUP03",
         "personFlg": 1
       },
       {
