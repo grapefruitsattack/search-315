@@ -51,9 +51,6 @@ export default function SongContent({ result }: { result: SongMaster }) {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
       dedupingInterval: Infinity,
-      next: {
-        tags: [`lyric-${result.lyric}`],
-      },
     }
   );
 

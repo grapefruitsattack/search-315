@@ -31,6 +31,7 @@ export async function GET(
   {
     headers: {
       "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800",
+      "Vercel-Cache-Tag": `lyric-${id}`,
     },
   });
 }
