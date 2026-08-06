@@ -70636,6 +70636,37 @@
   },
   {
     "seq": 108,
+    "storyId": "z0habxkto6pq976k",
+    "media": 1,
+    "category": "comics",
+    "website": "asb",
+    "headTitle": "",
+    "storyTitle": "アニマルズヒーロー",
+    "releaseDate": "20150531",
+    "subCnt": 3,
+    "voiceAtRelease": 0,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/comic/detail/194yjqmleo5xrve",
+    "releaseDateSourceUrl": "",
+    "pp": 0,
+    "infoStory": [
+      {
+        "infoId": "FRM01",
+        "personFlg": 1
+      },
+      {
+        "infoId": "FRM02",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [],
+    "relation": [
+      "oqqzndqjol0jh74s"
+    ]
+  },
+  {
+    "seq": 107,
     "storyId": "gavdm6kv70tempk0",
     "media": 1,
     "category": "comics",
@@ -70674,7 +70705,7 @@
     ]
   },
   {
-    "seq": 107,
+    "seq": 106,
     "storyId": "oqqzndqjol0jh74s",
     "media": 1,
     "category": "moba_event",
@@ -70713,37 +70744,6 @@
     "relation": [
       "gavdm6kv70tempk0",
       "z0habxkto6pq976k"
-    ]
-  },
-  {
-    "seq": 106,
-    "storyId": "z0habxkto6pq976k",
-    "media": 1,
-    "category": "comics",
-    "website": "asb",
-    "headTitle": "",
-    "storyTitle": "アニマルズヒーロー",
-    "releaseDate": "20150531",
-    "subCnt": 3,
-    "voiceAtRelease": 0,
-    "voice": 0,
-    "still": 0,
-    "url": "https://asobistory.asobistore.jp/comic/detail/194yjqmleo5xrve",
-    "releaseDateSourceUrl": "",
-    "pp": 0,
-    "infoStory": [
-      {
-        "infoId": "FRM01",
-        "personFlg": 1
-      },
-      {
-        "infoId": "FRM02",
-        "personFlg": 1
-      }
-    ],
-    "howtoviewStory": [],
-    "relation": [
-      "oqqzndqjol0jh74s"
     ]
   },
   {
@@ -70803,79 +70803,6 @@
   },
   {
     "seq": 104,
-    "storyId": "wm7v7p20vu21yjzh",
-    "media": 1,
-    "category": "comics",
-    "website": "asb",
-    "headTitle": "",
-    "storyTitle": "スクール・オブ・コーラス",
-    "releaseDate": "20150523",
-    "subCnt": 2,
-    "voiceAtRelease": 0,
-    "voice": 0,
-    "still": 0,
-    "url": "https://asobistory.asobistore.jp/comic/detail/7zlwpo349q14r32",
-    "releaseDateSourceUrl": "",
-    "pp": 0,
-    "infoStory": [
-      {
-        "infoId": "ALT00",
-        "personFlg": 0
-      },
-      {
-        "infoId": "ALT01",
-        "personFlg": 1
-      },
-      {
-        "infoId": "ALT02",
-        "personFlg": 1
-      }
-    ],
-    "howtoviewStory": [],
-    "relation": [
-      "txhbuw0kcs3nmdyp"
-    ]
-  },
-  {
-    "seq": 103,
-    "storyId": "txhbuw0kcs3nmdyp",
-    "media": 1,
-    "category": "moba_event",
-    "website": "asb",
-    "headTitle": "",
-    "storyTitle": "スクール・オブ・コーラス",
-    "releaseDate": "20150523",
-    "subCnt": 10,
-    "voiceAtRelease": 0,
-    "voice": 0,
-    "still": 0,
-    "url": "https://asobistory.asobistore.jp/eventalbum/detail/q96zj79rlz7dnvl",
-    "releaseDateSourceUrl": "",
-    "pp": 38,
-    "infoStory": [
-      {
-        "infoId": "ALT00",
-        "personFlg": 0
-      },
-      {
-        "infoId": "ALT01",
-        "personFlg": 1
-      },
-      {
-        "infoId": "ALT02",
-        "personFlg": 1
-      }
-    ],
-    "howtoviewStory": [
-      "asb_login"
-    ],
-    "relation": [
-      "wm7v7p20vu21yjzh",
-      "39dzeo9hsxh81vf8"
-    ]
-  },
-  {
-    "seq": 102,
     "storyId": "39dzeo9hsxh81vf8",
     "media": 1,
     "category": "comics",
@@ -70911,6 +70838,79 @@
     "howtoviewStory": [],
     "relation": [
       "txhbuw0kcs3nmdyp"
+    ]
+  },
+  {
+    "seq": 103,
+    "storyId": "wm7v7p20vu21yjzh",
+    "media": 1,
+    "category": "comics",
+    "website": "asb",
+    "headTitle": "",
+    "storyTitle": "スクール・オブ・コーラス",
+    "releaseDate": "20150523",
+    "subCnt": 2,
+    "voiceAtRelease": 0,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/comic/detail/7zlwpo349q14r32",
+    "releaseDateSourceUrl": "",
+    "pp": 0,
+    "infoStory": [
+      {
+        "infoId": "ALT00",
+        "personFlg": 0
+      },
+      {
+        "infoId": "ALT01",
+        "personFlg": 1
+      },
+      {
+        "infoId": "ALT02",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [],
+    "relation": [
+      "txhbuw0kcs3nmdyp"
+    ]
+  },
+  {
+    "seq": 102,
+    "storyId": "txhbuw0kcs3nmdyp",
+    "media": 1,
+    "category": "moba_event",
+    "website": "asb",
+    "headTitle": "",
+    "storyTitle": "スクール・オブ・コーラス",
+    "releaseDate": "20150523",
+    "subCnt": 10,
+    "voiceAtRelease": 0,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/eventalbum/detail/q96zj79rlz7dnvl",
+    "releaseDateSourceUrl": "",
+    "pp": 38,
+    "infoStory": [
+      {
+        "infoId": "ALT00",
+        "personFlg": 0
+      },
+      {
+        "infoId": "ALT01",
+        "personFlg": 1
+      },
+      {
+        "infoId": "ALT02",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [
+      "asb_login"
+    ],
+    "relation": [
+      "wm7v7p20vu21yjzh",
+      "39dzeo9hsxh81vf8"
     ]
   },
   {
@@ -71382,6 +71382,41 @@
   },
   {
     "seq": 92,
+    "storyId": "y7d7algmnsoprumy",
+    "media": 1,
+    "category": "comics",
+    "website": "asb",
+    "headTitle": "",
+    "storyTitle": "双子星の涙",
+    "releaseDate": "20150415",
+    "subCnt": 3,
+    "voiceAtRelease": 0,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/comic/detail/57z8jo84ek1ym9n",
+    "releaseDateSourceUrl": "",
+    "pp": 0,
+    "infoStory": [
+      {
+        "infoId": "DBL00",
+        "personFlg": 0
+      },
+      {
+        "infoId": "DBL01",
+        "personFlg": 1
+      },
+      {
+        "infoId": "DBL02",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [],
+    "relation": [
+      "57b1nsn4p5378feq"
+    ]
+  },
+  {
+    "seq": 91,
     "storyId": "mbz4p2wh6skkae9v",
     "media": 1,
     "category": "comics",
@@ -71420,7 +71455,7 @@
     ]
   },
   {
-    "seq": 91,
+    "seq": 90,
     "storyId": "57b1nsn4p5378feq",
     "media": 1,
     "category": "moba_event",
@@ -71459,41 +71494,6 @@
     "relation": [
       "mbz4p2wh6skkae9v",
       "y7d7algmnsoprumy"
-    ]
-  },
-  {
-    "seq": 90,
-    "storyId": "y7d7algmnsoprumy",
-    "media": 1,
-    "category": "comics",
-    "website": "asb",
-    "headTitle": "",
-    "storyTitle": "双子星の涙",
-    "releaseDate": "20150415",
-    "subCnt": 3,
-    "voiceAtRelease": 0,
-    "voice": 0,
-    "still": 0,
-    "url": "https://asobistory.asobistore.jp/comic/detail/57z8jo84ek1ym9n",
-    "releaseDateSourceUrl": "",
-    "pp": 0,
-    "infoStory": [
-      {
-        "infoId": "DBL00",
-        "personFlg": 0
-      },
-      {
-        "infoId": "DBL01",
-        "personFlg": 1
-      },
-      {
-        "infoId": "DBL02",
-        "personFlg": 1
-      }
-    ],
-    "howtoviewStory": [],
-    "relation": [
-      "57b1nsn4p5378feq"
     ]
   },
   {
@@ -72094,6 +72094,37 @@
   },
   {
     "seq": 78,
+    "storyId": "g7s6w4ojrut9s79k",
+    "media": 1,
+    "category": "comics",
+    "website": "asb",
+    "headTitle": "",
+    "storyTitle": "ドラマ[卒業]",
+    "releaseDate": "20150228",
+    "subCnt": 3,
+    "voiceAtRelease": 0,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/comic/detail/7zlwpo3w9k14r32",
+    "releaseDateSourceUrl": "",
+    "pp": 0,
+    "infoStory": [
+      {
+        "infoId": "KGD01",
+        "personFlg": 1
+      },
+      {
+        "infoId": "KGD03",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [],
+    "relation": [
+      "byb86fpc5ocv9jgw"
+    ]
+  },
+  {
+    "seq": 77,
     "storyId": "tp923v17re61qdd0",
     "media": 1,
     "category": "comics",
@@ -72132,7 +72163,7 @@
     ]
   },
   {
-    "seq": 77,
+    "seq": 76,
     "storyId": "byb86fpc5ocv9jgw",
     "media": 1,
     "category": "moba_event",
@@ -72171,37 +72202,6 @@
     "relation": [
       "tp923v17re61qdd0",
       "g7s6w4ojrut9s79k"
-    ]
-  },
-  {
-    "seq": 76,
-    "storyId": "g7s6w4ojrut9s79k",
-    "media": 1,
-    "category": "comics",
-    "website": "asb",
-    "headTitle": "",
-    "storyTitle": "ドラマ[卒業]",
-    "releaseDate": "20150228",
-    "subCnt": 3,
-    "voiceAtRelease": 0,
-    "voice": 0,
-    "still": 0,
-    "url": "https://asobistory.asobistore.jp/comic/detail/7zlwpo3w9k14r32",
-    "releaseDateSourceUrl": "",
-    "pp": 0,
-    "infoStory": [
-      {
-        "infoId": "KGD01",
-        "personFlg": 1
-      },
-      {
-        "infoId": "KGD03",
-        "personFlg": 1
-      }
-    ],
-    "howtoviewStory": [],
-    "relation": [
-      "byb86fpc5ocv9jgw"
     ]
   },
   {
@@ -72574,41 +72574,6 @@
   },
   {
     "seq": 68,
-    "storyId": "5wnmqi2dw665nys5",
-    "media": 1,
-    "category": "comics",
-    "website": "asb",
-    "headTitle": "",
-    "storyTitle": "ベイサイドライブ",
-    "releaseDate": "20150131",
-    "subCnt": 3,
-    "voiceAtRelease": 0,
-    "voice": 0,
-    "still": 0,
-    "url": "https://asobistory.asobistore.jp/comic/detail/wdlvpk5vrq93x56",
-    "releaseDateSourceUrl": "",
-    "pp": 0,
-    "infoStory": [
-      {
-        "infoId": "DBL00",
-        "personFlg": 0
-      },
-      {
-        "infoId": "DBL01",
-        "personFlg": 1
-      },
-      {
-        "infoId": "DBL02",
-        "personFlg": 1
-      }
-    ],
-    "howtoviewStory": [],
-    "relation": [
-      "gyrn9he6kckihatw"
-    ]
-  },
-  {
-    "seq": 67,
     "storyId": "vgos7v99jzc85vqp",
     "media": 1,
     "category": "comics",
@@ -72643,7 +72608,7 @@
     ]
   },
   {
-    "seq": 66,
+    "seq": 67,
     "storyId": "gyrn9he6kckihatw",
     "media": 1,
     "category": "moba_event",
@@ -72690,6 +72655,41 @@
     "relation": [
       "5wnmqi2dw665nys5",
       "vgos7v99jzc85vqp"
+    ]
+  },
+  {
+    "seq": 66,
+    "storyId": "5wnmqi2dw665nys5",
+    "media": 1,
+    "category": "comics",
+    "website": "asb",
+    "headTitle": "",
+    "storyTitle": "ベイサイドライブ",
+    "releaseDate": "20150131",
+    "subCnt": 3,
+    "voiceAtRelease": 0,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/comic/detail/wdlvpk5vrq93x56",
+    "releaseDateSourceUrl": "",
+    "pp": 0,
+    "infoStory": [
+      {
+        "infoId": "DBL00",
+        "personFlg": 0
+      },
+      {
+        "infoId": "DBL01",
+        "personFlg": 1
+      },
+      {
+        "infoId": "DBL02",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [],
+    "relation": [
+      "gyrn9he6kckihatw"
     ]
   },
   {
@@ -72966,6 +72966,37 @@
   },
   {
     "seq": 59,
+    "storyId": "wj90txx4vlkay99i",
+    "media": 1,
+    "category": "comics",
+    "website": "asb",
+    "headTitle": "",
+    "storyTitle": "開運初詣",
+    "releaseDate": "20141231",
+    "subCnt": 3,
+    "voiceAtRelease": 0,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/comic/detail/zpn0dkedeqmy396",
+    "releaseDateSourceUrl": "",
+    "pp": 0,
+    "infoStory": [
+      {
+        "infoId": "CFP03",
+        "personFlg": 1
+      },
+      {
+        "infoId": "CFP05",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [],
+    "relation": [
+      "038ee7uo2nq61f3o"
+    ]
+  },
+  {
+    "seq": 58,
     "storyId": "xz3cjy53gob625pl",
     "media": 1,
     "category": "comics",
@@ -73000,7 +73031,7 @@
     ]
   },
   {
-    "seq": 58,
+    "seq": 57,
     "storyId": "038ee7uo2nq61f3o",
     "media": 1,
     "category": "moba_event",
@@ -73056,37 +73087,6 @@
       "xz3cjy53gob625pl",
       "wj90txx4vlkay99i",
       "8dp0ctkbiahuy3wp"
-    ]
-  },
-  {
-    "seq": 57,
-    "storyId": "wj90txx4vlkay99i",
-    "media": 1,
-    "category": "comics",
-    "website": "asb",
-    "headTitle": "",
-    "storyTitle": "開運初詣",
-    "releaseDate": "20141231",
-    "subCnt": 3,
-    "voiceAtRelease": 0,
-    "voice": 0,
-    "still": 0,
-    "url": "https://asobistory.asobistore.jp/comic/detail/zpn0dkedeqmy396",
-    "releaseDateSourceUrl": "",
-    "pp": 0,
-    "infoStory": [
-      {
-        "infoId": "CFP03",
-        "personFlg": 1
-      },
-      {
-        "infoId": "CFP05",
-        "personFlg": 1
-      }
-    ],
-    "howtoviewStory": [],
-    "relation": [
-      "038ee7uo2nq61f3o"
     ]
   },
   {
@@ -73511,6 +73511,37 @@
   },
   {
     "seq": 48,
+    "storyId": "pda9frprt54da9kl",
+    "media": 1,
+    "category": "comics",
+    "website": "asb",
+    "headTitle": "",
+    "storyTitle": "秋のお寺修行",
+    "releaseDate": "20141120",
+    "subCnt": 3,
+    "voiceAtRelease": 0,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/comic/detail/x36nyk7elow41m7",
+    "releaseDateSourceUrl": "",
+    "pp": 0,
+    "infoStory": [
+      {
+        "infoId": "KGD02",
+        "personFlg": 1
+      },
+      {
+        "infoId": "KGD03",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [],
+    "relation": [
+      "wt3b0636cg2mbmgk"
+    ]
+  },
+  {
+    "seq": 47,
     "storyId": "793i8xll93qkgxgj",
     "media": 1,
     "category": "comics",
@@ -73549,7 +73580,7 @@
     ]
   },
   {
-    "seq": 47,
+    "seq": 46,
     "storyId": "wt3b0636cg2mbmgk",
     "media": 1,
     "category": "moba_event",
@@ -73588,37 +73619,6 @@
     "relation": [
       "793i8xll93qkgxgj",
       "pda9frprt54da9kl"
-    ]
-  },
-  {
-    "seq": 46,
-    "storyId": "pda9frprt54da9kl",
-    "media": 1,
-    "category": "comics",
-    "website": "asb",
-    "headTitle": "",
-    "storyTitle": "秋のお寺修行",
-    "releaseDate": "20141120",
-    "subCnt": 3,
-    "voiceAtRelease": 0,
-    "voice": 0,
-    "still": 0,
-    "url": "https://asobistory.asobistore.jp/comic/detail/x36nyk7elow41m7",
-    "releaseDateSourceUrl": "",
-    "pp": 0,
-    "infoStory": [
-      {
-        "infoId": "KGD02",
-        "personFlg": 1
-      },
-      {
-        "infoId": "KGD03",
-        "personFlg": 1
-      }
-    ],
-    "howtoviewStory": [],
-    "relation": [
-      "wt3b0636cg2mbmgk"
     ]
   },
   {
@@ -74275,6 +74275,45 @@
   },
   {
     "seq": 32,
+    "storyId": "av06s6kjyzcz4rji",
+    "media": 1,
+    "category": "comics",
+    "website": "asb",
+    "headTitle": "",
+    "storyTitle": "ジョブ★チャレンジ",
+    "releaseDate": "20140918",
+    "subCnt": 4,
+    "voiceAtRelease": 0,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/comic/detail/m0wzlk27mqrexdp",
+    "releaseDateSourceUrl": "",
+    "pp": 0,
+    "infoStory": [
+      {
+        "infoId": "DRS00",
+        "personFlg": 0
+      },
+      {
+        "infoId": "DRS01",
+        "personFlg": 1
+      },
+      {
+        "infoId": "DRS02",
+        "personFlg": 1
+      },
+      {
+        "infoId": "DRS03",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [],
+    "relation": [
+      "zro7hj5tnk23a9og"
+    ]
+  },
+  {
+    "seq": 31,
     "storyId": "txjbkn0o39gyadr3",
     "media": 1,
     "category": "comics",
@@ -74313,7 +74352,7 @@
     ]
   },
   {
-    "seq": 31,
+    "seq": 30,
     "storyId": "zro7hj5tnk23a9og",
     "media": 1,
     "category": "moba_event",
@@ -74353,45 +74392,6 @@
       "txjbkn0o39gyadr3",
       "av06s6kjyzcz4rji",
       "r6cltpsm3wc5vpkq"
-    ]
-  },
-  {
-    "seq": 30,
-    "storyId": "av06s6kjyzcz4rji",
-    "media": 1,
-    "category": "comics",
-    "website": "asb",
-    "headTitle": "",
-    "storyTitle": "ジョブ★チャレンジ",
-    "releaseDate": "20140918",
-    "subCnt": 4,
-    "voiceAtRelease": 0,
-    "voice": 0,
-    "still": 0,
-    "url": "https://asobistory.asobistore.jp/comic/detail/m0wzlk27mqrexdp",
-    "releaseDateSourceUrl": "",
-    "pp": 0,
-    "infoStory": [
-      {
-        "infoId": "DRS00",
-        "personFlg": 0
-      },
-      {
-        "infoId": "DRS01",
-        "personFlg": 1
-      },
-      {
-        "infoId": "DRS02",
-        "personFlg": 1
-      },
-      {
-        "infoId": "DRS03",
-        "personFlg": 1
-      }
-    ],
-    "howtoviewStory": [],
-    "relation": [
-      "zro7hj5tnk23a9og"
     ]
   },
   {
@@ -74492,6 +74492,37 @@
   },
   {
     "seq": 27,
+    "storyId": "2lr9mu9hukmshqtd",
+    "media": 1,
+    "category": "comics",
+    "website": "asb",
+    "headTitle": "",
+    "storyTitle": "肝試し",
+    "releaseDate": "20140828",
+    "subCnt": 3,
+    "voiceAtRelease": 0,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/comic/detail/1jx09orn5k36edg",
+    "releaseDateSourceUrl": "",
+    "pp": 0,
+    "infoStory": [
+      {
+        "infoId": "SAI01",
+        "personFlg": 1
+      },
+      {
+        "infoId": "SAI03",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [],
+    "relation": [
+      "95tn9opv5xl1w2kq"
+    ]
+  },
+  {
+    "seq": 26,
     "storyId": "ipdpc34kz4b8z2ol",
     "media": 1,
     "category": "comics",
@@ -74530,7 +74561,7 @@
     ]
   },
   {
-    "seq": 26,
+    "seq": 25,
     "storyId": "95tn9opv5xl1w2kq",
     "media": 1,
     "category": "moba_event",
@@ -74569,37 +74600,6 @@
     "relation": [
       "ipdpc34kz4b8z2ol",
       "2lr9mu9hukmshqtd"
-    ]
-  },
-  {
-    "seq": 25,
-    "storyId": "2lr9mu9hukmshqtd",
-    "media": 1,
-    "category": "comics",
-    "website": "asb",
-    "headTitle": "",
-    "storyTitle": "肝試し",
-    "releaseDate": "20140828",
-    "subCnt": 3,
-    "voiceAtRelease": 0,
-    "voice": 0,
-    "still": 0,
-    "url": "https://asobistory.asobistore.jp/comic/detail/1jx09orn5k36edg",
-    "releaseDateSourceUrl": "",
-    "pp": 0,
-    "infoStory": [
-      {
-        "infoId": "SAI01",
-        "personFlg": 1
-      },
-      {
-        "infoId": "SAI03",
-        "personFlg": 1
-      }
-    ],
-    "howtoviewStory": [],
-    "relation": [
-      "95tn9opv5xl1w2kq"
     ]
   },
   {
