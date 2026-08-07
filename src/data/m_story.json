@@ -72749,37 +72749,6 @@
   },
   {
     "seq": 64,
-    "storyId": "g7hfqbezue9y2fgz",
-    "media": 1,
-    "category": "comics",
-    "website": "asb",
-    "headTitle": "",
-    "storyTitle": "マスカレード",
-    "releaseDate": "20150120",
-    "subCnt": 3,
-    "voiceAtRelease": 0,
-    "voice": 0,
-    "still": 0,
-    "url": "https://asobistory.asobistore.jp/comic/detail/18x34kggmk5yjgm",
-    "releaseDateSourceUrl": "",
-    "pp": 0,
-    "infoStory": [
-      {
-        "infoId": "FRM01",
-        "personFlg": 1
-      },
-      {
-        "infoId": "FRM03",
-        "personFlg": 1
-      }
-    ],
-    "howtoviewStory": [],
-    "relation": [
-      "rytd79o5dip7hl09"
-    ]
-  },
-  {
-    "seq": 63,
     "storyId": "ankgkyejt5mymhck",
     "media": 1,
     "category": "comics",
@@ -72818,7 +72787,7 @@
     ]
   },
   {
-    "seq": 62,
+    "seq": 63,
     "storyId": "rytd79o5dip7hl09",
     "media": 1,
     "category": "moba_event",
@@ -72857,6 +72826,37 @@
     "relation": [
       "g7hfqbezue9y2fgz",
       "ankgkyejt5mymhck"
+    ]
+  },
+  {
+    "seq": 62,
+    "storyId": "g7hfqbezue9y2fgz",
+    "media": 1,
+    "category": "comics",
+    "website": "asb",
+    "headTitle": "",
+    "storyTitle": "マスカレード",
+    "releaseDate": "20150120",
+    "subCnt": 3,
+    "voiceAtRelease": 0,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/comic/detail/18x34kggmk5yjgm",
+    "releaseDateSourceUrl": "",
+    "pp": 0,
+    "infoStory": [
+      {
+        "infoId": "FRM01",
+        "personFlg": 1
+      },
+      {
+        "infoId": "FRM03",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [],
+    "relation": [
+      "rytd79o5dip7hl09"
     ]
   },
   {
