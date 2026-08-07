@@ -92,14 +92,17 @@ export default async function StoryDetailedPage(
   // 検索文字列
   let searchText: string = '';
   if(CATEGORY.mobaEvent.id===storyData.category||CATEGORY.comicSpecial.id===storyData.category){
-    searchText = `SideM+${storyData.storyTitle}`;
+    searchText = `SideM ${storyData.storyTitle}`;
   } else if(storyData.media===MEDIA.gs.id){
     if(CATEGORY.gsEvent.id===storyData.category){
-      searchText = `サイスタ+イベントストーリー+${storyData.headTitle}`;
+      searchText = `サイスタ イベントストーリー ${storyData.headTitle}`;
     } else {
-      searchText = `サイスタ+${categoryName}+${storyData.storyTitle}`;
+      searchText = `サイスタ ${categoryName} ${storyData.storyTitle}`;
     }
   };
+
+  const searchUrl = new URL("https://www.google.com/search");
+  searchUrl.searchParams.set("q", searchText);
 
   return (
   <>
@@ -288,7 +291,7 @@ export default async function StoryDetailedPage(
               className={` ${searchText===''&&' hidden'}`}>
               <a 
                 className=""
-                href={'https://www.google.com/search?q='+searchText}
+                href={searchUrl.toString()}
                 target="_blank" rel="noopener noreferrer">
                 <button
                   className='
