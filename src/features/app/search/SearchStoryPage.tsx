@@ -48,7 +48,12 @@ export default function SearchStoryPage(
       
 <div className="grid grid-cols-1 tablet:grid-cols-[3fr_2fr] tablet:h-[95%]">
 
-  <div className="tablet:order-1 order-2 flex flex-col max-w-[700px] tablet:min-w-[400px] tablet:h-[100%] tablet:overflow-y-scroll tablet:overflow-x-hidden">
+  <div 
+    id='storyScrollArea' 
+    className="
+      tablet:order-1 order-2 flex flex-col pb-64 tablet:pb-0
+      max-w-[700px] tablet:min-w-[400px] tablet:h-[100%] tablet:overflow-y-scroll tablet:overflow-x-hidden"
+  >
     {loading
       ? (
         <div className="my-6 mx-auto">

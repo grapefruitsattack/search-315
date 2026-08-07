@@ -30,14 +30,13 @@ useEffect(() => {
   if(sessionStorage.getItem(sessionStorageItemId)!=="1"){
     return;
   }
-
+  if(scrollAreaElementId!==undefined){
+    const element = document.getElementById(scrollAreaElementId);
+    if(element!==null)element.scrollTo({top:0,behavior: 'instant'});
+  }
   const timer = setTimeout(() => {
-
       // ページの高さが十分になったらスクロール
-      if(scrollAreaElementId!==undefined){
-        const element = document.getElementById(scrollAreaElementId);
-        if(element!==null)element.scrollTo({top:0});
-      }else{
+      if(scrollAreaElementId===undefined){
         const element = document.getElementById(scrollTargetElementId||'');
         if(element!==null){
           const targetDOMRect = element.getBoundingClientRect();
@@ -50,7 +49,7 @@ useEffect(() => {
         }
       }
 
-  },100);
+  },50);
 
   sessionStorage.removeItem(sessionStorageItemId);
 
