@@ -99,7 +99,7 @@ export default function IdolBadge({ id, useShortName, size, linkType }: { id: st
           <span 
             className={`p-1 rounded-xs whitespace-nowrap ${personFlg===1?' border-l-2 border-white/80':''}`}
             >
-            {name}
+            {id==='CFP03'?'アスラン＝BBⅡ世':name}
           </span>
           </Link>
       );
