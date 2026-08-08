@@ -7,7 +7,7 @@ import songInfoAsc from '@/data/songInfoAsc.json'
 import type { SongMaster } from '@/data/types';
 import SongCarousel from "@/features/common/components/SongCarousel";
 
-export default function IdolPageMusic({ idolId }: { idolId: string }) {
+export default function IdolMusic({ idolId }: { idolId: string }) {
 
   const idolName:string = singingMaster.find(data => data.singingInfoId === idolId)?.singingInfoName||'';
   //ソロ曲取得

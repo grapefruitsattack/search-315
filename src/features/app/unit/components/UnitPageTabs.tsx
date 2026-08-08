@@ -1,182 +1,158 @@
-'use client'
+'use client';
+
 import { useEffect } from "react";
-import Link from "next/link";
-import { usePathname,useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { hasAnalyticsConsent } from "@/lib/analytics";
-import {usePageCategory} from "@/features/common/hooks/pageCategoryHook";
+import { usePageCategory } from "@/features/common/hooks/pageCategoryHook";
 import type { SingingMaster } from '@/data/types';
-import { Smile,Music,BookOpen,MessageCircleWarning,Sparkles } from 'lucide-react';
+import {
+  Music,
+  BookOpen,
+  MessageCircleWarning,
+  Sparkles
+} from 'lucide-react';
+
 import {
   Tabs,
-  TabsContent,
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
 
 const TAB_ELEMENT_ID = 'unitpagetab';
-const SONG_TAB_ELEMENT_ID = 'songtab';
+const SESSION_STORAGE_ITEM_ID = 'navigatewithtab';
 
-export default function UnitPageTabs({ type,member,unitMember }: { type: string,member:string,unitMember:SingingMaster[] }) {
-    const currentPath: string = usePathname();
-    const searchParams = useSearchParams();
-    const [pageCategory,setPageCategory] = usePageCategory('');
-    const sessionStorageItemId: string = 'navigatewithtab';
+const VALID_TYPES = [
+  'story',
+  'music',
+  'recommend',
+  'other',
+] as const;
 
-    const scrollFunction =(targetElementId:string)=>{
-      const element = document.getElementById(targetElementId);
-      if(element!==null){
-        const targetDOMRect = element.getBoundingClientRect();
-        const targetTop = targetDOMRect.top + window.pageYOffset;
-        const headerHight = window.innerWidth >= 1000 ? 5: 70;
-        window.scrollTo({
-          top: targetTop-headerHight,
-          behavior: 'smooth'
-        });
-      }
+type TabType = typeof VALID_TYPES[number];
+
+type Props = {
+  type: string;
+  onChange: (type: TabType) => void;
+};
+
+export default function UnitPageTabs({
+  type,
+  onChange,
+}: Props) {
+  const currentPath = usePathname();
+  const [pageCategory, setPageCategory] = usePageCategory('');
+
+  const scrollFunction = (targetElementId: string) => {
+    const element = document.getElementById(targetElementId);
+
+    if (element !== null) {
+      const targetDOMRect = element.getBoundingClientRect();
+      const targetTop =
+        targetDOMRect.top + window.pageYOffset;
+
+      const headerHeight =
+        window.innerWidth >= 1000 ? 5 : 70;
+
+      window.scrollTo({
+        top: targetTop - headerHeight,
+        behavior: 'smooth',
+      });
     }
+  };
 
   useEffect(() => {
-    if(sessionStorage.getItem(sessionStorageItemId)!=="1"){
-        return;
+    if (
+      sessionStorage.getItem(SESSION_STORAGE_ITEM_ID) !== "1"
+    ) {
+      return;
     }
-    requestAnimationFrame(()=>{
-      scrollFunction(TAB_ELEMENT_ID);
-      sessionStorage.removeItem(sessionStorageItemId);
-    });
-  },[searchParams]);
 
-    return(
+    requestAnimationFrame(() => {
+      scrollFunction(TAB_ELEMENT_ID);
+      sessionStorage.removeItem(SESSION_STORAGE_ITEM_ID);
+    });
+  }, []);
+
+  const handleTabChange = (newType: TabType) => {
+    setPageCategory(newType);
+
+    sessionStorage.setItem(
+      SESSION_STORAGE_ITEM_ID,
+      '1'
+    );
+
+    onChange(newType);
+  };
+
+  return (
     <div>
-      <div 
-        className="flex mb-5 gap-0 flex-wrap px-0 mobileS:px-2" role="tablist" 
+      <div
+        className="flex mb-5 gap-0 flex-wrap px-0 mobileS:px-2"
+        role="tablist"
         aria-label="tab options"
         id={TAB_ELEMENT_ID}
       >
-        <Tabs defaultValue={type}>
+        <Tabs
+          value={
+            VALID_TYPES.includes(type as TabType)
+              ? type
+              : 'recommend'
+          }
+          onValueChange={(value) => {
+            if (
+              VALID_TYPES.includes(value as TabType)
+            ) {
+              handleTabChange(value as TabType);
+            }
+          }}
+        >
           <TabsList className="h-fit">
-            <TabsTrigger asChild key={'recommend'} value={'recommend'} className="flex-1">
-              <Link 
-                className={`flex-col px-2.5 sm:px-3 w-[64px] tablet:w-[68px] text-xs mobileL:text-sm tablet:text-base
-                    `}
-                href={{ pathname: currentPath, query: {t:'recommend', m:member}}}
-                scroll={false}
-                onClick={()=>{
-                  setPageCategory('recommend');
-                  if(typeof window !== 'undefined'){
-                    sessionStorage.setItem(
-                      sessionStorageItemId,
-                      String('1')
-                    );
-                  }
-                }}
-              >
-              <MessageCircleWarning className="mx-auto  w-[20px] tablet:w-[24px]" />
-              <div className=" ">
-                {'オススメ'}
-              </div>
-              </Link>
-            </TabsTrigger>
-            <TabsTrigger asChild key={'music'} value={'music'} className='flex-1'>
-              <Link 
-                className={`flex-col px-2.5 sm:px-3 w-[64px] tablet:w-[68px] text-xs mobileL:text-xs mobileL:text-sm tablet:text-base
-                    `}
-                href={{ pathname: currentPath, query: {t: 'music', m:member}}}
-                scroll={false}
-                onClick={()=>{
-                  setPageCategory('music');
-                  if(typeof window !== 'undefined'){
-                    sessionStorage.setItem(
-                      sessionStorageItemId,
-                      String('1')
-                    );
-                  };
-                }}
-              >
-              <Music className="mx-auto  w-[20px] tablet:w-[24px]" />
-              <div className=" ">
-              {'楽曲'}
-              </div>
-              </Link>
-            </TabsTrigger>
-            <TabsTrigger asChild key={'story'} value={'story'} className='flex-1'>
-              <Link 
-                className={`flex-col px-2.5 sm:px-3 w-[64px] tablet:w-[68px] text-xs mobileL:text-sm tablet:text-base
-                    `}
-                href={{ pathname: currentPath, query: {t: 'story', m:member}}}
-                scroll={false}
-                onClick={()=>{
-                  setPageCategory('story');
-                  if(typeof window !== 'undefined'){
-                    sessionStorage.setItem(
-                      sessionStorageItemId,
-                      String('1')
-                    );
-                  };
-                }}
-              >
-              <BookOpen className="mx-auto  w-[20px] tablet:w-[24px]" />
-              {`ストーリー`}
-              </Link>
-            </TabsTrigger>
-            <TabsTrigger asChild key={'other'} value={'other'} className='flex-1'>
-              <Link 
-                className={`flex-col px-2.5 sm:px-3 w-[64px] tablet:w-[68px] text-xs mobileL:text-sm tablet:text-base
-                    `}
-                href={{ pathname: currentPath, query: {t: 'other', m:member}}}
-                scroll={false}
-                onClick={()=>{
-                  setPageCategory('other');
-                  if(typeof window !== 'undefined'){
-                    sessionStorage.setItem(
-                      sessionStorageItemId,
-                      String('1')
-                    );
-                  };
-                }}
-              >
-              <Sparkles className="mx-auto w-[20px] tablet:w-[24px]" />
-              {`その他`}
-              </Link>
-            </TabsTrigger>
+
+          <TabsTrigger
+            value="recommend"
+            className="px-2.5 sm:px-3"
+          >
+            <div className="flex flex-col items-center justify-center text-xs mobileL:text-sm tablet:text-base">
+              <MessageCircleWarning className="w-[40px] tablet:w-[44px]" />
+              <div>オススメ</div>
+            </div>
+          </TabsTrigger>
+
+          <TabsTrigger
+            value="music"
+            className="px-2.5 sm:px-3"
+          >
+            <div className="flex flex-col items-center justify-center text-xs mobileL:text-sm tablet:text-base">
+              <Music className="w-[40px] tablet:w-[44px]" />
+              <div>楽曲</div>
+            </div>
+          </TabsTrigger>
+
+          <TabsTrigger
+            value="story"
+            className="px-2.5 sm:px-3"
+          >
+            <div className="flex flex-col items-center justify-center text-xs mobileL:text-sm tablet:text-base">
+              <BookOpen className="w-[40px] tablet:w-[44px]" />
+              <div>ストーリー</div>
+            </div>
+          </TabsTrigger>
+
+          <TabsTrigger
+            value="other"
+            className="px-2.5 sm:px-3"
+          >
+            <div className="flex flex-col items-center justify-center text-xs mobileL:text-sm tablet:text-base">
+              <Sparkles className="w-[40px] tablet:w-[44px]" />
+              <div>その他</div>
+            </div>
+          </TabsTrigger>
+
           </TabsList>
         </Tabs>
       </div>
-      <div 
-        id={SONG_TAB_ELEMENT_ID}
-        className={`
-          ${['music'].includes(type)?'flex flex-wrap':'hidden'}
-          mb-5 gap-1 font-bold px-2
-        `}
-      >
-        <Link
-          className={`border border-2 rounded-xl px-2 py-[2px]
-            ${member==='unit'
-              ?'bg-green-400 border-green-400 text-stone-50 pointer-events-none'
-              :'bg-stone-200/20 border-stone-200 text-stone-500 '}
-          `}
-          key={'unit'}
-          href={{ pathname: currentPath, query: {t: type, m: 'unit'}}}
-          scroll={false}
-          aria-disabled={member==='unit'}
-        >
-          ユニット
-        </Link>
-        {unitMember.map((data,index)=>
-        <Link
-          className={`border border-2 rounded-xl px-2 py-[2px]
-            ${member===data.singingInfoId
-              ?'bg-green-400 border-green-400 text-stone-50 pointer-events-none'
-              :'bg-stone-200/20 border-stone-200 text-stone-500 '}
-          `}
-          key={data.singingInfoId}
-          href={{ pathname: currentPath, query: {t: type, m: data.singingInfoId}}}
-          scroll={false}
-          aria-disabled={member===data.singingInfoId}
-        >
-          {data.singingInfoId==='CFP03'?'アスラン＝BBⅡ世':data.singingInfoName}
-        </Link>
-        )}
-      </div>
+
+
     </div>
-    )
+  );
 }

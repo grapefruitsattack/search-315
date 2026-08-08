@@ -6,7 +6,7 @@ import type { SingingMaster } from '@/data/types';
 import singingMaster from '@/data/singingMaster.json';
 import CommonPage from "@/features/common/components/CommonPage";
 import UnitPageStoryServer from "@/features/app/unit/UnitPageStoryServer";
-import UnitPageTabs from "@/features/app/unit/components/UnitPageTabs";
+import UnitPageTabController from "@/features/app/unit/components/UnitPageTabController";
 
 export function generateStaticParams() {
   const idols = singingMaster.filter(data=>data.personFlg===0);
@@ -18,7 +18,6 @@ export function generateStaticParams() {
 const UnitPageRecommend = dynamic(() => import("@/features/app/unit/UnitPageRecommend"), { ssr: true });
 const UnitPageMain = dynamic(() => import("@/features/app/unit/UnitPageMain"), { ssr: true });
 const UnitPageMusic = dynamic(() => import("@/features/app/unit/UnitPageMusic"), { ssr: true });
-const IdolPageMusic = dynamic(() => import("@/features/app/idol/IdolPageMusic"), { ssr: true });
 const UnitPageOther = dynamic(() => import("@/features/app/unit/UnitPageOther"), { ssr: true });
 
 const Units = async ({
@@ -35,7 +34,6 @@ const Units = async ({
   //クエリパラメータ
   const { id } = await params;
   const {t} = await searchParams;
-  const {m} = await searchParams;
 
   const queryType: string = t||pageCategory;
 
@@ -50,12 +48,6 @@ const Units = async ({
     = singingMaster.filter(data=>data.personFlg===1 && data.singingInfoId.substring(0, 3)===id.substring(0, 3))
     .map(data=>{ return data });
 
-  const selectedMember: string 
-    = m === 'unit' || m === id ? 'unit'
-      : unitMember.findIndex(data=>data.singingInfoId===m)>=0 
-        ? m||'unit'
-        : 'unit';
-
   return (
   <Suspense>
     <CommonPage>
@@ -68,27 +60,34 @@ const Units = async ({
         <UnitPageMain unitId={id} type={type}/>
       </div>
       <div  className="w-full mt-5 px-0 mobileS:px-0 tablet:px-4 lg:px-4 bg-white lg:max-w-[950px] lg:m-auto min-h-[100vh]">
-        <div className=' '>
-          <UnitPageTabs type={type===''?'recommend':type} member={selectedMember} unitMember={unitMember}/>
-        </div>
-
-          <div className={`${type!=='story'&&'hidden'}`}>
-            <Suspense fallback={<>{'story loading'}</>}>
-              <UnitPageStoryServer unitId={id} unitMember={unitMember}/>
+        <UnitPageTabController
+          type={type === '' ? 'recommend' : type}
+          story={
+            <Suspense fallback={<>story loading</>}>
+              <UnitPageStoryServer
+                unitId={id}
+                unitMember={unitMember}
+              />
             </Suspense>
-          </div>
-          <div className={`${type!=='music'&&'hidden'}`}>
-            {selectedMember==='unit'
-            ?<UnitPageMusic unitId={id}/>
-            :<IdolPageMusic idolId={selectedMember}/>}
-          </div>
+          }
 
-          <div className={`${type!=='other'&&'hidden'}`}>
-            <UnitPageOther unitId={id} unitMember={unitMember}/>
-          </div>
-          <div className={`${type!=='recommend'&&'hidden'}`}>
-            <UnitPageRecommend unitId={id}/>
-          </div>
+          music={
+            <UnitPageMusic unitId={id} unitMember={unitMember}/>
+          }
+
+          other={
+            <UnitPageOther
+              unitId={id}
+              unitMember={unitMember}
+            />
+          }
+
+          recommend={
+            <UnitPageRecommend
+              unitId={id}
+            />
+          }
+        />
       </div>
     </article>
     </CommonPage>

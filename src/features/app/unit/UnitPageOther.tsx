@@ -9,11 +9,12 @@ import type { SingingMaster, Video, LiveMaster } from '@/data/types';
 import {SearchVideo} from "@/features/common/utils/SearchVideo";
 import {VideoCarousel} from "@/features/common/components/video/VideoCarousel";
 import LiveBlock from "@/features/common/components/LiveBlock";
+import UnitPageMemberTabController from "./components/UnitPageMemberTabController";
 
 export default function UnitPageOther({ unitId,unitMember }: { unitId: string; unitMember: SingingMaster[] }) {
 
   const searchParams = useSearchParams();
-  const memberParam :string = searchParams.get('m')||unitId;
+  //const memberParam :string = searchParams.get('m')||unitId;
   const currentPath: string = usePathname();
 
   const unitName:string = singingMaster.find(data => data.singingInfoId === unitId)?.singingInfoName||'';
@@ -35,7 +36,6 @@ export default function UnitPageOther({ unitId,unitMember }: { unitId: string; u
   ];
 
   //ライブ情報
-  const livePerIds: string[] = livePerformer.filter(data => data.singingInfoId === unitId).map(data=>data.livePerId);
   const liveInfos: LiveMaster[] 
       = livePerformer.filter(data => data.singingInfoId === unitId)
         .map(data=>liveMaster.find(masterData=>data.livePerId===masterData.livePerId))
@@ -53,7 +53,6 @@ export default function UnitPageOther({ unitId,unitMember }: { unitId: string; u
       infoName:memberData.singingInfoId==='CFP03'?'アスラン＝BBⅡ世':memberData.singingInfoName
     })
   });
-  const live = liveInfoArray.find(data=>memberParam===data.infoId)||{liveArray:liveInfos,infoId:unitId,infoName:'ユニット'};
 
   return (<>
    <div 
@@ -142,38 +141,29 @@ export default function UnitPageOther({ unitId,unitMember }: { unitId: string; u
         {'映像商品化されたライブイベントのみ掲載'}
       </p>
   </div>
-  <div 
-    className={`
-      flex flex-wrap
-      mt-2 gap-1 font-bold
-      mb-1 px-2
-    `}
-  >
-      {liveInfoArray.map((data,index)=>
-      <Link
-        className={`border border-2 rounded-xl px-2 py-[2px]
-          ${live.infoId===data.infoId
-            ?'bg-green-400 border-green-400 text-stone-50 pointer-events-none'
-            :'bg-stone-200/20 border-stone-200 text-stone-500 '}
-        `}
-        key={data.infoId}
-        href={{ pathname: currentPath, query: {t: 'other', m: data.infoId}}}
-        scroll={false}
-        aria-disabled={live.infoId===data.infoId}
-      >
-        {data.infoName}
-      </Link>
-      )}
-  </div>
-  <div className={`grid
-      grid-cols-2 tablet:grid-cols-4 lg:gap-4 gap-4 pt-4 
-      px-4
+  <div className={`pt-4
   `}>
-  {live.liveArray.map((result) => (
-    <div className="" key={result.livePerId+result.liveId}>
-      <LiveBlock livePerId={result.livePerId} liveId={result.liveId} />
-    </div>
-  ))}
+    <UnitPageMemberTabController
+      unitId={unitId}
+      unitMember={unitMember}
+    >
+      {(member) =>{
+        const live = liveInfoArray.find(data=>member===data.infoId)||{liveArray:liveInfos,infoId:unitId,infoName:'ユニット'};
+
+      return(
+        <div className={`grid
+            grid-cols-2 tablet:grid-cols-4 lg:gap-4 gap-4 pt-1 
+            px-4
+        `}>
+        {live.liveArray.map((result) => (
+          <div className="" key={result.livePerId+result.liveId}>
+            <LiveBlock livePerId={result.livePerId} liveId={result.liveId} />
+          </div>
+        ))}
+        </div>
+      )}
+      }
+    </UnitPageMemberTabController>
   </div>
   </section>
 
