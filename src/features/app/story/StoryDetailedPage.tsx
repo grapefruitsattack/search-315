@@ -102,7 +102,7 @@ export default async function StoryDetailedPage(
   };
 
   const searchUrl = new URL("https://www.google.com/search");
-  searchUrl.searchParams.set("q", searchText);
+  searchUrl.searchParams.set("q", searchText.replace("-", ""));
 
   return (
   <>
