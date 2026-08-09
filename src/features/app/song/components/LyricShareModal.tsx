@@ -1,7 +1,8 @@
 'use client'
 import React from "react";
-import Image from 'next/image';
 import { useEffect, useState } from "react";
+import Image from 'next/image';
+import { Noto_Sans_JP } from "next/font/google";
 import type { Lyric,LyricData,SongMaster } from '@/data/types';
 import {
   Modal,
@@ -15,6 +16,11 @@ import {
   useDisclosure, 
  } from "@chakra-ui/react";
 import {Tooltip} from "@chakra-ui/react";
+
+const NotoSansFont = Noto_Sans_JP({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const LyricShareModal = (
   { song, lyric, targetRows, disclosure, }
@@ -293,14 +299,14 @@ export const LyricShareModal = (
         {['rowStart','rowEnd','rowSelected'].includes(selectionStep)
         &&
           <div 
-            className="flex flex-col gap-0 select-none print:hidden font-sans "
+          className={`flex flex-col gap-0 select-none print:hidden font-sans ${NotoSansFont.className}`}
           >
             {lyricList}
           </div>
         }
         {['charStart','charEnd','charSelected'].includes(selectionStep)
         &&
-          <div className="flex flex-wrap gap-y-2 select-none print:hidden font-sans">
+          <div className={`flex flex-wrap gap-y-2 select-none print:hidden font-sans ${NotoSansFont.className}`}>
             {lyricCharList}
           </div>
         }

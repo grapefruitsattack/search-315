@@ -3,6 +3,7 @@ import React from "react";
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import { Noto_Sans_JP } from "next/font/google";
 import type { SongMaster,Albums,Lyric,LyricData } from '@/data/types';
 import subscSongs from '@/data/subscSongs.json';
 import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
@@ -13,6 +14,11 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { ArrowRight } from 'lucide-react';
 
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
+
+const NotoSansFont = Noto_Sans_JP({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 function getTargetLyric(lyric: Lyric, maxRowSeq:number, startRow: number, endRow: number, displayRowCnt: number): LyricData[] {
   const emptyRowSeqs: number[] = lyric.data.filter((data)=>data.lyric==='').map((data)=>data.row_seq);
@@ -294,7 +300,7 @@ export default function LyricShareResult(
               ${startRow<=displayRowCnt+1&&'hidden'}
             `}
           />
-          <div className="flex flex-col gap-0 text-xl mobileL:text-2xl tablet:text-3xl">
+          <div className={`flex flex-col gap-0 text-xl mobileL:text-2xl tablet:text-3xl ${NotoSansFont.className}`}>
             {lyricList}
           </div>
           <div

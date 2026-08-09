@@ -1,12 +1,18 @@
 'use client'
 import React from "react";
 import { useEffect, useState } from "react";
+import { Noto_Sans_JP } from "next/font/google";
 import type { Lyric,LyricData,SongMaster } from '@/data/types';
 import { Skeleton } from "@/components/ui/skeleton";
 import {
   useDisclosure, 
  } from "@chakra-ui/react";
 import {LyricShareModal} from "@/features/app/song/components/LyricShareModal";
+
+const NotoSansFont = Noto_Sans_JP({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongMaster, lyric: Lyric, lyricIsLoading: boolean }) {
   const lyricOpen = typeof window !== 'undefined'?sessionStorage.getItem("lyricOpen"):'';
@@ -151,7 +157,7 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
         }}
       >
         <div id="lyricDisplayArea" className="flex flex-col gap-0 mb-4 font-sans">
-        <div className="mt-auto">
+        <div className={`mt-auto ${NotoSansFont.className}`}>
           {lyricList}
         </div>
         </div>
