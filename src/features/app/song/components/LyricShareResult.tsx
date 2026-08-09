@@ -131,7 +131,7 @@ function getLyricJsx(
       lyricList.push(
         <div 
           key={currentRowSeq} 
-          className={`align-baseline w-fit pointer-events-none 
+          className={`w-fit pointer-events-none leading-[1.4]
           ${currentRowSeq>=startRow&&currentRowSeq<=endRow
               ?'text-gray-800 font-bold bg-green-200'
               :'text-gray-400'
