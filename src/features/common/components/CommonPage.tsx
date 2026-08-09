@@ -60,7 +60,7 @@ const CommonPage = ({ children }: Props )=> {
           <div className={`flex mx-auto mt-2 mb-2 text-sm ${currentPath.includes('/search/story/')&&'hidden'}`}>
             <Image
               className={`h-auto w-[50px] tablet:h-auto tablet:w-[64px]`}
-              src={`/jasrac.PNG`}
+              src={`/jasrac.png`}
               alt="JASRAC許諾マーク"
               width={0}
               height={0}
