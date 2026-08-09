@@ -42,36 +42,36 @@ export default function UnitPageTabs({
   const currentPath = usePathname();
   const [pageCategory, setPageCategory] = usePageCategory('');
 
-  const scrollFunction = (targetElementId: string) => {
-    const element = document.getElementById(targetElementId);
+  // const scrollFunction = (targetElementId: string) => {
+  //   const element = document.getElementById(targetElementId);
 
-    if (element !== null) {
-      const targetDOMRect = element.getBoundingClientRect();
-      const targetTop =
-        targetDOMRect.top + window.pageYOffset;
+  //   if (element !== null) {
+  //     const targetDOMRect = element.getBoundingClientRect();
+  //     const targetTop =
+  //       targetDOMRect.top + window.pageYOffset;
 
-      const headerHeight =
-        window.innerWidth >= 1000 ? 5 : 70;
+  //     const headerHeight =
+  //       window.innerWidth >= 1000 ? 5 : 70;
 
-      window.scrollTo({
-        top: targetTop - headerHeight,
-        behavior: 'smooth',
-      });
-    }
-  };
+  //     window.scrollTo({
+  //       top: targetTop - headerHeight,
+  //       behavior: 'smooth',
+  //     });
+  //   }
+  // };
 
-  useEffect(() => {
-    if (
-      sessionStorage.getItem(SESSION_STORAGE_ITEM_ID) !== "1"
-    ) {
-      return;
-    }
+  // useEffect(() => {
+  //   if (
+  //     sessionStorage.getItem(SESSION_STORAGE_ITEM_ID) !== "1"
+  //   ) {
+  //     return;
+  //   }
 
-    requestAnimationFrame(() => {
-      scrollFunction(TAB_ELEMENT_ID);
-      sessionStorage.removeItem(SESSION_STORAGE_ITEM_ID);
-    });
-  }, []);
+  //   requestAnimationFrame(() => {
+  //     scrollFunction(TAB_ELEMENT_ID);
+  //     sessionStorage.removeItem(SESSION_STORAGE_ITEM_ID);
+  //   });
+  // }, []);
 
   const handleTabChange = (newType: TabType) => {
     setPageCategory(newType);
