@@ -49,34 +49,35 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
   useEffect(() => {
     setIsOpen(firstIsOpen);
   }, [firstIsOpen]);
-  useEffect(() => {
-    if (!isOpen) return;
-    if (!shouldScrollToInfo) return;
+  
+  // useEffect(() => {
+  //   if (!isOpen) return;
+  //   if (!shouldScrollToInfo) return;
 
-    const timer = setTimeout(() => {
+  //   const timer = setTimeout(() => {
 
-      const scrollAreaElement = document.getElementById('controllerScrollArea');
-      const scrollTargetElement = document.getElementById('infoCheckBox');
+  //     const scrollAreaElement = document.getElementById('controllerScrollArea');
+  //     const scrollTargetElement = document.getElementById('infoCheckBox');
 
-      if (
-        scrollAreaElement &&
-        scrollTargetElement
-      ) {
-        const targetDOMRect = scrollTargetElement.getBoundingClientRect();
-        const scrollAreaRect = scrollAreaElement.getBoundingClientRect();
+  //     if (
+  //       scrollAreaElement &&
+  //       scrollTargetElement
+  //     ) {
+  //       const targetDOMRect = scrollTargetElement.getBoundingClientRect();
+  //       const scrollAreaRect = scrollAreaElement.getBoundingClientRect();
 
-        const targetTop = targetDOMRect.top - scrollAreaElement.getBoundingClientRect().top;
+  //       const targetTop = targetDOMRect.top - scrollAreaElement.getBoundingClientRect().top;
 
-        scrollAreaElement.scrollTo({
-          top: scrollAreaElement.scrollTop + targetTop,
-          behavior: "smooth"
-        });
-        setShouldScrollToInfo(false)
-      }
-    }, 0);
-    return () => clearTimeout(timer);
+  //       scrollAreaElement.scrollTo({
+  //         top: scrollAreaElement.scrollTop + targetTop,
+  //         behavior: "smooth"
+  //       });
+  //       setShouldScrollToInfo(false)
+  //     }
+  //   }, 0);
+  //   return () => clearTimeout(timer);
 
-  }, [isOpen,shouldScrollToInfo]);
+  // }, [isOpen,shouldScrollToInfo]);
   
   const idols: SingingMaster[] = singingMaster.filter(data=>data.personFlg===1);
   const units: SingingMaster[] = singingMaster.filter(data=>data.personFlg===0);

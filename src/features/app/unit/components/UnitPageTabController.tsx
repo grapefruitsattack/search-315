@@ -2,8 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
-import type { SingingMaster } from '@/data/types';
 import UnitPageTabs from '@/features/app/unit/components/UnitPageTabs';
+
+type TabType =
+  | 'story'
+  | 'music'
+  | 'recommend'
+  | 'other';
 
 type Props = {
   type: string;
@@ -13,21 +18,31 @@ type Props = {
   recommend: ReactNode;
 };
 
-const TAB_ELEMENT_ID = 'unitpagetab';
-
-const VALID_TYPES = [
+const VALID_TYPES: TabType[] = [
   'story',
   'music',
   'recommend',
   'other',
-] as const;
+];
 
-type TabType = typeof VALID_TYPES[number];
-
-const normalizeType = (type: string): TabType => {
+const normalizeType = (
+  type: string
+): TabType => {
   return VALID_TYPES.includes(type as TabType)
     ? type as TabType
     : 'recommend';
+};
+
+const getTypeFromUrl = (
+  fallback: string
+): TabType => {
+  const params = new URLSearchParams(
+    window.location.search
+  );
+
+  return normalizeType(
+    params.get('t') ?? fallback
+  );
 };
 
 export default function UnitPageTabController({
@@ -38,34 +53,64 @@ export default function UnitPageTabController({
   recommend,
 }: Props) {
   const [type, setType] = useState<TabType>(
-    normalizeType(initialType)
+    () => {
+      if (typeof window === 'undefined') {
+        return normalizeType(initialType);
+      }
+
+      return getTypeFromUrl(initialType);
+    }
   );
 
-  // ブラウザの戻る・進む
   useEffect(() => {
-    const handlePopState = () => {
-      const params = new URLSearchParams(window.location.search);
-      const t = params.get('t');
-
-      setType(normalizeType(t ?? 'recommend'));
+    const updateType = () => {
+      setType(
+        getTypeFromUrl(initialType)
+      );
     };
 
-    window.addEventListener('popstate', handlePopState);
+    window.addEventListener(
+      'popstate',
+      updateType
+    );
+
+    window.addEventListener(
+      'pageshow',
+      updateType
+    );
 
     return () => {
-      window.removeEventListener('popstate', handlePopState);
-    };
-  }, []);
+      window.removeEventListener(
+        'popstate',
+        updateType
+      );
 
-  const changeTab = (newType: TabType) => {
+      window.removeEventListener(
+        'pageshow',
+        updateType
+      );
+    };
+  }, [initialType]);
+
+  const changeTab = (
+    newType: TabType
+  ) => {
     setType(newType);
 
-    const url = new URL(window.location.href);
+    const url = new URL(
+      window.location.href
+    );
 
-    url.searchParams.set('t', newType);
+    url.searchParams.set(
+      't',
+      newType
+    );
 
-    // Next.jsのServer Componentを再実行しない
-    window.history.pushState({}, '', url);
+    window.history.replaceState(
+      window.history.state,
+      '',
+      url
+    );
   };
 
   return (
@@ -75,19 +120,43 @@ export default function UnitPageTabController({
         onChange={changeTab}
       />
 
-      <div className={type === 'story' ? '' : 'hidden'}>
+      <div
+        className={
+          type === 'story'
+            ? ''
+            : 'hidden'
+        }
+      >
         {story}
       </div>
 
-      <div className={type === 'music' ? '' : 'hidden'}>
+      <div
+        className={
+          type === 'music'
+            ? ''
+            : 'hidden'
+        }
+      >
         {music}
       </div>
 
-      <div className={type === 'other' ? '' : 'hidden'}>
+      <div
+        className={
+          type === 'other'
+            ? ''
+            : 'hidden'
+        }
+      >
         {other}
       </div>
 
-      <div className={type === 'recommend' ? '' : 'hidden'}>
+      <div
+        className={
+          type === 'recommend'
+            ? ''
+            : 'hidden'
+        }
+      >
         {recommend}
       </div>
     </>
