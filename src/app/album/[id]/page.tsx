@@ -2,7 +2,7 @@
 import { Metadata } from 'next'
 import type { Albums } from '@/data/types';
 import albumMaster from '@/data/albumMaster.json';
-import CommonPage from "@/features/common/components/CommonPage";
+import CommonPage from "@/features/common/components/common/CommonPage";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import AlbumContent from "@/features/app/album/components/AlbumContent";

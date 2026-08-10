@@ -1,6 +1,6 @@
 
 import React from "react"
-import CommonPage from "../../common/components/CommonPage";
+import CommonPage from "../../common/components/common/CommonPage";
 import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
 import { headers } from "next/headers";
 import {SignIn,SignOut} from "../../management/auth/SignIn";

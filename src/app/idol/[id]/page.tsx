@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import dynamic from "next/dynamic";
 import singingMaster from '../../../data/singingMaster.json';
-import CommonPage from "../../../features/common/components/CommonPage";
+import CommonPage from "../../../features/common/components/common/CommonPage";
 import { Suspense } from "react";
 
 export function generateStaticParams() {

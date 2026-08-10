@@ -1,6 +1,6 @@
 'use client'
 import { Button, Img } from "@chakra-ui/react";
-import CommonPage from "../../common/components/CommonPage";
+import CommonPage from "../../common/components/common/CommonPage";
 import {useSnowParam} from '../../common/hooks/useSnowParam';
 
 export default function SettingPage({ }: { }) {

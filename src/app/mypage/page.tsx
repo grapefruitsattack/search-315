@@ -6,7 +6,7 @@ import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/aut
 import { headers } from "next/headers";
 import { notFound, redirect } from 'next/navigation'
 import type { UserChartData } from '@/data/types';
-import CommonPage from "@/features/common/components/CommonPage";
+import CommonPage from "@/features/common/components/common/CommonPage";
 import Mypage from "@/features/app/mypage/Mypage";
 import MypageTabs from "@/features/app/mypage/components/MypageTabs";
 import MypageChart from "@/features/app/mypage/MypageChart";

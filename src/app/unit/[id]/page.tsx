@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { Suspense, cache } from "react";
 import type { SingingMaster } from '@/data/types';
 import singingMaster from '@/data/singingMaster.json';
-import CommonPage from "@/features/common/components/CommonPage";
+import CommonPage from "@/features/common/components/common/CommonPage";
 import UnitPageStoryServer from "@/features/app/unit/UnitPageStoryServer";
 import UnitPageTabController from "@/features/app/unit/components/UnitPageTabController";
 

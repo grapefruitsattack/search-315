@@ -8,8 +8,6 @@ import { AppProps } from "next/app";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import CommonHeader from "./CommonHeader";
 import CommonSidebar from "./CommonSidebar";
-//import { useRouter } from "next/navigation"
-//import useBuildId from "../utils/useBuildId"
 import ParticlesComponent from './particles';
 
 interface SidebarProviderCSS extends React.CSSProperties{

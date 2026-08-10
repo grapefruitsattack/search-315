@@ -3,7 +3,7 @@ import React from "react"
 import { Suspense } from "react";
 import { headers } from "next/headers";
 import { auth, createSupabaseClient, createSupabaseClientWithLogin } from "@/auth";
-import CommonPage from "@/features/common/components/CommonPage";
+import CommonPage from "@/features/common/components/common/CommonPage";
 import SearchStoryPage from "@/features/app/search/SearchStoryPage";
 import {CheckSingingInfoParm,CheckStoryCategoryParm} from "@/features/common/utils/CheckSearchParm";
 

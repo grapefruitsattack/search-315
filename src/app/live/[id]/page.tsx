@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { notFound } from 'next/navigation';
 import type { LiveMaster } from '@/data/types';
 import liveMaster from '@/data/liveMaster.json';
-import CommonPage from "@/features/common/components/CommonPage";
+import CommonPage from "@/features/common/components/common/CommonPage";
 import LiveContent from "@/features/app/live/components/LiveContent";
 import StoryWithLive from "@/features/app/live/components/StoryWithLive";
 

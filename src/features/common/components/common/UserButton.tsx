@@ -3,7 +3,7 @@ import React from "react"
 import CommonPage from "./CommonPage";
 import { useSession } from "@/auth-client";
 import { headers } from "next/headers";
-import {SignIn,SignOut} from "../../management/auth/SignIn";
+import {SignIn,SignOut} from "../../../management/auth/SignIn";
 import Link from "next/link";
 import { CircleUserRound } from "lucide-react";
 

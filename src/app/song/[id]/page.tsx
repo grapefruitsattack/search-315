@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import dynamic from "next/dynamic";
 import type { SongMaster,Albums,Lyric } from '@/data/types';
 import songMaster from '@/data/songMaster.json';
-import CommonPage from "@/features/common/components/CommonPage";
+import CommonPage from "@/features/common/components/common/CommonPage";
 import SongContent from "@/features/app/song/components/SongContent";
 import StoryWithSong from "@/features/app/song/components/StoryWithSong";
 

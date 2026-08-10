@@ -9,7 +9,7 @@ import { notFound } from 'next/navigation'
 import m_story from '@/data/m_story.json';
 import relation_story_other from '@/data/relation_story_other.json';
 import type { Story,UserReadingData,RelationStoryOther } from '@/data/types';
-import CommonPage from "@/features/common/components/CommonPage";
+import CommonPage from "@/features/common/components/common/CommonPage";
 import StoryDetailedPage from "@/features/app/story/StoryDetailedPage";
 
 export const revalidate = 600; // 10分ごとに再検証する

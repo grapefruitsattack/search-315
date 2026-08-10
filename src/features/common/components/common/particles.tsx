@@ -3,7 +3,7 @@ import type { Container, Engine, ISourceOptions } from 'tsparticles-engine'
 import {Particles} from 'react-tsparticles'
 import { loadFull } from "tsparticles"
 import { useCallback } from 'react'
-import {useSnowParam} from '../hooks/useSnowParam'
+import {useSnowParam} from '../../hooks/useSnowParam'
 
 const STORAGE_SNOW_PARAM = 'snowParam';
 

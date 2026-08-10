@@ -5,7 +5,7 @@ import React from "react"
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import { headers } from "next/headers";
-import CommonPage from "@/features/common/components/CommonPage";
+import CommonPage from "@/features/common/components/common/CommonPage";
 import SigninPage from "@/features/app/signin/SigninPage";
 
 export default async function Page() {

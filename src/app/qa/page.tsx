@@ -1,6 +1,6 @@
 
 import dynamic from "next/dynamic";
-import CommonPage from "../../features/common/components/CommonPage";
+import CommonPage from "../../features/common/components/common/CommonPage";
 import { Suspense } from "react";
 
 const QaPage = dynamic(() => import("../../features/app/qa/QaPage"), { ssr: true });
