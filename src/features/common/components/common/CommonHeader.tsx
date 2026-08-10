@@ -56,7 +56,7 @@ export default function CommonHeader() {
 
             <code className="font-mono font-bold">
                 <Link
-                    className ="relative"
+                    className =""
                     href={`/`}
                     rel="noopener noreferrer"
                 >
