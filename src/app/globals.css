@@ -125,7 +125,11 @@ body {
   }
 }
 
-@layer base {
+html {
+  scrollbar-gutter: auto;
+}
+
+@media (max-width: 1000px) {
   html {
     scrollbar-gutter: stable;
   }
