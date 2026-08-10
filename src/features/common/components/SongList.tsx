@@ -32,12 +32,6 @@ export default function SongList(
       Number(song.releaseDate.substring(0,4))
       ,Number(song.releaseDate.substring(4,6))-1
       ,Number(song.releaseDate.substring(6,8))).toLocaleDateString("ja-JP");
- 
-  //YoutubeURL取得
-  const youtubeId: string
-    = song.subscFlg===1
-      ?subscSongs.find(data=>song.songId===data.id)?.youtubeId || ''
-      :'';
 
   return (
   <div 

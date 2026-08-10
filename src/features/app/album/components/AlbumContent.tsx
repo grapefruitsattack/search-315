@@ -112,7 +112,7 @@ export default function AlbumContent({ album, }: { album: Albums}) {
         <div className='flex flex-wrap gap-4 my-4'>
           <div className={`
             grid gap-y-[5px]
-            ${album.subscFlg!==1 && album.trialYoutubeId===''?' hideen':''}
+            ${album.subscFlg!==1 && album.trialYoutubeId===''?' hidden':''}
             ${album.subscFlg!==1
               ?' grid-cols-1 w-2/3 tablet:w-1/3 w-full'
               :' grid-cols-[2fr_3fr] tablet:w-1/2 w-full'}
@@ -124,19 +124,17 @@ export default function AlbumContent({ album, }: { album: Albums}) {
                 href={`${youtubeId===''?'https://youtu.be/'+album.trialYoutubeId:'https://youtube.com/playlist?list='+youtubeId}`}
                 target="_blank" rel="noopener noreferrer"
               >
-                <motion.button
-                  className='
-                    rounded-lg border-2 border-red-500 w-full h-full
-                    text-red-500 font-sans leading-tight
-                    hover:bg-red-500 hover:text-red-100 
-                    transition-all duration-500 ease-out
-                    fill-red-500 hover:fill-red-100 
-                    text-sm mobileM:text-base lg:text-lg
+                <button
+                    className='rounded-lg border-2 border-red-500 w-full h-full
+                    font-sans leading-tight
+                    text-white fill-white bg-red-500
+                    text-xs mobileM:text-sm lg:text-base
+                    transition-all duration-200 ease-out
+                    hover:ring-2 hover:ring-red-500 hover:ring-offset-2
                     '
-                  type="button"
-                  aria-controls="contents"
-                  whileTap={{ scale: 0.97 }}
-                  transition={{ duration: 0.05 }} >
+                    type="button"
+                    aria-controls="contents"
+                >
                   <div 
                     className='
                       flex flex-wrap justify-center items-center font-sans font-black 
@@ -146,7 +144,7 @@ export default function AlbumContent({ album, }: { album: Albums}) {
                       <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
                     </span>
                   </div>
-                </motion.button>
+                </button>
               </a>
             </div> 
             {/* サブスク */}

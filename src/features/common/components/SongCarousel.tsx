@@ -75,8 +75,8 @@ export default function SongCarousel(
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className={`top-[calc(100%+0.5rem)] left-0 translate-y-0 ml-4 tablet:ml-0`} />
-        <CarouselNext className="top-[calc(100%+0.5rem)] left-2 translate-x-full translate-y-0 ml-4 tablet:ml-0" />
+        <CarouselPrevious className={`${count===1?'collapse':'flex'} top-[calc(100%+0.5rem)] left-0 translate-y-0 ml-4 tablet:ml-0`} />
+        <CarouselNext className={`${count===1?'collapse':'flex'} top-[calc(100%+0.5rem)] left-2 translate-x-full translate-y-0 ml-4 tablet:ml-0`} />
       </Carousel>
       <div className={`${count===1?'collapse':'flex'} my-2  mr-4 text-sm mobileM:text-base items-center justify-end gap-2`}>
         {`${current}/${count}`}
