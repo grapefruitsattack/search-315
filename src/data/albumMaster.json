@@ -4206,5 +4206,21 @@
     "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24790.html",
     "trialYoutubeId": "fX4iinOuXQc",
     "description": ""
+  },
+  {
+    "sereisId": "MTS",
+    "albumId": "MTS11",
+    "albumTitleFull": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 11 F-LAGS",
+    "albumTitle": "MONTHLY THEME SONG 11 F-LAGS",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260930",
+    "displayArtist": "F-LAGS",
+    "artist": "[FLG00]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24791.html",
+    "trialYoutubeId": "CekogVGPwV0",
+    "description": ""
   }
 ]
