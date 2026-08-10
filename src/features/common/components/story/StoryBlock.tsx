@@ -212,7 +212,7 @@ export default function StoryBlock(
                     <div className="animate-spin h-5 w-5 border-4 border-blue-500 rounded-full border-t-transparent"></div>
                   </div>
                   :
-                  <div className="w-full h-full col-span-2 ">
+                  <div className="w-full h-full col-span-2 z-10">
                     <form
                       className='w-full h-full'
                       action={async () => {
@@ -230,20 +230,21 @@ export default function StoryBlock(
                       <button
                           className={`group 
                           flex justify-center
-                          rounded-lg border-2 border-amber-500 w-full h-full
+                          rounded-lg  w-full h-full
                           font-sans leading-tight
-                          transition-all duration-500 ease-out
+                          transition-all duration-200 ease-out
                           text-xs mobileS:text-sm 
+                          active:scale-95
                           ${userReadLater===1
                             ?` lg:text-base
-                              text-amber-700 hover:text-amber-500 
-                              bg-amber-200 hover:bg-white
-                              fill-amber-700 hover:fill-amber-500 
+                              text-white fill-white bg-amber-600
+                              border-2 border-amber-600
+                              hover:ring-2 hover:ring-amber-600 hover:ring-offset-2 
                             `
                             :` lg:text-lg
-                              text-amber-500 hover:text-amber-100 
-                              bg-white hover:bg-amber-500
-                              fill-amber-500 hover:fill-amber-100 
+                              text-amber-700 fill-amber-700 bg-amber-100
+                              border-2 border-amber-700
+                              hover:ring-2 hover:ring-amber-700 hover:ring-offset-2 
                               `
                           }
                           font-sans font-black 
@@ -253,8 +254,7 @@ export default function StoryBlock(
                       <svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px" viewBox="0 -960 960 960">
                         <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
                       </span>
-                      <span className='flex items-center group-hover:hidden'>{userReadLater===1?'「後で読む」追加済み':'後で読む'}</span>
-                      <span className='hidden items-center group-hover:flex'>{userReadLater===1?'「後で読む」から削除':'後で読む'}</span>
+                      <span className=' items-center flex'>{userReadLater===1?'「後で読む」から削除':'後で読む'}</span>
                       </button>
                     </form>
                   </div>
