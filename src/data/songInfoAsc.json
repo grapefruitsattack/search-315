@@ -44613,6 +44613,62 @@
     "songId": "MTS10_4",
     "singingInfoId": "MFM03",
     "releaseDate": "20260826",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS11",
+    "songId": "MTS11_1",
+    "singingInfoId": "FLG00",
+    "releaseDate": "20260930",
+    "type": "u"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS11",
+    "songId": "MTS11_1",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260930",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS11",
+    "songId": "MTS11_1",
+    "singingInfoId": "FLG02",
+    "releaseDate": "20260930",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS11",
+    "songId": "MTS11_1",
+    "singingInfoId": "FLG03",
+    "releaseDate": "20260930",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "MTS11",
+    "songId": "MTS11_2",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260930",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "MTS11",
+    "songId": "MTS11_3",
+    "singingInfoId": "FLG02",
+    "releaseDate": "20260930",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "MTS11",
+    "songId": "MTS11_4",
+    "singingInfoId": "FLG03",
+    "releaseDate": "20260930",
     "type": "sver"
   }
 ]
