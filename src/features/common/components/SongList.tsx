@@ -1,15 +1,14 @@
 'use client'
-import React, { useState } from "react";
+import React from "react";
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter, usePathname, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import type { SongMaster } from '@/data/types';
 import subscSongs from '@/data/subscSongs.json';
 import songMaster from '@/data/songMaster.json';
 import albumMasters from '@/data/albumMaster.json';
 import GetArtWorkSrc from '@/features/common/utils/GetArtWorkSrc';
-import YoutubeButton from "@/features/common/components/video/YoutubeButton";
 import {GetArtistBadgeInfo} from '@/features/common/utils/ArtistUtils';
 import IdolBadge from '@/features/common/components/IdolBadge';
 import { ExternalLink } from 'lucide-react';
@@ -47,8 +46,8 @@ export default function SongList(
     {/* アートワーク */}
     <Link 
       className ={`
-        ${displayArtwork?'h-fit rounded outline outline-2 outline-green-200/0 hover:opacity-[.67] hover:outline-green-400 ':'hidden'}`}
-      href={`/album/` + song.albumId}
+        ${displayArtwork?'h-fit rounded outline outline-2 outline-green-200/0 group-hover:opacity-[.67] ':'hidden'}`}
+      href={`/song/` + song.songId}
     >
     {imgSrc===''
       ?
@@ -119,18 +118,18 @@ export default function SongList(
           >
             <button
                 className='rounded-lg border-2 border-red-500 w-full h-full
-                text-red-500 font-sans leading-tight
-                hover:bg-red-500 hover:text-red-100 
-                transition-all duration-500 ease-out
-                fill-red-500 hover:fill-red-100 
+                font-sans leading-tight
+                text-white bg-red-500
                 text-xs mobileM:text-sm lg:text-base
+                transition-all duration-200 ease-out
+                hover:ring-2 hover:ring-red-500 hover:ring-offset-2
                 '
                 type="button"
                 aria-controls="contents"
             >
                 <div className={`
                     mobileL:flex hidden flex-wrap justify-center items-center font-sans font-black 
-                    mobileM:my-1 my-2 mx-4
+                    mobileM:my-1 my-2 mx-4 
                 `}>
                 {'試聴動画'}
                     <ExternalLink className="tablet:w-[18px] tablet:h-[18px] w-[14px] h-[14px]" />
