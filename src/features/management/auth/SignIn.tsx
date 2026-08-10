@@ -19,10 +19,10 @@ export function SignIn() {
   return (
     <button
       onClick={() => authClient.signIn.social({ provider: "google",callbackURL: window.location.href, })}
-      className="grid grid-cols-1 justify-items-center"
+      className="flex pc:flex-row flex-col"
     >
-    <LogIn className="h-[40px] w-[40px] lg:h-[40px] lg:w-[40px]" />
-    <p className='text-xs tablet:text-sm'>{'ログイン'}</p>
+    <LogIn className="hover:text-zinc-800 text-zinc-500 h-[40px] w-[40px] lg:h-[40px] lg:w-[40px] mx-auto pc:mx-2" />
+    <p className='text-xs tablet:text-sm pc:my-auto pc:text-lg'>{'ログイン'}</p>
     </button>
   )
 } 

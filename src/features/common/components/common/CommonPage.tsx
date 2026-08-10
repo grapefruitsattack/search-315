@@ -51,7 +51,7 @@ const CommonPage = ({ children }: Props )=> {
            flex flex-col text-center  pb-1  text-gray-600 mobileL:text-sm mobileM:text-sm text-xs
         ">
           <Link 
-            className="underline"
+            className="underline w-fit mx-auto"
             href={`/about`}
             rel="noopener noreferrer"
           >このサイトについて・プライバシーポリシー・免責事項</Link>

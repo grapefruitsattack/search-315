@@ -1,9 +1,10 @@
 'use client'
 import Link from 'next/link';
 import Image from 'next/image';
- 
-export default function CommonSidebar() {
+import UserButton from "./UserButton";
+import CommonMenu from "./CommonMenu";
 
+export default function CommonSidebar() {
   
   return (
 <div>
@@ -24,10 +25,10 @@ export default function CommonSidebar() {
           className=" w-[150px] h-[50px]" 
           src="/search315_logo.svg" width="200" height="200" alt="ホームアイコン" />
       </Link>
-    <div>Sidebar</div>
-    <div>Sidebar</div>
-    <div>Sidebar</div>
-    <div>Sidebar</div>
+    <div className='pt-4'>
+      <UserButton/>
+    </div>
+    <CommonMenu />
   </div>
 </div>
   )
