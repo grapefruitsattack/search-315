@@ -111,7 +111,7 @@ export default function SongContent({ result }: { result: SongMaster }) {
           <p className="pr-2">{'曲'}</p>
         </div>
       </section>
-      <section className="mb-16 text-start align-middle gap-x-5">
+      <section className="mb-16 text-start align-middle gap-x-5 tablet:mx-0 mx-2">
         <div className='grid lg:grid-cols-songPageLg grid-cols-1 grid-rows-4'>
           {/* アートワーク */}
           <div className={`row-span-6 w-[135px] inline-block relative`}>

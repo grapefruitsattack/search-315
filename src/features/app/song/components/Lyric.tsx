@@ -133,7 +133,7 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
     {'歌詞'}
   </a>
   {lyricIsLoading
-    ?<div className="flex flex-col gap-[4px]">
+    ?<div className="flex flex-col gap-[4px] tablet:mx-0 mx-2">
       <Skeleton className={`flex h-[20px] w-[60%] rounded`}>
       </Skeleton>
       <Skeleton className={`flex h-[20px] w-[80%] rounded`}>
@@ -145,7 +145,7 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
     </div>
     :
     <section 
-      className={`select-none print:hidden whitespace-pre-wrap`}
+      className={`select-none print:hidden whitespace-pre-wrap tablet:mx-0 mx-2`}
     >
       <div
         className={`
