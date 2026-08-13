@@ -37859,7 +37859,7 @@
     "category": "dof",
     "website": "asb",
     "headTitle": "",
-    "storyTitle": "日常での1コマ　特別版",
+    "storyTitle": "日常での1コマ（2021/01特別版）",
     "releaseDate": "20210114",
     "subCnt": 4,
     "voiceAtRelease": 0,
@@ -40638,35 +40638,35 @@
   },
   {
     "seq": 702,
-    "storyId": "dyorney2gkt3424p",
+    "storyId": "rau13jgy5ex6qsw4",
     "media": 1,
     "category": "dof",
     "website": "asb",
     "headTitle": "",
     "storyTitle": "事務所での1コマ（2020/07特別版）",
     "releaseDate": "20200722",
-    "subCnt": 16,
+    "subCnt": 6,
     "voiceAtRelease": 0,
     "voice": 0,
     "still": 0,
-    "url": "https://asobistory.asobistore.jp/adventure/entrance/nmkrjymwqpe3152",
+    "url": "https://asobistory.asobistore.jp/adventure/entrance/vgn54ynweye0d1x",
     "releaseDateSourceUrl": "",
     "pp": 5,
     "infoStory": [
       {
-        "infoId": "HIJ04",
+        "infoId": "JUP00",
+        "personFlg": 0
+      },
+      {
+        "infoId": "JUP01",
         "personFlg": 1
       },
       {
-        "infoId": "HIJ05",
+        "infoId": "JUP02",
         "personFlg": 1
       },
       {
-        "infoId": "MFM02",
-        "personFlg": 1
-      },
-      {
-        "infoId": "KGD02",
+        "infoId": "JUP03",
         "personFlg": 1
       }
     ],
@@ -40716,35 +40716,35 @@
   },
   {
     "seq": 700,
-    "storyId": "rau13jgy5ex6qsw4",
+    "storyId": "dyorney2gkt3424p",
     "media": 1,
     "category": "dof",
     "website": "asb",
     "headTitle": "",
     "storyTitle": "事務所での1コマ（2020/07特別版）",
     "releaseDate": "20200722",
-    "subCnt": 6,
+    "subCnt": 16,
     "voiceAtRelease": 0,
     "voice": 0,
     "still": 0,
-    "url": "https://asobistory.asobistore.jp/adventure/entrance/vgn54ynweye0d1x",
+    "url": "https://asobistory.asobistore.jp/adventure/entrance/nmkrjymwqpe3152",
     "releaseDateSourceUrl": "",
     "pp": 5,
     "infoStory": [
       {
-        "infoId": "JUP00",
-        "personFlg": 0
-      },
-      {
-        "infoId": "JUP01",
+        "infoId": "HIJ04",
         "personFlg": 1
       },
       {
-        "infoId": "JUP02",
+        "infoId": "HIJ05",
         "personFlg": 1
       },
       {
-        "infoId": "JUP03",
+        "infoId": "MFM02",
+        "personFlg": 1
+      },
+      {
+        "infoId": "KGD02",
         "personFlg": 1
       }
     ],
@@ -43523,6 +43523,45 @@
   },
   {
     "seq": 642,
+    "storyId": "ud5hmkadehzc4byf",
+    "media": 1,
+    "category": "dof",
+    "website": "asb",
+    "headTitle": "",
+    "storyTitle": "事務所での1コマ（2020/01特別版）",
+    "releaseDate": "20200128",
+    "subCnt": 6,
+    "voiceAtRelease": 1,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/adventure/entrance/k8g73z3o9ze6qnj",
+    "releaseDateSourceUrl": "",
+    "pp": 5,
+    "infoStory": [
+      {
+        "infoId": "FLG00",
+        "personFlg": 0
+      },
+      {
+        "infoId": "FLG01",
+        "personFlg": 1
+      },
+      {
+        "infoId": "FLG02",
+        "personFlg": 1
+      },
+      {
+        "infoId": "FLG03",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [
+      "asb_login"
+    ],
+    "relation": []
+  },
+  {
+    "seq": 641,
     "storyId": "ktstnqwctikekpii",
     "media": 1,
     "category": "dof",
@@ -43568,45 +43607,6 @@
       },
       {
         "infoId": "SAI03",
-        "personFlg": 1
-      }
-    ],
-    "howtoviewStory": [
-      "asb_login"
-    ],
-    "relation": []
-  },
-  {
-    "seq": 641,
-    "storyId": "ud5hmkadehzc4byf",
-    "media": 1,
-    "category": "dof",
-    "website": "asb",
-    "headTitle": "",
-    "storyTitle": "事務所での1コマ（2020/01特別版）",
-    "releaseDate": "20200128",
-    "subCnt": 6,
-    "voiceAtRelease": 1,
-    "voice": 0,
-    "still": 0,
-    "url": "https://asobistory.asobistore.jp/adventure/entrance/k8g73z3o9ze6qnj",
-    "releaseDateSourceUrl": "",
-    "pp": 5,
-    "infoStory": [
-      {
-        "infoId": "FLG00",
-        "personFlg": 0
-      },
-      {
-        "infoId": "FLG01",
-        "personFlg": 1
-      },
-      {
-        "infoId": "FLG02",
-        "personFlg": 1
-      },
-      {
-        "infoId": "FLG03",
         "personFlg": 1
       }
     ],
@@ -55839,22 +55839,6 @@
     "pp": 5,
     "infoStory": [
       {
-        "infoId": "MFM00",
-        "personFlg": 0
-      },
-      {
-        "infoId": "MFM01",
-        "personFlg": 1
-      },
-      {
-        "infoId": "MFM02",
-        "personFlg": 1
-      },
-      {
-        "infoId": "MFM03",
-        "personFlg": 1
-      },
-      {
         "infoId": "CFP00",
         "personFlg": 0
       },
@@ -55876,6 +55860,22 @@
       },
       {
         "infoId": "CFP05",
+        "personFlg": 1
+      },
+      {
+        "infoId": "MFM00",
+        "personFlg": 0
+      },
+      {
+        "infoId": "MFM01",
+        "personFlg": 1
+      },
+      {
+        "infoId": "MFM02",
+        "personFlg": 1
+      },
+      {
+        "infoId": "MFM03",
         "personFlg": 1
       }
     ],
@@ -57313,22 +57313,6 @@
     "pp": 5,
     "infoStory": [
       {
-        "infoId": "SEM00",
-        "personFlg": 0
-      },
-      {
-        "infoId": "SEM01",
-        "personFlg": 1
-      },
-      {
-        "infoId": "SEM02",
-        "personFlg": 1
-      },
-      {
-        "infoId": "SEM03",
-        "personFlg": 1
-      },
-      {
         "infoId": "HIJ00",
         "personFlg": 0
       },
@@ -57350,6 +57334,22 @@
       },
       {
         "infoId": "HIJ05",
+        "personFlg": 1
+      },
+      {
+        "infoId": "SEM00",
+        "personFlg": 0
+      },
+      {
+        "infoId": "SEM01",
+        "personFlg": 1
+      },
+      {
+        "infoId": "SEM02",
+        "personFlg": 1
+      },
+      {
+        "infoId": "SEM03",
         "personFlg": 1
       }
     ],
