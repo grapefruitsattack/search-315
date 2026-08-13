@@ -381,7 +381,7 @@ export default async function StoryDetailedPage(
                         <div className={`w-fit`}>
                         {result.subStoryTitle}</div>
                       </div>
-                        {displaySubStoryReleaseDate===false||sunStoryReleaseDate===''
+                        {storyData.category===CATEGORY.dailyOneFrame.id||displaySubStoryReleaseDate===false||sunStoryReleaseDate===''
                           ?<></>
                           :
                           <div 
