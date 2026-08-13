@@ -216,7 +216,7 @@ export type SubStory = {
   media: number;
   category: string;
   subStoryTitle: string;
-  releaseDate: Date;
+  releaseDate: string;
   voiceAtRelease: number;
   url: string;
   infoSubStory: InfoStory[];

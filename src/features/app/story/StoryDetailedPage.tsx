@@ -40,6 +40,7 @@ export default async function StoryDetailedPage(
   const categoryName: string = GetStoryCategoryName(storyData.category);
   const infoStoryPerson: InfoStory[] = storyData.infoStory.filter(storyData=>storyData.personFlg===1);
   const subStorys: SubStory[] = m_sub_story.filter((data)=>data.storyId===storyData.storyId).reverse();
+  const displaySubStoryReleaseDate: boolean = subStorys.some(data=>data.releaseDate!==storyData.releaseDate);
 
   const releaseDate: string 
     = storyData.releaseDate===''
@@ -95,9 +96,9 @@ export default async function StoryDetailedPage(
     searchText = `SideM ${storyData.storyTitle}`;
   } else if(storyData.media===MEDIA.gs.id){
     if(CATEGORY.gsEvent.id===storyData.category){
-      searchText = `サイスタ イベントストーリー ${storyData.headTitle}`;
+      searchText = `サイスタ イベントストーリー ${storyData.storyTitle}`;
     } else {
-      searchText = `サイスタ ${categoryName} ${storyData.storyTitle}`;
+      searchText = `サイスタ ${storyData.storyTitle.replace("｜", " ")}`;
     }
   };
 
@@ -330,6 +331,13 @@ export default async function StoryDetailedPage(
               items-start gap-2 grid-cols-1 mt-2 ml-8
               grid max-w-[700px]`}>
               {subStorys.map((result, index) => {
+                const sunStoryReleaseDate: string 
+                  = result.releaseDate===''
+                    ?''
+                    :new Date(
+                      Number(result.releaseDate.substring(0,4))
+                      ,Number(result.releaseDate.substring(4,6))-1
+                      ,Number(result.releaseDate.substring(6,9))).toLocaleDateString("ja-JP");
                 const subVoiceStateName = GetVoiceStateName(0,result.voiceAtRelease);
                 // サブストーリー用シェア文章
                 let subShareText: string = '';
@@ -357,10 +365,10 @@ export default async function StoryDetailedPage(
                   <div key={Number(result.subStoryNo)} 
                     className="flex flex-col pc:flex-row  bg-white border-orange-700/30 border-t-4 border-l-4 bg-orange-50/50 text-xl"
                   >
-                    <div className="flex gap-1 flex-col">
+                    <div className="flex gap-0 flex-col">
                       {subVoiceStateName===''
                         ?<></>
-                        :<div className="justify-center w-fit text-sm text-red-500 border border-red-500 rounded-sm p-1">{subVoiceStateName}</div>
+                        :<div className="justify-center w-fit text-sm text-red-500 border border-red-500 rounded-sm p-1 mb-1">{subVoiceStateName}</div>
                       }
                       <div className="flex gap-1 text-xl">
                         {/* モバエム雑誌のときのみアイドル名を表示 */}
@@ -373,6 +381,16 @@ export default async function StoryDetailedPage(
                         <div className={`w-fit`}>
                         {result.subStoryTitle}</div>
                       </div>
+                        {displaySubStoryReleaseDate===false||sunStoryReleaseDate===''
+                          ?<></>
+                          :
+                          <div 
+                            className={`flex w-fit lg:text-sm text-xs font-sans text-slate-500 my-auto`}
+                          >
+                            <p className="">{sunStoryReleaseDate}</p>
+                            <p className="">{'更新'}</p>
+                          </div>
+                        }
                     </div>
                     {/* サブストーリーボタン部  */}
                     <div className='
