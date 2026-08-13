@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
-import UnitPageTabs from '@/features/app/unit/components/UnitPageTabs';
+import UnitPageTabs from '@/features/app/unit/components/UnitPageTabs_bk';
 
 type TabType =
   | 'story'

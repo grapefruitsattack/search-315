@@ -1,158 +1,160 @@
 'use client';
 
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
-import { hasAnalyticsConsent } from "@/lib/analytics";
-import { usePageCategory } from "@/features/common/hooks/pageCategoryHook";
-import type { SingingMaster } from '@/data/types';
+import { useState, useEffect } from 'react';
 import {
+  MessageCircleWarning,
   Music,
   BookOpen,
-  MessageCircleWarning,
-  Sparkles
+  Sparkles,
 } from 'lucide-react';
 
-import {
-  Tabs,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs";
-
-const TAB_ELEMENT_ID = 'unitpagetab';
-const SESSION_STORAGE_ITEM_ID = 'navigatewithtab';
-
-const VALID_TYPES = [
-  'story',
-  'music',
-  'recommend',
-  'other',
+const sections = [
+  {
+    id: 'unit-recommend',
+    label: 'オススメ',
+    icon: MessageCircleWarning,
+  },
+  {
+    id: 'unit-music',
+    label: '楽曲',
+    icon: Music,
+  },
+  {
+    id: 'unit-story',
+    label: 'ストーリー',
+    icon: BookOpen,
+  },
+  {
+    id: 'unit-other',
+    label: 'その他',
+    icon: Sparkles,
+  },
 ] as const;
 
-type TabType = typeof VALID_TYPES[number];
+type SectionId = typeof sections[number]['id'];
 
-type Props = {
-  type: string;
-  onChange: (type: TabType) => void;
-};
+export default function UnitPageTabs() {
+  const scrollToSection = (id: SectionId) => {
+    const element = document.getElementById(id);
 
-export default function UnitPageTabs({
-  type,
-  onChange,
-}: Props) {
-  const currentPath = usePathname();
-  const [pageCategory, setPageCategory] = usePageCategory('');
+    if (!element) return;
 
-  // const scrollFunction = (targetElementId: string) => {
-  //   const element = document.getElementById(targetElementId);
+    const headerHeight =
+      window.innerWidth < 1000
+        ? window.innerWidth >= 768
+          ? 66
+          : 58
+        : 0;
 
-  //   if (element !== null) {
-  //     const targetDOMRect = element.getBoundingClientRect();
-  //     const targetTop =
-  //       targetDOMRect.top + window.pageYOffset;
+    const rect = element.getBoundingClientRect();
 
-  //     const headerHeight =
-  //       window.innerWidth >= 1000 ? 5 : 70;
-
-  //     window.scrollTo({
-  //       top: targetTop - headerHeight,
-  //       behavior: 'smooth',
-  //     });
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   if (
-  //     sessionStorage.getItem(SESSION_STORAGE_ITEM_ID) !== "1"
-  //   ) {
-  //     return;
-  //   }
-
-  //   requestAnimationFrame(() => {
-  //     scrollFunction(TAB_ELEMENT_ID);
-  //     sessionStorage.removeItem(SESSION_STORAGE_ITEM_ID);
-  //   });
-  // }, []);
-
-  const handleTabChange = (newType: TabType) => {
-    setPageCategory(newType);
-
-    sessionStorage.setItem(
-      SESSION_STORAGE_ITEM_ID,
-      '1'
-    );
-
-    onChange(newType);
+    window.scrollTo({
+      top:
+        window.scrollY +
+        rect.top -
+        headerHeight -
+        48, // セクションナビ自身の高さ
+      behavior: 'smooth',
+    });
   };
 
+  const [activeSection, setActiveSection] =
+    useState<SectionId>('unit-recommend');
+
+  useEffect(() => {
+    const elements = sections
+      .map(section =>
+        document.getElementById(section.id)
+      )
+      .filter(
+        (element): element is HTMLElement =>
+          element !== null
+      );
+
+    const observer = new IntersectionObserver(
+      entries => {
+        const visibleEntries = entries
+          .filter(entry => entry.isIntersecting)
+          .sort(
+            (a, b) =>
+              a.boundingClientRect.top -
+              b.boundingClientRect.top
+          );
+
+        const active =
+          visibleEntries[0]?.target.id;
+
+        if (active) {
+          setActiveSection(
+            active as SectionId
+          );
+        }
+      },
+      {
+        rootMargin: '-120px 0px -60% 0px',
+        threshold: 0,
+      }
+    );
+
+    elements.forEach(element =>
+      observer.observe(element)
+    );
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div>
-      <div
-        className="flex mb-5 gap-0 flex-wrap px-0 mobileS:px-2"
-        role="tablist"
-        aria-label="tab options"
-        id={TAB_ELEMENT_ID}
-      >
-        <Tabs
-          value={
-            VALID_TYPES.includes(type as TabType)
-              ? type
-              : 'recommend'
-          }
-          onValueChange={(value) => {
-            if (
-              VALID_TYPES.includes(value as TabType)
-            ) {
-              handleTabChange(value as TabType);
-            }
-          }}
-        >
-          <TabsList className="h-fit">
+    <nav
+      className="
+        sticky
+        top-[58px]
+        tablet:top-[66px]
+        lg:top-0
+        z-40
+        bg-white
+      "
+      aria-label="ページ内ナビゲーション"
+    >
+      <div className="flex w-full justify-center">
+        <div className="flex w-full max-w-[950px]">
+          {sections.map((section) => {
+            const Icon = section.icon;
 
-          <TabsTrigger
-            value="recommend"
-            className="px-2.5 sm:px-3"
-          >
-            <div className="flex flex-col items-center justify-center text-xs mobileL:text-sm tablet:text-base">
-              <MessageCircleWarning className="w-[40px] tablet:w-[44px]" />
-              <div>オススメ</div>
-            </div>
-          </TabsTrigger>
+            return (
+              <button
+                key={section.id}
+                type="button"
+                onClick={() =>
+                  scrollToSection(section.id)
+                }
+                className={`
+                  flex flex-1 items-center justify-center
+                  gap-1 px-1 py-2 text-xs
+                  transition-colors
+                  ${
+                    activeSection === section.id
+                      ? 'bg-gray-100 font-bold text-green-600'
+                      : 'text-gray-600'
+                  }
+                `}
+              >
+                <Icon
+                  className="
+                    h-[19px]
+                    w-[19px]
+                    tablet:h-[21px]
+                    tablet:w-[21px]
+                  "
+                />
 
-          <TabsTrigger
-            value="music"
-            className="px-2.5 sm:px-3"
-          >
-            <div className="flex flex-col items-center justify-center text-xs mobileL:text-sm tablet:text-base">
-              <Music className="w-[40px] tablet:w-[44px]" />
-              <div>楽曲</div>
-            </div>
-          </TabsTrigger>
-
-          <TabsTrigger
-            value="story"
-            className="px-2.5 sm:px-3"
-          >
-            <div className="flex flex-col items-center justify-center text-xs mobileL:text-sm tablet:text-base">
-              <BookOpen className="w-[40px] tablet:w-[44px]" />
-              <div>ストーリー</div>
-            </div>
-          </TabsTrigger>
-
-          <TabsTrigger
-            value="other"
-            className="px-2.5 sm:px-3"
-          >
-            <div className="flex flex-col items-center justify-center text-xs mobileL:text-sm tablet:text-base">
-              <Sparkles className="w-[40px] tablet:w-[44px]" />
-              <div>その他</div>
-            </div>
-          </TabsTrigger>
-
-          </TabsList>
-        </Tabs>
+                <span>
+                  {section.label}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
-
-
-    </div>
+    </nav>
   );
 }
