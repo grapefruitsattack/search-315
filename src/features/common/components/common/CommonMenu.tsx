@@ -1,4 +1,5 @@
 'use client'
+import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter, } from 'next/navigation'
 import type { SingingMaster } from '@/data/types';
@@ -18,6 +19,7 @@ export default function CommonMenu() {
 
   const router = useRouter();
   const units: SingingMaster[] = singingMaster.filter(data=>data.personFlg===0);
+  const [isSelectorOpen, setIsSelectorOpen] = useState<boolean>(false);
   
   return (<>
     <div className='flex flex-col mt-6 gap-4 text-base'>
@@ -26,12 +28,17 @@ export default function CommonMenu() {
           className=' pr-4 w-fit flex '
         >
           <Sparkle className='h-[25px]  mr-1' />
-          <div className='my-auto '>
+          <button 
+            className='my-auto '
+            onClick={()=>setIsSelectorOpen(!isSelectorOpen)}
+          >
             {'ユニットページ'}
-          </div>
+          </button>
         </div>
         <div className='ml-2'>
-          <Select name="link-unit-page"
+          <Select name="link-unit-page" 
+            open={isSelectorOpen} 
+            onOpenChange={()=>setIsSelectorOpen(!isSelectorOpen)}
             onValueChange={(value)=>router.push(`/unit/${value}`)}
           >
             <SelectTrigger className="w-[170px] h-[35px]">
