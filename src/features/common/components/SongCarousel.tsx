@@ -39,6 +39,32 @@ export default function SongCarousel(
     });
   }, [api]);
 
+  if(songArray.length<=displaySongCnt) {
+    return(
+      <div className="pt-4 pb-8">
+        <div className={`
+          items-start gap-y-0 gap-x-2 
+          lg:grid grid 
+          grid-cols-1 pt-1 pl-1
+        `}>
+          {songArray.map((result, index) => (
+          <div className={``} key={result.songId}>
+            <SongList
+              key={result.songId}
+              index={index} 
+              songId={result.songId}
+              displayArtist={displayArtist}
+              useArtistBadge={useArtistBadge}
+              displayArtwork={true}
+              displayReleaseDate={true}
+            />
+          </div>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="mx-auto  py-4">
       <Carousel className="w-full " setApi={setApi}
@@ -75,6 +101,7 @@ export default function SongCarousel(
             </CarouselItem>
           ))}
         </CarouselContent>
+        
         <CarouselPrevious className={`${count===1?'collapse':'flex'} top-[calc(100%+0.5rem)] left-0 translate-y-0 ml-4 tablet:ml-0`} />
         <CarouselNext className={`${count===1?'collapse':'flex'} top-[calc(100%+0.5rem)] left-2 translate-x-full translate-y-0 ml-4 tablet:ml-0`} />
       </Carousel>
