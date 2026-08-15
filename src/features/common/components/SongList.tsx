@@ -35,12 +35,14 @@ export default function SongList(
 
   return (
   <div 
-    className="flex w-full min-h-[50px] cursor-pointer group "
+    className={`flex w-full min-h-[50px] cursor-pointer group  hover:bg-green-100 ${index%2===1?'bg-white':'bg-zinc-50'} `}
   >
     {/* アートワーク */}
     <Link 
       className ={`
-        ${displayArtwork?'h-fit rounded outline outline-2 outline-green-200/0 group-hover:opacity-[.67] ':'hidden'}`}
+        ${displayArtwork
+          ?'h-fit rounded outline outline-2 outline-zinc-100 group-hover:outline-green-500 group-hover:opacity-[.67] '
+          :'hidden'}`}
       href={`/song/` + song.songId}
     >
     {imgSrc===''
@@ -56,7 +58,7 @@ export default function SongList(
       />
       :<Image
         className={` object-cover object-center rounded 
-        min-h-[48px] min-w-[48px] 
+        min-h-[48px] min-w-[48px]
         `}
         src={`/artwork/${imgSrc}.png`}
         alt="アートワーク"
@@ -69,14 +71,13 @@ export default function SongList(
       className={`rounded
         grid  ${song.subscFlg!==1&&song.trialYoutubeId===''?'grid-cols-1':'grid-cols-[2fr_1fr]'}
         w-full font-sans 
-        ${index%2===1?'bg-white':'bg-zinc-50'} 
-        group-hover:bg-green-100
+        
+        
         group/songtitle
         `}
-      onClick={() => router.push(`/song/` + song?.songId)}
     >
       <Link 
-        className="flex flex-col my-auto mx-2 text-xs mobileS:text-sm tablet:text-base truncate"
+        className="flex flex-col my-auto px-2 h-full text-xs mobileS:text-sm tablet:text-base truncate "
         href={`/song/` + song.songId}
       >
         <div>
@@ -99,47 +100,54 @@ export default function SongList(
         </div>
       </Link>
       {/* サブスク・視聴動画 */}
-      <div className={`
-        lg:w-auto inline-block row-span-1 h-10 my-auto 
+      <div className={`flex h-full
+        lg:w-auto  row-span-1  
         ${song.subscFlg!==1&&song.trialYoutubeId===''&&' hidden '}
-        `}>
-        {song.subscFlg!==1
-        ?song.trialYoutubeId!==''
-        ?<a className="w-full h-full"
-            href={`https://youtu.be/${song.trialYoutubeId}`}
-            onClick={(e) => e.stopPropagation()}
-            target="_blank" rel="noopener noreferrer"
-          >
-            <button
-                className='rounded-lg border-2 border-red-500 w-full h-full
-                font-sans leading-tight
-                text-white bg-red-500
-                text-xs mobileM:text-sm lg:text-base
-                transition-all duration-200 ease-out
-                hover:ring-2 hover:ring-red-500 hover:ring-offset-2
-                '
-                type="button"
-                aria-controls="contents"
-            >
-                <div className={`
-                    mobileL:flex hidden flex-wrap justify-center items-center font-sans font-black 
-                    mobileM:my-1 my-2 mx-4 
-                `}>
-                {'試聴動画'}
-                    <ExternalLink className="tablet:w-[18px] tablet:h-[18px] w-[14px] h-[14px]" />
-                </div>
-                <div className={`
-                    flex mobileL:hidden flex-wrap justify-center items-center font-sans font-black 
-                    mobileM:my-1 my-2 mx-4
-                `}>
-                {'試聴'}
-                    <ExternalLink className="tablet:w-[18px] tablet:h-[18px] mobileM:w-[14px] mobileM:h-[14px] w-[10px] h-[10px]" />
-                </div>
-            </button>
-        </a>
-        :<></>
-        :<SubscButton songId={song.songId} albumId={''} />
-        }
+        `}
+        onClick={() => {
+          console.log('router.push(`/song/` + song.songId);')
+          router.push(`/song/` + song.songId);
+        }}
+      >
+        <div className="flex my-auto w-full h-10">
+          {song.subscFlg!==1
+          ?song.trialYoutubeId!==''
+            ?<a className="w-full h-full"
+                href={`https://youtu.be/${song.trialYoutubeId}`}
+                onClick={(e) => e.stopPropagation()}
+                target="_blank" rel="noopener noreferrer"
+              >
+                <button
+                    className='rounded-lg border-2 border-red-500 w-full h-full
+                    font-sans leading-tight
+                    text-white bg-red-500
+                    text-xs mobileM:text-sm lg:text-base
+                    transition-all duration-200 ease-out
+                    hover:ring-2 hover:ring-red-500 hover:ring-offset-2
+                    '
+                    type="button"
+                    aria-controls="contents"
+                >
+                    <div className={`
+                        mobileL:flex hidden flex-wrap justify-center items-center font-sans font-black 
+                        mobileM:my-1 my-2 mx-4 
+                    `}>
+                    {'試聴動画'}
+                        <ExternalLink className="tablet:w-[18px] tablet:h-[18px] w-[14px] h-[14px]" />
+                    </div>
+                    <div className={`
+                        flex mobileL:hidden flex-wrap justify-center items-center font-sans font-black 
+                        mobileM:my-1 my-2 mx-4
+                    `}>
+                    {'試聴'}
+                        <ExternalLink className="tablet:w-[18px] tablet:h-[18px] mobileM:w-[14px] mobileM:h-[14px] w-[10px] h-[10px]" />
+                    </div>
+                </button>
+            </a>
+            :<></>
+          :<SubscButton songId={song.songId} albumId={''} />
+          }
+        </div>
       </div>
     </div>
   </div>
