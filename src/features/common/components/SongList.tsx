@@ -49,21 +49,21 @@ export default function SongList(
       ?
       <Image 
         className={` object-cover object-center rounded 
-          min-h-[48px] min-w-[48px] 
+          min-h-[45px] min-w-[45px] 
         `}
         src={`/artwork/dummy.png`}
         alt="アートワーク"
-        width={48}
-        height={48}
+        width={45}
+        height={45}
       />
       :<Image
         className={` object-cover object-center rounded 
-        min-h-[48px] min-w-[48px]
+        min-h-[45px] min-w-[45px]
         `}
         src={`/artwork/${imgSrc}.png`}
         alt="アートワーク"
-        width={48}
-        height={48}
+        width={45}
+        height={45}
       />
       }
     </Link>
@@ -71,8 +71,6 @@ export default function SongList(
       className={`rounded
         grid  ${song.subscFlg!==1&&song.trialYoutubeId===''?'grid-cols-1':'grid-cols-[2fr_1fr]'}
         w-full font-sans 
-        
-        
         group/songtitle
         `}
     >
@@ -105,7 +103,6 @@ export default function SongList(
         ${song.subscFlg!==1&&song.trialYoutubeId===''&&' hidden '}
         `}
         onClick={() => {
-          console.log('router.push(`/song/` + song.songId);')
           router.push(`/song/` + song.songId);
         }}
       >
