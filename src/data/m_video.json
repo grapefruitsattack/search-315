@@ -1,5 +1,82 @@
 [
   {
+    "videoId": "0ETkgAdAN7g",
+    "videoType": "3dlive",
+    "title": "【IWSF2026】我が混沌のサバト・マリアージュ／DAY2-ZESSYOU-",
+    "displayTitle": "【IWSF2026】我が混沌のサバト・マリアージュ／DAY2-ZESSYOU-",
+    "siteType": "youtubeshort",
+    "releaseDate": "20260809",
+    "url": "https://www.youtube.com/shorts/0ETkgAdAN7g",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/0ETkgAdAN7g?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/0ETkgAdAN7g/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "ALT01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "CFP03",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
+    "videoId": "RwZjPouOakY",
+    "videoType": "mv",
+    "title": "Beit「千夜一夜に瞬く星よ」2DMV",
+    "displayTitle": "Beit「千夜一夜に瞬く星よ」2DMV",
+    "siteType": "youtube",
+    "releaseDate": "20260805",
+    "url": "https://youtu.be/RwZjPouOakY",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/RwZjPouOakY?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/RwZjPouOakY/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "BEI00",
+        "personFlg": 0,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "BEI01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "BEI02",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "BEI03",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
+    "videoId": "JrpW_AxfVMc",
+    "videoType": "mv",
+    "title": "『アイドルマスター TOURS』「→→→SP」Official Music Video",
+    "displayTitle": "『アイドルマスター TOURS』「→→→SP」Official Music Video",
+    "siteType": "youtube",
+    "releaseDate": "20260728",
+    "url": "https://youtu.be/JrpW_AxfVMc",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/JrpW_AxfVMc?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/JrpW_AxfVMc/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "DRS01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
     "videoId": "suaPw2Hzjvk",
     "videoType": "mv",
     "title": "Jupiter「BRIGHTEST AWAKING」2DMV",

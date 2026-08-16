@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image';
 import {
   Modal,
   ModalBody,
@@ -8,31 +7,67 @@ import {
   ModalCloseButton,
   useDisclosure, 
  } from "@chakra-ui/react";
+ import type { Video } from '@/data/types';
+  import { ExternalLink } from 'lucide-react';
 
 
 export const YoutubeShortModal 
-= ({ title, embedUrl, disclosure }
-: { title: string, embedUrl: string, disclosure: any, }) => {
+= ({ video, disclosure }
+: { video: Video, disclosure: any, }) => {
+
+  const siteTitle = 
+    video.siteType==='asobichannel'
+      ?'アソビチャンネル'
+      :video.siteType==='asobistage'?'アソビステージ':'YouTube';
 
   return (
     <>
     {/* モーダル部 */}
     <Modal 
-        isOpen={disclosure.isOpen} onClose={disclosure.onClose} size={'sm'}
+        isOpen={disclosure.isOpen} onClose={disclosure.onClose} size={'lg'}
     >
         <ModalOverlay />
         <ModalContent my={'auto'}>
-          <ModalCloseButton />
         <ModalBody p={1}>
-        <div className="bg-white rounded-md text-center pt-10 pb-0">
-            <div>
-            <iframe 
-                className="mx-auto w-fit h-[85vh] aspect-[402/715]" 
-                src={embedUrl} >
-            </iframe>
+          <div className="flex flex-col bg-white rounded-md text-center pt-2 pb-0">
+              <div className='flex flex-row'>
+                <iframe 
+                    className="mx-auto w-fit max-h-[85vh] max-w-[calc(80vw-32px)] aspect-[402/715]" 
+                    src={video.embedUrl} >
+                </iframe>
+                <ModalCloseButton p={1}/>
+              </div>
+
+              <div className="flex flex-row mx-auto mt-2 gap-2">
+                <a className="
+                  flex py-2 px-2 gap-1 tablet:px-5 rounded-full bg-zinc-100 items-center w-fit h-fit
+                  font-mono text-xs mobileL:text-sm tablet:text-base 
+                  transition-all duration-300
+                  hover:ring-2 hover:ring-zinc-600 hover:ring-offset-2 hover:bg-zinc-200
+                  active:scale-90
+                "
+                  href={video.url}
+                  onClick={(e) => {}}
+                  target="_blank" rel="noopener noreferrer">
+                  {`${siteTitle}で見る`}
+                  <ExternalLink className='mt-auto' width="16" height="16"/>
+                </a>
+                <a className={`${video.tiktokUrl===''&&' hidden '}
+                  flex py-2 px-2 gap-1 tablet:px-5 rounded-full bg-zinc-100 items-center w-fit h-fit
+                  font-mono text-xs mobileL:text-sm tablet:text-base 
+                  transition-all duration-300
+                  hover:ring-2 hover:ring-zinc-600 hover:ring-offset-2 hover:bg-zinc-200
+                  active:scale-90
+                  `}
+                  href={video.url}
+                  onClick={(e) => {}}
+                  target="_blank" rel="noopener noreferrer">
+                  {`TikTokで見る`}
+                  <ExternalLink className='mt-auto' width="16" height="16"/>
+                </a>
+              </div>
             </div>
-            </div>
-            </ModalBody>
+          </ModalBody>
         </ModalContent>
      </Modal>
 

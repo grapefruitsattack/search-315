@@ -73,6 +73,7 @@ export type SubscUrls = {
 };
 
 export type MvInfo = {
+  videoId: string;
   songId: string;
   title: string;
   siteType: string;
