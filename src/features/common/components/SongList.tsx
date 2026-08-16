@@ -39,16 +39,18 @@ export default function SongList(
   >
     {/* アートワーク */}
     <Link 
-      className ={`
+      className ={`h-fit rounded 
+        bg-white group-hover:bg-white
+        outline outline-2 outline-zinc-100 group-hover:outline-green-500 
         ${displayArtwork
-          ?'h-fit rounded outline outline-2 outline-zinc-100 group-hover:outline-green-500 group-hover:opacity-[.67] '
-          :'hidden'}`}
+          ?' '
+          :' hidden '}`}
       href={`/song/` + song.songId}
     >
     {imgSrc===''
       ?
       <Image 
-        className={` object-cover object-center rounded 
+        className={` object-cover object-center rounded group-hover:opacity-[.67]
           min-h-[45px] min-w-[45px] 
         `}
         src={`/artwork/dummy.png`}
@@ -57,7 +59,7 @@ export default function SongList(
         height={45}
       />
       :<Image
-        className={` object-cover object-center rounded 
+        className={` object-cover object-center rounded group-hover:opacity-[.67]
         min-h-[45px] min-w-[45px]
         `}
         src={`/artwork/${imgSrc}.png`}
