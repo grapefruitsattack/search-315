@@ -24,6 +24,7 @@ export default function AlbumSongs({ album }: { album: Albums }) {
         max-w-[700px]
         items-start gap-0 grid-cols-1 mt-5
         lg:grid grid 
+        tablet:px-0 mobileS:px-2 px-0
       `}>
       {results.map((result, index) => (
         <SongList

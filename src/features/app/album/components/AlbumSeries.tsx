@@ -1,7 +1,7 @@
 'use client'
 import albumMaster from '@/data/albumMaster.json';
 import type { Albums } from '@/data/types';
-import AlbumBlock from "@/features//common/components/AlbumBlock";
+import AlbumBlock from "@/features/common/components/AlbumBlock";
 
 export default function AlbumSeries({ albumId, seriesId }: { albumId: string, seriesId: string }) {
 
@@ -25,19 +25,21 @@ export default function AlbumSeries({ albumId, seriesId }: { albumId: string, se
           {'アルバムシリーズ'}
       </div>
 
-      <section className={`
-      grid items-start lg:px-8 gap-4 grid-cols-1 lg:grid-cols-2 
-      mt-5
-      lg:grid grid
+      <div className={`
+      flex flex-row flex-nowrap
+      gap-4 lg:px-8  p-4
+      overflow-x-scroll overflow-y-hidden
       `}
       >
           {resultsSort.map((result, index) => (
-          <AlbumBlock 
-              key={index} 
-              albumId={result.albumId}
-          />
+          <div className='tablet:min-w-[230px] mobileL:min-w-[200px] min-w-[170px]' key={index}>
+            <AlbumBlock 
+                key={index} 
+                albumId={result.albumId}
+            />
+          </div>
           ))}
-      </section>
+      </div>
 
     </>
   )
