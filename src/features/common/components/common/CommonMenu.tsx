@@ -24,17 +24,17 @@ export default function CommonMenu() {
   return (<>
     <div className='flex flex-col mt-6 gap-4 text-base'>
       <div className='hover:text-zinc-800 text-zinc-500'>
-        <div
-          className=' pr-4 w-fit flex '
+        <button
+          className=' pr-4 flex w-full'
+            onClick={()=>setIsSelectorOpen(!isSelectorOpen)}
         >
           <Sparkle className='h-[25px]  mr-1' />
-          <button 
+          <div 
             className='my-auto '
-            onClick={()=>setIsSelectorOpen(!isSelectorOpen)}
           >
             {'ユニットページ'}
-          </button>
-        </div>
+          </div>
+        </button>
         <div className='ml-2'>
           <Select name="link-unit-page" 
             open={isSelectorOpen} 

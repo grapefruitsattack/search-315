@@ -17,7 +17,7 @@ export default function UserButton() {
       <div>
         <div className="flex pc:flex-row flex-col items-center">
           <Skeleton className="h-[40px] w-[40px] rounded-xl mx-auto pc:mx-1" />
-          <Skeleton className="h-5 w-20 mt-1 pc:mt-0" />
+          <Skeleton className="h-2 pc:h-5 w-20 mt-1 pc:mt-0" />
         </div>
       </div>
     )
