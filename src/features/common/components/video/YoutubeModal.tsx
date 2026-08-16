@@ -58,7 +58,7 @@ export const YoutubeModal
                   hover:ring-2 hover:ring-zinc-600 hover:ring-offset-2 hover:bg-zinc-200
                   active:scale-90
                   `}
-                  href={video.url}
+                  href={video.tiktokUrl}
                   onClick={(e) => {}}
                   target="_blank" rel="noopener noreferrer">
                   {`TikTokで見る`}
