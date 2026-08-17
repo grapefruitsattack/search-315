@@ -56,7 +56,7 @@ export default function IdolBadge({ id, useShortName, size, linkType }: { id: st
               ${personFlg===1?'pl-0.5 pr-1 border-l-[6px] border-[var(--border-color)]':'px-1'}
               `}
               >
-          <p className={`whitespace-nowrap`}>{name}</p>
+          <p className={`whitespace-nowrap`}>{id==='CFP03'&&useShortName===0?'アスラン＝BBⅡ世':name}</p>
           </div>
       );
   }else if(size==='mainpage'){
@@ -99,7 +99,7 @@ export default function IdolBadge({ id, useShortName, size, linkType }: { id: st
           <span 
             className={`p-1 rounded-xs whitespace-nowrap ${personFlg===1?' border-l-2 border-white/80':''}`}
             >
-            {id==='CFP03'?'アスラン＝BBⅡ世':name}
+            {id==='CFP03'&&useShortName===0?'アスラン＝BBⅡ世':name}
           </span>
           </Link>
       );
