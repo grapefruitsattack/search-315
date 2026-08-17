@@ -1,5 +1,9 @@
-"use client";
+
+import { Suspense } from "react";
 import UnitBlock from "@/features/common/components/UnitBlock";
+import TopPageAlbum from './TopPageAlbum';
+import TopPageSong from './TopPageSong';
+import TopPageStoryServer from './TopPageStoryServer';
 
 export default function TopPage({ }: { }) {
 
@@ -10,6 +14,11 @@ export default function TopPage({ }: { }) {
       className="min-h-screen flex-col items-center justify-between 
       pb-72 px-0 mobileM:px-1 mobileL:px-2 tablet:px-4 tablet:px-8 lg:px-8"
     >
+      <TopPageAlbum/>
+      <TopPageSong/>
+      <Suspense fallback={<>story loading</>}>
+        <TopPageStoryServer/>
+      </Suspense>
     
       <div 
         className="mt-5 mb-32 px-1 mobileL:px-0
