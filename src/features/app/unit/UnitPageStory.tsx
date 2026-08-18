@@ -1,9 +1,11 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from 'next/link';
 import type { SingingMaster,Story,UserReadingData } from '@/data/types';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 import StoryCarousel from "@/features/common/components/StoryCarousel";
+import { Toaster } from 'sonner';
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Bell, House } from "lucide-react";
 
 export default function UnitPageStory(
@@ -35,10 +37,14 @@ export default function UnitPageStory(
       ,query: {q: searchQueryId, order:'desc', htv: 3}},
   ];
 
-  const [selectedStory, setSelectedStory] = useState(StoryDataArray[0]);
+  const [selectedStoryType, setSelectedStoryType] = useState<string>('all');
+  const selectedStory =
+    StoryDataArray.find(data => data.type === selectedStoryType)
+    ?? StoryDataArray[0];
   
   return (
     <>
+    <Toaster position="top-center"/>
     <div className="flex items-center ">
       <div 
         className="flex flex-col tablet:flex-row justify-start w-fit
@@ -68,7 +74,7 @@ export default function UnitPageStory(
               :'bg-stone-200/20 border-stone-200 text-stone-500 '}
           `}
           key={data.type}
-          onClick={()=>setSelectedStory(data)}
+          onClick={()=>setSelectedStoryType(data.type)}
           aria-disabled={selectedStory.type===data.type}
         >
           {data.typeName}
@@ -78,29 +84,39 @@ export default function UnitPageStory(
     <div className='tablet:hidden'>
       <StoryCarousel StoryArray={selectedStory.story} displayCnt={1} login={login} />
     </div>
-    <div className={`
-        items-start gap-4 hidden tablet:grid tablet:grid-cols-3 mt-2
-    `}>
+    <ScrollArea 
+      type="always" 
+      className="hidden tablet:flex h-fit w-full rounded-md border "
+    >
+      <div 
+        className="flex flex-row flex-nowrap
+        gap-4 lg:px-4 px-2 pt-2 pb-6
+        "
+      >
       {selectedStory.story.map((result, index) => (
-        <StoryBlock 
-          key={index} 
-          storyId={result.story.storyId} 
-          media={result.story.media} 
-          category={result.story.category} 
-          website={result.story.website}
-          headTitle={result.story.headTitle} 
-          storyTitle={result.story.storyTitle} 
-          releaseDate={result.story.releaseDate} 
-          infoStory={result.story.infoStory} 
-          howtoviewStory={result.story.howtoviewStory}
-          url={result.story.url} 
-          pp={result.story.pp||0}
-          login={login}
-          userReadLater={result.userReadingData===null?null:result.userReadingData.read_later}
-          displayLogin={true}
-        />
+        <div key={index} className="pc:min-w-[290px] min-w-[260px]">
+          <StoryBlock 
+            key={index} 
+            storyId={result.story.storyId} 
+            media={result.story.media} 
+            category={result.story.category} 
+            website={result.story.website}
+            headTitle={result.story.headTitle} 
+            storyTitle={result.story.storyTitle} 
+            releaseDate={result.story.releaseDate} 
+            infoStory={result.story.infoStory} 
+            howtoviewStory={result.story.howtoviewStory}
+            url={result.story.url} 
+            pp={result.story.pp||0}
+            login={login}
+            userReadLater={result.userReadingData===null?null:result.userReadingData.read_later}
+            displayLogin={true}
+          />
+        </div>
       ))}
-    </div>
+      </div>
+      <ScrollBar orientation="horizontal" />
+    </ScrollArea>
 
     <div className='flex tablet:mt-4 pr-2 tablet:pr-0 pt-[42px] tablet:pt-0'>
         <Link
