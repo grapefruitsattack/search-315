@@ -1,11 +1,12 @@
 'use client'
 import React from "react"
-import type { Story } from '@/data/types';
+import type { Story, UserReadingData } from '@/data/types';
 import m_story from '@/data/m_story.json';
 import { HOW_TO_VIEW } from '@/features/common/const/StoryInfoConst';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 import Pagination from "@/features/common/components/Pagination";
 import { UseUserReading } from "@/features/app/search/provider/UserReadingProvider";
+import { LoaderIcon } from "lucide-react";
 
 
 const DISPLAY_CNT: number = 15;
@@ -14,16 +15,11 @@ function getSearchResult(
   searchParam:{
     infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; 
     ppType: number; andor: string; SortedAsc: number; page: number; readLaterType: string;
-  }
+  }, login: boolean,userReadingData: UserReadingData[] | null
   ):{
     result: {story:Story;readLater:number|null;}[],totalCnt: number,login:boolean
   }
 {
-  const {
-    login,
-    userReadingData,
-    isLoading,
-  } = UseUserReading();
 
   // ストーリー絞り込み
   let story: Story[] = m_story;
@@ -104,12 +100,29 @@ function getSearchResult(
 
 export default function SearchStoryResult({ searchParam }: { searchParam:{infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; ppType: number; andor: string; SortedAsc: number; page: number; readLaterType: string;} }) {
 
-  const post = getSearchResult(searchParam);
+  const {
+    login,
+    userReadingData,
+    isLoading,
+  } = UseUserReading();
+  const post = getSearchResult(searchParam,login,userReadingData);
   const resultData:{story:Story;readLater:number|null;}[] = post.result;
   const totalCnt:number = post.totalCnt;
 
   // ページネーション
   const maxPage: number = Math.ceil(totalCnt/DISPLAY_CNT);
+
+  if(isLoading===true){
+    return(
+      <div className="my-6 mx-auto">
+        <LoaderIcon
+          size={32}
+          color="#a8a8a8"
+          className="animate-pulse animate-spin"
+        />
+      </div>
+    )
+  }
 
   return (
   <>
@@ -121,6 +134,7 @@ export default function SearchStoryResult({ searchParam }: { searchParam:{infoId
     <div className="lg:flex px-2 mobileM:px-8 tablet:px-4 w-full">
       <div className="grid grid-flow-row-dense items-start gap-4 grid-cols-1 w-full">
         <>
+        
           {resultData === null || resultData.length===0 
           ?
           <div className="flex flex-col justify-center items-start ">

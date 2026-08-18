@@ -16,12 +16,9 @@ export async function DeleteReadingData(storyId: string, readLater: number) {
     .eq('id', session?.user?.id)
     .eq('story_id', storyId)
     .eq('read_later', readLater).select();
-
-    console.log(data);
   if (error||data===null||data.length===0) {
     console.error('Delete error:', error);
     throw ('削除に失敗しました');
   }
   revalidatePath("/");
-  // revalidatePath などもここで使える
 }

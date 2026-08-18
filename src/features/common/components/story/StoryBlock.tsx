@@ -94,26 +94,27 @@ export default function StoryBlock(
   };
   async function deleteIsReading(storyId: string, storyTItle: string) {
     await DeleteReadingData(storyId,1)
-    .then(() => {
-      setLoading(true);
-      return new Promise<void>((resolve) => {
-        window.setTimeout(() => {
-          setLoading(false);
-          resolve();
-        }, 1000);
-      });
-    })
-    .then(() => {
-      toast(`「${storyTitle}」を後で読むリストから削除しました`, {
-        action: {
-          label: "OK",
-          onClick: () => console.log("Undo"),
-        },
-      });
-    }).catch((e) => {
-      console.log(e);
-    }).finally(() => {
-    })
+      .then(() => {
+        setLoading(true);
+        return new Promise<void>((resolve) => {
+          window.setTimeout(() => {
+            setLoading(false);
+            resolve();
+          }, 1000);
+        });
+      })
+      .then(() => {
+        toast(`「${storyTitle}」を後で読むリストから削除しました`, {
+          action: {
+            label: "OK",
+            onClick: () => console.log("Undo"),
+          },
+        });
+      }).catch((e) => {
+        console.log(e);
+      }).finally(() => {
+      })
+    await mutate('/api/user-reading');
   };
   
 
@@ -123,8 +124,8 @@ export default function StoryBlock(
         w-full
         rounded-md
         font-sans 
-        bg-white hover:outline-green-400 hover:outline-4 shadow-lg
-        outline-none outline-green-400 outline-offset-0
+        bg-white hover:outline-green-400 hover:outline-4 
+        outline-none outline-zinc-600/30 outline-offset-0
       `}
     >
     <LoginModal disclosure={disclosure} description="ログインすると「後で読む」に登録できます！"/>
@@ -161,8 +162,8 @@ export default function StoryBlock(
       </div>
       <div className ="
         lg:text-2xl text-xl
-        underline underline-offset-2 decoration-green-400
-        decoration-1 group-hover:decoration-4
+        underline underline-offset-2 decoration-zinc-500
+        decoration-1 group-hover:decoration-4 group-hover:decoration-green-400
         leading-tight
         font-sans font-black
         text-zinc-800
@@ -266,7 +267,7 @@ export default function StoryBlock(
                       className='rounded-lg border-2 border-gray-600 w-full h-full
                       font-sans leading-tight text-white bg-gray-600 fill-white
                       transition-all duration-200 ease-out
-                      hover:ring-2 hover:ring-gray-600 hover:ring-offset-2 hover:shadow-[0_0_0_2px_rgba(0,0,0,1)]
+                      hover:ring-2 hover:ring-gray-600 hover:ring-offset-2 
                       active:scale-95
                       text-xs mobileS:text-sm lg:text-lg'
                     >
@@ -291,7 +292,7 @@ export default function StoryBlock(
                   className='rounded-lg border-2 border-gray-600 w-full h-full
                   font-sans leading-tight text-white bg-gray-600 fill-white
                   transition-all duration-200 ease-out
-                  hover:ring-2 hover:ring-gray-600 hover:ring-offset-2 hover:shadow-[0_0_0_2px_rgba(0,0,0,1)]
+                  hover:ring-2 hover:ring-gray-600 hover:ring-offset-2 
                   active:scale-90
                   text-xs mobileS:text-sm lg:text-lg'
               >

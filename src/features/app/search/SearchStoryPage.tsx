@@ -1,9 +1,6 @@
-'use client'
-import { useEffect } from "react";
-import { useSearchParams } from 'next/navigation'
+
 import SearchStoryResult from "./components/SearchStoryResult";
 import SearchStoryController from "./components/SearchStoryController";
-import { UseSearchLoading } from "@/features/app/search/provider/SearchLoadingProvider";
 import { Toaster } from 'sonner';
 import { LoaderIcon } from "lucide-react"
 
@@ -13,19 +10,10 @@ export default function SearchStoryPage(
   )
  {
 
-  const { loading, setLoading }= UseSearchLoading();
-  const searchParams = useSearchParams();
+  //const { loading, setLoading }= UseSearchLoading();
 
-  useEffect(() => {
 
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 200);
 
-    return () => clearTimeout(timer);
-
-  }, [searchParams]);
-  
   return (
     <>
     <Toaster position="top-center"/>
@@ -54,18 +42,7 @@ export default function SearchStoryPage(
       tablet:order-1 order-2 flex flex-col pb-64 tablet:pb-0
       max-w-[700px] tablet:min-w-[400px] tablet:h-[100%] tablet:overflow-y-scroll tablet:overflow-x-hidden"
   >
-    {loading
-      ? (
-        <div className="my-6 mx-auto">
-          <LoaderIcon
-            size={32}
-            color="#a8a8a8"
-            className="animate-pulse animate-spin"
-          />
-        </div>
-      )
-      : <SearchStoryResult searchParam={searchParam} />
-    }
+    <SearchStoryResult searchParam={searchParam} />
   </div>
 
   <div className="tablet:order-2 order-1 flex flex-col w-full tablet:max-w-[480px] tablet:ml-2 mx-auto">

@@ -5,6 +5,7 @@ import useSWR, { mutate } from 'swr';
 
 type UserReadingData = {
   story_id: string;
+  reading_date: string;
   read_later: number;
 };
 
