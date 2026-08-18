@@ -19,6 +19,7 @@ import StoryReadEditButton from "./components/StoryReadEditButton";
 import StoryReadLaterButton from "./components/StoryReadLaterButton";
 import StoryReadLaterEditButton from "./components/StoryReadLaterEditButton";
 import StoryRelation from "./components/StoryRelation";
+import { BookOpen, ExternalLink } from "lucide-react";
 
 export default async function StoryDetailedPage(
   { mainStoryData,relationStorysData,relationOtherData,login }
@@ -119,9 +120,8 @@ export default async function StoryDetailedPage(
           gap-1"
       >
         {/* Google Fonts Icons */}
-        <svg className="fill-gray-500 bg-white rounded px-[0.5px] w-[20px] h-[18px] tablet:w-[24px] tablet:h-[22px]" xmlns="http://www.w3.org/2000/svg" viewBox="10 -960 960 960">
-          <path d="M260-320q47 0 91.5 10.5T440-278v-394q-41-24-87-36t-93-12q-36 0-71.5 7T120-692v396q35-12 69.5-18t70.5-6Zm260 42q44-21 88.5-31.5T700-320q36 0 70.5 6t69.5 18v-396q-33-14-68.5-21t-71.5-7q-47 0-93 12t-87 36v394Zm-40 118q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113.5 15T480-740q51-30 106.5-45T700-800q52 0 102 12t96 36q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59ZM280-494Z"/>
-        </svg>
+
+        <BookOpen className="text-gray-500 bg-white rounded px-[0.5px] w-[20px] h-[18px] tablet:w-[24px] tablet:h-[22px]"/>
         <p className="pr-2">{'ストーリー'}</p>
       </div>
     </section>
@@ -244,9 +244,7 @@ export default async function StoryDetailedPage(
                     mobileM:my-0.5 my-1 
                   '>
                     {websiteName+'で読む'}
-                    <span className="">
-                      <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
-                    </span>
+                    <ExternalLink className="w-[17px] ml-px mt-auto"/>
                   </div>
               </button>
             </a>
@@ -302,9 +300,7 @@ export default async function StoryDetailedPage(
                     hover:ring-2 hover:ring-zinc-600 hover:ring-offset-2 hover:bg-zinc-200
                     active:scale-90'>
                     {'Googleで検索'}
-                    <span className="h-fit mobileL:h-[24px]">
-                      <svg className="inline-block w-[15px] h-[15px] mobileL:w-[18px] mobileL:h-[18px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
-                    </span>
+                    <ExternalLink className="w-[17px] ml-px mt-auto"/>
                 </button>
               </a>
             </div>
@@ -318,13 +314,11 @@ export default async function StoryDetailedPage(
             <div 
               className="
                   mobileL:text-2xl text-xl font-mono flex items-center w-full
-                  after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-                  mt-5
+                  after:h-[0.5px] after:grow after:bg-indigo-800/50 after:ml-[1rem] 
+                  mt-5 text-indigo-900 font-bold
               "
             >
-              <svg className="fill-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
-                <path d="M13 21V23H11V21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H9C10.1947 3 11.2671 3.52375 12 4.35418C12.7329 3.52375 13.8053 3 15 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H13ZM20 19V5H15C13.8954 5 13 5.89543 13 7V19H20ZM11 19V7C11 5.89543 10.1046 5 9 5H4V19H11Z"></path>
-              </svg>
+              <BookOpen className="mr-1 text-indigo-700"/>
               {'各話'}
             </div>
             <div className={`
@@ -412,9 +406,7 @@ export default async function StoryDetailedPage(
                                 mobileM:my-0.5 my-1 
                               '>
                                 {websiteName}
-                                <span className="">
-                                  <svg className="inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
-                                </span>
+                                <ExternalLink className="w-[16px] ml-px mt-auto"/>
                               </div>
                             </button>
                         </a>
