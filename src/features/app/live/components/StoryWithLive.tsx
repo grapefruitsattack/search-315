@@ -5,6 +5,10 @@ import type { Story,UserReadingData,RelationStoryOther } from '@/data/types';
 import m_story from '@/data/m_story.json';
 import relation_story_other from '@/data/relation_story_other.json';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
+import StoryCarousel from "@/features/common/components/StoryCarousel";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Toaster } from 'sonner';
+import { BookOpen } from "lucide-react";
 
 async function getData(
   storyIds: string[]
@@ -54,7 +58,7 @@ async function getData(
   });
 }
 
-export default async function P({ livePerId,liveId }: { livePerId: string; liveId: string; }) {
+export default async function StoryWithLive({ livePerId,liveId }: { livePerId: string; liveId: string; }) {
   const storyIds = relation_story_other.filter(data=>data.livePerId===livePerId||data.liveId===liveId).map(data=>data.storyId);
   const post = await getData(storyIds);
   const login = post.login;
@@ -65,42 +69,54 @@ export default async function P({ livePerId,liveId }: { livePerId: string; liveI
   {post.resultStoryData===null || post.resultStoryData.length===0
     ?<></>
     :<>
+      <Toaster position="top-center"/>
       <div 
         className="
             mobileL:text-2xl text-xl font-mono flex items-center w-full
-            after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-            mt-8
+            after:h-[0.5px] after:grow after:bg-indigo-800/50 after:ml-[1rem] 
+            text-indigo-900 font-bold
         "
       >
-        <svg className="fill-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
-          <path d="M13 21V23H11V21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H9C10.1947 3 11.2671 3.52375 12 4.35418C12.7329 3.52375 13.8053 3 15 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H13ZM20 19V5H15C13.8954 5 13 5.89543 13 7V19H20ZM11 19V7C11 5.89543 10.1046 5 9 5H4V19H11Z"></path>
-        </svg>
+        <BookOpen className="mr-1 text-indigo-700" />
         {'関連ストーリー'}
       </div>
-      <div className={`
-          items-start gap-4 grid-cols-1 tablet:grid-cols-2 mt-2
-          grid
-      `}>
-        {post.resultStoryData.map((result, index) => (
-          <StoryBlock 
-            key={index} 
-            storyId={result.story.storyId} 
-            media={result.story.media} 
-            category={result.story.category} 
-            website={result.story.website}
-            headTitle={result.story.headTitle} 
-            storyTitle={result.story.storyTitle} 
-            releaseDate={result.story.releaseDate}
-            infoStory={result.story.infoStory} 
-            howtoviewStory={result.story.howtoviewStory}
-            url={result.story.url} 
-            pp={result.story.pp||0}
-            login={login}
-            userReadLater={result.userReadingData===null?null:result.userReadingData.read_later}
-            displayLogin={true}
-          />
-        ))}
+      <div className='tablet:hidden'>
+        <StoryCarousel StoryArray={post.resultStoryData} displayCnt={1} login={login} uniqueCarouselKey={`live-${livePerId}`} />
       </div>
+      <ScrollArea 
+        type="always" 
+        className={`hidden tablet:flex h-fit w-full rounded-md  ${post.resultStoryData.length>=3&&'border'}`}
+      >
+        <div 
+          className="flex flex-row flex-nowrap
+          gap-4 lg:px-4 px-2 pt-4 pb-4
+          "
+        >
+        {post.resultStoryData.map((result, index) => (
+          <div key={index} className="pc:min-w-[290px] min-w-[260px]">
+            <StoryBlock 
+              key={index} 
+              storyId={result.story.storyId} 
+              media={result.story.media} 
+              category={result.story.category} 
+              website={result.story.website}
+              headTitle={result.story.headTitle} 
+              storyTitle={result.story.storyTitle} 
+              releaseDate={result.story.releaseDate} 
+              infoStory={result.story.infoStory} 
+              howtoviewStory={result.story.howtoviewStory}
+              url={result.story.url} 
+              pp={result.story.pp||0}
+              login={login}
+              userReadLater={result.userReadingData===null?null:result.userReadingData.read_later}
+              displayLogin={true}
+            />
+          </div>
+        ))}
+        </div>
+        <ScrollBar orientation="horizontal" />
+      </ScrollArea>
+
     </>
   }
   </>);

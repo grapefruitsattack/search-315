@@ -177,7 +177,7 @@ export default function SongContent({ result }: { result: SongMaster }) {
             <div className={`lg:w-auto inline-block row-span-1 lg:pr-2 pr-1`}>
               <a 
                 className="w-full"
-                href={`https://youtu.be/${result.trialYoutubeId}`}
+                href={`https://youtu.be/${youtubeId===''?result.trialYoutubeId:youtubeId}`}
                 target="_blank" rel="noopener noreferrer">
                   <button
                       className='rounded-lg border-2 border-red-500 w-full h-full

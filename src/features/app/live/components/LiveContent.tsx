@@ -1,4 +1,5 @@
-'use client'
+
+import { Suspense } from "react";
 import Link from 'next/link';
 import type { LiveMovie,LiveProduct,LiveMaster } from '@/data/types';
 import LiveProducts from '@/data/liveProducts.json';
@@ -9,6 +10,8 @@ import Products from './Products'
 import Movie from './Movie'
 import SetLists from './SetLists'
 import Performer from './Performer'
+import StoryWithLive from "@/features/app/live/components/StoryWithLive";
+import { LoaderIcon } from "lucide-react";
 
 export default function LiveContent({ selectedLivePerId,LiveData }: { selectedLivePerId:string,LiveData: LiveMaster[] }) {
 
@@ -57,7 +60,7 @@ export default function LiveContent({ selectedLivePerId,LiveData }: { selectedLi
           <p className="pr-2">{'ライブ・イベント'}</p>
         </div>
       </div>
-      <div className="pb-1">
+      <div className="">
         <div className='flex flex-col pb-4'>
           <div className="text-2xl lg:text-3xl font-mono font-bold inline-block">
             {LiveData[0].liveName}
@@ -139,36 +142,47 @@ export default function LiveContent({ selectedLivePerId,LiveData }: { selectedLi
         </div>
       </div>
 
-
+      <div className="flex flex-col gap-8 mt-8">
       
-      {/* 出演者 */}
-      <div className="">
-        <Performer livePerId={selectedLivePerId}/>
-      </div>
-      {/* セットリスト */}
-      <div className="mt-2">
-        <SetLists livePerId={selectedLivePerId} type={selectedLiveData.type}/>
-      </div>
-      
-      {/* 映像 */}
-      {movies === undefined || movies.length === 0
-        ?<></>
-        :
-        <section className="mt-10">
+        {/* 出演者 */}
+        <div className="">
+          <Performer livePerId={selectedLivePerId}/>
+        </div>
+        {/* セットリスト */}
+        <div className="">
+          <SetLists livePerId={selectedLivePerId} type={selectedLiveData.type}/>
+        </div>
+        
+        {/* 映像 */}
+        {movies === undefined || movies.length === 0
+          ?<></>
+          :
+          <section className="">
             <Movie results={movies}/>
-        </section>
-      }
-      {/* 製品 */}
-      {products === undefined || products.length === 0
-        ?<></>
-        :
-        <section className="mt-10">
-          <Products results={Array.from(new Map(products.map((data) => [data.productId, data])).values())}/>
-        </section>
-      }
-
-
-    
+          </section>
+        }
+        {/* 製品 */}
+        {products === undefined || products.length === 0
+          ?<></>
+          :
+          <section className="">
+            <Products results={Array.from(new Map(products.map((data) => [data.productId, data])).values())}/>
+          </section>
+        }
+        <div className="">
+          <Suspense fallback={      
+            <div className="flex my-6 ">
+              <LoaderIcon
+                size={32}
+                color="#a8a8a8"
+                className="animate-pulse animate-spin mx-auto"
+              />
+            </div>}
+          >
+            <StoryWithLive livePerId={selectedLivePerId} liveId={selectedLiveData.liveId}/>
+          </Suspense>
+      </div>
+    </div>
     </>
   )
 }

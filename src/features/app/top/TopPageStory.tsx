@@ -106,7 +106,7 @@ export default function TopPageStory(
       <ScrollBar orientation="horizontal" />
     </ScrollArea>
     <div className='tablet:hidden'>
-      <StoryCarousel StoryArray={selectedStory.story} displayCnt={1} login={login} />
+      <StoryCarousel StoryArray={selectedStory.story} displayCnt={1} login={login} uniqueCarouselKey={`toppage`} />
     </div>
 
     <div className='flex tablet:mt-4 pr-2 tablet:pr-0 pt-[42px] tablet:pt-0'>

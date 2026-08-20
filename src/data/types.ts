@@ -164,6 +164,7 @@ export type ShareModalTabInfo = {
 };
 
 export type LivePerformer = {
+  liveId: string;
   livePerId: string;
   singingInfoId: string;
   singingInfoName: string;

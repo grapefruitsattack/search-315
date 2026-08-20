@@ -27,19 +27,23 @@ export default function LiveBlock(
       ?liveMaster.filter(data=>liveId===data.liveId).map(data=>data.perDate).join(',')
       :liveInfo.perDate;
   const perDateArray: string[] 
-    = dateStr.split(',').map(str=>{
-      return new Date(
-        Number(str.substring(0,4))
-        ,Number(str.substring(4,6))-1
-        ,Number(str.substring(6,8))).toLocaleDateString("ja-JP")
-    });
+    = Array.from(
+        new Set(dateStr.split(',').map(str=>{
+        return new Date(
+          Number(str.substring(0,4))
+          ,Number(str.substring(4,6))-1
+          ,Number(str.substring(6,8))).toLocaleDateString("ja-JP")
+      })
+    ));
+  const displayDate: string 
+    = perDateArray.length>2?`${perDateArray[0]} - ${perDateArray[perDateArray.length-1]}`:perDateArray.join('、');
 
 return(<>
   <div key={livePerId===''?liveId:livePerId} className = "flex flex-col mt-auto">
     <Link 
       href={{ pathname: `/live/${liveInfo.livePerId}`}}
-      className={`z-40
-        text-xs ml-1 px-1 w-fit rounded-t-md text-black
+      className={`z-10
+        text-sm ml-1 px-2 w-fit rounded-t-md text-black
         ${liveInfo.type===''
             ?'bg-cyan-300 '
           :liveInfo.type==='3dlive'
@@ -81,8 +85,8 @@ return(<>
       `}
       href={{ pathname: `/live/${liveInfo.livePerId}`}}
       >
-        <div className='flex flex-wrap text-xs text-stone-500 ml-1'>
-          {perDateArray.map((data,index)=><p key={index}>{`${data}${(index+1)!==perDateArray.length?'、':''}`}</p>)}
+        <div className='flex text-xs text-stone-500 ml-1'>
+          {displayDate}
         </div>
         <div className={`
           flex flex-wrap place-content-center

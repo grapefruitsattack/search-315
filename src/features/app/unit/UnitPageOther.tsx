@@ -1,11 +1,10 @@
 'use client'
 import { useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import Link from "next/link";
 import singingMaster from '@/data/singingMaster.json';
 import livePerformer from '@/data/livePerformer.json'
 import liveMaster from '@/data/liveMaster.json';
-import type { SingingMaster, Video, LiveMaster } from '@/data/types';
+import type { SingingMaster, Video, LiveMaster, LivePerformer } from '@/data/types';
 import {SearchVideo} from "@/features/common/utils/SearchVideo";
 import {VideoCarousel} from "@/features/common/components/video/VideoCarousel";
 import LiveBlock from "@/features/common/components/LiveBlock";
@@ -36,17 +35,20 @@ export default function UnitPageOther({ unitId,unitMember }: { unitId: string; u
   ];
 
   //ライブ情報
-  const liveInfos: LiveMaster[] 
-      = livePerformer.filter(data => data.singingInfoId === unitId)
-        .map(data=>liveMaster.find(masterData=>data.livePerId===masterData.livePerId))
-        .filter((item): item is LiveMaster => typeof item == 'object').slice().reverse();
-  const liveInfoArray: {liveArray:LiveMaster[],infoId:string,infoName:string}[] 
+  const liveInfos: LivePerformer[] 
+    = livePerformer.filter(data => data.singingInfoId === unitId).toReversed()
+    .filter(
+      (element, index, self) => element.liveId===''||(self.findIndex((e) => e.liveId === element.liveId) === index)
+    );
+
+  const liveInfoArray: {liveArray:LivePerformer[],infoId:string,infoName:string}[] 
     = [{liveArray:liveInfos,infoId:unitId,infoName:'ユニット'}];
   unitMember.forEach(memberData=>{
-    const memberLiveInfos: LiveMaster[] 
-        = livePerformer.filter(data => data.singingInfoId === memberData.singingInfoId)
-          .map(data=>liveMaster.find(masterData=>data.livePerId===masterData.livePerId))
-          .filter((item): item is LiveMaster => typeof item == 'object').slice().reverse();
+    const memberLiveInfos: LivePerformer[] 
+      = livePerformer.filter(data => data.singingInfoId === memberData.singingInfoId).toReversed()
+      .filter(
+        (element, index, self) => element.liveId===''||(self.findIndex((e) => e.liveId === element.liveId) === index)
+      );
     liveInfoArray.push({
       liveArray:memberLiveInfos,
       infoId:memberData.singingInfoId,
@@ -155,9 +157,9 @@ export default function UnitPageOther({ unitId,unitMember }: { unitId: string; u
             grid-cols-2 tablet:grid-cols-4 lg:gap-4 gap-4 pt-1 
             px-4
         `}>
-        {live.liveArray.map((result) => (
-          <div className="" key={result.livePerId+result.liveId}>
-            <LiveBlock livePerId={result.livePerId} liveId={result.liveId} />
+        {live.liveArray.map((result,index) => (
+          <div className="" key={index}>
+            <LiveBlock livePerId={result.liveId===""?result.livePerId:''} liveId={result.liveId} />
           </div>
         ))}
         </div>

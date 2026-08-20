@@ -14,30 +14,82 @@ import type { UserReadingData,Story } from '@/data/types';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 
 export default function StoryCarousel(
-  { StoryArray,displayCnt,login}
-  : { StoryArray: {story: Story;userReadingData: UserReadingData | null;}[], displayCnt: number, login:boolean }
+  { StoryArray,displayCnt,login,uniqueCarouselKey}
+  : { StoryArray: {story: Story;userReadingData: UserReadingData | null;}[], displayCnt: number, login:boolean, uniqueCarouselKey: string }
 ) {
+  const CAROUSEL_KEY = `story-carousel-${uniqueCarouselKey}`;
+
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
-
+  
+  // Carousel API の初期化時
   React.useEffect(() => {
-    setCurrent(0);
-  }, [StoryArray]);
-
-  React.useEffect(() => {
-    if (!api) {
-      return;
-    }
+    if (!api) return;
 
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
 
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-    api.scrollTo(0);
-  }, [api,StoryArray]);
+    // 前回の位置を復元
+    const saved = sessionStorage.getItem(CAROUSEL_KEY);
+
+
+    const index = Number(saved !== null?'0':saved);
+
+    if (
+      Number.isInteger(index) &&
+      index >= 0 &&
+      index < api.scrollSnapList().length
+    ) {
+      // Emblaの初期化が完全に終わってから復元
+      requestAnimationFrame(() => {
+        api.scrollTo(index, true);
+      });
+    }
+    
+
+    const handleSelect = () => {
+      const index = api.selectedScrollSnap();
+
+      setCurrent(index + 1);
+
+      sessionStorage.setItem(
+        CAROUSEL_KEY,
+        String(index)
+      );
+    };
+
+    api.on("select", handleSelect);
+
+    return () => {
+      api.off("select", handleSelect);
+    };
+  }, [api, CAROUSEL_KEY]);
+
+
+  if(StoryArray.length<=displayCnt) {
+    return(
+      <div className={`py-1`} key={StoryArray[0].story.storyId}>
+        <StoryBlock
+          key={StoryArray[0].story.storyId}
+          storyId={StoryArray[0].story.storyId} 
+          media={StoryArray[0].story.media} 
+          category={StoryArray[0].story.category} 
+          website={StoryArray[0].story.website}
+          headTitle={StoryArray[0].story.headTitle} 
+          storyTitle={StoryArray[0].story.storyTitle} 
+          releaseDate={StoryArray[0].story.releaseDate} 
+          infoStory={StoryArray[0].story.infoStory} 
+          howtoviewStory={StoryArray[0].story.howtoviewStory}
+          url={StoryArray[0].story.url} 
+          pp={StoryArray[0].story.pp||0}
+          login={login}
+          userReadLater={StoryArray[0].userReadingData===null?null:StoryArray[0].userReadingData.read_later}
+          displayLogin={true}
+        />
+      </div>
+    )
+  }
 
   if(displayCnt!==3){
     return (

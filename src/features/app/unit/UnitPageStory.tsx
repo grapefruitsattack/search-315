@@ -82,7 +82,7 @@ export default function UnitPageStory(
         )}
     </div>
     <div className='tablet:hidden'>
-      <StoryCarousel StoryArray={selectedStory.story} displayCnt={1} login={login} />
+      <StoryCarousel StoryArray={selectedStory.story} displayCnt={1} login={login} uniqueCarouselKey={`unit-new-${selectedStory.type}-${unitId}`} />
     </div>
     <ScrollArea 
       type="always" 
@@ -159,7 +159,7 @@ export default function UnitPageStory(
       </div>
     </div>
     <div className='tablet:hidden'>
-      <StoryCarousel StoryArray={post.archiveStoryData} displayCnt={1} login={login} />
+      <StoryCarousel StoryArray={post.archiveStoryData} displayCnt={1} login={login} uniqueCarouselKey={`unit-archive-${unitId}`} />
     </div>
     <div className={`
         items-start gap-4 hidden tablet:grid tablet:grid-cols-3 mt-2
