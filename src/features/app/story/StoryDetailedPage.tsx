@@ -119,8 +119,6 @@ export default async function StoryDetailedPage(
           text-white py-[1px] tablet:py-0
           gap-1"
       >
-        {/* Google Fonts Icons */}
-
         <BookOpen className="text-gray-500 bg-white rounded px-[0.5px] w-[20px] h-[18px] tablet:w-[24px] tablet:h-[22px]"/>
         <p className="pr-2">{'ストーリー'}</p>
       </div>

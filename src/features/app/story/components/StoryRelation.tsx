@@ -41,9 +41,41 @@ export default async function StoryRelation(
         <BookOpen  className="mr-1 text-indigo-700"/>
         {'関連ストーリー'}
       </div>
-      <div className={`
+      <ScrollArea 
+        type="always" 
+        className={`hidden tablet:flex h-fit w-full rounded-md  ${relationStorysData.length>=3&&'border'}`}
+      >
+        <div 
+          className="flex flex-row flex-nowrap
+          gap-3 lg:px-3 px-2 pt-4 pb-4
+          "
+        >
+          {relationStorysData.map((result, index) => (
+            <div key={index} className="pc:min-w-[290px] min-w-[260px]">
+              <StoryBlock 
+                key={index} 
+                storyId={result.story.storyId} 
+                media={result.story.media} 
+                category={result.story.category} 
+                website={result.story.website}
+                headTitle={result.story.headTitle} 
+                storyTitle={result.story.storyTitle} 
+                releaseDate={result.story.releaseDate} 
+                infoStory={result.story.infoStory} 
+                howtoviewStory={result.story.howtoviewStory}
+                url={result.story.url} 
+                pp={result.story.pp||0}
+                login={login}
+                userReadLater={result.userReadingData===null?null:result.userReadingData.read_later}
+                displayLogin={true}
+              />
+            </div>
+          ))}
+        </div>
+        <ScrollBar orientation="horizontal" />
+      </ScrollArea>
+      <div className={`grid tablet:hidden
           items-start gap-4 grid-cols-1 tablet:grid-cols-2 mt-2
-          grid
       `}>
         {relationStorysData.map((result, index) => (
           <StoryBlock 
