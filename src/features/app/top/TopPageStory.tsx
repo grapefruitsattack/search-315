@@ -4,7 +4,7 @@ import Link from 'next/link';
 import type { SingingMaster,Story,UserReadingData } from '@/data/types';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 import StoryCarousel from "@/features/common/components/StoryCarousel";
-import { Bell, House } from "lucide-react";
+import { Bell, BookOpen } from "lucide-react";
 
 export default function TopPageStory(
   { post }
@@ -37,14 +37,13 @@ export default function TopPageStory(
     <>
     <div className="flex items-center ">
       <div 
-        className="flex flex-col tablet:flex-row justify-start w-fit
-        tezt-xl mobileM:text-2xl font-mono pb-1
+        className="
+            mobileL:text-2xl text-xl font-mono flex items-center w-full
+            after:h-[0.5px] after:grow after:bg-indigo-800/50 after:ml-[1rem] 
+            text-indigo-900 font-bold
         "
       >
-        <div className='flex items-center justify-start'>
-          <Bell className="w-[20px] h-[20px] mobileM:w-[24px] mobileM:h-[24px] text-red-600"/>
-          {'新着ストーリー'}
-        </div>
+        <BookOpen className="mr-1 text-indigo-700" />{'最新ストーリー'}
       </div>
       <div className='h-[0.5px] grow bg-slate-900/50 ml-[1rem] '>
       {''}
