@@ -2,7 +2,6 @@
 import { useState } from "react";
 import songMaster from '@/data/songMaster.json';
 import type { SongMaster } from '@/data/types';
-import SongBlock from "../../../common/components/SongBlock";
 import SongCarousel from "@/features/common/components/SongCarousel";
 
 export default function OtherVersion({ id ,otherVersionSongs }: { id: string, otherVersionSongs: SongMaster[] }) {
@@ -28,7 +27,7 @@ export default function OtherVersion({ id ,otherVersionSongs }: { id: string, ot
               max-w-[700px] w-full
               px-0 tablet:px-2
             `}>
-              <SongCarousel songArray={resultSort} displaySongCnt={5} displayArtist={true} useArtistBadge={true} />
+              <SongCarousel songArray={resultSort} displaySongCnt={5} displayArtist={true} useArtistBadge={true} displayReleaseDate={false} />
             </section>
             </>
     )

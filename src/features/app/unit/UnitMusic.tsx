@@ -52,7 +52,7 @@ export default function UnitMusic({ unitId }: { unitId: string; }) {
           px-0 mobileM:px-2
           
         `}>
-          <SongCarousel songArray={unitSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false}/>
+          <SongCarousel songArray={unitSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false} displayReleaseDate={true} />
         </div>
       </div>
       <div 
@@ -70,7 +70,7 @@ export default function UnitMusic({ unitId }: { unitId: string; }) {
           px-0 mobileM:px-2
           
         `}>
-          <SongCarousel songArray={collaboSongs} displaySongCnt={4} displayArtist={true} useArtistBadge={false}/>
+          <SongCarousel songArray={collaboSongs} displaySongCnt={4} displayArtist={true} useArtistBadge={false} displayReleaseDate={true} />
         </div>
       </div>
       {coverSongs.length===0 
@@ -91,7 +91,7 @@ export default function UnitMusic({ unitId }: { unitId: string; }) {
           px-0 mobileM:px-2
           
         `}>
-          <SongCarousel songArray={coverSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false}/>
+          <SongCarousel songArray={coverSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false} displayReleaseDate={true} />
         </div>
       </div>
       <div 
@@ -109,7 +109,7 @@ export default function UnitMusic({ unitId }: { unitId: string; }) {
           px-0 mobileM:px-2
           
         `}>
-          <SongCarousel songArray={unitVerSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false}/>
+          <SongCarousel songArray={unitVerSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false} displayReleaseDate={true} />
         </div>
       </div>
 
