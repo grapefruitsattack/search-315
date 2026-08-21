@@ -128,7 +128,9 @@ export default async function StoryRelation(
         ))}
       </div>
       <div 
-        className={` h-fit w-full rounded-md overflow-x-scroll overflow-y-hidden`}
+        className={` h-fit w-full rounded-md overflow-x-auto overflow-y-hidden
+          ${relationAlbum.length<=0&&'hidden'}
+          `}
       >
         <div className={`
         flex flex-row flex-nowrap
