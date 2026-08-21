@@ -41,7 +41,7 @@ export default async function StoryRelation(
         {'関連ストーリー'}
       </div>
       <div 
-        className={`hidden tablet:flex h-fit w-full rounded-md  overflow-x-scroll overflow-y-hidden`}
+        className={`hidden tablet:flex h-fit w-full rounded-md  overflow-x-auto overflow-y-hidden`}
       >
         <div 
           className="flex flex-row flex-nowrap
