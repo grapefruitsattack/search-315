@@ -5,7 +5,6 @@ import type { SingingMaster,Story,UserReadingData } from '@/data/types';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 import StoryCarousel from "@/features/common/components/StoryCarousel";
 import { Toaster } from 'sonner';
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Bell, House } from "lucide-react";
 
 export default function UnitPageStory(
@@ -84,9 +83,8 @@ export default function UnitPageStory(
     <div className='tablet:hidden'>
       <StoryCarousel StoryArray={selectedStory.story} displayCnt={1} login={login} uniqueCarouselKey={`unit-new-${selectedStory.type}-${unitId}`} />
     </div>
-    <ScrollArea 
-      type="always" 
-      className="hidden tablet:flex h-fit w-full rounded-md border "
+    <div 
+      className="hidden tablet:flex h-fit w-full rounded-md overflow-x-scroll overflow-y-hidden"
     >
       <div 
         className="flex flex-row flex-nowrap
@@ -115,8 +113,7 @@ export default function UnitPageStory(
         </div>
       ))}
       </div>
-      <ScrollBar orientation="horizontal" />
-    </ScrollArea>
+    </div>
 
     <div className='flex tablet:mt-4 pr-2 tablet:pr-0 pt-[42px] tablet:pt-0'>
         <Link

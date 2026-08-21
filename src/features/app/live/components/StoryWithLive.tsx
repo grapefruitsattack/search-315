@@ -104,9 +104,8 @@ export default async function StoryWithLive({ livePerId,liveId }: { livePerId: s
           />
         ))}
       </div>
-      <ScrollArea 
-        type="always" 
-        className={`hidden tablet:flex w-full rounded-md `}
+      <div 
+        className={`hidden tablet:flex w-full rounded-md overflow-x-scroll overflow-y-hidden `}
       >
         <div 
           className="flex flex-row flex-nowrap w-max
@@ -135,8 +134,7 @@ export default async function StoryWithLive({ livePerId,liveId }: { livePerId: s
           </div>
         ))}
         </div>
-        <ScrollBar orientation="horizontal" />
-      </ScrollArea>
+      </div>
 
     </>
   }

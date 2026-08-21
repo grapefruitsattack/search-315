@@ -4,7 +4,6 @@ import Link from 'next/link';
 import type { SingingMaster,Story,UserReadingData } from '@/data/types';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 import StoryCarousel from "@/features/common/components/StoryCarousel";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Bell, House } from "lucide-react";
 
 export default function TopPageStory(
@@ -72,9 +71,8 @@ export default function TopPageStory(
         </button>
         )}
     </div>
-    <ScrollArea 
-      type="always" 
-      className="hidden tablet:flex h-fit w-full rounded-md border "
+    <div 
+      className="hidden tablet:flex h-fit w-full rounded-md border overflow-x-scroll overflow-y-hidden"
     >
       <div 
         className="flex flex-row flex-nowrap
@@ -103,8 +101,7 @@ export default function TopPageStory(
           </div>
         ))}
       </div>
-      <ScrollBar orientation="horizontal" />
-    </ScrollArea>
+    </div>
     <div className='tablet:hidden'>
       <StoryCarousel StoryArray={selectedStory.story} displayCnt={1} login={login} uniqueCarouselKey={`toppage`} />
     </div>

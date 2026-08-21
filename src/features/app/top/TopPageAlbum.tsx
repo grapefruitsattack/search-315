@@ -2,15 +2,13 @@
 import albumMaster from '@/data/albumMaster.json';
 import type { Albums } from '@/data/types';
 import AlbumBlock from "@/features/common/components/AlbumBlock";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 export default function TopPageAlbum({ }: { }) {
   const displayAlbumData: Albums[] = albumMaster.toReversed().slice(0,10);
 
   return(<>
-    <ScrollArea 
-      type="always" 
-      className=" h-fit w-full rounded-md border "
+    <div 
+      className=" h-fit w-full rounded-md border overflow-x-scroll overflow-y-hidden"
     >
       <div className={`
       flex flex-row flex-nowrap
@@ -26,7 +24,6 @@ export default function TopPageAlbum({ }: { }) {
           </div>
           ))}
       </div>
-      <ScrollBar orientation="horizontal" />
-    </ScrollArea>
+    </div>
   </>)
 }

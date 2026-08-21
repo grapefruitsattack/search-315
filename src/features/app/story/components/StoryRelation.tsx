@@ -7,7 +7,6 @@ import StoryBlock from "@/features/common/components/story/StoryBlock";
 import LiveBlock from '@/features/common/components/LiveBlock';
 import {VideoBlock} from "@/features/common/components/video/VideoBlock";
 import {VideoCarousel} from "@/features/common/components/video/VideoCarousel";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { SquarePlay, BookOpen, Music, MicVocal } from "lucide-react";
 
 export default async function StoryRelation(
@@ -41,9 +40,8 @@ export default async function StoryRelation(
         <BookOpen  className="mr-1 text-indigo-700"/>
         {'関連ストーリー'}
       </div>
-      <ScrollArea 
-        type="always" 
-        className={`hidden tablet:flex h-fit w-full rounded-md  ${relationStorysData.length>=3&&'border'}`}
+      <div 
+        className={`hidden tablet:flex h-fit w-full rounded-md  overflow-x-scroll overflow-y-hidden`}
       >
         <div 
           className="flex flex-row flex-nowrap
@@ -72,8 +70,7 @@ export default async function StoryRelation(
             </div>
           ))}
         </div>
-        <ScrollBar orientation="horizontal" />
-      </ScrollArea>
+      </div>
       <div className={`grid tablet:hidden
           items-start gap-4 grid-cols-1 tablet:grid-cols-2 mt-2
       `}>
@@ -130,9 +127,8 @@ export default async function StoryRelation(
         />
         ))}
       </div>
-      <ScrollArea 
-        type="always" 
-        className={` h-fit w-full rounded-md ${relationAlbum.length<=0&&'hidden'}`}
+      <div 
+        className={` h-fit w-full rounded-md overflow-x-scroll overflow-y-hidden`}
       >
         <div className={`
         flex flex-row flex-nowrap
@@ -148,8 +144,7 @@ export default async function StoryRelation(
             </div>
           ))}
         </div>
-        <ScrollBar orientation="horizontal" />
-      </ScrollArea>
+      </div>
   </div>
   }
   {relationLive.length===0 
