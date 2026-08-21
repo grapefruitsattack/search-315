@@ -16,7 +16,7 @@ export default function TopPageSong({ }: { }) {
     max-w-[700px] w-full
     px-0 tablet:px-2
   `}>
-    <SongCarousel songArray={displaySongData} displaySongCnt={4} displayArtist={true} useArtistBadge={true} />
+    <SongCarousel songArray={displaySongData} displaySongCnt={4} displayArtist={true} useArtistBadge={true} displayReleaseDate={true} useBadgeShortName={1} />
   </div>
   </>)
 }

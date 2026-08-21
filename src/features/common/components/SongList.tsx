@@ -16,8 +16,8 @@ import { ExternalLink } from 'lucide-react';
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
 export default function SongList(
-  { songId,index,displayArtist,useArtistBadge,displayArtwork,displayReleaseDate }
-  : { songId: string, index: number, displayArtist: boolean, useArtistBadge: boolean, displayArtwork: boolean, displayReleaseDate:boolean }
+  { songId,index,displayArtist,useArtistBadge,displayArtwork,displayReleaseDate,useBadgeShortName=0 }
+  : { songId: string, index: number, displayArtist: boolean, useArtistBadge: boolean, displayArtwork: boolean, displayReleaseDate:boolean, useBadgeShortName?:number, }
 ) {
   const song: SongMaster = songMaster.find((data=>data.songId===songId)) as SongMaster;
 
@@ -94,7 +94,7 @@ export default function SongList(
             {artistArray.length <= 0 || useArtistBadge===false
               ?<p className="text-sm leading-tight text-zinc-700 truncate">{song?.displayArtist}</p>
               :artistArray.map(
-                (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={0} size={'block'}/></div>))
+                (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={useBadgeShortName} size={'block'}/></div>))
             }
           </div>
         </div>
