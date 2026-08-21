@@ -48,8 +48,9 @@ export default function LiveContent({ selectedLivePerId,LiveData }: { selectedLi
   return(
     <>
       <div 
-        className="mb-2 bg-gray-500 mobileS:bg-gradient-to-r from-gray-500 tablet:from-50% from-80% rounded 
-          mobileM:mx-0 mx-1"
+        className="mb-2 mobileM:mx-0 mx-1 rounded
+          bg-gradient-to-r from-gray-500 mobileS:to-gray-50 mobileL:from-50% from-80% to-gray-500
+          "
       >
         <div 
           className="
