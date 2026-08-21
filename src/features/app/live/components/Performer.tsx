@@ -22,45 +22,49 @@ export default function Performer({ livePerId }: { livePerId: string }) {
 
     return(
     <>
-        <div 
-          className="
-            text-2xl font-mono flex items-center w-full mb-2
-            after:h-[0.5px] after:grow after:bg-indigo-800/50 after:ml-[1rem] 
-            text-indigo-900 font-bold
-          "
-        >
-          <UserRound className="mr-1 text-indigo-700" />
-          {'出演'}
-        </div>
-
-        {livePerformerResults.length === 0
-          ?<></>
-          :<>
-            <div className='flex flex-wrap relative text-sm font-mono gap-y-2 gap-x-1 tablet:gap-y-1 tablet:gap-x-2'>
+      {livePerformerResults.length === 0
+        ?<></>
+        :<>
+          <div 
+            className="
+              mobileL:text-2xl text-xl font-mono flex items-center w-full mb-2
+              after:h-[0.5px] after:grow after:bg-indigo-800/50 after:ml-[1rem] 
+              text-indigo-900 font-bold
+            "
+          >
+            <UserRound className="mr-1 text-indigo-700" />
+            {'出演'}
+          </div>
 
 
-                {livePerformerResults.map(
-                  (result, index) => {
-                    if(result.singingInfoId === "") {
-                      return (
-                      <div 
-                        key={result.singingInfoName}
-                        className='
-                        bg-sky-300 
-                        justify-center font-bold rounded-sm py-0.5 px-2
-                        text-xs mobileS:text-sm tablet:text-base
-                        '
-                      >
-                        {result.singingInfoName}
-                      </div>
-                      )
-                    }
-                    return (<IdolBadge id={result.singingInfoId} useShortName={0} size={'normal'} key={index} linkType=''/>);
-                  })}
+          <div 
+            className='flex flex-wrap relative text-sm font-mono gap-y-2 gap-x-1 tablet:gap-y-1 tablet:gap-x-2
+            mobileM:mx-1 mobileS:mx-2 mx-1'
+          >
 
-            </div>
-          </>
-        }
+
+              {livePerformerResults.map(
+                (result, index) => {
+                  if(result.singingInfoId === "") {
+                    return (
+                    <div 
+                      key={result.singingInfoName}
+                      className='
+                      bg-sky-300 
+                      justify-center font-bold rounded-sm py-0.5 px-2
+                      text-xs mobileS:text-sm tablet:text-base
+                      '
+                    >
+                      {result.singingInfoName}
+                    </div>
+                    )
+                  }
+                  return (<IdolBadge id={result.singingInfoId} useShortName={0} size={'normal'} key={index} linkType=''/>);
+                })}
+
+          </div>
+        </>
+      }
     </>
     )
 }

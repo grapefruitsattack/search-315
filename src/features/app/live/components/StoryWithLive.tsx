@@ -80,8 +80,29 @@ export default async function StoryWithLive({ livePerId,liveId }: { livePerId: s
         <BookOpen className="mr-1 text-indigo-700" />
         {'関連ストーリー'}
       </div>
-      <div className='tablet:hidden'>
-        <StoryCarousel StoryArray={post.resultStoryData} displayCnt={1} login={login} uniqueCarouselKey={`live-${livePerId}`} />
+      <div className={`grid tablet:hidden
+        items-start gap-4 grid-cols-1 tablet:grid-cols-2 mt-2
+        mobileM:mx-1 mobileS:mx-2 mx-1
+      `}>
+        {post.resultStoryData.map((result, index) => (
+          <StoryBlock
+            key={index} 
+            storyId={result.story.storyId} 
+            media={result.story.media} 
+            category={result.story.category} 
+            website={result.story.website}
+            headTitle={result.story.headTitle} 
+            storyTitle={result.story.storyTitle} 
+            releaseDate={result.story.releaseDate} 
+            infoStory={result.story.infoStory} 
+            howtoviewStory={result.story.howtoviewStory}
+            url={result.story.url} 
+            pp={result.story.pp||0}
+            login={login}
+            userReadLater={result.userReadingData===null?null:result.userReadingData.read_later}
+            displayLogin={true}
+          />
+        ))}
       </div>
       <ScrollArea 
         type="always" 
@@ -89,7 +110,7 @@ export default async function StoryWithLive({ livePerId,liveId }: { livePerId: s
       >
         <div 
           className="flex flex-row flex-nowrap
-          gap-4 lg:px-4 px-2 pt-4 pb-4
+          gap-3 lg:px-3 px-2 pt-4 pb-4
           "
         >
         {post.resultStoryData.map((result, index) => (

@@ -69,7 +69,7 @@ export default function SetLists({ livePerId, type }: { livePerId: string, type:
     <>
         <div 
           className="
-            text-2xl font-mono flex items-center w-full
+            mobileL:text-2xl text-xl font-mono flex items-center w-full
             after:h-[0.5px] after:grow after:bg-indigo-800/50 after:ml-[1rem] 
             text-indigo-900 font-bold
           "
