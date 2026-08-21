@@ -106,7 +106,7 @@ export default async function StoryWithLive({ livePerId,liveId }: { livePerId: s
       </div>
       <ScrollArea 
         type="always" 
-        className={`hidden tablet:flex h-fit w-full rounded-md  ${post.resultStoryData.length>=3&&'border'}`}
+        className={`hidden tablet:flex w-full rounded-md `}
       >
         <div 
           className="flex flex-row flex-nowrap w-max
