@@ -109,7 +109,7 @@ export default async function StoryWithLive({ livePerId,liveId }: { livePerId: s
         className={`hidden tablet:flex h-fit w-full rounded-md  ${post.resultStoryData.length>=3&&'border'}`}
       >
         <div 
-          className="flex flex-row flex-nowrap
+          className="flex flex-row flex-nowrap w-max
           gap-3 lg:px-3 px-2 pt-4 pb-4
           "
         >
