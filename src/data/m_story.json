@@ -37859,7 +37859,7 @@
     "category": "dof",
     "website": "asb",
     "headTitle": "",
-    "storyTitle": "日常での1コマ（2021/01特別版）",
+    "storyTitle": "日常での1コマ（シリーズ15周年記念特別版）",
     "releaseDate": "20210117",
     "subCnt": 4,
     "voiceAtRelease": 0,
@@ -46653,6 +46653,42 @@
   },
   {
     "seq": 579,
+    "storyId": "3bxnfu4cbhz7tmb5",
+    "media": 1,
+    "category": "comics",
+    "website": "asb",
+    "headTitle": "",
+    "storyTitle": "2nd Anniversary Live ～感謝の言葉～Vol.2",
+    "releaseDate": "20190722",
+    "subCnt": 3,
+    "voiceAtRelease": 0,
+    "voice": 0,
+    "still": 0,
+    "url": "https://asobistory.asobistore.jp/comic/detail/7zlwpo324rk14r3",
+    "releaseDateSourceUrl": "",
+    "pp": 0,
+    "infoStory": [
+      {
+        "infoId": "HIJ02",
+        "personFlg": 1
+      },
+      {
+        "infoId": "HIJ03",
+        "personFlg": 1
+      },
+      {
+        "infoId": "HIJ05",
+        "personFlg": 1
+      }
+    ],
+    "howtoviewStory": [],
+    "relation": [
+      "p9ihpnqedie0r5i4",
+      "i1gtzefj95726cw5"
+    ]
+  },
+  {
+    "seq": 578,
     "storyId": "od9xjll4cs3aqq7w",
     "media": 1,
     "category": "comics",
@@ -46707,7 +46743,7 @@
     ]
   },
   {
-    "seq": 578,
+    "seq": 577,
     "storyId": "n5798tw3d9wbdgze",
     "media": 1,
     "category": "moba_event",
@@ -46769,7 +46805,7 @@
     ]
   },
   {
-    "seq": 577,
+    "seq": 576,
     "storyId": "bl2j9xnc2ntros2c",
     "media": 1,
     "category": "comics",
@@ -46820,7 +46856,7 @@
     ]
   },
   {
-    "seq": 576,
+    "seq": 575,
     "storyId": "axj3l9aampnhu75d",
     "media": 1,
     "category": "moba_event",
@@ -46878,7 +46914,7 @@
     ]
   },
   {
-    "seq": 575,
+    "seq": 574,
     "storyId": "6mu24559qw7bjuuj",
     "media": 1,
     "category": "comics",
@@ -46921,7 +46957,7 @@
     ]
   },
   {
-    "seq": 574,
+    "seq": 573,
     "storyId": "sszdscx04oq2zqap",
     "media": 1,
     "category": "moba_event",
@@ -46966,7 +47002,7 @@
     ]
   },
   {
-    "seq": 573,
+    "seq": 572,
     "storyId": "9spb4f571lai0b9i",
     "media": 1,
     "category": "dof",
@@ -47021,7 +47057,7 @@
     "relation": []
   },
   {
-    "seq": 572,
+    "seq": 571,
     "storyId": "6frt2bf8n5fvebos",
     "media": 1,
     "category": "comics",
@@ -47068,7 +47104,7 @@
     ]
   },
   {
-    "seq": 571,
+    "seq": 570,
     "storyId": "1c65z1fh9pas58sd",
     "media": 1,
     "category": "moba_event",
@@ -47117,7 +47153,7 @@
     ]
   },
   {
-    "seq": 570,
+    "seq": 569,
     "storyId": "z7zggkn08hpcpthq",
     "media": 1,
     "category": "comics",
@@ -47172,7 +47208,7 @@
     ]
   },
   {
-    "seq": 569,
+    "seq": 568,
     "storyId": "476ndkrnnqb9bofv",
     "media": 1,
     "category": "moba_event",
@@ -47229,7 +47265,7 @@
     ]
   },
   {
-    "seq": 568,
+    "seq": 567,
     "storyId": "sj64q9om4ei2h797",
     "media": 1,
     "category": "comics",
@@ -47276,7 +47312,7 @@
     ]
   },
   {
-    "seq": 567,
+    "seq": 566,
     "storyId": "xs4fpbql88m98tjy",
     "media": 1,
     "category": "moba_event",
@@ -47327,7 +47363,7 @@
     ]
   },
   {
-    "seq": 566,
+    "seq": 565,
     "storyId": "9brk2x1o8ryzt3x4",
     "media": 1,
     "category": "comics",
@@ -47374,7 +47410,7 @@
     ]
   },
   {
-    "seq": 565,
+    "seq": 564,
     "storyId": "rdx8iryu7p5fx09g",
     "media": 1,
     "category": "moba_event",
@@ -47423,7 +47459,7 @@
     ]
   },
   {
-    "seq": 564,
+    "seq": 563,
     "storyId": "9l841mb0zf6nueor",
     "media": 1,
     "category": "dof",
@@ -47478,7 +47514,7 @@
     "relation": []
   },
   {
-    "seq": 563,
+    "seq": 562,
     "storyId": "774nx9k1suoo7zhp",
     "media": 1,
     "category": "smemo",
@@ -47505,7 +47541,7 @@
     "relation": []
   },
   {
-    "seq": 562,
+    "seq": 561,
     "storyId": "hs4ektnp82r14u31",
     "media": 1,
     "category": "comics",
@@ -47556,7 +47592,7 @@
     ]
   },
   {
-    "seq": 561,
+    "seq": 560,
     "storyId": "hk0tpgw6nyq1l5wa",
     "media": 1,
     "category": "moba_event",
@@ -47609,7 +47645,7 @@
     ]
   },
   {
-    "seq": 560,
+    "seq": 559,
     "storyId": "jj17a9btxbq5xdjk",
     "media": 1,
     "category": "comics",
@@ -47664,7 +47700,7 @@
     ]
   },
   {
-    "seq": 559,
+    "seq": 558,
     "storyId": "hi099q232atm2ojw",
     "media": 1,
     "category": "moba_event",
@@ -47724,7 +47760,7 @@
     ]
   },
   {
-    "seq": 558,
+    "seq": 557,
     "storyId": "zwbvivmvdrg26za7",
     "media": 1,
     "category": "comics",
@@ -47775,7 +47811,7 @@
     ]
   },
   {
-    "seq": 557,
+    "seq": 556,
     "storyId": "aj29c7btugpoxoyo",
     "media": 1,
     "category": "moba_event",
@@ -47831,7 +47867,7 @@
     ]
   },
   {
-    "seq": 556,
+    "seq": 555,
     "storyId": "kduzc6y7vgwlk6wq",
     "media": 1,
     "category": "comics",
@@ -47878,7 +47914,7 @@
     ]
   },
   {
-    "seq": 555,
+    "seq": 554,
     "storyId": "ozii052s4wvkvaqd",
     "media": 1,
     "category": "moba_event",
@@ -47927,7 +47963,7 @@
     ]
   },
   {
-    "seq": 554,
+    "seq": 553,
     "storyId": "uhm20rejmd3ua1sr",
     "media": 1,
     "category": "dof",
@@ -47982,7 +48018,7 @@
     "relation": []
   },
   {
-    "seq": 553,
+    "seq": 552,
     "storyId": "zzzkthcq2ut3ta2t",
     "media": 1,
     "category": "smemo",
@@ -48009,7 +48045,7 @@
     "relation": []
   },
   {
-    "seq": 552,
+    "seq": 551,
     "storyId": "ph0fntdxysxtstc6",
     "media": 1,
     "category": "comics",
@@ -48052,7 +48088,7 @@
     ]
   },
   {
-    "seq": 551,
+    "seq": 550,
     "storyId": "oi77gy543opvfyss",
     "media": 1,
     "category": "moba_event",
@@ -48097,7 +48133,7 @@
     ]
   },
   {
-    "seq": 550,
+    "seq": 549,
     "storyId": "gsqo1zidj8sew5i9",
     "media": 1,
     "category": "comics",
@@ -48148,7 +48184,7 @@
     ]
   },
   {
-    "seq": 549,
+    "seq": 548,
     "storyId": "v9h5gvjhnok8k633",
     "media": 1,
     "category": "moba_event",
@@ -48201,7 +48237,7 @@
     ]
   },
   {
-    "seq": 548,
+    "seq": 547,
     "storyId": "pzfv7v0rlf8bygqp",
     "media": 1,
     "category": "comics",
@@ -48248,7 +48284,7 @@
     ]
   },
   {
-    "seq": 547,
+    "seq": 546,
     "storyId": "vpyvz2pa8z6bt5k2",
     "media": 1,
     "category": "moba_event",
@@ -48297,7 +48333,7 @@
     ]
   },
   {
-    "seq": 546,
+    "seq": 545,
     "storyId": "oilohtz9ngkoujma",
     "media": 1,
     "category": "comics",
@@ -48352,7 +48388,7 @@
     ]
   },
   {
-    "seq": 545,
+    "seq": 544,
     "storyId": "87w1cvsuwm32g2d0",
     "media": 1,
     "category": "moba_event",
@@ -48409,7 +48445,7 @@
     ]
   },
   {
-    "seq": 544,
+    "seq": 543,
     "storyId": "nj2or7fipve7pa7s",
     "media": 1,
     "category": "dof",
@@ -48464,7 +48500,7 @@
     "relation": []
   },
   {
-    "seq": 543,
+    "seq": 542,
     "storyId": "ycom2cornt7x8krp",
     "media": 1,
     "category": "smemo",
@@ -48491,7 +48527,7 @@
     "relation": []
   },
   {
-    "seq": 542,
+    "seq": 541,
     "storyId": "da4ssap6zi9tjw5n",
     "media": 1,
     "category": "comics",
@@ -48542,7 +48578,7 @@
     ]
   },
   {
-    "seq": 541,
+    "seq": 540,
     "storyId": "dfn77ci8qeja26da",
     "media": 1,
     "category": "moba_event",
@@ -48595,7 +48631,7 @@
     ]
   },
   {
-    "seq": 540,
+    "seq": 539,
     "storyId": "pmkagbrfogdrcq1o",
     "media": 1,
     "category": "comics",
@@ -48642,7 +48678,7 @@
     ]
   },
   {
-    "seq": 539,
+    "seq": 538,
     "storyId": "yigq3zsve7h8answ",
     "media": 1,
     "category": "moba_event",
@@ -48691,7 +48727,7 @@
     ]
   },
   {
-    "seq": 538,
+    "seq": 537,
     "storyId": "jhsnu6b975ptnmb1",
     "media": 1,
     "category": "comics",
@@ -48742,7 +48778,7 @@
     ]
   },
   {
-    "seq": 537,
+    "seq": 536,
     "storyId": "escz5s7u3cytu96i",
     "media": 1,
     "category": "moba_event",
@@ -48795,7 +48831,7 @@
     ]
   },
   {
-    "seq": 536,
+    "seq": 535,
     "storyId": "94wqq9k85kyds05y",
     "media": 1,
     "category": "comics",
@@ -48838,7 +48874,7 @@
     ]
   },
   {
-    "seq": 535,
+    "seq": 534,
     "storyId": "ojiszi22j6koqfqi",
     "media": 1,
     "category": "moba_event",
@@ -48885,7 +48921,7 @@
     ]
   },
   {
-    "seq": 534,
+    "seq": 533,
     "storyId": "56t95x5ob8363598",
     "media": 1,
     "category": "dof",
@@ -48944,7 +48980,7 @@
     "relation": []
   },
   {
-    "seq": 533,
+    "seq": 532,
     "storyId": "76uroyoxqcp5l8d8",
     "media": 1,
     "category": "smemo",
@@ -48971,7 +49007,7 @@
     "relation": []
   },
   {
-    "seq": 532,
+    "seq": 531,
     "storyId": "7j8056kg5e184cya",
     "media": 1,
     "category": "comics",
@@ -49026,7 +49062,7 @@
     ]
   },
   {
-    "seq": 531,
+    "seq": 530,
     "storyId": "e9o2z6gzd6dvunoh",
     "media": 1,
     "category": "moba_event",
@@ -49083,7 +49119,7 @@
     ]
   },
   {
-    "seq": 530,
+    "seq": 529,
     "storyId": "trwcj8ay5wuri5qo",
     "media": 1,
     "category": "comics",
@@ -49130,7 +49166,7 @@
     ]
   },
   {
-    "seq": 529,
+    "seq": 528,
     "storyId": "zw0unvnhs0weo3yt",
     "media": 1,
     "category": "moba_event",
@@ -49179,7 +49215,7 @@
     ]
   },
   {
-    "seq": 528,
+    "seq": 527,
     "storyId": "ov9l10smxv8ovkoa",
     "media": 1,
     "category": "comics",
@@ -49226,7 +49262,7 @@
     ]
   },
   {
-    "seq": 527,
+    "seq": 526,
     "storyId": "chvfgrttdzegcb8n",
     "media": 1,
     "category": "moba_event",
@@ -49275,7 +49311,7 @@
     ]
   },
   {
-    "seq": 526,
+    "seq": 525,
     "storyId": "zmut09vxo03u31zg",
     "media": 1,
     "category": "comics",
@@ -49318,7 +49354,7 @@
     ]
   },
   {
-    "seq": 525,
+    "seq": 524,
     "storyId": "m2cskcw27qjirh60",
     "media": 1,
     "category": "moba_event",
@@ -49365,7 +49401,7 @@
     ]
   },
   {
-    "seq": 524,
+    "seq": 523,
     "storyId": "jpi41zvt8sbfd24g",
     "media": 1,
     "category": "dof",
@@ -49428,7 +49464,7 @@
     "relation": []
   },
   {
-    "seq": 523,
+    "seq": 522,
     "storyId": "vd0wpqmdbvnokdfc",
     "media": 1,
     "category": "smemo",
@@ -49455,7 +49491,7 @@
     "relation": []
   },
   {
-    "seq": 522,
+    "seq": 521,
     "storyId": "42jiy5tc8evg8axp",
     "media": 1,
     "category": "comics",
@@ -49510,7 +49546,7 @@
     ]
   },
   {
-    "seq": 521,
+    "seq": 520,
     "storyId": "6ricaxqr844udjta",
     "media": 1,
     "category": "moba_event",
@@ -49567,7 +49603,7 @@
     ]
   },
   {
-    "seq": 520,
+    "seq": 519,
     "storyId": "spv8jidp1f7duh95",
     "media": 1,
     "category": "comics",
@@ -49626,7 +49662,7 @@
     ]
   },
   {
-    "seq": 519,
+    "seq": 518,
     "storyId": "15bvbkioui4epy9u",
     "media": 1,
     "category": "moba_event",
@@ -49687,7 +49723,7 @@
     ]
   },
   {
-    "seq": 518,
+    "seq": 517,
     "storyId": "yinevk20tpxrkprx",
     "media": 1,
     "category": "comics",
@@ -49734,7 +49770,7 @@
     ]
   },
   {
-    "seq": 517,
+    "seq": 516,
     "storyId": "9ukojucwrz3meisu",
     "media": 1,
     "category": "moba_event",
@@ -49783,7 +49819,7 @@
     ]
   },
   {
-    "seq": 516,
+    "seq": 515,
     "storyId": "coub6vpb9h324o42",
     "media": 1,
     "category": "comics",
@@ -49830,7 +49866,7 @@
     ]
   },
   {
-    "seq": 515,
+    "seq": 514,
     "storyId": "te1z1ca83amxnbxl",
     "media": 1,
     "category": "moba_event",
@@ -49879,7 +49915,7 @@
     ]
   },
   {
-    "seq": 514,
+    "seq": 513,
     "storyId": "1tgkgg3r00z9zukr",
     "media": 1,
     "category": "dof",
@@ -49930,7 +49966,7 @@
     "relation": []
   },
   {
-    "seq": 513,
+    "seq": 512,
     "storyId": "62rkjb6zx3ozfryf",
     "media": 1,
     "category": "comics",
@@ -49973,7 +50009,7 @@
     ]
   },
   {
-    "seq": 512,
+    "seq": 511,
     "storyId": "of6t33futk8zi6zu",
     "media": 1,
     "category": "moba_event",
@@ -50020,7 +50056,7 @@
     ]
   },
   {
-    "seq": 511,
+    "seq": 510,
     "storyId": "0hch2ok7kvywv162",
     "media": 1,
     "category": "comics",
@@ -50075,7 +50111,7 @@
     ]
   },
   {
-    "seq": 510,
+    "seq": 509,
     "storyId": "zzrov97z7jdlr8qf",
     "media": 1,
     "category": "moba_event",
@@ -50132,7 +50168,7 @@
     ]
   },
   {
-    "seq": 509,
+    "seq": 508,
     "storyId": "vps4277pj1om4wnr",
     "media": 1,
     "category": "comics",
@@ -50175,7 +50211,7 @@
     ]
   },
   {
-    "seq": 508,
+    "seq": 507,
     "storyId": "q2rzzba5u3qpwpf8",
     "media": 1,
     "category": "moba_event",
@@ -50225,7 +50261,7 @@
     ]
   },
   {
-    "seq": 507,
+    "seq": 506,
     "storyId": "u3i5tffon842wozq",
     "media": 1,
     "category": "comics",
@@ -50268,7 +50304,7 @@
     ]
   },
   {
-    "seq": 506,
+    "seq": 505,
     "storyId": "yd6kbh36eb7csj5g",
     "media": 1,
     "category": "moba_event",
@@ -50318,7 +50354,7 @@
     ]
   },
   {
-    "seq": 505,
+    "seq": 504,
     "storyId": "pzeme72ar0eiqpzi",
     "media": 1,
     "category": "dof",
@@ -50373,7 +50409,7 @@
     "relation": []
   },
   {
-    "seq": 504,
+    "seq": 503,
     "storyId": "ozqv95sggzje20ow",
     "media": 1,
     "category": "smemo",
@@ -50400,7 +50436,7 @@
     "relation": []
   },
   {
-    "seq": 503,
+    "seq": 502,
     "storyId": "k7498f9zzvll3ols",
     "media": 1,
     "category": "comics",
@@ -50447,7 +50483,7 @@
     ]
   },
   {
-    "seq": 502,
+    "seq": 501,
     "storyId": "clnftzrd1txkb8ff",
     "media": 1,
     "category": "moba_event",
@@ -50496,7 +50532,7 @@
     ]
   },
   {
-    "seq": 501,
+    "seq": 500,
     "storyId": "7yxq07fr8138a80j",
     "media": 1,
     "category": "comics",
@@ -50543,7 +50579,7 @@
     ]
   },
   {
-    "seq": 500,
+    "seq": 499,
     "storyId": "h8okwd626as9tenh",
     "media": 1,
     "category": "moba_event",
@@ -50596,7 +50632,7 @@
     ]
   },
   {
-    "seq": 499,
+    "seq": 498,
     "storyId": "4klr3cbhcnozz86u",
     "media": 1,
     "category": "comics",
@@ -50643,7 +50679,7 @@
     ]
   },
   {
-    "seq": 498,
+    "seq": 497,
     "storyId": "4h6kvlcq82vdev2q",
     "media": 1,
     "category": "moba_event",
@@ -50692,7 +50728,7 @@
     ]
   },
   {
-    "seq": 497,
+    "seq": 496,
     "storyId": "agk4zya236dempiw",
     "media": 1,
     "category": "comics",
@@ -50747,7 +50783,7 @@
     ]
   },
   {
-    "seq": 496,
+    "seq": 495,
     "storyId": "pwxn48k9vo1rgrcf",
     "media": 1,
     "category": "moba_event",
@@ -50804,7 +50840,7 @@
     ]
   },
   {
-    "seq": 495,
+    "seq": 494,
     "storyId": "hpbf4v7ul3pwxxjd",
     "media": 1,
     "category": "dof",
@@ -50859,7 +50895,7 @@
     "relation": []
   },
   {
-    "seq": 494,
+    "seq": 493,
     "storyId": "9eo6hjm6dncvulx4",
     "media": 1,
     "category": "smemo",
@@ -50886,7 +50922,7 @@
     "relation": []
   },
   {
-    "seq": 493,
+    "seq": 492,
     "storyId": "9c60439v3xzchnnu",
     "media": 1,
     "category": "comics",
@@ -50937,7 +50973,7 @@
     ]
   },
   {
-    "seq": 492,
+    "seq": 491,
     "storyId": "25ejrf5r81s21i8o",
     "media": 1,
     "category": "moba_event",
@@ -50990,7 +51026,7 @@
     ]
   },
   {
-    "seq": 491,
+    "seq": 490,
     "storyId": "v6ccmpxb45e0msmp",
     "media": 1,
     "category": "comics",
@@ -51037,7 +51073,7 @@
     ]
   },
   {
-    "seq": 490,
+    "seq": 489,
     "storyId": "bbz047dy3hdt6l3h",
     "media": 1,
     "category": "moba_event",
@@ -51086,7 +51122,7 @@
     ]
   },
   {
-    "seq": 489,
+    "seq": 488,
     "storyId": "y9lme1rxpkis9o1w",
     "media": 1,
     "category": "comics",
@@ -51129,7 +51165,7 @@
     ]
   },
   {
-    "seq": 488,
+    "seq": 487,
     "storyId": "n2l6zab4mfwa6t19",
     "media": 1,
     "category": "moba_event",
@@ -51176,7 +51212,7 @@
     ]
   },
   {
-    "seq": 487,
+    "seq": 486,
     "storyId": "58ft24l171dynqzh",
     "media": 1,
     "category": "comics",
@@ -51227,7 +51263,7 @@
     ]
   },
   {
-    "seq": 486,
+    "seq": 485,
     "storyId": "8syde4ooati6d2o8",
     "media": 1,
     "category": "moba_event",
@@ -51280,7 +51316,7 @@
     ]
   },
   {
-    "seq": 485,
+    "seq": 484,
     "storyId": "pwglzl54gnd1oh8j",
     "media": 1,
     "category": "dof",
@@ -51331,7 +51367,7 @@
     "relation": []
   },
   {
-    "seq": 484,
+    "seq": 483,
     "storyId": "qdj9mh6jrgjamotb",
     "media": 1,
     "category": "smemo",
@@ -51358,7 +51394,7 @@
     "relation": []
   },
   {
-    "seq": 483,
+    "seq": 482,
     "storyId": "3iory7sypewkc62u",
     "media": 1,
     "category": "comics",
@@ -51413,7 +51449,7 @@
     ]
   },
   {
-    "seq": 482,
+    "seq": 481,
     "storyId": "zlwbiei6pvv5971q",
     "media": 1,
     "category": "moba_event",
@@ -51470,7 +51506,7 @@
     ]
   },
   {
-    "seq": 481,
+    "seq": 480,
     "storyId": "nlcjrmf8pjnfliph",
     "media": 1,
     "category": "comics",
@@ -51517,7 +51553,7 @@
     ]
   },
   {
-    "seq": 480,
+    "seq": 479,
     "storyId": "zp0i1oii63utsfw3",
     "media": 1,
     "category": "moba_event",
@@ -51566,7 +51602,7 @@
     ]
   },
   {
-    "seq": 479,
+    "seq": 478,
     "storyId": "mzkfwuw8nnsl11tb",
     "media": 1,
     "category": "comics",
@@ -51621,7 +51657,7 @@
     ]
   },
   {
-    "seq": 478,
+    "seq": 477,
     "storyId": "w5gwpbb91be2xp0n",
     "media": 1,
     "category": "moba_event",
@@ -51678,7 +51714,7 @@
     ]
   },
   {
-    "seq": 477,
+    "seq": 476,
     "storyId": "l5utiomxtyhsptkt",
     "media": 1,
     "category": "comics",
@@ -51725,7 +51761,7 @@
     ]
   },
   {
-    "seq": 476,
+    "seq": 475,
     "storyId": "nn5twn8ii9sfjf3u",
     "media": 1,
     "category": "moba_event",
@@ -51774,7 +51810,7 @@
     ]
   },
   {
-    "seq": 475,
+    "seq": 474,
     "storyId": "2ylwqavg1yonr66d",
     "media": 1,
     "category": "dof",
@@ -51829,7 +51865,7 @@
     "relation": []
   },
   {
-    "seq": 474,
+    "seq": 473,
     "storyId": "f03utfltbyl0ssmo",
     "media": 1,
     "category": "smemo",
@@ -51856,7 +51892,7 @@
     "relation": []
   },
   {
-    "seq": 473,
+    "seq": 472,
     "storyId": "xrkjnx2yldfe6phu",
     "media": 1,
     "category": "comics",
@@ -51907,7 +51943,7 @@
     ]
   },
   {
-    "seq": 472,
+    "seq": 471,
     "storyId": "fp20sf1otbzvbjlw",
     "media": 1,
     "category": "moba_event",
@@ -51960,7 +51996,7 @@
     ]
   },
   {
-    "seq": 471,
+    "seq": 470,
     "storyId": "98qdj622rqohzquf",
     "media": 1,
     "category": "comics",
@@ -52011,7 +52047,7 @@
     ]
   },
   {
-    "seq": 470,
+    "seq": 469,
     "storyId": "x2xamh8r99cqbpyj",
     "media": 1,
     "category": "moba_event",
@@ -52064,7 +52100,7 @@
     ]
   },
   {
-    "seq": 469,
+    "seq": 468,
     "storyId": "1kwvcrdfa1o6eq6v",
     "media": 1,
     "category": "comics",
@@ -52111,7 +52147,7 @@
     ]
   },
   {
-    "seq": 468,
+    "seq": 467,
     "storyId": "uayw3keq2rlv9p5v",
     "media": 1,
     "category": "moba_event",
@@ -52160,7 +52196,7 @@
     ]
   },
   {
-    "seq": 467,
+    "seq": 466,
     "storyId": "b7jdx3ap41j8b656",
     "media": 1,
     "category": "comics",
@@ -52211,7 +52247,7 @@
     ]
   },
   {
-    "seq": 466,
+    "seq": 465,
     "storyId": "jq6n8ptaxkyaoc8r",
     "media": 1,
     "category": "moba_event",
@@ -52297,7 +52333,7 @@
     ]
   },
   {
-    "seq": 465,
+    "seq": 464,
     "storyId": "vxl8gcj7vdxgb00p",
     "media": 1,
     "category": "dof",
@@ -52348,7 +52384,7 @@
     "relation": []
   },
   {
-    "seq": 464,
+    "seq": 463,
     "storyId": "ygg92cxxg2mwgbnp",
     "media": 1,
     "category": "comics",
@@ -52399,7 +52435,7 @@
     ]
   },
   {
-    "seq": 463,
+    "seq": 462,
     "storyId": "2kmzaffr3dmqoci8",
     "media": 1,
     "category": "moba_event",
@@ -52457,7 +52493,7 @@
     ]
   },
   {
-    "seq": 462,
+    "seq": 461,
     "storyId": "xvhhs06x34fyug5x",
     "media": 1,
     "category": "comics",
@@ -52512,7 +52548,7 @@
     ]
   },
   {
-    "seq": 461,
+    "seq": 460,
     "storyId": "gb0d5lxasoepfije",
     "media": 1,
     "category": "moba_event",
@@ -52569,7 +52605,7 @@
     ]
   },
   {
-    "seq": 460,
+    "seq": 459,
     "storyId": "w5lf25ju4ag6hq6n",
     "media": 1,
     "category": "comics",
@@ -52616,7 +52652,7 @@
     ]
   },
   {
-    "seq": 459,
+    "seq": 458,
     "storyId": "0blyp677k3lopes8",
     "media": 1,
     "category": "moba_event",
@@ -52665,7 +52701,7 @@
     ]
   },
   {
-    "seq": 458,
+    "seq": 457,
     "storyId": "3xchcrit6o1ob7r2",
     "media": 1,
     "category": "comics",
@@ -52712,7 +52748,7 @@
     ]
   },
   {
-    "seq": 457,
+    "seq": 456,
     "storyId": "9ubjomyw8qbjpu6x",
     "media": 1,
     "category": "moba_event",
@@ -52761,7 +52797,7 @@
     ]
   },
   {
-    "seq": 456,
+    "seq": 455,
     "storyId": "vexqt03xfn2l7s6r",
     "media": 1,
     "category": "dof",
@@ -52824,7 +52860,7 @@
     "relation": []
   },
   {
-    "seq": 455,
+    "seq": 454,
     "storyId": "mnqz2ki7wb2uo4hw",
     "media": 1,
     "category": "smemo",
@@ -52851,7 +52887,7 @@
     "relation": []
   },
   {
-    "seq": 454,
+    "seq": 453,
     "storyId": "lsx46fknsl7f9070",
     "media": 1,
     "category": "comics",
@@ -52906,7 +52942,7 @@
     ]
   },
   {
-    "seq": 453,
+    "seq": 452,
     "storyId": "qz6pl0mlvvud555g",
     "media": 1,
     "category": "moba_event",
@@ -52963,7 +52999,7 @@
     ]
   },
   {
-    "seq": 452,
+    "seq": 451,
     "storyId": "89v1n0p0j8l62tth",
     "media": 1,
     "category": "comics",
@@ -53014,7 +53050,7 @@
     ]
   },
   {
-    "seq": 451,
+    "seq": 450,
     "storyId": "bbs630hj209dj3u8",
     "media": 1,
     "category": "moba_event",
@@ -53067,7 +53103,7 @@
     ]
   },
   {
-    "seq": 450,
+    "seq": 449,
     "storyId": "m838ytn0vchwjc83",
     "media": 1,
     "category": "comics",
@@ -53122,7 +53158,7 @@
     ]
   },
   {
-    "seq": 449,
+    "seq": 448,
     "storyId": "p9ahfl5khyh3pnk5",
     "media": 1,
     "category": "moba_event",
@@ -53181,7 +53217,7 @@
     ]
   },
   {
-    "seq": 448,
+    "seq": 447,
     "storyId": "uzketttm3mmwr87x",
     "media": 1,
     "category": "comics",
@@ -53228,7 +53264,7 @@
     ]
   },
   {
-    "seq": 447,
+    "seq": 446,
     "storyId": "46hy5b4nodbvskhs",
     "media": 1,
     "category": "moba_event",
@@ -53277,7 +53313,7 @@
     ]
   },
   {
-    "seq": 446,
+    "seq": 445,
     "storyId": "3oo75eubpenfd6hp",
     "media": 1,
     "category": "dof",
@@ -53332,7 +53368,7 @@
     "relation": []
   },
   {
-    "seq": 445,
+    "seq": 444,
     "storyId": "1sm0q55dlc31ablg",
     "media": 1,
     "category": "smemo",
@@ -53359,7 +53395,7 @@
     "relation": []
   },
   {
-    "seq": 444,
+    "seq": 443,
     "storyId": "kskl0yhpw0dn9qj9",
     "media": 1,
     "category": "comics",
@@ -53406,7 +53442,7 @@
     ]
   },
   {
-    "seq": 443,
+    "seq": 442,
     "storyId": "9h7s6npy4h1m5dm0",
     "media": 1,
     "category": "moba_event",
@@ -53455,7 +53491,7 @@
     ]
   },
   {
-    "seq": 442,
+    "seq": 441,
     "storyId": "ddeoh33g0pq2c58o",
     "media": 1,
     "category": "comics",
@@ -53506,7 +53542,7 @@
     ]
   },
   {
-    "seq": 441,
+    "seq": 440,
     "storyId": "lwuh3t6xfyxqrp2l",
     "media": 1,
     "category": "moba_event",
@@ -53559,7 +53595,7 @@
     ]
   },
   {
-    "seq": 440,
+    "seq": 439,
     "storyId": "ene8bwpspl5mwe2z",
     "media": 1,
     "category": "comics",
@@ -53602,7 +53638,7 @@
     ]
   },
   {
-    "seq": 439,
+    "seq": 438,
     "storyId": "qbcilh9s16bernbb",
     "media": 1,
     "category": "moba_event",
@@ -53647,7 +53683,7 @@
     ]
   },
   {
-    "seq": 438,
+    "seq": 437,
     "storyId": "7s6de9tcurz5bukp",
     "media": 1,
     "category": "comics",
@@ -53702,7 +53738,7 @@
     ]
   },
   {
-    "seq": 437,
+    "seq": 436,
     "storyId": "ah9786n7vlov9n98",
     "media": 1,
     "category": "moba_event",
@@ -53759,7 +53795,7 @@
     ]
   },
   {
-    "seq": 436,
+    "seq": 435,
     "storyId": "l8yu6pwabmegeo5l",
     "media": 1,
     "category": "dof",
@@ -53822,7 +53858,7 @@
     "relation": []
   },
   {
-    "seq": 435,
+    "seq": 434,
     "storyId": "tdq3jcold5bdp9j9",
     "media": 1,
     "category": "smemo",
@@ -53849,7 +53885,7 @@
     "relation": []
   },
   {
-    "seq": 434,
+    "seq": 433,
     "storyId": "rf1ajphhwa0kpe1r",
     "media": 1,
     "category": "comics",
@@ -53896,7 +53932,7 @@
     ]
   },
   {
-    "seq": 433,
+    "seq": 432,
     "storyId": "q93xhiwbfm4gg9t0",
     "media": 1,
     "category": "moba_event",
@@ -53945,7 +53981,7 @@
     ]
   },
   {
-    "seq": 432,
+    "seq": 431,
     "storyId": "z8wk1edhhf9181r7",
     "media": 1,
     "category": "comics",
@@ -53996,7 +54032,7 @@
     ]
   },
   {
-    "seq": 431,
+    "seq": 430,
     "storyId": "ryyhyzpo3c19yodx",
     "media": 1,
     "category": "moba_event",
@@ -54049,7 +54085,7 @@
     ]
   },
   {
-    "seq": 430,
+    "seq": 429,
     "storyId": "6n235yhazuya05ud",
     "media": 1,
     "category": "comics",
@@ -54096,7 +54132,7 @@
     ]
   },
   {
-    "seq": 429,
+    "seq": 428,
     "storyId": "k1hqys91ly3k9x6m",
     "media": 1,
     "category": "moba_event",
@@ -54145,7 +54181,7 @@
     ]
   },
   {
-    "seq": 428,
+    "seq": 427,
     "storyId": "yxn21xv8ga14tmse",
     "media": 1,
     "category": "comics",
@@ -54196,7 +54232,7 @@
     ]
   },
   {
-    "seq": 427,
+    "seq": 426,
     "storyId": "sytj64tpw294pu0k",
     "media": 1,
     "category": "moba_event",
@@ -54249,7 +54285,7 @@
     ]
   },
   {
-    "seq": 426,
+    "seq": 425,
     "storyId": "6thoe3ugy08sur0w",
     "media": 1,
     "category": "dof",
@@ -54300,7 +54336,7 @@
     "relation": []
   },
   {
-    "seq": 425,
+    "seq": 424,
     "storyId": "4c80wpkpag1atphk",
     "media": 1,
     "category": "smemo",
@@ -54327,7 +54363,7 @@
     "relation": []
   },
   {
-    "seq": 424,
+    "seq": 423,
     "storyId": "eez6v9l1qaifgvto",
     "media": 1,
     "category": "comics",
@@ -54382,7 +54418,7 @@
     ]
   },
   {
-    "seq": 423,
+    "seq": 422,
     "storyId": "ba4zrjnr7gf3ev9d",
     "media": 1,
     "category": "moba_event",
@@ -54440,7 +54476,7 @@
     ]
   },
   {
-    "seq": 422,
+    "seq": 421,
     "storyId": "8xdc943b1dc6760t",
     "media": 1,
     "category": "comics",
@@ -54487,7 +54523,7 @@
     ]
   },
   {
-    "seq": 421,
+    "seq": 420,
     "storyId": "o82nkj708yzupfyp",
     "media": 1,
     "category": "moba_event",
@@ -54536,7 +54572,7 @@
     ]
   },
   {
-    "seq": 420,
+    "seq": 419,
     "storyId": "mr29uvmwgaiqda0r",
     "media": 1,
     "category": "comics",
@@ -54587,7 +54623,7 @@
     ]
   },
   {
-    "seq": 419,
+    "seq": 418,
     "storyId": "b3scmojlptq8nbe5",
     "media": 1,
     "category": "moba_event",
@@ -54640,7 +54676,7 @@
     ]
   },
   {
-    "seq": 418,
+    "seq": 417,
     "storyId": "yhko8j5uuoaifcu5",
     "media": 1,
     "category": "comics",
@@ -54687,7 +54723,7 @@
     ]
   },
   {
-    "seq": 417,
+    "seq": 416,
     "storyId": "i820vkuma063witm",
     "media": 1,
     "category": "moba_event",
@@ -54738,7 +54774,7 @@
     ]
   },
   {
-    "seq": 416,
+    "seq": 415,
     "storyId": "uodk0xo4u4hcsf6g",
     "media": 1,
     "category": "dof",
@@ -54793,7 +54829,7 @@
     "relation": []
   },
   {
-    "seq": 415,
+    "seq": 414,
     "storyId": "v0xpzuimdtghqqkp",
     "media": 1,
     "category": "smemo",
@@ -54820,7 +54856,7 @@
     "relation": []
   },
   {
-    "seq": 414,
+    "seq": 413,
     "storyId": "vc2e148c6tvuzxyy",
     "media": 1,
     "category": "comics",
@@ -54875,7 +54911,7 @@
     ]
   },
   {
-    "seq": 413,
+    "seq": 412,
     "storyId": "abgwaej2gzrvp2an",
     "media": 1,
     "category": "moba_event",
@@ -54932,7 +54968,7 @@
     ]
   },
   {
-    "seq": 412,
+    "seq": 411,
     "storyId": "qp63dnd8sq2zgild",
     "media": 1,
     "category": "comics",
@@ -54979,7 +55015,7 @@
     ]
   },
   {
-    "seq": 411,
+    "seq": 410,
     "storyId": "jk5w3k7zxmts9gyb",
     "media": 1,
     "category": "moba_event",
@@ -55028,7 +55064,7 @@
     ]
   },
   {
-    "seq": 410,
+    "seq": 409,
     "storyId": "6vzvezja3jfkoxfw",
     "media": 1,
     "category": "comics",
@@ -55083,7 +55119,7 @@
     ]
   },
   {
-    "seq": 409,
+    "seq": 408,
     "storyId": "pfsa5m4z4h7razl8",
     "media": 1,
     "category": "moba_event",
@@ -55140,7 +55176,7 @@
     ]
   },
   {
-    "seq": 408,
+    "seq": 407,
     "storyId": "w29gacxck2k1pcaq",
     "media": 1,
     "category": "comics",
@@ -55191,7 +55227,7 @@
     ]
   },
   {
-    "seq": 407,
+    "seq": 406,
     "storyId": "aifkvfwvy4p6wi6n",
     "media": 1,
     "category": "moba_event",
@@ -55246,7 +55282,7 @@
     ]
   },
   {
-    "seq": 406,
+    "seq": 405,
     "storyId": "6rpl9zug2e1l2tyw",
     "media": 1,
     "category": "dof",
@@ -55297,7 +55333,7 @@
     "relation": []
   },
   {
-    "seq": 405,
+    "seq": 404,
     "storyId": "2dcwkup15l3tpeew",
     "media": 1,
     "category": "smemo",
@@ -55324,7 +55360,7 @@
     "relation": []
   },
   {
-    "seq": 404,
+    "seq": 403,
     "storyId": "wpxc8n12rjnobbbg",
     "media": 1,
     "category": "comics",
@@ -55371,7 +55407,7 @@
     ]
   },
   {
-    "seq": 403,
+    "seq": 402,
     "storyId": "1q5p6kcmw0edljx4",
     "media": 1,
     "category": "moba_event",
@@ -55420,7 +55456,7 @@
     ]
   },
   {
-    "seq": 402,
+    "seq": 401,
     "storyId": "pwvgyguhvtam57ct",
     "media": 1,
     "category": "comics",
@@ -55467,7 +55503,7 @@
     ]
   },
   {
-    "seq": 401,
+    "seq": 400,
     "storyId": "zoggq3nja9atmaj6",
     "media": 1,
     "category": "moba_event",
@@ -55516,7 +55552,7 @@
     ]
   },
   {
-    "seq": 400,
+    "seq": 399,
     "storyId": "1avucydfbnh6kpbw",
     "media": 1,
     "category": "comics",
@@ -55567,7 +55603,7 @@
     ]
   },
   {
-    "seq": 399,
+    "seq": 398,
     "storyId": "27a1hbrpt0a5idjc",
     "media": 1,
     "category": "moba_event",
@@ -55620,7 +55656,7 @@
     ]
   },
   {
-    "seq": 398,
+    "seq": 397,
     "storyId": "nzto7bieo80glsdi",
     "media": 1,
     "category": "comics",
@@ -55675,7 +55711,7 @@
     ]
   },
   {
-    "seq": 397,
+    "seq": 396,
     "storyId": "re31d4zpcqepyb3d",
     "media": 1,
     "category": "moba_event",
@@ -55732,7 +55768,7 @@
     ]
   },
   {
-    "seq": 396,
+    "seq": 395,
     "storyId": "qyv8tl42pyggtw3e",
     "media": 1,
     "category": "dof",
@@ -55795,7 +55831,7 @@
     "relation": []
   },
   {
-    "seq": 395,
+    "seq": 394,
     "storyId": "ftbpj30nu4153qpt",
     "media": 1,
     "category": "comics",
@@ -55838,7 +55874,7 @@
     ]
   },
   {
-    "seq": 394,
+    "seq": 393,
     "storyId": "4p5nfa1hy41bts0s",
     "media": 1,
     "category": "moba_event",
@@ -55885,7 +55921,7 @@
     ]
   },
   {
-    "seq": 393,
+    "seq": 392,
     "storyId": "ryclt7qdi6pr5k25",
     "media": 1,
     "category": "comics",
@@ -55940,7 +55976,7 @@
     ]
   },
   {
-    "seq": 392,
+    "seq": 391,
     "storyId": "zbazy6zk9sy6jlsl",
     "media": 1,
     "category": "moba_event",
@@ -55997,7 +56033,7 @@
     ]
   },
   {
-    "seq": 391,
+    "seq": 390,
     "storyId": "4maspw6hp2guwn88",
     "media": 1,
     "category": "comics",
@@ -56040,7 +56076,7 @@
     ]
   },
   {
-    "seq": 390,
+    "seq": 389,
     "storyId": "etmp0rvlvrv3ma89",
     "media": 1,
     "category": "moba_event",
@@ -56114,7 +56150,7 @@
     ]
   },
   {
-    "seq": 389,
+    "seq": 388,
     "storyId": "x13kv097to5lbfvg",
     "media": 1,
     "category": "comics",
@@ -56157,7 +56193,7 @@
     ]
   },
   {
-    "seq": 388,
+    "seq": 387,
     "storyId": "hzt3al4v8owzgz31",
     "media": 1,
     "category": "moba_event",
@@ -56207,7 +56243,7 @@
     ]
   },
   {
-    "seq": 387,
+    "seq": 386,
     "storyId": "azk08sb2jgu9rph8",
     "media": 1,
     "category": "dof",
@@ -56258,7 +56294,7 @@
     "relation": []
   },
   {
-    "seq": 386,
+    "seq": 385,
     "storyId": "zjaukuar6ha8jtk9",
     "media": 1,
     "category": "smemo",
@@ -56285,7 +56321,7 @@
     "relation": []
   },
   {
-    "seq": 385,
+    "seq": 384,
     "storyId": "mtwc6lfao2pqksqj",
     "media": 1,
     "category": "comics",
@@ -56332,7 +56368,7 @@
     ]
   },
   {
-    "seq": 384,
+    "seq": 383,
     "storyId": "83c00hpcpnuli60e",
     "media": 1,
     "category": "moba_event",
@@ -56381,7 +56417,7 @@
     ]
   },
   {
-    "seq": 383,
+    "seq": 382,
     "storyId": "2ep11ns92gunb4ti",
     "media": 1,
     "category": "comics",
@@ -56436,7 +56472,7 @@
     ]
   },
   {
-    "seq": 382,
+    "seq": 381,
     "storyId": "v84faw0vs6xfg0uu",
     "media": 1,
     "category": "moba_event",
@@ -56494,7 +56530,7 @@
     ]
   },
   {
-    "seq": 381,
+    "seq": 380,
     "storyId": "5tc417pzbn9kk72o",
     "media": 1,
     "category": "comics",
@@ -56541,7 +56577,7 @@
     ]
   },
   {
-    "seq": 380,
+    "seq": 379,
     "storyId": "bvf2h5iimcoywwzv",
     "media": 1,
     "category": "moba_event",
@@ -56590,7 +56626,7 @@
     ]
   },
   {
-    "seq": 379,
+    "seq": 378,
     "storyId": "jqqdvnkh7isdgt81",
     "media": 1,
     "category": "comics",
@@ -56641,7 +56677,7 @@
     ]
   },
   {
-    "seq": 378,
+    "seq": 377,
     "storyId": "uv0a3b7fy9675437",
     "media": 1,
     "category": "moba_event",
@@ -56694,7 +56730,7 @@
     ]
   },
   {
-    "seq": 377,
+    "seq": 376,
     "storyId": "slylcvc76m31kbze",
     "media": 1,
     "category": "dof",
@@ -56749,7 +56785,7 @@
     "relation": []
   },
   {
-    "seq": 376,
+    "seq": 375,
     "storyId": "cna677aijkmgtjm8",
     "media": 1,
     "category": "smemo",
@@ -56776,7 +56812,7 @@
     "relation": []
   },
   {
-    "seq": 375,
+    "seq": 374,
     "storyId": "xrfdd6u18u0aj2uz",
     "media": 1,
     "category": "comics",
@@ -56819,7 +56855,7 @@
     ]
   },
   {
-    "seq": 374,
+    "seq": 373,
     "storyId": "4je7rxmkyrgbau8c",
     "media": 1,
     "category": "moba_event",
@@ -56865,7 +56901,7 @@
     ]
   },
   {
-    "seq": 373,
+    "seq": 372,
     "storyId": "aucy0obgvi31amn3",
     "media": 1,
     "category": "comics",
@@ -56920,7 +56956,7 @@
     ]
   },
   {
-    "seq": 372,
+    "seq": 371,
     "storyId": "e3k7hcy1pf5mics8",
     "media": 1,
     "category": "moba_event",
@@ -56977,7 +57013,7 @@
     ]
   },
   {
-    "seq": 371,
+    "seq": 370,
     "storyId": "i6nyirkndov6lb5d",
     "media": 1,
     "category": "comics",
@@ -57024,7 +57060,7 @@
     ]
   },
   {
-    "seq": 370,
+    "seq": 369,
     "storyId": "18sh2zgjlpgtlm8e",
     "media": 1,
     "category": "moba_event",
@@ -57075,7 +57111,7 @@
     ]
   },
   {
-    "seq": 369,
+    "seq": 368,
     "storyId": "9449l2vgmh1py4he",
     "media": 1,
     "category": "comics",
@@ -57126,7 +57162,7 @@
     ]
   },
   {
-    "seq": 368,
+    "seq": 367,
     "storyId": "53r1091v5fchwvm2",
     "media": 1,
     "category": "moba_event",
@@ -57179,7 +57215,7 @@
     ]
   },
   {
-    "seq": 367,
+    "seq": 366,
     "storyId": "iac1ivmup7nah8q7",
     "media": 1,
     "category": "dof",
@@ -57242,7 +57278,7 @@
     "relation": []
   },
   {
-    "seq": 366,
+    "seq": 365,
     "storyId": "x48f0ardwuf4pebi",
     "media": 1,
     "category": "smemo",
@@ -57269,7 +57305,7 @@
     "relation": []
   },
   {
-    "seq": 365,
+    "seq": 364,
     "storyId": "8ci1hkuhg5pcq5qu",
     "media": 1,
     "category": "comics",
@@ -57312,7 +57348,7 @@
     ]
   },
   {
-    "seq": 364,
+    "seq": 363,
     "storyId": "l71fsstn4vfy0mcn",
     "media": 1,
     "category": "moba_event",
@@ -57359,7 +57395,7 @@
     ]
   },
   {
-    "seq": 363,
+    "seq": 362,
     "storyId": "nv3upoohlwkqzcvu",
     "media": 1,
     "category": "comics",
@@ -57406,7 +57442,7 @@
     ]
   },
   {
-    "seq": 362,
+    "seq": 361,
     "storyId": "dju65vzs5zoa2aa8",
     "media": 1,
     "category": "moba_event",
@@ -57455,7 +57491,7 @@
     ]
   },
   {
-    "seq": 361,
+    "seq": 360,
     "storyId": "ok0zb9lkmsodbh04",
     "media": 1,
     "category": "comics",
@@ -57510,7 +57546,7 @@
     ]
   },
   {
-    "seq": 360,
+    "seq": 359,
     "storyId": "gwsf0rojhlkaqule",
     "media": 1,
     "category": "moba_event",
@@ -57567,7 +57603,7 @@
     ]
   },
   {
-    "seq": 359,
+    "seq": 358,
     "storyId": "ewz9za1xsjq3fs1d",
     "media": 1,
     "category": "comics",
@@ -57618,7 +57654,7 @@
     ]
   },
   {
-    "seq": 358,
+    "seq": 357,
     "storyId": "zbh0z8vodrn8a8u3",
     "media": 1,
     "category": "moba_event",
@@ -57671,7 +57707,7 @@
     ]
   },
   {
-    "seq": 357,
+    "seq": 356,
     "storyId": "w7uh0avr7yk4c7ca",
     "media": 1,
     "category": "dof",
@@ -57722,7 +57758,7 @@
     "relation": []
   },
   {
-    "seq": 356,
+    "seq": 355,
     "storyId": "kw3l5r1sjezu9c0a",
     "media": 1,
     "category": "smemo",
@@ -57749,7 +57785,7 @@
     "relation": []
   },
   {
-    "seq": 355,
+    "seq": 354,
     "storyId": "m92yw774338uubn2",
     "media": 1,
     "category": "comics",
@@ -57792,7 +57828,7 @@
     ]
   },
   {
-    "seq": 354,
+    "seq": 353,
     "storyId": "9hwwtc8q9zg6ejrj",
     "media": 1,
     "category": "moba_event",
@@ -57839,7 +57875,7 @@
     ]
   },
   {
-    "seq": 353,
+    "seq": 352,
     "storyId": "tyx6imenl6uwwj2x",
     "media": 1,
     "category": "comics",
@@ -57890,7 +57926,7 @@
     ]
   },
   {
-    "seq": 352,
+    "seq": 351,
     "storyId": "39rtkjlxch9jg4z3",
     "media": 1,
     "category": "moba_event",
@@ -57943,7 +57979,7 @@
     ]
   },
   {
-    "seq": 351,
+    "seq": 350,
     "storyId": "9e7eagmu1g41wawl",
     "media": 1,
     "category": "comics",
@@ -57998,7 +58034,7 @@
     ]
   },
   {
-    "seq": 350,
+    "seq": 349,
     "storyId": "czi5r63hfc9q3vi7",
     "media": 1,
     "category": "moba_event",
@@ -58058,7 +58094,7 @@
     ]
   },
   {
-    "seq": 349,
+    "seq": 348,
     "storyId": "je8yycd1enm3pu9o",
     "media": 1,
     "category": "comics",
@@ -58109,7 +58145,7 @@
     ]
   },
   {
-    "seq": 348,
+    "seq": 347,
     "storyId": "ue6zw5a57bz0yk40",
     "media": 1,
     "category": "moba_event",
@@ -58162,7 +58198,7 @@
     ]
   },
   {
-    "seq": 347,
+    "seq": 346,
     "storyId": "cmdp9n5rp161gy78",
     "media": 1,
     "category": "dof",
@@ -58217,7 +58253,7 @@
     "relation": []
   },
   {
-    "seq": 346,
+    "seq": 345,
     "storyId": "lexb42bdh5ly8zno",
     "media": 1,
     "category": "smemo",
@@ -58244,7 +58280,7 @@
     "relation": []
   },
   {
-    "seq": 345,
+    "seq": 344,
     "storyId": "9zxbt1ny41xs5c6u",
     "media": 1,
     "category": "comics",
@@ -58291,7 +58327,7 @@
     ]
   },
   {
-    "seq": 344,
+    "seq": 343,
     "storyId": "dmvk9ulxnhpsvu3l",
     "media": 1,
     "category": "moba_event",
@@ -58340,7 +58376,7 @@
     ]
   },
   {
-    "seq": 343,
+    "seq": 342,
     "storyId": "13z5ebfde6bv6eaf",
     "media": 1,
     "category": "comics",
@@ -58387,7 +58423,7 @@
     ]
   },
   {
-    "seq": 342,
+    "seq": 341,
     "storyId": "3h4std17hhiw10e4",
     "media": 1,
     "category": "moba_event",
@@ -58441,7 +58477,7 @@
     ]
   },
   {
-    "seq": 341,
+    "seq": 340,
     "storyId": "o19u7140hve70zkz",
     "media": 1,
     "category": "comics",
@@ -58496,7 +58532,7 @@
     ]
   },
   {
-    "seq": 340,
+    "seq": 339,
     "storyId": "6zv9ky5ubsafpgrq",
     "media": 1,
     "category": "moba_event",
@@ -58558,7 +58594,7 @@
     ]
   },
   {
-    "seq": 339,
+    "seq": 338,
     "storyId": "7btu9rfwjphw9ips",
     "media": 1,
     "category": "dof",
@@ -58825,7 +58861,7 @@
     "relation": []
   },
   {
-    "seq": 338,
+    "seq": 337,
     "storyId": "qmgb2hglre5igjnc",
     "media": 1,
     "category": "comics",
@@ -58872,7 +58908,7 @@
     ]
   },
   {
-    "seq": 337,
+    "seq": 336,
     "storyId": "g5a4xo6xpc4juz9x",
     "media": 1,
     "category": "moba_event",
@@ -58923,7 +58959,7 @@
     ]
   },
   {
-    "seq": 336,
+    "seq": 335,
     "storyId": "mw57cklqto3n9tc9",
     "media": 1,
     "category": "dof",
@@ -58986,7 +59022,7 @@
     "relation": []
   },
   {
-    "seq": 335,
+    "seq": 334,
     "storyId": "0y0w9ukei015rb4s",
     "media": 1,
     "category": "comics",
@@ -59037,7 +59073,7 @@
     ]
   },
   {
-    "seq": 334,
+    "seq": 333,
     "storyId": "p3cqlckaidvpbq45",
     "media": 1,
     "category": "moba_event",
@@ -59090,7 +59126,7 @@
     ]
   },
   {
-    "seq": 333,
+    "seq": 332,
     "storyId": "sdcmc47uemn2f74i",
     "media": 1,
     "category": "comics",
@@ -59145,7 +59181,7 @@
     ]
   },
   {
-    "seq": 332,
+    "seq": 331,
     "storyId": "x620gtppkl2473om",
     "media": 1,
     "category": "moba_event",
@@ -59202,7 +59238,7 @@
     ]
   },
   {
-    "seq": 331,
+    "seq": 330,
     "storyId": "wi7sv6g8urb5ebbc",
     "media": 1,
     "category": "comics",
@@ -59245,7 +59281,7 @@
     ]
   },
   {
-    "seq": 330,
+    "seq": 329,
     "storyId": "ynjiv9o6nczc91ng",
     "media": 1,
     "category": "moba_event",
@@ -59292,7 +59328,7 @@
     ]
   },
   {
-    "seq": 329,
+    "seq": 328,
     "storyId": "5tejn1i6ww4ulbzn",
     "media": 1,
     "category": "comics",
@@ -59335,7 +59371,7 @@
     ]
   },
   {
-    "seq": 328,
+    "seq": 327,
     "storyId": "5gve61p9lg09qgow",
     "media": 1,
     "category": "moba_event",
@@ -59384,7 +59420,7 @@
     ]
   },
   {
-    "seq": 327,
+    "seq": 326,
     "storyId": "namdjt2tziej875x",
     "media": 1,
     "category": "dof",
@@ -59435,7 +59471,7 @@
     "relation": []
   },
   {
-    "seq": 326,
+    "seq": 325,
     "storyId": "w66a7xp35gla4ghy",
     "media": 1,
     "category": "smemo",
@@ -59462,7 +59498,7 @@
     "relation": []
   },
   {
-    "seq": 325,
+    "seq": 324,
     "storyId": "53l0zfor9s5ugtgn",
     "media": 1,
     "category": "comics",
@@ -59513,7 +59549,7 @@
     ]
   },
   {
-    "seq": 324,
+    "seq": 323,
     "storyId": "r6htfgh1ot99k511",
     "media": 1,
     "category": "moba_event",
@@ -59566,7 +59602,7 @@
     ]
   },
   {
-    "seq": 323,
+    "seq": 322,
     "storyId": "9jngcou9h9y81unr",
     "media": 1,
     "category": "comics",
@@ -59613,7 +59649,7 @@
     ]
   },
   {
-    "seq": 322,
+    "seq": 321,
     "storyId": "1dpnd4t3arenjlpk",
     "media": 1,
     "category": "moba_event",
@@ -59662,7 +59698,7 @@
     ]
   },
   {
-    "seq": 321,
+    "seq": 320,
     "storyId": "ouxsbnw4l7cq0v1d",
     "media": 1,
     "category": "comics",
@@ -59713,7 +59749,7 @@
     ]
   },
   {
-    "seq": 320,
+    "seq": 319,
     "storyId": "w4g8pcqot6tcxdlt",
     "media": 1,
     "category": "moba_event",
@@ -59766,7 +59802,7 @@
     ]
   },
   {
-    "seq": 319,
+    "seq": 318,
     "storyId": "3jzbm9oyss899vur",
     "media": 1,
     "category": "comics",
@@ -59813,7 +59849,7 @@
     ]
   },
   {
-    "seq": 318,
+    "seq": 317,
     "storyId": "ssfglpjct7xr8o16",
     "media": 1,
     "category": "moba_event",
@@ -59862,7 +59898,7 @@
     ]
   },
   {
-    "seq": 317,
+    "seq": 316,
     "storyId": "y5ue30ljxywk82he",
     "media": 1,
     "category": "dof",
@@ -59917,7 +59953,7 @@
     "relation": []
   },
   {
-    "seq": 316,
+    "seq": 315,
     "storyId": "9rgrhtz2kwyshr9d",
     "media": 1,
     "category": "comics",
@@ -59964,7 +60000,7 @@
     ]
   },
   {
-    "seq": 315,
+    "seq": 314,
     "storyId": "r1aag7boh4q1cvmn",
     "media": 1,
     "category": "moba_event",
@@ -60013,7 +60049,7 @@
     ]
   },
   {
-    "seq": 314,
+    "seq": 313,
     "storyId": "25bde0x0wwua5x85",
     "media": 1,
     "category": "comics",
@@ -60056,7 +60092,7 @@
     ]
   },
   {
-    "seq": 313,
+    "seq": 312,
     "storyId": "t897taoc5eugsp5p",
     "media": 1,
     "category": "moba_event",
@@ -60103,7 +60139,7 @@
     ]
   },
   {
-    "seq": 312,
+    "seq": 311,
     "storyId": "nz9mrxgiujr5p8af",
     "media": 1,
     "category": "comics",
@@ -60158,7 +60194,7 @@
     ]
   },
   {
-    "seq": 311,
+    "seq": 310,
     "storyId": "gtw7oclaa0d39jxb",
     "media": 1,
     "category": "moba_event",
@@ -60215,7 +60251,7 @@
     ]
   },
   {
-    "seq": 310,
+    "seq": 309,
     "storyId": "wiaq9aao8a6ow1pp",
     "media": 1,
     "category": "comics",
@@ -60266,7 +60302,7 @@
     ]
   },
   {
-    "seq": 309,
+    "seq": 308,
     "storyId": "l63u0gqbo3hqiq89",
     "media": 1,
     "category": "moba_event",
@@ -60319,7 +60355,7 @@
     ]
   },
   {
-    "seq": 308,
+    "seq": 307,
     "storyId": "rg63eaxez9i0u42h",
     "media": 1,
     "category": "dof",
@@ -60378,7 +60414,7 @@
     "relation": []
   },
   {
-    "seq": 307,
+    "seq": 306,
     "storyId": "9rqt24u9rqhunlsy",
     "media": 1,
     "category": "comics",
@@ -60425,7 +60461,7 @@
     ]
   },
   {
-    "seq": 306,
+    "seq": 305,
     "storyId": "lpjkh7tvsrt2bg3u",
     "media": 1,
     "category": "moba_event",
@@ -60474,7 +60510,7 @@
     ]
   },
   {
-    "seq": 305,
+    "seq": 304,
     "storyId": "jfd1fmogbbcettp2",
     "media": 1,
     "category": "comics",
@@ -60521,7 +60557,7 @@
     ]
   },
   {
-    "seq": 304,
+    "seq": 303,
     "storyId": "m0zfe0d0faj7vtfm",
     "media": 1,
     "category": "moba_event",
@@ -60570,7 +60606,7 @@
     ]
   },
   {
-    "seq": 303,
+    "seq": 302,
     "storyId": "8uw6q02nebh8hx8i",
     "media": 1,
     "category": "comics",
@@ -60621,7 +60657,7 @@
     ]
   },
   {
-    "seq": 302,
+    "seq": 301,
     "storyId": "9kcu2inpk9b5bv1g",
     "media": 1,
     "category": "moba_event",
@@ -60674,7 +60710,7 @@
     ]
   },
   {
-    "seq": 301,
+    "seq": 300,
     "storyId": "1pj8h2onx1orbsve",
     "media": 1,
     "category": "comics",
@@ -60717,7 +60753,7 @@
     ]
   },
   {
-    "seq": 300,
+    "seq": 299,
     "storyId": "acit47sbofnyhdez",
     "media": 1,
     "category": "moba_event",
@@ -60764,7 +60800,7 @@
     ]
   },
   {
-    "seq": 299,
+    "seq": 298,
     "storyId": "xztmhrjzd6vvte0z",
     "media": 1,
     "category": "dof",
@@ -60815,7 +60851,7 @@
     "relation": []
   },
   {
-    "seq": 298,
+    "seq": 297,
     "storyId": "cfyknlw4ccxwc6dl",
     "media": 1,
     "category": "comics",
@@ -60870,7 +60906,7 @@
     ]
   },
   {
-    "seq": 297,
+    "seq": 296,
     "storyId": "vzp7hidhzclp3c81",
     "media": 1,
     "category": "moba_event",
@@ -60927,7 +60963,7 @@
     ]
   },
   {
-    "seq": 296,
+    "seq": 295,
     "storyId": "i9h2f8v3rd1zsf86",
     "media": 1,
     "category": "comics",
@@ -60978,7 +61014,7 @@
     ]
   },
   {
-    "seq": 295,
+    "seq": 294,
     "storyId": "t15d6t205lj2x8nk",
     "media": 1,
     "category": "moba_event",
@@ -61032,7 +61068,7 @@
     ]
   },
   {
-    "seq": 294,
+    "seq": 293,
     "storyId": "qt86lg7xn7wdccog",
     "media": 1,
     "category": "dof",
@@ -61085,7 +61121,7 @@
     ]
   },
   {
-    "seq": 293,
+    "seq": 292,
     "storyId": "seikylc0of96ddn8",
     "media": 1,
     "category": "comics",
@@ -61128,7 +61164,7 @@
     ]
   },
   {
-    "seq": 292,
+    "seq": 291,
     "storyId": "5gn2p0i761dxh1bs",
     "media": 1,
     "category": "moba_event",
@@ -61173,7 +61209,7 @@
     ]
   },
   {
-    "seq": 291,
+    "seq": 290,
     "storyId": "0a5sjhasiacwkcno",
     "media": 1,
     "category": "comics",
@@ -61216,7 +61252,7 @@
     ]
   },
   {
-    "seq": 290,
+    "seq": 289,
     "storyId": "3hsig8ncmiqbpvyd",
     "media": 1,
     "category": "moba_event",
@@ -61263,7 +61299,7 @@
     ]
   },
   {
-    "seq": 289,
+    "seq": 288,
     "storyId": "17qiiglayg9869os",
     "media": 1,
     "category": "dof",
@@ -61326,7 +61362,7 @@
     "relation": []
   },
   {
-    "seq": 288,
+    "seq": 287,
     "storyId": "5h430j36wopthqim",
     "media": 1,
     "category": "comics",
@@ -61381,7 +61417,7 @@
     ]
   },
   {
-    "seq": 287,
+    "seq": 286,
     "storyId": "yk7sgo3kxnqm5pa2",
     "media": 1,
     "category": "moba_event",
@@ -61438,7 +61474,7 @@
     ]
   },
   {
-    "seq": 286,
+    "seq": 285,
     "storyId": "fd0wa1uhpxwnogbo",
     "media": 1,
     "category": "comics",
@@ -61481,7 +61517,7 @@
     ]
   },
   {
-    "seq": 285,
+    "seq": 284,
     "storyId": "np1fgurr4wpv7fsn",
     "media": 1,
     "category": "moba_event",
@@ -61528,7 +61564,7 @@
     ]
   },
   {
-    "seq": 284,
+    "seq": 283,
     "storyId": "dgm2dyuiq1hpfxyu",
     "media": 1,
     "category": "comics",
@@ -61579,7 +61615,7 @@
     ]
   },
   {
-    "seq": 283,
+    "seq": 282,
     "storyId": "70vc421um0gom04t",
     "media": 1,
     "category": "moba_event",
@@ -61632,7 +61668,7 @@
     ]
   },
   {
-    "seq": 282,
+    "seq": 281,
     "storyId": "fono99mijtt8z447",
     "media": 1,
     "category": "comics",
@@ -61679,7 +61715,7 @@
     ]
   },
   {
-    "seq": 281,
+    "seq": 280,
     "storyId": "khosfzrfkifvf2lq",
     "media": 1,
     "category": "moba_event",
@@ -61728,7 +61764,7 @@
     ]
   },
   {
-    "seq": 280,
+    "seq": 279,
     "storyId": "xvaybzi4yc12hxsh",
     "media": 1,
     "category": "dof",
@@ -61783,7 +61819,7 @@
     "relation": []
   },
   {
-    "seq": 279,
+    "seq": 278,
     "storyId": "k6l2lhrt7dffj1tg",
     "media": 1,
     "category": "comics",
@@ -61838,7 +61874,7 @@
     ]
   },
   {
-    "seq": 278,
+    "seq": 277,
     "storyId": "ty2wlsqe2livzk0e",
     "media": 1,
     "category": "moba_event",
@@ -61897,7 +61933,7 @@
     ]
   },
   {
-    "seq": 277,
+    "seq": 276,
     "storyId": "b3zz0lg9xwf9v9y3",
     "media": 1,
     "category": "comics",
@@ -61948,7 +61984,7 @@
     ]
   },
   {
-    "seq": 276,
+    "seq": 275,
     "storyId": "dj0905i2w9q35wgm",
     "media": 1,
     "category": "moba_event",
@@ -62001,7 +62037,7 @@
     ]
   },
   {
-    "seq": 275,
+    "seq": 274,
     "storyId": "yvp271vacl90sw78",
     "media": 1,
     "category": "comics",
@@ -62044,7 +62080,7 @@
     ]
   },
   {
-    "seq": 274,
+    "seq": 273,
     "storyId": "n0fnds8ehlgi04u3",
     "media": 1,
     "category": "moba_event",
@@ -62118,7 +62154,7 @@
     ]
   },
   {
-    "seq": 273,
+    "seq": 272,
     "storyId": "zgrpzz7xcvplan9m",
     "media": 1,
     "category": "comics",
@@ -62165,7 +62201,7 @@
     ]
   },
   {
-    "seq": 272,
+    "seq": 271,
     "storyId": "vqdbb6wivhqold8o",
     "media": 1,
     "category": "moba_event",
@@ -62219,7 +62255,7 @@
     ]
   },
   {
-    "seq": 271,
+    "seq": 270,
     "storyId": "kqkhqh2q6mvubl9d",
     "media": 1,
     "category": "dof",
@@ -62282,7 +62318,7 @@
     "relation": []
   },
   {
-    "seq": 270,
+    "seq": 269,
     "storyId": "t66xmzh97w1jj60p",
     "media": 1,
     "category": "comics",
@@ -62337,7 +62373,7 @@
     ]
   },
   {
-    "seq": 269,
+    "seq": 268,
     "storyId": "9j986esgb9uxxqnx",
     "media": 1,
     "category": "moba_event",
@@ -62395,7 +62431,7 @@
     ]
   },
   {
-    "seq": 268,
+    "seq": 267,
     "storyId": "sk1nhs64p7lxlvea",
     "media": 1,
     "category": "comics",
@@ -62438,7 +62474,7 @@
     ]
   },
   {
-    "seq": 267,
+    "seq": 266,
     "storyId": "65gsve6av07qf745",
     "media": 1,
     "category": "moba_event",
@@ -62485,7 +62521,7 @@
     ]
   },
   {
-    "seq": 266,
+    "seq": 265,
     "storyId": "bf47xckusthsmj4y",
     "media": 1,
     "category": "comics",
@@ -62532,7 +62568,7 @@
     ]
   },
   {
-    "seq": 265,
+    "seq": 264,
     "storyId": "ynzk6g99atieexx6",
     "media": 1,
     "category": "moba_event",
@@ -62581,7 +62617,7 @@
     ]
   },
   {
-    "seq": 264,
+    "seq": 263,
     "storyId": "gge0h4nlabjjfoyc",
     "media": 1,
     "category": "comics",
@@ -62636,7 +62672,7 @@
     ]
   },
   {
-    "seq": 263,
+    "seq": 262,
     "storyId": "j9pkbsdg3e0zrq10",
     "media": 1,
     "category": "moba_event",
@@ -62693,7 +62729,7 @@
     ]
   },
   {
-    "seq": 262,
+    "seq": 261,
     "storyId": "u166syqtbhny6cx0",
     "media": 1,
     "category": "dof",
@@ -62748,7 +62784,7 @@
     "relation": []
   },
   {
-    "seq": 261,
+    "seq": 260,
     "storyId": "io1p0s7kxgkx2s04",
     "media": 1,
     "category": "comics",
@@ -62795,7 +62831,7 @@
     ]
   },
   {
-    "seq": 260,
+    "seq": 259,
     "storyId": "ohgglkgd5v6kbu14",
     "media": 1,
     "category": "moba_event",
@@ -62844,7 +62880,7 @@
     ]
   },
   {
-    "seq": 259,
+    "seq": 258,
     "storyId": "1ij6lw3unstys0ck",
     "media": 1,
     "category": "comics",
@@ -62887,7 +62923,7 @@
     ]
   },
   {
-    "seq": 258,
+    "seq": 257,
     "storyId": "97r9i2o45zigvxyi",
     "media": 1,
     "category": "moba_event",
@@ -62933,7 +62969,7 @@
     ]
   },
   {
-    "seq": 257,
+    "seq": 256,
     "storyId": "3x5781w15nq761z6",
     "media": 1,
     "category": "comics",
@@ -62984,7 +63020,7 @@
     ]
   },
   {
-    "seq": 256,
+    "seq": 255,
     "storyId": "udh7v6jmndp6vdpn",
     "media": 1,
     "category": "moba_event",
@@ -63037,7 +63073,7 @@
     ]
   },
   {
-    "seq": 255,
+    "seq": 254,
     "storyId": "ppk701pqkgxgo7zr",
     "media": 1,
     "category": "comics",
@@ -63084,7 +63120,7 @@
     ]
   },
   {
-    "seq": 254,
+    "seq": 253,
     "storyId": "lqxtd0x455y48ofu",
     "media": 1,
     "category": "moba_event",
@@ -63135,7 +63171,7 @@
     ]
   },
   {
-    "seq": 253,
+    "seq": 252,
     "storyId": "tu3xb00it0nu2lju",
     "media": 1,
     "category": "dof",
@@ -63186,7 +63222,7 @@
     "relation": []
   },
   {
-    "seq": 252,
+    "seq": 251,
     "storyId": "i9u4hr4ml2df9vrj",
     "media": 1,
     "category": "comics",
@@ -63241,7 +63277,7 @@
     ]
   },
   {
-    "seq": 251,
+    "seq": 250,
     "storyId": "av4ccuk0iulucbex",
     "media": 1,
     "category": "moba_event",
@@ -63298,7 +63334,7 @@
     ]
   },
   {
-    "seq": 250,
+    "seq": 249,
     "storyId": "tjhpamr9tm0w93vm",
     "media": 1,
     "category": "comics",
@@ -63353,7 +63389,7 @@
     ]
   },
   {
-    "seq": 249,
+    "seq": 248,
     "storyId": "oie8rdurldxjerwu",
     "media": 1,
     "category": "moba_event",
@@ -63410,7 +63446,7 @@
     ]
   },
   {
-    "seq": 248,
+    "seq": 247,
     "storyId": "q2020wm01favphrp",
     "media": 1,
     "category": "comics",
@@ -63461,7 +63497,7 @@
     ]
   },
   {
-    "seq": 247,
+    "seq": 246,
     "storyId": "5167d6oa7kcj1nm2",
     "media": 1,
     "category": "moba_event",
@@ -63515,7 +63551,7 @@
     ]
   },
   {
-    "seq": 246,
+    "seq": 245,
     "storyId": "oghbcy2386bbmay5",
     "media": 1,
     "category": "comics",
@@ -63562,7 +63598,7 @@
     ]
   },
   {
-    "seq": 245,
+    "seq": 244,
     "storyId": "haw5eaoc7ioiy94l",
     "media": 1,
     "category": "moba_event",
@@ -63612,7 +63648,7 @@
     ]
   },
   {
-    "seq": 244,
+    "seq": 243,
     "storyId": "47a7lf8dklz2d31n",
     "media": 1,
     "category": "dof",
@@ -63663,7 +63699,7 @@
     "relation": []
   },
   {
-    "seq": 243,
+    "seq": 242,
     "storyId": "41klftu2kjzrsvgz",
     "media": 1,
     "category": "comics",
@@ -63710,7 +63746,7 @@
     ]
   },
   {
-    "seq": 242,
+    "seq": 241,
     "storyId": "wjin29ohxotc6gjr",
     "media": 1,
     "category": "moba_event",
@@ -63759,7 +63795,7 @@
     ]
   },
   {
-    "seq": 241,
+    "seq": 240,
     "storyId": "itidfxcckqjjo7gi",
     "media": 1,
     "category": "comics",
@@ -63810,7 +63846,7 @@
     ]
   },
   {
-    "seq": 240,
+    "seq": 239,
     "storyId": "kxvjs9fwwtkr9gm1",
     "media": 1,
     "category": "moba_event",
@@ -63863,7 +63899,7 @@
     ]
   },
   {
-    "seq": 239,
+    "seq": 238,
     "storyId": "hjrugcb8qn7ylxz0",
     "media": 1,
     "category": "comics",
@@ -63914,7 +63950,7 @@
     ]
   },
   {
-    "seq": 238,
+    "seq": 237,
     "storyId": "0ukp9mfsker0ua30",
     "media": 1,
     "category": "moba_event",
@@ -63967,7 +64003,7 @@
     ]
   },
   {
-    "seq": 237,
+    "seq": 236,
     "storyId": "d6ipsyl2cv8x4adl",
     "media": 1,
     "category": "comics",
@@ -64014,7 +64050,7 @@
     ]
   },
   {
-    "seq": 236,
+    "seq": 235,
     "storyId": "4q0d3daun6jnj51t",
     "media": 1,
     "category": "moba_event",
@@ -64063,7 +64099,7 @@
     ]
   },
   {
-    "seq": 235,
+    "seq": 234,
     "storyId": "hfk8yazypsqrnx8w",
     "media": 1,
     "category": "dof",
@@ -64126,7 +64162,7 @@
     "relation": []
   },
   {
-    "seq": 234,
+    "seq": 233,
     "storyId": "vln6027fbe6owock",
     "media": 1,
     "category": "comics",
@@ -64181,7 +64217,7 @@
     ]
   },
   {
-    "seq": 233,
+    "seq": 232,
     "storyId": "49o8ge21f33uw9qn",
     "media": 1,
     "category": "moba_event",
@@ -64238,7 +64274,7 @@
     ]
   },
   {
-    "seq": 232,
+    "seq": 231,
     "storyId": "2cy5v9l2r69xd4vp",
     "media": 1,
     "category": "comics",
@@ -64293,7 +64329,7 @@
     ]
   },
   {
-    "seq": 231,
+    "seq": 230,
     "storyId": "wgo94g3lgaeoqrlp",
     "media": 1,
     "category": "moba_event",
@@ -64353,7 +64389,7 @@
     ]
   },
   {
-    "seq": 230,
+    "seq": 229,
     "storyId": "i1gtzefj95726cw5",
     "media": 1,
     "category": "comics",
@@ -64398,42 +64434,6 @@
     "relation": [
       "p9ihpnqedie0r5i4",
       "3bxnfu4cbhz7tmb5"
-    ]
-  },
-  {
-    "seq": 229,
-    "storyId": "3bxnfu4cbhz7tmb5",
-    "media": 1,
-    "category": "comics",
-    "website": "asb",
-    "headTitle": "",
-    "storyTitle": "2nd Anniversary Live ～感謝の言葉～Vol.2",
-    "releaseDate": "20160714",
-    "subCnt": 3,
-    "voiceAtRelease": 0,
-    "voice": 0,
-    "still": 0,
-    "url": "https://asobistory.asobistore.jp/comic/detail/7zlwpo324rk14r3",
-    "releaseDateSourceUrl": "",
-    "pp": 0,
-    "infoStory": [
-      {
-        "infoId": "HIJ02",
-        "personFlg": 1
-      },
-      {
-        "infoId": "HIJ03",
-        "personFlg": 1
-      },
-      {
-        "infoId": "HIJ05",
-        "personFlg": 1
-      }
-    ],
-    "howtoviewStory": [],
-    "relation": [
-      "p9ihpnqedie0r5i4",
-      "i1gtzefj95726cw5"
     ]
   },
   {
