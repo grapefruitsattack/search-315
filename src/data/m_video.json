@@ -1,5 +1,101 @@
 [
   {
+    "videoId": "w-Zv0cxZCcM",
+    "videoType": "mv",
+    "title": "THE 虎牙道「宵闇のイリュージョン」2DMV",
+    "displayTitle": "THE 虎牙道「宵闇のイリュージョン」2DMV",
+    "siteType": "youtube",
+    "releaseDate": "20260821",
+    "url": "https://youtu.be/w-Zv0cxZCcM",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/w-Zv0cxZCcM?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/w-Zv0cxZCcM/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "KGD00",
+        "personFlg": 0,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "KGD01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "KGD02",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "KGD03",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
+    "videoId": "pJxbMmWIoEE",
+    "videoType": "3dlive",
+    "title": "【IWSF2026】SHOOTING STAR／DAY2-ZESSYOU-｜IDOL WORLD SUPER FESTIVAL 2026 ",
+    "displayTitle": "【IWSF2026】SHOOTING STAR／DAY2-ZESSYOU-",
+    "siteType": "youtubeshort",
+    "releaseDate": "20260816",
+    "url": "https://www.youtube.com/shorts/pJxbMmWIoEE",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/pJxbMmWIoEE?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/pJxbMmWIoEE/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "CFP03",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
+    "videoId": "8s8rOt4oUMk",
+    "videoType": "3dlive",
+    "title": "【IWSF2026】MCパート／DAY3-KYOUMEI-｜IDOL WORLD SUPER FESTIVAL 2026 ",
+    "displayTitle": "【IWSF2026】MCパート／DAY3-KYOUMEI-",
+    "siteType": "youtubeshort",
+    "releaseDate": "20260811",
+    "url": "https://www.youtube.com/shorts/8s8rOt4oUMk",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/8s8rOt4oUMk?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/8s8rOt4oUMk/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "SSK01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
+    "videoId": "Pl_uRmAvlzU",
+    "videoType": "3dlive",
+    "title": "【IWSF2026】メルヘンデビュー！／DAY3-KYOUMEI-｜IDOL WORLD SUPER FESTIVAL 2026 ",
+    "displayTitle": "【IWSF2026】メルヘンデビュー！／DAY3-KYOUMEI-",
+    "siteType": "youtubeshort",
+    "releaseDate": "20260810",
+    "url": "https://www.youtube.com/shorts/Pl_uRmAvlzU",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/Pl_uRmAvlzU?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/Pl_uRmAvlzU/mqdefault.jpg",
+    "tiktokUrl": "",
+    "infoVideo": [
+      {
+        "infoId": "DRS01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      },
+      {
+        "infoId": "SSK01",
+        "personFlg": 1,
+        "excludeFlg": 0
+      }
+    ]
+  },
+  {
     "videoId": "0ETkgAdAN7g",
     "videoType": "3dlive",
     "title": "【IWSF2026】我が混沌のサバト・マリアージュ／DAY2-ZESSYOU-",
