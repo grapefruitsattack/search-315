@@ -145,16 +145,19 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
     </div>
     :
     <section 
-      className={`select-none print:hidden whitespace-pre-wrap tablet:mx-0 mx-2`}
+      className={`group 
+        select-none print:hidden whitespace-pre-wrap tablet:mx-0 mx-2
+        ${isExpanded ? '' : ' cursor-pointer'}
+        `}
+        onClick={(e) => {
+          if(!isExpanded) switchExpanded(!isExpanded);
+        }}
     >
       <div
         className={`
           relative overflow-hidden 
           ${isExpanded ? 'max-h-[9999px]' : 'max-h-32 cursor-pointer'}
         `}
-        onClick={(e) => {
-          if(!isExpanded) switchExpanded(!isExpanded);
-        }}
       >
         <div id="lyricDisplayArea" className="flex flex-col gap-0 mb-4 font-sans">
         <div className={`mt-auto ${NotoSansFont.className}`}>
@@ -180,13 +183,13 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
       {lyricList.length > 8 && (
         <button
           onClick={() => switchExpanded(!isExpanded)}
-          className="
+          className={`
             mt-3 w-full rounded-lg
             border border-neutral-300
             py-2 text-sm font-medium
-            hover:bg-neutral-100
             transition-colors
-          "
+            ${isExpanded ? ' hover:bg-neutral-100 ' : ' group-hover:bg-neutral-100 '}
+          `}
         >
           {isExpanded ? '閉じる' : 'もっと見る'}
         </button>
