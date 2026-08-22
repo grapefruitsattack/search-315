@@ -12,6 +12,7 @@ import CopyButton from "@/features/common/components/CopyButton";
 import {ShareModalButton} from "@/features/app/shareModal/ShareModalButton";
 import AlbumSongs from './AlbumSongs'
 import AlbumSeries from './AlbumSeries'
+import { Disc2 } from "lucide-react";
 
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
@@ -49,7 +50,9 @@ export default function AlbumContent({ album, }: { album: Albums}) {
   return(
     <>
       <section className='tablet:px-0 px-px '>
-        <div className=" mb-2 bg-gradient-to-r from-orange-500 tablet:from-0% mobileM:from-20% from-50% rounded">
+        <div className=" mb-2 rounded
+          bg-gradient-to-r from-gray-500 mobileS:to-gray-50 mobileL:from-50% from-80% to-gray-500 "
+        >
           <div 
             className="
               flex items-center w-full ml-2
@@ -58,7 +61,7 @@ export default function AlbumContent({ album, }: { album: Albums}) {
               cursor-pointer lg:cursor-auto 
               gap-1"
           >
-            <svg className="fill-orange-500 bg-white rounded" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <svg className="fill-gray-500 bg-white rounded" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 16C14.2133 16 16 14.2133 16 12C16 9.78667 14.2133 8 12 8C9.78667 8 8 9.78667 8 12C8 14.2133 9.78667 16 12 16ZM12 11C12.55 11 13 11.45 13 12C13 12.55 12.55 13 12 13C11.45 13 11 12.55 11 12C11 11.45 11.45 11 12 11Z"></path>
             </svg>
             <p className="pr-2">{'アルバム'}</p>
@@ -222,17 +225,19 @@ export default function AlbumContent({ album, }: { album: Albums}) {
           </div>
         </div>
       </section>
-      {/* アルバム収録曲 */}
-      <section className="mt-10">
-        <AlbumSongs album={album}/>
-      </section>
+      <section className='flex flex-col gap-6 mt-10'>
+        {/* アルバム収録曲 */}
+        <div className="">
+          <AlbumSongs album={album}/>
+        </div>
 
-      {/* シリーズ */}
-      <section className="mt-10">
-        {album.sereisId === undefined || album.sereisId === '' || series.length < 1
-          ?<></>
-          :<AlbumSeries albumId={album.albumId} seriesId={album.sereisId}/>
-        }
+        {/* シリーズ */}
+        <div className="">
+          {album.sereisId === undefined || album.sereisId === '' || series.length < 1
+            ?<></>
+            :<AlbumSeries albumId={album.albumId} seriesId={album.sereisId}/>
+          }
+        </div>
       </section>
 
     
