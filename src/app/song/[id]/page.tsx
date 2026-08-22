@@ -36,9 +36,11 @@ const Songs = async ({
       <title>{`${song.songTitle} ${'\u00a0'}|${'\u00a0\u00a0'}サーチサイコー`}</title>
       <div className=" pb-96 px-0 mobileM:px-1 mobileL:px-2 tablet:px-4 tablet:px-8 lg:px-8 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
         <SongContent result={song}/>
-        <Suspense fallback={<></>}>
-          <StoryWithSong songId={id}/>
-        </Suspense>
+        <div className="mt-6">
+          <Suspense fallback={<></>}>
+            <StoryWithSong songId={id}/>
+          </Suspense>
+        </div>
       </div>
     </CommonPage>
     </Suspense>

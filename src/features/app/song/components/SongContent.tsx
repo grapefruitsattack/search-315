@@ -22,6 +22,7 @@ import LyricPage from './Lyric'
 import {
   useDisclosure, 
  } from "@chakra-ui/react";
+import { Music } from "lucide-react";
 
 const SubscButton = dynamic(() => import("@/features/common/components/SubscButton"), {ssr: false,});
 
@@ -98,7 +99,9 @@ export default function SongContent({ result }: { result: SongMaster }) {
 
   return(
     <>
-      <section className="mb-2 bg-gradient-to-r from-cyan-500/70 tablet:from-0% from-20% rounded">
+      <section className="mb-2 rounded
+        bg-gradient-to-r from-gray-500 mobileS:to-gray-50 mobileL:from-50% from-80% to-gray-500
+      ">
         <div 
           className="
             flex items-center w-full ml-2
@@ -106,9 +109,8 @@ export default function SongContent({ result }: { result: SongMaster }) {
             text-white
             cursor-pointer lg:cursor-auto 
               gap-2">
-          <svg className="fill-cyan-500 bg-white rounded" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 0 24 24" width="24" height="24">
-              <path d="M20 3V17C20 19.2091 18.2091 21 16 21C13.7909 21 12 19.2091 12 17C12 14.7909 13.7909 13 16 13C16.7286 13 17.4117 13.1948 18 13.5351V5H9V17C9 19.2091 7.20914 21 5 21C2.79086 21 1 19.2091 1 17C1 14.7909 2.79086 13 5 13C5.72857 13 6.41165 13.1948 7 13.5351V3H20ZM5 19C6.10457 19 7 18.1046 7 17C7 15.8954 6.10457 15 5 15C3.89543 15 3 15.8954 3 17C3 18.1046 3.89543 19 5 19ZM16 19C17.1046 19 18 18.1046 18 17C18 15.8954 17.1046 15 16 15C14.8954 15 14 15.8954 14 17C14 18.1046 14.8954 19 16 19Z"></path></svg>
-          <p className="pr-2">{'曲'}</p>
+          <Music  className="text-gray-500 bg-white rounded pr-[2px]"/>
+          <p className="pr-2">{'楽曲'}</p>
         </div>
       </section>
       <section className="mb-16 text-start align-middle gap-x-5 tablet:mx-0 mx-2">
@@ -297,39 +299,39 @@ export default function SongContent({ result }: { result: SongMaster }) {
           </p>
         </div>
       </section>
+      <section className='flex flex-col gap-6'>
+        {/* 歌詞 */}
+        {result.lyric === ''
+          ?<></>
+          :
+          <section className="">
+            <LyricPage song={result} lyric={lyric} lyricIsLoading={lyricIsLoading} />
+          </section>
+        }
+        {/* MV */}
+        {mv === undefined || mv.length === 0
+          ?<></>
+          :<section className="">
+            <Mv mvInfos={mv}/>
+          </section>
+        }
 
-      {/* 歌詞 */}
-      {result.lyric === ''
+        {/* ライブ */}
+        {live === undefined || live.length === 0
         ?<></>
-        :
-        <section className="mt-10">
-          <LyricPage song={result} lyric={lyric} lyricIsLoading={lyricIsLoading} />
-        </section>
-      }
-      {/* MV */}
-      {mv === undefined || mv.length === 0
-        ?<></>
-        :<section className="mt-10">
-          <Mv mvInfos={mv}/>
-        </section>
-      }
+        :<section className="">
+            <Live results={live}/>
+          </section>
+        }
 
-      {/* ライブ */}
-      {live === undefined || live.length === 0
-      ?<></>
-      :<section className="mt-10">
-          <Live results={live}/>
-        </section>
-      }
-
-      {/* 他のバージョン */}
-      {otherVersionSongs.length < 1
-        ?<></>
-        :<section className=" mt-10">
-          <OtherVersion id={result.songId} otherVersionSongs={otherVersionSongs}/>
-        </section>
-      }
-
+        {/* 他のバージョン */}
+        {otherVersionSongs.length < 1
+          ?<></>
+          :<section className="">
+            <OtherVersion id={result.songId} otherVersionSongs={otherVersionSongs}/>
+          </section>
+        }
+      </section>
     
     </>
   )

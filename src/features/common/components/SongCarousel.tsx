@@ -41,7 +41,7 @@ export default function SongCarousel(
 
   if(songArray.length<=displaySongCnt) {
     return(
-      <div className="pt-4 pb-8">
+      <div className="pt-1 pb-4">
         <div className={`
           items-start gap-y-0 gap-x-2 
           lg:grid grid 

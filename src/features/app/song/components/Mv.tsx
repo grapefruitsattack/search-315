@@ -19,9 +19,9 @@ export default function Mv({ mvInfos }: { mvInfos: MvInfo[] }) {
     {/* 見出し */}
     <a 
         className="
-            mobileL:text-2xl text-xl font-mono flex items-center w-full
-            after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-            cursor-pointer mb-4
+          mobileL:text-2xl text-xl font-mono flex items-center w-full
+          after:h-[0.5px] after:grow after:bg-indigo-800/50 after:ml-[1rem] 
+          text-indigo-900 font-bold
         "
         onClick={()=>setISopen(!isOpen)}
     >
@@ -31,10 +31,10 @@ export default function Mv({ mvInfos }: { mvInfos: MvInfo[] }) {
         :<svg className="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
         <path d="M13.1714 12.0007L8.22168 7.05093L9.63589 5.63672L15.9999 12.0007L9.63589 18.3646L8.22168 16.9504L13.1714 12.0007Z"></path></svg>
         }
-          <SquarePlay  className="text-red-400"/>
+          <SquarePlay  className="text-red-500 mr-1"/>
             {'関連動画'}
     </a>
-    <section className={`${isOpen?'':'hidden'}`}>
+    <section className={`${isOpen?'pt-1':'hidden'}`}>
 
       {displayMv.length<=1
         ?(
