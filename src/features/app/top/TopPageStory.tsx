@@ -12,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Toaster } from 'sonner';
 import { Bell, BookOpen } from "lucide-react";
 
 export default function TopPageStory(
@@ -39,9 +40,14 @@ export default function TopPageStory(
       ,query: {order:'desc', htv: 3}},
   ];
 
-  const [selectedStory, setSelectedStory] = useState(StoryDataArray[0]);
+  const [selectedStoryType, setSelectedStoryType] = useState<string>('all');
+  const selectedStory =
+    StoryDataArray.find(data => data.type === selectedStoryType)
+    ?? StoryDataArray[0];
 
   return (
+    <>
+    <Toaster position="top-center"/>
     <Card className="shadow-lg ">
       <CardHeader>
         <div 
@@ -69,7 +75,7 @@ export default function TopPageStory(
                     :'bg-stone-200/20 border-stone-200 text-stone-500 '}
                 `}
                 key={data.type}
-                onClick={()=>setSelectedStory(data)}
+                onClick={()=>setSelectedStoryType(data.type)}
                 aria-disabled={selectedStory.type===data.type}
               >
                 {data.typeName}
@@ -108,7 +114,7 @@ export default function TopPageStory(
             </div>
           </div>
           <div className='tablet:hidden'>
-            <StoryCarousel StoryArray={selectedStory.story} displayCnt={1} login={login} uniqueCarouselKey={`toppage`} />
+            <StoryCarousel StoryArray={selectedStory.story} displayCnt={1} login={login} uniqueCarouselKey={`toppage-${selectedStory.type}`} />
           </div>
 
           <div className='flex tablet:mt-4 pr-2 tablet:pr-0 pt-[42px] tablet:pt-0'>
@@ -131,5 +137,6 @@ export default function TopPageStory(
           </div>
         </div>
       </CardContent>
-    </Card>)
+    </Card>
+    </>)
 };
