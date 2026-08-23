@@ -9,6 +9,7 @@ const dummySeriesId:string[]
         ,'9ST'
         ,'MESP'
         ,'UOS'
+        ,'JSC'
         ,''
         ,'MTS' //TODO 該当アートワーク作成後削除
         ,'FBF' //TODO 該当アートワーク作成後削除

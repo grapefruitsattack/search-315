@@ -44617,6 +44617,206 @@
   },
   {
     "trackNo": 1,
+    "albumId": "10AS4",
+    "songId": "10AS4_1",
+    "singingInfoId": "KGD01",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "10AS4",
+    "songId": "10AS4_2",
+    "singingInfoId": "KGD02",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "10AS4",
+    "songId": "10AS4_3",
+    "singingInfoId": "KGD03",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "10AS4",
+    "songId": "10AS4_4",
+    "singingInfoId": "FLG01",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "10AS4",
+    "songId": "10AS4_5",
+    "singingInfoId": "FLG02",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 6,
+    "albumId": "10AS4",
+    "songId": "10AS4_6",
+    "singingInfoId": "FLG03",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 7,
+    "albumId": "10AS4",
+    "songId": "10AS4_7",
+    "singingInfoId": "LGN01",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "10AS4",
+    "songId": "10AS4_8",
+    "singingInfoId": "LGN02",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 9,
+    "albumId": "10AS4",
+    "songId": "10AS4_9",
+    "singingInfoId": "LGN03",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 10,
+    "albumId": "10AS4",
+    "songId": "10AS4_10",
+    "singingInfoId": "CLF01",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 11,
+    "albumId": "10AS4",
+    "songId": "10AS4_11",
+    "singingInfoId": "CLF02",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 12,
+    "albumId": "10AS4",
+    "songId": "10AS4_12",
+    "singingInfoId": "CLF03",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "JSC01",
+    "songId": "JSC01_1",
+    "singingInfoId": "BEI01",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 2,
+    "albumId": "JSC01",
+    "songId": "JSC01_2",
+    "singingInfoId": "BEI02",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "JSC01",
+    "songId": "JSC01_3",
+    "singingInfoId": "BEI03",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "JSC01",
+    "songId": "JSC01_4",
+    "singingInfoId": "DBL01",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "JSC01",
+    "songId": "JSC01_5",
+    "singingInfoId": "DBL02",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 6,
+    "albumId": "JSC01",
+    "songId": "JSC01_6",
+    "singingInfoId": "HIJ01",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 7,
+    "albumId": "JSC01",
+    "songId": "JSC01_7",
+    "singingInfoId": "HIJ02",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "JSC01",
+    "songId": "JSC01_8",
+    "singingInfoId": "HIJ03",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 9,
+    "albumId": "JSC01",
+    "songId": "JSC01_9",
+    "singingInfoId": "HIJ04",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 10,
+    "albumId": "JSC01",
+    "songId": "JSC01_10",
+    "singingInfoId": "HIJ05",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 11,
+    "albumId": "JSC01",
+    "songId": "JSC01_11",
+    "singingInfoId": "SEM01",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 12,
+    "albumId": "JSC01",
+    "songId": "JSC01_12",
+    "singingInfoId": "SEM02",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 13,
+    "albumId": "JSC01",
+    "songId": "JSC01_13",
+    "singingInfoId": "SEM03",
+    "releaseDate": "20260912",
+    "type": "sver"
+  },
+  {
+    "trackNo": 1,
     "albumId": "MTS11",
     "songId": "MTS11_1",
     "singingInfoId": "FLG00",
