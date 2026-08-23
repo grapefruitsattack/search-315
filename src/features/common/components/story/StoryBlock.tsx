@@ -234,15 +234,14 @@ export default function StoryBlock(
                           rounded-lg  w-full h-full
                           font-sans leading-tight
                           transition-all duration-200 ease-out
-                          text-xs mobileS:text-sm 
                           active:scale-95
                           ${userReadLater===1
-                            ?` lg:text-base
+                            ?` lg:text-base text-xs mobileS:text-sm 
                               text-white fill-white bg-amber-600
                               border-2 border-amber-600
                               hover:ring-2 hover:ring-amber-600 hover:ring-offset-2 
                             `
-                            :` lg:text-lg
+                            :` lg:text-lg text-xs mobileS:text-sm 
                               text-amber-700 fill-amber-700 bg-amber-100
                               border-2 border-amber-700
                               hover:ring-2 hover:ring-amber-700 hover:ring-offset-2 

@@ -4,6 +4,14 @@ import Link from 'next/link';
 import type { SingingMaster,Story,UserReadingData } from '@/data/types';
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 import StoryCarousel from "@/features/common/components/StoryCarousel";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Bell, BookOpen } from "lucide-react";
 
 export default function TopPageStory(
@@ -32,99 +40,96 @@ export default function TopPageStory(
   ];
 
   const [selectedStory, setSelectedStory] = useState(StoryDataArray[0]);
-  
+
   return (
-    <>
-    <div className="flex items-center ">
-      <div 
-        className="
-            mobileL:text-2xl text-xl font-mono flex items-center w-full
-            after:h-[0.5px] after:grow after:bg-indigo-800/50 after:ml-[1rem] 
-            text-indigo-900 font-bold
-        "
-      >
-        <BookOpen className="mr-1 text-indigo-700" />{'最新ストーリー'}
-      </div>
-      <div className='h-[0.5px] grow bg-slate-900/50 ml-[1rem] '>
-      {''}
-      </div>
-    </div>
-    <div 
-      className={`
-        flex flex-wrap px-2
-        mt-2 mb-4 gap-1 font-bold 
-      `}
-    >
-        {StoryDataArray.map((data,index)=>
-        <button
-          className={`border border-2 rounded-xl px-2 py-[2px]
-            ${selectedStory.type===data.type
-              ?'bg-green-400 border-green-400 text-stone-50 pointer-events-none'
-              :'bg-stone-200/20 border-stone-200 text-stone-500 '}
-          `}
-          key={data.type}
-          onClick={()=>setSelectedStory(data)}
-          aria-disabled={selectedStory.type===data.type}
-        >
-          {data.typeName}
-        </button>
-        )}
-    </div>
-    <div 
-      className="hidden tablet:flex h-fit w-full rounded-md border overflow-x-scroll overflow-y-hidden"
-    >
-      <div 
-        className="flex flex-row flex-nowrap
-        gap-4 lg:px-4 px-2 pt-2 pb-6
-        "
-      >
-        {selectedStory.story.map((result, index) => (
-          <div key={index} className="pc:min-w-[270px] min-w-[230px]">
-            <StoryBlock 
-              key={index} 
-              storyId={result.story.storyId} 
-              media={result.story.media} 
-              category={result.story.category} 
-              website={result.story.website}
-              headTitle={result.story.headTitle} 
-              storyTitle={result.story.storyTitle} 
-              releaseDate={result.story.releaseDate} 
-              infoStory={result.story.infoStory} 
-              howtoviewStory={result.story.howtoviewStory}
-              url={result.story.url} 
-              pp={result.story.pp||0}
-              login={login}
-              userReadLater={result.userReadingData===null?null:result.userReadingData.read_later}
-              displayLogin={true}
-            />
+    <Card className="shadow-lg ">
+      <CardHeader>
+        <div 
+          className="flex items-center w-full py-2 pl-4
+            bg-gray-100 text-gray-700 mobileL:text-2xl mobileS:text-xl text-lg font-bold
+            border-b "
+        > 
+          <BookOpen className="mr-1 text-indigo-700" />
+          {'最新ストーリー'}
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div className="pb-4">
+          <div 
+            className={`
+              flex flex-wrap px-2 pt-2
+              mt-2 mb-4 gap-1 font-bold text-base
+            `}
+          >
+              {StoryDataArray.map((data,index)=>
+              <button
+                className={`border border-2 rounded-xl px-2 py-[2px]
+                  ${selectedStory.type===data.type
+                    ?'bg-green-400 border-green-400 text-stone-50 pointer-events-none'
+                    :'bg-stone-200/20 border-stone-200 text-stone-500 '}
+                `}
+                key={data.type}
+                onClick={()=>setSelectedStory(data)}
+                aria-disabled={selectedStory.type===data.type}
+              >
+                {data.typeName}
+              </button>
+              )}
           </div>
-        ))}
-      </div>
-    </div>
-    <div className='tablet:hidden'>
-      <StoryCarousel StoryArray={selectedStory.story} displayCnt={1} login={login} uniqueCarouselKey={`toppage`} />
-    </div>
+          <div 
+            className="hidden tablet:flex h-fit w-full rounded-md overflow-x-scroll overflow-y-hidden"
+          >
+            <div 
+              className="flex flex-row flex-nowrap
+              gap-4 lg:px-4 px-2 pt-2 pb-6
+              "
+            >
+              {selectedStory.story.map((result, index) => (
+                <div key={index} className="pc:min-w-[290px] min-w-[260px]">
+                  <StoryBlock 
+                    key={index} 
+                    storyId={result.story.storyId} 
+                    media={result.story.media} 
+                    category={result.story.category} 
+                    website={result.story.website}
+                    headTitle={result.story.headTitle} 
+                    storyTitle={result.story.storyTitle} 
+                    releaseDate={result.story.releaseDate} 
+                    infoStory={result.story.infoStory} 
+                    howtoviewStory={result.story.howtoviewStory}
+                    url={result.story.url} 
+                    pp={result.story.pp||0}
+                    login={login}
+                    userReadLater={result.userReadingData===null?null:result.userReadingData.read_later}
+                    displayLogin={true}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className='tablet:hidden'>
+            <StoryCarousel StoryArray={selectedStory.story} displayCnt={1} login={login} uniqueCarouselKey={`toppage`} />
+          </div>
 
-    <div className='flex tablet:mt-4 pr-2 tablet:pr-0 pt-[42px] tablet:pt-0'>
-        <Link
-          className='flex z-10 items-center w-fit gap-1
-          border-2 border-green-700 text-green-800 bg-white
-          text-sm tablet:text-base font-bold ml-auto
-          '
-          href={{ pathname: '/search/story', query: selectedStory.query}}
-        >
-          <span className='ml-1'>{'全'}</span>
-          <span className=''>{selectedStory.cnt}</span>
-          <span className='mr-1'>{`${selectedStory.type==='all'?'':selectedStory.typeName}ストーリーを見る`}</span>
-          <span className='bg-green-700 fill-white'>
-            <svg className='w-[22px] h-[22px] tablet:w-[24px] tablet:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -950 900 950">
-            <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/>
-            </svg>
-        </span>
-        </Link>
-    </div>
-
-
-
-</>)
+          <div className='flex tablet:mt-4 pr-2 tablet:pr-0 pt-[42px] tablet:pt-0'>
+              <Link
+                className='flex z-10 items-center w-fit gap-1
+                border-2 border-green-700 text-green-800 bg-white
+                text-sm tablet:text-base font-bold ml-auto
+                '
+                href={{ pathname: '/search/story', query: selectedStory.query}}
+              >
+                <span className='ml-1'>{'全'}</span>
+                <span className=''>{selectedStory.cnt}</span>
+                <span className='mr-1'>{`${selectedStory.type==='all'?'':selectedStory.typeName}ストーリーを見る`}</span>
+                <span className='bg-green-700 fill-white'>
+                  <svg className='w-[22px] h-[22px] tablet:w-[24px] tablet:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -950 900 950">
+                  <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/>
+                  </svg>
+              </span>
+              </Link>
+          </div>
+        </div>
+      </CardContent>
+    </Card>)
 };

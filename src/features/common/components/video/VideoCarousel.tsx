@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/carousel"
 
 
-export function VideoCarousel({ videoIdArray }: { videoIdArray: string[] }) {
+export function VideoCarousel({ videoIdArray,loop=false }: { videoIdArray: string[],loop?:boolean }) {
   const videoArray: Video[] = videoIdArray.map(id=>m_video.find(data=>data.videoId===id) as Video);
 
   const [mainApi, setMainApi] = useState<CarouselApi>()
@@ -50,7 +50,11 @@ export function VideoCarousel({ videoIdArray }: { videoIdArray: string[] }) {
 
   return (
     <div className="flex w-full max-w-[500px] flex-col gap-3 p-4 bg-white pb-12">
-      <Carousel setApi={setMainApi} className="w-full">
+      <Carousel setApi={setMainApi} className="w-full"
+        opts={{
+          loop: loop,
+        }}
+      >
         <CarouselContent>
           {videoArray.map((data, index) => (
             <CarouselItem className="rounded-lg" key={index}>
@@ -69,6 +73,7 @@ export function VideoCarousel({ videoIdArray }: { videoIdArray: string[] }) {
         opts={{
           containScroll: "keepSnaps",
           dragFree: true,
+          loop: loop,
         }}
         className="w-full"
       >
