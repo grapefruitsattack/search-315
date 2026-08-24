@@ -6,6 +6,7 @@ import songMaster from '@/data/songMaster.json';
 import songInfoAsc from '@/data/songInfoAsc.json'
 import type { SongMaster } from '@/data/types';
 import SongCarousel from "@/features/common/components/SongCarousel";
+import { Music2 } from "lucide-react";
 
 export default function UnitMusic({ unitId }: { unitId: string; }) {
 
@@ -36,82 +37,86 @@ export default function UnitMusic({ unitId }: { unitId: string; }) {
         .filter((item): item is SongMaster => typeof item == 'object').slice().reverse();
 
     return (<>
-   <div 
-          className="
-          px-0
-              text-2xl font-mono flex items-center w-full
-              after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-          "
-      >
-          <svg className="fill-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 13.5351V3H20V5H14V17C14 19.2091 12.2091 21 10 21C7.79086 21 6 19.2091 6 17C6 14.7909 7.79086 13 10 13C10.7286 13 11.4117 13.1948 12 13.5351ZM10 19C11.1046 19 12 18.1046 12 17C12 15.8954 11.1046 15 10 15C8.89543 15 8 15.8954 8 17C8 18.1046 8.89543 19 10 19Z"></path></svg>
-          {'ユニット曲'}
+    <div 
+      className="text-2xl font-mono flex items-center w-full pl-1 pr-8
+        after:h-[0.5px] after:grow after:bg-indigo-700/50 after:ml-[1rem] 
+        text-base tablet:text-lg font-bold"
+    >
+      <Music2 className=" text-indigo-500 w-[20px]"  />
+      {'ユニット曲'}
+    </div>
+    <div className="flex">
+      <div className={`
+        max-w-[700px] w-full
+        px-0 mobileM:px-2
+        
+      `}>
+        <SongCarousel songArray={unitSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false} displayReleaseDate={true} />
       </div>
-      <div className="flex">
-        <div className={`
-          max-w-[700px] w-full
-          px-0 mobileM:px-2
-          
-        `}>
-          <SongCarousel songArray={unitSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false} displayReleaseDate={true} />
-        </div>
+    </div>
+    <div 
+        className="
+            text-2xl font-mono flex items-center w-full pl-1 pr-8
+            after:h-[0.5px] after:grow after:bg-indigo-700/50 after:ml-[1rem] 
+            text-base tablet:text-lg font-bold
+        "
+    >
+      <Music2 className=" text-indigo-500 w-[20px]"  />
+      {'ユニット合同曲'}
+    </div>
+    <div className="flex">
+      <div className={`
+        max-w-[700px] w-full
+        px-0 mobileM:px-2
+        
+      `}>
+        <SongCarousel songArray={collaboSongs} displaySongCnt={4} displayArtist={true} useArtistBadge={false} displayReleaseDate={true} />
       </div>
-      <div 
-          className="
-              text-2xl font-mono flex items-center w-full
-              after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-          "
-      >
-          <svg className="fill-teal-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 13.5351V3H20V5H14V17C14 19.2091 12.2091 21 10 21C7.79086 21 6 19.2091 6 17C6 14.7909 7.79086 13 10 13C10.7286 13 11.4117 13.1948 12 13.5351ZM10 19C11.1046 19 12 18.1046 12 17C12 15.8954 11.1046 15 10 15C8.89543 15 8 15.8954 8 17C8 18.1046 8.89543 19 10 19Z"></path></svg>
-          {'ユニット合同曲'}
-      </div>
-      <div className="flex">
-        <div className={`
-          max-w-[700px] w-full
-          px-0 mobileM:px-2
-          
-        `}>
-          <SongCarousel songArray={collaboSongs} displaySongCnt={4} displayArtist={true} useArtistBadge={false} displayReleaseDate={true} />
-        </div>
-      </div>
-      {coverSongs.length===0 
-            ? <></>
-            :<div 
-          className="
-              text-2xl font-mono flex items-center w-full
-              after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-          "
-      >
-          <svg className="fill-lime-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 13.5351V3H20V5H14V17C14 19.2091 12.2091 21 10 21C7.79086 21 6 19.2091 6 17C6 14.7909 7.79086 13 10 13C10.7286 13 11.4117 13.1948 12 13.5351ZM10 19C11.1046 19 12 18.1046 12 17C12 15.8954 11.1046 15 10 15C8.89543 15 8 15.8954 8 17C8 18.1046 8.89543 19 10 19Z"></path></svg>
+    </div>
+    {coverSongs.length===0 
+      ? <></>
+      :
+      <>
+        <div 
+            className="
+                text-2xl font-mono flex items-center w-full pl-1 pr-8
+                after:h-[0.5px] after:grow after:bg-indigo-700/50 after:ml-[1rem] 
+                text-base tablet:text-lg font-bold
+            "
+        >
+          <Music2 className=" text-indigo-500 w-[20px]"  />
           {'カバー曲'}
-      </div>
-            }
-      <div className="flex">
-        <div className={`
-          max-w-[700px] w-full
-          px-0 mobileM:px-2
-          
-        `}>
-          <SongCarousel songArray={coverSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false} displayReleaseDate={true} />
         </div>
-      </div>
-      <div 
-          className="
-              text-2xl font-mono flex items-center w-full
-              after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-          "
-      >
-      <svg className="fill-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 13.5351V3H20V5H14V17C14 19.2091 12.2091 21 10 21C7.79086 21 6 19.2091 6 17C6 14.7909 7.79086 13 10 13C10.7286 13 11.4117 13.1948 12 13.5351ZM10 19C11.1046 19 12 18.1046 12 17C12 15.8954 11.1046 15 10 15C8.89543 15 8 15.8954 8 17C8 18.1046 8.89543 19 10 19Z"></path></svg>
-          {'ユニットVer'}
-      </div>
-      <div className="flex">
-        <div className={`
-          max-w-[700px] w-full
-          px-0 mobileM:px-2
-          
-        `}>
-          <SongCarousel songArray={unitVerSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false} displayReleaseDate={true} />
+        <div className="flex">
+          <div className={`
+            max-w-[700px] w-full
+            px-0 mobileM:px-2
+            
+          `}>
+            <SongCarousel songArray={coverSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false} displayReleaseDate={true} />
+          </div>
         </div>
+      </>
+    }
+    <div 
+        className="
+            text-2xl font-mono flex items-center w-full pl-1 pr-8
+            after:h-[0.5px] after:grow after:bg-indigo-700/50 after:ml-[1rem] 
+            text-base tablet:text-lg font-bold
+        "
+    >
+      <Music2 className=" text-indigo-500 w-[20px]"  />
+      {'ユニットVer'}
+    </div>
+    <div className="flex">
+      <div className={`
+        max-w-[700px] w-full
+        px-0 mobileM:px-2
+        
+      `}>
+        <SongCarousel songArray={unitVerSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false} displayReleaseDate={true} />
       </div>
+    </div>
 
 
 

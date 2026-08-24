@@ -67,7 +67,7 @@ export default function SongCarousel(
   }
 
   return (
-    <div className="mx-auto  py-4">
+    <div className="mx-auto pt-1 pb-4">
       <Carousel className="w-full " setApi={setApi}
         opts={{
           loop: false,

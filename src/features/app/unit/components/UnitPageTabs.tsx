@@ -10,11 +10,6 @@ import {
 
 const sections = [
   {
-    id: 'unit-recommend',
-    label: 'オススメ',
-    icon: MessageCircleWarning,
-  },
-  {
     id: 'unit-music',
     label: '楽曲',
     icon: Music,
@@ -59,7 +54,7 @@ export default function UnitPageTabs() {
   };
 
   const [activeSection, setActiveSection] =
-    useState<SectionId>('unit-recommend');
+  useState<SectionId>('unit-music');
 
   useEffect(() => {
     const elements = sections
@@ -110,13 +105,12 @@ export default function UnitPageTabs() {
         top-[58px]
         tablet:top-[66px]
         lg:top-0
-        z-40
-        bg-white
+        z-40 bg-white
       "
       aria-label="ページ内ナビゲーション"
     >
       <div className="flex w-full justify-center">
-        <div className="flex w-full max-w-[950px]">
+        <div className="flex w-full max-w-[950px] gap-1 mobileL:gap-2">
           {sections.map((section) => {
             const Icon = section.icon;
 
@@ -129,12 +123,15 @@ export default function UnitPageTabs() {
                 }
                 className={`
                   flex flex-1 items-center justify-center
-                  gap-1 px-1 py-2 text-xs
-                  transition-colors
+                  gap-1 px-1 text-xs mobileL:text-base
+                  py-3 mobileL:py-2
+                  rounded-xl
+                  transition-all duration-300
+                  hover:ring-2 hover:ring-zinc-600 hover:ring-offset-2 
                   ${
                     activeSection === section.id
-                      ? 'bg-gray-100 font-bold text-green-600'
-                      : 'text-gray-600'
+                      ? 'bg-gray-500 font-bold text-white'
+                      : 'text-gray-600 bg-gray-100'
                   }
                 `}
               >

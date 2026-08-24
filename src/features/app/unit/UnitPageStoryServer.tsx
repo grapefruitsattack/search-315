@@ -54,6 +54,9 @@ async function getData(
   randArchiveStoryData.push({story:archiveStoryAllData[randArray[0]-1], userReadingData:null});
   randArchiveStoryData.push({story:archiveStoryAllData[randArray[1]-1], userReadingData:null});
   randArchiveStoryData.push({story:archiveStoryAllData[randArray[2]-1], userReadingData:null});
+  randArchiveStoryData.push({story:archiveStoryAllData[randArray[3]-1], userReadingData:null});
+  randArchiveStoryData.push({story:archiveStoryAllData[randArray[4]-1], userReadingData:null});
+  randArchiveStoryData.push({story:archiveStoryAllData[randArray[5]-1], userReadingData:null});
 
   if(login){
     const targetStoryId: string[] = freeStoryData.map(data=>data.story.storyId).concat(paidStoryData.map(data=>data.story.storyId)).concat(randArchiveStoryData.map(data=>data.story.storyId));

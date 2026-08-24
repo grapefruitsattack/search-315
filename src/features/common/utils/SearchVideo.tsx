@@ -29,7 +29,7 @@ export function SearchVideo(
       }else{
         //OR検索
         result = result.filter((videoData)=>{
-          if(videoData.infoVideo.some(info=>(infoIds.includes(info.infoId)||info.infoId==='all')&&(excludeFlg!==1||excludeFlg===info.excludeFlg))){
+          if(videoData.infoVideo.some(info=>(infoIds.includes(info.infoId)||info.infoId==='all')&&(info.excludeFlg===0||info.excludeFlg===excludeFlg))){
             return videoData;
           };
         });

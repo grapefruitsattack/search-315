@@ -7,6 +7,13 @@ import singingMaster from '@/data/singingMaster.json';
 import IdolBlock from "@/features/common/components/IdolBlock";
 import IdolBadge from "@/features/common/components/IdolBadge";
 import {ShareModalButton} from "@/features/app/shareModal/ShareModalButton";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { User } from "lucide-react";
 
 
 export default function UnitPageMain({ unitId, type }
@@ -66,7 +73,7 @@ export default function UnitPageMain({ unitId, type }
         </div>
       </div>
       <div  className="w-fit
-          pt-2 pb-8 lg:text-base text-sm font-sans break-all
+          pt-2 pb-4 lg:text-base text-sm font-sans break-all
           "
       >
         <p>公式サイトユニット紹介：
@@ -91,55 +98,63 @@ export default function UnitPageMain({ unitId, type }
           </a>
         </p>
       </div>
-      <div 
-          className="
-              text-2xl font-mono flex items-center max-w-full mb-2
-              after:h-[0.5px] after:grow after:bg-slate-900/50 after:ml-[1rem] 
-          "
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-          <path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z" fill="rgba(55,94,126,1)"></path></svg>
-          {'ユニットメンバー'}
-      </div>
-      <div className='grid grid-cols-1 tablet:grid-cols-[auto_auto] mt-2 pb-8 grid text-center align-middle lg:mb-0 gap-0 tablet:gap-3 w-fit'>
-        {unitmember.length===0 
-          ? <div>結果なし</div>
-          :unitmember.map((result, index) => (
-            <React.Fragment key={result.id}>
-              <div className="w-fit tablet:w-auto h-fit" key={result.id+'_badge'}>
-                <IdolBadge 
-                id={result.id} 
-                size="mainpage"
-                useShortName={0}
-                />
-              </div>
-              <div 
-                key={result.id+'_link'}
-                className="w-fit h-fit mb-2 tablet:mb-0 pl-4 tablet:pl-0">
-                <a 
-                className ="
-                underline text-sm tablet:text-base
-                text-slate-400
-                hover:text-sky-300 
-                fill-slate-500
-                hover:fill-sky-500 
+      <Accordion>
+        <AccordionItem value="item-1">
+          <AccordionTrigger className='hover:bg-gray-100'>
+            <div 
+                className="flex items-center
+                  text-lg mobileL:text-xl w-full h-full
+                  
                 "
-                href={result.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                >
-                  <span>
-                  {'公式サイトアイドル紹介'} 
-                  <span className="pl-0.5">
-                  <svg className="inline-block w-[15px] h-[15px] tablet:w-[20px] tablet:h-[20px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
-                  </span>
-                  </span>
-                </a>
-              </div>
-            </React.Fragment>
-          ))
-        }
-      </div>
+            >
+              <User className="text-indigo-700"/>
+              {'ユニットメンバー'}
+            </div>
+          </AccordionTrigger>
+          <AccordionContent className=''>
+            <div className='grid grid-cols-1 tablet:grid-cols-[auto_auto] mt-2 pb-8 grid text-center align-middle lg:mb-0 gap-0 tablet:gap-3 w-fit'>
+              {unitmember.length===0 
+                ?<></>
+                :unitmember.map((result, index) => (
+                  <React.Fragment key={result.id}>
+                    <div className="w-fit tablet:w-auto h-fit" key={result.id+'_badge'}>
+                      <IdolBadge 
+                      id={result.id} 
+                      size="mainpage"
+                      useShortName={0}
+                      />
+                    </div>
+                    <div 
+                      key={result.id+'_link'}
+                      className="w-fit h-fit mb-2 tablet:mb-0 pl-4 tablet:pl-0">
+                      <a 
+                      className ="
+                      underline text-sm tablet:text-base
+                      text-slate-400
+                      hover:text-sky-300 
+                      fill-slate-500
+                      hover:fill-sky-500 
+                      "
+                      href={result.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >
+                        <span>
+                        {'公式サイトアイドル紹介'} 
+                        <span className="pl-0.5">
+                        <svg className="inline-block w-[15px] h-[15px] tablet:w-[20px] tablet:h-[20px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+                        </span>
+                        </span>
+                      </a>
+                    </div>
+                  </React.Fragment>
+                ))
+              }
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+
     </section>
 
 
