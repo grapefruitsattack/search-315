@@ -134,9 +134,11 @@ export const LyricShareModal = (
             }else{
               return(
               <span key={rowListIndex} className="inline-flex items-end">
-                <ruby className="">{rowListData.lyric}
+                <ruby className="[ruby-align:center]">{rowListData.lyric}
                   <rp>(</rp>
-                  <rt>{rowListData.ruby}</rt>
+                  <rt  className={`${['WT10_1'].includes(song.lyric)&&'mb-[2px]'}`}>
+                    {rowListData.ruby}
+                  </rt>
                   <rp>)</rp>
                 </ruby>
               </span>
@@ -218,7 +220,9 @@ export const LyricShareModal = (
             <ruby>
               {unit.text}
               <rp>(</rp>
-              <rt>{unit.ruby}</rt>
+              <rt  className={`${['WT10_1'].includes(song.lyric)&&'mb-[2px]'}`}>
+                {unit.ruby}
+              </rt>
               <rp>)</rp>
             </ruby>
           )

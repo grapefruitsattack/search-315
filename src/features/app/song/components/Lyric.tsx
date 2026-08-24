@@ -86,11 +86,13 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
               )
             }else{
               return(
-              <span key={rowListIndex} className="inline-flex items-end">
-                <ruby>
+              <span key={rowListIndex} className="inline-flex items-end leading-8">
+                <ruby className="[ruby-align:center]">
                   {rowListData.lyric}
                   <rp>(</rp>
-                  <rt>{rowListData.ruby}</rt>
+                  <rt className={`${['WT10_1'].includes(song.lyric)&&'mb-[2px]'}`}>
+                    {rowListData.ruby}
+                  </rt>
                   <rp>)</rp>
                 </ruby>
               </span>

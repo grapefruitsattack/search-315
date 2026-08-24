@@ -42,6 +42,7 @@ function getTargetLyric(lyric: Lyric, maxRowSeq:number, startRow: number, endRow
 };
 
 function getLyricJsx(
+  lyricId: string, 
   lyricData: LyricData[],
   startRow: number,
   endRow: number,
@@ -112,10 +113,10 @@ function getLyricJsx(
           >
             {unit.ruby
               ? (
-                <ruby>
+                <ruby className="[ruby-align:center]">
                   {unit.text}
                   <rp>(</rp>
-                  <rt>{unit.ruby}</rt>
+                  <rt className={`${['WT10_1'].includes(lyricId)&&'mb-[2px]'}`}>{unit.ruby}</rt>
                   <rp>)</rp>
                 </ruby>
               )
@@ -146,9 +147,11 @@ function getLyricJsx(
           }else{
             return(
               <span key={rowListIndex} className="inline-flex items-end">
-                <ruby key={rowListIndex} className="mt-auto">{rowListData.lyric}
+                <ruby  key={rowListIndex} className="mt-auto [ruby-align:center]" >{rowListData.lyric}
                   <rp>(</rp>
-                  <rt>{rowListData.ruby}</rt>
+                  <rt className={`${['WT10_1'].includes(lyricId)&&'mb-[2px]'}`}>
+                    {rowListData.ruby}
+                  </rt>
                   <rp>)</rp>
                 </ruby>
               </span>
@@ -202,7 +205,7 @@ export default function LyricShareResult(
   const displayRowCnt: number = startRow===endRow?4:3;
   const maxRowSeq: number = lyric.data.reduce((max, data) => Math.max(max, data.row_seq), 0);
   const targetLyricData: LyricData[] = getTargetLyric(lyric, maxRowSeq, startRow, endRow, displayRowCnt);
-  const lyricList: JSX.Element[] = getLyricJsx(targetLyricData, startRow, endRow, startChar, endChar);
+  const lyricList: JSX.Element[] = getLyricJsx(result.lyric, targetLyricData, startRow, endRow, startChar, endChar);
 
   return(
     <div className=" pb-96 px-2 mobileS:px-2 mobileM:px-4 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
