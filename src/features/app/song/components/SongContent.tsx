@@ -316,6 +316,14 @@ export default function SongContent({ result }: { result: SongMaster }) {
           </section>
         }
 
+        {/* 他のバージョン */}
+        {otherVersionSongs.length < 1
+          ?<></>
+          :<section className="">
+            <OtherVersion id={result.songId} otherVersionSongs={otherVersionSongs}/>
+          </section>
+        }
+        
         {/* ライブ */}
         {live === undefined || live.length === 0
         ?<></>
@@ -324,13 +332,6 @@ export default function SongContent({ result }: { result: SongMaster }) {
           </section>
         }
 
-        {/* 他のバージョン */}
-        {otherVersionSongs.length < 1
-          ?<></>
-          :<section className="">
-            <OtherVersion id={result.songId} otherVersionSongs={otherVersionSongs}/>
-          </section>
-        }
       </section>
     
     </>
