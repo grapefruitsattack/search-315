@@ -3,10 +3,11 @@ import React from "react"
 import type { Story, UserReadingData } from '@/data/types';
 import m_story from '@/data/m_story.json';
 import { HOW_TO_VIEW } from '@/features/common/const/StoryInfoConst';
+import CommonFooterContents from "@/features/common/components/common/CommonFooterContents";
 import StoryBlock from "@/features/common/components/story/StoryBlock";
 import Pagination from "@/features/common/components/Pagination";
 import { UseUserReading } from "@/features/app/search/provider/UserReadingProvider";
-import { LoaderIcon } from "lucide-react";
+import { ArrowUp, LoaderIcon } from "lucide-react";
 
 
 const DISPLAY_CNT: number = 15;
@@ -172,6 +173,30 @@ export default function SearchStoryResult({ searchParam }: { searchParam:{infoId
         <Pagination totalPage={maxPage} maxDisplayNum={7} scrollAreaElementId='storyScrollArea' scrollTargetElementId="topPagination_7"/>
       </div>
     </div>
+    <footer className='mt-24'>
+      <div className="w-full  h-12">
+        <button className="flex w-full h-full bg-indigo-200 
+          transition-all duration-100
+          hover:outline-indigo-400 hover:outline-4 
+          outline-none outline-indigo-600/30 outline-offset-0"
+          onClick={()=>{
+            const element = document.getElementById('storyScrollArea');
+            if(element!==null)element.scrollTo({top:0,behavior:'smooth'});
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "smooth",
+            });
+          }}
+        >
+          <div className="flex items-center m-auto text-xl font-bold text-indigo-600">
+            <ArrowUp className="w-[28px] stroke-[3px] mr-1"/>
+            {'ページの先頭へ'}
+          </div>
+        </button>
+      </div>
+      <CommonFooterContents />
+    </footer>
   </>
   );
 }

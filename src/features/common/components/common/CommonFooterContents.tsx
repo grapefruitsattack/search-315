@@ -32,9 +32,11 @@ export default function CommonFooterContents() {
   }, []);
   
   return (<>
-    <div className="border-t inset-shadow-sm  w-full pc:w-[calc(100%-240px)] ml-auto bg-gray-900
-          flex flex-col text-center pt-12 pb-4  text-gray-50 mobileL:text-sm mobileM:text-sm text-xs
-      ">
+    <div className={`border-t inset-shadow-sm  
+      w-full ${currentPath.includes('/search/story/')?' pc:w-full ':' pc:w-[calc(100%-240px)] '}
+      ml-auto bg-gray-900
+      flex flex-col text-center pt-12 pb-4  text-gray-50 mobileL:text-sm mobileM:text-sm text-xs`}
+    >
         <a 
           className="group flex w-fit mx-auto my-4 
             underline underline-offset-2 decoration-indigo-200
@@ -59,7 +61,7 @@ export default function CommonFooterContents() {
           rel="noopener noreferrer"
         >このサイトについて・プライバシーポリシー・免責事項
         </Link>
-        <div className={`flex flex-col mx-auto my-6 text-sm ${currentPath.includes('/search/story/')&&'hidden'}`}>
+        <div className={`flex flex-col mx-auto my-6 text-sm `}>
           <Image
             className={`mx-auto h-auto w-[50px] tablet:h-auto tablet:w-[64px]`}
             src={`/jasrac.png`}

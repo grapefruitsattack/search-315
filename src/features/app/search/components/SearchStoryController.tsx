@@ -208,7 +208,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
     return(
     <>
       {/* 上部ボタン */}
-      <div className="flex flex-col pc:flex-col pb-2 gap-4">
+      <div className="flex flex-col pc:flex-col pb-2 gap-4 w-full min-w-0 max-w-full">
         <div id='infoSelector' className={`flex flex-col`}>
           <div className="flex gap-3 pb-1">
             <div className="text-sm">ユニット・アイドル</div>

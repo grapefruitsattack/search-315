@@ -37,7 +37,7 @@ const Page = async ({
     <CommonPage>
       <title>{ 'ストーリー検索結果 | サーチサイコー'}</title>
       <Suspense fallback={<>{'story loading'}</>}>
-      <section className="justify-start px-4 pc:pl-2 pc:pr-12 bg-white lg:m-auto font-mono">
+      <section className="justify-start pl-0 pr-0 tablet:pr-4  pc:pl-2 pc:pr-8 bg-white lg:mx-auto font-mono h-full">
 
       {/* @ts-ignore Server Component */}
       <SearchStoryPage 

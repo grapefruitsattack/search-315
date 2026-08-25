@@ -48,7 +48,7 @@ const CommonPage = ({ children }: Props )=> {
           rel="noopener noreferrer"
         >雪の降る演出のON・OFFはこちら</Link>
         </div> */}
-      <footer className=" ">
+      <footer className={`${currentPath.includes('/search/story/')&&'hidden'}`}>
         <div className="w-full pc:w-[calc(100%-240px)] ml-auto h-12">
           <button className="flex w-full h-full bg-indigo-200 
             transition-all duration-100
@@ -67,7 +67,6 @@ const CommonPage = ({ children }: Props )=> {
               {'ページの先頭へ'}
             </div>
           </button>
-          {'page top'}
         </div>
         <CommonFooterContents />
       </footer>
