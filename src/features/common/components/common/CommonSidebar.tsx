@@ -11,10 +11,9 @@ export default function CommonSidebar() {
   <div 
     className=" collapse pc:visible
       overflow-y-auto  overflow-x-hidden
-      transition-transform duration-300 ease-linear transform 
       box-border fixed 
-      left-0 top-0 block p-6 border-b border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl
-      w-60  h-[100vh]
+      left-0 top-0 block p-6 bg-gradient-to-b from-gray-200 to-gray-50
+      w-60  h-[100vh] z-50
       ">
       <Link
         className ="relative"

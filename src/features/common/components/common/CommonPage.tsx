@@ -8,7 +8,9 @@ import { AppProps } from "next/app";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import CommonHeader from "./CommonHeader";
 import CommonSidebar from "./CommonSidebar";
+import CommonFooterContents from "./CommonFooterContents";
 import ParticlesComponent from './particles';
+import { ArrowUp } from "lucide-react";
 
 interface SidebarProviderCSS extends React.CSSProperties{
   '--sidebar-width':string
@@ -47,26 +49,27 @@ const CommonPage = ({ children }: Props )=> {
         >雪の降る演出のON・OFFはこちら</Link>
         </div> */}
       <footer className=" ">
-        <div className="
-           flex flex-col text-center  pb-1  text-gray-600 mobileL:text-sm mobileM:text-sm text-xs
-        ">
-          <Link 
-            className="underline w-fit mx-auto"
-            href={`/about`}
-            rel="noopener noreferrer"
-          >このサイトについて・プライバシーポリシー・免責事項</Link>
-          <div className={`flex mx-auto mt-2 mb-2 text-sm ${currentPath.includes('/search/story/')&&'hidden'}`}>
-            <Image
-              className={`h-auto w-[50px] tablet:h-auto tablet:w-[64px]`}
-              src={`/jasrac.png`}
-              alt="JASRAC許諾マーク"
-              width={0}
-              height={0}
-              sizes="100%"
-            />
-            <div className="my-auto pl-1 text-[0.60rem]">{'JASRAC許諾第J260643396号'}</div>
-          </div>
-      </div>
+        <div className="w-full pc:w-[calc(100%-240px)] ml-auto h-12">
+          <button className="flex w-full h-full bg-indigo-200 
+            transition-all duration-100
+            hover:outline-indigo-400 hover:outline-4 
+            outline-none outline-indigo-600/30 outline-offset-0"
+            onClick={()=>{
+              window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+              });
+            }}
+          >
+            <div className="flex items-center m-auto text-xl font-bold text-indigo-600">
+              <ArrowUp className="w-[28px] stroke-[3px] mr-1"/>
+              {'ページの先頭へ'}
+            </div>
+          </button>
+          {'page top'}
+        </div>
+        <CommonFooterContents />
       </footer>
       
       <p className={`
