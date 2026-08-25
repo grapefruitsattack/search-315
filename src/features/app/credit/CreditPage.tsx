@@ -1,5 +1,4 @@
 'use client'
-import CommonPage from "../../common/components/common/CommonPage";
 import creditMaster from '../../../data/creditMaster.json';
 import songCredit from '../../../data/songCredit.json';
 import songMaster from '../../../data/songMaster.json';

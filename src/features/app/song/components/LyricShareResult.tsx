@@ -208,7 +208,7 @@ export default function LyricShareResult(
   const lyricList: JSX.Element[] = getLyricJsx(result.lyric, targetLyricData, startRow, endRow, startChar, endChar);
 
   return(
-    <div className=" pb-96 px-2 mobileS:px-2 mobileM:px-4 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
+    <div className=" pb-24 px-2 mobileS:px-2 mobileM:px-4 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
 
       <div className="mb-2 bg-gradient-to-r from-zinc-500 tablet:from-60% from-90% rounded">
         <div 

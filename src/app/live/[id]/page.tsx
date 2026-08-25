@@ -42,7 +42,7 @@ const Lives = async ({
     <CommonPage>
       <title>{ `${result === undefined?'':result.displayLiveName+'\u00a0'+result.displayPerName
           +'\u00a0\u00a0|\u00a0\u00a0'}サーチサイコー`}</title>
-      <article className=" pb-96 mobileS:px-2 mobileM:px-4 tablet:px-8 lg:px-8
+      <article className=" pb-24 mobileS:px-2 mobileM:px-4 tablet:px-8 lg:px-8
        bg-white lg:max-w-[1500px] lg:m-auto font-mono">
         <LiveContent selectedLivePerId={id} LiveData={LiveData} />
       </article>

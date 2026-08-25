@@ -6,7 +6,7 @@ export default function NotFound() {
     <CommonPage>
       <title>{`404 not found ${"\u00a0"}|${"\u00a0\u00a0"}サーチサイコー`}</title>
 
-      <div className="bg-white px-2 mobileS:px-4 mobileM:px-8 pb-96 lg:m-auto lg:max-w-[1000px] font-mono">
+      <div className="bg-white px-2 mobileS:px-4 mobileM:px-8 pb-24 lg:m-auto lg:max-w-[1000px] font-mono">
         <div className="mx-auto max-w-2xl py-24 text-center">
           <h1 className="text-6xl font-bold tracking-wider">404</h1>
 

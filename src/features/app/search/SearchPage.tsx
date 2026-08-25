@@ -1,6 +1,5 @@
 'use client'
 import { useSearchParams } from 'next/navigation'
-import CommonPage from "../../common/components/common/CommonPage";
 import SearchPageSong from "./components/SearchPageSong";
 import {SearchModal} from "./components/SearchModal";
 

@@ -71,7 +71,7 @@ const Post = async ({
   return (
     <Suspense>
     <CommonPage>
-      <div className="justify-start pc:pt-6 pb-64 mb-24 tablet:mb-64 px-1 mobileS:px-2 mobileM:px-4 tablet:px-8 lg:px-8 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
+      <div className="justify-start pc:pt-6 pb-24 mb-24 tablet:mb-64 px-1 mobileS:px-2 mobileM:px-4 tablet:px-8 lg:px-8 bg-white lg:max-w-[1000px] lg:m-auto font-mono">
         {/* @ts-ignore Server Component */}
         <StoryDetailedPage 
           mainStoryData={{story:mainStory,userReadingData:post?.userReadingData.find((data)=>data.story_id===id)||null}} 
