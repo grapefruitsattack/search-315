@@ -1,10 +1,10 @@
-import singingMaster from '../../../data/singingMaster.json';
-import { CATEGORY } from '../const/StoryInfoConst'
+import singingMaster from '@/data/singingMaster.json';
+import { CATEGORY } from '@/features/common//const/StoryInfoConst'
 
-export function CheckSingingInfoParm(infoIdParms: string[]): string[]
+export function CheckSingingInfoParm(infoIdParms: string[], excludeUnit: boolean): string[]
 {
     const resultParams: string[] = [];
-    const idols = singingMaster.map((data)=> data.singingInfoId);
+    const idols = singingMaster.filter(data=>excludeUnit!==true||data.personFlg===1).map((data)=> data.singingInfoId);
     infoIdParms.forEach((infoId)=>{
         if(idols.includes(infoId)) resultParams.push(infoId);
     });

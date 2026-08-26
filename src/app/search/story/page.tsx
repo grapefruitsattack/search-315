@@ -27,7 +27,7 @@ const Page = async ({
   const {rl} = await searchParams || '';
   const {page} = await searchParams || '';
   // パラメータ編集
-  const infoIdArray: string[] = q===undefined?[]:CheckSingingInfoParm((q).split(' ').filter(s => s !== ''));
+  const infoIdArray: string[] = q===undefined?[]:CheckSingingInfoParm((q).split(' ').filter(s => s !== ''),true);
   const categoryArray: string[] = c===undefined?[]:CheckStoryCategoryParm(c.split(' ').filter(s => s !== ''));
   const SortedAsc: number = order==='asc'?1:0;
   const pageNum: number = Number(page)||1;

@@ -34,7 +34,7 @@ export default function SearchStoryFilterCheckbox(
                     justify-center px-2 py-0 lg:py-1
                     font-sans text-sm lg:text-base 
                     hover:bg-green-200/20
-                    hover:text-green-400
+                    hover:text-green-500
                     drop-shadow-md peer-checked:drop-shadow-none
                     transition-all duration-500 ease-out
                     select-none 
@@ -47,9 +47,9 @@ export default function SearchStoryFilterCheckbox(
                       peer-disabled:border-green-900`
                       :`rounded-lg peer-checked:rounded-none
                       bg-stone-200/20 peer-checked:bg-stone-200/0
-                      text-stone-500 peer-checked:text-green-400
+                      text-stone-500 peer-checked:text-green-500
                       border-green-300/0 border-2
-                      peer-checked:border-green-300 peer-checked:border-2
+                      peer-checked:border-green-400 peer-checked:border-2
                       peer-disabled:border-green-900`
                     }
                     `

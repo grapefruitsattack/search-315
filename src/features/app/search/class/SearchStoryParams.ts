@@ -1,6 +1,7 @@
 import { ReadonlyURLSearchParams } from 'next/navigation';
 import {getAllMediaWithCategoryArray} from '@/features/common/const/StoryInfoConst';
-
+import singingMaster from '@/data/singingMaster.json';
+import type { SingingMaster } from '@/data/types';
 export class SearchStoryParams {
   order: string;
   andor: string;
@@ -14,6 +15,8 @@ export class SearchStoryParams {
   categoryStr: string;
 
   constructor(urlSearchParams : ReadonlyURLSearchParams) {
+    const idols: string[] = singingMaster.filter(data=>data.personFlg===1).map(data=>data.singingInfoId);
+
     this.order = urlSearchParams.get('order') || 'desc';
     this.andor = urlSearchParams.get('andor') || 'or';
     this.voice = Number(urlSearchParams.get('v')) || 0;
@@ -41,10 +44,28 @@ export class SearchStoryParams {
     
     const info: string[] = urlSearchParams.get('q')?.split(' ') || [];
     this.info ={};
-    info.forEach(data=>{
-      this.info[data] = true;
+    info.forEach(infoId=>{
+      if(idols.includes(infoId)) {
+        this.info[infoId] = true;
+        this.info[infoId.substring(0, 3)+'00'] = true;
+      };
     });
-    this.selectorInfo=info.length<=0?'':info.length<=1?info[0]:undefined;
+
+    this.selectorInfo=undefined;
+    if(info.length<=0){
+      this.selectorInfo = '';
+    }else if(info.length===1){
+      this.selectorInfo = idols.includes(info[0])?info[0]:'';
+    }else if(info.length>=2&&info.length<=5){
+      const unitMember: string[] 
+        = singingMaster.filter(data=>data.personFlg===1 && data.singingInfoId.substring(0, 3)===info[0].substring(0, 3))
+          .map(data=>{ return data.singingInfoId });
+      if(unitMember.length===info.length&&info.every((infoId) => unitMember.includes(infoId))){
+        this.selectorInfo = info[0].substring(0, 3)+'00';
+      }else{
+        this.selectorInfo = '';
+      }
+    }
     
     this.categoryStr = getCategoryStr(this.media,this.category);
 

@@ -18,7 +18,7 @@ const Page = async ({
   searchParams: Promise<{ q?:string; }>;
 }) => {
   const {q} = await searchParams || '';
-  const infoIdCheckResult = CheckSingingInfoParm([q||'']);
+  const infoIdCheckResult = CheckSingingInfoParm([q||''],false);
   const infoId: string = infoIdCheckResult.length<=0?'':infoIdCheckResult[0];
 
   const session = await auth.api.getSession({

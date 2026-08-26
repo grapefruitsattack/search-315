@@ -40,12 +40,12 @@ export default function SearchModalRadioButton({
             className={`${index===0?'rounded-l-xl':(index+1)===data.length?'rounded-r-xl':''}
               text-left justify-center px-2 py-0 lg:py-1 w-fit break-keep
               text-stone-500
-              peer-checked:text-green-400
+              peer-checked:text-green-500
               font-sans text-sm lg:text-base 
               bg-stone-200/20 peer-checked:bg-stone-200/0
-              hover:bg-green-200/20 hover:text-green-400
+              hover:bg-green-200/20 hover:text-green-500
               border-2
-              peer-checked:border-green-300 peer-checked:border-2
+              peer-checked:border-green-400 peer-checked:border-2
               drop-shadow-md peer-checked:drop-shadow-none
               transition-all duration-500 ease-out
               select-none`}
