@@ -43,7 +43,7 @@ export const LyricShareModal = (
       );
 
       element?.scrollIntoView({
-        behavior: 'smooth',
+        behavior: 'instant',
         block: 'center',
       });
     }, 0);
