@@ -251,9 +251,16 @@ export default function LyricShareResult(
             <div className="tablet:text-base text-sm text-base font-sans leading-tight lg:leading-normal">
 
             </div>
-            <div className="text-3xl mobileL:text-4xl tablet:text-5xl font-mono font-bold inline-block">
+            <Link 
+              className="text-3xl mobileL:text-4xl tablet:text-5xl font-mono font-bold inline-block
+              text-gray-900
+              underline underline-offset-2 decoration-gray-700
+              decoration-2 hover:decoration-4
+              "
+              href={`/song/${result.songId}`}
+            >
               {result.songTitle}
-            </div>
+            </Link>
 
             {artistArray.length <= 0
               ?<div className="tablet:text-xl text-base font-sans text-blue-800/80">
@@ -336,9 +343,12 @@ export default function LyricShareResult(
             </div>
           </div>
           <Link
-            className='flex z-10  w-fit h-fit gap-1 items-stretch
-            border-2 border-zinc-700 text-zinc-800 bg-white
-            text-sm tablet:text-lg font-bold 
+            className='
+              flex py-2 px-4 gap-1 tablet:px-5 rounded-full bg-gray-200 items-center w-fit h-fit
+              font-mono text-xs mobileL:text-sm tablet:text-base 
+              transition-all duration-300
+              hover:ring-2 hover:ring-zinc-600 hover:ring-offset-2 hover:bg-zinc-200
+              active:scale-90
             '
             href={{pathname:`/song/${result.songId}`}}
             onClick={()=>{
@@ -350,16 +360,17 @@ export default function LyricShareResult(
               }
             }}
           >
-            <div className='px-1  my-auto'>
+            <div className=' my-auto'>
               <div>{'歌詞をすべて見る'}</div>
             </div>
-            <div className=' bg-zinc-700 flex items-center px-1 '>
+            <div className='pl-1 text-zinc-700 flex items-center my-auto'>
               <ArrowRight 
-                className='text-white my-auto mx-auto bg-zinc-700 w-[16px] tablet:w-[20px]'
+                className=' w-[18px] tablet:w-[22px]'
               />
             </div>
             
           </Link>
+
         </div>
       </>
       }
