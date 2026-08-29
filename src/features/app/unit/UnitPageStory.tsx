@@ -13,7 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Bell, House, BookOpen } from "lucide-react";
+import { Bell, House, BookOpen, ArrowRight } from "lucide-react";
 
 export default function UnitPageStory(
   { unitId,unitMember,post }
@@ -31,7 +31,7 @@ export default function UnitPageStory(
   
 {
   const login = post.login;
-  const searchQueryId = unitMember.map(data=>data.singingInfoId).concat(unitId).join(' ');
+  const searchQueryId = unitMember.map(data=>data.singingInfoId).join(' ');
 
   const allStoryData = post.freeStoryData.concat(post.paidStoryData).sort((a,b)=>a.story.seq < b.story.seq ? 1 : -1).slice(0,6);
   const StoryDataArray = [
@@ -130,23 +130,26 @@ export default function UnitPageStory(
           </div>
         </div>
 
-        <div className='flex tablet:mt-4 pr-2 tablet:pr-0 pt-[42px] tablet:pt-0'>
-            <Link
-              className='flex z-10 items-center w-fit gap-1
-              border-2 border-green-700 text-green-800 bg-white
-              text-sm tablet:text-base font-bold ml-auto
-              '
-              href={{ pathname: '/search/story', query: selectedStory.query}}
-            >
-              <span className='ml-1'>{'全'}</span>
-              <span className=''>{selectedStory.cnt}</span>
-              <span className='mr-1'>{`${selectedStory.type==='all'?'':selectedStory.typeName}ストーリーを見る`}</span>
-              <span className='bg-green-700 fill-white'>
-                <svg className='w-[22px] h-[22px] tablet:w-[24px] tablet:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -950 900 950">
-                <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/>
-                </svg>
-            </span>
-            </Link>
+        <div className='flex tablet:mt-4 pr-2 tablet:pr-2 pt-[42px] tablet:pt-0'>
+          <Link
+            className='
+              flex py-1 ml-auto gap-1 px-2 tablet:px-5 rounded-full bg-gray-200 items-center w-fit h-fit
+              font-mono text-xs mobileL:text-sm tablet:text-base 
+              transition-all duration-300
+              hover:ring-2 hover:ring-zinc-600 hover:ring-offset-2 hover:bg-zinc-200
+              active:scale-90
+            '
+            href={{ pathname: '/search/story', query: selectedStory.query}}
+          >
+            <span className='ml-1'>{'全'}</span>
+            <span className='font-bold'>{selectedStory.cnt}</span>
+            <span className='mr-1'>{`${selectedStory.type==='all'?'':selectedStory.typeName}ストーリーを見る`}</span>
+            <span className=''>
+              <ArrowRight 
+                className=' w-[22px] tablet:w-[24px]'
+              />
+          </span>
+          </Link>
         </div>
 
 
@@ -204,22 +207,24 @@ export default function UnitPageStory(
             ))}
           </div>
         </div>
-
-        <div className='flex tablet:mt-4 pr-2 tablet:pr-0 pt-[42px] tablet:pt-0'>
+        <div className='flex tablet:mt-4 pr-2 tablet:pr-2 pt-[42px] tablet:pt-0'>
             <Link
-              className='flex z-10 items-center w-fit gap-1
-              border-2 border-green-700 text-green-800 bg-white
-              text-sm tablet:text-base font-bold ml-auto
+              className='
+                flex flex-wrap py-1 ml-auto gap-1 px-2 tablet:px-5 rounded-full bg-gray-200 items-center w-fit h-fit
+                font-mono text-xs mobileL:text-sm tablet:text-base 
+                transition-all duration-300
+                hover:ring-2 hover:ring-zinc-600 hover:ring-offset-2 hover:bg-zinc-200
+                active:scale-90
               '
               href={{ pathname: '/search/story', query: {q: searchQueryId, order:'desc', htv: 2}}}
             >
               <span className='ml-1'>{'全'}</span>
-              <span className=''>{post.archiveStoryCnt}</span>
+              <span className='font-bold'>{post.archiveStoryCnt}</span>
               <span className='mr-1'>{'アーカイブストーリーを見る'}</span>
-              <span className='bg-green-700 fill-white'>
-                <svg className='w-[22px] h-[22px] tablet:w-[24px] tablet:h-[24px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 -950 900 950">
-                <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/>
-                </svg>
+              <span className=''>
+                <ArrowRight 
+                  className=' w-[22px] tablet:w-[24px]'
+                />
             </span>
             </Link>
         </div>

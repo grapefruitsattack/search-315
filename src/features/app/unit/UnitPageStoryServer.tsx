@@ -36,7 +36,8 @@ async function getData(
     );
   const freeStoryAllData: Story[]
     = unitStoryData
-    .filter((data)=>data.howtoviewStory.some((htvData)=>[HOW_TO_VIEW.asbPremium.id,HOW_TO_VIEW.asbPurchase.id,HOW_TO_VIEW.asbSerialcodeCD.id,HOW_TO_VIEW.asbSerialcode.id].includes(htvData)===false));
+    .filter((data)=>data.howtoviewStory.length===0||data.howtoviewStory.some((htvData)=>[HOW_TO_VIEW.asbPremium.id,HOW_TO_VIEW.asbPurchase.id,HOW_TO_VIEW.asbSerialcodeCD.id,HOW_TO_VIEW.asbSerialcode.id].includes(htvData)===false))
+    .filter(data=>data.url!=='');
   let freeStoryData: {story:Story; userReadingData: UserReadingData | null;}[]
     = freeStoryAllData.slice(0,displayPageSize)
       .map(data=>{return {story:data,userReadingData:null}})
@@ -46,9 +47,11 @@ async function getData(
       .filter((data)=>data.howtoviewStory.some((htvData)=>[HOW_TO_VIEW.asbPremium.id,HOW_TO_VIEW.asbPurchase.id,HOW_TO_VIEW.asbSerialcodeCD.id,HOW_TO_VIEW.asbSerialcode.id].includes(htvData)===true));
   let paidStoryData: {story:Story; userReadingData: UserReadingData | null;}[]
     = paidStoryAllData.slice(0,displayPageSize)
-      .map(data=>{return {story:data,userReadingData:null}})
-      ;
-  const archiveStoryAllData: Story[] = unitStoryData.filter((data)=>[1,2].includes(data.media));
+      .map(data=>{return {story:data,userReadingData:null}});
+  const archiveStoryAllData: Story[] 
+    = unitStoryData
+    .filter((data)=>[1,2].includes(data.media))
+    .filter(data=>data.url!=='');
   const randArray = FisherYatesShuffl(archiveStoryAllData.length)
   let randArchiveStoryData: {story:Story;userReadingData: UserReadingData | null;}[] = [];
   randArchiveStoryData.push({story:archiveStoryAllData[randArray[0]-1], userReadingData:null});
