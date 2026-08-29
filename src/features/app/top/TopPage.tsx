@@ -17,9 +17,6 @@ export default function TopPage({ }: { }) {
     >
       <div className="flex flex-col gap-8">
         <div>
-          <TopPageVideo/>
-        </div>
-        <div>
           <TopPageAlbum/>
         </div>
         <div>
@@ -29,6 +26,9 @@ export default function TopPage({ }: { }) {
           <Suspense fallback={<>story loading</>}>
             <TopPageStoryServer/>
           </Suspense>
+        </div>
+        <div>
+          <TopPageVideo/>
         </div>
         <div>
           <TopPageUnit />

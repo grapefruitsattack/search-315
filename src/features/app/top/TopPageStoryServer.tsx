@@ -28,7 +28,8 @@ async function getData(
 
   const freeStoryAllData: Story[]
     = m_story
-      .filter((data)=>data.howtoviewStory.some((htvData)=>[HOW_TO_VIEW.asbPremium.id,HOW_TO_VIEW.asbPurchase.id,HOW_TO_VIEW.asbSerialcodeCD.id,HOW_TO_VIEW.asbSerialcode.id].includes(htvData)===false));
+      .filter((data)=>data.howtoviewStory.length===0||data.howtoviewStory.some((htvData)=>[HOW_TO_VIEW.asbPremium.id,HOW_TO_VIEW.asbPurchase.id,HOW_TO_VIEW.asbSerialcodeCD.id,HOW_TO_VIEW.asbSerialcode.id].includes(htvData)===false))
+      .filter(data=>data.url!=='');
   let freeStoryData: {story:Story; userReadingData: UserReadingData | null;}[]
     = freeStoryAllData.slice(0,displayPageSize)
       .map(data=>{return {story:data,userReadingData:null}})
