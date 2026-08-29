@@ -2,18 +2,9 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter,usePathname } from 'next/navigation'
+import { useRouter,usePathname,useSearchParams } from 'next/navigation'
 import type { SingingMaster } from '@/data/types';
 import singingMaster from '@/data/singingMaster.json';
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 import { Flag, MessageSquareMore, ExternalLink, MessageCircleQuestion, Info, Sparkle } from 'lucide-react';
  
 export default function CommonFooterContents() {
@@ -29,7 +20,7 @@ export default function CommonFooterContents() {
 
   useEffect(() => {
     setUrl(window.location.href);
-  }, []);
+  }, [useSearchParams()]);
   
   return (<>
     <div className={`border-t inset-shadow-sm  
