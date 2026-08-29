@@ -16,6 +16,7 @@ const NotoSansFont = Noto_Sans_JP({
 
 export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongMaster, lyric: Lyric, lyricIsLoading: boolean }) {
   const lyricOpen = typeof window !== 'undefined'?sessionStorage.getItem("lyricOpen"):'';
+  const maxRowSeq = Math.max(...lyric.data.map(data=>data.row_seq));
   const [isExpanded, setIsExpanded] = useState(lyricOpen==='1');
   const [selectedRowSeq, setSelectedRowSeq] = useState<number | null>(null);
   useEffect(() => {
@@ -73,7 +74,7 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
           <p 
             key={currentRowSeq} 
             className={` text-gray-500  w-fit  align-baseline
-               ${isExpanded ? 'cursor-pointer hover:bg-green-100/50 rounded' : 'pointer-events-none'} `}
+               ${(isExpanded || maxRowSeq <= 8) ? 'cursor-pointer hover:bg-green-100/50 rounded' : 'pointer-events-none'} `}
               onClick={() => {
                 setSelectedRowSeq(currentRowSeq);
                 disclosure.onOpen();
@@ -149,16 +150,16 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
     <section 
       className={`group 
         select-none print:hidden whitespace-pre-wrap tablet:mx-0 mx-2
-        ${isExpanded ? '' : ' cursor-pointer'}
+        ${(isExpanded || maxRowSeq <= 8) ? '' : ' cursor-pointer'}
         `}
         onClick={(e) => {
-          if(!isExpanded) switchExpanded(!isExpanded);
+          if(!isExpanded && maxRowSeq > 8) switchExpanded(!isExpanded);
         }}
     >
       <div
         className={`
           relative overflow-hidden 
-          ${isExpanded ? 'max-h-[9999px]' : 'max-h-32 cursor-pointer'}
+          ${(isExpanded || maxRowSeq <= 8) ? 'max-h-[9999px]' : 'max-h-32 cursor-pointer'}
         `}
       >
         <div id="lyricDisplayArea" className="flex flex-col gap-0 mb-4 font-sans">
@@ -168,7 +169,7 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
         </div>
 
         {/* 下部フェード */}
-        {!isExpanded && (
+        {(!isExpanded && maxRowSeq > 8) && (
           <div
             className="
               absolute inset-x-0 bottom-0 h-24
@@ -182,7 +183,7 @@ export default function LyricPage({ song, lyric, lyricIsLoading }: { song: SongM
       </div>
 
       {/* ボタン */}
-      {lyricList.length > 8 && (
+      {maxRowSeq > 8 && (
         <button
           onClick={() => switchExpanded(!isExpanded)}
           className={`
