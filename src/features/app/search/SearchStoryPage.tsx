@@ -6,7 +6,7 @@ import { LoaderIcon } from "lucide-react"
 
 export default function SearchStoryPage(
   { searchParam }: {
-     searchParam:{infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; ppType: number; andor: string; SortedAsc: number; page: number; readLaterType: string;} }
+     searchParam:{infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; ppType: number; andor: string; SortedAsc: number; page: number; readType: string;} }
   )
  {
 

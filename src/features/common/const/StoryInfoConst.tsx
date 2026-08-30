@@ -31,22 +31,31 @@ export const HOW_TO_VIEW = {
   asbSerialcode: {id:'asb_scode',name:'シリアルコード'},
 };
 
-export function getMediaByCategory(categoryId:string):number{
+export function getMediaByCategory(categoryId:string,useSearchController:boolean):number{
+  if(useSearchController&&categoryId==='comic') return MEDIA.moba.id;
+
   type CategoryKey = keyof typeof CATEGORY;
   const keys: CategoryKey[] = Object.keys(CATEGORY) as CategoryKey[];
   const targetKey = keys.find((key)=>CATEGORY[key].id===categoryId)||"mobaEvent";
 
   return CATEGORY[targetKey].mediaId||1;
 };
-export function getCategoryByMedia(mediaId:number):{categoryId:string,name:string}[]{
+export function getCategoryByMedia(mediaId:number,useSearchController:boolean):{categoryId:string,name:string}[]{
   type CategoryKey = keyof typeof CATEGORY;
   const keys: CategoryKey[] = Object.keys(CATEGORY) as CategoryKey[];
   const result: {categoryId:string,name:string}[] = [];
   
   keys.forEach((key) => {
     const item = CATEGORY[key];
-    if(item.mediaId === mediaId) result.push({categoryId:item.id,name:item.name});
+    if(item.mediaId === mediaId) {
+      result.push({categoryId:item.id,name:item.name});
+    };
   });
+
+  if(useSearchController&&mediaId===MEDIA.moba.id) {
+    result.push({categoryId:'comic',name:'雑誌（マンガ）'});
+    return result.filter(data=>[CATEGORY.comicNomral.id,CATEGORY.comicSpecial.id].includes(data.categoryId)===false);
+  };
 
   return result;
 };
@@ -58,7 +67,7 @@ export function getMediaArrayByCategory(categoryIds:string[]):number[]{
   keys.forEach((key) => {
     const item = MEDIA[key];
     let isExist: boolean = true;
-    for(const data of getCategoryByMedia(item.id)){
+    for(const data of getCategoryByMedia(item.id,false)){
       if(!(categoryIds.includes(data.categoryId))){
         isExist = false;
         break;

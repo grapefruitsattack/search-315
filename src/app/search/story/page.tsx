@@ -14,7 +14,7 @@ const Page = async ({
   searchParams,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ q?:string; c?:string; v?:number; htv?:string; pp?:number; andor?:string; rl?:string; order?:string; page?:string; }>;
+  searchParams: Promise<{ q?:string; c?:string; v?:number; htv?:string; pp?:number; andor?:string; read?:string; order?:string; page?:string; }>;
 }) => {
   // パラメータ取得
   const {q} = await searchParams || '';
@@ -24,7 +24,7 @@ const Page = async ({
   const {pp} = await searchParams || '';
   const {andor} = await searchParams || '';
   const {order} = await searchParams || '';
-  const {rl} = await searchParams || '';
+  const {read} = await searchParams || '';
   const {page} = await searchParams || '';
   // パラメータ編集
   const infoIdArray: string[] = q===undefined?[]:CheckSingingInfoParm((q).split(' ').filter(s => s !== ''),true);
@@ -41,7 +41,7 @@ const Page = async ({
 
       {/* @ts-ignore Server Component */}
       <SearchStoryPage 
-        searchParam={{infoIdArray:infoIdArray,categoryArray:categoryArray,voiceType:Number(v)||0,howtoviewType:Number(htv)||0,ppType:Number(pp)||0,andor:andor||'or',SortedAsc:SortedAsc,page:pageNum,readLaterType:rl||''}
+        searchParam={{infoIdArray:infoIdArray,categoryArray:categoryArray,voiceType:Number(v)||0,howtoviewType:Number(htv)||0,ppType:Number(pp)||0,andor:andor||'or',SortedAsc:SortedAsc,page:pageNum,readType:read||''}
       }/>
       </section>
     </Suspense>

@@ -13,6 +13,8 @@ export function CheckSingingInfoParm(infoIdParms: string[], excludeUnit: boolean
 }
 export function CheckStoryCategoryParm(categoryParms: string[]): string[]
 {
+    if(categoryParms.includes('comic')) categoryParms.push(...[CATEGORY.comicNomral.id,CATEGORY.comicSpecial.id]);
+    
     type CategoryKey = keyof typeof CATEGORY;
     const keys: CategoryKey[] = Object.keys(CATEGORY) as CategoryKey[];
     const categoryIds: string[] = [];
@@ -23,8 +25,8 @@ export function CheckStoryCategoryParm(categoryParms: string[]): string[]
 
     const resultParams: string[] = [];
     categoryParms.forEach((categoryId)=>{
-        if(categoryIds.includes(categoryId)) resultParams.push(categoryId);
+      if(categoryIds.includes(categoryId)) resultParams.push(categoryId);
     });
     
-    return resultParams;
+    return resultParams.filter(data=>data!=='comic');
 }

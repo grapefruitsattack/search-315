@@ -1,5 +1,5 @@
 import { ReadonlyURLSearchParams } from 'next/navigation';
-import {getAllMediaWithCategoryArray} from '@/features/common/const/StoryInfoConst';
+import {getAllMediaWithCategoryArray,MEDIA} from '@/features/common/const/StoryInfoConst';
 import singingMaster from '@/data/singingMaster.json';
 import type { SingingMaster } from '@/data/types';
 export class SearchStoryParams {
@@ -13,6 +13,7 @@ export class SearchStoryParams {
   info: { [key: string]: boolean; };
   selectorInfo: string|undefined;
   categoryStr: string;
+  read: string;
 
   constructor(urlSearchParams : ReadonlyURLSearchParams) {
     const idols: string[] = singingMaster.filter(data=>data.personFlg===1).map(data=>data.singingInfoId);
@@ -22,6 +23,7 @@ export class SearchStoryParams {
     this.voice = Number(urlSearchParams.get('v')) || 0;
     this.howToView = Number(urlSearchParams.get('htv')) || 0;
     this.pp = Number(urlSearchParams.get('pp')) || 0;
+    this.read = urlSearchParams.get('read') || 'all';
 
     this.category ={};
     const category: string[] = urlSearchParams.get('c')?.split(' ') || [];
@@ -41,7 +43,8 @@ export class SearchStoryParams {
       };
       if(isMediaTarget) this.media[data.mediaId] = true;
     });
-    
+    if(this.category['comic']) this.media[MEDIA.moba.id] = true;
+
     const info: string[] = urlSearchParams.get('q')?.split(' ') || [];
     this.info ={};
     info.forEach(infoId=>{

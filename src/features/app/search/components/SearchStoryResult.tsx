@@ -15,7 +15,7 @@ const DISPLAY_CNT: number = 15;
 function getSearchResult(
   searchParam:{
     infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; 
-    ppType: number; andor: string; SortedAsc: number; page: number; readLaterType: string;
+    ppType: number; andor: string; SortedAsc: number; page: number; readType: string;
   }, login: boolean,userReadingData: UserReadingData[] | null
   ):{
     result: {story:Story;readLater:number|null;}[],totalCnt: number,login:boolean
@@ -79,10 +79,10 @@ function getSearchResult(
           :readLater
       }
     });
-    if(searchParam.readLaterType==='r'){
+    if(searchParam.readType==='read'){
       storyResult = storyResult.filter((data)=>data.readLater===0)
-    }else if(searchParam.readLaterType==='n'){
-      storyResult = storyResult.filter((data)=>data.readLater!==1)
+    }else if(searchParam.readType==='unread'){
+      storyResult = storyResult.filter((data)=>data.readLater!==0||data.readLater===null)
     }
   }else{
     storyResult = story.map((data)=>{return {story:data,readLater:null}})
@@ -96,10 +96,10 @@ function getSearchResult(
         :searchParam.page
   ;
   
-  return {result:storyResult.slice(DISPLAY_CNT*(page-1),(DISPLAY_CNT*page)), totalCnt:story.length, login:login};
+  return {result:storyResult.slice(DISPLAY_CNT*(page-1),(DISPLAY_CNT*page)), totalCnt:storyResult.length, login:login};
 }
 
-export default function SearchStoryResult({ searchParam }: { searchParam:{infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; ppType: number; andor: string; SortedAsc: number; page: number; readLaterType: string;} }) {
+export default function SearchStoryResult({ searchParam }: { searchParam:{infoIdArray: string[]; categoryArray: string[]; voiceType: number; howtoviewType: number; ppType: number; andor: string; SortedAsc: number; page: number; readType: string;} }) {
 
   const {
     login,

@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { usePathname, useSearchParams,useRouter } from "next/navigation";
 import { Separator } from "@/components/ui/separator";
+import { UseUserReading } from "@/features/app/search/provider/UserReadingProvider";
 import { SearchStoryParams,getCategoryStr } from '@/features/app/search/class/SearchStoryParams';
 import SearchInfoCheckbox from "./SearchInfoCheckbox";
 import SearchStoryFilterCheckbox from "./SearchStoryFilterCheckbox";
@@ -22,9 +23,20 @@ import {
 } from "@/components/ui/select";
 import { ArrowDown } from "lucide-react"
 
+function scrollTop(){
+  const element = document.getElementById('storyScrollArea');
+  if(element!==null)element.scrollTo({top:0,behavior:'smooth'});
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+}
 
 export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: boolean;}) {
-  
+  const {
+    login,
+  } = UseUserReading();
   const { setLoading }= UseSearchLoading();
   const router = useRouter();
   const currentPath: string = usePathname();
@@ -79,10 +91,11 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
     workParam.set('page','1');
     setLoading(true);
     router.push(currentPath + '?'  + decodeURIComponent(workParam.toString()));
+    scrollTop();
   };
   //パラメータクリア関数
   function clearParam(): void {
-    const newValue: SearchStoryParams = {andor:values['andor'],order:'desc',voice:0,howToView:0,pp:0,media:{},category:{},info:{},selectorInfo:'',categoryStr:''}
+    const newValue: SearchStoryParams = {andor:values['andor'],order:'desc',voice:0,howToView:0,pp:0,media:{},category:{},info:{},selectorInfo:'',categoryStr:'',read:'all'}
     setValues(newValue);
     search(newValue);
     setSelectedUnit('');
@@ -97,6 +110,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
     if(searchStoryParams.order!=='') workParam.set('order',searchStoryParams.order);
     if(searchStoryParams.andor!=='') workParam.set('andor',searchStoryParams.andor);
     if(searchStoryParams.voice!==0) workParam.set('v',searchStoryParams.voice.toString());
+    if(searchStoryParams.read!=='') workParam.set('read',searchStoryParams.read);
     if(searchStoryParams.howToView!==0) workParam.set('htv',searchStoryParams.howToView.toString());
     if(searchStoryParams.pp!==0) workParam.set('pp',searchStoryParams.pp.toString());
     return workParam;
@@ -109,6 +123,9 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
   };
   function switchVoice(voice: number): void{
     setValues({...values, voice:voice});
+  };
+  function switchRead(read: string): void{
+    setValues({...values, read:read});
   };
   function switchAndOr(andor: string): void{
     const newValue: SearchStoryParams = { ...values, andor:andor };
@@ -167,9 +184,10 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
     let valuesMedia = values.media;
     let valuesCategory = values.category;
     valuesMedia = {...valuesMedia,[mediaId]:onFlg};
-    getCategoryByMedia(mediaId).forEach((item)=>{
-        valuesCategory = {...valuesCategory,[item.categoryId]:onFlg};
+    getCategoryByMedia(mediaId,true).forEach((item)=>{
+      valuesCategory = {...valuesCategory,[item.categoryId]:onFlg};
     });
+
     const newValue: SearchStoryParams = {...values,media:valuesMedia,category:valuesCategory,categoryStr:getCategoryStr(valuesMedia,valuesCategory)};
     setValues(newValue);
     search(newValue);
@@ -178,7 +196,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
     let valuesMedia = values.media;
     let valuesCategory = values.category;
     valuesCategory = {...values.category,[categoryId]:onFlg}
-    const targetMediaId: number = getMediaByCategory(categoryId);
+    const targetMediaId: number = getMediaByCategory(categoryId,true);
     if(onFlg){
       // カテゴリーがONになるとき
       //  →対象メディアをON
@@ -187,7 +205,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
       // カテゴリーがOFFになるとき
       //  →対象メディアのカテゴリがすべてOFFの場合、対象メディアもOFF
       let mediaValid: boolean = false;
-      for(const data of getCategoryByMedia(targetMediaId)){
+      for(const data of getCategoryByMedia(targetMediaId,true)){
         if(valuesCategory[data.categoryId]){
           mediaValid = true;
           break;
@@ -234,10 +252,10 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
     return(
     <>
       {/* 上部ボタン */}
-      <div className="flex flex-col pc:flex-col pb-2 gap-4 w-full min-w-0 max-w-full">
+      <div className="flex flex-col pc:flex-col pb-2 gap-2 tablet:gap-4 w-full min-w-0 max-w-full">
         <div id='infoSelector' className={`flex flex-col`}>
           <div className="flex gap-3 pb-1">
-            <div className="text-sm">ユニット・アイドル</div>
+            <div className="text-xs tablet:text-sm">ユニット・アイドル</div>
             <button
               className="text-sm bg-green-500 px-1 pt-[1px] rounded-sm"
               onClick={()=>{
@@ -310,7 +328,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
 
         </div>
         <div className="flex flex-col ">
-          <div className="text-sm">閲覧方法</div>
+          <div className="text-xs tablet:text-sm">閲覧方法</div>
           <div className='flex flex-wrap w-full p-1 gap-3 items-center'>
             <SearchModalRadioButton
               radioName="radio-howtoview"
@@ -331,7 +349,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
           </div>
         </div>
         <div className="flex flex-col ">
-          <div className="text-sm">プロデュースポイント（PP）</div>
+          <div className="text-xs tablet:text-sm">プロデュースポイント（PP）</div>
           <div className='flex flex-wrap w-full p-1 gap-3 items-center'>
               <SearchModalRadioButton
               radioName="radio-pp"
@@ -350,7 +368,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
           </div>
         </div>
         <div className="flex flex-col ">
-          <div className="text-sm">ボイス</div>
+          <div className="text-xs tablet:text-sm">ボイス</div>
           <div className='flex flex-wrap w-full p-1 gap-3 items-center'>
               <SearchModalRadioButton
               radioName="radio-voice"
@@ -369,6 +387,26 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
               />
           </div>
         </div>
+        <div className={`${login?' flex flex-col ':' hidden '}`}>
+          <div className="text-xs tablet:text-sm">未読・既読</div>
+          <div className='flex flex-wrap w-full p-1 gap-3 items-center'>
+              <SearchModalRadioButton
+              radioName="radio-read"
+              data={[
+                  { filterId: "all", labelStr: "すべて" },
+                  { filterId: "unread", labelStr: "未読" },
+                  { filterId: "read", labelStr: "既読済み" },
+              ]}
+              selectedId={values.read}
+              onChange={(id) => {
+                const newValue: SearchStoryParams = { ...values, read:id };
+                setValues(newValue);
+                search(newValue);
+              }}
+              changeSearchParams={(id) =>switchRead(id)}
+              />
+          </div>
+        </div>
         <div className={`tablet:hidden w-full 
             mt-3 w-full rounded-lg
             border border-neutral-400
@@ -382,10 +420,10 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
         <div className={`${isOpen?' flex ':' hidden tablet:flex'}  flex-col`}>
               
           <div id='CategoryCheckBox' className={`flex flex-col gap-1`}>
-            <div className="text-sm">ストーリー種別</div>
+            <div className="text-xs tablet:text-sm">ストーリー種別</div>
             <div className='
                 flex flex-wrap justify-center items-center 
-                gap-x-3 gap-y-1 w-fit
+                gap-x-1 gap-y-1 w-fit
                 '>
                 {/* アイマスポータル */}
                 <SearchStoryFilterCheckbox 
@@ -418,7 +456,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
             <Separator />
             <div className='
                 flex flex-wrap justify-center items-center 
-                gap-x-3 gap-y-1 w-fit
+                gap-x-1 gap-y-1 w-fit
                 '>
                 {/* サイスタ */}
                 <SearchStoryFilterCheckbox 
@@ -430,12 +468,12 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                 <SearchStoryFilterCheckbox 
                     filterId={CATEGORY.main.id}
                     isValid={values.category[CATEGORY.main.id]}
-                    labelStr={CATEGORY.main.name}
+                    labelStr={'メイン'}
                     onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.main.id,isValid)} />
                 <SearchStoryFilterCheckbox 
                     filterId={CATEGORY.gsEvent.id}
                     isValid={values.category[CATEGORY.gsEvent.id]}
-                    labelStr={CATEGORY.gsEvent.name}
+                    labelStr={'イベント'}
                     onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.gsEvent.id,isValid)} />
                 <SearchStoryFilterCheckbox 
                     filterId={CATEGORY.episodeZero.id}
@@ -451,7 +489,7 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
             <Separator />
             <div className='
                 flex flex-wrap justify-center items-center 
-                gap-x-3 gap-y-1 w-fit
+                gap-x-1 gap-y-1 w-fit
                 '>
                 {/* モバエム */}
                 <SearchStoryFilterCheckbox 
@@ -461,36 +499,36 @@ export default function SearchStoryController({ firstIsOpen }: { firstIsOpen: bo
                     isMain={true}
                     onChange={(id,isValid) => changeSearchParamsMedia(MEDIA.moba.id,isValid)} />
                 <SearchStoryFilterCheckbox 
+                    filterId={CATEGORY.mobaEvent.id}
+                    isValid={values.category[CATEGORY.mobaEvent.id]}
+                    labelStr={'イベント'}
+                    onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.mobaEvent.id,isValid)} />
+                <SearchStoryFilterCheckbox 
+                    filterId={'comic'}
+                    isValid={values.category['comic']}
+                    labelStr={'雑誌(マンガ)'}
+                    onChange={(id,isValid) => changeSearchParamsCategory('comic',isValid)} />
+                <SearchStoryFilterCheckbox 
                     filterId={CATEGORY.SideMemories.id}
                     isValid={values.category[CATEGORY.SideMemories.id]}
                     labelStr={CATEGORY.SideMemories.name}
                     onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.SideMemories.id,isValid)} />
                 <SearchStoryFilterCheckbox 
-                    filterId={CATEGORY.comicNomral.id}
-                    isValid={values.category[CATEGORY.comicNomral.id]}
-                    labelStr={CATEGORY.comicNomral.name}
-                    onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.comicNomral.id,isValid)} />
-                <SearchStoryFilterCheckbox 
-                    filterId={CATEGORY.comicSpecial.id}
-                    isValid={values.category[CATEGORY.comicSpecial.id]}
-                    labelStr={CATEGORY.comicSpecial.name}
-                    onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.comicSpecial.id,isValid)} />
-                <SearchStoryFilterCheckbox 
-                    filterId={CATEGORY.mobaEvent.id}
-                    isValid={values.category[CATEGORY.mobaEvent.id]}
-                    labelStr={CATEGORY.mobaEvent.name}
-                    onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.mobaEvent.id,isValid)} />
-                <SearchStoryFilterCheckbox 
                     filterId={CATEGORY.dailyOneFrame.id}
                     isValid={values.category[CATEGORY.dailyOneFrame.id]}
                     labelStr={CATEGORY.dailyOneFrame.name}
                     onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.dailyOneFrame.id,isValid)} />
+                <SearchStoryFilterCheckbox 
+                    filterId={CATEGORY.dramaOnStage.id}
+                    isValid={values.category[CATEGORY.dramaOnStage.id]}
+                    labelStr={'DOS'}
+                    onChange={(id,isValid) => changeSearchParamsCategory(CATEGORY.dramaOnStage.id,isValid)} />
             </div>
           </div>
 
-          <div id='infoCheckBox' className={`grid grid-cols-1 gap-2 justify-center pt-2`}>
+          <div id='infoCheckBox' className={`grid grid-cols-1 gap-2 justify-center pt-4`}>
             <div className="flex gap-3">
-              <div className="text-sm">ユニット・アイドル（カスタム）</div>
+              <div className="text-xs tablet:text-sm">ユニット・アイドル（カスタム）</div>
             </div>
             <SearchModalRadioButton
               radioName="radio-andor"
