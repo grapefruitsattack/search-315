@@ -14,7 +14,7 @@ export default function UserButton() {
 
   if (isPending) {
     return (
-      <div>
+      <div className=''>
         <div className="flex pc:flex-row flex-col items-center">
           <Skeleton className="h-[40px] w-[40px] rounded-xl mx-auto pc:mx-1" />
           <Skeleton className="h-2 pc:h-5 w-20 mt-1 pc:mt-0" />

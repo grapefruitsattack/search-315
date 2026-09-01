@@ -244,7 +244,7 @@ export const LyricShareModal = (
     if(rows.endRow>0&&rows.endRow!==rows.startRow) queryArray.push(`endrow=${rows.endRow}`);
     if(chars.startChar>0) queryArray.push(`startchar=${chars.startChar}`);
     if(chars.endChar>0) queryArray.push(`endchar=${chars.endChar}`);
-    return `${process.env.NEXT_PUBLIC_HOME_URL}song/${song.songId}/lyricshare/?${queryArray.join('&')}`;
+    return `${process.env.NEXT_PUBLIC_HOME_URL}/song/${song.songId}/lyricshare/?${queryArray.join('&')}`;
   };
   const [shareText, setShareText] = useState('');
   const shareURLTwitter = (text: string) => `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;

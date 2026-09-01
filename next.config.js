@@ -30,7 +30,7 @@ module.exports = withPWA({
   experimental: {
       scrollRestoration: true,
   },
-  trailingSlash: true,
+  trailingSlash: false,
   assetPrefix: process.env.BASE_PATH || '',
   basePath: process.env.BASE_PATH || '',
   //output: 'export',
