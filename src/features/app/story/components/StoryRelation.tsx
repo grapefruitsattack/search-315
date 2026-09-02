@@ -121,7 +121,7 @@ export default async function StoryRelation(
           key={result.songId} 
           songId={result.songId}
           displayArtist={true}
-          useArtistBadge={true}
+          useArtistBadge={1}
           displayArtwork={true}
           displayReleaseDate={false}
         />

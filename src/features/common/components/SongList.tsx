@@ -17,7 +17,7 @@ const SubscButton = dynamic(() => import("@/features/common/components/SubscButt
 
 export default function SongList(
   { songId,index,displayArtist,useArtistBadge,displayArtwork,displayReleaseDate,useBadgeShortName=0 }
-  : { songId: string, index: number, displayArtist: boolean, useArtistBadge: boolean, displayArtwork: boolean, displayReleaseDate:boolean, useBadgeShortName?:number, }
+  : { songId: string, index: number, displayArtist: boolean, useArtistBadge: number, displayArtwork: boolean, displayReleaseDate:boolean, useBadgeShortName?:number, }
 ) {
   const song: SongMaster = songMaster.find((data=>data.songId===songId)) as SongMaster;
 
@@ -77,10 +77,10 @@ export default function SongList(
         `}
     >
       <Link 
-        className="flex flex-col my-auto px-2 h-full text-xs mobileS:text-sm tablet:text-base truncate "
+        className="flex flex-col my-auto px-2 h-full text-xs mobileS:text-sm tablet:text-base line-clamp-2"
         href={`/song/` + song.songId}
       >
-        <div>
+        <div className="w-full">
           <div className={`${displayReleaseDate?'text-xs text-gray-500':'hidden'}`}>
             {releaseDate}
           </div>
@@ -91,8 +91,8 @@ export default function SongList(
         {/* アーティスト */}
         <div className={`${displayArtist?' mobileM:text-base text-sm':'hidden'}`}>
           <div className ='flex flex-wrap relative text-sm gap-0.5 mb-1 mx-1 '>
-            {artistArray.length <= 0 || useArtistBadge===false
-              ?<p className="text-sm leading-tight text-zinc-700 truncate">{song?.displayArtist}</p>
+            {artistArray.length <= 0 || useArtistBadge===0 || (artistArray.length >= 7 && useArtistBadge===2)
+              ?<p className={`text-sm leading-tight text-zinc-700 line-clamp-2`}>{song?.displayArtist}</p>
               :artistArray.map(
                 (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={useBadgeShortName} size={'block'}/></div>))
             }

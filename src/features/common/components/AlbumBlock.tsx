@@ -55,7 +55,7 @@ export default function AlbumBlock(
           >
           <div className ='flex flex-wrap relative text-sm gap-0.5  font-sans'>
               {artistArray.length <= 0
-                ?<p className="text-base leading-tight text-zinc-700 font-bold mx-1">{results.displayArtist}</p>
+                ?<p className="text-sm font-bold leading-tight text-zinc-700 mx-1 line-clamp-2">{results.displayArtist}</p>
                 :artistArray.map(
                   (result, index) => (<div key={index} className=""><IdolBadge id={result} useShortName={1} size={'block'}/></div>))
               }

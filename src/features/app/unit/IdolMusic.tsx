@@ -44,7 +44,7 @@ export default function IdolMusic({ idolId }: { idolId: string }) {
           px-0 mobileM:px-2
           
         `}>
-        <SongCarousel songArray={soloSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false} displayReleaseDate={true}/>
+        <SongCarousel songArray={soloSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={0} displayReleaseDate={true}/>
         </div>
       </div>
       
@@ -68,7 +68,7 @@ export default function IdolMusic({ idolId }: { idolId: string }) {
               
             `}>
               <SongCarousel 
-                songArray={collaboSongs} displaySongCnt={4} displayArtist={true} useArtistBadge={false} displayReleaseDate={true}
+                songArray={collaboSongs} displaySongCnt={4} displayArtist={true} useArtistBadge={0} displayReleaseDate={true}
               />
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function IdolMusic({ idolId }: { idolId: string }) {
               px-0 mobileM:px-2
               
             `}>
-              <SongCarousel songArray={soloColleSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={false} displayReleaseDate={true} />
+              <SongCarousel songArray={soloColleSongs} displaySongCnt={5} displayArtist={false} useArtistBadge={0} displayReleaseDate={true} />
             </div>
           </div>
         </>

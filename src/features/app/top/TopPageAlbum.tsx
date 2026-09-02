@@ -13,7 +13,7 @@ import {
 import { Disc } from "lucide-react";
 
 export default function TopPageAlbum({ }: { }) {
-  const displayAlbumData: Albums[] = albumMaster.toReversed().slice(0,10);
+  const displayAlbumData: Albums[] = albumMaster.toReversed().slice(0,30);
 
   return(
   <Card className="shadow-lg ">

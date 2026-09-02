@@ -15,7 +15,7 @@ import SongList from "@/features/common/components/SongList";
 
 export default function SongCarousel(
   { songArray,displaySongCnt,displayArtist,useArtistBadge,displayReleaseDate,useBadgeShortName=0}
-  : { songArray: SongMaster[], displaySongCnt: number, displayArtist:boolean, useArtistBadge: boolean, displayReleaseDate:boolean, useBadgeShortName?:number, }
+  : { songArray: SongMaster[], displaySongCnt: number, displayArtist:boolean, useArtistBadge: number, displayReleaseDate:boolean, useBadgeShortName?:number, }
 ) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);

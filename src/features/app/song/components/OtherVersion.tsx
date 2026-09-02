@@ -27,7 +27,7 @@ export default function OtherVersion({ id ,otherVersionSongs }: { id: string, ot
               max-w-[700px] w-full
               px-0 tablet:px-2
             `}>
-              <SongCarousel songArray={resultSort} displaySongCnt={5} displayArtist={true} useArtistBadge={true} displayReleaseDate={false} />
+              <SongCarousel songArray={resultSort} displaySongCnt={5} displayArtist={true} useArtistBadge={1} displayReleaseDate={false} />
             </section>
             </>
     )

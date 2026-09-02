@@ -33,7 +33,7 @@ export default function AlbumSongs({ album }: { album: Albums }) {
           index={index} 
           songId={result.songId}
           displayArtist={result.artist!==album.artist}
-          useArtistBadge={true}
+          useArtistBadge={1}
           displayArtwork={false}
           displayReleaseDate={false}
         />
