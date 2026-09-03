@@ -4176,22 +4176,6 @@
     "description": ""
   },
   {
-    "sereisId": "TT",
-    "albumId": "TT12",
-    "albumTitleFull": "THE IDOLM@STER SideM TRANSCENDENT T@LES 12",
-    "albumTitle": "TRANSCENDENT T@LES 12",
-    "subscFlg": 0,
-    "colleFlg": 0,
-    "isSoloColle": 0,
-    "isUnitColle": 0,
-    "releaseDate": "20260902",
-    "displayArtist": "天道輝、若里春名、水嶋咲、 硲道夫、眉見鋭心",
-    "artist": "[DRS01]、[HIJ04]、[CFP05]、[SEM01]、[CLF03]",
-    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24772.html",
-    "trialYoutubeId": "NmOzehSWdVQ",
-    "description": ""
-  },
-  {
     "sereisId": "MTS",
     "albumId": "MTS10",
     "albumTitleFull": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 10 もふもふえん",
@@ -4205,6 +4189,22 @@
     "artist": "[MFM00]",
     "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24790.html",
     "trialYoutubeId": "fX4iinOuXQc",
+    "description": ""
+  },
+  {
+    "sereisId": "TT",
+    "albumId": "TT12",
+    "albumTitleFull": "THE IDOLM@STER SideM TRANSCENDENT T@LES 12",
+    "albumTitle": "TRANSCENDENT T@LES 12",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260902",
+    "displayArtist": "天道輝、若里春名、水嶋咲、 硲道夫、眉見鋭心",
+    "artist": "[DRS01]、[HIJ04]、[CFP05]、[SEM01]、[CLF03]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24772.html",
+    "trialYoutubeId": "NmOzehSWdVQ",
     "description": ""
   },
   {
