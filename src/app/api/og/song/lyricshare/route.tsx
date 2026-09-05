@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
   // 日本語フォント
   const fontData = await fetch(
     new URL(
-      '../../../../../assets/fonts/noto-sans-jp-bold-subset.ttf',
+      '../../../../../assets/fonts/NotoSansJP-Bold-subset.ttf',
       import.meta.url
     )
   ).then((res) => res.arrayBuffer());
