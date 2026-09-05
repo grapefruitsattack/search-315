@@ -29,12 +29,31 @@ export async function GET(request: NextRequest) {
 
   const origin = new URL(request.url).origin;
 
-const fontData = await fetch(
-  `${origin}/fonts/NotoSansJP-Bold-subset.ttf`,
-  {
-    cache: 'force-cache',
+  const fontUrl =
+    `${origin}/fonts/NotoSansJP-Bold-subset.ttf`;
+
+  const fontResponse = await fetch(fontUrl);
+
+  if (!fontResponse.ok) {
+    throw new Error(
+      `Font fetch failed: ${fontResponse.status} ${fontResponse.statusText}`
+    );
   }
-).then((res) => res.arrayBuffer());
+
+  const fontData = await fontResponse.arrayBuffer();
+
+  console.log('Font loaded:', {
+    url: fontUrl,
+    size: fontData.byteLength,
+  });
+  
+  const contentType = fontResponse.headers.get('content-type');
+
+  console.log('Font response:', {
+    status: fontResponse.status,
+    contentType,
+    size: fontData.byteLength,
+  });
 
   const artworkUrl =
     `${origin}/artwork/${encodeURIComponent(artwork)}.png`;
