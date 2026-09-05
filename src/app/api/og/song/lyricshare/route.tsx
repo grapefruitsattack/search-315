@@ -27,15 +27,14 @@ export async function GET(request: NextRequest) {
      = songTitleCount>=21?'50px'
       :songTitleCount>=16?'60px':'70px';
 
-  // 日本語フォント（WOFF2）
-  const fontData = await fetch(
-    new URL(
-      '../../../../../assets/fonts/NotoSansJP-Bold-subset.woff',
-      import.meta.url
-    )
-  ).then((res) => res.arrayBuffer());
-
   const origin = new URL(request.url).origin;
+
+const fontData = await fetch(
+  `${origin}/fonts/NotoSansJP-Bold-subset.ttf`,
+  {
+    cache: 'force-cache',
+  }
+).then((res) => res.arrayBuffer());
 
   const artworkUrl =
     `${origin}/artwork/${encodeURIComponent(artwork)}.png`;
