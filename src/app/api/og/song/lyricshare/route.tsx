@@ -23,15 +23,14 @@ export async function GET(request: NextRequest) {
   const artwork = searchParams.get('artwork') ?? '';
 
   const songTitleCount = count(songTitle);
-  const displayArtistCount = count(songTitle);
   const fontSizeStr: string 
      = songTitleCount>=21?'50px'
       :songTitleCount>=16?'60px':'70px';
 
-  // 日本語フォント
+  // 日本語フォント（WOFF2）
   const fontData = await fetch(
     new URL(
-      '../../../../../assets/fonts/NotoSansJP-Bold-subset.ttf',
+      '../../../../../assets/fonts/NotoSansJP-Bold-subset.woff',
       import.meta.url
     )
   ).then((res) => res.arrayBuffer());
