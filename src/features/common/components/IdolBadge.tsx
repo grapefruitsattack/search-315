@@ -13,7 +13,7 @@ export default function IdolBadge({ id, useShortName, size, linkType }: { id: st
       <div 
           className={`
           justify-center 
-          font-bold
+          font-bold font-sans
           bg-sky-600
           text-white
           ${size==='block'
@@ -50,7 +50,7 @@ export default function IdolBadge({ id, useShortName, size, linkType }: { id: st
               style={{ '--bg-color': bgColorCode,'--text-color': textColorCode,'--border-color': borderColorCode, } as React.CSSProperties}
               className={`
               justify-center 
-              font-bold
+              font-bold font-sans
               rounded-sm py-0.5  text-xs mobileS:text-sm tablet:text-base
               bg-[var(--bg-color)] text-[var(--text-color)] 
               ${personFlg===1?'pl-0.5 pr-1 border-l-[6px] border-[var(--border-color)]':'px-1'}
@@ -65,7 +65,7 @@ export default function IdolBadge({ id, useShortName, size, linkType }: { id: st
           style={{ '--bg-color': bgColorCode,'--text-color': textColorCode,'--border-color': borderColorCode, } as React.CSSProperties}
           className={`block
           text-left
-          font-bold 
+          font-bold font-sans
           bg-[var(--bg-color)] text-[var(--text-color)] 
           rounded-sm py-0.5 text-xs mobileS:text-base tablet:text-lg
           ${personFlg===1?' border-l-8 border-[var(--border-color)]':'px-2'}
@@ -85,7 +85,7 @@ export default function IdolBadge({ id, useShortName, size, linkType }: { id: st
               style={{ '--bg-color': bgColorCode,'--text-color': textColorCode,'--border-color': borderColorCode, } as React.CSSProperties}
               className={`block cursor-pointer
               justify-center 
-              font-bold 
+              font-bold font-sans
               bg-[var(--bg-color)] text-[var(--text-color)] 
               duration-100
               [box-shadow:2.5px_2.5px_rgb(100_100_100)]
@@ -110,7 +110,7 @@ export default function IdolBadge({ id, useShortName, size, linkType }: { id: st
     const badgeColors =
     [
         {
-            id:'JUP',bgColor:'#80ed6f', textColor:'#043204',
+            id:'JUP',bgColor:'#80ed6f', textColor:'#003000',
             unitColors:[
                 {id:'JUP01',borderColor:'#F14A4A'},
                 {id:'JUP02',borderColor:'#87C010'},
@@ -118,7 +118,7 @@ export default function IdolBadge({ id, useShortName, size, linkType }: { id: st
             ]
         },
         {
-            id:'DRS',bgColor:'#FFA90A', textColor:'#342305',
+            id:'DRS',bgColor:'#FFA90A', textColor:'#2e1d00',
             unitColors:[
                 {id:'DRS01',borderColor:'#CC313B'},
                 {id:'DRS02',borderColor:'#1767D9'},
@@ -126,14 +126,14 @@ export default function IdolBadge({ id, useShortName, size, linkType }: { id: st
             ]
         },
         {
-            id:'ALT',bgColor:'#F6F45E', textColor:'#52511F',
+            id:'ALT',bgColor:'#F6F45E', textColor:'#2c2b00',
             unitColors:[
                 {id:'ALT01',borderColor:'#A584E5'},
                 {id:'ALT02',borderColor:'#225B9D'},
             ]
         },
         {
-            id:'BEI',bgColor:'#66ddfa', textColor:'#0b414f',
+            id:'BEI',bgColor:'#66ddfa', textColor:'#002a35',
             unitColors:[
                 {id:'BEI01',borderColor:'#309AC1'},
                 {id:'BEI02',borderColor:'#54BC26'},
@@ -141,14 +141,14 @@ export default function IdolBadge({ id, useShortName, size, linkType }: { id: st
             ]
         },
         {
-            id:'DBL',bgColor:'#F7D828', textColor:'#4F450D',
+            id:'DBL',bgColor:'#F7D828', textColor:'#272100',
             unitColors:[
                 {id:'DBL01',borderColor:'#F4BA07'},
                 {id:'DBL02',borderColor:'#3BA12E'},
             ]
         },
         {
-            id:'FRM',bgColor:'#338033', textColor:'#e5ffe5',
+            id:'FRM',bgColor:'#338033', textColor:'#f6fff6',
             unitColors:[
                 {id:'FRM01',borderColor:'#3696D0'},
                 {id:'FRM02',borderColor:'#EF7A30'},
@@ -156,7 +156,7 @@ export default function IdolBadge({ id, useShortName, size, linkType }: { id: st
             ]
         },
         {
-            id:'SAI',bgColor:'#7E31CC', textColor:'#f5ebff',
+            id:'SAI',bgColor:'#7E31CC', textColor:'#faf5ff',
             unitColors:[
                 {id:'SAI01',borderColor:'#E7B12C'},
                 {id:'SAI02',borderColor:'#834DBD'},
@@ -174,7 +174,7 @@ export default function IdolBadge({ id, useShortName, size, linkType }: { id: st
             ]
         },
         {
-            id:'SSK',bgColor:'#D3DAE0', textColor:'#474A4D',
+            id:'SSK',bgColor:'#D3DAE0', textColor:'#3a3a3b',
             unitColors:[
                 {id:'SSK01',borderColor:'#E13E33'},
                 {id:'SSK02',borderColor:'#334ABA'},
@@ -191,7 +191,7 @@ export default function IdolBadge({ id, useShortName, size, linkType }: { id: st
             ]
         },
         {
-            id:'MFM',bgColor:'#f5abd7', textColor:'#4d3442',
+            id:'MFM',bgColor:'#f5abd7', textColor:'#3d2432',
             unitColors:[
                 {id:'MFM01',borderColor:'#484393'},
                 {id:'MFM02',borderColor:'#E44635'},
@@ -207,7 +207,7 @@ export default function IdolBadge({ id, useShortName, size, linkType }: { id: st
             ]
         },
         {
-            id:'KGD',bgColor:'#4A4A4A', textColor:'#EBEBEB',
+            id:'KGD',bgColor:'#4A4A4A', textColor:'#f8f8f8',
             unitColors:[
                 {id:'KGD01',borderColor:'#344DCB'},
                 {id:'KGD02',borderColor:'#EE972F'},
@@ -223,7 +223,7 @@ export default function IdolBadge({ id, useShortName, size, linkType }: { id: st
             ]
         },
         {
-            id:'LGN',bgColor:'#6880A0', textColor:'#f2f6fa',
+            id:'LGN',bgColor:'#6880A0', textColor:'#fafcff',
             unitColors:[
                 {id:'LGN01',borderColor:'#192F5D'},
                 {id:'LGN02',borderColor:'#3A782E'},
