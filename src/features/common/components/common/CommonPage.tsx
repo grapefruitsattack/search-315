@@ -34,7 +34,7 @@ const CommonPage = ({ children }: Props )=> {
   <main className=" min-h-screen grid grid-rows-[auto_auto_1fr_auto] grid-cols-[100%]">
     <CommonSidebar />
     <CommonHeader />
-    <div className="pc:pt-6 pt-24 pc:pl-64 pr-0 ">
+    <div className="pc:pt-6 pt-24 pc:pl-[240px] pr-0 ">
       {children}
     </div>
         {/* <ParticlesComponent/> */}

@@ -48,6 +48,7 @@ export default function UnitPageTabs() {
         window.scrollY +
         rect.top -
         headerHeight -
+        10 -
         48, // セクションナビ自身の高さ
       behavior: 'smooth',
     });
@@ -105,12 +106,12 @@ export default function UnitPageTabs() {
         top-[58px]
         tablet:top-[66px]
         lg:top-0
-        z-40 bg-white
+        z-40 bg-white shadow-lg 
       "
       aria-label="ページ内ナビゲーション"
     >
       <div className="flex w-full justify-center">
-        <div className="flex w-full max-w-[950px] gap-1 mobileL:gap-2">
+        <div className="flex w-full max-w-[2000px] ">
           {sections.map((section) => {
             const Icon = section.icon;
 
@@ -122,19 +123,24 @@ export default function UnitPageTabs() {
                   scrollToSection(section.id)
                 }
                 className={`
-                  flex flex-1 items-center justify-center
-                  gap-1 px-1 text-xs mobileL:text-base
-                  py-3 mobileL:py-2
-                  rounded-xl
+                  flex flex-1 items-center justify-center 
+                  bg-white
                   transition-all duration-300
-                  hover:ring-2 hover:ring-zinc-600 hover:ring-offset-2 
+                  border-2 
                   ${
                     activeSection === section.id
-                      ? 'bg-gray-500 font-bold text-white'
-                      : 'text-gray-600 bg-gray-100'
+                      ? 'font-bold border-blue-500'
+                      : 'text-gray-600 border-white'
                   }
                 `}
               >
+                <div 
+                  className='h-full w-fit 
+                    flex flex-1 items-center justify-center gap-1
+                    px-1 text-xs mobileL:text-base
+                    py-3 mobileL:py-2
+                    '
+                >
                 <Icon
                   className="
                     h-[19px]
@@ -144,9 +150,10 @@ export default function UnitPageTabs() {
                   "
                 />
 
-                <span>
+                <span className=''>
                   {section.label}
                 </span>
+                </div>
               </button>
             );
           })}
