@@ -10,6 +10,7 @@ const dummySeriesId:string[]
         ,'MESP'
         ,'UOS'
         ,'JSC'
+        ,'OCM'
         ,''
         ,'MTS' //TODO 該当アートワーク作成後削除
         ,'FBF' //TODO 該当アートワーク作成後削除

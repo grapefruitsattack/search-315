@@ -8611,5 +8611,60 @@
     "lineMusicUrl": "https://music.line.me/webapp/track/mt000000002679934e",
     "awaUrl": "https://s.awa.fm/track/ddc59c64b08c36faef02",
     "towerRecordsMusic": ""
+  },
+  {
+    "id": "PRS26K_1",
+    "title": "アニマ・フォルトゥナ",
+    "youtubeId": "xu3bPQ2r5Dg",
+    "spotifyUrl": "https://open.spotify.com/track/77xPFPOxJnwS92Dnu8rAHX",
+    "appleMusicUrl": "https://music.apple.com/jp/song/%E3%82%A2%E3%83%8B%E3%83%9E-%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%82%A5%E3%83%8A/6802206098",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0HFHJN9WF",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt000000002721b432",
+    "awaUrl": "https://s.awa.fm/track/c740a897dab32a31c975",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "PRS26K_2",
+    "title": "アニマ・フォルトゥナ（デカルトの影光 Ver.）",
+    "youtubeId": "PhEAB73Kiz0",
+    "spotifyUrl": "https://open.spotify.com/track/6mslbwiKkiZiiXMAn8P1nC",
+    "appleMusicUrl": "https://music.apple.com/jp/song/%E3%82%A2%E3%83%8B%E3%83%9E-%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%82%A5%E3%83%8A-%E3%83%87%E3%82%AB%E3%83%AB%E3%83%88%E3%81%AE%E5%BD%B1%E5%85%89-ver/6802206100",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0HFHG5P44",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt000000002721b433",
+    "awaUrl": "https://s.awa.fm/track/0bd393fb2c15d0d07b76",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "PRS26K_3",
+    "title": "アニマ・フォルトゥナ（テセウスの少年 Ver.）",
+    "youtubeId": "rwkRCmHUGzw",
+    "spotifyUrl": "https://open.spotify.com/track/3v2GhSvaPSThH1JnqyxM5c",
+    "appleMusicUrl": "https://music.apple.com/jp/song/%E3%82%A2%E3%83%8B%E3%83%9E-%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%82%A5%E3%83%8A-%E3%83%86%E3%82%BB%E3%82%A6%E3%82%B9%E3%81%AE%E5%B0%91%E5%B9%B4-ver/6802206101",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0HFHQ1424",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt000000002721b434",
+    "awaUrl": "https://s.awa.fm/track/1e18d87eaccc73383377",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "OC2025SOBS_7",
+    "title": "ARRIVE TO STAR (Day 第2幕「BRILLIANT STAGE」より)",
+    "youtubeId": "ZZ9MFCO8tPw",
+    "spotifyUrl": "https://open.spotify.com/track/5W07VFFL1EEHVGZ4UoF6F1",
+    "appleMusicUrl": "https://music.apple.com/jp/song/arrive-to-star-day-%E7%AC%AC2%E5%B9%95-brilliant-stage-%E3%82%88%E3%82%8A-live/6810503459",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0HJ8LJ4DK",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt000000002767478c",
+    "awaUrl": "https://s.awa.fm/track/dba468a6b214b76aa983",
+    "towerRecordsMusic": ""
+  },
+  {
+    "id": "OC2025SOBS_11",
+    "title": "Because (Day 第2幕「BRILLIANT STAGE」より)",
+    "youtubeId": "pUbDIw1Umbc",
+    "spotifyUrl": "https://open.spotify.com/track/4SkQCEznRXzFteVAqOYLOU",
+    "appleMusicUrl": "https://music.apple.com/jp/song/because-day-%E7%AC%AC2%E5%B9%95-brilliant-stage-%E3%82%88%E3%82%8A-live/6810503686",
+    "amazonMusicUrl": "https://music.amazon.co.jp/tracks/B0HJ8S536W",
+    "lineMusicUrl": "https://music.line.me/webapp/track/mt0000000027674790",
+    "awaUrl": "https://s.awa.fm/track/758098dde091b2030087",
+    "towerRecordsMusic": ""
   }
 ]

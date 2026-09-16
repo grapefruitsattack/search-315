@@ -2368,10 +2368,10 @@
     "description": ""
   },
   {
-    "sereisId": "",
+    "sereisId": "OCM",
     "albumId": "OCSOFS",
     "albumTitleFull": "THE IDOLM@STER ORCHESTRA CONCERT ～SYMPHONY OF FIVE STARS!!!!!～ コンサートアルバム",
-    "albumTitle": "THE IDOLM@STER ORCHESTRA CONCERT",
+    "albumTitle": "オケマス SYMPHONY OF FIVE STARS!!!!!",
     "subscFlg": 1,
     "colleFlg": 0,
     "isSoloColle": 0,
@@ -3840,6 +3840,22 @@
     "description": ""
   },
   {
+    "sereisId": "OCM",
+    "albumId": "OC2025SOBS",
+    "albumTitleFull": "THE IDOLM@STER 20th anniversary ORCHESTRA CONCERT SYMPHONY OF BRILLIANT STARS コンサートアルバム",
+    "albumTitle": "オケマス2025 SYMPHONY OF BRILLIANT STARS",
+    "subscFlg": 1,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20260131",
+    "displayArtist": "",
+    "artist": "",
+    "releasePage": "https://idolmaster-official.jp/news/01_16258",
+    "trialYoutubeId": "",
+    "description": ""
+  },
+  {
     "sereisId": "FBF",
     "albumId": "FBFWGFCUS",
     "albumTitleFull": "THE IDOLM@STER SideM F＠NTASTIC BATTLE FES ～Who goes first～ 「CROWN US KING!」",
@@ -3940,7 +3956,7 @@
     "albumId": "PRS26K",
     "albumTitleFull": "アイドルマスター SideM 魂環の人形 主題歌「アニマ・フォルトゥナ」 & サウンドトラック",
     "albumTitle": "魂環の人形「アニマ・フォルトゥナ」",
-    "subscFlg": 0,
+    "subscFlg": 1,
     "colleFlg": 0,
     "isSoloColle": 0,
     "isUnitColle": 0,
@@ -4253,6 +4269,22 @@
     "artist": "[FLG00]",
     "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24791.html",
     "trialYoutubeId": "CekogVGPwV0",
+    "description": ""
+  },
+  {
+    "sereisId": "MTS",
+    "albumId": "MTS12",
+    "albumTitleFull": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 12 Café Parade",
+    "albumTitle": "MONTHLY THEME SONG 12 Café Parade",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20261021",
+    "displayArtist": "Café Parade",
+    "artist": "[CFP00]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24792.html",
+    "trialYoutubeId": "xPnbCuHfozk",
     "description": ""
   }
 ]
