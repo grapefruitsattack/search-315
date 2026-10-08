@@ -1018,5 +1018,29 @@
     "perDate": "20251214",
     "officialPage": "https://idolmaster-official.jp//live_event/idolworld2025/",
     "type": "ex"
+  },
+  {
+    "liveId": "11TH",
+    "perId": "DAY1",
+    "livePerId": "11TH_DAY1",
+    "displayLiveName": "11thライブ",
+    "displayPerName": "DAY1",
+    "liveName": "THE IDOLM@STER SideM 11th STAGE ～EVER EVER＠FTER～",
+    "perName": "DAY1",
+    "perDate": "20260912",
+    "officialPage": "https://idolmaster-official.jp/live_event/sidem11th/",
+    "type": ""
+  },
+  {
+    "liveId": "11TH",
+    "perId": "DAY2",
+    "livePerId": "11TH_DAY2",
+    "displayLiveName": "11thライブ",
+    "displayPerName": "DAY2",
+    "liveName": "THE IDOLM@STER SideM 11th STAGE ～EVER EVER＠FTER～",
+    "perName": "DAY2",
+    "perDate": "20260913",
+    "officialPage": "https://idolmaster-official.jp/live_event/sidem11th/",
+    "type": ""
   }
 ]
