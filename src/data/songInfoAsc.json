@@ -44974,5 +44974,61 @@
     "singingInfoId": "CFP05",
     "releaseDate": "20261021",
     "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS13",
+    "songId": "MTS13_1",
+    "singingInfoId": "JUP00",
+    "releaseDate": "20261125",
+    "type": "u"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS13",
+    "songId": "MTS13_1",
+    "singingInfoId": "JUP01",
+    "releaseDate": "20261125",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS13",
+    "songId": "MTS13_1",
+    "singingInfoId": "JUP02",
+    "releaseDate": "20261125",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS13",
+    "songId": "MTS13_1",
+    "singingInfoId": "JUP03",
+    "releaseDate": "20261125",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "MTS13",
+    "songId": "MTS13_2",
+    "singingInfoId": "JUP01",
+    "releaseDate": "20261125",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "MTS13",
+    "songId": "MTS13_3",
+    "singingInfoId": "JUP02",
+    "releaseDate": "20261125",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "MTS13",
+    "songId": "MTS13_4",
+    "singingInfoId": "JUP03",
+    "releaseDate": "20261125",
+    "type": "sver"
   }
 ]
