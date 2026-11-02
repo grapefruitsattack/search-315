@@ -45030,5 +45030,141 @@
     "singingInfoId": "JUP03",
     "releaseDate": "20261125",
     "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_1",
+    "singingInfoId": "DBL00",
+    "releaseDate": "20261202",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_1",
+    "singingInfoId": "DBL01",
+    "releaseDate": "20261202",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_1",
+    "singingInfoId": "DBL02",
+    "releaseDate": "20261202",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_1",
+    "singingInfoId": "SSK00",
+    "releaseDate": "20261202",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_1",
+    "singingInfoId": "SSK01",
+    "releaseDate": "20261202",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_1",
+    "singingInfoId": "SSK02",
+    "releaseDate": "20261202",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_1",
+    "singingInfoId": "CLF00",
+    "releaseDate": "20261202",
+    "type": "c"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_1",
+    "singingInfoId": "CLF01",
+    "releaseDate": "20261202",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_1",
+    "singingInfoId": "CLF02",
+    "releaseDate": "20261202",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_1",
+    "singingInfoId": "CLF03",
+    "releaseDate": "20261202",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_2",
+    "singingInfoId": "DBL01",
+    "releaseDate": "20261202",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_3",
+    "singingInfoId": "DBL02",
+    "releaseDate": "20261202",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_4",
+    "singingInfoId": "SSK01",
+    "releaseDate": "20261202",
+    "type": "sver"
+  },
+  {
+    "trackNo": 5,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_5",
+    "singingInfoId": "SSK02",
+    "releaseDate": "20261202",
+    "type": "sver"
+  },
+  {
+    "trackNo": 6,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_6",
+    "singingInfoId": "CLF01",
+    "releaseDate": "20261202",
+    "type": "sver"
+  },
+  {
+    "trackNo": 7,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_7",
+    "singingInfoId": "CLF02",
+    "releaseDate": "20261202",
+    "type": "sver"
+  },
+  {
+    "trackNo": 8,
+    "albumId": "MFES2026",
+    "songId": "MFES2026_8",
+    "singingInfoId": "CLF03",
+    "releaseDate": "20261202",
+    "type": "sver"
   }
 ]

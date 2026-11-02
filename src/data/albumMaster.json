@@ -4291,7 +4291,7 @@
     "sereisId": "MTS",
     "albumId": "MTS13",
     "albumTitleFull": "THE IDOLM@STER SideM ～P@SSION CHALLENGE We are 315！～ MONTHLY THEME SONG 13 Jupiter",
-    "albumTitle": "MONTHLY THEME SONG 12 Jupiter",
+    "albumTitle": "MONTHLY THEME SONG 13 Jupiter",
     "subscFlg": 0,
     "colleFlg": 0,
     "isSoloColle": 0,
@@ -4301,6 +4301,22 @@
     "artist": "[JUP00]",
     "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACM-24793.html",
     "trialYoutubeId": "Ox9ZxjEtjsY",
+    "description": ""
+  },
+  {
+    "sereisId": "",
+    "albumId": "MFES2026",
+    "albumTitleFull": "THE IDOLM@STER SideM Mフェス 2026 in Winter Wonderland テーマソング 「Season's Greetings Party！」",
+    "albumTitle": "Mフェス2026「Season's Greetings Party！」",
+    "subscFlg": 0,
+    "colleFlg": 0,
+    "isSoloColle": 0,
+    "isUnitColle": 0,
+    "releaseDate": "20261202",
+    "displayArtist": "W、神速一魂、C.FIRST",
+    "artist": "[DBL00]、[SSK00]、[CLF00]",
+    "releasePage": "https://www.lantis.jp/sidem/releaseinfo/release_LACA-25317.html",
+    "trialYoutubeId": "EbPjBxz6vSc",
     "description": ""
   }
 ]
