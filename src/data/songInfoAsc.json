@@ -45166,5 +45166,61 @@
     "singingInfoId": "CLF03",
     "releaseDate": "20261202",
     "type": "sver"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS14",
+    "songId": "MTS14_1",
+    "singingInfoId": "BEI00",
+    "releaseDate": "20261223",
+    "type": "u"
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS14",
+    "songId": "MTS14_1",
+    "singingInfoId": "BEI01",
+    "releaseDate": "20261223",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS14",
+    "songId": "MTS14_1",
+    "singingInfoId": "BEI02",
+    "releaseDate": "20261223",
+    "type": ""
+  },
+  {
+    "trackNo": 1,
+    "albumId": "MTS14",
+    "songId": "MTS14_1",
+    "singingInfoId": "BEI03",
+    "releaseDate": "20261223",
+    "type": ""
+  },
+  {
+    "trackNo": 2,
+    "albumId": "MTS14",
+    "songId": "MTS14_2",
+    "singingInfoId": "BEI01",
+    "releaseDate": "20261223",
+    "type": "sver"
+  },
+  {
+    "trackNo": 3,
+    "albumId": "MTS14",
+    "songId": "MTS14_3",
+    "singingInfoId": "BEI02",
+    "releaseDate": "20261223",
+    "type": "sver"
+  },
+  {
+    "trackNo": 4,
+    "albumId": "MTS14",
+    "songId": "MTS14_4",
+    "singingInfoId": "BEI03",
+    "releaseDate": "20261223",
+    "type": "sver"
   }
 ]
