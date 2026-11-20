@@ -1738,5 +1738,35 @@
     "embedUrl": "https://www.youtube-nocookie.com/embed/zbbTB-_h6Qg?mute=1&modestbranding=1",
     "thumbnailUrl": "http://img.youtube.com/vi/zbbTB-_h6Qg/mqdefault.jpg",
     "songName": "Life’s Side Menu!"
+  },
+  {
+    "videoId": "Iu3hlREXqQo",
+    "songId": "10A06_2",
+    "title": "FRAME「ULTIMATE FLAME」2DMV",
+    "siteType": "youtube",
+    "url": "https://youtu.be/Iu3hlREXqQo",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/Iu3hlREXqQo?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/Iu3hlREXqQo/mqdefault.jpg",
+    "songName": "ULTIMATE FLAME"
+  },
+  {
+    "videoId": "id5FJcyLmVg",
+    "songId": "COD12_1",
+    "title": "High×Joker「POPPIN' PLANET」2DMV",
+    "siteType": "youtube",
+    "url": "https://youtu.be/id5FJcyLmVg",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/id5FJcyLmVg?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/id5FJcyLmVg/mqdefault.jpg",
+    "songName": "POPPIN' PLANET"
+  },
+  {
+    "videoId": "RKpCpM4_sGM",
+    "songId": "10A10_2",
+    "title": "Café Parade「Chocolate Special」2DMV",
+    "siteType": "youtube",
+    "url": "https://youtu.be/RKpCpM4_sGM",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/RKpCpM4_sGM?mute=1&modestbranding=1",
+    "thumbnailUrl": "http://img.youtube.com/vi/RKpCpM4_sGM/mqdefault.jpg",
+    "songName": "Chocolate Special"
   }
 ]
